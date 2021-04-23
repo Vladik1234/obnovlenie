@@ -25,6 +25,7 @@ local UTF8 = encoding.UTF8
 
 local pInfo = {
   Tag = "Tag:",
+  cvetclist = "31",
 }
 
 local monikQuant = {}
@@ -54,6 +55,7 @@ function main()
     local settings = {
       global = {
         Tag = "Tag:",
+        cvetclist = "31",
       }
     }
     config.save(settings, 'SOBR tools/config.ini')
@@ -72,6 +74,7 @@ function main()
     ofeka = cfg.global.ofeka
     pokazatel = cfg.global.pokazatel
     sdelaitak = cfg.global.sdelaitak
+    pInfo.cvetclist = cfg.global.cvetclist
     settings = cfg
     CreateFileAndSettings()
     sampAddChatMessage("[SOBR tools]: Скрипт успешно загружен.", 0xFFB22222)
@@ -157,9 +160,9 @@ function main()
       while true do
         wait(1000)
         local r, id = sampGetPlayerIdByCharHandle(PLAYER_PED)
-        if sampGetPlayerColor(id) == 4283536973 and settings.global.t_se_au_to_clist == true and getCharModel(PLAYER_PED) == 287 or getCharModel(PLAYER_PED) == 191 or getCharModel(PLAYER_PED) == 179 or getCharModel(PLAYER_PED) == 61 or getCharModel(PLAYER_PED) == 255 or getCharModel(PLAYER_PED) == 73 then 
+        if sampGetPlayerColor(id) == 4283536973 and settings.global.cvetclist ~= nil and settings.global.t_se_au_to_clist == true and getCharModel(PLAYER_PED) == 287 or getCharModel(PLAYER_PED) == 191 or getCharModel(PLAYER_PED) == 179 or getCharModel(PLAYER_PED) == 61 or getCharModel(PLAYER_PED) == 255 or getCharModel(PLAYER_PED) == 73 then 
           wait(1000)
-          sampSendChat("/clist 31")
+          sampSendChat("/clist "..pInfo.cvetclist.."")
         end
       end
     end)
@@ -312,21 +315,23 @@ function refreshDialog()
             while sampIsDialogActive() do wait(0) end
             local result, button, item, input = sampHasDialogRespond(9999)
             if result and button == 1 then
-              settings.global.Tag = input
+              sett9jgs.global.Tag = input
               pInfo.Tag = input
               refreshDialog()
             end
           end
         },
         {
-          title = "{9ACD32}Выключить/включить автоклист{FFFFFF}",
+          title = "{006400}Цвет автоклиста{FFFFFF} ",
           onclick = function()
-            if settings.global.t_se_au_to_clist == true then
-              sampAddChatMessage("[SOBR tools]: Автоклист выключен.", 0xFFB22222)
-              settings.global.t_se_au_to_clist = false
-            else
-              sampAddChatMessage("[SOBR tools]: Автоклист включен.", 0x33AAFFFF)
-              settings.global.t_se_au_to_clist = true
+            sampShowDialog(9999, "Автоклист:", "{b6b6b6}Введи номер цвета:", "ОК", "Закрыть", 1)
+            while sampIsDialogActive() do wait(0) end
+            local result, button, item, input = sampHasDialogRespond(9999)
+            if result and button == 1 then
+              settings.global.cvetclist = input
+              pInfo.cvetclist = input
+              refreshDialog()
+              onScriptTerminate()
             end
           end
         },
@@ -397,7 +402,7 @@ function refreshDialog()
     {
       title = "{20B2AA}Позывные напарников{FFFFFF}",
       onclick = function()
-        sampShowDialog(1298, "{808080}[SOBR tools] Позывные{FFFFFF}", "{808080}Molly Asad - Атланта\nAnton Amurov - Мура\nLeo Florenso - Пена\nVolodya Lipton - Свен\nTim Vedenkin - Морти\nAdam Walter - Вольт\nSativa Johnson - Боба\nMaksim Azzantroph - Лоли\nJony Soprano - Санёчек\nJack Lingard - Барон\nAnatoly Morozov - Беркут\nHoward Harper - Деанон\nIgor Chabanov - Филин\nValentin Molo - Крот\nBrain Spencor - Волк\nKevin Spencor - Гром\nBogdan Nurminski - Сталкер\nAleksey Tarasov - Зверь{FFFFFF}", "Ок", "Не ок", 0)
+        sampShowDialog(1298, "{808080}[SOBR tools] Позывные{FFFFFF}", "{808080}Molly Asad - Атланта\nAnton Amurov - Мура\nLeo Florenso - Пена\nVolodya Lipton - Свен\nTim Vedenkin - Морти\nAdam Walter - Вольт\nSativa Johnson - Боба\nMaksim Azzantroph - Лоли\nJack Lingard - Барон\nAnatoly Morozov - Беркут\nHoward Harper - Деанон\nIgor Chabanov - Филин\nValentin Molo - Крот\nBrain Spencor - Волк\nKevin Spencor - Гром\nBogdan Nurminski - Сталкер\nAleksey Tarasov - Зверь\nMaksim Dinosower - Сняряд{FFFFFF}", "Ок", "Не ок", 0)
       end
     },
   }
