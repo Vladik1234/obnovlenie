@@ -19,20 +19,6 @@ local shrift = "Segoe UI"
 local size = 10 
 local flag = 13 
 local getBonePosition = ffi.cast("int (__thiscall*)(void*, float*, int, bool)", 0x5E4280)
-if autoON then run = true end
-weapons = {}
-weapons[30] = 130
-weapons[31] = 70
-weapons[24] = 35
-weapons[23] = 100
-weapons[25] = 35
-weapons[27] = 30
-weapons[26] = 25
-weapons[28] = 25
-weapons[29] = 60
-weapons[33] = 100
-weapons[34] = 220
-weapons[22] = 25
 
 encoding.default = "CP1251"
 local UTF8 = encoding.UTF8
@@ -55,8 +41,6 @@ script_description("Ñêğèïò äëÿ ÑÎÁĞ")
 local cfg = config.load(nil, 'SOBR tools/config.ini')
 local SSSDialog = {}
 local LVDialog = {}
-local FADialog = {}
-local STREAMSDialog = {}
 
 function onScriptTerminate(script, jopa)
   if (script == thisScript()) then
@@ -229,15 +213,12 @@ function main()
       if sampIsChatInputActive() and settings.global.rusispr and sampGetChatInputText() == "/fè" then sampSetChatInputText("/fb") end
       if sampIsChatInputActive() and settings.global.rusispr and sampGetChatInputText() == "/rè" then sampSetChatInputText("/rb") end
       if priziv == true and testCheat("Z") then submenus_show(LVDialog, "{00FA9A}ÏĞÈÇÛÂ{FFFFFF}") end
-      if sampIsChatInputActive() == true and sampGetChatInputText() == "forum" then sampSetChatInputText("") submenus_show(FORDialog, "{00FA9A}Evolve Role Play - Ñîîáùåñòâî{FFFFFF}") end
-      if sampIsChatInputActive() and sampGetChatInputText() == "/streamsettings" then sampSetChatInputText("") submenus_show(STREAMSDialog, "{00FA9A}Íàñòğîéêà ôóíêöèè `Èãğîê â ñòğèìå`{FFFFFF}") end
-      if sampIsChatInputActive() and sampGetChatInputText() == "/cfaq" then sampSetChatInputText("") sampShowDialog(1285, "{808080}[SOBR tools] Êîìàíäû{FFFFFF}", "{808080}/aclist - âûêëş÷èòü/âêëş÷èòü àâòîêëèñò\n/agclist - âûêëş÷èòü/âêëş÷èòü àâòî-ñåäüìîé êëèñò íà ãğàæäàíêå\n/lp - âûêëş÷èòü/âêëş÷èòü îòêğûâàíèå àâòî íà êëàâèøó `L`\n/atag - âûêëş÷èòü/âêëş÷èòü àâòî-òåã\n/ascreen - âûêëş÷èòü/âêëş÷èòü àâòî-ñêğèí ïîñëå ïıéäåÿ\n/sw, /st - ñìåíèòü èãğîâîå âğåìÿ/ïîãîäó\n/cc - î÷èñòèòü ÷àò\n/kv - ïîñòàâèòü ìåòêó íà êâàäğàò\n/getm - ïîêàçàòü ñåáå ìîíèòîğèíã, /rgetm - â ğàöèş\n/przv - âêëş÷èòü/âûêëş÷èòü ğåæèì ïğèçûâà\n/abp - âûêëş÷èòü/âêëş÷èòü àâòî-ÁÏ íà `alt`\n/sicmd - âêëş÷èòü/âûêëş÷èòü àâòîèñïğàâëåíèå ğóññêèõ êîìàíä\n/hphud - âêëş÷èòü/îòêëş÷èòü õï õóä\n/abp - âêëş÷èòü íàñòğîéêè àâòî-ÁÏ\n/splayer - âêëş÷èòü/âûêëş÷èòü îòîáğàæåíèå â ÷àòå íèêîâ âîåííûõ êîòîğûå ïîÿâèëèñü â çîíå ñòğèìà{FFFFFF}", "Ëàäíî", "Ïğîõëàäíî", 0) end
+      if sampIsChatInputActive() and sampGetChatInputText() == "/cfaq" then sampSetChatInputText("") sampShowDialog(1285, "{808080}[SOBR tools] Êîìàíäû{FFFFFF}", "{808080}/aclist - âûêëş÷èòü/âêëş÷èòü àâòîêëèñò\n/lp - âûêëş÷èòü/âêëş÷èòü îòêğûâàíèå àâòî íà êëàâèøó `L`\n/atag - âûêëş÷èòü/âêëş÷èòü àâòî-òåã\n/ascreen - âûêëş÷èòü/âêëş÷èòü àâòî-ñêğèí ïîñëå ïıéäåÿ\n/sw, /st - ñìåíèòü èãğîâîå âğåìÿ/ïîãîäó\n/cc - î÷èñòèòü ÷àò\n/kv - ïîñòàâèòü ìåòêó íà êâàäğàò\n/getm - ïîêàçàòü ñåáå ìîíèòîğèíã, /rgetm - â ğàöèş\n/przv - âêëş÷èòü/âûêëş÷èòü ğåæèì ïğèçûâà\n/abp - âûêëş÷èòü/âêëş÷èòü àâòî-ÁÏ íà `alt`\n/sicmd - âêëş÷èòü/âûêëş÷èòü àâòîèñïğàâëåíèå ğóññêèõ êîìàíä\n/hphud - âêëş÷èòü/îòêëş÷èòü õï õóä\n/abp - âêëş÷èòü íàñòğîéêè àâòî-ÁÏ\n/splayer - âêëş÷èòü/âûêëş÷èòü îòîáğàæåíèå â ÷àòå íèêîâ âîåííûõ êîòîğûå ïîÿâèëèñü â çîíå ñòğèìà{FFFFFF}", "Ëàäíî", "Ïğîõëàäíî", 0) end
     end
   end
 
 function refreshDialog()
   SSSDialog = {
-  
   
     {
       title = "{FF7F50}Çàïğîñèòü ıâàêóàöèş{FFFFFF}",
@@ -680,12 +661,7 @@ function justPressThisShitPlease(key) lua_thread.create(function(key) setVirtual
 function goupdate()
   sampAddChatMessage("Îáíîâëåíèå óñïåøíî çàãğóæåíî.", 0xFFB22222)
   downloadUrlToFile("https://raw.githubusercontent.com/Vladik1234/obnovlenie/master/SOBR_tools.lua", thisScript().path, function(id, status)
-    if (status == dlstatus.STATUS_ENDDOWNLOADDATA) then
-      sampAddChatMessage("Îáíîâëåíèå óñïåøíî çàãğóæåíî.", 0xFFB22222)
-    else
-      wait(1000)
-      sampAddChatMessage("Îáíîâëåíèå íå çàãğóæåíî.", 0xFFB22222)
-    end    
+    print(status)  
   end)
 end
 
@@ -747,15 +723,6 @@ function rgetm()
 end
 
 function getm() local x,y,z = getCharCoordinates(PLAYER_PED) local result, text = Search3Dtext(x,y,z, 1000, "FBI") local temp = split(text, "\n") sampAddChatMessage("=============[Ìîíèòîğèíã]============", 0xFFFFFF) for k, val in pairs(temp) do sampAddChatMessage(val, 0xFFFFFF) end end
-
-function getDistance(x1, y1, z1, x2, y2, z2) local distance = math.sqrt( ((x1-x2)^2) + ((y1-y2)^2) + ((z1-z2)^2)) return distance end
-
-function getBodyPartCoordinates(id, handle) local pedptr = getCharPointer(handle) local vec = ffi.new("float[3]") getBonePosition(ffi.cast("void*", pedptr), vec, id, true) return vec[0], vec[1], vec[2] end
-
-function getActiveCamMode() local activeCaÓÑÁ = memory.getint8(0x00B6F028 + 0x59) return getCamMode(activeCaÓÑÁ) end
-
-
-function getCamMode(id) local cams = 0x00B6F028 + 0x174 local cam = cams + id * 0x238 return memory.getint16(cam + 0x0C) end
 
 function hphud()
   lua_thread.create(function()
@@ -824,7 +791,7 @@ function CloseWindow()
 			if notDialog >= 20 then
 				return
 			end
-		end
+    end
 	end
 end
 
