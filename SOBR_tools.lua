@@ -9,7 +9,7 @@ local SE = require 'samp.events'
 local e = require "lib.samp.events"
 local ffi = require "ffi"
 local memory = require 'memory'
-local t_se_au_to_clist, k_r_u_t_o, a_u_t_o_tag, a_u_t_o_screen, m_s_t_a_t, s_kin_i_n_lva, priziv, lwait, svscreen, rusispr, ofeka, pokazatel, sdelaitak = "config/SOBR tools/config.ini"
+local t_se_au_to_clist, k_r_u_t_o a_u_t_o_tag, a_u_t_o_screen, m_s_t_a_t, s_kin_i_n_lva, priziv, lwait, svscreen, ofeka, pokazatel, sdelaitak = "config/SOBR tools/config.ini"
 local sdopolnitelnoe = true
 local autoON = true
 local marker = nil
@@ -70,7 +70,6 @@ function main()
     priziv = cfg.global.priziv
     lwait = cfg.global.lwait
     pInfo.lwait = cfg.global.lwait
-    rusispr = cfg.global.rusispr
     ofeka = cfg.global.ofeka
     pokazatel = cfg.global.pokazatel
     sdelaitak = cfg.global.sdelaitak
@@ -79,8 +78,6 @@ function main()
     CreateFileAndSettings()
     sampAddChatMessage("[SOBR tools]: Скрипт успешно загружен.", 0xFFB22222)
   end
-
-    sampRegisterChatCommand("sicmd",function() if settings.global.rusispr == true then sampAddChatMessage("[SOBR tools]: Автоисправление ошибочных команд отключено.", 0xFFB22222) settings.global.rusispr = false else sampAddChatMessage("[SOBR tools]: Автоисправление ошибочных команд включено.", 0x33AAFFFF) settings.global.rusispr = true end end)
 
     sampRegisterChatCommand("supd", goupdate)
 
@@ -178,33 +175,9 @@ function main()
       if isKeyJustPressed(VK_SPACE) and sampIsChatInputActive() and settings.global.a_u_t_o_tag == true and sampGetChatInputText() =="/r " then sampSetChatInputText("/r "..pInfo.Tag.." ") end
       if isKeyJustPressed(VK_SPACE) and sampIsChatInputActive() and settings.global.a_u_t_o_tag == true and sampGetChatInputText() =="/R " then sampSetChatInputText("/R "..pInfo.Tag.." ") end
       if testCheat("PP") then submenus_show(SSSDialog, "{00FA9A}SOBR tools by Tarasov{FFFFFF}") end
-      if isKeyJustPressed(VK_L) and not sampIsChatInputActive() and not sampIsDialogActive() and not isPauseMenuActive() and not isSampfuncsConsoleActive() and k_r_u_t_o then sampSendChat("/lock") end
-      if sampIsChatInputActive() and settings.global.rusispr ~= nil and sampGetChatInputText() == "/ыьы" then sampSetChatInputText("/sms") end
-      if sampIsChatInputActive() and settings.global.rusispr and sampGetChatInputText() == "/к" then sampSetChatInputText("/r") end
-      if sampIsChatInputActive() and settings.global.rusispr and sampGetChatInputText() == "/а" then sampSetChatInputText("/f") end
-      if sampIsChatInputActive() and settings.global.rusispr and sampGetChatInputText() == "/ки" then sampSetChatInputText("/rb") end
-      if sampIsChatInputActive() and settings.global.rusispr and sampGetChatInputText() == "/аи" then sampSetChatInputText("/fb") end
-      if sampIsChatInputActive() and settings.global.rusispr and sampGetChatInputText() == "/в" then sampSetChatInputText("/d") end
-      if sampIsChatInputActive() and settings.global.rusispr and sampGetChatInputText() == "/пщм" then sampSetChatInputText("/gov") end
-      if sampIsChatInputActive() and settings.global.rusispr and sampGetChatInputText() == "/штмшеу" then sampSetChatInputText("/invite") end
-      if sampIsChatInputActive() and settings.global.rusispr and sampGetChatInputText() == "/гтштмшеу" then sampSetChatInputText("/uninvite") end
-      if sampIsChatInputActive() and settings.global.rusispr and sampGetChatInputText() == "/ьуьиукы" then sampSetChatInputText("/members") end
-      if sampIsChatInputActive() and settings.global.rusispr and sampGetChatInputText() == "/щааьуьиукы" then sampSetChatInputText("/offmembers") end 
-      if sampIsChatInputActive() and settings.global.rusispr and sampGetChatInputText() == "/пшмукфтл" then sampSetChatInputText("/giverank") end 
-      if sampIsChatInputActive() and settings.global.rusispr and sampGetChatInputText() == "/щаапшмукфтл" then sampSetChatInputText("/offgiverank") end
-      if sampIsChatInputActive() and settings.global.rusispr and sampGetChatInputText() == "/аьгеу" then sampSetChatInputText("/fmute") end
-      if sampIsChatInputActive() and settings.global.rusispr and sampGetChatInputText() == "/аашчсфк" then sampSetChatInputText("/ffixcar") end
-      if sampIsChatInputActive() and settings.global.rusispr and sampGetChatInputText() == "/ь" then sampSetChatInputText("/m") end
-      if sampIsChatInputActive() and settings.global.rusispr and sampGetChatInputText() == "/цфкурщгыу" then sampSetChatInputText("/warehouse") end
-      if sampIsChatInputActive() and settings.global.rusispr and sampGetChatInputText() == "/сфкь" then sampSetChatInputText("/carm") end
-      if sampIsChatInputActive() and settings.global.rusispr and sampGetChatInputText() == "/сфьукф" then sampSetChatInputText("/camera") end
-      if sampIsChatInputActive() and settings.global.rusispr and sampGetChatInputText() == "/сфьукфщаа" then sampSetChatInputText("/cameraoff") end
-      if sampIsChatInputActive() and settings.global.rusispr and sampGetChatInputText() == "/кфь" then sampSetChatInputText("/ram") end
-      if sampIsChatInputActive() and settings.global.rusispr and sampGetChatInputText() == "/ид" then sampSetChatInputText("/bl") end
-      if sampIsChatInputActive() and settings.global.rusispr and sampGetChatInputText() == "/fи" then sampSetChatInputText("/fb") end
-      if sampIsChatInputActive() and settings.global.rusispr and sampGetChatInputText() == "/rи" then sampSetChatInputText("/rb") end
+      if isKeyJustPressed(VK_L) and not sampIsChatInputActive() and not sampIsDialogActive() and not isPauseMenuActive() and not isSampfuncsConsoleActive() and settings.global.k_r_u_t_o == true then sampSendChat("/lock") end
       if priziv == true and testCheat("Z") then submenus_show(LVDialog, "{00FA9A}ПРИЗЫВ{FFFFFF}") end
-      if sampIsChatInputActive() and sampGetChatInputText() == "/cfaq" then sampSetChatInputText("") sampShowDialog(1285, "{808080}[SOBR tools] Команды{FFFFFF}", "{808080}/aclist - выключить/включить автоклист\n/lp - выключить/включить открывание авто на клавишу `L`\n/atag - выключить/включить авто-тег\n/ascreen - выключить/включить авто-скрин после пэйдея\n/sw, /st - сменить игровое время/погоду\n/cc - очистить чат\n/kv - поставить метку на квадрат\n/getm - показать себе мониторинг, /rgetm - в рацию\n/przv - включить/выключить режим призыва\n/abp - выключить/включить авто-БП на `alt`\n/sicmd - включить/выключить автоисправление русских команд\n/hphud - включить/отключить хп худ\n/abp - включить настройки авто-БП\n/splayer - включить/выключить отображение в чате ников военных которые появились в зоне стрима{FFFFFF}", "Ладно", "Прохладно", 0) end
+      if sampIsChatInputActive() and sampGetChatInputText() == "/cfaq" then sampSetChatInputText("") sampShowDialog(1285, "{808080}[SOBR tools] Команды{FFFFFF}", "{808080}/aclist - выключить/включить автоклист\n/lp - выключить/включить открывание авто на клавишу `L`\n/atag - выключить/включить авто-тег\n/ascreen - выключить/включить авто-скрин после пэйдея\n/sw, /st - сменить игровое время/погоду\n/cc - очистить чат\n/kv - поставить метку на квадрат\n/getm - показать себе мониторинг, /rgetm - в рацию\n/przv - включить/выключить режим призыва\n/abp - выключить/включить авто-БП на `alt`\n/hphud - включить/отключить хп худ\n/abp - включить настройки авто-БП\n/splayer - включить/выключить отображение в чате ников военных которые появились в зоне стрима{FFFFFF}", "Ладно", "Прохладно", 0) end
     end
   end
 
@@ -254,51 +227,398 @@ function refreshDialog()
       end
     },
     {
-      title = "{708090}Разминирование{FFFFFF}",
+      title = "{708090}Отыгровки{FFFFFF}",
       submenu = 
       {
-        title = "{2F4F4F}Выберите что хотите разминировать{FFFFFF}",
+        title = "{2F4F4F}Отыгровки{FFFFFF}",
         {
-          title = "{708090}Разминирование взрывчатки с часовым механизмом{FFFFFF}",
+          title = "{708090}Разминирование{FFFFFF}",
+          submenu = 
+          {
+            title = "{2F4F4F}Выберите отыгровку{FFFFFF}",
+            {
+              title = "{708090}Разминирование взрывчатки с часовым механизмом{FFFFFF}",
+              onclick = function()
+                if settings.global.lwait ~= nil then
+                  sampAddChatMessage("[SOBR tools]: Старт отыгровки. Для отмены нажмите CTRL+R.", 0xFFB22222)
+                  sampSendChat("/me достал(а) набор сапера")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me определил(а) тип взрывного устройства")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do Взрывчатка с часовым механизмом.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me достал(а) отвертку")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me аккуратно откручивает болты на корпусе устройства")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me обнаружил(а) в механизме несколько проводов")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me достал(а) кусачки из саперского набора")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me взял(а) синий провод в руки")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me с помощью кусачек оголил(а) провода")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me достал(а) индикаторную отвертку")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me приложил(а) отвертку к оголенному проводу")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do Светодиод в отвертке загорелся.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me взял(а) в руки кусачки")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me перерезал(а) провод")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me Таймер остановлен.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me отсоеденил(а) детанатор")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me взял(а) бронированный кейс")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me положил(а) взрывчатку в кейс")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me положил(а) все инструменты в набор сапера")
+                  sampAddChatMessage("[SOBR tools]: Конец отыгровки.", 0xFFB22222)
+                end
+              end
+            },
+            {
+              title = "{708090}Разминирование универсальное{FFFFFF}",
+              onclick = function()
+                if settings.global.lwait ~= nil then
+                  sampAddChatMessage("[SOBR tools]: Старт отыгровки. Для отмены нажмите CTRL+R.", 0xFFB22222)
+                  sampSendChat("/do На спине висит боевой рюкзак.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me стянул рюкзак со спины, затем достал набор для разминирования")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me аккуратно осмотрел бомбу")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me вытащил из набора электрическую отвертку типа `PS-201`")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me открутила шурупы с панели бомбы")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me обеими руками аккуратно снял крышку с бомбы, после чего вытащил из набора щипцы")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do На бомбе виден красный и синий провод.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me надрезал провод бомбы, после чего перекусил красный провод")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do Таймер заморожен и бомба больше не пригодна к использованию.")
+                  sampAddChatMessage("[SOBR tools]: Конец отыгровки.", 0xFFB22222)
+                end
+              end
+            },
+            {
+              title = "{708090}Разминирование взрывного устройства с дистанционным управлением{FFFFFF}",
+              onclick = function()
+                if settings.global.lwait ~= nil then
+                  sampAddChatMessage("[SOBR tools]: Старт отыгровки. Для отмены нажмите CTRL+R.", 0xFFB22222)
+                  sampSendChat("/me достав саперный набор, раскрыл(а) его")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me осмотрел(а) взрывное устройство")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do Определил(а) тип взрывного устройства `Бомба с дистанционным управлением`.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do Увидел(а) два шурупа на блоке с механизмом.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me достал(а) отвертку из саперного набора")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do Отвертка в руке.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me аккуратно выкрутил(а) шурупы")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me отодвинул(а) крышку блока и увидел(а) антенну")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do Увидел(а) красный мигающий индикатор.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me просмотрел(а) путь микросхемы от антенны к детонатору")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me увидел(а) два провода")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me перерезал(а) первый провод. Индикатор перестал мигать")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do Бомба обезврежена.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me сложил(а) инструменты обратно в саперный набор")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me достал бронированный кейс и аккуратно сложил туда бомбу")
+                  sampAddChatMessage("[SOBR tools]: Конец отыгровки.", 0xFFB22222)
+                end
+              end
+            },
+            {
+              title = "{708090}Разминирование взрывного устройства с жучком-детектором{FFFFFF}",
+              onclick = function()
+                if settings.global.lwait ~= nil then
+                  sampAddChatMessage("[SOBR tools]: Старт отыгровки. Для отмены нажмите CTRL+R.", 0xFFB22222)
+                  sampSendChat("/me осмотрел(а) взрывное устройство")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do Вид бомбы определен.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me достал(а) отвертку")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me откручивает корпус бомбы")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me взял(а) кусачки в саперном наборе")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me оголил(а) кусачками красный провод")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me взял(а) жучок-детектор в саперном наборе")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me прицепил жучок-детектор к красному проводу")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me взял изоленту в саперном наборе")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me заизолировал провод")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me взял кусачки ")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me взял жучок-детектор")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me прицепил жучок-детектор к синему проводу")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me взял кусачки")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me отрезал синий провод")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me отсоединил детонатор")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do Бомба обезврежена.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me положил все обратно в саперный набор")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me достал(а) бронированный кейс")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me поместил(а) бомбу в бронированный кейс")
+                  sampAddChatMessage("[SOBR tools]: Конец отыгровки.", 0xFFB22222)
+                end
+              end
+            },
+          }
+        },
+        {
+          title = "{708090}Первая медицинская помощь[ПМП]{FFFFFF}",
+          submenu = 
+          {
+            title = "{2F4F4F}Выберите отыгровку{FFFFFF}",
+            {
+              title = "{708090}ПМП при переломе{FFFFFF}",
+              onclick = function()
+                if settings.global.lwait ~= nil then
+                  sampAddChatMessage("[SOBR tools]: Старт отыгровки. Для отмены нажмите CTRL+R.", 0xFFB22222)
+                  sampSendChat("do Медицинская сумка на плече.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me снял медицинскую сумку с плеча, затем открыл её")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do В сумке лежат: стерильные шприцы, ампула с анальгетиком, шина, бинты.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me достал стерильный шприц с ампулой, аккуратно приоткрыв ампулу с анальгетиком")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me перелил содержимое ампулы в шприц")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me закатал рукав пострадавшего, после чего ввёл анальгетик через шприц в вену, вдавив поршень")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me достал из сумки шину, затем принялся накладывать её на повреждённую конечность")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me аккуратно наложил шину на повреждённую конечность")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do Шина качественно наложена на повреждённую конечность.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me взял из сумки стерильные бинты, затем начал делать косынку")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me сделал косынку из стерильного бинта")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me подвесил повреждённую конечность в согнутом положении")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do Повреждённая конечность иммобилизована.")
+                  sampAddChatMessage("[SOBR tools]: Конец отыгровки.", 0xFFB22222)
+                end
+              end
+            },
+            {
+              title = "{708090}ПМП при ранении конечностей{FFFFFF}",
+              onclick = function()
+                if settings.global.lwait ~= nil then
+                  sampAddChatMessage("[SOBR tools]: Старт отыгровки. Для отмены нажмите CTRL+R.", 0xFFB22222)
+                  sampSendChat("/me осмотрел раненного")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do Определил, пробита артерия.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me наложил давящую повязку на рану")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me достал флягу со спиртом и оторвал кусок ткани со своей одежды")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do Боец налил спирт на ткань и приложил её на место ранения.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me достал аптечку и открыл ее, затем достал жгут и бинт")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me закрепил повязку на ранении бинтом обмотав бинт вокруг раны")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do Боец наложил жгут ниже ранения.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do Кровотечение постепенно проходит.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do Жгут наложен, кровотечение остановлено.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me достал из аптечки таблетки Аспирин и положил в рот раненому")
+                  sampAddChatMessage("[SOBR tools]: Конец отыгровки.", 0xFFB22222)
+                end
+              end
+            },
+            {
+              title = "{708090}ПМП при ранении в грудь и живот{FFFFFF}",
+              onclick = function()
+                if settings.global.lwait ~= nil then
+                  sampAddChatMessage("[SOBR tools]: Старт отыгровки. Для отмены нажмите CTRL+R.", 0xFFB22222)
+                  sampSendChat("/me осмотрел раненного")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me помог человеку принять полусидячее положение")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me достал аптечку и открыл ее")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do Боец достал из аптечки стерильный бинт и средства для обработки ран.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me обработал края раны обеззараживающим средством и убрал излишки крови")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do Боец достал асептическую марлю и смочил ее спиртом.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me прижал марлю к ране, приостановив кровотечение")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me достал из аптечки бинт, затем начал обматывать рану")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do Бинты постепенно скрывают рану.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do Повязка крепко наложена и стягивает рану.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do Кровотечение постепенно проходит.")
+                  sampAddChatMessage("[SOBR tools]: Конец отыгровки.", 0xFFB22222)
+                end
+              end
+            },
+            {
+              title = "{708090}ПМП при потере пульса{FFFFFF}",
+              onclick = function()
+                if settings.global.lwait ~= nil then
+                  sampAddChatMessage("[SOBR tools]: Старт отыгровки. Для отмены нажмите CTRL+R.", 0xFFB22222)
+                  sampSendChat("/do На правом плече висит открытая мед. сумка.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me достав из сумки полотенце, подложил его под шею пострадавшего")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me снял с груди человека всю одежду")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me снял все сдавливающие аксессуары")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me сделав глубокий вдох, начал делать искусственное дыхание лёгких")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do Воздух постепенно наполняет и заполняет лёгкие пострадавшего.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me положил руки друг на друга на грудь человека")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me делает непрямой массаж сердца")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me попеременно делает искусственное дыхание и непрямой массаж сердца")
+                  sampAddChatMessage("[SOBR tools]: Конец отыгровки.", 0xFFB22222)
+                end
+              end
+            },
+          }
+        },
+        {
+          title = "{708090}Другое{FFFFFF}",
+          submenu = 
+          {
+            title = "{2F4F4F}Выберите отыгровку{FFFFFF}",
+            {
+              title = "{708090}Маскировка автомобиля и сидячих в нём{FFFFFF}",
+              onclick = function()
+                if settings.global.lwait ~= nil then
+                  sampAddChatMessage("[SOBR tools]: Старт отыгровки. Для отмены нажмите CTRL+R.", 0xFFB22222)
+                  sampSendChat("/do Водитель и пассажиры находятся в автомобиле без опозновательных знаков.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do Автомобиль полностью бронирован, номерные знаки отсутствуют, шины пулестойкие.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do Стекла автомобиля затонированы, личность водителя и пассажиров не распознать.")
+                  sampAddChatMessage("[SOBR tools]: Конец отыгровки.", 0xFFB22222)
+                end
+              end
+            },
+            {
+              title = "{708090}Надеть противогаз{FFFFFF}",
+              onclick = function()
+                if settings.global.lwait ~= nil then
+                  sampAddChatMessage("[SOBR tools]: Старт отыгровки. Для отмены нажмите CTRL+R.", 0xFFB22222)
+                  sampSendChat("/do На бедре левой ноги висит подсумок с противогазом ГП-21.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me задержав дыхание, достал противогаз и ловким движением надел его")
+                  sampAddChatMessage("[SOBR tools]: Конец отыгровки.", 0xFFB22222)
+                end
+              end
+            },
+            {
+              title = "{708090}Полная маскировка себя{FFFFFF}",
+              onclick = function()
+                if settings.global.lwait ~= nil then
+                  sampAddChatMessage("[SOBR tools]: Старт отыгровки. Для отмены нажмите CTRL+R.", 0xFFB22222)
+                  sampSendChat("/do Неизвестный одет в военную форму из номекса темно серого цвета.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do На бронежилете нет нашивок, распознавательные знаки отсутствуют.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do Лицо скрыто балаклавой, личность не распознать.")
+                  sampAddChatMessage("[SOBR tools]: Конец отыгровки.", 0xFFB22222)
+                end
+              end
+            },
+            {
+              title = "{708090}Полная маскировка себя и окружающих{FFFFFF}",
+              onclick = function()
+                if settings.global.lwait ~= nil then
+                  sampAddChatMessage("[SOBR tools]: Старт отыгровки. Для отмены нажмите CTRL+R.", 0xFFB22222)
+                  sampSendChat("/do Неизвестные одеты в военную форму из номекса темно-серого цвета.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do Распознавательные знаки на форме отсутствуют.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do Лица скрыты балаклавами, личности не распознать.")
+                  sampAddChatMessage("[SOBR tools]: Конец отыгровки.", 0xFFB22222)
+                end
+              end
+            },
+            {
+              title = "{708090}Проверка снаряжения{FFFFFF}",
+              onclick = function()
+                if settings.global.lwait ~= nil then
+                  sampAddChatMessage("[SOBR tools]: Старт отыгровки. Для отмены нажмите CTRL+R.", 0xFFB22222)
+                  sampSendChat("/do На груди висит четыре подсумка.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me начал проверять свое снаряжение, проверяя каждый подсумок")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me проверил первый подсумок")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do В первом подсумке лежит аптечка АИ-2 и перевязочный пакет ИПП-1. ")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me проверил второй и третий подсумок")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do Во втором и третьем подсумке лежит 5 магазинов для М4, 6 магазинов для Deagle, 5 обойм для Rifle.")
+                  wait(settings.global.lwait)
+                  sampSendChat("/me проверил четвертый подсумок")
+                  wait(settings.global.lwait)
+                  sampSendChat("/do В четвертом подсумке лежат 2 небольших фильтра для противогаза, ключи, сигареты, наручники.")
+                  sampAddChatMessage("[SOBR tools]: Конец отыгровки.", 0xFFB22222)
+                end
+              end
+            },
+          }
+        },
+        {
+          title = "{006400}Поставить задержку между строками в отыгровках(ОБЯЗАТЕЛЬНО){FFFFFF}",
           onclick = function()
-            sampSendChat("/me достал(а) набор сапера")
-            wait(1200)
-            sampSendChat("/me определил(а) тип взрывного устройства")
-            wait(1200)
-            sampSendChat("/do Взрывчатка с часовым механизмом.")
-            wait(1200)
-            sampSendChat("/me достал(а) отвертку")
-            wait(1200)
-            sampSendChat("/me аккуратно откручивает болты на корпусе устройства")
-            wait(1200)
-            sampSendChat("/me обнаружил(а) в механизме несколько проводов")
-            wait(1200)
-            sampSendChat("/me достал(а) кусачки из саперского набора")
-            wait(1200)
-            sampSendChat("/me взял(а) синий провод в руки")
-            wait(1200)
-            sampSendChat("/me с помощью кусачек оголил(а) провода")
-            wait(1200)
-            sampSendChat("/me достал(а) индикаторную отвертку")
-            wait(1200)
-            sampSendChat("/me приложил(а) отвертку к оголенному проводу")
-            wait(1200)
-            sampSendChat("/do Светодиод в отвертке загорелся.")
-            wait(1200)
-            sampSendChat("/me взял(а) в руки кусачки")
-            wait(1200)
-            sampSendChat("/me перерезал(а) провод")
-            wait(1200)
-            sampSendChat("/me Таймер остановлен.")
-            wait(1200)
-            sampSendChat("/me отсоеденил(а) детанатор")
-            wait(1200)
-            sampSendChat("/me взял(а) бронированный кейс")
-            wait(1200)
-            sampSendChat("/me положил(а) взрывчатку в кейс")
-            wait(1200)
-            sampSendChat("/me положил(а) все инструменты в набор сапера")
-            wait(1200)
+            sampShowDialog(9999, "Установить задержку в лекциях:", "{b6b6b6}Введи задержку:", "ОК", "Закрыть", 1)
+            while sampIsDialogActive() do wait(0) end
+            local result, button, item, input = sampHasDialogRespond(9999)
+            if result and button == 1 then
+              settings.global.lwait = input
+              pInfo.lwait = input
+              refreshDialog()
+            end
           end
         },
       }
@@ -318,11 +638,12 @@ function refreshDialog()
               settings.global.Tag = input
               pInfo.Tag = input
               refreshDialog()
+              onScriptTerminate()
             end
           end
         },
         {
-          title = "{006400}Цвет автоклиста{FFFFFF} "..pInfo.cvetclist,
+          title = "{006400}Номер цвета автоклиста:{FFFFFF} "..pInfo.cvetclist,
           onclick = function()
             sampShowDialog(9999, "Автоклист:", "{b6b6b6}Введи номер цвета:", "ОК", "Закрыть", 1)
             while sampIsDialogActive() do wait(0) end
