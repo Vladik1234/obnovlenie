@@ -9,7 +9,7 @@ local SE = require 'samp.events'
 local e = require "lib.samp.events"
 local ffi = require "ffi"
 local memory = require 'memory'
-local t_se_au_to_clist, k_r_u_t_o, a_u_t_o_tag, a_u_t_o_screen, m_s_t_a_t, s_kin_i_n_lva, priziv, lwait, svscreen, hepehud, rusispr, ofeka, pokazatel, sdelaitak = "config/SOBR tools/config.ini"
+local t_se_au_to_clist, k_r_u_t_o, a_u_t_o_tag, a_u_t_o_screen, m_s_t_a_t, s_kin_i_n_lva, priziv, lwait, svscreen, rusispr, ofeka, pokazatel, sdelaitak = "config/SOBR tools/config.ini"
 local sdopolnitelnoe = true
 local autoON = true
 local marker = nil
@@ -68,7 +68,6 @@ function main()
     priziv = cfg.global.priziv
     lwait = cfg.global.lwait
     pInfo.lwait = cfg.global.lwait
-    hepehud = cfg.global.hepehud
     rusispr = cfg.global.rusispr
     ofeka = cfg.global.ofeka
     pokazatel = cfg.global.pokazatel
@@ -79,8 +78,6 @@ function main()
   end
 
     sampRegisterChatCommand("sicmd",function() if settings.global.rusispr == true then sampAddChatMessage("[SOBR tools]: Автоисправление ошибочных команд отключено.", 0xFFB22222) settings.global.rusispr = false else sampAddChatMessage("[SOBR tools]: Автоисправление ошибочных команд включено.", 0x33AAFFFF) settings.global.rusispr = true end end)
-
-    sampRegisterChatCommand("hphud",function() if settings.global.hepehud == true then sampAddChatMessage("[SOBR tools]: ХП худ отключён.", 0xFFB22222) thisScript():reload() settings.global.hepehud = false else sampAddChatMessage("[SOBR tools]: ХП худ включён.", 0x33AAFFFF) settings.global.hepehud = true end end)
 
     sampRegisterChatCommand("supd", goupdate)
 
@@ -141,15 +138,6 @@ function main()
           sampSendChat("/r "..pInfo.Tag.." 10-100, определённое время.")
           wait(200)
           justPressThisShitPlease(VK_ESCAPE)
-        end
-      end
-    end)
-
-    lua_thread.create(function()
-      while true do
-      wait(0)
-        if settings.global.hepehud == true then 
-          hphud()
         end
       end
     end)
@@ -317,19 +305,6 @@ function refreshDialog()
       submenu =
       {
         title = "{9ACD32}Настройки{FFFFFF}",
-        {
-          title = "{006400}Поставить задержку между строками в лекциях(ОБЯЗАТЕЛЬНО){FFFFFF}",
-          onclick = function()
-            sampShowDialog(9999, "Установить задержку в лекциях:", "{b6b6b6}Введи задержку:", "ОК", "Закрыть", 1)
-            while sampIsDialogActive() do wait(0) end
-            local result, button, item, input = sampHasDialogRespond(9999)
-            if result and button == 1 then
-              settings.global.lwait = input
-              pInfo.lwait = input
-              refreshDialog()
-            end
-          end
-        },
         {
           title = "{006400}Тэг:{FFFFFF} "..pInfo.Tag,
           onclick = function()
@@ -723,27 +698,6 @@ function rgetm()
 end
 
 function getm() local x,y,z = getCharCoordinates(PLAYER_PED) local result, text = Search3Dtext(x,y,z, 1000, "FBI") local temp = split(text, "\n") sampAddChatMessage("=============[Мониторинг]============", 0xFFFFFF) for k, val in pairs(temp) do sampAddChatMessage(val, 0xFFFFFF) end end
-
-function hphud()
-  lua_thread.create(function()
-    while true do wait(0)
-      while not isPlayerPlaying(PLAYER_HANDLE) do wait(0) end
-      useRenderCommands(true) -- use lua render
-      setTextCentre(true) -- set text centered
-      setTextScale(0.2, 0.5) -- x y size
-      setTextColour(255--[[r]], 255--[[g]], 255--[[b]], 255--[[a]])
-      setTextEdge(1--[[outline size]], 0--[[r]], 0--[[g]], 0--[[b]], 255--[[a]])
-      displayTextWithNumber(578.0, 68.5, 'NUMBER', getCharHealth(PLAYER_PED))
-      if getCharArmour(PLAYER_PED) > 0 then
-         setTextCentre(true) -- set text centered
-         setTextScale(0.2, 0.5) -- x y size
-         setTextColour(255--[[r]], 255--[[g]], 255--[[b]], 255--[[a]])
-         setTextEdge(1--[[outline size]], 0--[[r]], 0--[[g]], 0--[[b]], 255--[[a]])
-         displayTextWithNumber(578.0, 47.0, 'NUMBER', getCharArmour(PLAYER_PED))
-      end
-    end
-  end)
-end
 
 function abp()	
 	if sampIsDialogActive() and sampGetCurrentDialogId() == 20053 then
