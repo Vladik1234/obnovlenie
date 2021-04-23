@@ -179,7 +179,7 @@ function main()
       if isKeyJustPressed(VK_SPACE) and sampIsChatInputActive() and settings.global.a_u_t_o_tag == true and sampGetChatInputText() =="/R " then sampSetChatInputText("/R "..pInfo.Tag.." ") end
       if testCheat("PP") then submenus_show(SSSDialog, "{00FA9A}SOBR tools by Tarasov{FFFFFF}") end
       if isKeyJustPressed(VK_L) and not sampIsChatInputActive() and not sampIsDialogActive() and not isPauseMenuActive() and not isSampfuncsConsoleActive() and k_r_u_t_o then sampSendChat("/lock") end
-      if sampIsChatInputActive() and settings.global.rusispr and sampGetChatInputText() == "/ыьы" then sampSetChatInputText("/sms") end
+      if sampIsChatInputActive() and settings.global.rusispr ~= nil and sampGetChatInputText() == "/ыьы" then sampSetChatInputText("/sms") end
       if sampIsChatInputActive() and settings.global.rusispr and sampGetChatInputText() == "/к" then sampSetChatInputText("/r") end
       if sampIsChatInputActive() and settings.global.rusispr and sampGetChatInputText() == "/а" then sampSetChatInputText("/f") end
       if sampIsChatInputActive() and settings.global.rusispr and sampGetChatInputText() == "/ки" then sampSetChatInputText("/rb") end
@@ -315,14 +315,14 @@ function refreshDialog()
             while sampIsDialogActive() do wait(0) end
             local result, button, item, input = sampHasDialogRespond(9999)
             if result and button == 1 then
-              sett9jgs.global.Tag = input
+              settings.global.Tag = input
               pInfo.Tag = input
               refreshDialog()
             end
           end
         },
         {
-          title = "{006400}Цвет автоклиста{FFFFFF} ",
+          title = "{006400}Цвет автоклиста{FFFFFF} "..pInfo.cvetclist,
           onclick = function()
             sampShowDialog(9999, "Автоклист:", "{b6b6b6}Введи номер цвета:", "ОК", "Закрыть", 1)
             while sampIsDialogActive() do wait(0) end
