@@ -1206,10 +1206,10 @@ function e.onPlayerStreamIn(id, _, model)
   if name == "Maksim_Azzantroph" then
     sampCreate3dText("{000000}Боец СОБР - Лоли{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
   end
-  if name == "Brain_Spenсor" then
+  if name == "Brain_Spencor" then
     sampCreate3dText("{000000}Боец СОБР - Волк{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
   end
-  if name == "Kevin_Spenсor" then
+  if name == "Kevin_Spencor" then
     sampCreate3dText("{000000}Боец СОБР - Гром{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
   end
   if name == "Igor_Chabanov" then
