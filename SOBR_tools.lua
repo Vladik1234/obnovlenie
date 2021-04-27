@@ -9,7 +9,7 @@ local SE = require 'samp.events'
 local e = require "lib.samp.events"
 local ffi = require "ffi"
 local memory = require 'memory'
-local t_se_au_to_clist, k_r_u_t_o, a_u_t_o_tag, a_u_t_o_screen, m_s_t_a_t, s_kin_i_n_lva, priziv, lwait, svscreen, ofeka, pokazatel, sdelaitak = "config/SOBR tools/config.ini"
+local t_se_au_to_clist, k_r_u_t_o, a_u_t_o_tag, a_u_t_o_screen, m_s_t_a_t, s_kin_i_n_lva, priziv, lwait, ofeka, pokazatel, sdelaitak = "config/SOBR tools/config.ini"
 local sdopolnitelnoe = true
 local autoON = true
 local marker = nil
@@ -117,7 +117,7 @@ function main()
     sampRegisterChatCommand("aclist",function() if settings.global.t_se_au_to_clist == true then sampAddChatMessage("[SOBR tools]: Автоклист выключен.", 0xFFB22222) settings.global.t_se_au_to_clist = false else sampAddChatMessage("[SOBR tools]: Автоклист включен.", 0x33AAFFFF) settings.global.t_se_au_to_clist = true end end)
 
     sampRegisterChatCommand("abp", Settingsabp)
-
+    
     lua_thread.create(function()
       while true do
         wait(0)
@@ -985,7 +985,7 @@ function refreshDialog()
         {
           title = "{808080}Позывные напарников{FFFFFF}",
           onclick = function()
-            sampShowDialog(1298, "{808080}[SOBR tools] Позывные{FFFFFF}", "{808080}Molly Asad - Атланта\nAnton Amurov - Мура\nLeo Florenso - Пена\nVolodya Lipton - Свен\nTim Vedenkin - Морти\nAdam Walter - Вольт\nSativa Johnson - Боба\nMaksim Azzantroph - Лоли\nJack Lingard - Барон\nAnatoly Morozov - Беркут\nHoward Harper - Деанон\nIgor Chabanov - Филин\nValentin Molo - Крот\nBrain Spencor - Волк\nKevin Spencor - Гром\nBogdan Nurminski - Сталкер\nAleksey Tarasov - Зверь\nMaksim Dinosower - Сняряд\nTimm Lahey - Принц{FFFFFF}", "Ок", "Не ок", 0)
+            sampShowDialog(1298, "{808080}[SOBR tools] Позывные{FFFFFF}", "{808080}Molly Asad - Атланта\nAnton Amurov - Мура\nLeo Florenso - Пена\nVolodya Lipton - Свен\nTim Vedenkin - Морти\nAdam Walter - Вольт\nSativa Johnson - Боба\nMaksim Azzantroph - Лоли\nJack Lingard - Барон\nAnatoly Morozov - Беркут\nHoward Harper - Деанон\nIgor Chabanov - Филин\nValentin Molo - Крот\nBrain Spencor - Волк\nKevin Spencor - Гром\nBogdan Nurminski - Сталкер\nAleksey Tarasov - Зверь\nTimm Lahey - Принц{FFFFFF}", "Ок", "Не ок", 0)
           end
         },
         {
@@ -995,6 +995,12 @@ function refreshDialog()
           end
         },
       }
+    },
+    {
+      title = "{808080}Команды скрипта{FFFFFF}",
+      onclick = function()
+        sampSendChat("/cfaq")
+      end
     },
     {
       title = "{808080}Настройки{FFFFFF}",
@@ -1182,6 +1188,58 @@ function e.onPlayerStreamIn(id, _, model)
         sampAddChatMessage("[SOBR tools]: Боец "..name.." появился в зоне прорисовки.", 0x33AAFFFF)
       end
     end
+  end
+  local name = sampGetPlayerNickname(id)
+  if name == "Molly_Asad" then
+    sampCreate3dText("{000000}Куратор СОБР - Атланта{FFFFFF}", 0x00000000, 0, 0, 0.9, 100, true, id, -1)
+  end
+  if name == "Leo_Florenso" then
+    sampCreate3dText("{000000}Командир СОБР - Пена{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
+  end
+  if name == "Volodya_Lipton" then
+    sampCreate3dText("{000000}Старший Оперативник СОБР - Свен{FFFFFF}", 0x00000000, 0, 0, 0.9, 100, true, id, -1)
+  end
+  if name == "Tim_Vedenkin" then
+    sampCreate3dText("{000000}Оперативник СОБР - Морти{FFFFFF}", 0x00000000, 0, 0, 0.9, 100, true, id, -1)
+  end
+  if name == "Howard_Harper" then
+    sampCreate3dText("{000000}Оперативник СОБР - Деанон{FFFFFF}", 0x00000000, 0, 0, 0.9, 100, true, id, -1)
+  end
+  if name == "Aleksey_Tarasov" then
+    sampCreate3dText("{000000}Оперативник СОБР - Зверь{FFFFFF}", 0x00000000, 0, 0, 0.9, 100, true, id, -1)
+  end
+  if name == "Adam_Walter" then
+    sampCreate3dText("{000000}Боец СОБР - Вольт{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
+  end
+  if name == "Sativa_Johnson" then
+    sampCreate3dText("{000000}Боец СОБР - Боба{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
+  end
+  if name == "Anton_Amurov" then
+    sampCreate3dText("{000000}Боец СОБР - Мура{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
+  end
+  if name == "Valentin_Molo" then
+    sampCreate3dText("{000000}Боец СОБР - Крот{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
+  end
+  if name == "Maksim_Azzantroph" then
+    sampCreate3dText("{000000}Боец СОБР - Лоли{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
+  end
+  if name == "Brain_Spenсor" then
+    sampCreate3dText("{000000}Боец СОБР - Волк{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
+  end
+  if name == "Kevin_Spenсor" then
+    sampCreate3dText("{000000}Боец СОБР - Гром{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
+  end
+  if name == "Anatoly_Morozov" then
+    sampCreate3dText("{000000}Боец СОБР - Беркут{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
+  end
+  if name == "Igor_Chabanov" then
+    sampCreate3dText("{000000}Боец СОБР - Филин{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
+  end
+  if name == "Timm_Lahey" then
+    sampCreate3dText("{000000}Боец СОБР - Принц{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
+  end
+  if name == "Bogdan_Nurminski" then
+    sampCreate3dText("{000000}Кадет СОБР - Сталкер{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
   end
 end
 
