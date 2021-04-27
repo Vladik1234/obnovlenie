@@ -61,7 +61,7 @@ function main()
       global = {
         Tag = "Не указан.",
         cvetclist = "Не указан.",
-        lwait = "Не указана",
+        lwait = "Не указана.",
       }
     }
     config.save(settings, 'SOBR tools/config.ini')
@@ -235,7 +235,7 @@ function refreshDialog()
             {
               title = "{808080}Разминирование взрывчатки с часовым механизмом{FFFFFF}",
               onclick = function()
-                if settings.global.lwait ~= nil then
+                if settings.global.lwait ~= "Не указана." and settings.global.lwait ~= "Не указана" then
                   if settings.global.m_s_t_a_t == true then
                     sampAddChatMessage("[SOBR tools]: Старт отыгровки. Для отмены нажмите CTRL+R.", 0x33AAFFFF)
                     wait(200)
@@ -327,7 +327,7 @@ function refreshDialog()
             {
               title = "{808080}Разминирование универсальное{FFFFFF}",
               onclick = function()
-                if settings.global.lwait ~= nil then
+                if settings.global.lwait ~= "Не указана." and settings.global.lwait ~= "Не указана" then
                   if settings.global.m_s_t_a_t == true then
                     sampAddChatMessage("[SOBR tools]: Старт отыгровки. Для отмены нажмите CTRL+R.", 0x33AAFFFF)
                     wait(200)
@@ -379,7 +379,7 @@ function refreshDialog()
             {
               title = "{808080}Разминирование взрывного устройства с дистанционным управлением{FFFFFF}",
               onclick = function()
-                if settings.global.lwait ~= nil then
+                if settings.global.lwait ~= "Не указана." and settings.global.lwait ~= "Не указана" then
                   if settings.global.m_s_t_a_t == true then
                     sampAddChatMessage("[SOBR tools]: Старт отыгровки. Для отмены нажмите CTRL+R.", 0x33AAFFFF)
                     wait(200)
@@ -455,7 +455,7 @@ function refreshDialog()
             {
               title = "{808080}Разминирование взрывного устройства с жучком-детектором{FFFFFF}",
               onclick = function()
-                if settings.global.lwait ~= nil then
+                if settings.global.lwait ~= "Не указана." and settings.global.lwait ~= "Не указана" then
                   if settings.global.m_s_t_a_t == true then
                     sampAddChatMessage("[SOBR tools]: Старт отыгровки. Для отмены нажмите CTRL+R.", 0x33AAFFFF)
                     wait(200)
@@ -558,7 +558,7 @@ function refreshDialog()
             {
               title = "{808080}ПМП при переломе{FFFFFF}",
               onclick = function()
-                if settings.global.lwait ~= nil then
+                if settings.global.lwait ~= "Не указана." and settings.global.lwait ~= "Не указана" then
                   if settings.global.m_s_t_a_t == true then
                     sampAddChatMessage("[SOBR tools]: Старт отыгровки. Для отмены нажмите CTRL+R.", 0x33AAFFFF)
                     wait(200)
@@ -626,7 +626,7 @@ function refreshDialog()
             {
               title = "{808080}ПМП при ранении конечностей{FFFFFF}",
               onclick = function()
-                if settings.global.lwait ~= nil then
+                if settings.global.lwait ~= "Не указана." and settings.global.lwait ~= "Не указана" then
                   if settings.global.m_s_t_a_t == true then
                     sampAddChatMessage("[SOBR tools]: Старт отыгровки. Для отмены нажмите CTRL+R.", 0x33AAFFFF)
                     wait(200)
@@ -686,7 +686,7 @@ function refreshDialog()
             {
               title = "{808080}ПМП при ранении в грудь и живот{FFFFFF}",
               onclick = function()
-                if settings.global.lwait ~= nil then
+                if settings.global.lwait ~= "Не указана." and settings.global.lwait ~= "Не указана" then
                   if settings.global.m_s_t_a_t == true then
                     sampAddChatMessage("[SOBR tools]: Старт отыгровки. Для отмены нажмите CTRL+R.", 0x33AAFFFF)
                     wait(200)
@@ -746,7 +746,7 @@ function refreshDialog()
             {
               title = "{808080}ПМП при потере пульса{FFFFFF}",
               onclick = function()
-                if settings.global.lwait ~= nil then
+                if settings.global.lwait ~= "Не указана." and settings.global.lwait ~= "Не указана" then
                   if settings.global.m_s_t_a_t == true then
                     sampAddChatMessage("[SOBR tools]: Старт отыгровки. Для отмены нажмите CTRL+R.", 0x33AAFFFF)
                     wait(200)
@@ -805,7 +805,7 @@ function refreshDialog()
             {
               title = "{808080}Маскировка автомобиля и сидячих в нём{FFFFFF}",
               onclick = function()
-                if settings.global.lwait ~= nil then
+                if settings.global.lwait ~= "Не указана." and settings.global.lwait ~= "Не указана" then
                   sampAddChatMessage("[SOBR tools]: Старт отыгровки. Для отмены нажмите CTRL+R.", 0x33AAFFFF)
                   wait(200)
                   sampSendChat("/do Водитель и пассажиры находятся в автомобиле без опозновательных знаков.")
@@ -821,7 +821,7 @@ function refreshDialog()
             {
               title = "{808080}Надеть противогаз{FFFFFF}",
               onclick = function()
-                if settings.global.lwait ~= nil then
+                if settings.global.lwait ~= "Не указана." and settings.global.lwait ~= "Не указана" then
                   if settings.global.m_s_t_a_t == true then
                     sampAddChatMessage("[SOBR tools]: Старт отыгровки. Для отмены нажмите CTRL+R.", 0x33AAFFFF)
                     wait(200)
@@ -845,7 +845,7 @@ function refreshDialog()
             {
               title = "{808080}Полная маскировка себя{FFFFFF}",
               onclick = function()
-                if settings.global.lwait ~= nil then
+                if settings.global.lwait ~= "Не указана." and settings.global.lwait ~= "Не указана" then
                   if settings.global.m_s_t_a_t == true then
                     sampAddChatMessage("[SOBR tools]: Старт отыгровки. Для отмены нажмите CTRL+R.", 0x33AAFFFF)
                     wait(200)
@@ -873,7 +873,7 @@ function refreshDialog()
             {
               title = "{808080}Полная маскировка себя и окружающих{FFFFFF}",
               onclick = function()
-                if settings.global.lwait ~= nil then
+                if settings.global.lwait ~= "Не указана." and settings.global.lwait ~= "Не указана" then
                   sampAddChatMessage("[SOBR tools]: Старт отыгровки. Для отмены нажмите CTRL+R.", 0x33AAFFFF)
                   wait(200)
                   sampSendChat("/do Неизвестные одеты в военную форму из номекса темно-серого цвета.")
@@ -889,7 +889,7 @@ function refreshDialog()
             {
               title = "{808080}Проверка снаряжения{FFFFFF}",
               onclick = function()
-                if settings.global.lwait ~= nil then
+                if settings.global.lwait ~= "Не указана." and settings.global.lwait ~= "Не указана" then
                   if settings.global.m_s_t_a_t == true then
                     sampAddChatMessage("[SOBR tools]: Старт отыгровки. Для отмены нажмите CTRL+R.", 0x33AAFFFF)
                     wait(200)
