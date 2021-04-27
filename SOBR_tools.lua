@@ -187,7 +187,7 @@ function main()
       if isKeyJustPressed(VK_L) and not sampIsChatInputActive() and not sampIsDialogActive() and not isPauseMenuActive() and not isSampfuncsConsoleActive() and settings.global.k_r_u_t_o == true then sampSendChat("/lock") end
       if priziv == true and testCheat("Z") then submenus_show(LVDialog, "{00FA9A}ПРИЗЫВ{FFFFFF}") end
       if main_window_state.v == false then imgui.Process = false end
-      if sampIsChatInputActive() and sampGetChatInputText() == "/cfaq" then sampSetChatInputText("") sampShowDialog(1285, "{808080}[SOBR tools] Команды{FFFFFF}", "{808080}/aclist - выключить/включить автоклист\n/lp - выключить/включить открывание авто на клавишу `L`\n/atag - выключить/включить авто-тег\n/ascreen - выключить/включить авто-скрин после пэйдея\n/sw, /st - сменить игровое время/погоду\n/cc - очистить чат\n/kv - поставить метку на квадрат\n/getm - показать себе мониторинг, /rgetm - в рацию\n/przv - включить/выключить режим призыва\n/abp - выключить/включить авто-БП на `alt`\n/hphud - включить/отключить хп худ\n/abp - включить настройки авто-БП\n/splayer - включить/выключить отображение в чате ников военных которые появились в зоне стрима{FFFFFF}", "Ладно", "Прохладно", 0) end
+      if sampIsChatInputActive() and sampGetChatInputText() == "/cfaq" then sampSetChatInputText("") sampShowDialog(1285, "{808080}[SOBR tools] Команды{FFFFFF}", "{808080}/aclist - выключить/включить автоклист\n/lp - выключить/включить открывание авто на клавишу `L`\n/atag - выключить/включить авто-тег\n/ascreen - выключить/включить авто-скрин после пэйдея\n/sw, /st - сменить игровое время/погоду\n/cc - очистить чат\n/kv - поставить метку на квадрат\n/getm - показать себе мониторинг, /rgetm - в рацию\n/przv - включить/выключить режим призыва\n/abp - выключить/включить авто-БП на `alt`\n/hphud - включить/отключить хп худ\n/abp - включить настройки авто-БП\n/splayer - включить/выключить отображение в чате ников военных которые появились в зоне стрима\n/fustav - посмотреть ФП и устав{FFFFFF}", "Ладно", "Прохладно", 0) end
     end
   end
 
@@ -985,7 +985,7 @@ function refreshDialog()
         {
           title = "{808080}Позывные напарников{FFFFFF}",
           onclick = function()
-            sampShowDialog(1298, "{808080}[SOBR tools] Позывные{FFFFFF}", "{808080}Molly Asad - Атланта\nAnton Amurov - Мура\nLeo Florenso - Пена\nVolodya Lipton - Свен\nTim Vedenkin - Морти\nAdam Walter - Вольт\nSativa Johnson - Боба\nMaksim Azzantroph - Лоли\nJack Lingard - Барон\nAnatoly Morozov - Беркут\nHoward Harper - Деанон\nIgor Chabanov - Филин\nValentin Molo - Крот\nBrain Spencor - Волк\nKevin Spencor - Гром\nBogdan Nurminski - Сталкер\nAleksey Tarasov - Зверь\nTimm Lahey - Принц{FFFFFF}", "Ок", "Не ок", 0)
+            sampShowDialog(1298, "{808080}[SOBR tools] Позывные{FFFFFF}", "{808080}Molly Asad - Атланта\nLeo Florenso - Пена\nVolodya Lipton - Свен\nTim Vedenkin - Морти\nAdam Walter - Вольт\nSativa Johnson - Боба\nMaksim Azzantroph - Лоли\nJack Lingard - Барон\nHoward Harper - Деанон\nIgor Chabanov - Филин\nValentin Molo - Крот\nBrain Spencor - Волк\nKevin Spencor - Гром\nBogdan Nurminski - Сталкер\nAleksey Tarasov - Зверь\nTimm Lahey - Принц\nSantiago Fabretti - Ферзь{FFFFFF}", "Ок", "Не ок", 0)
           end
         },
         {
@@ -999,7 +999,7 @@ function refreshDialog()
     {
       title = "{808080}Команды скрипта{FFFFFF}",
       onclick = function()
-        sampSendChat("/cfaq")
+        sampShowDialog(1285, "{808080}[SOBR tools] Команды{FFFFFF}", "{808080}/aclist - выключить/включить автоклист\n/lp - выключить/включить открывание авто на клавишу `L`\n/atag - выключить/включить авто-тег\n/ascreen - выключить/включить авто-скрин после пэйдея\n/sw, /st - сменить игровое время/погоду\n/cc - очистить чат\n/kv - поставить метку на квадрат\n/getm - показать себе мониторинг, /rgetm - в рацию\n/przv - включить/выключить режим призыва\n/abp - выключить/включить авто-БП на `alt`\n/hphud - включить/отключить хп худ\n/abp - включить настройки авто-БП\n/splayer - включить/выключить отображение в чате ников военных которые появились в зоне стрима\n/fustav - посмотреть ФП и устав{FFFFFF}", "Ладно", "Прохладно", 0)
       end
     },
     {
@@ -1214,9 +1214,6 @@ function e.onPlayerStreamIn(id, _, model)
   if name == "Sativa_Johnson" then
     sampCreate3dText("{000000}Боец СОБР - Боба{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
   end
-  if name == "Anton_Amurov" then
-    sampCreate3dText("{000000}Боец СОБР - Мура{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
-  end
   if name == "Valentin_Molo" then
     sampCreate3dText("{000000}Боец СОБР - Крот{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
   end
@@ -1229,9 +1226,6 @@ function e.onPlayerStreamIn(id, _, model)
   if name == "Kevin_Spenсor" then
     sampCreate3dText("{000000}Боец СОБР - Гром{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
   end
-  if name == "Anatoly_Morozov" then
-    sampCreate3dText("{000000}Боец СОБР - Беркут{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
-  end
   if name == "Igor_Chabanov" then
     sampCreate3dText("{000000}Боец СОБР - Филин{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
   end
@@ -1240,6 +1234,9 @@ function e.onPlayerStreamIn(id, _, model)
   end
   if name == "Bogdan_Nurminski" then
     sampCreate3dText("{000000}Кадет СОБР - Сталкер{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
+  end
+  if name == "Santiago_Fabretti" then
+    sampCreate3dText("{000000}Кадет СОБР - Ферзь{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
   end
 end
 
