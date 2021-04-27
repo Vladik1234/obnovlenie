@@ -223,20 +223,6 @@ function refreshDialog()
       end
     },
     {
-      title = "{808080}Завербовать в отряд{FFFFFF}",
-      onclick = function()
-        sampShowDialog(9999, "Завербовать кого-то", "{b6b6b6}Введите ID игрока которого хотите завербовать", "ОК", "Закрыть", 1)
-        while sampIsDialogActive() do wait(0) end
-        local result, button, item, input = sampHasDialogRespond(9999)
-        if result and button == 1 then
-          local args = split(input, ",")
-          if sampIsPlayerConnected(args[1]) then
-            sampSendChat("/r "..pInfo.Tag.." "..sampGetPlayerNickname(args[1]):gsub("_", " ").." завербован в спец.отряд СОБР.")
-          else sampShowDialog(9999, "{CD5C5C}SOBR tools |{FFFFFF} Ошибка", "{b6b6b6}Игрока с ID {B22222}"..args[1].."{b6b6b6} не существует.", "Блин", "Ок", 0) end
-        end      
-      end
-    },
-    {
       title = "{808080}Отыгровки{FFFFFF}",
       submenu = 
       {
