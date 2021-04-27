@@ -1177,22 +1177,22 @@ function e.onPlayerStreamIn(id, _, model)
   end
   local name = sampGetPlayerNickname(id)
   if name == "Molly_Asad" then
-    sampCreate3dText("{000000}Куратор СОБР - Атланта{FFFFFF}", 0x00000000, 0, 0, 0.9, 100, true, id, -1)
+    sampCreate3dText("{000000}Куратор СОБР - Атланта{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
   end
   if name == "Leo_Florenso" then
     sampCreate3dText("{000000}Командир СОБР - Пена{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
   end
   if name == "Volodya_Lipton" then
-    sampCreate3dText("{000000}Старший Оперативник СОБР - Свен{FFFFFF}", 0x00000000, 0, 0, 0.9, 100, true, id, -1)
+    sampCreate3dText("{000000}Старший Оперативник СОБР - Свен{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
   end
   if name == "Tim_Vedenkin" then
-    sampCreate3dText("{000000}Оперативник СОБР - Морти{FFFFFF}", 0x00000000, 0, 0, 0.9, 100, true, id, -1)
+    sampCreate3dText("{000000}Оперативник СОБР - Морти{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
   end
   if name == "Howard_Harper" then
-    sampCreate3dText("{000000}Оперативник СОБР - Деанон{FFFFFF}", 0x00000000, 0, 0, 0.9, 100, true, id, -1)
+    sampCreate3dText("{000000}Оперативник СОБР - Деанон{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
   end
   if name == "Aleksey_Tarasov" then
-    sampCreate3dText("{000000}Оперативник СОБР - Зверь{FFFFFF}", 0x00000000, 0, 0, 0.9, 100, true, id, -1)
+    sampCreate3dText("{000000}Оперативник СОБР - Зверь{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
   end
   if name == "Adam_Walter" then
     sampCreate3dText("{000000}Боец СОБР - Вольт{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
