@@ -1186,7 +1186,7 @@ function e.onPlayerStreamIn(id, _, model)
     sampCreate3dText("{000000}Старший Оперативник СОБР - Свен{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
   end
   if name == "Tim_Vedenkin" then
-    sampCreate3dText("{000000}Оперативник СОБР - Морти{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
+    sampCreate3dText("{000000}Заместитель командира СОБР - Морти{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
   end
   if name == "Howard_Harper" then
     sampCreate3dText("{000000}Оперативник СОБР - Деанон{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
@@ -1201,7 +1201,7 @@ function e.onPlayerStreamIn(id, _, model)
     sampCreate3dText("{000000}Боец СОБР - Боба{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
   end
   if name == "Valentin_Molo" then
-    sampCreate3dText("{000000}Боец СОБР - Крот{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
+    sampCreate3dText("{000000}Оперативник СОБР - Крот{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
   end
   if name == "Maksim_Azzantroph" then
     sampCreate3dText("{000000}Боец СОБР - Лоли{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
@@ -1216,7 +1216,7 @@ function e.onPlayerStreamIn(id, _, model)
     sampCreate3dText("{000000}Боец СОБР - Принц{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
   end
   if name == "Bogdan_Nurminski" then
-    sampCreate3dText("{000000}Кадет СОБР - Сталкер{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
+    sampCreate3dText("{000000}Боец СОБР - Сталкер{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
   end
   if name == "Santiago_Fabretti" then
     sampCreate3dText("{000000}Кадет СОБР - Ферзь{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
