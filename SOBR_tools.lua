@@ -971,7 +971,7 @@ function refreshDialog()
         {
           title = "{808080}Позывные напарников{FFFFFF}",
           onclick = function()
-            sampShowDialog(1298, "{808080}[SOBR tools] Позывные{FFFFFF}", "{808080}Molly Asad - Атланта\nLeo Florenso - Пена\nVolodya Lipton - Свен\nTim Vedenkin - Морти\nAdam Walter - Вольт\nSativa Johnson - Боба\nMaksim Azzantroph - Лоли\nJack Lingard - Барон\nHoward Harper - Деанон\nIgor Chabanov - Филин\nValentin Molo - Крот\nBrain Spencor - Волк\nKevin Spencor - Гром\nBogdan Nurminski - Сталкер\nAleksey Tarasov - Зверь\nTimm Lahey - Принц\nSantiago Fabretti - Ферзь{FFFFFF}", "Ок", "Не ок", 0)
+            sampShowDialog(1298, "{808080}[SOBR tools] Позывные{FFFFFF}", "{808080}Molly Asad - Атланта\nLeo Florenso - Пена\nVolodya Lipton - Свен\nTim Vedenkin - Морти\nAdam Walter - Вольт\nSativa Johnson - Боба\nMaksim Azzantroph - Лоли\nJack Lingard - Барон\nHoward Harper - Деанон\nMisha Samyrai - Еврей\nValentin Molo - Крот\nBrain Spencor - Волк\nKevin Spencor - Гром\nBogdan Nurminski - Сталкер\nAleksey Tarasov - Зверь\nTimm Lahey - Принц\nSantiago Fabretti - Ферзь{FFFFFF}", "Ок", "Не ок", 0)
           end
         },
         {
@@ -1212,9 +1212,6 @@ function e.onPlayerStreamIn(id, _, model)
   if name == "Kevin_Spencor" then
     sampCreate3dText("{000000}Боец СОБР - Гром{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
   end
-  if name == "Igor_Chabanov" then
-    sampCreate3dText("{000000}Боец СОБР - Филин{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
-  end
   if name == "Timm_Lahey" then
     sampCreate3dText("{000000}Боец СОБР - Принц{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
   end
@@ -1226,6 +1223,9 @@ function e.onPlayerStreamIn(id, _, model)
   end
   if name == "Evan_Corleone" then
     sampCreate3dText("{000000}Кадет СОБР - Левиафан{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
+  end
+  if name == "Misha_Samyrai" then
+    sampCreate3dText("{000000}Кадет СОБР - Еврей{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
   end
 end
 
