@@ -1193,7 +1193,7 @@ function Target:New(text)
 
   function obj:attachText()
     self:deattachText()
-    self.text3d = sampCreate3dText(self.text, 0x00000000, 0, 0, 0.7, 50, true, self.id, -1)
+    self.text3d = sampCreate3dText(self.text, 0x00000000, 0, 0, 0.7, 150, true, self.id, -1)
   end
 
   setmetatable(obj, self)
