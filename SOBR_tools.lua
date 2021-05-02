@@ -9,6 +9,7 @@ local SE = require 'samp.events'
 local e = require "lib.samp.events"
 local ffi = require "ffi"
 local memory = require 'memory'
+local textId = nil
 local t_se_au_to_clist, k_r_u_t_o, a_u_t_o_tag, a_u_t_o_screen, m_s_t_a_t, s_kin_i_n_lva, priziv, lwait, ofeka, pokazatel, sdelaitak = "config/SOBR tools/config.ini"
 local sdopolnitelnoe = true
 local autoON = true
@@ -19,6 +20,8 @@ local shrift = "Segoe UI"
 local size = 10 
 local flag = 13 
 local getBonePosition = ffi.cast("int (__thiscall*)(void*, float*, int, bool)", 0x5E4280)
+local tData = {}
+Target = {}
 
 encoding.default = "CP1251"
 local u8 = encoding.UTF8
@@ -1175,56 +1178,64 @@ function e.onPlayerStreamIn(id, _, model)
       end
     end
   end
-  local name = sampGetPlayerNickname(id)
-  if name == "Molly_Asad" then
-    sampCreate3dText("{000000}Куратор СОБР - Атланта{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
-  end
-  if name == "Leo_Florenso" then
-    sampCreate3dText("{000000}Командир СОБР - Пена{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
-  end
-  if name == "Tim_Vedenkin" then
-    sampCreate3dText("{000000}Заместитель командира СОБР - Морти{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
-  end
-  if name == "Howard_Harper" then
-    sampCreate3dText("{000000}Заместитель командира СОБР - Деанон{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
-  end
-  if name == "Aleksey_Tarasov" then
-    sampCreate3dText("{000000}Старший Оперативник СОБР - Зверь{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
-  end
-  if name == "Adam_Walter" then
-    sampCreate3dText("{000000}Боец СОБР - Вольт{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
-  end
-  if name == "Sativa_Johnson" then
-    sampCreate3dText("{000000}Боец СОБР - Боба{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
-  end
-  if name == "Valentin_Molo" then
-    sampCreate3dText("{000000}Оперативник СОБР - Крот{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
-  end
-  if name == "Maksim_Azzantroph" then
-    sampCreate3dText("{000000}Боец СОБР - Лоли{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
-  end
-  if name == "Brain_Spencor" then
-    sampCreate3dText("{000000}Боец СОБР - Волк{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
-  end
-  if name == "Kevin_Spencor" then
-    sampCreate3dText("{000000}Боец СОБР - Гром{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
-  end
-  if name == "Timm_Lahey" then
-    sampCreate3dText("{000000}Боец СОБР - Принц{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
-  end
-  if name == "Bogdan_Nurminski" then
-    sampCreate3dText("{000000}Боец СОБР - Сталкер{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
-  end
-  if name == "Santiago_Fabretti" then
-    sampCreate3dText("{000000}Кадет СОБР - Ферзь{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
-  end
-  if name == "Evan_Corleone" then
-    sampCreate3dText("{000000}Кадет СОБР - Левиафан{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
-  end
-  if name == "Misha_Samyrai" then
-    sampCreate3dText("{000000}Кадет СОБР - Еврей{FFFFFF}", 0x00000000, 0, 0, 0.7, 100, true, id, -1)
+  if (sampIsPlayerConnected(id) and tData[sampGetPlayerNickname(id)] ~= nil) then
+    local target = tData[sampGetPlayerNickname(id)]
+    if ((target.id == nil) or (target.id ~= id)) then
+      target.id = id
+      target:attachText()
+    end
   end
 end
+
+function e.onPlayerQuit(id)
+  local name = sampGetPlayerNickname(id)
+  if (tData[name] ~= nil) then 
+    tData[name]:deattachText()
+  end
+end
+
+function Target:New(text)
+  local obj = {}
+  obj.text = text
+  obj.name = name
+  obj.id = nil
+  obj.text3d = nil
+
+  function obj:deattachText()
+    if (self.text3d ~= nil) then 
+      sampDestroy3dText(self.text3d)
+      self.text3d = nil
+    end
+  end
+
+  function obj:attachText()
+    self:deattachText()
+    self.text3d = sampCreate3dText(self.text, 0x00000000a, 0, 0, 0.7, 150, true, self.id, -1)
+  end
+
+  setmetatable(obj, self)
+  self.__index = self
+  return obj
+end
+
+tData["Molly_Asad"] = Target:New("Куратор СОБР - Атланта")
+tData["Leo_Florenso"] = Target:New("Командир СОБР - Пена")
+tData["Tim_Vedenkin"] = Target:New("Заместитель командира СОБР - Морти")
+tData["Howard_Harper"] = Target:New("{000000}Заместитель командира СОБР - Деанон")
+tData["Aleksey_Tarasov"] = Target:New("Старший Оперативник СОБР - Зверь")
+tData["Adam_Walter"] = Target:New("Боец СОБР - Вольт")
+tData["Sativa_Johnson"] = Target:New("Боец СОБР - Боба")
+tData["Valentin_Molo"] = Target:New("Оперативник СОБР - Крот")
+tData["Maksim_Azzantroph"] = Target:New("Боец СОБР - Лоли")
+tData["Brain_Spencor"] = Target:New("Боец СОБР - Волк{FFFFFF}")
+tData["Kevin_Spencor"] = Target:New("Боец СОБР - Гром")
+tData["Timm_Lahey"] = Target:New("Боец СОБР - Принц")
+tData["Bogdan_Nurminski"] = Target:New("Боец СОБР - Сталкер")
+tData["Santiago_Fabretti"] = Target:New("{000000}Кадет СОБР - Ферзь")
+tData["Evan_Corleone"] = Target:New("Кадет СОБР - Левиафан")
+tData["Misha_Samyrai"] = Target:New("Кадет СОБР - Еврей")
+tData["Shredder_Rose"] = Target:New("Кадет СОБР - Рози")
+tData["Sergu_Sibov"] = Target:New("Кадет СОБР - Аристократ")
 
 function submenus_show(menu, caption, select_button, close_button, back_button)
   select_button, close_button, back_button = select_button or 'Выбрать', close_button or 'Выйти', back_button or 'Назад'
