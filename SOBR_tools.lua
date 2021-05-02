@@ -21,6 +21,7 @@ local size = 10
 local flag = 13 
 local getBonePosition = ffi.cast("int (__thiscall*)(void*, float*, int, bool)", 0x5E4280)
 local tData = {}
+
 Target = {}
 
 encoding.default = "CP1251"
@@ -974,7 +975,7 @@ function refreshDialog()
         {
           title = "{808080}Позывные напарников{FFFFFF}",
           onclick = function()
-            sampShowDialog(1298, "{808080}[SOBR tools] Позывные{FFFFFF}", "{808080}Molly Asad - Атланта\nLeo Florenso - Пена\nVolodya Lipton - Свен\nTim Vedenkin - Морти\nAdam Walter - Вольт\nSativa Johnson - Боба\nMaksim Azzantroph - Лоли\nJack Lingard - Барон\nHoward Harper - Деанон\nMisha Samyrai - Еврей\nValentin Molo - Крот\nBrain Spencor - Волк\nKevin Spencor - Гром\nBogdan Nurminski - Сталкер\nAleksey Tarasov - Зверь\nTimm Lahey - Принц\nSantiago Fabretti - Ферзь{FFFFFF}", "Ок", "Не ок", 0)
+            sampShowDialog(1298, "{808080}[SOBR tools] Позывные{FFFFFF}", "{808080}Molly Asad - Атланта\nLeo Florenso - Пена\nVolodya Lipton - Свен\nTim Vedenkin - Морти\nSergu Sibov - Аристократ\nSativa Johnson - Боба\nMaksim Azzantroph - Лоли\nJack Lingard - Барон\nHoward Harper - Деанон\nMisha Samyrai - Еврей\nValentin Molo - Крот\nBrain Spencor - Волк\nKevin Spencor - Гром\nAleksey Tarasov - Зверь\nTimm Lahey - Принц\nSantiago Fabretti - Ферзь\nShredder Rose - Рози{FFFFFF}", "Ок", "Не ок", 0)
           end
         },
         {
@@ -1169,24 +1170,6 @@ end
 
 function split(inputstr, sep) if sep == nil then sep = "%s" end local t = {} ; i = 1 for str in string.gmatch(inputstr, "([^"..sep.."]+)") do t[i] = str i = i + 1 end return t end
 
-function e.onPlayerStreamIn(id, _, model)
-  if cfg.global.sdelaitak ~= nil then
-    if cfg.global.sdelaitak == true then
-      local name = sampGetPlayerNickname(id)
-      if model == 287 or model == 191 or model == 179 or model == 61 or model == 255 or model == 73 then
-        sampAddChatMessage("[SOBR tools]: Боец "..name.." появился в зоне прорисовки.", 0x33AAFFFF)
-      end
-    end
-  end
-  if (sampIsPlayerConnected(id) and tData[sampGetPlayerNickname(id)] ~= nil) then
-    local target = tData[sampGetPlayerNickname(id)]
-    if ((target.id == nil) or (target.id ~= id)) then
-      target.id = id
-      target:attachText()
-    end
-  end
-end
-
 function e.onPlayerQuit(id)
   local name = sampGetPlayerNickname(id)
   if (tData[name] ~= nil) then 
@@ -1210,7 +1193,7 @@ function Target:New(text)
 
   function obj:attachText()
     self:deattachText()
-    self.text3d = sampCreate3dText(self.text, 0x00000000a, 0, 0, 0.7, 150, true, self.id, -1)
+    self.text3d = sampCreate3dText(self.text, 0x00000000, 0, 0, 0.7, 50, true, self.id, -1)
   end
 
   setmetatable(obj, self)
@@ -1219,23 +1202,39 @@ function Target:New(text)
 end
 
 tData["Molly_Asad"] = Target:New("Куратор СОБР - Атланта")
-tData["Leo_Florenso"] = Target:New("Командир СОБР - Пена")
-tData["Tim_Vedenkin"] = Target:New("Заместитель командира СОБР - Морти")
-tData["Howard_Harper"] = Target:New("{000000}Заместитель командира СОБР - Деанон")
-tData["Aleksey_Tarasov"] = Target:New("Старший Оперативник СОБР - Зверь")
-tData["Adam_Walter"] = Target:New("Боец СОБР - Вольт")
-tData["Sativa_Johnson"] = Target:New("Боец СОБР - Боба")
-tData["Valentin_Molo"] = Target:New("Оперативник СОБР - Крот")
-tData["Maksim_Azzantroph"] = Target:New("Боец СОБР - Лоли")
-tData["Brain_Spencor"] = Target:New("Боец СОБР - Волк{FFFFFF}")
-tData["Kevin_Spencor"] = Target:New("Боец СОБР - Гром")
-tData["Timm_Lahey"] = Target:New("Боец СОБР - Принц")
-tData["Bogdan_Nurminski"] = Target:New("Боец СОБР - Сталкер")
-tData["Santiago_Fabretti"] = Target:New("{000000}Кадет СОБР - Ферзь")
-tData["Evan_Corleone"] = Target:New("Кадет СОБР - Левиафан")
-tData["Misha_Samyrai"] = Target:New("Кадет СОБР - Еврей")
-tData["Shredder_Rose"] = Target:New("Кадет СОБР - Рози")
-tData["Sergu_Sibov"] = Target:New("Кадет СОБР - Аристократ")
+tData["Leo_Florenso"] = Target:New("{000000}Командир СОБР - Пена{FFFFFF}")
+tData["Tim_Vedenkin"] = Target:New("{000000}Заместитель командира СОБР - Морти{FFFFFF}")
+tData["Howard_Harper"] = Target:New("{000000}Заместитель командира СОБР - Деанон{FFFFFF}")
+tData["Aleksey_Tarasov"] = Target:New("{000000}Старший Оперативник СОБР - Зверь{FFFFFF}")
+tData["Sativa_Johnson"] = Target:New("{000000}Боец СОБР - Боба{FFFFFF}")
+tData["Valentin_Molo"] = Target:New("{000000}Оперативник СОБР - Крот{FFFFFF}")
+tData["Maksim_Azzantroph"] = Target:New("{000000}Боец СОБР - Лоли{FFFFFF}")
+tData["Brain_Spencor"] = Target:New("{000000}Боец СОБР - Волк{FFFFFF}")
+tData["Kevin_Spencor"] = Target:New("{000000}Боец СОБР - Гром{FFFFFF}")
+tData["Timm_Lahey"] = Target:New("{000000}Боец СОБР - Принц{FFFFFF}")
+tData["Santiago_Fabretti"] = Target:New("{000000}Кадет СОБР - Ферзь{FFFFFF}")
+tData["Evan_Corleone"] = Target:New("{000000}Кадет СОБР - Левиафан{FFFFFF}")
+tData["Misha_Samyrai"] = Target:New("{000000}Кадет СОБР - Еврей{FFFFFF}")
+tData["Shredder_Rose"] = Target:New("{000000}Кадет СОБР - Рози{FFFFFF}")
+tData["Sergu_Sibov"] = Target:New("{000000}Кадет СОБР - Аристократ{FFFFFF}")
+
+function e.onPlayerStreamIn(id, _, model)
+  if cfg.global.sdelaitak ~= nil then
+    if cfg.global.sdelaitak == true then
+      local name = sampGetPlayerNickname(id)
+      if model == 287 or model == 191 or model == 179 or model == 61 or model == 255 or model == 73 then
+        sampAddChatMessage("[SOBR tools]: Боец "..name.." появился в зоне прорисовки.", 0x33AAFFFF)
+      end
+    end
+  end
+  if (sampIsPlayerConnected(id) and tData[sampGetPlayerNickname(id)] ~= nil) then
+    local target = tData[sampGetPlayerNickname(id)]
+    if ((target.id == nil) or (target.id ~= id)) then
+      target.id = id
+      target:attachText()
+    end
+  end
+end
 
 function submenus_show(menu, caption, select_button, close_button, back_button)
   select_button, close_button, back_button = select_button or 'Выбрать', close_button or 'Выйти', back_button or 'Назад'
