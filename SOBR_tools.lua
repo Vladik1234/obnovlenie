@@ -52,8 +52,11 @@ local cfg = config.load(nil, 'SOBR tools/config.ini')
 local SSSDialog = {}
 local LVDialog = {}
 
-function onScriptTerminate(script, jopa)
+function onScriptTerminate(script)
   if (script == thisScript()) then
+    for k, val in pairs(tData) do 
+      val:deattachText() 
+    end
     config.save(settings, "SOBR tools/config.ini")
   end
 end
@@ -975,7 +978,7 @@ function refreshDialog()
         {
           title = "{808080}Позывные напарников{FFFFFF}",
           onclick = function()
-            sampShowDialog(1298, "{808080}[SOBR tools] Позывные{FFFFFF}", "{808080}Molly Asad - Атланта\nLeo Florenso - Пена\nVolodya Lipton - Свен\nTim Vedenkin - Морти\nSergu Sibov - Аристократ\nSativa Johnson - Боба\nMaksim Azzantroph - Лоли\nJack Lingard - Барон\nHoward Harper - Деанон\nMisha Samyrai - Еврей\nValentin Molo - Крот\nBrain Spencor - Волк\nKevin Spencor - Гром\nAleksey Tarasov - Зверь\nTimm Lahey - Принц\nSantiago Fabretti - Ферзь\nShredder Rose - Рози{FFFFFF}", "Ок", "Не ок", 0)
+            sampShowDialog(1298, "{808080}[SOBR tools] Позывные{FFFFFF}", "{808080}Molly Asad - Атланта\nLeo Florenso - Пена\nVolodya Lipton - Свен\nTim Vedenkin - Морти\nSergu Sibov - Аристократ\nSativa Johnson - Боба\nMaksim Azzantroph - Лоли\nJack Lingard - Барон\nHoward Harper - Деанон\nMisha Samyrai - Еврей\nValentin Molo - Крот\nBrain Spencor - Волк\nKevin Spencor - Гром\nAleksey Tarasov - Зверь\nTimm Lahey - Принц\nShredder Rose - Рози\nSergey Good - Гуд\nRooney Allen - Вагон{FFFFFF}", "Ок", "Не ок", 0)
           end
         },
         {
@@ -1193,7 +1196,7 @@ function Target:New(text)
 
   function obj:attachText()
     self:deattachText()
-    self.text3d = sampCreate3dText(self.text, 0x00000000, 0, 0, 0.7, 150, true, self.id, -1)
+    self.text3d = sampCreate3dText(self.text, 0x00000000, 0, 0, 0.7, 150, false, self.id, -1)
   end
 
   setmetatable(obj, self)
@@ -1201,7 +1204,7 @@ function Target:New(text)
   return obj
 end
 
-tData["Molly_Asad"] = Target:New("Куратор СОБР - Атланта")
+tData["Molly_Asad"] = Target:New("{000000}Куратор СОБР - Атланта{FFFFFF}")
 tData["Leo_Florenso"] = Target:New("{000000}Командир СОБР - Пена{FFFFFF}")
 tData["Tim_Vedenkin"] = Target:New("{000000}Заместитель командира СОБР - Морти{FFFFFF}")
 tData["Howard_Harper"] = Target:New("{000000}Заместитель командира СОБР - Деанон{FFFFFF}")
@@ -1212,11 +1215,12 @@ tData["Maksim_Azzantroph"] = Target:New("{000000}Боец СОБР - Лоли{FFFFFF}")
 tData["Brain_Spencor"] = Target:New("{000000}Боец СОБР - Волк{FFFFFF}")
 tData["Kevin_Spencor"] = Target:New("{000000}Боец СОБР - Гром{FFFFFF}")
 tData["Timm_Lahey"] = Target:New("{000000}Боец СОБР - Принц{FFFFFF}")
-tData["Santiago_Fabretti"] = Target:New("{000000}Кадет СОБР - Ферзь{FFFFFF}")
 tData["Evan_Corleone"] = Target:New("{000000}Кадет СОБР - Левиафан{FFFFFF}")
 tData["Misha_Samyrai"] = Target:New("{000000}Кадет СОБР - Еврей{FFFFFF}")
 tData["Shredder_Rose"] = Target:New("{000000}Кадет СОБР - Рози{FFFFFF}")
 tData["Sergu_Sibov"] = Target:New("{000000}Кадет СОБР - Аристократ{FFFFFF}")
+tData["Sergey_Good"] = Target:New("{000000}Кадет СОБР - Гуд{FFFFFF}")
+tData["Rooney_Allen"] = Target:New("{000000}Кадет СОБР - Вагон{FFFFFF}")
 
 function e.onPlayerStreamIn(id, _, model)
   if cfg.global.sdelaitak ~= nil then
@@ -1441,7 +1445,6 @@ function rgetm()
     thisScript():reload()
   else
     sampAddChatMessage("[SOBR tools]: Ошибка. Вы находитесь слишком далеко от бункера.", 0xFFB22222)
-    thisScript():reload()
   end
 end
 
