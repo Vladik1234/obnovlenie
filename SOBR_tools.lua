@@ -10,7 +10,7 @@ local e = require "lib.samp.events"
 local ffi = require "ffi"
 local memory = require 'memory'
 local textId = nil
-local t_se_au_to_clist, k_r_u_t_o, a_u_t_o_tag, a_u_t_o_screen, m_s_t_a_t, s_kin_i_n_lva, priziv, lwait, ofeka, pokazatel, sdelaitak = "config/SOBR tools/config.ini"
+local t_se_au_to_clist, k_r_u_t_o, a_u_t_o_tag, a_u_t_o_screen, m_s_t_a_t, s_kin_i_n_lva, priziv, lwait, ofeka, pokazatel, sdelaitak, pozivnoy = "config/SOBR tools/config.ini"
 local sdopolnitelnoe = true
 local autoON = true
 local marker = nil
@@ -86,6 +86,7 @@ function main()
     ofeka = cfg.global.ofeka
     pokazatel = cfg.global.pokazatel
     sdelaitak = cfg.global.sdelaitak
+    pozivnoy = cfg.global.pozivnoy
     pInfo.cvetclist = cfg.global.cvetclist
     settings = cfg
     CreateFileAndSettings()
@@ -99,7 +100,8 @@ function main()
         local _, id = sampGetPlayerIdByCharHandle(ped)
         if sampIsPlayerConnected(id) then
           local name = sampGetPlayerNickname(id)
-          if (tData[name] ~= nil) then
+          if (tData[name] ~= nil) and settings.global.pozivnoy == true then
+            tData[name].id = id
             tData[name]:attachText()
           end
         end
@@ -1098,6 +1100,20 @@ function refreshDialog()
             else
               sampAddChatMessage("[SOBR tools]: Функция показа паспорта была включена.", 0x33AAFFFF)
               settings.global.pokazatpassport = true
+            end
+          end
+        },
+        {
+          title = "{808080}Выключить/включить отображение позывных{FFFFFF}",
+          onclick = function()
+            if settings.global.pozivnoy == true then
+              sampAddChatMessage("[SOBR tools]: Отображение позывных было выключено.", 0xFFB22222)
+              settings.global.pozivnoy = false
+              for k, val in pairs(tData) do val:deattachText() end
+            else
+              sampAddChatMessage("[SOBR tools]: Отображение позывных было включено.", 0x33AAFFFF)
+              settings.global.pozivnoy = true
+              for k, val in pairs(tData) do val:attachText() end
             end
           end
         },
