@@ -93,6 +93,19 @@ function main()
 
   imgui.Process = false
 
+
+    for _, ped in pairs(getAllChars()) do
+      if (doesCharExist(ped) and PLAYER_PED ~= ped) then
+        local _, id = sampGetPlayerIdByCharHandle(ped)
+        if sampIsPlayerConnected(id) then
+          local name = sampGetPlayerNickname(id)
+          if (tData[name] ~= nil) then
+            tData[name]:attachText()
+          end
+        end
+      end
+    end
+
     sampRegisterChatCommand("fustav", cmd_imgui)
 
     sampRegisterChatCommand("supd", goupdate)
@@ -1213,14 +1226,15 @@ tData["Sativa_Johnson"] = Target:New("{000000}Боец СОБР - Боба{FFFFFF}")
 tData["Valentin_Molo"] = Target:New("{000000}Оперативник СОБР - Крот{FFFFFF}")
 tData["Maksim_Azzantroph"] = Target:New("{000000}Боец СОБР - Лоли{FFFFFF}")
 tData["Brain_Spencor"] = Target:New("{000000}Боец СОБР - Волк{FFFFFF}")
-tData["Kevin_Spencor"] = Target:New("{000000}Боец СОБР - Гром{FFFFFF}")
+tData["Kevin_Spencor"] = Target:New("{000000}Оперативник СОБР - Гром{FFFFFF}")
 tData["Timm_Lahey"] = Target:New("{000000}Боец СОБР - Принц{FFFFFF}")
-tData["Evan_Corleone"] = Target:New("{000000}Кадет СОБР - Левиафан{FFFFFF}")
-tData["Misha_Samyrai"] = Target:New("{000000}Кадет СОБР - Еврей{FFFFFF}")
-tData["Shredder_Rose"] = Target:New("{000000}Кадет СОБР - Рози{FFFFFF}")
-tData["Sergu_Sibov"] = Target:New("{000000}Кадет СОБР - Аристократ{FFFFFF}")
-tData["Sergey_Good"] = Target:New("{000000}Кадет СОБР - Гуд{FFFFFF}")
-tData["Rooney_Allen"] = Target:New("{000000}Кадет СОБР - Вагон{FFFFFF}")
+tData["Evan_Corleone"] = Target:New("{000000}Боец СОБР - Левиафан{FFFFFF}")
+tData["Misha_Samyrai"] = Target:New("{000000}Боец СОБР - Еврей{FFFFFF}")
+tData["Sergu_Sibov"] = Target:New("{000000}Боец СОБР - Аристократ{FFFFFF}")
+tData["Sergey_Good"] = Target:New("{000000}Боец СОБР - Гуд{FFFFFF}")
+tData["Rooney_Allen"] = Target:New("{000000}Боец СОБР - Вагон{FFFFFF}")
+tData["Anton_Amurov"] = Target:New("{000000}Кадет СОБР - Мура{FFFFFF}")
+tData["Friderik_Asad"] = Target:New("{000000}Кадет СОБР - Асад{FFFFFF}")
 
 function e.onPlayerStreamIn(id, _, model)
   if cfg.global.sdelaitak ~= nil then
