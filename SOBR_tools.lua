@@ -993,7 +993,7 @@ function refreshDialog()
         {
           title = "{808080}Позывные напарников{FFFFFF}",
           onclick = function()
-            sampShowDialog(1298, "{808080}[SOBR tools] Позывные{FFFFFF}", "{808080}Molly Asad - Атланта\nLeo Florenso - Пена\nVolodya Lipton - Свен\nTim Vedenkin - Морти\nSergu Sibov - Аристократ\nSativa Johnson - Боба\nMaksim Azzantroph - Лоли\nJack Lingard - Барон\nHoward Harper - Деанон\nMisha Samyrai - Еврей\nValentin Molo - Крот\nBrain Spencor - Волк\nKevin Spencor - Гром\nAleksey Tarasov - Зверь\nTimm Lahey - Принц\nShredder Rose - Рози\nSergey Good - Гуд\nRooney Allen - Вагон{FFFFFF}", "Ок", "Не ок", 0)
+            sampShowDialog(1298, "{808080}[SOBR tools] Позывные{FFFFFF}", "{808080}Molly Asad - Атланта\nLeo Florenso - Пена\nVolodya Lipton - Свен\nTim Vedenkin - Морти\nSergu Sibov - Аристократ\nSativa Johnson - Боба\nMaksim Azzantroph - Лоли\nJack Lingard - Барон\nHoward Harper - Деанон\nMisha Samyrai - Еврей\nValentin Molo - Крот\nBrain Spencor - Волк\nKevin Spencor - Гром\nAleksey Tarasov - Зверь\nTimm Lahey - Принц\nSergey Good - Гуд\nRodrigo German - Фура\nFriderik Asad - Асад\nAnton Amurov - Мура{FFFFFF}", "Ок", "Не ок", 0)
           end
         },
         {
@@ -1248,9 +1248,9 @@ tData["Evan_Corleone"] = Target:New("{000000}Боец СОБР - Левиафан{FFFFFF}")
 tData["Misha_Samyrai"] = Target:New("{000000}Боец СОБР - Еврей{FFFFFF}")
 tData["Sergu_Sibov"] = Target:New("{000000}Боец СОБР - Аристократ{FFFFFF}")
 tData["Sergey_Good"] = Target:New("{000000}Боец СОБР - Гуд{FFFFFF}")
-tData["Rooney_Allen"] = Target:New("{000000}Боец СОБР - Вагон{FFFFFF}")
 tData["Anton_Amurov"] = Target:New("{000000}Кадет СОБР - Мура{FFFFFF}")
 tData["Friderik_Asad"] = Target:New("{000000}Кадет СОБР - Асад{FFFFFF}")
+tData["Rodrigo_German"] = Target:New("{000000}Кадет СОБР - Фура{FFFFFF}")
 
 function e.onPlayerStreamIn(id, _, model)
   if cfg.global.sdelaitak ~= nil then
