@@ -10,7 +10,7 @@ local e = require "lib.samp.events"
 local ffi = require "ffi"
 local memory = require 'memory'
 local textId = nil
-local t_se_au_to_clist, k_r_u_t_o, a_u_t_o_tag, a_u_t_o_screen, m_s_t_a_t, s_kin_i_n_lva, priziv, lwait, ofeka, pokazatel, sdelaitak, pozivnoy = "config/SOBR tools/config.ini"
+local t_se_au_to_clist, k_r_u_t_o, a_u_t_o_tag, a_u_t_o_screen, m_s_t_a_t, s_kin_i_n_lva, priziv, lwait, sdelaitak, pozivnoy = "config/SOBR tools/config.ini"
 local sdopolnitelnoe = true
 local autoON = true
 local marker = nil
@@ -83,8 +83,6 @@ function main()
     priziv = cfg.global.priziv
     lwait = cfg.global.lwait
     pInfo.lwait = cfg.global.lwait
-    ofeka = cfg.global.ofeka
-    pokazatel = cfg.global.pokazatel
     sdelaitak = cfg.global.sdelaitak
     pozivnoy = cfg.global.pozivnoy
     pInfo.cvetclist = cfg.global.cvetclist
@@ -139,15 +137,6 @@ function main()
     sampRegisterChatCommand("aclist",function() if settings.global.t_se_au_to_clist == true then sampAddChatMessage("[SOBR tools]: Автоклист выключен.", 0xFFB22222) settings.global.t_se_au_to_clist = false else sampAddChatMessage("[SOBR tools]: Автоклист включен.", 0x33AAFFFF) settings.global.t_se_au_to_clist = true end end)
 
     sampRegisterChatCommand("abp", Settingsabp)
-    
-    lua_thread.create(function()
-      while true do
-        wait(0)
-        if wasKeyPressed(VK_MENU) then
-          abp()
-        end
-      end
-    end)
 
     lua_thread.create(function()  
       while true do
@@ -159,17 +148,6 @@ function main()
             sampSendChat("/showpass "..id.."") 
           end 
         end 
-      end
-    end)
-
-    lua_thread.create(function()
-      while true do
-        wait(0)
-        if testCheat("1") and wasKeyPressed(VK_CONTROL) and settings.global.ofeka == true then
-          sampSendChat("/r "..pInfo.Tag.." 10-100, определённое время.")
-          wait(200)
-          justPressThisShitPlease(VK_ESCAPE)
-        end
       end
     end)
 
@@ -188,16 +166,15 @@ function main()
       while true do
         wait(1000)
         local r, id = sampGetPlayerIdByCharHandle(PLAYER_PED)
-        if sampGetPlayerColor(id) == 4283536973 and settings.global.cvetclist ~= nil and settings.global.t_se_au_to_clist == true and getCharModel(PLAYER_PED) == 287 or getCharModel(PLAYER_PED) == 191 or getCharModel(PLAYER_PED) == 179 or getCharModel(PLAYER_PED) == 61 or getCharModel(PLAYER_PED) == 255 or getCharModel(PLAYER_PED) == 73 then 
-          wait(1000)
-          sampSendChat("/clist "..pInfo.cvetclist.."")
+        if sampGetPlayerColor(id) == 4283536973 and settings.global.cvetclist ~= nil and settings.global.t_se_au_to_clist == true then 
+          if getCharModel(PLAYER_PED) == 287 or getCharModel(PLAYER_PED) == 191 or getCharModel(PLAYER_PED) == 179 or getCharModel(PLAYER_PED) == 61 or getCharModel(PLAYER_PED) == 255 or getCharModel(PLAYER_PED) == 73 then 
+            sampSendChat("/clist "..pInfo.cvetclist.."")
+          end
         end
       end
     end)
 
     refreshDialog()
-
-    while getCharHealth(PLAYER_PED) == 200 do wait(0) end
 
     local r, id = sampGetPlayerIdByCharHandle(PLAYER_PED)
 
@@ -210,6 +187,7 @@ function main()
       if priziv == true and testCheat("Z") then submenus_show(LVDialog, "{00FA9A}ПРИЗЫВ{FFFFFF}") end
       if main_window_state.v == false then imgui.Process = false end
       if sampIsChatInputActive() and sampGetChatInputText() == "/cfaq" then sampSetChatInputText("") sampShowDialog(1285, "{808080}[SOBR tools] Команды{FFFFFF}", "{808080}/aclist - выключить/включить автоклист\n/lp - выключить/включить открывание авто на клавишу `L`\n/atag - выключить/включить авто-тег\n/ascreen - выключить/включить авто-скрин после пэйдея\n/sw, /st - сменить игровое время/погоду\n/cc - очистить чат\n/kv - поставить метку на квадрат\n/getm - показать себе мониторинг, /rgetm - в рацию\n/przv - включить/выключить режим призыва\n/abp - выключить/включить авто-БП на `alt`\n/hphud - включить/отключить хп худ\n/abp - включить настройки авто-БП\n/splayer - включить/выключить отображение в чате ников военных которые появились в зоне стрима\n/fustav - посмотреть ФП и устав{FFFFFF}", "Ладно", "Прохладно", 0) end
+      if wasKeyPressed(VK_MENU) then abp() end
     end
   end
 
@@ -1076,18 +1054,6 @@ function refreshDialog()
             else
               sampAddChatMessage("[SOBR tools]: Автоскрин после пэйдея был включен.", 0x33AAFFFF)
               settings.global.a_u_t_o_screen = true
-            end
-          end
-        },
-        {
-          title = "{808080}Выключить/включить функцию `Рация на зарядке`{FFFFFF}",
-          onclick = function()
-            if settings.global.ofeka == true then
-              sampAddChatMessage("[SOBR tools]: Функция `Рация на зарядке` была отключена.", 0xFFB22222)
-              settings.global.ofeka = false
-            else
-              sampAddChatMessage("[SOBR tools]: Функция `Рация на зарядке` была включена", 0x33AAFFFF)
-              settings.global.ofeka = true
             end
           end
         },
