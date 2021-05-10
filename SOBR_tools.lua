@@ -59,6 +59,7 @@ function onScriptTerminate(script)
     end
     config.save(settings, "SOBR tools/config.ini")
   end
+  deleteCheckpoint(marker) removeBlip(checkpoint)
 end
 
 function main()
@@ -92,7 +93,6 @@ function main()
 
   imgui.Process = false
 
-
     for _, ped in pairs(getAllChars()) do
       if (doesCharExist(ped) and PLAYER_PED ~= ped) then
         local _, id = sampGetPlayerIdByCharHandle(ped)
@@ -107,8 +107,6 @@ function main()
     end
 
     sampRegisterChatCommand("fustav", cmd_imgui)
-
-    sampRegisterChatCommand("supd", goupdate)
 
     sampRegisterChatCommand("rgetm", rgetm)
 
@@ -188,6 +186,7 @@ function main()
       if main_window_state.v == false then imgui.Process = false end
       if sampIsChatInputActive() and sampGetChatInputText() == "/cfaq" then sampSetChatInputText("") sampShowDialog(1285, "{808080}[SOBR tools] Команды{FFFFFF}", "{808080}/aclist - выключить/включить автоклист\n/lp - выключить/включить открывание авто на клавишу `L`\n/atag - выключить/включить авто-тег\n/ascreen - выключить/включить авто-скрин после пэйдея\n/sw, /st - сменить игровое время/погоду\n/cc - очистить чат\n/kv - поставить метку на квадрат\n/getm - показать себе мониторинг, /rgetm - в рацию\n/przv - включить/выключить режим призыва\n/abp - выключить/включить авто-БП на `alt`\n/hphud - включить/отключить хп худ\n/abp - включить настройки авто-БП\n/splayer - включить/выключить отображение в чате ников военных которые появились в зоне стрима\n/fustav - посмотреть ФП и устав{FFFFFF}", "Ладно", "Прохладно", 0) end
       if wasKeyPressed(VK_MENU) then abp() end
+      if testCheat("GGG") then getNearestPlayerId() end
     end
   end
 
@@ -971,7 +970,7 @@ function refreshDialog()
         {
           title = "{808080}Позывные напарников{FFFFFF}",
           onclick = function()
-            sampShowDialog(1298, "{808080}[SOBR tools] Позывные{FFFFFF}", "{808080}Molly Asad - Атланта\nLeo Florenso - Пена\nVolodya Lipton - Свен\nTim Vedenkin - Морти\nSergu Sibov - Аристократ\nSativa Johnson - Боба\nMaksim Azzantroph - Лоли\nJack Lingard - Барон\nHoward Harper - Деанон\nMisha Samyrai - Еврей\nValentin Molo - Крот\nBrain Spencor - Волк\nKevin Spencor - Гром\nAleksey Tarasov - Зверь\nTimm Lahey - Принц\nSergey Good - Гуд\nRodrigo German - Фура\nFriderik Asad - Асад\nAnton Amurov - Мура\nMichael Fersize - Изгой{FFFFFF}", "Ок", "Не ок", 0)
+            sampShowDialog(1298, "{808080}[SOBR tools] Позывные{FFFFFF}", "{808080}Leo Florenso - Пена\nVolodya Lipton - Свен\nTim Vedenkin - Морти\nSergu Sibov - Аристократ\nSativa Johnson - Боба\nMaksim Azzantroph - Лоли\nJack Lingard - Барон\nHoward Harper - Деанон\nMisha Samyrai - Еврей\nValentin Molo - Крот\nBrain Spencor - Волк\nKevin Spencor - Гром\nAleksey Tarasov - Зверь\nTimm Lahey - Принц\nSergey Good - Гуд\nRodrigo German - Фура\nFriderik Asad - Асад\nMichael Fersize - Изгой{FFFFFF}", "Ок", "Не ок", 0)
           end
         },
         {
@@ -1199,11 +1198,10 @@ function Target:New(text)
   return obj
 end
 
-tData["Molly_Asad"] = Target:New("{000000}Куратор СОБР - Атланта{FFFFFF}")
-tData["Leo_Florenso"] = Target:New("{000000}Командир СОБР - Пена{FFFFFF}")
-tData["Tim_Vedenkin"] = Target:New("{000000}Заместитель командира СОБР - Морти{FFFFFF}")
+tData["Leo_Florenso"] = Target:New("{000000}Куратор СОБР - Пена{FFFFFF}")
+tData["Tim_Vedenkin"] = Target:New("{000000}Командир СОБР - Морти{FFFFFF}")
 tData["Howard_Harper"] = Target:New("{000000}Заместитель командира СОБР - Деанон{FFFFFF}")
-tData["Aleksey_Tarasov"] = Target:New("{000000}Старший Оперативник СОБР - Зверь{FFFFFF}")
+tData["Aleksey_Tarasov"] = Target:New("{000000}Заместитель командира СОБР - Зверь{FFFFFF}")
 tData["Sativa_Johnson"] = Target:New("{000000}Боец СОБР - Боба{FFFFFF}")
 tData["Valentin_Molo"] = Target:New("{000000}Оперативник СОБР - Крот{FFFFFF}")
 tData["Maksim_Azzantroph"] = Target:New("{000000}Боец СОБР - Лоли{FFFFFF}")
@@ -1214,8 +1212,7 @@ tData["Evan_Corleone"] = Target:New("{000000}Боец СОБР - Левиафан{FFFFFF}")
 tData["Misha_Samyrai"] = Target:New("{000000}Боец СОБР - Еврей{FFFFFF}")
 tData["Sergu_Sibov"] = Target:New("{000000}Боец СОБР - Аристократ{FFFFFF}")
 tData["Sergey_Good"] = Target:New("{000000}Боец СОБР - Гуд{FFFFFF}")
-tData["Anton_Amurov"] = Target:New("{000000}Кадет СОБР - Мура{FFFFFF}")
-tData["Friderik_Asad"] = Target:New("{000000}Кадет СОБР - Асад{FFFFFF}")
+tData["Friderik_Asad"] = Target:New("{000000}Боец СОБР - Асад{FFFFFF}")
 tData["Rodrigo_German"] = Target:New("{000000}Кадет СОБР - Фура{FFFFFF}")
 tData["Michael_Fersize"] = Target:New("{000000}Кадет СОБР - Изгой{FFFFFF}")
 
@@ -1371,7 +1368,10 @@ function e.onServerMessage(color, text)
           justPressThisShitPlease(VK_F8)
       end)
   end
-	if color == 479068104  then
+  if (text:find("Добро пожаловать на Evolve Role Play")) then
+    goupdate()
+  end
+	if color == 479068104 then
 		local id = text:match("%d+")
 		sampAddChatMessage(text, sampGetPlayerColor(id))
 		return false
@@ -1381,7 +1381,7 @@ end
 function justPressThisShitPlease(key) lua_thread.create(function(key) setVirtualKeyDown(key, true) wait(10) setVirtualKeyDown(key, false) end, key) end
 
 function goupdate()
-  sampAddChatMessage("Обновление успешно загружено.", 0xFFB22222)
+  sampAddChatMessage("[SOBR tools]: Последнее обновление успешно загружено.", 0xFFB22222)
   downloadUrlToFile("https://raw.githubusercontent.com/Vladik1234/obnovlenie/master/SOBR_tools.lua", thisScript().path, function(id, status)
     print(status)  
   end)
@@ -1452,6 +1452,30 @@ function getm()
   local temp = split(text, "\n") 
   for k, val in pairs(temp) do 
     sampAddChatMessage(val, 0xFFFFFF) 
+  end
+end
+
+function getNearestPlayerId()
+local min = 9999
+local minPed = nil
+local x, y, z = getCharCoordinates(PLAYER_PED)
+  for _, ped in pairs(getAllChars()) do
+      if (doesCharExist(ped)) and (PLAYER_PED ~= ped) then
+          local px, py, pz = getCharCoordinates(ped)
+          local dist = getDistanceBetweenCoords3d(x, y, z, px, py, pz)
+          if (dist < min) then
+              min = dist
+              minPed = ped
+          end
+      end
+  end 
+  if (minPed ~= nil) then
+    if (doesCharExist(minPed)) then
+      local result, playerid = sampGetPlayerIdByCharHandle(minPed)
+      if result and not isCharInAnyCar(minPed) then
+        sampSendChat("/showpass "..playerid.."")
+      end
+    end
   end
 end
 
