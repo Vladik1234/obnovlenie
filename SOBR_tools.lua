@@ -187,6 +187,7 @@ function main()
       if sampIsChatInputActive() and sampGetChatInputText() == "/cfaq" then sampSetChatInputText("") sampShowDialog(1285, "{808080}[SOBR tools] Команды{FFFFFF}", "{808080}/aclist - выключить/включить автоклист\n/lp - выключить/включить открывание авто на клавишу `L`\n/atag - выключить/включить авто-тег\n/ascreen - выключить/включить авто-скрин после пэйдея\n/sw, /st - сменить игровое время/погоду\n/cc - очистить чат\n/kv - поставить метку на квадрат\n/getm - показать себе мониторинг, /rgetm - в рацию\n/przv - включить/выключить режим призыва\n/abp - выключить/включить авто-БП на `alt`\n/hphud - включить/отключить хп худ\n/abp - включить настройки авто-БП\n/splayer - включить/выключить отображение в чате ников военных которые появились в зоне стрима\n/fustav - посмотреть ФП и устав{FFFFFF}", "Ладно", "Прохладно", 0) end
       if wasKeyPressed(VK_MENU) then abp() end
       if testCheat("GGG") then getNearestPlayerId() end
+      nyamnyam()
     end
   end
 
@@ -970,7 +971,7 @@ function refreshDialog()
         {
           title = "{808080}Позывные напарников{FFFFFF}",
           onclick = function()
-            sampShowDialog(1298, "{808080}[SOBR tools] Позывные{FFFFFF}", "{808080}Leo Florenso - Пена\nVolodya Lipton - Свен\nTim Vedenkin - Морти\nSergu Sibov - Аристократ\nSativa Johnson - Боба\nMaksim Azzantroph - Лоли\nJack Lingard - Барон\nHoward Harper - Деанон\nMisha Samyrai - Еврей\nValentin Molo - Крот\nBrain Spencor - Волк\nKevin Spencor - Гром\nAleksey Tarasov - Зверь\nTimm Lahey - Принц\nSergey Good - Гуд\nRodrigo German - Фура\nFriderik Asad - Асад\nMichael Fersize - Изгой\nTessa Luv - Ангел\nJimmy Saints - Маккуин{FFFFFF}", "Ок", "Не ок", 0)
+            sampShowDialog(1298, "{808080}[SOBR tools] Позывные{FFFFFF}", "{808080}Leo Florenso - Пена\nTim Vedenkin - Морти\nSergu Sibov - Аристократ\nSativa Johnson - Боба\nMaksim Azzantroph - Лоли\nHoward Harper - Деанон\nMisha Samyrai - Еврей\nValentin Molo - Крот\nBrain Spencor - Волк\nKevin Spencor - Гром\nAleksey Tarasov - Зверь\nTimm Lahey - Принц\nRodrigo German - Фура\nFriderik Asad - Асад\nMichael Fersize - Изгой\nTessa Luv - Ангел\nJimmy Saints - Маккуин\nAnton Amurov - Мура\nBoulevard Bledov - Бизон\nSaibor Ackerman - Молния{FFFFFF}", "Ок", "Не ок", 0)
           end
         },
         {
@@ -1202,21 +1203,22 @@ tData["Leo_Florenso"] = Target:New("{000000}Куратор СОБР - Пена{FFFFFF}")
 tData["Tim_Vedenkin"] = Target:New("{000000}Командир СОБР - Морти{FFFFFF}")
 tData["Howard_Harper"] = Target:New("{000000}Заместитель командира СОБР - Деанон{FFFFFF}")
 tData["Aleksey_Tarasov"] = Target:New("{000000}Заместитель командира СОБР - Зверь{FFFFFF}")
-tData["Sativa_Johnson"] = Target:New("{000000}Боец СОБР - Боба{FFFFFF}")
-tData["Valentin_Molo"] = Target:New("{000000}Оперативник СОБР - Крот{FFFFFF}")
-tData["Maksim_Azzantroph"] = Target:New("{000000}Боец СОБР - Лоли{FFFFFF}")
+tData["Sativa_Johnson"] = Target:New("{000000}Оперативник СОБР - Боба{FFFFFF}")
+tData["Valentin_Molo"] = Target:New("{000000}Старший Оперативник СОБР - Крот{FFFFFF}")
 tData["Brain_Spencor"] = Target:New("{000000}Боец СОБР - Волк{FFFFFF}")
-tData["Kevin_Spencor"] = Target:New("{000000}Оперативник СОБР - Гром{FFFFFF}")
+tData["Kevin_Spencor"] = Target:New("{000000}Боец СОБР - Гром{FFFFFF}")
 tData["Timm_Lahey"] = Target:New("{000000}Боец СОБР - Принц{FFFFFF}")
 tData["Evan_Corleone"] = Target:New("{000000}Боец СОБР - Левиафан{FFFFFF}")
+tData["Anton_Amurov"] = Target:New("{000000}Боец СОБР - Мура{FFFFFF}")
 tData["Misha_Samyrai"] = Target:New("{000000}Боец СОБР - Еврей{FFFFFF}")
 tData["Sergu_Sibov"] = Target:New("{000000}Боец СОБР - Аристократ{FFFFFF}")
-tData["Sergey_Good"] = Target:New("{000000}Боец СОБР - Гуд{FFFFFF}")
 tData["Friderik_Asad"] = Target:New("{000000}Боец СОБР - Асад{FFFFFF}")
-tData["Rodrigo_German"] = Target:New("{000000}Кадет СОБР - Фура{FFFFFF}")
+tData["Rodrigo_German"] = Target:New("{000000}Боец СОБР - Фура{FFFFFF}")
 tData["Michael_Fersize"] = Target:New("{000000}Кадет СОБР - Изгой{FFFFFF}")
 tData["Jimmy_Saints"] = Target:New("{000000}Кадет СОБР - Маккуин{FFFFFF}")
 tData["Tessa_Luv"] = Target:New("{000000}Кадет СОБР - Ангел{FFFFFF}")
+tData["Saibor_Ackerman"] = Target:New("{000000}Кадет СОБР - Молния{FFFFFF}")
+tData["Boulevard_Bledov"] = Target:New("{000000}Кадет СОБР - Бизон{FFFFFF}")
 
 
 function e.onPlayerStreamIn(id, _, model)
@@ -1683,6 +1685,17 @@ function imgui.OnDrawFrame()
   imgui.Text(u8"Глава №6.\nПолномочия агентов ФБР.\n6.1. Дежурный FBI и выше имеет право отдать приказ бойцам армии до звания Капитан и офицерам полиции до звания\nКапитан включительно при ЧС [ теракте/похищение ].\n6.2. Агент DEA/CID имеет право отдать приказ бойцам армии до звания\nПрапорщик и офицерам полиции до звания Ст.Прапорщик включительно.\n6.3. Глава DEA/CID имеет право отдать приказ бойцам армии до звания\nМайор и офицерам полиции до звания Майор включительно.\n6.4. Инспектор FBI имеет право отдать приказ бойцам армии до звания \nПодполковник и офицерам полиции до звания Подполковник включительно.\n6.5. Зам. Директора FBI имеет право отдать приказ бойцам армии до звания\nПолковник и офицерам полиции до звания Полковник включительно.\nПримечание: В случаях, когда Директора ФБР нет на рабочем месте [ не в игре/выходной ],\nЗаместитель Директора ФБР имеет право отдать приказ любому сотруднику силовых структур.\n6.6. Директор FBI имеет право отдать приказ бойцам армии до звания\nГенерал и офицерам полиции до звания Шериф включительно.")
   imgui.Text(u8"Глава №7.\nВиды санкций для государственных структур.\n7.1. Санкции, перечисленные ниже в данной главе являются едиными.\nЛюбая другая санкция, выданная не по данным правилам не наделяется юридической силой.\n7.2. Сотрудник ПД/Армии может получить санкцию в виде предупреждения\nза нарушение Федерального постановления / внутреннего устава организации.\n7.3. Сотрудник ПД/Армии может получить санкцию в виде наряда за нарушение\nФедерального постановления / внутреннего устава организации.\n7.4. Сотрудник ПД/Армии может получить санкцию в виде обычного выговора на 7 дней за нарушение\nФедерального постановления / внутреннего устава организации.\n7.5. Сотрудник ПД/Армии может получить санкцию в виде строгого выговора на 14 дней с\nпропуском повышения за нарушение Федерального постановления / внутреннего устава организации.\n7.6. Сотрудник ПД/Армии может получить санкцию в виде понижения за нарушение\nФедерального постановления / внутреннего устава организации.\n7.7. Сотрудник ПД/Армии может получить санкцию в виде увольнения за нарушение\nФедерального постановления / внутреннего устава организации.")
   imgui.End()
+end
+
+function nyamnyam()
+  local result, id = sampGetPlayerIdByCharHandle(PLAYER_PED)
+  if result then
+    local animid = sampGetPlayerAnimationId(id)
+    if animid == 536 then
+      sampSendChat("Ням ням.")
+      wait(6000)
+    end
+  end
 end
 
 function SettingsBodyArmor(flag)
