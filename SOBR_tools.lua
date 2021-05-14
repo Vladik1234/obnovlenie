@@ -21,7 +21,8 @@ local size = 10
 local flag = 13 
 local getBonePosition = ffi.cast("int (__thiscall*)(void*, float*, int, bool)", 0x5E4280)
 local tData = {}
-
+local nData = {}
+local bronya = false
 Target = {}
 
 encoding.default = "CP1251"
@@ -136,6 +137,8 @@ function main()
 
     sampRegisterChatCommand("abp", Settingsabp)
 
+    sampRegisterChatCommand("smembers", smembers)
+
     lua_thread.create(function()  
       while true do
         wait(0)
@@ -185,7 +188,7 @@ function main()
       if priziv == true and testCheat("Z") then submenus_show(LVDialog, "{00FA9A}ПРИЗЫВ{FFFFFF}") end
       if main_window_state.v == false then imgui.Process = false end
       if sampIsChatInputActive() and sampGetChatInputText() == "/cfaq" then sampSetChatInputText("") sampShowDialog(1285, "{808080}[SOBR tools] Команды{FFFFFF}", "{808080}/aclist - выключить/включить автоклист\n/lp - выключить/включить открывание авто на клавишу `L`\n/atag - выключить/включить авто-тег\n/ascreen - выключить/включить авто-скрин после пэйдея\n/sw, /st - сменить игровое время/погоду\n/cc - очистить чат\n/kv - поставить метку на квадрат\n/getm - показать себе мониторинг, /rgetm - в рацию\n/przv - включить/выключить режим призыва\n/abp - выключить/включить авто-БП на `alt`\n/hphud - включить/отключить хп худ\n/abp - включить настройки авто-БП\n/splayer - включить/выключить отображение в чате ников военных которые появились в зоне стрима\n/fustav - посмотреть ФП и устав{FFFFFF}", "Ладно", "Прохладно", 0) end
-      if wasKeyPressed(VK_MENU) then abp() end
+      if wasKeyPressed(VK_MENU) then bronya = true abp() wait(3000) bronya = false end
       if testCheat("GGG") then getNearestPlayerId() end
       nyamnyam()
     end
@@ -1214,12 +1217,13 @@ tData["Misha_Samyrai"] = Target:New("{000000}Боец СОБР - Еврей{FFFFFF}")
 tData["Sergu_Sibov"] = Target:New("{000000}Боец СОБР - Аристократ{FFFFFF}")
 tData["Friderik_Asad"] = Target:New("{000000}Боец СОБР - Асад{FFFFFF}")
 tData["Rodrigo_German"] = Target:New("{000000}Боец СОБР - Фура{FFFFFF}")
-tData["Michael_Fersize"] = Target:New("{000000}Кадет СОБР - Изгой{FFFFFF}")
+tData["Michael_Fersize"] = Target:New("{000000}Боец СОБР - Изгой{FFFFFF}")
 tData["Jimmy_Saints"] = Target:New("{000000}Кадет СОБР - Маккуин{FFFFFF}")
 tData["Tessa_Luv"] = Target:New("{000000}Кадет СОБР - Ангел{FFFFFF}")
 tData["Saibor_Ackerman"] = Target:New("{000000}Кадет СОБР - Молния{FFFFFF}")
 tData["Boulevard_Bledov"] = Target:New("{000000}Кадет СОБР - Бизон{FFFFFF}")
 
+nData = {"Leo_Florenso", "Tim_Vedenkin", "Howard_Harper", "Aleksey_Tarasov", "Valentin_Molo", "Sativa_Johnson", "Evan_Corleone", "Anton_Amurov", "Kevin_Spencor", "Brain_Spencor", "Rodrigo_German", "Sergu_Sibov", "Friderik_Asad", "Jimmy_Saints", "Saibor_Ackerman", "Michael_Fersize", "Tessa_Luv", "Boulevard_Bledov"}
 
 function e.onPlayerStreamIn(id, _, model)
   if cfg.global.sdelaitak ~= nil then
@@ -1363,6 +1367,11 @@ function kvadrat1(letter, number)
     setMarker(1, X, Y, 60, 5, 0x00FF00FF)
 end
 
+function e.onShowDialog(dialogId, style, title, button1, button2, text)
+  if title:find('Дополнительно') and bronya == true then       
+    sampSendDialogResponse(32700, 1, 2, nil)
+  end
+end
 
 function e.onServerMessage(color, text)
   if (text:find("КЛИЕНТ БАНКА SA")) and settings.global.a_u_t_o_screen == true then
@@ -1573,6 +1582,17 @@ function Settingsabp()
 		until not sampIsDialogActive() or stopThread
 	end)
 end	
+
+function smembers()
+  for i = 0, 999 do
+    if (sampIsPlayerConnected(i)) then
+      local name = sampGetPlayerNickname(i)
+      if (table.concat(nData, " "):find(name)) then
+        sampAddChatMessage(name, 0x33AAFFFF)
+      end
+    end
+  end
+end
 
 function SettingsGun(list)
 	stopThread = true
