@@ -1511,7 +1511,7 @@ local x, y, z = getCharCoordinates(PLAYER_PED)
     if (doesCharExist(minPed)) then
       local result, playerid = sampGetPlayerIdByCharHandle(minPed)
       if result then
-        sampSendChat(" /report "..playerid.." +Ñ")
+        sampSendChat("/report "..playerid.." +Ñ")
       end
     end
   end
