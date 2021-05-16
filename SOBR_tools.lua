@@ -181,15 +181,15 @@ function main()
 
     while true do
       wait(0)
-      if isKeyJustPressed(VK_SPACE) and sampIsChatInputActive() and settings.global.a_u_t_o_tag == true and sampGetChatInputText() =="/r " then sampSetChatInputText("/r "..pInfo.Tag.." ") end
-      if isKeyJustPressed(VK_SPACE) and sampIsChatInputActive() and settings.global.a_u_t_o_tag == true and sampGetChatInputText() =="/R " then sampSetChatInputText("/R "..pInfo.Tag.." ") end
+      if isKeyJustPressed(VK_SPACE) and sampIsChatInputActive() and settings.global.a_u_t_o_tag == true and sampGetChatInputText() == "/r " then sampSetChatInputText("/r "..pInfo.Tag.." ") end
+      if isKeyJustPressed(VK_SPACE) and sampIsChatInputActive() and settings.global.a_u_t_o_tag == true and sampGetChatInputText() == "/R " then sampSetChatInputText("/R "..pInfo.Tag.." ") end
       if testCheat("PP") then submenus_show(SSSDialog, "{808080}SOBR tools by Tarasov{FFFFFF}") end
       if isKeyJustPressed(VK_L) and not sampIsChatInputActive() and not sampIsDialogActive() and not isPauseMenuActive() and not isSampfuncsConsoleActive() and settings.global.k_r_u_t_o == true then sampSendChat("/lock") end
       if priziv == true and testCheat("Z") then submenus_show(LVDialog, "{00FA9A}ПРИЗЫВ{FFFFFF}") end
       if main_window_state.v == false then imgui.Process = false end
-      if sampIsChatInputActive() and sampGetChatInputText() == "/cfaq" then sampSetChatInputText("") sampShowDialog(1285, "{808080}[SOBR tools] Команды{FFFFFF}", "{808080}/aclist - выключить/включить автоклист\n/lp - выключить/включить открывание авто на клавишу `L`\n/atag - выключить/включить авто-тег\n/ascreen - выключить/включить авто-скрин после пэйдея\n/sw, /st - сменить игровое время/погоду\n/cc - очистить чат\n/kv - поставить метку на квадрат\n/getm - показать себе мониторинг, /rgetm - в рацию\n/przv - включить/выключить режим призыва\n/abp - выключить/включить авто-БП на `alt`\n/hphud - включить/отключить хп худ\n/abp - включить настройки авто-БП\n/splayer - включить/выключить отображение в чате ников военных которые появились в зоне стрима\n/fustav - посмотреть ФП и устав{FFFFFF}", "Ладно", "Прохладно", 0) end
-      if wasKeyPressed(VK_MENU) then bronya = true abp() wait(3000) bronya = false end
-      if testCheat("GGG") then getNearestPlayerId() end
+      if sampIsChatInputActive() and sampGetChatInputText() == "/cfaq" then sampSetChatInputText("") sampShowDialog(1285, "{808080}[SOBR tools] Команды{FFFFFF}", "{808080}/aclist - выключить/включить автоклист\n/lp - выключить/включить открывание авто на клавишу `L`\n/atag - выключить/включить авто-тег\n/ascreen - выключить/включить авто-скрин после пэйдея\n/sw, /st - сменить игровое время/погоду\n/cc - очистить чат\n/kv - поставить метку на квадрат\n/getm - показать себе мониторинг, /rgetm - в рацию\n/przv - включить/выключить режим призыва\n/abp - выключить/включить авто-БП на `alt`\n/hphud - включить/отключить хп худ\n/abp - включить настройки авто-БП\n/splayer - включить/выключить отображение в чате ников военных которые появились в зоне стрима\n/fustav - посмотреть ФП и устав\n/smembers - посмотреть онлайн отряда{FFFFFF}", "Ладно", "Прохладно", 0) end
+      if testCheat("JJJJJ") then getNearestPlayerId() end
+      if isKeyJustPressed(VK_C) and isKeyJustPressed(VK_MULTIPLY) then getNearestPlayerId1() end
       nyamnyam()
     end
   end
@@ -974,7 +974,7 @@ function refreshDialog()
         {
           title = "{808080}Позывные напарников{FFFFFF}",
           onclick = function()
-            sampShowDialog(1298, "{808080}[SOBR tools] Позывные{FFFFFF}", "{808080}Leo Florenso - Пена\nTim Vedenkin - Морти\nSergu Sibov - Аристократ\nSativa Johnson - Боба\nMaksim Azzantroph - Лоли\nHoward Harper - Деанон\nMisha Samyrai - Еврей\nValentin Molo - Крот\nBrain Spencor - Волк\nKevin Spencor - Гром\nAleksey Tarasov - Зверь\nTimm Lahey - Принц\nRodrigo German - Фура\nFriderik Asad - Асад\nMichael Fersize - Изгой\nTessa Luv - Ангел\nJimmy Saints - Маккуин\nAnton Amurov - Мура\nBoulevard Bledov - Бизон\nSaibor Ackerman - Молния{FFFFFF}", "Ок", "Не ок", 0)
+            sampShowDialog(1298, "{808080}[SOBR tools] Позывные{FFFFFF}", "{808080}Leo Florenso - Пена\nTim Vedenkin - Морти\nSergu Sibov - Аристократ\nSativa Johnson - Боба\nHoward Harper - Деанон\nMisha Samyrai - Еврей\nValentin Molo - Крот\nBrain Spencor - Волк\nKevin Spencor - Гром\nAleksey Tarasov - Зверь\nTimm Lahey - Принц\nRodrigo German - Фура\nFriderik Asad - Асад\nMichael Fersize - Изгой\nTessa Luv - Ангел\nJimmy Saints - Маккуин\nAnton Amurov - Мура\nBoulevard Bledov - Бизон\nSaibor Ackerman - Молния{FFFFFF}", "Ок", "Не ок", 0)
           end
         },
         {
@@ -1202,26 +1202,26 @@ function Target:New(text)
   return obj
 end
 
-tData["Leo_Florenso"] = Target:New("{000000}Куратор СОБР - Пена{FFFFFF}")
-tData["Tim_Vedenkin"] = Target:New("{000000}Командир СОБР - Морти{FFFFFF}")
-tData["Howard_Harper"] = Target:New("{000000}Заместитель командира СОБР - Деанон{FFFFFF}")
-tData["Aleksey_Tarasov"] = Target:New("{000000}Заместитель командира СОБР - Зверь{FFFFFF}")
-tData["Sativa_Johnson"] = Target:New("{000000}Оперативник СОБР - Боба{FFFFFF}")
-tData["Valentin_Molo"] = Target:New("{000000}Старший Оперативник СОБР - Крот{FFFFFF}")
-tData["Brain_Spencor"] = Target:New("{000000}Боец СОБР - Волк{FFFFFF}")
-tData["Kevin_Spencor"] = Target:New("{000000}Боец СОБР - Гром{FFFFFF}")
-tData["Timm_Lahey"] = Target:New("{000000}Боец СОБР - Принц{FFFFFF}")
-tData["Evan_Corleone"] = Target:New("{000000}Боец СОБР - Левиафан{FFFFFF}")
-tData["Anton_Amurov"] = Target:New("{000000}Боец СОБР - Мура{FFFFFF}")
-tData["Misha_Samyrai"] = Target:New("{000000}Боец СОБР - Еврей{FFFFFF}")
-tData["Sergu_Sibov"] = Target:New("{000000}Боец СОБР - Аристократ{FFFFFF}")
-tData["Friderik_Asad"] = Target:New("{000000}Боец СОБР - Асад{FFFFFF}")
-tData["Rodrigo_German"] = Target:New("{000000}Боец СОБР - Фура{FFFFFF}")
-tData["Michael_Fersize"] = Target:New("{000000}Боец СОБР - Изгой{FFFFFF}")
-tData["Jimmy_Saints"] = Target:New("{000000}Кадет СОБР - Маккуин{FFFFFF}")
-tData["Tessa_Luv"] = Target:New("{000000}Кадет СОБР - Ангел{FFFFFF}")
-tData["Saibor_Ackerman"] = Target:New("{000000}Кадет СОБР - Молния{FFFFFF}")
-tData["Boulevard_Bledov"] = Target:New("{000000}Кадет СОБР - Бизон{FFFFFF}")
+tData["Leo_Florenso"] = Target:New("{000000}Пена{FFFFFF}")
+tData["Tim_Vedenkin"] = Target:New("{000000}Морти{FFFFFF}")
+tData["Howard_Harper"] = Target:New("{000000}Деанон{FFFFFF}")
+tData["Aleksey_Tarasov"] = Target:New("{000000}Зверь{FFFFFF}")
+tData["Sativa_Johnson"] = Target:New("{000000}Боба{FFFFFF}")
+tData["Valentin_Molo"] = Target:New("{000000}Крот{FFFFFF}")
+tData["Brain_Spencor"] = Target:New("{000000}Волк{FFFFFF}")
+tData["Kevin_Spencor"] = Target:New("{000000}ром{FFFFFF}")
+tData["Timm_Lahey"] = Target:New("{000000}Принц{FFFFFF}")
+tData["Evan_Corleone"] = Target:New("{000000}Левиафан{FFFFFF}")
+tData["Anton_Amurov"] = Target:New("{000000}Мура{FFFFFF}")
+tData["Misha_Samyrai"] = Target:New("{000000}Еврей{FFFFFF}")
+tData["Sergu_Sibov"] = Target:New("{000000}Аристократ{FFFFFF}")
+tData["Friderik_Asad"] = Target:New("{000000}Асад{FFFFFF}")
+tData["Rodrigo_German"] = Target:New("{000000}Фура{FFFFFF}")
+tData["Michael_Fersize"] = Target:New("{000000}Изгой{FFFFFF}")
+tData["Jimmy_Saints"] = Target:New("{000000}Маккуин{FFFFFF}")
+tData["Tessa_Luv"] = Target:New("{000000}Ангел{FFFFFF}")
+tData["Saibor_Ackerman"] = Target:New("{000000}Молния{FFFFFF}")
+tData["Boulevard_Bledov"] = Target:New("{000000}Бизон{FFFFFF}")
 
 nData = {"Leo_Florenso", "Tim_Vedenkin", "Howard_Harper", "Aleksey_Tarasov", "Valentin_Molo", "Sativa_Johnson", "Evan_Corleone", "Anton_Amurov", "Kevin_Spencor", "Brain_Spencor", "Rodrigo_German", "Sergu_Sibov", "Friderik_Asad", "Jimmy_Saints", "Saibor_Ackerman", "Michael_Fersize", "Tessa_Luv", "Boulevard_Bledov"}
 
@@ -1492,8 +1492,33 @@ local x, y, z = getCharCoordinates(PLAYER_PED)
   end
 end
 
+function getNearestPlayerId1()
+local min = 9999
+local minPed = nil
+local x, y, z = getCharCoordinates(PLAYER_PED)
+  for _, ped in pairs(getAllChars()) do
+      if (doesCharExist(ped)) and (PLAYER_PED ~= ped) then
+          local px, py, pz = getCharCoordinates(ped)
+          local dist = getDistanceBetweenCoords3d(x, y, z, px, py, pz)
+          if (dist < min) then
+              min = dist
+              minPed = ped
+          end
+      end
+  end 
+  if (minPed ~= nil) then
+    if (doesCharExist(minPed)) then
+      local result, playerid = sampGetPlayerIdByCharHandle(minPed)
+      if result then
+        sampSendChat(" /report "..playerid.." +С")
+      end
+    end
+  end
+end
+
 function abp()	
-	if sampIsDialogActive() and sampGetCurrentDialogId() == 20053 then
+  if sampIsDialogActive() and sampGetCurrentDialogId() == 20053 then
+    bronya = true
 		local idGun = 0
 		local countCurrentGun = 0
     local nameKey = ""
@@ -1520,7 +1545,8 @@ function abp()
 		wait(500)
 		sampCloseCurrentDialogWithButton(0)
 		wait(250)
-		sampAddChatMessage("[SOBR tools] Желаемый комплект боеприпасов был взят.", 0xFFB22222)
+    sampAddChatMessage("[SOBR tools] Желаемый комплект боеприпасов был взят.", 0xFFB22222)
+    bronya = false
 	end
 end
 
