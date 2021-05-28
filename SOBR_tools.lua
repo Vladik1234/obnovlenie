@@ -975,7 +975,7 @@ function refreshDialog()
         {
           title = "{808080}Позывные напарников{FFFFFF}",
           onclick = function()
-            sampShowDialog(1298, "{808080}[SOBR tools] Позывные{FFFFFF}", "{808080}Leo Florenso - Пена\nSergu Sibov - Аристократ\nHoward Harper - Деанон\nMisha Samyrai - Жит\nValentin Molo - Крот\nBrain Spencor - Волк\nKevin Spencor - Гром\nAleksey Tarasov - Зверь\nRodrigo German - Фура\nMichael Fersize - Изгой\nBarbie Bell - Ангел\nJimmy Saints - Маккуин\nBoulevard Bledov - Бизон\nSaibor Ackerman - Молния\nKenneth Sapporo - Феникс\nNikita Prizrack - Призрак\nHieden Bell - Андрюха\nChristian Hazard - Крест{FFFFFF}", "Ок", "Не ок", 0)
+            sampShowDialog(1298, "{808080}[SOBR tools] Позывные{FFFFFF}", "{808080}Leo Florenso - Пена\nSergu Sibov - Аристократ\nHoward Harper - Деанон\nMisha Samyrai - Жит\nValentin Molo - Крот\nBrain Spencor - Волк\nKevin Spencor - Гром\nAleksey Tarasov - Зверь\nRodrigo German - Фура\nMichael Fersize - Изгой\nBarbie Bell - Ангел\nJimmy Saints - Маккуин\nBoulevard Bledov - Бизон\nSaibor Ackerman - Молния\nKenneth Sapporo - Феникс\nNikita Prizrack - Призрак\nHieden Bell - Андрюха\nChristian Hazard - Крест\nBogdan Mishenko - Сокол{FFFFFF}", "Ок", "Не ок", 0)
           end
         },
         {
@@ -1222,9 +1222,10 @@ tData["Boulevard_Bledov"] = Target:New("{000000}Бизон{FFFFFF}")
 tData["Nikita_Prizrack"] = Target:New("{000000}Призрак{FFFFFF}")
 tData["Christian_Hazard"] = Target:New("{000000}Крест{FFFFFF}")
 tData["Hieden_Bell"] = Target:New("{000000}Андрюха{FFFFFF}")
+tData["Bogdan_Mishenko"] = Target:New("{000000}Сокол{FFFFFF}")
 
 
-nData = {"Leo_Florenso", "Howard_Harper", "Aleksey_Tarasov", "Valentin_Molo", "Evan_Corleone", "Kevin_Spencor", "Brain_Spencor", "Rodrigo_German", "Sergu_Sibov", "Jimmy_Saints", "Saibor_Ackerman", "Michael_Fersize", "Barbie_Bell", "Boulevard_Bledov", "Kenneth_Sapporo", "Nikita_Prizrack", "Hieden_Bell", "Christian_Hazard"}
+nData = {"Leo_Florenso", "Howard_Harper", "Aleksey_Tarasov", "Valentin_Molo", "Evan_Corleone", "Kevin_Spencor", "Brain_Spencor", "Rodrigo_German", "Sergu_Sibov", "Jimmy_Saints", "Saibor_Ackerman", "Michael_Fersize", "Barbie_Bell", "Boulevard_Bledov", "Kenneth_Sapporo", "Nikita_Prizrack", "Hieden_Bell", "Christian_Hazard", "Bogdan_Mishenko"}
 
 function e.onPlayerStreamIn(id, _, model)
   if cfg.global.sdelaitak ~= nil then
