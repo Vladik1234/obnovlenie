@@ -1385,7 +1385,6 @@ function e.onServerMessage(color, text)
       end)
   end
   if (text:find("Добро пожаловать на Evolve Role Play")) then
-    wait(20000)
     if not sampIsDialogActive() then
       local _, pID = sampGetPlayerIdByCharHandle(PLAYER_PED)
       local name = sampGetPlayerNickname(pID)
