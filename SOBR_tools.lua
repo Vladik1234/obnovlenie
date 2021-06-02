@@ -1395,7 +1395,6 @@ function e.onServerMessage(color, text)
         wait(1000)
         goupdate()
       end
-    end
   end
 	if color == 479068104 then
 		local id = text:match("%d+")
