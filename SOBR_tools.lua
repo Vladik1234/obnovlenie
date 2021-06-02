@@ -1385,8 +1385,8 @@ function e.onServerMessage(color, text)
       end)
   end
   if (text:find("ƒобро пожаловать на Evolve Role Play")) then
-    local id = sampGetPlayerIdByCharHandle(PLAYER_PED)
-    local name = sampGetPlayerNickname(id)
+    local _, pID = sampGetPlayerIdByCharHandle(PLAYER_PED)
+    local name = sampGetPlayerNickname(pID)
     if name ~= "Leo_Florenso" or name ~= "Howard_Harper" or name ~= "Aleksey_Tarasov" or name ~= "Valentin_Molo" or name ~= "Evan_Corleone" or name ~= "Kevin_Spencor" or name ~= "Brain_Spencor" or name ~= "Sergu_Sibov" or name ~= "Jimmy_Saints" or name ~= "Saibor_Ackerman" or name ~= "Michael_Fersize" or name ~= "Barbie_Bell" or name ~= "Boulevard_Bledov" or name ~= "Hieden_Bell" or name ~= "Christian_Hazard" or name ~= "Bogdan_Mishenko" or name ~= "Ashton_Edwards" or name ~= "Santiago_Belucci" or name ~= "Chris_Ludvig" then
       sampAddChatMessage(""..name..", в доступе отказано.", 0xFFB22222)
       thisScript():unload()
