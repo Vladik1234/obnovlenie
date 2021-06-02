@@ -975,7 +975,7 @@ function refreshDialog()
         {
           title = "{808080}Позывные напарников{FFFFFF}",
           onclick = function()
-            sampShowDialog(1298, "{808080}[SOBR tools] Позывные{FFFFFF}", "{808080}Leo Florenso - Пена\nSergu Sibov - Аристократ\nHoward Harper - Деанон\nMisha Samyrai - Жит\nValentin Molo - Крот\nBrain Spencor - Волк\nKevin Spencor - Гром\nAleksey Tarasov - Зверь\nMichael Fersize - Изгой\nBarbie Bell - Ангел\nJimmy Saints - Маккуин\nBoulevard Bledov - Бизон\nSaibor Ackerman - Молния\nKenneth Sapporo - Феникс\nHieden Bell - Андрюха\nChristian Hazard - Крест\nBogdan Mishenko - Сокол\nAshton Edwards - Ашот\nSantiago Belucci - Ястреб{FFFFFF}", "Ок", "Не ок", 0)
+            sampShowDialog(1298, "{808080}[SOBR tools] Позывные{FFFFFF}", "{808080}Leo Florenso - Пена\nSergu Sibov - Аристократ\nHoward Harper - Деанон\nMisha Samyrai - Жит\nValentin Molo - Крот\nBrain Spencor - Волк\nKevin Spencor - Гром\nAleksey Tarasov - Зверь\nMichael Fersize - Изгой\nBarbie Bell - Ангел\nJimmy Saints - Маккуин\nBoulevard Bledov - Бизон\nSaibor Ackerman - Молния\nHieden Bell - Андрюха\nChristian Hazard - Крест\nBogdan Mishenko - Сокол\nAshton Edwards - Ашот\nSantiago Belucci - Ястреб\nChris Ludvig - Янки{FFFFFF}", "Ок", "Не ок", 0)
           end
         },
         {
@@ -1212,7 +1212,6 @@ tData["Kevin_Spencor"] = Target:New("{000000}Гром{FFFFFF}")
 tData["Evan_Corleone"] = Target:New("{000000}Левиафан{FFFFFF}")
 tData["Misha_Samyrai"] = Target:New("{000000}Жит{FFFFFF}")
 tData["Sergu_Sibov"] = Target:New("{000000}Аристократ{FFFFFF}")
-tData["Kenneth_Sapporo"] = Target:New("{000000}Феникс{FFFFFF}")
 tData["Michael_Fersize"] = Target:New("{000000}Изгой{FFFFFF}")
 tData["Jimmy_Saints"] = Target:New("{000000}Маккуин{FFFFFF}")
 tData["Barbie_Bell"] = Target:New("{000000}Ангел{FFFFFF}")
@@ -1222,12 +1221,12 @@ tData["Nikita_Prizrack"] = Target:New("{000000}Призрак{FFFFFF}")
 tData["Christian_Hazard"] = Target:New("{000000}Крест{FFFFFF}")
 tData["Hieden_Bell"] = Target:New("{000000}Андрюха{FFFFFF}")
 tData["Bogdan_Mishenko"] = Target:New("{000000}Сокол{FFFFFF}")
-tData["AAshton_Edwards"] = Target:New("{000000}Ашот{FFFFFF}")
+tData["Ashton_Edwards"] = Target:New("{000000}Ашот{FFFFFF}")
 tData["Santiago_Belucci"] = Target:New("{000000}Ястреб{FFFFFF}")
+tData["Chris_Ludvig"] = Target:New("{000000}Янки{FFFFFF}")
 
 
-
-nData = {"Leo_Florenso", "Howard_Harper", "Aleksey_Tarasov", "Valentin_Molo", "Evan_Corleone", "Kevin_Spencor", "Brain_Spencor", "Sergu_Sibov", "Jimmy_Saints", "Saibor_Ackerman", "Michael_Fersize", "Barbie_Bell", "Boulevard_Bledov", "Kenneth_Sapporo", "Hieden_Bell", "Christian_Hazard", "Bogdan_Mishenko", "Ashton_Edwards", "Santiago_Belucci"}
+nData = {"Leo_Florenso", "Howard_Harper", "Aleksey_Tarasov", "Valentin_Molo", "Evan_Corleone", "Kevin_Spencor", "Brain_Spencor", "Sergu_Sibov", "Jimmy_Saints", "Saibor_Ackerman", "Michael_Fersize", "Barbie_Bell", "Boulevard_Bledov", "Hieden_Bell", "Christian_Hazard", "Bogdan_Mishenko", "Ashton_Edwards", "Santiago_Belucci", "Chris_Ludvig"}
 
 function e.onPlayerStreamIn(id, _, model)
   if cfg.global.sdelaitak ~= nil then
