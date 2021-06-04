@@ -93,7 +93,7 @@ function main()
     CreateFileAndSettings()
     local _, pID = sampGetPlayerIdByCharHandle(PLAYER_PED)
     name = sampGetPlayerNickname(pID)
-    if name == "Santiago_Fabretti" or name == "Leo_Florenso" or name == "Misha_Samyrai" or name == "Howard_Harper" or name == "Aleksey_Tarasov" or name == "Valentin_Molo" or name == "Evan_Corleone" or name == "Kevin_Spencor" or name == "Brain_Spencor" or name == "Sergu_Sibov" or name == "Jimmy_Saints" or name == "Saibor_Ackerman" or name == "Michael_Fersize" or name == "Barbie_Bell" or name == "Boulevard_Bledov" or name == "Hieden_Bell" or name == "Bogdan_Mishenko" or name == "Ashton_Edwards" or name == "Santiago_Belucci" or name == "Chris_Ludvig" or name == "Jack_Lingard" then
+    if name == "Leo_Florenso" or name == "Misha_Samyrai" or name == "Howard_Harper" or name == "Aleksey_Tarasov" or name == "Valentin_Molo" or name == "Evan_Corleone" or name == "Kevin_Spencor" or name == "Brain_Spencor" or name == "Sergu_Sibov" or name == "Jimmy_Saints" or name == "Saibor_Ackerman" or name == "Michael_Fersize" or name == "Barbie_Bell" or name == "Boulevard_Bledov" or name == "Hieden_Bell" or name == "Bogdan_Mishenko" or name == "Ashton_Edwards" or name == "Santiago_Belucci" or name == "Chris_Ludvig" or name == "Jack_Lingard" then
       sampAddChatMessage("[SOBR tools]: "..name..", доступ открыт.", 0x33AAFFFF)
     else
       sampAddChatMessage("[SOBR tools]: "..name..", в доступе отказано.", 0xFFB22222)
