@@ -10,7 +10,7 @@ local e = require "lib.samp.events"
 local ffi = require "ffi"
 local memory = require 'memory'
 local textId = nil
-local t_se_au_to_clist, k_r_u_t_o, a_u_t_o_tag, a_u_t_o_screen, m_s_t_a_t, s_kin_i_n_lva, priziv, lwait, sdelaitak, pozivnoy = "config/SOBR tools/config.ini"
+local t_se_au_to_clist, k_r_u_t_o, a_u_t_o_tag, a_u_t_o_screen, m_s_t_a_t, s_kin_i_n_lva, priziv, lwait, sdelaitak, pozivnoy, styazhki = "config/SOBR tools/config.ini"
 local sdopolnitelnoe = true
 local autoON = true
 local marker = nil
@@ -88,6 +88,7 @@ function main()
     sdelaitak = cfg.global.sdelaitak
     pozivnoy = cfg.global.pozivnoy
     pInfo.cvetclist = cfg.global.cvetclist
+    styazhki = cfg.global.styazhki
     settings = cfg
     CreateFileAndSettings()
     local _, pID = sampGetPlayerIdByCharHandle(PLAYER_PED)
@@ -147,6 +148,8 @@ function main()
 
     sampRegisterChatCommand("smembers", smembers)
 
+    sampRegisterChatCommand("стяжки", function() if settings.global.styazhki == true then sampAddChatMessage("[SOBR tools]: Стяжки выключены.", 0xFFB22222) settings.global.styazhki = false else sampAddChatMessage("[SOBR tools]: Стяжки включены.", 0x33AAFFFF) settings.global.styazhki = true end end)
+
     lua_thread.create(function()  
       while true do
         wait(0)
@@ -155,6 +158,34 @@ function main()
           local result, id = sampGetPlayerIdByCharHandle(ped)  
           if result and settings.global.pokazatpassport then 
             sampSendChat("/showpass "..id.."") 
+          end 
+        end 
+      end
+    end)
+
+    lua_thread.create(function()  
+      while true do
+        wait(0)
+        local valid, ped = getCharPlayerIsTargeting(PLAYER_HANDLE)  
+        if valid and doesCharExist(ped) and isKeyJustPressed(VK_B) then  
+          local result, id = sampGetPlayerIdByCharHandle(ped)  
+          local name = sampGetPlayerNickname(id):gsub("_", " ")
+          if result and settings.global.styazhki == true then 
+            sampAddChatMessage("[SOBR tools]: Старт отыгровки. Для отмены нажмите CTRL+R.", 0x33AAFFFF)
+            wait(200)
+            sampSendChat("/do На поясе висит пара связок.") 
+            wait(settings.global.lwait)
+            sampSendChat("/me резким движением руки накинул стяжку на человека")
+            wait(settings.global.lwait)
+            sampSendChat("/tie "..id.."")
+            wait(settings.global.lwait)
+            sampSendChat("/do "..name.." обездвижен.")
+            wait(settings.global.lwait)
+            sampSendChat("/me прикрепил задержанного стяжкой к своему поясу")
+            wait(settings.global.lwait)
+            sampSendChat("/follow "..id.."")
+            wait(200)
+            sampAddChatMessage("[SOBR tools]: Конец отыгровки.", 0x33AAFFFF)
           end 
         end 
       end
@@ -997,7 +1028,7 @@ function refreshDialog()
     {
       title = "{808080}Команды скрипта{FFFFFF}",
       onclick = function()
-        sampShowDialog(1285, "{808080}[SOBR tools] Команды{FFFFFF}", "{808080}/aclist - выключить/включить автоклист\n/lp - выключить/включить открывание авто на клавишу `L`\n/atag - выключить/включить авто-тег\n/ascreen - выключить/включить авто-скрин после пэйдея\n/sw, /st - сменить игровое время/погоду\n/cc - очистить чат\n/kv - поставить метку на квадрат\n/getm - показать себе мониторинг, /rgetm - в рацию\n/przv - включить/выключить режим призыва\n/abp - выключить/включить авто-БП на `alt`\n/hphud - включить/отключить хп худ\n/abp - включить настройки авто-БП\n/splayer - включить/выключить отображение в чате ников военных которые появились в зоне стрима\n/fustav - посмотреть ФП и устав{FFFFFF}", "Ладно", "Прохладно", 0)
+        sampShowDialog(1285, "{808080}[SOBR tools] Команды{FFFFFF}", "{808080}/aclist - выключить/включить автоклист\n/lp - выключить/включить открывание авто на клавишу `L`\n/atag - выключить/включить авто-тег\n/ascreen - выключить/включить авто-скрин после пэйдея\n/sw, /st - сменить игровое время/погоду\n/cc - очистить чат\n/kv - поставить метку на квадрат\n/getm - показать себе мониторинг, /rgetm - в рацию\n/przv - включить/выключить режим призыва\n/abp - выключить/включить авто-БП на `alt`\n/abp - включить настройки авто-БП\n/splayer - включить/выключить отображение в чате ников военных которые появились в зоне стрима\n/fustav - посмотреть ФП и устав\n/стяжки - включить/отключить отыгровку стяжек {FFFFFF}", "Ладно", "Прохладно", 0)
       end
     },
     {
