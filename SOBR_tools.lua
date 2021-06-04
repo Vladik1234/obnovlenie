@@ -223,6 +223,7 @@ function main()
       if isKeyJustPressed(VK_SPACE) and sampIsChatInputActive() and settings.global.a_u_t_o_tag == true and sampGetChatInputText() == "/r " then sampSetChatInputText("/r "..pInfo.Tag.." ") end
       if isKeyJustPressed(VK_SPACE) and sampIsChatInputActive() and settings.global.a_u_t_o_tag == true and sampGetChatInputText() == "/R " then sampSetChatInputText("/R "..pInfo.Tag.." ") end
       if testCheat("PP") then submenus_show(SSSDialog, "{808080}SOBR tools by Tarasov{FFFFFF}") end
+      if sampIsChatInputActive() and sampGetChatInputText() == "/доклады" then sampSetChatInputText("") submenus_show(RaciaDialog, "{808080}Доклады{FFFFFF}") end
       if isKeyJustPressed(VK_L) and not sampIsChatInputActive() and not sampIsDialogActive() and not isPauseMenuActive() and not isSampfuncsConsoleActive() and settings.global.k_r_u_t_o == true then sampSendChat("/lock") end
       if priziv == true and testCheat("Z") then submenus_show(LVDialog, "{00FA9A}ПРИЗЫВ{FFFFFF}") end
       if main_window_state.v == false then imgui.Process = false end
@@ -232,7 +233,7 @@ function main()
       if wasKeyPressed(VK_MENU) then abp() end
       nyamnyam()
     end
-  end
+end
 
 function refreshDialog()
   SSSDialog = {
@@ -1205,6 +1206,261 @@ function refreshDialog()
           end
         },
       }
+    },
+  }
+  RaciaDialog = {
+
+    {
+      title = "{808080}10-30{FFFFFF}",
+      onclick = function()
+        local result, amount = getPassengers()
+        if (result ~= false) then
+            if (amount > 0) then
+                names = ""
+                for k, val in pairs(result) do
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром")
+                    print(n)
+                    if names == "" then
+                        names = names.. n
+                    else
+                        names = names .. ", ".. n
+                    end
+                end
+                sampSendChat("/r "..pInfo.Tag..": 10-30. ".. names .. ".")
+              else
+                sampSendChat("/r "..pInfo.Tag..": 10-30.")
+            end
+        end
+      end
+    },
+    {
+      title = "{808080}10-31{FFFFFF}",
+      onclick = function()
+        local result, amount = getPassengers()
+        if (result ~= false) then
+            if (amount > 0) then
+                names = ""
+                for k, val in pairs(result) do
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром")
+                    print(n)
+                    if names == "" then
+                        names = names.. n
+                    else
+                        names = names .. ", ".. n
+                    end
+                end
+                sampSendChat("/r "..pInfo.Tag..": 10-31. ".. names .. ".")
+              else
+                sampSendChat("/r "..pInfo.Tag..": 10-31.")
+            end
+        end
+      end
+    },
+    {
+      title = "{808080}10-40{FFFFFF}",
+      onclick = function()
+        local result, amount = getPassengers()
+        if (result ~= false) then
+            if (amount > 0) then
+                names = ""
+                for k, val in pairs(result) do
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром")
+                    print(n)
+                    if names == "" then
+                        names = names.. n
+                    else
+                        names = names .. ", ".. n
+                    end
+                end
+                sampSendChat("/r "..pInfo.Tag..": 10-40. ".. names .. ".")
+              else
+                sampSendChat("/r "..pInfo.Tag..": 10-40.")
+            end
+        end
+      end
+    },
+    {
+      title = "{808080}10-43{FFFFFF}",
+      onclick = function()
+        local result, amount = getPassengers()
+        if (result ~= false) then
+            if (amount > 0) then
+                names = ""
+                for k, val in pairs(result) do
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром")
+                    print(n)
+                    if names == "" then
+                        names = names.. n
+                    else
+                        names = names .. ", ".. n
+                    end
+                end
+                sampSendChat("/r "..pInfo.Tag..": 10-43. ".. names .. ".")
+              else
+                sampSendChat("/r "..pInfo.Tag..": 10-43.")
+            end
+        end
+      end
+    },
+    {
+      title = "{808080}10-44{FFFFFF}",
+      onclick = function()
+        local result, amount = getPassengers()
+        if (result ~= false) then
+            if (amount > 0) then
+                names = ""
+                for k, val in pairs(result) do
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром")
+                    print(n)
+                    if names == "" then
+                        names = names.. n
+                    else
+                        names = names .. ", ".. n
+                    end
+                end
+                sampSendChat("/r "..pInfo.Tag..": 10-44. ".. names .. ".")
+              else
+                sampSendChat("/r "..pInfo.Tag..": 10-44.")
+            end
+        end
+      end
+    },
+    {
+      title = "{808080}10-51{FFFFFF}",
+      onclick = function()
+        local result, amount = getPassengers()
+        if (result ~= false) then
+            if (amount > 0) then
+                names = ""
+                for k, val in pairs(result) do
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром")
+                    print(n)
+                    if names == "" then
+                        names = names.. n
+                    else
+                        names = names .. ", ".. n
+                    end
+                end
+                sampSendChat("/r "..pInfo.Tag..": 10-51. ".. names .. ".")
+              else
+                sampSendChat("/r "..pInfo.Tag..": 10-51.")
+            end
+        end
+      end
+    },
+    {
+      title = "{808080}10-52{FFFFFF}",
+      onclick = function()
+        local result, amount = getPassengers()
+        if (result ~= false) then
+            if (amount > 0) then
+                names = ""
+                for k, val in pairs(result) do
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром")
+                    print(n)
+                    if names == "" then
+                        names = names.. n
+                    else
+                        names = names .. ", ".. n
+                    end
+                end
+                sampSendChat("/r "..pInfo.Tag..": 10-52. ".. names .. ".")
+              else
+                sampSendChat("/r "..pInfo.Tag..": 10-52.")
+            end
+        end
+      end
+    },
+    {
+      title = "{808080}10-53{FFFFFF}",
+      onclick = function()
+        local result, amount = getPassengers()
+        if (result ~= false) then
+            if (amount > 0) then
+                names = ""
+                for k, val in pairs(result) do
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром")
+                    print(n)
+                    if names == "" then
+                        names = names.. n
+                    else
+                        names = names .. ", ".. n
+                    end
+                end
+                sampSendChat("/r "..pInfo.Tag..": 10-53. ".. names .. ".")
+              else
+                sampSendChat("/r "..pInfo.Tag..": 10-53.")
+            end
+        end
+      end
+    },
+    {
+      title = "{808080}10-61{FFFFFF}",
+      onclick = function()
+        local result, amount = getPassengers()
+        if (result ~= false) then
+            if (amount > 0) then
+                names = ""
+                for k, val in pairs(result) do
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром")
+                    print(n)
+                    if names == "" then
+                        names = names.. n
+                    else
+                        names = names .. ", ".. n
+                    end
+                end
+                sampSendChat("/r "..pInfo.Tag..": 10-61. ".. names .. ".")
+              else
+                sampSendChat("/r "..pInfo.Tag..": 10-61.")
+            end
+        end
+      end
+    },
+    {
+      title = "{808080}10-62{FFFFFF}",
+      onclick = function()
+        local result, amount = getPassengers()
+        if (result ~= false) then
+            if (amount > 0) then
+                names = ""
+                for k, val in pairs(result) do
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром")
+                    print(n)
+                    if names == "" then
+                        names = names.. n
+                    else
+                        names = names .. ", ".. n
+                    end
+                end
+                sampSendChat("/r "..pInfo.Tag..": 10-62. ".. names .. ".")
+              else
+                sampSendChat("/r "..pInfo.Tag..": 10-62.")
+            end
+        end
+      end
+    },    {
+      title = "{808080}10-63{FFFFFF}",
+      onclick = function()
+        local result, amount = getPassengers()
+        if (result ~= false) then
+            if (amount > 0) then
+                names = ""
+                for k, val in pairs(result) do
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром")
+                    print(n)
+                    if names == "" then
+                        names = names.. n
+                    else
+                        names = names .. ", ".. n
+                    end
+                end
+                sampSendChat("/r "..pInfo.Tag..": 10-63. ".. names .. ".")
+              else
+                sampSendChat("/r "..pInfo.Tag..": 10-63.")
+            end
+        end
+      end
     },
   }
 end
