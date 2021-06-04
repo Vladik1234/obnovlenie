@@ -93,7 +93,7 @@ function main()
     CreateFileAndSettings()
     local _, pID = sampGetPlayerIdByCharHandle(PLAYER_PED)
     name = sampGetPlayerNickname(pID)
-    if name == "Leo_Florenso" or name == "Misha_Samyrai" or name == "Howard_Harper" or name == "Aleksey_Tarasov" or name == "Valentin_Molo" or name == "Evan_Corleone" or name == "Kevin_Spencor" or name == "Brain_Spencor" or name == "Sergu_Sibov" or name == "Jimmy_Saints" or name == "Saibor_Ackerman" or name == "Michael_Fersize" or name == "Barbie_Bell" or name == "Boulevard_Bledov" or name == "Hieden_Bell" or name == "Bogdan_Mishenko" or name == "Ashton_Edwards" or name == "Santiago_Belucci" or name == "Chris_Ludvig" or name == "Jack_Lingard" then
+    if name == "Leo_Florenso" or name == "Misha_Samyrai" or name == "Howard_Harper" or name == "Aleksey_Tarasov" or name == "Valentin_Molo" or name == "Evan_Corleone" or name == "Kevin_Spencor" or name == "Brain_Spencor" or name == "Sergu_Sibov" or name == "Jimmy_Saints" or name == "Saibor_Ackerman" or name == "Michael_Fersize" or name == "Barbie_Bell" or name == "Boulevard_Bledov" or name == "Hieden_Bell" or name == "Bogdan_Mishenko" or name == "Ashton_Edwards" or name == "Santiago_Belucci" or name == "Chris_Ludvig" or name == "Jack_Lingard" or name == "Thomas_Rinner" then
       sampAddChatMessage("[SOBR tools]: "..name..", доступ открыт.", 0x33AAFFFF)
     else
       sampAddChatMessage("[SOBR tools]: "..name..", в доступе отказано.", 0xFFB22222)
@@ -162,6 +162,9 @@ function main()
         end 
       end
     end)
+
+    local X, Y, Z = getCharCoordinates(PLAYER_PED)
+    if 
 
     lua_thread.create(function()  
       while true do
@@ -1218,7 +1221,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas_Rinner", "Карахман")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1226,9 +1229,9 @@ function refreshDialog()
                         names = names .. ", ".. n
                     end
                 end
-                sampSendChat("/r "..pInfo.Tag..": 10-30. ".. names .. ".")
+                sampSendChat("/r "..pInfo.Tag.." 10-30. ".. names .. ".")
               else
-                sampSendChat("/r "..pInfo.Tag..": 10-30.")
+                sampSendChat("/r "..pInfo.Tag.." 10-30.")
             end
         end
       end
@@ -1241,7 +1244,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas_Rinner", "Карахман")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1249,9 +1252,9 @@ function refreshDialog()
                         names = names .. ", ".. n
                     end
                 end
-                sampSendChat("/r "..pInfo.Tag..": 10-31. ".. names .. ".")
+                sampSendChat("/r "..pInfo.Tag.." 10-31. ".. names .. ".")
               else
-                sampSendChat("/r "..pInfo.Tag..": 10-31.")
+                sampSendChat("/r "..pInfo.Tag.." 10-31.")
             end
         end
       end
@@ -1264,7 +1267,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas_Rinner", "Карахман")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1272,9 +1275,9 @@ function refreshDialog()
                         names = names .. ", ".. n
                     end
                 end
-                sampSendChat("/r "..pInfo.Tag..": 10-40. ".. names .. ".")
+                sampSendChat("/r "..pInfo.Tag.." 10-40. ".. names .. ".")
               else
-                sampSendChat("/r "..pInfo.Tag..": 10-40.")
+                sampSendChat("/r "..pInfo.Tag.." 10-40.")
             end
         end
       end
@@ -1287,7 +1290,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas_Rinner", "Карахман")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1295,9 +1298,9 @@ function refreshDialog()
                         names = names .. ", ".. n
                     end
                 end
-                sampSendChat("/r "..pInfo.Tag..": 10-43. ".. names .. ".")
+                sampSendChat("/r "..pInfo.Tag.." 10-43. ".. names .. ".")
               else
-                sampSendChat("/r "..pInfo.Tag..": 10-43.")
+                sampSendChat("/r "..pInfo.Tag.." 10-43.")
             end
         end
       end
@@ -1310,7 +1313,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas_Rinner", "Карахман")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1318,9 +1321,9 @@ function refreshDialog()
                         names = names .. ", ".. n
                     end
                 end
-                sampSendChat("/r "..pInfo.Tag..": 10-44. ".. names .. ".")
+                sampSendChat("/r "..pInfo.Tag.." 10-44. ".. names .. ".")
               else
-                sampSendChat("/r "..pInfo.Tag..": 10-44.")
+                sampSendChat("/r "..pInfo.Tag.." 10-44.")
             end
         end
       end
@@ -1333,7 +1336,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas_Rinner", "Карахман")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1341,9 +1344,9 @@ function refreshDialog()
                         names = names .. ", ".. n
                     end
                 end
-                sampSendChat("/r "..pInfo.Tag..": 10-51. ".. names .. ".")
+                sampSendChat("/r "..pInfo.Tag.." 10-51. ".. names .. ".")
               else
-                sampSendChat("/r "..pInfo.Tag..": 10-51.")
+                sampSendChat("/r "..pInfo.Tag.." 10-51.")
             end
         end
       end
@@ -1356,7 +1359,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas_Rinner", "Карахман")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1364,9 +1367,9 @@ function refreshDialog()
                         names = names .. ", ".. n
                     end
                 end
-                sampSendChat("/r "..pInfo.Tag..": 10-52. ".. names .. ".")
+                sampSendChat("/r "..pInfo.Tag.." 10-52. ".. names .. ".")
               else
-                sampSendChat("/r "..pInfo.Tag..": 10-52.")
+                sampSendChat("/r "..pInfo.Tag.." 10-52.")
             end
         end
       end
@@ -1379,7 +1382,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas_Rinner", "Карахман")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1387,9 +1390,9 @@ function refreshDialog()
                         names = names .. ", ".. n
                     end
                 end
-                sampSendChat("/r "..pInfo.Tag..": 10-53. ".. names .. ".")
+                sampSendChat("/r "..pInfo.Tag.." 10-53. ".. names .. ".")
               else
-                sampSendChat("/r "..pInfo.Tag..": 10-53.")
+                sampSendChat("/r "..pInfo.Tag.." 10-53.")
             end
         end
       end
@@ -1402,7 +1405,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas_Rinner", "Карахман")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1410,9 +1413,9 @@ function refreshDialog()
                         names = names .. ", ".. n
                     end
                 end
-                sampSendChat("/r "..pInfo.Tag..": 10-61. ".. names .. ".")
+                sampSendChat("/r "..pInfo.Tag.." 10-61. ".. names .. ".")
               else
-                sampSendChat("/r "..pInfo.Tag..": 10-61.")
+                sampSendChat("/r "..pInfo.Tag.." 10-61.")
             end
         end
       end
@@ -1425,7 +1428,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas_Rinner", "Карахман")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1433,9 +1436,9 @@ function refreshDialog()
                         names = names .. ", ".. n
                     end
                 end
-                sampSendChat("/r "..pInfo.Tag..": 10-62. ".. names .. ".")
+                sampSendChat("/r "..pInfo.Tag.." 10-62. ".. names .. ".")
               else
-                sampSendChat("/r "..pInfo.Tag..": 10-62.")
+                sampSendChat("/r "..pInfo.Tag.." 10-62.")
             end
         end
       end
@@ -1447,7 +1450,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Howard Harper", "Деанон"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas_Rinner", "Карахман")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1455,9 +1458,9 @@ function refreshDialog()
                         names = names .. ", ".. n
                     end
                 end
-                sampSendChat("/r "..pInfo.Tag..": 10-63. ".. names .. ".")
+                sampSendChat("/r "..pInfo.Tag.." 10-63. ".. names .. ".")
               else
-                sampSendChat("/r "..pInfo.Tag..": 10-63.")
+                sampSendChat("/r "..pInfo.Tag.." 10-63.")
             end
         end
       end
@@ -1518,9 +1521,11 @@ tData["Ashton_Edwards"] = Target:New("{000000}Ашот{FFFFFF}")
 tData["Santiago_Belucci"] = Target:New("{000000}Ястреб{FFFFFF}")
 tData["Chris_Ludvig"] = Target:New("{000000}Янки{FFFFFF}")
 tData["Jack_Lingard"] = Target:New("{000000}Барон{FFFFFF}")
+tData["Thomas_Rinner"] = Target:New("{000000}Карахман{FFFFFF}")
 
 
-nData = {"Leo_Florenso", "Howard_Harper", "Aleksey_Tarasov", "Valentin_Molo", "Evan_Corleone", "Misha_Samyrai", "Kevin_Spencor", "Brain_Spencor", "Sergu_Sibov", "Jimmy_Saints", "Saibor_Ackerman", "Michael_Fersize", "Barbie_Bell", "Boulevard_Bledov", "Bogdan_Mishenko", "Ashton_Edwards", "Santiago_Belucci", "Chris_Ludvig", "Jack_Lingard"}
+
+nData = {"Leo_Florenso", "Howard_Harper", "Aleksey_Tarasov", "Valentin_Molo", "Evan_Corleone", "Misha_Samyrai", "Kevin_Spencor", "Brain_Spencor", "Sergu_Sibov", "Jimmy_Saints", "Saibor_Ackerman", "Michael_Fersize", "Barbie_Bell", "Boulevard_Bledov", "Bogdan_Mishenko", "Ashton_Edwards", "Santiago_Belucci", "Chris_Ludvig", "Jack_Lingard", "Thomas_Rinner"}
 
 function e.onPlayerStreamIn(id, _, model)
   if cfg.global.sdelaitak ~= nil then
@@ -1749,7 +1754,7 @@ function rgetm()
 			number1, number2, monikQuantNum[i] = string.match(monikQuant[i],"(%d+)[^%d]+(%d+)[^%d]+(%d+)")
 			monikQuantNum[i] = monikQuantNum[i]/1000
 		end
-    sampSendChat("/r "..pInfo.Tag..": Мониторинг: LSPD - "..monikQuantNum[1].."|SFPD: "..monikQuantNum[2].."|LVPD: "..monikQuantNum[3].."|SFa: "..monikQuantNum[4].."|FBI: "..monikQuantNum[6].."")
+    sampSendChat("/r "..pInfo.Tag.." Мониторинг: LSPD - "..monikQuantNum[1].."|SFPD: "..monikQuantNum[2].."|LVPD: "..monikQuantNum[3].."|SFa: "..monikQuantNum[4].."|FBI: "..monikQuantNum[6].."")
     thisScript():reload()
   else
     sampAddChatMessage("[SOBR tools]: Ошибка. Вы находитесь слишком далеко от бункера.", 0xFFB22222)
