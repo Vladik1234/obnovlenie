@@ -163,9 +163,6 @@ function main()
       end
     end)
 
-    local X, Y, Z = getCharCoordinates(PLAYER_PED)
-    if 
-
     lua_thread.create(function()  
       while true do
         wait(0)
