@@ -116,6 +116,15 @@ function main()
       end
     end
 
+    while true do wait(0)
+      if rabbota == true then
+        if testCheat("Y") then 
+          sampSendChat("/r "..pInfo.Tag.." Здравия желаю армия.")
+          rabbota = false
+        end
+      end
+    end
+
     sampRegisterChatCommand("fustav", cmd_imgui)
 
     sampRegisterChatCommand("rgetm", rgetm)
@@ -1687,6 +1696,15 @@ function e.onServerMessage(color, text)
 		local id = text:match("%d+")
 		sampAddChatMessage(text, sampGetPlayerColor(id))
 		return false
+  end
+  if (text:find("Рабочий день начат")) and color == 1687547391 then
+    rabbota = true
+    lua_thread.create(function()
+      wait(500)
+      sampAddChatMessage("[SOBR tools]: Нажмите 'Y' в течении 5 секунд чтобы поздороваться с товарищами по службе.", 0x33AAFFFF)
+      wait(5000)
+      if rabbota then rabbota = false end
+    end)
   end
 end
 
