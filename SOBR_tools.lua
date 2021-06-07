@@ -116,15 +116,6 @@ function main()
       end
     end
 
-    while true do wait(0)
-      if rabbota == true then
-        if testCheat("Y") then 
-          sampSendChat("/r "..pInfo.Tag.." Здравия желаю армия.")
-          rabbota = false
-        end
-      end
-    end
-
     sampRegisterChatCommand("fustav", cmd_imgui)
 
     sampRegisterChatCommand("rgetm", rgetm)
@@ -241,6 +232,12 @@ function main()
       if isKeyJustPressed(VK_C) and isKeyJustPressed(VK_MULTIPLY) then getNearestPlayerId1() end
       if wasKeyPressed(VK_MENU) then abp() end
       nyamnyam()
+      if rabbota == true then
+        if testCheat("Y") then 
+          sampSendChat("/r "..pInfo.Tag.." Здравия желаю армия.")
+          rabbota = false
+        end
+      end
     end
 end
 
