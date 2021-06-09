@@ -23,8 +23,6 @@ local getBonePosition = ffi.cast("int (__thiscall*)(void*, float*, int, bool)", 
 local tData = {}
 local nData = {}
 local bronya = false
-local monitor = false
-local rabbota = false
 Target = {}
 
 encoding.default = "CP1251"
