@@ -1027,7 +1027,7 @@ function refreshDialog()
         {
           title = "{808080}Позывные напарников{FFFFFF}",
           onclick = function()
-            sampShowDialog(1298, "{808080}[SOBR tools] Позывные{FFFFFF}", "{808080}Leo Florenso - Пена\nSergu Sibov - Аристократ\nMisha Samyrai - Жит\nValentin Molo - Крот\nBrain Spencor - Волк\nKevin Spencor - Гром\nAleksey Tarasov - Зверь\nMichael Fersize - Изгой\nBarbie Bell - Ангел\nJimmy Saints - Маккуин\nBoulevard Bledov - Бизон\nSaibor Ackerman - Молния\nHieden Bell - Андрюха\nBogdan Mishenko - Сокол\nAshton Edwards - Ашот\nSantiago Belucci - Ястреб\nChris Ludvig - Янки\nJack Lingard - Барон{FFFFFF}", "Ок", "Не ок", 0)
+            sampShowDialog(1298, "{808080}[SOBR tools] Позывные{FFFFFF}", "{808080}Leo Florenso - Шынгыс\nSergu Sibov - Аристократ\nMisha Samyrai - Жит\nValentin Molo - Крот\nBrain Spencor - Волк\nKevin Spencor - Гром\nAleksey Tarasov - Зверь\nMichael Fersize - Изгой\nBarbie Bell - Ангел\nJimmy Saints - Маккуин\nBoulevard Bledov - Бизон\nSaibor Ackerman - Молния\nHieden Bell - Андрюха\nBogdan Mishenko - Сокол\nAshton Edwards - Ашот\nSantiago Belucci - Ястреб\nChris Ludvig - Янки\nJack Lingard - Барон{FFFFFF}", "Ок", "Не ок", 0)
           end
         },
         {
@@ -1230,7 +1230,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Angel Galante", "Вампир"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas Rinner", "Карахман")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Шынгыс"):gsub("Angel Galante", "Вампир"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas Rinner", "Карахман")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1253,7 +1253,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Angel Galante", "Вампир"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas Rinner", "Карахман")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Шынгыс"):gsub("Angel Galante", "Вампир"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas Rinner", "Карахман")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1276,7 +1276,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Angel Galante", "Вампир"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas Rinner", "Карахман")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Шынгыс"):gsub("Angel Galante", "Вампир"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas Rinner", "Карахман")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1299,7 +1299,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Angel Galante", "Вампир"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas Rinner", "Карахман")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Шынгыс"):gsub("Angel Galante", "Вампир"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas Rinner", "Карахман")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1322,7 +1322,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Angel Galante", "Вампир"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas Rinner", "Карахман")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Шынгыс"):gsub("Angel Galante", "Вампир"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas Rinner", "Карахман")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1345,7 +1345,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Angel Galante", "Вампир"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas Rinner", "Карахман")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Шынгыс"):gsub("Angel Galante", "Вампир"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas Rinner", "Карахман")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1368,7 +1368,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Angel Galante", "Вампир"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas Rinner", "Карахман")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Шынгыс"):gsub("Angel Galante", "Вампир"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas Rinner", "Карахман")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1391,7 +1391,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Angel Galante", "Вампир"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas Rinner", "Карахман")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Шынгыс"):gsub("Angel Galante", "Вампир"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas Rinner", "Карахман")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1414,7 +1414,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Angel Galante", "Вампир"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas Rinner", "Карахман")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Шынгыс"):gsub("Angel Galante", "Вампир"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas Rinner", "Карахман")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1437,7 +1437,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Angel Galante", "Вампир"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas Rinner", "Карахман")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Шынгыс"):gsub("Angel Galante", "Вампир"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas Rinner", "Карахман")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1459,7 +1459,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Пена"):gsub("Angel Galante", "Вампир"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas Rinner", "Карахман")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Шынгыс"):gsub("Angel Galante", "Вампир"):gsub("Valentin Molo", "Крот"):gsub("Aleksey Tarasov", "Зверь"):gsub("Sergu Sibov", "Аристократ"):gsub("Misha Samyrai", "Жит"):gsub("Jimmy Saints", "Маккуин"):gsub("Saibor Ackerman", "Молния"):gsub("Evan Corleone", "Левиафан"):gsub("Bogdan Mishenko", "Сокол"):gsub("Brain Spencor", "Волк"):gsub("Boulevard Bledov", "Бизон"):gsub("Ashton Edwards", "Ашот"):gsub("Barbie Bell", "Ангел"):gsub("Chris Ludvig", "Янки"):gsub("Santiago Belucci", "Ястреб"):gsub("Jack Lingard", "Барон"):gsub("Kevin Spencor", "Гром"):gsub("Thomas Rinner", "Карахман")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1510,7 +1510,7 @@ function Target:New(text)
   return obj
 end
 
-tData["Leo_Florenso"] = Target:New("{000000}Пена{FFFFFF}")
+tData["Leo_Florenso"] = Target:New("{000000}Шынгыс{FFFFFF}")
 tData["Angel_Galante"] = Target:New("{000000}Вампир{FFFFFF}")
 tData["Aleksey_Tarasov"] = Target:New("{000000}Зверь{FFFFFF}")
 tData["Valentin_Molo"] = Target:New("{000000}Крот{FFFFFF}")
@@ -1709,7 +1709,7 @@ function e.onServerMessage(color, text)
       if rabbota then rabbota = false end
     end)
   end
-  if (text:find("Огласите мониторинг")) or (text:find("Запрашиваю мониторинг")) or (text:find("Мониторинг пожалуйста")) then
+  if (text:find("Огласите мониторинг")) or (text:find("Запрашиваю мониторинг")) or (text:find("Мониторинг пожалуйста")) or (text:find("Обьявите мониторинг"))or (text:find("Дайте мониторинг")) then
     if color == -1920073984 then
       monitor = true
       lua_thread.create(function()
