@@ -1709,7 +1709,7 @@ function e.onServerMessage(color, text)
       if rabbota then rabbota = false end
     end)
   end
-  if (text:find("Огласите мониторинг")) or (text:find("Запрашиваю мониторинг")) then
+  if (text:find("Огласите мониторинг")) or (text:find("Запрашиваю мониторинг")) or (text:find("Мониторинг пожалуйста")) then
     if color == -1920073984 then
       monitor = true
       lua_thread.create(function()
