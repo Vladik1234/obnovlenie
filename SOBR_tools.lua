@@ -23,6 +23,8 @@ local getBonePosition = ffi.cast("int (__thiscall*)(void*, float*, int, bool)", 
 local tData = {}
 local nData = {}
 local bronya = false
+local monitor = false
+local rabbota = false
 Target = {}
 
 encoding.default = "CP1251"
@@ -236,6 +238,12 @@ function main()
         if testCheat("Y") then 
           sampSendChat("/r "..pInfo.Tag.." Здравия желаю армия.")
           rabbota = false
+        end
+      end
+      if monitor == true then
+        if testCheat("Y") then 
+          rgetm()
+          monitor = false
         end
       end
     end
@@ -1702,6 +1710,17 @@ function e.onServerMessage(color, text)
       wait(5000)
       if rabbota then rabbota = false end
     end)
+  end
+  if (text:find("Огласите мониторинг")) or (text:find("Запрашиваю мониторинг")) then
+    if color == -1920073984 then
+      monitor = true
+      lua_thread.create(function()
+        wait(500)
+        sampAddChatMessage("[SOBR tools]: Нажмите 'Y' в течении 5 секунд чтобы огласить мониторинг.", 0x33AAFFFF)
+        wait(5000)
+        if monitor then monitor = false end
+      end)
+    end
   end
 end
 
