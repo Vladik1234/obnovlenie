@@ -33,9 +33,9 @@ local main_window_state = imgui.ImBool(false)
 local text_buffer = imgui.ImBuffer(256)
 
 local pInfo = {
-  Tag = "Íå óêàçàí.",
-  cvetclist = "Íå óêàçàí.",
-  lwait = "Íå óêàçàíà.",
+  Tag = "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­.",
+  cvetclist = "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­.",
+  lwait = "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­Ã .",
 }
 
 local monikQuant = {}
@@ -47,7 +47,7 @@ local settings = {}
 script_author("Tarasov")
 script_name("SOBR tools")
 script_version_number(1)
-script_description("Ñêğèïò äëÿ ÑÎÁĞ")
+script_description("Ã‘ÃªÃ°Ã¨Ã¯Ã² Ã¤Ã«Ã¿ Ã‘ÃÃÃ")
 
 local cfg = config.load(nil, 'SOBR tools/config.ini')
 local SSSDialog = {}
@@ -68,9 +68,9 @@ function main()
   if cfg == nil then
     local settings = {
       global = {
-        Tag = "Íå óêàçàí.",
-        cvetclist = "Íå óêàçàí.",
-        lwait = "Íå óêàçàíà.",
+        Tag = "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­.",
+        cvetclist = "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­.",
+        lwait = "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­Ã .",
       }
     }
     config.save(settings, 'SOBR tools/config.ini')
@@ -94,9 +94,9 @@ function main()
     local _, pID = sampGetPlayerIdByCharHandle(PLAYER_PED)
     name = sampGetPlayerNickname(pID)
     if name == "Weaver_Tail" or name == "Charles_Montenegro" or name == "Tim_Vedenkin" or name == "Leo_Florenso" or name == "Misha_Samyrai" or name == "Angel_Galante" or name == "Aleksey_Tarasov" or name == "Valentin_Molo" or name == "Evan_Corleone" or name == "Kevin_Spencor" or name == "Brain_Spencor" or name == "Sergu_Sibov" or name == "Jimmy_Saints" or name == "Saibor_Ackerman" or name == "Christopher_Shaffer" or name == "Barbie_Bell" or name == "Boulevard_Bledov" or name == "Hieden_Bell" or name == "Bogdan_Mishenko" or name == "Ashton_Edwards" or name == "Santiago_Belucci" or name == "Chris_Ludvig" or name == "Jack_Lingard" or name == "Thomas_Rinner" or name == "Aiden_Florestino" or name == "Steven_Green" or name == "Hidan_Bell" then
-      sampAddChatMessage("[SOBR tools]: "..name..", äîñòóï îòêğûò.", 0x33AAFFFF)
+      sampAddChatMessage("[SOBR tools]: "..name..", Ã¤Ã®Ã±Ã²Ã³Ã¯ Ã®Ã²ÃªÃ°Ã»Ã².", 0x33AAFFFF)
     else
-      sampAddChatMessage("[SOBR tools]: "..name..", â äîñòóïå îòêàçàíî.", 0xFFB22222)
+      sampAddChatMessage("[SOBR tools]: "..name..", Ã¢ Ã¤Ã®Ã±Ã²Ã³Ã¯Ã¥ Ã®Ã²ÃªÃ Ã§Ã Ã­Ã®.", 0xFFB22222)
       thisScript():unload()
     end
   end
@@ -130,25 +130,25 @@ function main()
 
     sampRegisterChatCommand("kv", function(param) if (#param > 1) then letter = param:sub(1,1) number = param:match("%d+") kvadrat1(letter, number) else deleteCheckpoint(marker) removeBlip(checkpoint) end end)
  
-    sampRegisterChatCommand("przv",function() if settings.global.priziv == true then sampAddChatMessage("[SOBR tools]: Ğåæèì ïğèçûâà îòêëş÷¸í.", 0xFFB22222) settings.global.priziv = false else sampAddChatMessage("[SOBR tools]: Ğåæèì ïğèçûâà âêëş÷¸í.", 0x33AAFFFF) settings.global.priziv = true end end)
+    sampRegisterChatCommand("przv",function() if settings.global.priziv == true then sampAddChatMessage("[SOBR tools]: ÃÃ¥Ã¦Ã¨Ã¬ Ã¯Ã°Ã¨Ã§Ã»Ã¢Ã  Ã®Ã²ÃªÃ«Ã¾Ã·Â¸Ã­.", 0xFFB22222) settings.global.priziv = false else sampAddChatMessage("[SOBR tools]: ÃÃ¥Ã¦Ã¨Ã¬ Ã¯Ã°Ã¨Ã§Ã»Ã¢Ã  Ã¢ÃªÃ«Ã¾Ã·Â¸Ã­.", 0x33AAFFFF) settings.global.priziv = true end end)
 
-    sampRegisterChatCommand("splayer",function() if settings.global.sdelaitak == true then sampAddChatMessage("[SOBR tools]: Îòîáğàæåíèå â ÷àòå íèêîâ âîåííûõ êîòîğûå ïîÿâèëèñü â çîíå ñòğèìà îòêëş÷åíî.", 0xFFB22222) settings.global.sdelaitak = false else sampAddChatMessage("[SOBR tools]: Îòîáğàæåíèå â ÷àòå íèêîâ âîåííûõ êîòîğûå ïîÿâèëèñü â çîíå ñòğèìà âêëş÷åíî.", 0x33AAFFFF) settings.global.sdelaitak = true end end)
+    sampRegisterChatCommand("splayer",function() if settings.global.sdelaitak == true then sampAddChatMessage("[SOBR tools]: ÃÃ²Ã®Ã¡Ã°Ã Ã¦Ã¥Ã­Ã¨Ã¥ Ã¢ Ã·Ã Ã²Ã¥ Ã­Ã¨ÃªÃ®Ã¢ Ã¢Ã®Ã¥Ã­Ã­Ã»Ãµ ÃªÃ®Ã²Ã®Ã°Ã»Ã¥ Ã¯Ã®Ã¿Ã¢Ã¨Ã«Ã¨Ã±Ã¼ Ã¢ Ã§Ã®Ã­Ã¥ Ã±Ã²Ã°Ã¨Ã¬Ã  Ã®Ã²ÃªÃ«Ã¾Ã·Ã¥Ã­Ã®.", 0xFFB22222) settings.global.sdelaitak = false else sampAddChatMessage("[SOBR tools]: ÃÃ²Ã®Ã¡Ã°Ã Ã¦Ã¥Ã­Ã¨Ã¥ Ã¢ Ã·Ã Ã²Ã¥ Ã­Ã¨ÃªÃ®Ã¢ Ã¢Ã®Ã¥Ã­Ã­Ã»Ãµ ÃªÃ®Ã²Ã®Ã°Ã»Ã¥ Ã¯Ã®Ã¿Ã¢Ã¨Ã«Ã¨Ã±Ã¼ Ã¢ Ã§Ã®Ã­Ã¥ Ã±Ã²Ã°Ã¨Ã¬Ã  Ã¢ÃªÃ«Ã¾Ã·Ã¥Ã­Ã®.", 0x33AAFFFF) settings.global.sdelaitak = true end end)
 
-    sampRegisterChatCommand("pst",function() if settings.global.m_s_t_a_t == true then sampAddChatMessage("[SOBR tools]: Òåïåğü ó âàñ â ñêğèïòå æåíñêèå îòûãğîâêè.", 0xFFB22222) settings.global.m_s_t_a_t = false else  sampAddChatMessage("[SOBR tools]: Òåïåğü ó âàñ â ñêğèïòå ìóæñêèå îòûãğîâêè.", 0x33AAFFFF) settings.global.m_s_t_a_t = true end end)
+    sampRegisterChatCommand("pst",function() if settings.global.m_s_t_a_t == true then sampAddChatMessage("[SOBR tools]: Ã’Ã¥Ã¯Ã¥Ã°Ã¼ Ã³ Ã¢Ã Ã± Ã¢ Ã±ÃªÃ°Ã¨Ã¯Ã²Ã¥ Ã¦Ã¥Ã­Ã±ÃªÃ¨Ã¥ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨.", 0xFFB22222) settings.global.m_s_t_a_t = false else  sampAddChatMessage("[SOBR tools]: Ã’Ã¥Ã¯Ã¥Ã°Ã¼ Ã³ Ã¢Ã Ã± Ã¢ Ã±ÃªÃ°Ã¨Ã¯Ã²Ã¥ Ã¬Ã³Ã¦Ã±ÃªÃ¨Ã¥ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨.", 0x33AAFFFF) settings.global.m_s_t_a_t = true end end)
 
-    sampRegisterChatCommand("ascreen",function() if settings.global.a_u_t_o_screen == true then sampAddChatMessage("[SOBR tools]: Àâòîñêğèí ïîñëå ïıéäåÿ áûë âûêëş÷åí.", 0xFFB22222) settings.global.a_u_t_o_screen = false else sampAddChatMessage("[SOBR tools]: Àâòîñêğèí ïîñëå ïıéäåÿ áûë âêëş÷¸í.", 0x33AAFFFF) settings.global.a_u_t_o_screen = true end end)
+    sampRegisterChatCommand("ascreen",function() if settings.global.a_u_t_o_screen == true then sampAddChatMessage("[SOBR tools]: Ã€Ã¢Ã²Ã®Ã±ÃªÃ°Ã¨Ã­ Ã¯Ã®Ã±Ã«Ã¥ Ã¯Ã½Ã©Ã¤Ã¥Ã¿ Ã¡Ã»Ã« Ã¢Ã»ÃªÃ«Ã¾Ã·Ã¥Ã­.", 0xFFB22222) settings.global.a_u_t_o_screen = false else sampAddChatMessage("[SOBR tools]: Ã€Ã¢Ã²Ã®Ã±ÃªÃ°Ã¨Ã­ Ã¯Ã®Ã±Ã«Ã¥ Ã¯Ã½Ã©Ã¤Ã¥Ã¿ Ã¡Ã»Ã« Ã¢ÃªÃ«Ã¾Ã·Â¸Ã­.", 0x33AAFFFF) settings.global.a_u_t_o_screen = true end end)
 
-    sampRegisterChatCommand("atag",function() if settings.global.a_u_t_o_tag == true then sampAddChatMessage("[SOBR tools]: Àâòîòåã â ÷àò áûë âûêëş÷åí.", 0xFFB22222) settings.global.a_u_t_o_tag = false else sampAddChatMessage("[SOBR tools]: Àâòîòåã â ÷àò áûë âêëş÷åí.", 0x33AAFFFF) settings.global.a_u_t_o_tag = true end end)
+    sampRegisterChatCommand("atag",function() if settings.global.a_u_t_o_tag == true then sampAddChatMessage("[SOBR tools]: Ã€Ã¢Ã²Ã®Ã²Ã¥Ã£ Ã¢ Ã·Ã Ã² Ã¡Ã»Ã« Ã¢Ã»ÃªÃ«Ã¾Ã·Ã¥Ã­.", 0xFFB22222) settings.global.a_u_t_o_tag = false else sampAddChatMessage("[SOBR tools]: Ã€Ã¢Ã²Ã®Ã²Ã¥Ã£ Ã¢ Ã·Ã Ã² Ã¡Ã»Ã« Ã¢ÃªÃ«Ã¾Ã·Ã¥Ã­.", 0x33AAFFFF) settings.global.a_u_t_o_tag = true end end)
 
-    sampRegisterChatCommand("lp",function() if settings.global.k_r_u_t_o == true then sampAddChatMessage("[SOBR tools]: Îòêğûâàíèå àâòî íà êëàâèøó `L` áûëî âûêëş÷åíî.", 0xFFB22222) settings.global.k_r_u_t_o = false else sampAddChatMessage("[SOBR tools]: Îòêğûâàíèå àâòî íà êëàâèøó `L` áûëî âêëş÷åíî.", 0x33AAFFFF) settings.global.k_r_u_t_o = true end end)
+    sampRegisterChatCommand("lp",function() if settings.global.k_r_u_t_o == true then sampAddChatMessage("[SOBR tools]: ÃÃ²ÃªÃ°Ã»Ã¢Ã Ã­Ã¨Ã¥ Ã Ã¢Ã²Ã® Ã­Ã  ÃªÃ«Ã Ã¢Ã¨Ã¸Ã³ `L` Ã¡Ã»Ã«Ã® Ã¢Ã»ÃªÃ«Ã¾Ã·Ã¥Ã­Ã®.", 0xFFB22222) settings.global.k_r_u_t_o = false else sampAddChatMessage("[SOBR tools]: ÃÃ²ÃªÃ°Ã»Ã¢Ã Ã­Ã¨Ã¥ Ã Ã¢Ã²Ã® Ã­Ã  ÃªÃ«Ã Ã¢Ã¨Ã¸Ã³ `L` Ã¡Ã»Ã«Ã® Ã¢ÃªÃ«Ã¾Ã·Ã¥Ã­Ã®.", 0x33AAFFFF) settings.global.k_r_u_t_o = true end end)
 
-    sampRegisterChatCommand("aclist",function() if settings.global.t_se_au_to_clist == true then sampAddChatMessage("[SOBR tools]: Àâòîêëèñò âûêëş÷åí.", 0xFFB22222) settings.global.t_se_au_to_clist = false else sampAddChatMessage("[SOBR tools]: Àâòîêëèñò âêëş÷åí.", 0x33AAFFFF) settings.global.t_se_au_to_clist = true end end)
+    sampRegisterChatCommand("aclist",function() if settings.global.t_se_au_to_clist == true then sampAddChatMessage("[SOBR tools]: Ã€Ã¢Ã²Ã®ÃªÃ«Ã¨Ã±Ã² Ã¢Ã»ÃªÃ«Ã¾Ã·Ã¥Ã­.", 0xFFB22222) settings.global.t_se_au_to_clist = false else sampAddChatMessage("[SOBR tools]: Ã€Ã¢Ã²Ã®ÃªÃ«Ã¨Ã±Ã² Ã¢ÃªÃ«Ã¾Ã·Ã¥Ã­.", 0x33AAFFFF) settings.global.t_se_au_to_clist = true end end)
 
     sampRegisterChatCommand("abp", Settingsabp)
 
     sampRegisterChatCommand("smembers", smembers)
 
-    sampRegisterChatCommand("ñòÿæêè", function() if settings.global.styazhki == true then sampAddChatMessage("[SOBR tools]: Ñòÿæêè âûêëş÷åíû.", 0xFFB22222) settings.global.styazhki = false else sampAddChatMessage("[SOBR tools]: Ñòÿæêè âêëş÷åíû.", 0x33AAFFFF) settings.global.styazhki = true end end)
+    sampRegisterChatCommand("Ã±Ã²Ã¿Ã¦ÃªÃ¨", function() if settings.global.styazhki == true then sampAddChatMessage("[SOBR tools]: Ã‘Ã²Ã¿Ã¦ÃªÃ¨ Ã¢Ã»ÃªÃ«Ã¾Ã·Ã¥Ã­Ã».", 0xFFB22222) settings.global.styazhki = false else sampAddChatMessage("[SOBR tools]: Ã‘Ã²Ã¿Ã¦ÃªÃ¨ Ã¢ÃªÃ«Ã¾Ã·Ã¥Ã­Ã».", 0x33AAFFFF) settings.global.styazhki = true end end)
 
     lua_thread.create(function()  
       while true do
@@ -171,21 +171,21 @@ function main()
           local result, id = sampGetPlayerIdByCharHandle(ped)  
           local name = sampGetPlayerNickname(id):gsub("_", " ")
           if result and settings.global.styazhki == true then 
-            sampAddChatMessage("[SOBR tools]: Ñòàğò îòûãğîâêè. Äëÿ îòìåíû íàæìèòå CTRL+R.", 0x33AAFFFF)
+            sampAddChatMessage("[SOBR tools]: Ã‘Ã²Ã Ã°Ã² Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨. Ã„Ã«Ã¿ Ã®Ã²Ã¬Ã¥Ã­Ã» Ã­Ã Ã¦Ã¬Ã¨Ã²Ã¥ CTRL+R.", 0x33AAFFFF)
             wait(200)
-            sampSendChat("/do Íà ïîÿñå âèñèò ïàğà ñâÿçîê.") 
+            sampSendChat("/do ÃÃ  Ã¯Ã®Ã¿Ã±Ã¥ Ã¢Ã¨Ã±Ã¨Ã² Ã¯Ã Ã°Ã  Ã±Ã¢Ã¿Ã§Ã®Ãª.") 
             wait(settings.global.lwait)
-            sampSendChat("/me ğåçêèì äâèæåíèåì ğóêè íàêèíóë ñòÿæêó íà ÷åëîâåêà")
+            sampSendChat("/me Ã°Ã¥Ã§ÃªÃ¨Ã¬ Ã¤Ã¢Ã¨Ã¦Ã¥Ã­Ã¨Ã¥Ã¬ Ã°Ã³ÃªÃ¨ Ã­Ã ÃªÃ¨Ã­Ã³Ã« Ã±Ã²Ã¿Ã¦ÃªÃ³ Ã­Ã  Ã·Ã¥Ã«Ã®Ã¢Ã¥ÃªÃ ")
             wait(settings.global.lwait)
             sampSendChat("/tie "..id.."")
             wait(settings.global.lwait)
-            sampSendChat("/do "..name.." îáåçäâèæåí.")
+            sampSendChat("/do "..name.." Ã®Ã¡Ã¥Ã§Ã¤Ã¢Ã¨Ã¦Ã¥Ã­.")
             wait(settings.global.lwait)
-            sampSendChat("/me ïğèêğåïèë çàäåğæàííîãî ñòÿæêîé ê ñâîåìó ïîÿñó")
+            sampSendChat("/me Ã¯Ã°Ã¨ÃªÃ°Ã¥Ã¯Ã¨Ã« Ã§Ã Ã¤Ã¥Ã°Ã¦Ã Ã­Ã­Ã®Ã£Ã® Ã±Ã²Ã¿Ã¦ÃªÃ®Ã© Ãª Ã±Ã¢Ã®Ã¥Ã¬Ã³ Ã¯Ã®Ã¿Ã±Ã³")
             wait(settings.global.lwait)
             sampSendChat("/follow "..id.."")
             wait(200)
-            sampAddChatMessage("[SOBR tools]: Êîíåö îòûãğîâêè.", 0x33AAFFFF)
+            sampAddChatMessage("[SOBR tools]: ÃŠÃ®Ã­Ã¥Ã¶ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨.", 0x33AAFFFF)
           end 
         end 
       end
@@ -223,18 +223,18 @@ function main()
       if isKeyJustPressed(VK_SPACE) and sampIsChatInputActive() and settings.global.a_u_t_o_tag == true and sampGetChatInputText() == "/r " then sampSetChatInputText("/r "..pInfo.Tag.." ") end
       if isKeyJustPressed(VK_SPACE) and sampIsChatInputActive() and settings.global.a_u_t_o_tag == true and sampGetChatInputText() == "/R " then sampSetChatInputText("/R "..pInfo.Tag.." ") end
       if testCheat("PP") then submenus_show(SSSDialog, "{808080}SOBR tools by Tarasov{FFFFFF}") end
-      if sampIsChatInputActive() and sampGetChatInputText() == "/äîêëàäû" then sampSetChatInputText("") submenus_show(RaciaDialog, "{808080}Äîêëàäû{FFFFFF}") end
+      if sampIsChatInputActive() and sampGetChatInputText() == "/Ã¤Ã®ÃªÃ«Ã Ã¤Ã»" then sampSetChatInputText("") submenus_show(RaciaDialog, "{808080}Ã„Ã®ÃªÃ«Ã Ã¤Ã»{FFFFFF}") end
       if isKeyJustPressed(VK_L) and not sampIsChatInputActive() and not sampIsDialogActive() and not isPauseMenuActive() and not isSampfuncsConsoleActive() and settings.global.k_r_u_t_o == true then sampSendChat("/lock") end
-      if priziv == true and testCheat("Z") then submenus_show(LVDialog, "{00FA9A}ÏĞÈÇÛÂ{FFFFFF}") end
+      if priziv == true and testCheat("Z") then submenus_show(LVDialog, "{00FA9A}ÃÃÃˆÃ‡Ã›Ã‚{FFFFFF}") end
       if main_window_state.v == false then imgui.Process = false end
-      if sampIsChatInputActive() and sampGetChatInputText() == "/cfaq" then sampSetChatInputText("") sampShowDialog(1285, "{808080}[SOBR tools] Êîìàíäû{FFFFFF}", "{808080}/aclist - âûêëş÷èòü/âêëş÷èòü àâòîêëèñò\n/lp - âûêëş÷èòü/âêëş÷èòü îòêğûâàíèå àâòî íà êëàâèøó `L`\n/atag - âûêëş÷èòü/âêëş÷èòü àâòî-òåã\n/ascreen - âûêëş÷èòü/âêëş÷èòü àâòî-ñêğèí ïîñëå ïıéäåÿ\n/sw, /st - ñìåíèòü èãğîâîå âğåìÿ/ïîãîäó\n/cc - î÷èñòèòü ÷àò\n/kv - ïîñòàâèòü ìåòêó íà êâàäğàò\n/getm - ïîêàçàòü ñåáå ìîíèòîğèíã, /rgetm - â ğàöèş\n/przv - âêëş÷èòü/âûêëş÷èòü ğåæèì ïğèçûâà\n/abp - âûêëş÷èòü/âêëş÷èòü àâòî-ÁÏ íà `alt`\n/hphud - âêëş÷èòü/îòêëş÷èòü õï õóä\n/abp - âêëş÷èòü íàñòğîéêè àâòî-ÁÏ\n/splayer - âêëş÷èòü/âûêëş÷èòü îòîáğàæåíèå â ÷àòå íèêîâ âîåííûõ êîòîğûå ïîÿâèëèñü â çîíå ñòğèìà\n/fustav - ïîñìîòğåòü ÔÏ è óñòàâ\n/smembers - ïîñìîòğåòü îíëàéí îòğÿäà{FFFFFF}", "Ëàäíî", "Ïğîõëàäíî", 0) end
+      if sampIsChatInputActive() and sampGetChatInputText() == "/cfaq" then sampSetChatInputText("") sampShowDialog(1285, "{808080}[SOBR tools] ÃŠÃ®Ã¬Ã Ã­Ã¤Ã»{FFFFFF}", "{808080}/aclist - Ã¢Ã»ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼/Ã¢ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼ Ã Ã¢Ã²Ã®ÃªÃ«Ã¨Ã±Ã²\n/lp - Ã¢Ã»ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼/Ã¢ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼ Ã®Ã²ÃªÃ°Ã»Ã¢Ã Ã­Ã¨Ã¥ Ã Ã¢Ã²Ã® Ã­Ã  ÃªÃ«Ã Ã¢Ã¨Ã¸Ã³ `L`\n/atag - Ã¢Ã»ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼/Ã¢ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼ Ã Ã¢Ã²Ã®-Ã²Ã¥Ã£\n/ascreen - Ã¢Ã»ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼/Ã¢ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼ Ã Ã¢Ã²Ã®-Ã±ÃªÃ°Ã¨Ã­ Ã¯Ã®Ã±Ã«Ã¥ Ã¯Ã½Ã©Ã¤Ã¥Ã¿\n/sw, /st - Ã±Ã¬Ã¥Ã­Ã¨Ã²Ã¼ Ã¨Ã£Ã°Ã®Ã¢Ã®Ã¥ Ã¢Ã°Ã¥Ã¬Ã¿/Ã¯Ã®Ã£Ã®Ã¤Ã³\n/cc - Ã®Ã·Ã¨Ã±Ã²Ã¨Ã²Ã¼ Ã·Ã Ã²\n/kv - Ã¯Ã®Ã±Ã²Ã Ã¢Ã¨Ã²Ã¼ Ã¬Ã¥Ã²ÃªÃ³ Ã­Ã  ÃªÃ¢Ã Ã¤Ã°Ã Ã²\n/getm - Ã¯Ã®ÃªÃ Ã§Ã Ã²Ã¼ Ã±Ã¥Ã¡Ã¥ Ã¬Ã®Ã­Ã¨Ã²Ã®Ã°Ã¨Ã­Ã£, /rgetm - Ã¢ Ã°Ã Ã¶Ã¨Ã¾\n/przv - Ã¢ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼/Ã¢Ã»ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼ Ã°Ã¥Ã¦Ã¨Ã¬ Ã¯Ã°Ã¨Ã§Ã»Ã¢Ã \n/abp - Ã¢Ã»ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼/Ã¢ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼ Ã Ã¢Ã²Ã®-ÃÃ Ã­Ã  `alt`\n/hphud - Ã¢ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼/Ã®Ã²ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼ ÃµÃ¯ ÃµÃ³Ã¤\n/abp - Ã¢ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼ Ã­Ã Ã±Ã²Ã°Ã®Ã©ÃªÃ¨ Ã Ã¢Ã²Ã®-ÃÃ\n/splayer - Ã¢ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼/Ã¢Ã»ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼ Ã®Ã²Ã®Ã¡Ã°Ã Ã¦Ã¥Ã­Ã¨Ã¥ Ã¢ Ã·Ã Ã²Ã¥ Ã­Ã¨ÃªÃ®Ã¢ Ã¢Ã®Ã¥Ã­Ã­Ã»Ãµ ÃªÃ®Ã²Ã®Ã°Ã»Ã¥ Ã¯Ã®Ã¿Ã¢Ã¨Ã«Ã¨Ã±Ã¼ Ã¢ Ã§Ã®Ã­Ã¥ Ã±Ã²Ã°Ã¨Ã¬Ã \n/fustav - Ã¯Ã®Ã±Ã¬Ã®Ã²Ã°Ã¥Ã²Ã¼ Ã”Ã Ã¨ Ã³Ã±Ã²Ã Ã¢\n/smembers - Ã¯Ã®Ã±Ã¬Ã®Ã²Ã°Ã¥Ã²Ã¼ Ã®Ã­Ã«Ã Ã©Ã­ Ã®Ã²Ã°Ã¿Ã¤Ã {FFFFFF}", "Ã‹Ã Ã¤Ã­Ã®", "ÃÃ°Ã®ÃµÃ«Ã Ã¤Ã­Ã®", 0) end
       if testCheat("JJJJJ") then getNearestPlayerId() end
       if isKeyJustPressed(VK_C) and isKeyJustPressed(VK_MULTIPLY) then getNearestPlayerId1() end
       if wasKeyPressed(VK_MENU) then abp() end
       nyamnyam()
       if rabbota == true then
         if testCheat("Y") then 
-          sampSendChat("/r "..pInfo.Tag.." Çäğàâèÿ æåëàş àğìèÿ.")
+          sampSendChat("/r "..pInfo.Tag.." Ã‡Ã¤Ã°Ã Ã¢Ã¨Ã¿ Ã¦Ã¥Ã«Ã Ã¾ Ã Ã°Ã¬Ã¨Ã¿.")
           rabbota = false
         end
       end
@@ -251,355 +251,355 @@ function refreshDialog()
   SSSDialog = {
   
     {
-      title = "{808080}Çàïğîñèòü ıâàêóàöèş{FFFFFF}",
+      title = "{808080}Ã‡Ã Ã¯Ã°Ã®Ã±Ã¨Ã²Ã¼ Ã½Ã¢Ã ÃªÃ³Ã Ã¶Ã¨Ã¾{FFFFFF}",
       onclick = function()
-        sampSendChat("/r "..pInfo.Tag.." Çàïğàøèâàş ıâàêóàöèş â êâàäğàò "..kvadrat())
+        sampSendChat("/r "..pInfo.Tag.." Ã‡Ã Ã¯Ã°Ã Ã¸Ã¨Ã¢Ã Ã¾ Ã½Ã¢Ã ÃªÃ³Ã Ã¶Ã¨Ã¾ Ã¢ ÃªÃ¢Ã Ã¤Ã°Ã Ã² "..kvadrat())
       end
     },
     {
-      title = "{808080}Íàäåòü ìàñêó{FFFFFF}",
+      title = "{808080}ÃÃ Ã¤Ã¥Ã²Ã¼ Ã¬Ã Ã±ÃªÃ³{FFFFFF}",
       onclick = function()
         if m_s_t_a_t == true then
-            sampSendChat("/me äîñòàë ìàñêó èç êàğìàíà è íàäåë íà ëèöî")
+            sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã« Ã¬Ã Ã±ÃªÃ³ Ã¨Ã§ ÃªÃ Ã°Ã¬Ã Ã­Ã  Ã¨ Ã­Ã Ã¤Ã¥Ã« Ã­Ã  Ã«Ã¨Ã¶Ã®")
             wait(1200)
             sampSendChat("/mask")
             wait(1200)
             sampSendChat("/clist 0")
             wait(1200)
-            sampSendChat("/do Íà ëèöå ìàñêà. Ëèöà íå âèäíî. Ôîğìà áåç íàøèâîê è ïîãîí.")
+            sampSendChat("/do ÃÃ  Ã«Ã¨Ã¶Ã¥ Ã¬Ã Ã±ÃªÃ . Ã‹Ã¨Ã¶Ã  Ã­Ã¥ Ã¢Ã¨Ã¤Ã­Ã®. Ã”Ã®Ã°Ã¬Ã  Ã¡Ã¥Ã§ Ã­Ã Ã¸Ã¨Ã¢Ã®Ãª Ã¨ Ã¯Ã®Ã£Ã®Ã­.")
         else
-            sampSendChat("/me äîñòàëà ìàñêó èç êàğìàíà è íàäåëà íà ëèöî")
+            sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã«Ã  Ã¬Ã Ã±ÃªÃ³ Ã¨Ã§ ÃªÃ Ã°Ã¬Ã Ã­Ã  Ã¨ Ã­Ã Ã¤Ã¥Ã«Ã  Ã­Ã  Ã«Ã¨Ã¶Ã®")
             wait(1200)
             sampSendChat("/mask")
             wait(1200)
             sampSendChat("/clist 0")
             wait(1200)
-            sampSendChat("/do Íà ëèöå ìàñêà. Ëèöà íå âèäíî. Ôîğìà áåç íàøèâîê è ïîãîí.")
+            sampSendChat("/do ÃÃ  Ã«Ã¨Ã¶Ã¥ Ã¬Ã Ã±ÃªÃ . Ã‹Ã¨Ã¶Ã  Ã­Ã¥ Ã¢Ã¨Ã¤Ã­Ã®. Ã”Ã®Ã°Ã¬Ã  Ã¡Ã¥Ã§ Ã­Ã Ã¸Ã¨Ã¢Ã®Ãª Ã¨ Ã¯Ã®Ã£Ã®Ã­.")
         end
       end
     },
     {
-      title = "{808080}Îòûãğîâêè{FFFFFF}",
+      title = "{808080}ÃÃ²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨{FFFFFF}",
       submenu = 
       {
-        title = "{808080}Îòûãğîâêè{FFFFFF}",
+        title = "{808080}ÃÃ²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨{FFFFFF}",
         {
-          title = "{808080}Ğàçìèíèğîâàíèå{FFFFFF}",
+          title = "{808080}ÃÃ Ã§Ã¬Ã¨Ã­Ã¨Ã°Ã®Ã¢Ã Ã­Ã¨Ã¥{FFFFFF}",
           submenu = 
           {
-            title = "{808080}Âûáåğèòå îòûãğîâêó{FFFFFF}",
+            title = "{808080}Ã‚Ã»Ã¡Ã¥Ã°Ã¨Ã²Ã¥ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ³{FFFFFF}",
             {
-              title = "{808080}Ğàçìèíèğîâàíèå âçğûâ÷àòêè ñ ÷àñîâûì ìåõàíèçìîì{FFFFFF}",
+              title = "{808080}ÃÃ Ã§Ã¬Ã¨Ã­Ã¨Ã°Ã®Ã¢Ã Ã­Ã¨Ã¥ Ã¢Ã§Ã°Ã»Ã¢Ã·Ã Ã²ÃªÃ¨ Ã± Ã·Ã Ã±Ã®Ã¢Ã»Ã¬ Ã¬Ã¥ÃµÃ Ã­Ã¨Ã§Ã¬Ã®Ã¬{FFFFFF}",
               onclick = function()
-                if settings.global.lwait ~= "Íå óêàçàíà." and settings.global.lwait ~= "Íå óêàçàíà" then
+                if settings.global.lwait ~= "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­Ã ." and settings.global.lwait ~= "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­Ã " then
                   if settings.global.m_s_t_a_t == true then
-                    sampAddChatMessage("[SOBR tools]: Ñòàğò îòûãğîâêè. Äëÿ îòìåíû íàæìèòå CTRL+R.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: Ã‘Ã²Ã Ã°Ã² Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨. Ã„Ã«Ã¿ Ã®Ã²Ã¬Ã¥Ã­Ã» Ã­Ã Ã¦Ã¬Ã¨Ã²Ã¥ CTRL+R.", 0x33AAFFFF)
                     wait(200)
-                    sampSendChat("/me äîñòàë íàáîğ ñàïåğà")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã« Ã­Ã Ã¡Ã®Ã° Ã±Ã Ã¯Ã¥Ã°Ã ")
                     wait(settings.global.lwait)
-                    sampSendChat("/me îïğåäåëèë òèï âçğûâíîãî óñòğîéñòâà")
+                    sampSendChat("/me Ã®Ã¯Ã°Ã¥Ã¤Ã¥Ã«Ã¨Ã« Ã²Ã¨Ã¯ Ã¢Ã§Ã°Ã»Ã¢Ã­Ã®Ã£Ã® Ã³Ã±Ã²Ã°Ã®Ã©Ã±Ã²Ã¢Ã ")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Âçğûâ÷àòêà ñ ÷àñîâûì ìåõàíèçìîì.")
+                    sampSendChat("/do Ã‚Ã§Ã°Ã»Ã¢Ã·Ã Ã²ÃªÃ  Ã± Ã·Ã Ã±Ã®Ã¢Ã»Ã¬ Ã¬Ã¥ÃµÃ Ã­Ã¨Ã§Ã¬Ã®Ã¬.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äîñòàë îòâåğòêó")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã« Ã®Ã²Ã¢Ã¥Ã°Ã²ÃªÃ³")
                     wait(settings.global.lwait)
-                    sampSendChat("/me àêêóğàòíî îòêğó÷èâàåò áîëòû íà êîğïóñå óñòğîéñòâà")
+                    sampSendChat("/me Ã ÃªÃªÃ³Ã°Ã Ã²Ã­Ã® Ã®Ã²ÃªÃ°Ã³Ã·Ã¨Ã¢Ã Ã¥Ã² Ã¡Ã®Ã«Ã²Ã» Ã­Ã  ÃªÃ®Ã°Ã¯Ã³Ã±Ã¥ Ã³Ã±Ã²Ã°Ã®Ã©Ã±Ã²Ã¢Ã ")
                     wait(settings.global.lwait)
-                    sampSendChat("/me îáíàğóæèë â ìåõàíèçìå íåñêîëüêî ïğîâîäîâ")
+                    sampSendChat("/me Ã®Ã¡Ã­Ã Ã°Ã³Ã¦Ã¨Ã« Ã¢ Ã¬Ã¥ÃµÃ Ã­Ã¨Ã§Ã¬Ã¥ Ã­Ã¥Ã±ÃªÃ®Ã«Ã¼ÃªÃ® Ã¯Ã°Ã®Ã¢Ã®Ã¤Ã®Ã¢")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äîñòàë êóñà÷êè èç ñàïåğñêîãî íàáîğà")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã« ÃªÃ³Ã±Ã Ã·ÃªÃ¨ Ã¨Ã§ Ã±Ã Ã¯Ã¥Ã°Ã±ÃªÃ®Ã£Ã® Ã­Ã Ã¡Ã®Ã°Ã ")
                     wait(settings.global.lwait)
-                    sampSendChat("/me âçÿë ñèíèé ïğîâîä â ğóêè")
+                    sampSendChat("/me Ã¢Ã§Ã¿Ã« Ã±Ã¨Ã­Ã¨Ã© Ã¯Ã°Ã®Ã¢Ã®Ã¤ Ã¢ Ã°Ã³ÃªÃ¨")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ñ ïîìîùüş êóñà÷åê îãîëèë ïğîâîäà")
+                    sampSendChat("/me Ã± Ã¯Ã®Ã¬Ã®Ã¹Ã¼Ã¾ ÃªÃ³Ã±Ã Ã·Ã¥Ãª Ã®Ã£Ã®Ã«Ã¨Ã« Ã¯Ã°Ã®Ã¢Ã®Ã¤Ã ")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äîñòàë èíäèêàòîğíóş îòâåğòêó")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã« Ã¨Ã­Ã¤Ã¨ÃªÃ Ã²Ã®Ã°Ã­Ã³Ã¾ Ã®Ã²Ã¢Ã¥Ã°Ã²ÃªÃ³")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïğèëîæèë îòâåğòêó ê îãîëåííîìó ïğîâîäó")
+                    sampSendChat("/me Ã¯Ã°Ã¨Ã«Ã®Ã¦Ã¨Ã« Ã®Ã²Ã¢Ã¥Ã°Ã²ÃªÃ³ Ãª Ã®Ã£Ã®Ã«Ã¥Ã­Ã­Ã®Ã¬Ã³ Ã¯Ã°Ã®Ã¢Ã®Ã¤Ã³")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Ñâåòîäèîä â îòâåğòêå çàãîğåëñÿ.")
+                    sampSendChat("/do Ã‘Ã¢Ã¥Ã²Ã®Ã¤Ã¨Ã®Ã¤ Ã¢ Ã®Ã²Ã¢Ã¥Ã°Ã²ÃªÃ¥ Ã§Ã Ã£Ã®Ã°Ã¥Ã«Ã±Ã¿.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me âçÿë â ğóêè êóñà÷êè")
+                    sampSendChat("/me Ã¢Ã§Ã¿Ã« Ã¢ Ã°Ã³ÃªÃ¨ ÃªÃ³Ã±Ã Ã·ÃªÃ¨")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïåğåğåçàë ïğîâîä")
+                    sampSendChat("/me Ã¯Ã¥Ã°Ã¥Ã°Ã¥Ã§Ã Ã« Ã¯Ã°Ã®Ã¢Ã®Ã¤")
                     wait(settings.global.lwait)
-                    sampSendChat("/me Òàéìåğ îñòàíîâëåí.")
+                    sampSendChat("/me Ã’Ã Ã©Ã¬Ã¥Ã° Ã®Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me îòñîåäåíèë äåòàíàòîğ")
+                    sampSendChat("/me Ã®Ã²Ã±Ã®Ã¥Ã¤Ã¥Ã­Ã¨Ã« Ã¤Ã¥Ã²Ã Ã­Ã Ã²Ã®Ã°")
                     wait(settings.global.lwait)
-                    sampSendChat("/me âçÿë áğîíèğîâàííûé êåéñ")
+                    sampSendChat("/me Ã¢Ã§Ã¿Ã« Ã¡Ã°Ã®Ã­Ã¨Ã°Ã®Ã¢Ã Ã­Ã­Ã»Ã© ÃªÃ¥Ã©Ã±")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïîëîæèë âçğûâ÷àòêó â êåéñ")
+                    sampSendChat("/me Ã¯Ã®Ã«Ã®Ã¦Ã¨Ã« Ã¢Ã§Ã°Ã»Ã¢Ã·Ã Ã²ÃªÃ³ Ã¢ ÃªÃ¥Ã©Ã±")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïîëîæèë âñå èíñòğóìåíòû â íàáîğ ñàïåğà")
+                    sampSendChat("/me Ã¯Ã®Ã«Ã®Ã¦Ã¨Ã« Ã¢Ã±Ã¥ Ã¨Ã­Ã±Ã²Ã°Ã³Ã¬Ã¥Ã­Ã²Ã» Ã¢ Ã­Ã Ã¡Ã®Ã° Ã±Ã Ã¯Ã¥Ã°Ã ")
                     wait(200)
-                    sampAddChatMessage("[SOBR tools]: Êîíåö îòûãğîâêè.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: ÃŠÃ®Ã­Ã¥Ã¶ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨.", 0x33AAFFFF)
                   else
-                    sampAddChatMessage("[SOBR tools]: Ñòàğò îòûãğîâêè. Äëÿ îòìåíû íàæìèòå CTRL+R.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: Ã‘Ã²Ã Ã°Ã² Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨. Ã„Ã«Ã¿ Ã®Ã²Ã¬Ã¥Ã­Ã» Ã­Ã Ã¦Ã¬Ã¨Ã²Ã¥ CTRL+R.", 0x33AAFFFF)
                     wait(200)
-                    sampSendChat("/me äîñòàëà íàáîğ ñàïåğà")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã«Ã  Ã­Ã Ã¡Ã®Ã° Ã±Ã Ã¯Ã¥Ã°Ã ")
                     wait(settings.global.lwait)
-                    sampSendChat("/me îïğåäåëèëà òèï âçğûâíîãî óñòğîéñòâà")
+                    sampSendChat("/me Ã®Ã¯Ã°Ã¥Ã¤Ã¥Ã«Ã¨Ã«Ã  Ã²Ã¨Ã¯ Ã¢Ã§Ã°Ã»Ã¢Ã­Ã®Ã£Ã® Ã³Ã±Ã²Ã°Ã®Ã©Ã±Ã²Ã¢Ã ")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Âçğûâ÷àòêà ñ ÷àñîâûì ìåõàíèçìîì.")
+                    sampSendChat("/do Ã‚Ã§Ã°Ã»Ã¢Ã·Ã Ã²ÃªÃ  Ã± Ã·Ã Ã±Ã®Ã¢Ã»Ã¬ Ã¬Ã¥ÃµÃ Ã­Ã¨Ã§Ã¬Ã®Ã¬.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äîñòàëà îòâåğòêó")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã«Ã  Ã®Ã²Ã¢Ã¥Ã°Ã²ÃªÃ³")
                     wait(settings.global.lwait)
-                    sampSendChat("/me àêêóğàòíî îòêğó÷èâàåò áîëòû íà êîğïóñå óñòğîéñòâà")
+                    sampSendChat("/me Ã ÃªÃªÃ³Ã°Ã Ã²Ã­Ã® Ã®Ã²ÃªÃ°Ã³Ã·Ã¨Ã¢Ã Ã¥Ã² Ã¡Ã®Ã«Ã²Ã» Ã­Ã  ÃªÃ®Ã°Ã¯Ã³Ã±Ã¥ Ã³Ã±Ã²Ã°Ã®Ã©Ã±Ã²Ã¢Ã ")
                     wait(settings.global.lwait)
-                    sampSendChat("/me îáíàğóæèëà â ìåõàíèçìå íåñêîëüêî ïğîâîäîâ")
+                    sampSendChat("/me Ã®Ã¡Ã­Ã Ã°Ã³Ã¦Ã¨Ã«Ã  Ã¢ Ã¬Ã¥ÃµÃ Ã­Ã¨Ã§Ã¬Ã¥ Ã­Ã¥Ã±ÃªÃ®Ã«Ã¼ÃªÃ® Ã¯Ã°Ã®Ã¢Ã®Ã¤Ã®Ã¢")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äîñòàëà êóñà÷êè èç ñàïåğñêîãî íàáîğà")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã«Ã  ÃªÃ³Ã±Ã Ã·ÃªÃ¨ Ã¨Ã§ Ã±Ã Ã¯Ã¥Ã°Ã±ÃªÃ®Ã£Ã® Ã­Ã Ã¡Ã®Ã°Ã ")
                     wait(settings.global.lwait)
-                    sampSendChat("/me âçÿëà ñèíèé ïğîâîä â ğóêè")
+                    sampSendChat("/me Ã¢Ã§Ã¿Ã«Ã  Ã±Ã¨Ã­Ã¨Ã© Ã¯Ã°Ã®Ã¢Ã®Ã¤ Ã¢ Ã°Ã³ÃªÃ¨")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ñ ïîìîùüş êóñà÷åê îãîëèëà ïğîâîäà")
+                    sampSendChat("/me Ã± Ã¯Ã®Ã¬Ã®Ã¹Ã¼Ã¾ ÃªÃ³Ã±Ã Ã·Ã¥Ãª Ã®Ã£Ã®Ã«Ã¨Ã«Ã  Ã¯Ã°Ã®Ã¢Ã®Ã¤Ã ")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äîñòàëà èíäèêàòîğíóş îòâåğòêó")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã«Ã  Ã¨Ã­Ã¤Ã¨ÃªÃ Ã²Ã®Ã°Ã­Ã³Ã¾ Ã®Ã²Ã¢Ã¥Ã°Ã²ÃªÃ³")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïğèëîæèëà îòâåğòêó ê îãîëåííîìó ïğîâîäó")
+                    sampSendChat("/me Ã¯Ã°Ã¨Ã«Ã®Ã¦Ã¨Ã«Ã  Ã®Ã²Ã¢Ã¥Ã°Ã²ÃªÃ³ Ãª Ã®Ã£Ã®Ã«Ã¥Ã­Ã­Ã®Ã¬Ã³ Ã¯Ã°Ã®Ã¢Ã®Ã¤Ã³")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Ñâåòîäèîä â îòâåğòêå çàãîğåëñÿ.")
+                    sampSendChat("/do Ã‘Ã¢Ã¥Ã²Ã®Ã¤Ã¨Ã®Ã¤ Ã¢ Ã®Ã²Ã¢Ã¥Ã°Ã²ÃªÃ¥ Ã§Ã Ã£Ã®Ã°Ã¥Ã«Ã±Ã¿.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me âçÿëà â ğóêè êóñà÷êè")
+                    sampSendChat("/me Ã¢Ã§Ã¿Ã«Ã  Ã¢ Ã°Ã³ÃªÃ¨ ÃªÃ³Ã±Ã Ã·ÃªÃ¨")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïåğåğåçàëà ïğîâîä")
+                    sampSendChat("/me Ã¯Ã¥Ã°Ã¥Ã°Ã¥Ã§Ã Ã«Ã  Ã¯Ã°Ã®Ã¢Ã®Ã¤")
                     wait(settings.global.lwait)
-                    sampSendChat("/me Òàéìåğ îñòàíîâëåí.")
+                    sampSendChat("/me Ã’Ã Ã©Ã¬Ã¥Ã° Ã®Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me îòñîåäåíèëà äåòàíàòîğ")
+                    sampSendChat("/me Ã®Ã²Ã±Ã®Ã¥Ã¤Ã¥Ã­Ã¨Ã«Ã  Ã¤Ã¥Ã²Ã Ã­Ã Ã²Ã®Ã°")
                     wait(settings.global.lwait)
-                    sampSendChat("/me âçÿëà áğîíèğîâàííûé êåéñ")
+                    sampSendChat("/me Ã¢Ã§Ã¿Ã«Ã  Ã¡Ã°Ã®Ã­Ã¨Ã°Ã®Ã¢Ã Ã­Ã­Ã»Ã© ÃªÃ¥Ã©Ã±")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïîëîæèëà âçğûâ÷àòêó â êåéñ")
+                    sampSendChat("/me Ã¯Ã®Ã«Ã®Ã¦Ã¨Ã«Ã  Ã¢Ã§Ã°Ã»Ã¢Ã·Ã Ã²ÃªÃ³ Ã¢ ÃªÃ¥Ã©Ã±")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïîëîæèëà âñå èíñòğóìåíòû â íàáîğ ñàïåğà")
+                    sampSendChat("/me Ã¯Ã®Ã«Ã®Ã¦Ã¨Ã«Ã  Ã¢Ã±Ã¥ Ã¨Ã­Ã±Ã²Ã°Ã³Ã¬Ã¥Ã­Ã²Ã» Ã¢ Ã­Ã Ã¡Ã®Ã° Ã±Ã Ã¯Ã¥Ã°Ã ")
                     wait(200)
-                    sampAddChatMessage("[SOBR tools]: Êîíåö îòûãğîâêè.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: ÃŠÃ®Ã­Ã¥Ã¶ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨.", 0x33AAFFFF)
                   end
                 end
               end
             },
             {
-              title = "{808080}Ğàçìèíèğîâàíèå óíèâåğñàëüíîå{FFFFFF}",
+              title = "{808080}ÃÃ Ã§Ã¬Ã¨Ã­Ã¨Ã°Ã®Ã¢Ã Ã­Ã¨Ã¥ Ã³Ã­Ã¨Ã¢Ã¥Ã°Ã±Ã Ã«Ã¼Ã­Ã®Ã¥{FFFFFF}",
               onclick = function()
-                if settings.global.lwait ~= "Íå óêàçàíà." and settings.global.lwait ~= "Íå óêàçàíà" then
+                if settings.global.lwait ~= "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­Ã ." and settings.global.lwait ~= "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­Ã " then
                   if settings.global.m_s_t_a_t == true then
-                    sampAddChatMessage("[SOBR tools]: Ñòàğò îòûãğîâêè. Äëÿ îòìåíû íàæìèòå CTRL+R.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: Ã‘Ã²Ã Ã°Ã² Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨. Ã„Ã«Ã¿ Ã®Ã²Ã¬Ã¥Ã­Ã» Ã­Ã Ã¦Ã¬Ã¨Ã²Ã¥ CTRL+R.", 0x33AAFFFF)
                     wait(200)
-                    sampSendChat("/do Íà ñïèíå âèñèò áîåâîé ğşêçàê.")
+                    sampSendChat("/do ÃÃ  Ã±Ã¯Ã¨Ã­Ã¥ Ã¢Ã¨Ã±Ã¨Ã² Ã¡Ã®Ã¥Ã¢Ã®Ã© Ã°Ã¾ÃªÃ§Ã Ãª.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ñòÿíóë ğşêçàê ñî ñïèíû, çàòåì äîñòàë íàáîğ äëÿ ğàçìèíèğîâàíèÿ")
+                    sampSendChat("/me Ã±Ã²Ã¿Ã­Ã³Ã« Ã°Ã¾ÃªÃ§Ã Ãª Ã±Ã® Ã±Ã¯Ã¨Ã­Ã», Ã§Ã Ã²Ã¥Ã¬ Ã¤Ã®Ã±Ã²Ã Ã« Ã­Ã Ã¡Ã®Ã° Ã¤Ã«Ã¿ Ã°Ã Ã§Ã¬Ã¨Ã­Ã¨Ã°Ã®Ã¢Ã Ã­Ã¨Ã¿")
                     wait(settings.global.lwait)
-                    sampSendChat("/me àêêóğàòíî îñìîòğåë áîìáó")
+                    sampSendChat("/me Ã ÃªÃªÃ³Ã°Ã Ã²Ã­Ã® Ã®Ã±Ã¬Ã®Ã²Ã°Ã¥Ã« Ã¡Ã®Ã¬Ã¡Ã³")
                     wait(settings.global.lwait)
-                    sampSendChat("/me âûòàùèë èç íàáîğà ıëåêòğè÷åñêóş îòâåğòêó òèïà `PS-201`")
+                    sampSendChat("/me Ã¢Ã»Ã²Ã Ã¹Ã¨Ã« Ã¨Ã§ Ã­Ã Ã¡Ã®Ã°Ã  Ã½Ã«Ã¥ÃªÃ²Ã°Ã¨Ã·Ã¥Ã±ÃªÃ³Ã¾ Ã®Ã²Ã¢Ã¥Ã°Ã²ÃªÃ³ Ã²Ã¨Ã¯Ã  `PS-201`")
                     wait(settings.global.lwait)
-                    sampSendChat("/me îòêğóòèë øóğóïû ñ ïàíåëè áîìáû")
+                    sampSendChat("/me Ã®Ã²ÃªÃ°Ã³Ã²Ã¨Ã« Ã¸Ã³Ã°Ã³Ã¯Ã» Ã± Ã¯Ã Ã­Ã¥Ã«Ã¨ Ã¡Ã®Ã¬Ã¡Ã»")
                     wait(settings.global.lwait)
-                    sampSendChat("/me îáåèìè ğóêàìè àêêóğàòíî ñíÿë êğûøêó ñ áîìáû, ïîñëå ÷åãî âûòàùèë èç íàáîğà ùèïöû")
+                    sampSendChat("/me Ã®Ã¡Ã¥Ã¨Ã¬Ã¨ Ã°Ã³ÃªÃ Ã¬Ã¨ Ã ÃªÃªÃ³Ã°Ã Ã²Ã­Ã® Ã±Ã­Ã¿Ã« ÃªÃ°Ã»Ã¸ÃªÃ³ Ã± Ã¡Ã®Ã¬Ã¡Ã», Ã¯Ã®Ã±Ã«Ã¥ Ã·Ã¥Ã£Ã® Ã¢Ã»Ã²Ã Ã¹Ã¨Ã« Ã¨Ã§ Ã­Ã Ã¡Ã®Ã°Ã  Ã¹Ã¨Ã¯Ã¶Ã»")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Íà áîìáå âèäåí êğàñíûé è ñèíèé ïğîâîä.")
+                    sampSendChat("/do ÃÃ  Ã¡Ã®Ã¬Ã¡Ã¥ Ã¢Ã¨Ã¤Ã¥Ã­ ÃªÃ°Ã Ã±Ã­Ã»Ã© Ã¨ Ã±Ã¨Ã­Ã¨Ã© Ã¯Ã°Ã®Ã¢Ã®Ã¤.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me íàäğåçàë ïğîâîä áîìáû, ïîñëå ÷åãî ïåğåêóñèë êğàñíûé ïğîâîä")
+                    sampSendChat("/me Ã­Ã Ã¤Ã°Ã¥Ã§Ã Ã« Ã¯Ã°Ã®Ã¢Ã®Ã¤ Ã¡Ã®Ã¬Ã¡Ã», Ã¯Ã®Ã±Ã«Ã¥ Ã·Ã¥Ã£Ã® Ã¯Ã¥Ã°Ã¥ÃªÃ³Ã±Ã¨Ã« ÃªÃ°Ã Ã±Ã­Ã»Ã© Ã¯Ã°Ã®Ã¢Ã®Ã¤")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Òàéìåğ çàìîğîæåí è áîìáà áîëüøå íå ïğèãîäíà ê èñïîëüçîâàíèş.")
+                    sampSendChat("/do Ã’Ã Ã©Ã¬Ã¥Ã° Ã§Ã Ã¬Ã®Ã°Ã®Ã¦Ã¥Ã­ Ã¨ Ã¡Ã®Ã¬Ã¡Ã  Ã¡Ã®Ã«Ã¼Ã¸Ã¥ Ã­Ã¥ Ã¯Ã°Ã¨Ã£Ã®Ã¤Ã­Ã  Ãª Ã¨Ã±Ã¯Ã®Ã«Ã¼Ã§Ã®Ã¢Ã Ã­Ã¨Ã¾.")
                     wait(200)
-                    sampAddChatMessage("[SOBR tools]: Êîíåö îòûãğîâêè.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: ÃŠÃ®Ã­Ã¥Ã¶ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨.", 0x33AAFFFF)
                   else
-                    sampAddChatMessage("[SOBR tools]: Ñòàğò îòûãğîâêè. Äëÿ îòìåíû íàæìèòå CTRL+R.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: Ã‘Ã²Ã Ã°Ã² Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨. Ã„Ã«Ã¿ Ã®Ã²Ã¬Ã¥Ã­Ã» Ã­Ã Ã¦Ã¬Ã¨Ã²Ã¥ CTRL+R.", 0x33AAFFFF)
                     wait(200)
-                    sampSendChat("/do Íà ñïèíå âèñèò áîåâîé ğşêçàê.")
+                    sampSendChat("/do ÃÃ  Ã±Ã¯Ã¨Ã­Ã¥ Ã¢Ã¨Ã±Ã¨Ã² Ã¡Ã®Ã¥Ã¢Ã®Ã© Ã°Ã¾ÃªÃ§Ã Ãª.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ñòÿíóëà ğşêçàê ñî ñïèíû, çàòåì äîñòàë íàáîğ äëÿ ğàçìèíèğîâàíèÿ")
+                    sampSendChat("/me Ã±Ã²Ã¿Ã­Ã³Ã«Ã  Ã°Ã¾ÃªÃ§Ã Ãª Ã±Ã® Ã±Ã¯Ã¨Ã­Ã», Ã§Ã Ã²Ã¥Ã¬ Ã¤Ã®Ã±Ã²Ã Ã« Ã­Ã Ã¡Ã®Ã° Ã¤Ã«Ã¿ Ã°Ã Ã§Ã¬Ã¨Ã­Ã¨Ã°Ã®Ã¢Ã Ã­Ã¨Ã¿")
                     wait(settings.global.lwait)
-                    sampSendChat("/me àêêóğàòíî îñìîòğåëà áîìáó")
+                    sampSendChat("/me Ã ÃªÃªÃ³Ã°Ã Ã²Ã­Ã® Ã®Ã±Ã¬Ã®Ã²Ã°Ã¥Ã«Ã  Ã¡Ã®Ã¬Ã¡Ã³")
                     wait(settings.global.lwait)
-                    sampSendChat("/me âûòàùèëà èç íàáîğà ıëåêòğè÷åñêóş îòâåğòêó òèïà `PS-201`")
+                    sampSendChat("/me Ã¢Ã»Ã²Ã Ã¹Ã¨Ã«Ã  Ã¨Ã§ Ã­Ã Ã¡Ã®Ã°Ã  Ã½Ã«Ã¥ÃªÃ²Ã°Ã¨Ã·Ã¥Ã±ÃªÃ³Ã¾ Ã®Ã²Ã¢Ã¥Ã°Ã²ÃªÃ³ Ã²Ã¨Ã¯Ã  `PS-201`")
                     wait(settings.global.lwait)
-                    sampSendChat("/me îòêğóòèëà øóğóïû ñ ïàíåëè áîìáû")
+                    sampSendChat("/me Ã®Ã²ÃªÃ°Ã³Ã²Ã¨Ã«Ã  Ã¸Ã³Ã°Ã³Ã¯Ã» Ã± Ã¯Ã Ã­Ã¥Ã«Ã¨ Ã¡Ã®Ã¬Ã¡Ã»")
                     wait(settings.global.lwait)
-                    sampSendChat("/me îáåèìè ğóêàìè àêêóğàòíî ñíÿëà êğûøêó ñ áîìáû, ïîñëå ÷åãî âûòàùèë èç íàáîğà ùèïöû")
+                    sampSendChat("/me Ã®Ã¡Ã¥Ã¨Ã¬Ã¨ Ã°Ã³ÃªÃ Ã¬Ã¨ Ã ÃªÃªÃ³Ã°Ã Ã²Ã­Ã® Ã±Ã­Ã¿Ã«Ã  ÃªÃ°Ã»Ã¸ÃªÃ³ Ã± Ã¡Ã®Ã¬Ã¡Ã», Ã¯Ã®Ã±Ã«Ã¥ Ã·Ã¥Ã£Ã® Ã¢Ã»Ã²Ã Ã¹Ã¨Ã« Ã¨Ã§ Ã­Ã Ã¡Ã®Ã°Ã  Ã¹Ã¨Ã¯Ã¶Ã»")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Íà áîìáå âèäåí êğàñíûé è ñèíèé ïğîâîä.")
+                    sampSendChat("/do ÃÃ  Ã¡Ã®Ã¬Ã¡Ã¥ Ã¢Ã¨Ã¤Ã¥Ã­ ÃªÃ°Ã Ã±Ã­Ã»Ã© Ã¨ Ã±Ã¨Ã­Ã¨Ã© Ã¯Ã°Ã®Ã¢Ã®Ã¤.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me íàäğåçàëà ïğîâîä áîìáû, ïîñëå ÷åãî ïåğåêóñèë êğàñíûé ïğîâîä")
+                    sampSendChat("/me Ã­Ã Ã¤Ã°Ã¥Ã§Ã Ã«Ã  Ã¯Ã°Ã®Ã¢Ã®Ã¤ Ã¡Ã®Ã¬Ã¡Ã», Ã¯Ã®Ã±Ã«Ã¥ Ã·Ã¥Ã£Ã® Ã¯Ã¥Ã°Ã¥ÃªÃ³Ã±Ã¨Ã« ÃªÃ°Ã Ã±Ã­Ã»Ã© Ã¯Ã°Ã®Ã¢Ã®Ã¤")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Òàéìåğ çàìîğîæåí è áîìáà áîëüøå íå ïğèãîäíà ê èñïîëüçîâàíèş.")
+                    sampSendChat("/do Ã’Ã Ã©Ã¬Ã¥Ã° Ã§Ã Ã¬Ã®Ã°Ã®Ã¦Ã¥Ã­ Ã¨ Ã¡Ã®Ã¬Ã¡Ã  Ã¡Ã®Ã«Ã¼Ã¸Ã¥ Ã­Ã¥ Ã¯Ã°Ã¨Ã£Ã®Ã¤Ã­Ã  Ãª Ã¨Ã±Ã¯Ã®Ã«Ã¼Ã§Ã®Ã¢Ã Ã­Ã¨Ã¾.")
                     wait(200)
-                    sampAddChatMessage("[SOBR tools]: Êîíåö îòûãğîâêè.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: ÃŠÃ®Ã­Ã¥Ã¶ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨.", 0x33AAFFFF)
                   end
                 end
               end
             },
             {
-              title = "{808080}Ğàçìèíèğîâàíèå âçğûâíîãî óñòğîéñòâà ñ äèñòàíöèîííûì óïğàâëåíèåì{FFFFFF}",
+              title = "{808080}ÃÃ Ã§Ã¬Ã¨Ã­Ã¨Ã°Ã®Ã¢Ã Ã­Ã¨Ã¥ Ã¢Ã§Ã°Ã»Ã¢Ã­Ã®Ã£Ã® Ã³Ã±Ã²Ã°Ã®Ã©Ã±Ã²Ã¢Ã  Ã± Ã¤Ã¨Ã±Ã²Ã Ã­Ã¶Ã¨Ã®Ã­Ã­Ã»Ã¬ Ã³Ã¯Ã°Ã Ã¢Ã«Ã¥Ã­Ã¨Ã¥Ã¬{FFFFFF}",
               onclick = function()
-                if settings.global.lwait ~= "Íå óêàçàíà." and settings.global.lwait ~= "Íå óêàçàíà" then
+                if settings.global.lwait ~= "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­Ã ." and settings.global.lwait ~= "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­Ã " then
                   if settings.global.m_s_t_a_t == true then
-                    sampAddChatMessage("[SOBR tools]: Ñòàğò îòûãğîâêè. Äëÿ îòìåíû íàæìèòå CTRL+R.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: Ã‘Ã²Ã Ã°Ã² Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨. Ã„Ã«Ã¿ Ã®Ã²Ã¬Ã¥Ã­Ã» Ã­Ã Ã¦Ã¬Ã¨Ã²Ã¥ CTRL+R.", 0x33AAFFFF)
                     wait(200)
-                    sampSendChat("/me äîñòàâ ñàïåğíûé íàáîğ, ğàñêğûë åãî")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã¢ Ã±Ã Ã¯Ã¥Ã°Ã­Ã»Ã© Ã­Ã Ã¡Ã®Ã°, Ã°Ã Ã±ÃªÃ°Ã»Ã« Ã¥Ã£Ã®")
                     wait(settings.global.lwait)
-                    sampSendChat("/me îñìîòğåë âçğûâíîå óñòğîéñòâî")
+                    sampSendChat("/me Ã®Ã±Ã¬Ã®Ã²Ã°Ã¥Ã« Ã¢Ã§Ã°Ã»Ã¢Ã­Ã®Ã¥ Ã³Ã±Ã²Ã°Ã®Ã©Ã±Ã²Ã¢Ã®")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Îïğåäåëèë òèï âçğûâíîãî óñòğîéñòâà `Áîìáà ñ äèñòàíöèîííûì óïğàâëåíèåì`.")
+                    sampSendChat("/do ÃÃ¯Ã°Ã¥Ã¤Ã¥Ã«Ã¨Ã« Ã²Ã¨Ã¯ Ã¢Ã§Ã°Ã»Ã¢Ã­Ã®Ã£Ã® Ã³Ã±Ã²Ã°Ã®Ã©Ã±Ã²Ã¢Ã  `ÃÃ®Ã¬Ã¡Ã  Ã± Ã¤Ã¨Ã±Ã²Ã Ã­Ã¶Ã¨Ã®Ã­Ã­Ã»Ã¬ Ã³Ã¯Ã°Ã Ã¢Ã«Ã¥Ã­Ã¨Ã¥Ã¬`.")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Óâèäåë äâà øóğóïà íà áëîêå ñ ìåõàíèçìîì.")
+                    sampSendChat("/do Ã“Ã¢Ã¨Ã¤Ã¥Ã« Ã¤Ã¢Ã  Ã¸Ã³Ã°Ã³Ã¯Ã  Ã­Ã  Ã¡Ã«Ã®ÃªÃ¥ Ã± Ã¬Ã¥ÃµÃ Ã­Ã¨Ã§Ã¬Ã®Ã¬.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äîñòàë îòâåğòêó èç ñàïåğíîãî íàáîğà")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã« Ã®Ã²Ã¢Ã¥Ã°Ã²ÃªÃ³ Ã¨Ã§ Ã±Ã Ã¯Ã¥Ã°Ã­Ã®Ã£Ã® Ã­Ã Ã¡Ã®Ã°Ã ")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Îòâåğòêà â ğóêå.")
+                    sampSendChat("/do ÃÃ²Ã¢Ã¥Ã°Ã²ÃªÃ  Ã¢ Ã°Ã³ÃªÃ¥.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me àêêóğàòíî âûêğóòèë øóğóïû")
+                    sampSendChat("/me Ã ÃªÃªÃ³Ã°Ã Ã²Ã­Ã® Ã¢Ã»ÃªÃ°Ã³Ã²Ã¨Ã« Ã¸Ã³Ã°Ã³Ã¯Ã»")
                     wait(settings.global.lwait)
-                    sampSendChat("/me îòîäâèíóë êğûøêó áëîêà è óâèäåë àíòåííó")
+                    sampSendChat("/me Ã®Ã²Ã®Ã¤Ã¢Ã¨Ã­Ã³Ã« ÃªÃ°Ã»Ã¸ÃªÃ³ Ã¡Ã«Ã®ÃªÃ  Ã¨ Ã³Ã¢Ã¨Ã¤Ã¥Ã« Ã Ã­Ã²Ã¥Ã­Ã­Ã³")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Óâèäåë êğàñíûé ìèãàşùèé èíäèêàòîğ.")
+                    sampSendChat("/do Ã“Ã¢Ã¨Ã¤Ã¥Ã« ÃªÃ°Ã Ã±Ã­Ã»Ã© Ã¬Ã¨Ã£Ã Ã¾Ã¹Ã¨Ã© Ã¨Ã­Ã¤Ã¨ÃªÃ Ã²Ã®Ã°.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïğîñìîòğåë ïóòü ìèêğîñõåìû îò àíòåííû ê äåòîíàòîğó")
+                    sampSendChat("/me Ã¯Ã°Ã®Ã±Ã¬Ã®Ã²Ã°Ã¥Ã« Ã¯Ã³Ã²Ã¼ Ã¬Ã¨ÃªÃ°Ã®Ã±ÃµÃ¥Ã¬Ã» Ã®Ã² Ã Ã­Ã²Ã¥Ã­Ã­Ã» Ãª Ã¤Ã¥Ã²Ã®Ã­Ã Ã²Ã®Ã°Ã³")
                     wait(settings.global.lwait)
-                    sampSendChat("/me óâèäåë äâà ïğîâîäà")
+                    sampSendChat("/me Ã³Ã¢Ã¨Ã¤Ã¥Ã« Ã¤Ã¢Ã  Ã¯Ã°Ã®Ã¢Ã®Ã¤Ã ")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïåğåğåçàë ïåğâûé ïğîâîä. Èíäèêàòîğ ïåğåñòàë ìèãàòü")
+                    sampSendChat("/me Ã¯Ã¥Ã°Ã¥Ã°Ã¥Ã§Ã Ã« Ã¯Ã¥Ã°Ã¢Ã»Ã© Ã¯Ã°Ã®Ã¢Ã®Ã¤. ÃˆÃ­Ã¤Ã¨ÃªÃ Ã²Ã®Ã° Ã¯Ã¥Ã°Ã¥Ã±Ã²Ã Ã« Ã¬Ã¨Ã£Ã Ã²Ã¼")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Áîìáà îáåçâğåæåíà.")
+                    sampSendChat("/do ÃÃ®Ã¬Ã¡Ã  Ã®Ã¡Ã¥Ã§Ã¢Ã°Ã¥Ã¦Ã¥Ã­Ã .")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ñëîæèë èíñòğóìåíòû îáğàòíî â ñàïåğíûé íàáîğ")
+                    sampSendChat("/me Ã±Ã«Ã®Ã¦Ã¨Ã« Ã¨Ã­Ã±Ã²Ã°Ã³Ã¬Ã¥Ã­Ã²Ã» Ã®Ã¡Ã°Ã Ã²Ã­Ã® Ã¢ Ã±Ã Ã¯Ã¥Ã°Ã­Ã»Ã© Ã­Ã Ã¡Ã®Ã°")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äîñòàë áğîíèğîâàííûé êåéñ è àêêóğàòíî ñëîæèë òóäà áîìáó")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã« Ã¡Ã°Ã®Ã­Ã¨Ã°Ã®Ã¢Ã Ã­Ã­Ã»Ã© ÃªÃ¥Ã©Ã± Ã¨ Ã ÃªÃªÃ³Ã°Ã Ã²Ã­Ã® Ã±Ã«Ã®Ã¦Ã¨Ã« Ã²Ã³Ã¤Ã  Ã¡Ã®Ã¬Ã¡Ã³")
                     wait(200)
-                    sampAddChatMessage("[SOBR tools]: Êîíåö îòûãğîâêè.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: ÃŠÃ®Ã­Ã¥Ã¶ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨.", 0x33AAFFFF)
                   else
-                    sampAddChatMessage("[SOBR tools]: Ñòàğò îòûãğîâêè. Äëÿ îòìåíû íàæìèòå CTRL+R.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: Ã‘Ã²Ã Ã°Ã² Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨. Ã„Ã«Ã¿ Ã®Ã²Ã¬Ã¥Ã­Ã» Ã­Ã Ã¦Ã¬Ã¨Ã²Ã¥ CTRL+R.", 0x33AAFFFF)
                     wait(200)
-                    sampSendChat("/me äîñòàâ ñàïåğíûé íàáîğ, ğàñêğûëà åãî")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã¢ Ã±Ã Ã¯Ã¥Ã°Ã­Ã»Ã© Ã­Ã Ã¡Ã®Ã°, Ã°Ã Ã±ÃªÃ°Ã»Ã«Ã  Ã¥Ã£Ã®")
                     wait(settings.global.lwait)
-                    sampSendChat("/me îñìîòğåëà âçğûâíîå óñòğîéñòâî")
+                    sampSendChat("/me Ã®Ã±Ã¬Ã®Ã²Ã°Ã¥Ã«Ã  Ã¢Ã§Ã°Ã»Ã¢Ã­Ã®Ã¥ Ã³Ã±Ã²Ã°Ã®Ã©Ã±Ã²Ã¢Ã®")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Îïğåäåëèëà òèï âçğûâíîãî óñòğîéñòâà `Áîìáà ñ äèñòàíöèîííûì óïğàâëåíèåì`.")
+                    sampSendChat("/do ÃÃ¯Ã°Ã¥Ã¤Ã¥Ã«Ã¨Ã«Ã  Ã²Ã¨Ã¯ Ã¢Ã§Ã°Ã»Ã¢Ã­Ã®Ã£Ã® Ã³Ã±Ã²Ã°Ã®Ã©Ã±Ã²Ã¢Ã  `ÃÃ®Ã¬Ã¡Ã  Ã± Ã¤Ã¨Ã±Ã²Ã Ã­Ã¶Ã¨Ã®Ã­Ã­Ã»Ã¬ Ã³Ã¯Ã°Ã Ã¢Ã«Ã¥Ã­Ã¨Ã¥Ã¬`.")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Óâèäåëà äâà øóğóïà íà áëîêå ñ ìåõàíèçìîì.")
+                    sampSendChat("/do Ã“Ã¢Ã¨Ã¤Ã¥Ã«Ã  Ã¤Ã¢Ã  Ã¸Ã³Ã°Ã³Ã¯Ã  Ã­Ã  Ã¡Ã«Ã®ÃªÃ¥ Ã± Ã¬Ã¥ÃµÃ Ã­Ã¨Ã§Ã¬Ã®Ã¬.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äîñòàëà îòâåğòêó èç ñàïåğíîãî íàáîğà")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã«Ã  Ã®Ã²Ã¢Ã¥Ã°Ã²ÃªÃ³ Ã¨Ã§ Ã±Ã Ã¯Ã¥Ã°Ã­Ã®Ã£Ã® Ã­Ã Ã¡Ã®Ã°Ã ")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Îòâåğòêà â ğóêå.")
+                    sampSendChat("/do ÃÃ²Ã¢Ã¥Ã°Ã²ÃªÃ  Ã¢ Ã°Ã³ÃªÃ¥.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me àêêóğàòíî âûêğóòèëà øóğóïû")
+                    sampSendChat("/me Ã ÃªÃªÃ³Ã°Ã Ã²Ã­Ã® Ã¢Ã»ÃªÃ°Ã³Ã²Ã¨Ã«Ã  Ã¸Ã³Ã°Ã³Ã¯Ã»")
                     wait(settings.global.lwait)
-                    sampSendChat("/me îòîäâèíóëà êğûøêó áëîêà è óâèäåëà àíòåííó")
+                    sampSendChat("/me Ã®Ã²Ã®Ã¤Ã¢Ã¨Ã­Ã³Ã«Ã  ÃªÃ°Ã»Ã¸ÃªÃ³ Ã¡Ã«Ã®ÃªÃ  Ã¨ Ã³Ã¢Ã¨Ã¤Ã¥Ã«Ã  Ã Ã­Ã²Ã¥Ã­Ã­Ã³")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Óâèäåëà êğàñíûé ìèãàşùèé èíäèêàòîğ.")
+                    sampSendChat("/do Ã“Ã¢Ã¨Ã¤Ã¥Ã«Ã  ÃªÃ°Ã Ã±Ã­Ã»Ã© Ã¬Ã¨Ã£Ã Ã¾Ã¹Ã¨Ã© Ã¨Ã­Ã¤Ã¨ÃªÃ Ã²Ã®Ã°.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïğîñìîòğåëà ïóòü ìèêğîñõåìû îò àíòåííû ê äåòîíàòîğó")
+                    sampSendChat("/me Ã¯Ã°Ã®Ã±Ã¬Ã®Ã²Ã°Ã¥Ã«Ã  Ã¯Ã³Ã²Ã¼ Ã¬Ã¨ÃªÃ°Ã®Ã±ÃµÃ¥Ã¬Ã» Ã®Ã² Ã Ã­Ã²Ã¥Ã­Ã­Ã» Ãª Ã¤Ã¥Ã²Ã®Ã­Ã Ã²Ã®Ã°Ã³")
                     wait(settings.global.lwait)
-                    sampSendChat("/me óâèäåëà äâà ïğîâîäà")
+                    sampSendChat("/me Ã³Ã¢Ã¨Ã¤Ã¥Ã«Ã  Ã¤Ã¢Ã  Ã¯Ã°Ã®Ã¢Ã®Ã¤Ã ")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïåğåğåçàëà ïåğâûé ïğîâîä. Èíäèêàòîğ ïåğåñòàë ìèãàòü")
+                    sampSendChat("/me Ã¯Ã¥Ã°Ã¥Ã°Ã¥Ã§Ã Ã«Ã  Ã¯Ã¥Ã°Ã¢Ã»Ã© Ã¯Ã°Ã®Ã¢Ã®Ã¤. ÃˆÃ­Ã¤Ã¨ÃªÃ Ã²Ã®Ã° Ã¯Ã¥Ã°Ã¥Ã±Ã²Ã Ã« Ã¬Ã¨Ã£Ã Ã²Ã¼")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Áîìáà îáåçâğåæåíà.")
+                    sampSendChat("/do ÃÃ®Ã¬Ã¡Ã  Ã®Ã¡Ã¥Ã§Ã¢Ã°Ã¥Ã¦Ã¥Ã­Ã .")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ñëîæèëà èíñòğóìåíòû îáğàòíî â ñàïåğíûé íàáîğ")
+                    sampSendChat("/me Ã±Ã«Ã®Ã¦Ã¨Ã«Ã  Ã¨Ã­Ã±Ã²Ã°Ã³Ã¬Ã¥Ã­Ã²Ã» Ã®Ã¡Ã°Ã Ã²Ã­Ã® Ã¢ Ã±Ã Ã¯Ã¥Ã°Ã­Ã»Ã© Ã­Ã Ã¡Ã®Ã°")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äîñòàë áğîíèğîâàííûé êåéñ è àêêóğàòíî ñëîæèë òóäà áîìáó")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã« Ã¡Ã°Ã®Ã­Ã¨Ã°Ã®Ã¢Ã Ã­Ã­Ã»Ã© ÃªÃ¥Ã©Ã± Ã¨ Ã ÃªÃªÃ³Ã°Ã Ã²Ã­Ã® Ã±Ã«Ã®Ã¦Ã¨Ã« Ã²Ã³Ã¤Ã  Ã¡Ã®Ã¬Ã¡Ã³")
                     wait(200)
-                    sampAddChatMessage("[SOBR tools]: Êîíåö îòûãğîâêè.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: ÃŠÃ®Ã­Ã¥Ã¶ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨.", 0x33AAFFFF)
                   end
                 end
               end
             },
             {
-              title = "{808080}Ğàçìèíèğîâàíèå âçğûâíîãî óñòğîéñòâà ñ æó÷êîì-äåòåêòîğîì{FFFFFF}",
+              title = "{808080}ÃÃ Ã§Ã¬Ã¨Ã­Ã¨Ã°Ã®Ã¢Ã Ã­Ã¨Ã¥ Ã¢Ã§Ã°Ã»Ã¢Ã­Ã®Ã£Ã® Ã³Ã±Ã²Ã°Ã®Ã©Ã±Ã²Ã¢Ã  Ã± Ã¦Ã³Ã·ÃªÃ®Ã¬-Ã¤Ã¥Ã²Ã¥ÃªÃ²Ã®Ã°Ã®Ã¬{FFFFFF}",
               onclick = function()
-                if settings.global.lwait ~= "Íå óêàçàíà." and settings.global.lwait ~= "Íå óêàçàíà" then
+                if settings.global.lwait ~= "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­Ã ." and settings.global.lwait ~= "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­Ã " then
                   if settings.global.m_s_t_a_t == true then
-                    sampAddChatMessage("[SOBR tools]: Ñòàğò îòûãğîâêè. Äëÿ îòìåíû íàæìèòå CTRL+R.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: Ã‘Ã²Ã Ã°Ã² Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨. Ã„Ã«Ã¿ Ã®Ã²Ã¬Ã¥Ã­Ã» Ã­Ã Ã¦Ã¬Ã¨Ã²Ã¥ CTRL+R.", 0x33AAFFFF)
                     wait(200)
-                    sampSendChat("/me îñìîòğåë âçğûâíîå óñòğîéñòâî")
+                    sampSendChat("/me Ã®Ã±Ã¬Ã®Ã²Ã°Ã¥Ã« Ã¢Ã§Ã°Ã»Ã¢Ã­Ã®Ã¥ Ã³Ã±Ã²Ã°Ã®Ã©Ã±Ã²Ã¢Ã®")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Âèä áîìáû îïğåäåëåí.")
+                    sampSendChat("/do Ã‚Ã¨Ã¤ Ã¡Ã®Ã¬Ã¡Ã» Ã®Ã¯Ã°Ã¥Ã¤Ã¥Ã«Ã¥Ã­.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äîñòàë îòâåğòêó")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã« Ã®Ã²Ã¢Ã¥Ã°Ã²ÃªÃ³")
                     wait(settings.global.lwait)
-                    sampSendChat("/me îòêğó÷èâàåò êîğïóñ áîìáû")
+                    sampSendChat("/me Ã®Ã²ÃªÃ°Ã³Ã·Ã¨Ã¢Ã Ã¥Ã² ÃªÃ®Ã°Ã¯Ã³Ã± Ã¡Ã®Ã¬Ã¡Ã»")
                     wait(settings.global.lwait)
-                    sampSendChat("/me âçÿë êóñà÷êè â ñàïåğíîì íàáîğå")
+                    sampSendChat("/me Ã¢Ã§Ã¿Ã« ÃªÃ³Ã±Ã Ã·ÃªÃ¨ Ã¢ Ã±Ã Ã¯Ã¥Ã°Ã­Ã®Ã¬ Ã­Ã Ã¡Ã®Ã°Ã¥")
                     wait(settings.global.lwait)
-                    sampSendChat("/me îãîëèë êóñà÷êàìè êğàñíûé ïğîâîä")
+                    sampSendChat("/me Ã®Ã£Ã®Ã«Ã¨Ã« ÃªÃ³Ã±Ã Ã·ÃªÃ Ã¬Ã¨ ÃªÃ°Ã Ã±Ã­Ã»Ã© Ã¯Ã°Ã®Ã¢Ã®Ã¤")
                     wait(settings.global.lwait)
-                    sampSendChat("/me âçÿë æó÷îê-äåòåêòîğ â ñàïåğíîì íàáîğå")
+                    sampSendChat("/me Ã¢Ã§Ã¿Ã« Ã¦Ã³Ã·Ã®Ãª-Ã¤Ã¥Ã²Ã¥ÃªÃ²Ã®Ã° Ã¢ Ã±Ã Ã¯Ã¥Ã°Ã­Ã®Ã¬ Ã­Ã Ã¡Ã®Ã°Ã¥")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïğèöåïèë æó÷îê-äåòåêòîğ ê êğàñíîìó ïğîâîäó")
+                    sampSendChat("/me Ã¯Ã°Ã¨Ã¶Ã¥Ã¯Ã¨Ã« Ã¦Ã³Ã·Ã®Ãª-Ã¤Ã¥Ã²Ã¥ÃªÃ²Ã®Ã° Ãª ÃªÃ°Ã Ã±Ã­Ã®Ã¬Ã³ Ã¯Ã°Ã®Ã¢Ã®Ã¤Ã³")
                     wait(settings.global.lwait)
-                    sampSendChat("/me âçÿë èçîëåíòó â ñàïåğíîì íàáîğå")
+                    sampSendChat("/me Ã¢Ã§Ã¿Ã« Ã¨Ã§Ã®Ã«Ã¥Ã­Ã²Ã³ Ã¢ Ã±Ã Ã¯Ã¥Ã°Ã­Ã®Ã¬ Ã­Ã Ã¡Ã®Ã°Ã¥")
                     wait(settings.global.lwait)
-                    sampSendChat("/me çàèçîëèğîâàë ïğîâîä")
+                    sampSendChat("/me Ã§Ã Ã¨Ã§Ã®Ã«Ã¨Ã°Ã®Ã¢Ã Ã« Ã¯Ã°Ã®Ã¢Ã®Ã¤")
                     wait(settings.global.lwait)
-                    sampSendChat("/me âçÿë êóñà÷êè ")
+                    sampSendChat("/me Ã¢Ã§Ã¿Ã« ÃªÃ³Ã±Ã Ã·ÃªÃ¨ ")
                     wait(settings.global.lwait)
-                    sampSendChat("/me âçÿë æó÷îê-äåòåêòîğ")
+                    sampSendChat("/me Ã¢Ã§Ã¿Ã« Ã¦Ã³Ã·Ã®Ãª-Ã¤Ã¥Ã²Ã¥ÃªÃ²Ã®Ã°")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïğèöåïèë æó÷îê-äåòåêòîğ ê ñèíåìó ïğîâîäó")
+                    sampSendChat("/me Ã¯Ã°Ã¨Ã¶Ã¥Ã¯Ã¨Ã« Ã¦Ã³Ã·Ã®Ãª-Ã¤Ã¥Ã²Ã¥ÃªÃ²Ã®Ã° Ãª Ã±Ã¨Ã­Ã¥Ã¬Ã³ Ã¯Ã°Ã®Ã¢Ã®Ã¤Ã³")
                     wait(settings.global.lwait)
-                    sampSendChat("/me âçÿë êóñà÷êè")
+                    sampSendChat("/me Ã¢Ã§Ã¿Ã« ÃªÃ³Ã±Ã Ã·ÃªÃ¨")
                     wait(settings.global.lwait)
-                    sampSendChat("/me îòğåçàë ñèíèé ïğîâîä")
+                    sampSendChat("/me Ã®Ã²Ã°Ã¥Ã§Ã Ã« Ã±Ã¨Ã­Ã¨Ã© Ã¯Ã°Ã®Ã¢Ã®Ã¤")
                     wait(settings.global.lwait)
-                    sampSendChat("/me îòñîåäèíèë äåòîíàòîğ")
+                    sampSendChat("/me Ã®Ã²Ã±Ã®Ã¥Ã¤Ã¨Ã­Ã¨Ã« Ã¤Ã¥Ã²Ã®Ã­Ã Ã²Ã®Ã°")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Áîìáà îáåçâğåæåíà.")
+                    sampSendChat("/do ÃÃ®Ã¬Ã¡Ã  Ã®Ã¡Ã¥Ã§Ã¢Ã°Ã¥Ã¦Ã¥Ã­Ã .")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïîëîæèë âñå îáğàòíî â ñàïåğíûé íàáîğ")
+                    sampSendChat("/me Ã¯Ã®Ã«Ã®Ã¦Ã¨Ã« Ã¢Ã±Ã¥ Ã®Ã¡Ã°Ã Ã²Ã­Ã® Ã¢ Ã±Ã Ã¯Ã¥Ã°Ã­Ã»Ã© Ã­Ã Ã¡Ã®Ã°")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äîñòàë áğîíèğîâàííûé êåéñ")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã« Ã¡Ã°Ã®Ã­Ã¨Ã°Ã®Ã¢Ã Ã­Ã­Ã»Ã© ÃªÃ¥Ã©Ã±")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïîìåñòèë áîìáó â áğîíèğîâàííûé êåéñ")
+                    sampSendChat("/me Ã¯Ã®Ã¬Ã¥Ã±Ã²Ã¨Ã« Ã¡Ã®Ã¬Ã¡Ã³ Ã¢ Ã¡Ã°Ã®Ã­Ã¨Ã°Ã®Ã¢Ã Ã­Ã­Ã»Ã© ÃªÃ¥Ã©Ã±")
                     wait(200)
-                    sampAddChatMessage("[SOBR tools]: Êîíåö îòûãğîâêè.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: ÃŠÃ®Ã­Ã¥Ã¶ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨.", 0x33AAFFFF)
                   else
-                    sampAddChatMessage("[SOBR tools]: Ñòàğò îòûãğîâêè. Äëÿ îòìåíû íàæìèòå CTRL+R.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: Ã‘Ã²Ã Ã°Ã² Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨. Ã„Ã«Ã¿ Ã®Ã²Ã¬Ã¥Ã­Ã» Ã­Ã Ã¦Ã¬Ã¨Ã²Ã¥ CTRL+R.", 0x33AAFFFF)
                     wait(200)
-                    sampSendChat("/me îñìîòğåëà âçğûâíîå óñòğîéñòâî")
+                    sampSendChat("/me Ã®Ã±Ã¬Ã®Ã²Ã°Ã¥Ã«Ã  Ã¢Ã§Ã°Ã»Ã¢Ã­Ã®Ã¥ Ã³Ã±Ã²Ã°Ã®Ã©Ã±Ã²Ã¢Ã®")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Âèä áîìáû îïğåäåëåí.")
+                    sampSendChat("/do Ã‚Ã¨Ã¤ Ã¡Ã®Ã¬Ã¡Ã» Ã®Ã¯Ã°Ã¥Ã¤Ã¥Ã«Ã¥Ã­.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äîñòàëà îòâåğòêó")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã«Ã  Ã®Ã²Ã¢Ã¥Ã°Ã²ÃªÃ³")
                     wait(settings.global.lwait)
-                    sampSendChat("/me îòêğó÷èâàåò êîğïóñ áîìáû")
+                    sampSendChat("/me Ã®Ã²ÃªÃ°Ã³Ã·Ã¨Ã¢Ã Ã¥Ã² ÃªÃ®Ã°Ã¯Ã³Ã± Ã¡Ã®Ã¬Ã¡Ã»")
                     wait(settings.global.lwait)
-                    sampSendChat("/me âçÿëà êóñà÷êè â ñàïåğíîì íàáîğå")
+                    sampSendChat("/me Ã¢Ã§Ã¿Ã«Ã  ÃªÃ³Ã±Ã Ã·ÃªÃ¨ Ã¢ Ã±Ã Ã¯Ã¥Ã°Ã­Ã®Ã¬ Ã­Ã Ã¡Ã®Ã°Ã¥")
                     wait(settings.global.lwait)
-                    sampSendChat("/me îãîëèëà êóñà÷êàìè êğàñíûé ïğîâîä")
+                    sampSendChat("/me Ã®Ã£Ã®Ã«Ã¨Ã«Ã  ÃªÃ³Ã±Ã Ã·ÃªÃ Ã¬Ã¨ ÃªÃ°Ã Ã±Ã­Ã»Ã© Ã¯Ã°Ã®Ã¢Ã®Ã¤")
                     wait(settings.global.lwait)
-                    sampSendChat("/me âçÿëà æó÷îê-äåòåêòîğ â ñàïåğíîì íàáîğå")
+                    sampSendChat("/me Ã¢Ã§Ã¿Ã«Ã  Ã¦Ã³Ã·Ã®Ãª-Ã¤Ã¥Ã²Ã¥ÃªÃ²Ã®Ã° Ã¢ Ã±Ã Ã¯Ã¥Ã°Ã­Ã®Ã¬ Ã­Ã Ã¡Ã®Ã°Ã¥")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïğèöåïèëà æó÷îê-äåòåêòîğ ê êğàñíîìó ïğîâîäó")
+                    sampSendChat("/me Ã¯Ã°Ã¨Ã¶Ã¥Ã¯Ã¨Ã«Ã  Ã¦Ã³Ã·Ã®Ãª-Ã¤Ã¥Ã²Ã¥ÃªÃ²Ã®Ã° Ãª ÃªÃ°Ã Ã±Ã­Ã®Ã¬Ã³ Ã¯Ã°Ã®Ã¢Ã®Ã¤Ã³")
                     wait(settings.global.lwait)
-                    sampSendChat("/me âçÿëà èçîëåíòó â ñàïåğíîì íàáîğå")
+                    sampSendChat("/me Ã¢Ã§Ã¿Ã«Ã  Ã¨Ã§Ã®Ã«Ã¥Ã­Ã²Ã³ Ã¢ Ã±Ã Ã¯Ã¥Ã°Ã­Ã®Ã¬ Ã­Ã Ã¡Ã®Ã°Ã¥")
                     wait(settings.global.lwait)
-                    sampSendChat("/me çàèçîëèğîâàëà ïğîâîä")
+                    sampSendChat("/me Ã§Ã Ã¨Ã§Ã®Ã«Ã¨Ã°Ã®Ã¢Ã Ã«Ã  Ã¯Ã°Ã®Ã¢Ã®Ã¤")
                     wait(settings.global.lwait)
-                    sampSendChat("/me âçÿëà êóñà÷êè ")
+                    sampSendChat("/me Ã¢Ã§Ã¿Ã«Ã  ÃªÃ³Ã±Ã Ã·ÃªÃ¨ ")
                     wait(settings.global.lwait)
-                    sampSendChat("/me âçÿëà æó÷îê-äåòåêòîğ")
+                    sampSendChat("/me Ã¢Ã§Ã¿Ã«Ã  Ã¦Ã³Ã·Ã®Ãª-Ã¤Ã¥Ã²Ã¥ÃªÃ²Ã®Ã°")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïğèöåïèëà æó÷îê-äåòåêòîğ ê ñèíåìó ïğîâîäó")
+                    sampSendChat("/me Ã¯Ã°Ã¨Ã¶Ã¥Ã¯Ã¨Ã«Ã  Ã¦Ã³Ã·Ã®Ãª-Ã¤Ã¥Ã²Ã¥ÃªÃ²Ã®Ã° Ãª Ã±Ã¨Ã­Ã¥Ã¬Ã³ Ã¯Ã°Ã®Ã¢Ã®Ã¤Ã³")
                     wait(settings.global.lwait)
-                    sampSendChat("/me âçÿëà êóñà÷êè")
+                    sampSendChat("/me Ã¢Ã§Ã¿Ã«Ã  ÃªÃ³Ã±Ã Ã·ÃªÃ¨")
                     wait(settings.global.lwait)
-                    sampSendChat("/me îòğåçàëà ñèíèé ïğîâîä")
+                    sampSendChat("/me Ã®Ã²Ã°Ã¥Ã§Ã Ã«Ã  Ã±Ã¨Ã­Ã¨Ã© Ã¯Ã°Ã®Ã¢Ã®Ã¤")
                     wait(settings.global.lwait)
-                    sampSendChat("/me îòñîåäèíèëà äåòîíàòîğ")
+                    sampSendChat("/me Ã®Ã²Ã±Ã®Ã¥Ã¤Ã¨Ã­Ã¨Ã«Ã  Ã¤Ã¥Ã²Ã®Ã­Ã Ã²Ã®Ã°")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Áîìáà îáåçâğåæåíà.")
+                    sampSendChat("/do ÃÃ®Ã¬Ã¡Ã  Ã®Ã¡Ã¥Ã§Ã¢Ã°Ã¥Ã¦Ã¥Ã­Ã .")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïîëîæèëà âñå îáğàòíî â ñàïåğíûé íàáîğ")
+                    sampSendChat("/me Ã¯Ã®Ã«Ã®Ã¦Ã¨Ã«Ã  Ã¢Ã±Ã¥ Ã®Ã¡Ã°Ã Ã²Ã­Ã® Ã¢ Ã±Ã Ã¯Ã¥Ã°Ã­Ã»Ã© Ã­Ã Ã¡Ã®Ã°")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äîñòàëà áğîíèğîâàííûé êåéñ")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã«Ã  Ã¡Ã°Ã®Ã­Ã¨Ã°Ã®Ã¢Ã Ã­Ã­Ã»Ã© ÃªÃ¥Ã©Ã±")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïîìåñòèëà áîìáó â áğîíèğîâàííûé êåéñ")
+                    sampSendChat("/me Ã¯Ã®Ã¬Ã¥Ã±Ã²Ã¨Ã«Ã  Ã¡Ã®Ã¬Ã¡Ã³ Ã¢ Ã¡Ã°Ã®Ã­Ã¨Ã°Ã®Ã¢Ã Ã­Ã­Ã»Ã© ÃªÃ¥Ã©Ã±")
                     wait(200)
-                    sampAddChatMessage("[SOBR tools]: Êîíåö îòûãğîâêè.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: ÃŠÃ®Ã­Ã¥Ã¶ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨.", 0x33AAFFFF)
                   end
                 end
               end
@@ -607,246 +607,246 @@ function refreshDialog()
           }
         },
         {
-          title = "{808080}Ïåğâàÿ ìåäèöèíñêàÿ ïîìîùü[ÏÌÏ]{FFFFFF}",
+          title = "{808080}ÃÃ¥Ã°Ã¢Ã Ã¿ Ã¬Ã¥Ã¤Ã¨Ã¶Ã¨Ã­Ã±ÃªÃ Ã¿ Ã¯Ã®Ã¬Ã®Ã¹Ã¼[ÃÃŒÃ]{FFFFFF}",
           submenu = 
           {
-            title = "{808080}Âûáåğèòå îòûãğîâêó{FFFFFF}",
+            title = "{808080}Ã‚Ã»Ã¡Ã¥Ã°Ã¨Ã²Ã¥ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ³{FFFFFF}",
             {
-              title = "{808080}ÏÌÏ ïğè ïåğåëîìå{FFFFFF}",
+              title = "{808080}ÃÃŒÃ Ã¯Ã°Ã¨ Ã¯Ã¥Ã°Ã¥Ã«Ã®Ã¬Ã¥{FFFFFF}",
               onclick = function()
-                if settings.global.lwait ~= "Íå óêàçàíà." and settings.global.lwait ~= "Íå óêàçàíà" then
+                if settings.global.lwait ~= "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­Ã ." and settings.global.lwait ~= "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­Ã " then
                   if settings.global.m_s_t_a_t == true then
-                    sampAddChatMessage("[SOBR tools]: Ñòàğò îòûãğîâêè. Äëÿ îòìåíû íàæìèòå CTRL+R.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: Ã‘Ã²Ã Ã°Ã² Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨. Ã„Ã«Ã¿ Ã®Ã²Ã¬Ã¥Ã­Ã» Ã­Ã Ã¦Ã¬Ã¨Ã²Ã¥ CTRL+R.", 0x33AAFFFF)
                     wait(200)
-                    sampSendChat("/do Ìåäèöèíñêàÿ ñóìêà íà ïëå÷å.")
+                    sampSendChat("/do ÃŒÃ¥Ã¤Ã¨Ã¶Ã¨Ã­Ã±ÃªÃ Ã¿ Ã±Ã³Ã¬ÃªÃ  Ã­Ã  Ã¯Ã«Ã¥Ã·Ã¥.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ñíÿë ìåäèöèíñêóş ñóìêó ñ ïëå÷à, çàòåì îòêğûë å¸")
+                    sampSendChat("/me Ã±Ã­Ã¿Ã« Ã¬Ã¥Ã¤Ã¨Ã¶Ã¨Ã­Ã±ÃªÃ³Ã¾ Ã±Ã³Ã¬ÃªÃ³ Ã± Ã¯Ã«Ã¥Ã·Ã , Ã§Ã Ã²Ã¥Ã¬ Ã®Ã²ÃªÃ°Ã»Ã« Ã¥Â¸")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Â ñóìêå ëåæàò: ñòåğèëüíûå øïğèöû, àìïóëà ñ àíàëüãåòèêîì, øèíà, áèíòû.")
+                    sampSendChat("/do Ã‚ Ã±Ã³Ã¬ÃªÃ¥ Ã«Ã¥Ã¦Ã Ã²: Ã±Ã²Ã¥Ã°Ã¨Ã«Ã¼Ã­Ã»Ã¥ Ã¸Ã¯Ã°Ã¨Ã¶Ã», Ã Ã¬Ã¯Ã³Ã«Ã  Ã± Ã Ã­Ã Ã«Ã¼Ã£Ã¥Ã²Ã¨ÃªÃ®Ã¬, Ã¸Ã¨Ã­Ã , Ã¡Ã¨Ã­Ã²Ã».")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äîñòàë ñòåğèëüíûé øïğèö ñ àìïóëîé, àêêóğàòíî ïğèîòêğûâ àìïóëó ñ àíàëüãåòèêîì")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã« Ã±Ã²Ã¥Ã°Ã¨Ã«Ã¼Ã­Ã»Ã© Ã¸Ã¯Ã°Ã¨Ã¶ Ã± Ã Ã¬Ã¯Ã³Ã«Ã®Ã©, Ã ÃªÃªÃ³Ã°Ã Ã²Ã­Ã® Ã¯Ã°Ã¨Ã®Ã²ÃªÃ°Ã»Ã¢ Ã Ã¬Ã¯Ã³Ã«Ã³ Ã± Ã Ã­Ã Ã«Ã¼Ã£Ã¥Ã²Ã¨ÃªÃ®Ã¬")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïåğåëèë ñîäåğæèìîå àìïóëû â øïğèö")
+                    sampSendChat("/me Ã¯Ã¥Ã°Ã¥Ã«Ã¨Ã« Ã±Ã®Ã¤Ã¥Ã°Ã¦Ã¨Ã¬Ã®Ã¥ Ã Ã¬Ã¯Ã³Ã«Ã» Ã¢ Ã¸Ã¯Ã°Ã¨Ã¶")
                     wait(settings.global.lwait)
-                    sampSendChat("/me çàêàòàë ğóêàâ ïîñòğàäàâøåãî, ïîñëå ÷åãî ââ¸ë àíàëüãåòèê ÷åğåç øïğèö â âåíó, âäàâèâ ïîğøåíü")
+                    sampSendChat("/me Ã§Ã ÃªÃ Ã²Ã Ã« Ã°Ã³ÃªÃ Ã¢ Ã¯Ã®Ã±Ã²Ã°Ã Ã¤Ã Ã¢Ã¸Ã¥Ã£Ã®, Ã¯Ã®Ã±Ã«Ã¥ Ã·Ã¥Ã£Ã® Ã¢Ã¢Â¸Ã« Ã Ã­Ã Ã«Ã¼Ã£Ã¥Ã²Ã¨Ãª Ã·Ã¥Ã°Ã¥Ã§ Ã¸Ã¯Ã°Ã¨Ã¶ Ã¢ Ã¢Ã¥Ã­Ã³, Ã¢Ã¤Ã Ã¢Ã¨Ã¢ Ã¯Ã®Ã°Ã¸Ã¥Ã­Ã¼")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äîñòàë èç ñóìêè øèíó, çàòåì ïğèíÿëñÿ íàêëàäûâàòü å¸ íà ïîâğåæä¸ííóş êîíå÷íîñòü")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã« Ã¨Ã§ Ã±Ã³Ã¬ÃªÃ¨ Ã¸Ã¨Ã­Ã³, Ã§Ã Ã²Ã¥Ã¬ Ã¯Ã°Ã¨Ã­Ã¿Ã«Ã±Ã¿ Ã­Ã ÃªÃ«Ã Ã¤Ã»Ã¢Ã Ã²Ã¼ Ã¥Â¸ Ã­Ã  Ã¯Ã®Ã¢Ã°Ã¥Ã¦Ã¤Â¸Ã­Ã­Ã³Ã¾ ÃªÃ®Ã­Ã¥Ã·Ã­Ã®Ã±Ã²Ã¼")
                     wait(settings.global.lwait)
-                    sampSendChat("/me àêêóğàòíî íàëîæèë øèíó íà ïîâğåæä¸ííóş êîíå÷íîñòü")
+                    sampSendChat("/me Ã ÃªÃªÃ³Ã°Ã Ã²Ã­Ã® Ã­Ã Ã«Ã®Ã¦Ã¨Ã« Ã¸Ã¨Ã­Ã³ Ã­Ã  Ã¯Ã®Ã¢Ã°Ã¥Ã¦Ã¤Â¸Ã­Ã­Ã³Ã¾ ÃªÃ®Ã­Ã¥Ã·Ã­Ã®Ã±Ã²Ã¼")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Øèíà êà÷åñòâåííî íàëîæåíà íà ïîâğåæä¸ííóş êîíå÷íîñòü.")
+                    sampSendChat("/do Ã˜Ã¨Ã­Ã  ÃªÃ Ã·Ã¥Ã±Ã²Ã¢Ã¥Ã­Ã­Ã® Ã­Ã Ã«Ã®Ã¦Ã¥Ã­Ã  Ã­Ã  Ã¯Ã®Ã¢Ã°Ã¥Ã¦Ã¤Â¸Ã­Ã­Ã³Ã¾ ÃªÃ®Ã­Ã¥Ã·Ã­Ã®Ã±Ã²Ã¼.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me âçÿë èç ñóìêè ñòåğèëüíûå áèíòû, çàòåì íà÷àë äåëàòü êîñûíêó")
+                    sampSendChat("/me Ã¢Ã§Ã¿Ã« Ã¨Ã§ Ã±Ã³Ã¬ÃªÃ¨ Ã±Ã²Ã¥Ã°Ã¨Ã«Ã¼Ã­Ã»Ã¥ Ã¡Ã¨Ã­Ã²Ã», Ã§Ã Ã²Ã¥Ã¬ Ã­Ã Ã·Ã Ã« Ã¤Ã¥Ã«Ã Ã²Ã¼ ÃªÃ®Ã±Ã»Ã­ÃªÃ³")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ñäåëàë êîñûíêó èç ñòåğèëüíîãî áèíòà")
+                    sampSendChat("/me Ã±Ã¤Ã¥Ã«Ã Ã« ÃªÃ®Ã±Ã»Ã­ÃªÃ³ Ã¨Ã§ Ã±Ã²Ã¥Ã°Ã¨Ã«Ã¼Ã­Ã®Ã£Ã® Ã¡Ã¨Ã­Ã²Ã ")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïîäâåñèë ïîâğåæä¸ííóş êîíå÷íîñòü â ñîãíóòîì ïîëîæåíèè")
+                    sampSendChat("/me Ã¯Ã®Ã¤Ã¢Ã¥Ã±Ã¨Ã« Ã¯Ã®Ã¢Ã°Ã¥Ã¦Ã¤Â¸Ã­Ã­Ã³Ã¾ ÃªÃ®Ã­Ã¥Ã·Ã­Ã®Ã±Ã²Ã¼ Ã¢ Ã±Ã®Ã£Ã­Ã³Ã²Ã®Ã¬ Ã¯Ã®Ã«Ã®Ã¦Ã¥Ã­Ã¨Ã¨")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Ïîâğåæä¸ííàÿ êîíå÷íîñòü èììîáèëèçîâàíà.")
+                    sampSendChat("/do ÃÃ®Ã¢Ã°Ã¥Ã¦Ã¤Â¸Ã­Ã­Ã Ã¿ ÃªÃ®Ã­Ã¥Ã·Ã­Ã®Ã±Ã²Ã¼ Ã¨Ã¬Ã¬Ã®Ã¡Ã¨Ã«Ã¨Ã§Ã®Ã¢Ã Ã­Ã .")
                     wait(200)
-                    sampAddChatMessage("[SOBR tools]: Êîíåö îòûãğîâêè.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: ÃŠÃ®Ã­Ã¥Ã¶ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨.", 0x33AAFFFF)
                   else
-                    sampAddChatMessage("[SOBR tools]: Ñòàğò îòûãğîâêè. Äëÿ îòìåíû íàæìèòå CTRL+R.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: Ã‘Ã²Ã Ã°Ã² Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨. Ã„Ã«Ã¿ Ã®Ã²Ã¬Ã¥Ã­Ã» Ã­Ã Ã¦Ã¬Ã¨Ã²Ã¥ CTRL+R.", 0x33AAFFFF)
                     wait(200)
-                    sampSendChat("/do Ìåäèöèíñêàÿ ñóìêà íà ïëå÷å.")
+                    sampSendChat("/do ÃŒÃ¥Ã¤Ã¨Ã¶Ã¨Ã­Ã±ÃªÃ Ã¿ Ã±Ã³Ã¬ÃªÃ  Ã­Ã  Ã¯Ã«Ã¥Ã·Ã¥.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ñíÿëà ìåäèöèíñêóş ñóìêó ñ ïëå÷à, çàòåì îòêğûë å¸")
+                    sampSendChat("/me Ã±Ã­Ã¿Ã«Ã  Ã¬Ã¥Ã¤Ã¨Ã¶Ã¨Ã­Ã±ÃªÃ³Ã¾ Ã±Ã³Ã¬ÃªÃ³ Ã± Ã¯Ã«Ã¥Ã·Ã , Ã§Ã Ã²Ã¥Ã¬ Ã®Ã²ÃªÃ°Ã»Ã« Ã¥Â¸")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Â ñóìêå ëåæàò: ñòåğèëüíûå øïğèöû, àìïóëà ñ àíàëüãåòèêîì, øèíà, áèíòû.")
+                    sampSendChat("/do Ã‚ Ã±Ã³Ã¬ÃªÃ¥ Ã«Ã¥Ã¦Ã Ã²: Ã±Ã²Ã¥Ã°Ã¨Ã«Ã¼Ã­Ã»Ã¥ Ã¸Ã¯Ã°Ã¨Ã¶Ã», Ã Ã¬Ã¯Ã³Ã«Ã  Ã± Ã Ã­Ã Ã«Ã¼Ã£Ã¥Ã²Ã¨ÃªÃ®Ã¬, Ã¸Ã¨Ã­Ã , Ã¡Ã¨Ã­Ã²Ã».")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äîñòàëà ñòåğèëüíûé øïğèö ñ àìïóëîé, àêêóğàòíî ïğèîòêğûâ àìïóëó ñ àíàëüãåòèêîì")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã«Ã  Ã±Ã²Ã¥Ã°Ã¨Ã«Ã¼Ã­Ã»Ã© Ã¸Ã¯Ã°Ã¨Ã¶ Ã± Ã Ã¬Ã¯Ã³Ã«Ã®Ã©, Ã ÃªÃªÃ³Ã°Ã Ã²Ã­Ã® Ã¯Ã°Ã¨Ã®Ã²ÃªÃ°Ã»Ã¢ Ã Ã¬Ã¯Ã³Ã«Ã³ Ã± Ã Ã­Ã Ã«Ã¼Ã£Ã¥Ã²Ã¨ÃªÃ®Ã¬")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïåğåëèëà ñîäåğæèìîå àìïóëû â øïğèö")
+                    sampSendChat("/me Ã¯Ã¥Ã°Ã¥Ã«Ã¨Ã«Ã  Ã±Ã®Ã¤Ã¥Ã°Ã¦Ã¨Ã¬Ã®Ã¥ Ã Ã¬Ã¯Ã³Ã«Ã» Ã¢ Ã¸Ã¯Ã°Ã¨Ã¶")
                     wait(settings.global.lwait)
-                    sampSendChat("/me çàêàòàëà ğóêàâ ïîñòğàäàâøåãî, ïîñëå ÷åãî ââ¸ë àíàëüãåòèê ÷åğåç øïğèö â âåíó, âäàâèâ ïîğøåíü")
+                    sampSendChat("/me Ã§Ã ÃªÃ Ã²Ã Ã«Ã  Ã°Ã³ÃªÃ Ã¢ Ã¯Ã®Ã±Ã²Ã°Ã Ã¤Ã Ã¢Ã¸Ã¥Ã£Ã®, Ã¯Ã®Ã±Ã«Ã¥ Ã·Ã¥Ã£Ã® Ã¢Ã¢Â¸Ã« Ã Ã­Ã Ã«Ã¼Ã£Ã¥Ã²Ã¨Ãª Ã·Ã¥Ã°Ã¥Ã§ Ã¸Ã¯Ã°Ã¨Ã¶ Ã¢ Ã¢Ã¥Ã­Ã³, Ã¢Ã¤Ã Ã¢Ã¨Ã¢ Ã¯Ã®Ã°Ã¸Ã¥Ã­Ã¼")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äîñòàëà èç ñóìêè øèíó, çàòåì ïğèíÿëñÿ íàêëàäûâàòü å¸ íà ïîâğåæä¸ííóş êîíå÷íîñòü")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã«Ã  Ã¨Ã§ Ã±Ã³Ã¬ÃªÃ¨ Ã¸Ã¨Ã­Ã³, Ã§Ã Ã²Ã¥Ã¬ Ã¯Ã°Ã¨Ã­Ã¿Ã«Ã±Ã¿ Ã­Ã ÃªÃ«Ã Ã¤Ã»Ã¢Ã Ã²Ã¼ Ã¥Â¸ Ã­Ã  Ã¯Ã®Ã¢Ã°Ã¥Ã¦Ã¤Â¸Ã­Ã­Ã³Ã¾ ÃªÃ®Ã­Ã¥Ã·Ã­Ã®Ã±Ã²Ã¼")
                     wait(settings.global.lwait)
-                    sampSendChat("/me àêêóğàòíî íàëîæèëà øèíó íà ïîâğåæä¸ííóş êîíå÷íîñòü")
+                    sampSendChat("/me Ã ÃªÃªÃ³Ã°Ã Ã²Ã­Ã® Ã­Ã Ã«Ã®Ã¦Ã¨Ã«Ã  Ã¸Ã¨Ã­Ã³ Ã­Ã  Ã¯Ã®Ã¢Ã°Ã¥Ã¦Ã¤Â¸Ã­Ã­Ã³Ã¾ ÃªÃ®Ã­Ã¥Ã·Ã­Ã®Ã±Ã²Ã¼")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Øèíà êà÷åñòâåííî íàëîæåíà íà ïîâğåæä¸ííóş êîíå÷íîñòü.")
+                    sampSendChat("/do Ã˜Ã¨Ã­Ã  ÃªÃ Ã·Ã¥Ã±Ã²Ã¢Ã¥Ã­Ã­Ã® Ã­Ã Ã«Ã®Ã¦Ã¥Ã­Ã  Ã­Ã  Ã¯Ã®Ã¢Ã°Ã¥Ã¦Ã¤Â¸Ã­Ã­Ã³Ã¾ ÃªÃ®Ã­Ã¥Ã·Ã­Ã®Ã±Ã²Ã¼.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me âçÿëà èç ñóìêè ñòåğèëüíûå áèíòû, çàòåì íà÷àë äåëàòü êîñûíêó")
+                    sampSendChat("/me Ã¢Ã§Ã¿Ã«Ã  Ã¨Ã§ Ã±Ã³Ã¬ÃªÃ¨ Ã±Ã²Ã¥Ã°Ã¨Ã«Ã¼Ã­Ã»Ã¥ Ã¡Ã¨Ã­Ã²Ã», Ã§Ã Ã²Ã¥Ã¬ Ã­Ã Ã·Ã Ã« Ã¤Ã¥Ã«Ã Ã²Ã¼ ÃªÃ®Ã±Ã»Ã­ÃªÃ³")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ñäåëàëà êîñûíêó èç ñòåğèëüíîãî áèíòà")
+                    sampSendChat("/me Ã±Ã¤Ã¥Ã«Ã Ã«Ã  ÃªÃ®Ã±Ã»Ã­ÃªÃ³ Ã¨Ã§ Ã±Ã²Ã¥Ã°Ã¨Ã«Ã¼Ã­Ã®Ã£Ã® Ã¡Ã¨Ã­Ã²Ã ")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïîäâåñèëà ïîâğåæä¸ííóş êîíå÷íîñòü â ñîãíóòîì ïîëîæåíèè")
+                    sampSendChat("/me Ã¯Ã®Ã¤Ã¢Ã¥Ã±Ã¨Ã«Ã  Ã¯Ã®Ã¢Ã°Ã¥Ã¦Ã¤Â¸Ã­Ã­Ã³Ã¾ ÃªÃ®Ã­Ã¥Ã·Ã­Ã®Ã±Ã²Ã¼ Ã¢ Ã±Ã®Ã£Ã­Ã³Ã²Ã®Ã¬ Ã¯Ã®Ã«Ã®Ã¦Ã¥Ã­Ã¨Ã¨")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Ïîâğåæä¸ííàÿ êîíå÷íîñòü èììîáèëèçîâàíà.")
+                    sampSendChat("/do ÃÃ®Ã¢Ã°Ã¥Ã¦Ã¤Â¸Ã­Ã­Ã Ã¿ ÃªÃ®Ã­Ã¥Ã·Ã­Ã®Ã±Ã²Ã¼ Ã¨Ã¬Ã¬Ã®Ã¡Ã¨Ã«Ã¨Ã§Ã®Ã¢Ã Ã­Ã .")
                     wait(200)
-                    sampAddChatMessage("[SOBR tools]: Êîíåö îòûãğîâêè.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: ÃŠÃ®Ã­Ã¥Ã¶ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨.", 0x33AAFFFF)
                   end
                 end
               end
             },
             {
-              title = "{808080}ÏÌÏ ïğè ğàíåíèè êîíå÷íîñòåé{FFFFFF}",
+              title = "{808080}ÃÃŒÃ Ã¯Ã°Ã¨ Ã°Ã Ã­Ã¥Ã­Ã¨Ã¨ ÃªÃ®Ã­Ã¥Ã·Ã­Ã®Ã±Ã²Ã¥Ã©{FFFFFF}",
               onclick = function()
-                if settings.global.lwait ~= "Íå óêàçàíà." and settings.global.lwait ~= "Íå óêàçàíà" then
+                if settings.global.lwait ~= "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­Ã ." and settings.global.lwait ~= "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­Ã " then
                   if settings.global.m_s_t_a_t == true then
-                    sampAddChatMessage("[SOBR tools]: Ñòàğò îòûãğîâêè. Äëÿ îòìåíû íàæìèòå CTRL+R.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: Ã‘Ã²Ã Ã°Ã² Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨. Ã„Ã«Ã¿ Ã®Ã²Ã¬Ã¥Ã­Ã» Ã­Ã Ã¦Ã¬Ã¨Ã²Ã¥ CTRL+R.", 0x33AAFFFF)
                     wait(200)
-                    sampSendChat("/me îñìîòğåë ğàíåííîãî")
+                    sampSendChat("/me Ã®Ã±Ã¬Ã®Ã²Ã°Ã¥Ã« Ã°Ã Ã­Ã¥Ã­Ã­Ã®Ã£Ã®")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Îïğåäåëèë, ïğîáèòà àğòåğèÿ.")
+                    sampSendChat("/do ÃÃ¯Ã°Ã¥Ã¤Ã¥Ã«Ã¨Ã«, Ã¯Ã°Ã®Ã¡Ã¨Ã²Ã  Ã Ã°Ã²Ã¥Ã°Ã¨Ã¿.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me íàëîæèë äàâÿùóş ïîâÿçêó íà ğàíó")
+                    sampSendChat("/me Ã­Ã Ã«Ã®Ã¦Ã¨Ã« Ã¤Ã Ã¢Ã¿Ã¹Ã³Ã¾ Ã¯Ã®Ã¢Ã¿Ã§ÃªÃ³ Ã­Ã  Ã°Ã Ã­Ã³")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äîñòàë ôëÿãó ñî ñïèğòîì è îòîğâàë êóñîê òêàíè ñî ñâîåé îäåæäû")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã« Ã´Ã«Ã¿Ã£Ã³ Ã±Ã® Ã±Ã¯Ã¨Ã°Ã²Ã®Ã¬ Ã¨ Ã®Ã²Ã®Ã°Ã¢Ã Ã« ÃªÃ³Ã±Ã®Ãª Ã²ÃªÃ Ã­Ã¨ Ã±Ã® Ã±Ã¢Ã®Ã¥Ã© Ã®Ã¤Ã¥Ã¦Ã¤Ã»")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Áîåö íàëèë ñïèğò íà òêàíü è ïğèëîæèë å¸ íà ìåñòî ğàíåíèÿ.")
+                    sampSendChat("/do ÃÃ®Ã¥Ã¶ Ã­Ã Ã«Ã¨Ã« Ã±Ã¯Ã¨Ã°Ã² Ã­Ã  Ã²ÃªÃ Ã­Ã¼ Ã¨ Ã¯Ã°Ã¨Ã«Ã®Ã¦Ã¨Ã« Ã¥Â¸ Ã­Ã  Ã¬Ã¥Ã±Ã²Ã® Ã°Ã Ã­Ã¥Ã­Ã¨Ã¿.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äîñòàë àïòå÷êó è îòêğûë åå, çàòåì äîñòàë æãóò è áèíò")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã« Ã Ã¯Ã²Ã¥Ã·ÃªÃ³ Ã¨ Ã®Ã²ÃªÃ°Ã»Ã« Ã¥Ã¥, Ã§Ã Ã²Ã¥Ã¬ Ã¤Ã®Ã±Ã²Ã Ã« Ã¦Ã£Ã³Ã² Ã¨ Ã¡Ã¨Ã­Ã²")
                     wait(settings.global.lwait)
-                    sampSendChat("/me çàêğåïèë ïîâÿçêó íà ğàíåíèè áèíòîì îáìîòàâ áèíò âîêğóã ğàíû")
+                    sampSendChat("/me Ã§Ã ÃªÃ°Ã¥Ã¯Ã¨Ã« Ã¯Ã®Ã¢Ã¿Ã§ÃªÃ³ Ã­Ã  Ã°Ã Ã­Ã¥Ã­Ã¨Ã¨ Ã¡Ã¨Ã­Ã²Ã®Ã¬ Ã®Ã¡Ã¬Ã®Ã²Ã Ã¢ Ã¡Ã¨Ã­Ã² Ã¢Ã®ÃªÃ°Ã³Ã£ Ã°Ã Ã­Ã»")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Áîåö íàëîæèë æãóò íèæå ğàíåíèÿ.")
+                    sampSendChat("/do ÃÃ®Ã¥Ã¶ Ã­Ã Ã«Ã®Ã¦Ã¨Ã« Ã¦Ã£Ã³Ã² Ã­Ã¨Ã¦Ã¥ Ã°Ã Ã­Ã¥Ã­Ã¨Ã¿.")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Êğîâîòå÷åíèå ïîñòåïåííî ïğîõîäèò.")
+                    sampSendChat("/do ÃŠÃ°Ã®Ã¢Ã®Ã²Ã¥Ã·Ã¥Ã­Ã¨Ã¥ Ã¯Ã®Ã±Ã²Ã¥Ã¯Ã¥Ã­Ã­Ã® Ã¯Ã°Ã®ÃµÃ®Ã¤Ã¨Ã².")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Æãóò íàëîæåí, êğîâîòå÷åíèå îñòàíîâëåíî.")
+                    sampSendChat("/do Ã†Ã£Ã³Ã² Ã­Ã Ã«Ã®Ã¦Ã¥Ã­, ÃªÃ°Ã®Ã¢Ã®Ã²Ã¥Ã·Ã¥Ã­Ã¨Ã¥ Ã®Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­Ã®.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äîñòàë èç àïòå÷êè òàáëåòêè Àñïèğèí è ïîëîæèë â ğîò ğàíåíîìó")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã« Ã¨Ã§ Ã Ã¯Ã²Ã¥Ã·ÃªÃ¨ Ã²Ã Ã¡Ã«Ã¥Ã²ÃªÃ¨ Ã€Ã±Ã¯Ã¨Ã°Ã¨Ã­ Ã¨ Ã¯Ã®Ã«Ã®Ã¦Ã¨Ã« Ã¢ Ã°Ã®Ã² Ã°Ã Ã­Ã¥Ã­Ã®Ã¬Ã³")
                     wait(200)
-                    sampAddChatMessage("[SOBR tools]: Êîíåö îòûãğîâêè.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: ÃŠÃ®Ã­Ã¥Ã¶ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨.", 0x33AAFFFF)
                   else
-                    sampAddChatMessage("[SOBR tools]: Ñòàğò îòûãğîâêè. Äëÿ îòìåíû íàæìèòå CTRL+R.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: Ã‘Ã²Ã Ã°Ã² Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨. Ã„Ã«Ã¿ Ã®Ã²Ã¬Ã¥Ã­Ã» Ã­Ã Ã¦Ã¬Ã¨Ã²Ã¥ CTRL+R.", 0x33AAFFFF)
                     wait(200)
-                    sampSendChat("/me îñìîòğåëà ğàíåííîãî")
+                    sampSendChat("/me Ã®Ã±Ã¬Ã®Ã²Ã°Ã¥Ã«Ã  Ã°Ã Ã­Ã¥Ã­Ã­Ã®Ã£Ã®")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Îïğåäåëèëà, ïğîáèòà àğòåğèÿ.")
+                    sampSendChat("/do ÃÃ¯Ã°Ã¥Ã¤Ã¥Ã«Ã¨Ã«Ã , Ã¯Ã°Ã®Ã¡Ã¨Ã²Ã  Ã Ã°Ã²Ã¥Ã°Ã¨Ã¿.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me íàëîæèëà äàâÿùóş ïîâÿçêó íà ğàíó")
+                    sampSendChat("/me Ã­Ã Ã«Ã®Ã¦Ã¨Ã«Ã  Ã¤Ã Ã¢Ã¿Ã¹Ã³Ã¾ Ã¯Ã®Ã¢Ã¿Ã§ÃªÃ³ Ã­Ã  Ã°Ã Ã­Ã³")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äîñòàëà ôëÿãó ñî ñïèğòîì è îòîğâàëà êóñîê òêàíè ñî ñâîåé îäåæäû")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã«Ã  Ã´Ã«Ã¿Ã£Ã³ Ã±Ã® Ã±Ã¯Ã¨Ã°Ã²Ã®Ã¬ Ã¨ Ã®Ã²Ã®Ã°Ã¢Ã Ã«Ã  ÃªÃ³Ã±Ã®Ãª Ã²ÃªÃ Ã­Ã¨ Ã±Ã® Ã±Ã¢Ã®Ã¥Ã© Ã®Ã¤Ã¥Ã¦Ã¤Ã»")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Íàëèëà ñïèğò íà òêàíü è ïğèëîæèëà å¸ íà ìåñòî ğàíåíèÿ.")
+                    sampSendChat("/do ÃÃ Ã«Ã¨Ã«Ã  Ã±Ã¯Ã¨Ã°Ã² Ã­Ã  Ã²ÃªÃ Ã­Ã¼ Ã¨ Ã¯Ã°Ã¨Ã«Ã®Ã¦Ã¨Ã«Ã  Ã¥Â¸ Ã­Ã  Ã¬Ã¥Ã±Ã²Ã® Ã°Ã Ã­Ã¥Ã­Ã¨Ã¿.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äîñòàëà àïòå÷êó è îòêğûëà åå, çàòåì äîñòàëà æãóò è áèíò")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã«Ã  Ã Ã¯Ã²Ã¥Ã·ÃªÃ³ Ã¨ Ã®Ã²ÃªÃ°Ã»Ã«Ã  Ã¥Ã¥, Ã§Ã Ã²Ã¥Ã¬ Ã¤Ã®Ã±Ã²Ã Ã«Ã  Ã¦Ã£Ã³Ã² Ã¨ Ã¡Ã¨Ã­Ã²")
                     wait(settings.global.lwait)
-                    sampSendChat("/me çàêğåïèëà ïîâÿçêó íà ğàíåíèè áèíòîì îáìîòàâ áèíò âîêğóã ğàíû")
+                    sampSendChat("/me Ã§Ã ÃªÃ°Ã¥Ã¯Ã¨Ã«Ã  Ã¯Ã®Ã¢Ã¿Ã§ÃªÃ³ Ã­Ã  Ã°Ã Ã­Ã¥Ã­Ã¨Ã¨ Ã¡Ã¨Ã­Ã²Ã®Ã¬ Ã®Ã¡Ã¬Ã®Ã²Ã Ã¢ Ã¡Ã¨Ã­Ã² Ã¢Ã®ÃªÃ°Ã³Ã£ Ã°Ã Ã­Ã»")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Íàëîæèëà æãóò íèæå ğàíåíèÿ.")
+                    sampSendChat("/do ÃÃ Ã«Ã®Ã¦Ã¨Ã«Ã  Ã¦Ã£Ã³Ã² Ã­Ã¨Ã¦Ã¥ Ã°Ã Ã­Ã¥Ã­Ã¨Ã¿.")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Êğîâîòå÷åíèå ïîñòåïåííî ïğîõîäèò.")
+                    sampSendChat("/do ÃŠÃ°Ã®Ã¢Ã®Ã²Ã¥Ã·Ã¥Ã­Ã¨Ã¥ Ã¯Ã®Ã±Ã²Ã¥Ã¯Ã¥Ã­Ã­Ã® Ã¯Ã°Ã®ÃµÃ®Ã¤Ã¨Ã².")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Æãóò íàëîæåí, êğîâîòå÷åíèå îñòàíîâëåíî.")
+                    sampSendChat("/do Ã†Ã£Ã³Ã² Ã­Ã Ã«Ã®Ã¦Ã¥Ã­, ÃªÃ°Ã®Ã¢Ã®Ã²Ã¥Ã·Ã¥Ã­Ã¨Ã¥ Ã®Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­Ã®.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äîñòàëà èç àïòå÷êè òàáëåòêè Àñïèğèí è ïîëîæèëà â ğîò ğàíåíîìó")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã«Ã  Ã¨Ã§ Ã Ã¯Ã²Ã¥Ã·ÃªÃ¨ Ã²Ã Ã¡Ã«Ã¥Ã²ÃªÃ¨ Ã€Ã±Ã¯Ã¨Ã°Ã¨Ã­ Ã¨ Ã¯Ã®Ã«Ã®Ã¦Ã¨Ã«Ã  Ã¢ Ã°Ã®Ã² Ã°Ã Ã­Ã¥Ã­Ã®Ã¬Ã³")
                     wait(200)
-                    sampAddChatMessage("[SOBR tools]: Êîíåö îòûãğîâêè.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: ÃŠÃ®Ã­Ã¥Ã¶ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨.", 0x33AAFFFF)
                   end
                 end
               end
             },
             {
-              title = "{808080}ÏÌÏ ïğè ğàíåíèè â ãğóäü è æèâîò{FFFFFF}",
+              title = "{808080}ÃÃŒÃ Ã¯Ã°Ã¨ Ã°Ã Ã­Ã¥Ã­Ã¨Ã¨ Ã¢ Ã£Ã°Ã³Ã¤Ã¼ Ã¨ Ã¦Ã¨Ã¢Ã®Ã²{FFFFFF}",
               onclick = function()
-                if settings.global.lwait ~= "Íå óêàçàíà." and settings.global.lwait ~= "Íå óêàçàíà" then
+                if settings.global.lwait ~= "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­Ã ." and settings.global.lwait ~= "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­Ã " then
                   if settings.global.m_s_t_a_t == true then
-                    sampAddChatMessage("[SOBR tools]: Ñòàğò îòûãğîâêè. Äëÿ îòìåíû íàæìèòå CTRL+R.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: Ã‘Ã²Ã Ã°Ã² Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨. Ã„Ã«Ã¿ Ã®Ã²Ã¬Ã¥Ã­Ã» Ã­Ã Ã¦Ã¬Ã¨Ã²Ã¥ CTRL+R.", 0x33AAFFFF)
                     wait(200)
-                    sampSendChat("/me îñìîòğåë ğàíåííîãî")
+                    sampSendChat("/me Ã®Ã±Ã¬Ã®Ã²Ã°Ã¥Ã« Ã°Ã Ã­Ã¥Ã­Ã­Ã®Ã£Ã®")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïîìîã ÷åëîâåêó ïğèíÿòü ïîëóñèäÿ÷åå ïîëîæåíèå")
+                    sampSendChat("/me Ã¯Ã®Ã¬Ã®Ã£ Ã·Ã¥Ã«Ã®Ã¢Ã¥ÃªÃ³ Ã¯Ã°Ã¨Ã­Ã¿Ã²Ã¼ Ã¯Ã®Ã«Ã³Ã±Ã¨Ã¤Ã¿Ã·Ã¥Ã¥ Ã¯Ã®Ã«Ã®Ã¦Ã¥Ã­Ã¨Ã¥")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äîñòàë àïòå÷êó è îòêğûë åå")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã« Ã Ã¯Ã²Ã¥Ã·ÃªÃ³ Ã¨ Ã®Ã²ÃªÃ°Ã»Ã« Ã¥Ã¥")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Áîåö äîñòàë èç àïòå÷êè ñòåğèëüíûé áèíò è ñğåäñòâà äëÿ îáğàáîòêè ğàí.")
+                    sampSendChat("/do ÃÃ®Ã¥Ã¶ Ã¤Ã®Ã±Ã²Ã Ã« Ã¨Ã§ Ã Ã¯Ã²Ã¥Ã·ÃªÃ¨ Ã±Ã²Ã¥Ã°Ã¨Ã«Ã¼Ã­Ã»Ã© Ã¡Ã¨Ã­Ã² Ã¨ Ã±Ã°Ã¥Ã¤Ã±Ã²Ã¢Ã  Ã¤Ã«Ã¿ Ã®Ã¡Ã°Ã Ã¡Ã®Ã²ÃªÃ¨ Ã°Ã Ã­.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me îáğàáîòàë êğàÿ ğàíû îáåççàğàæèâàşùèì ñğåäñòâîì è óáğàë èçëèøêè êğîâè")
+                    sampSendChat("/me Ã®Ã¡Ã°Ã Ã¡Ã®Ã²Ã Ã« ÃªÃ°Ã Ã¿ Ã°Ã Ã­Ã» Ã®Ã¡Ã¥Ã§Ã§Ã Ã°Ã Ã¦Ã¨Ã¢Ã Ã¾Ã¹Ã¨Ã¬ Ã±Ã°Ã¥Ã¤Ã±Ã²Ã¢Ã®Ã¬ Ã¨ Ã³Ã¡Ã°Ã Ã« Ã¨Ã§Ã«Ã¨Ã¸ÃªÃ¨ ÃªÃ°Ã®Ã¢Ã¨")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Áîåö äîñòàë àñåïòè÷åñêóş ìàğëş è ñìî÷èë åå ñïèğòîì.")
+                    sampSendChat("/do ÃÃ®Ã¥Ã¶ Ã¤Ã®Ã±Ã²Ã Ã« Ã Ã±Ã¥Ã¯Ã²Ã¨Ã·Ã¥Ã±ÃªÃ³Ã¾ Ã¬Ã Ã°Ã«Ã¾ Ã¨ Ã±Ã¬Ã®Ã·Ã¨Ã« Ã¥Ã¥ Ã±Ã¯Ã¨Ã°Ã²Ã®Ã¬.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïğèæàë ìàğëş ê ğàíå, ïğèîñòàíîâèâ êğîâîòå÷åíèå")
+                    sampSendChat("/me Ã¯Ã°Ã¨Ã¦Ã Ã« Ã¬Ã Ã°Ã«Ã¾ Ãª Ã°Ã Ã­Ã¥, Ã¯Ã°Ã¨Ã®Ã±Ã²Ã Ã­Ã®Ã¢Ã¨Ã¢ ÃªÃ°Ã®Ã¢Ã®Ã²Ã¥Ã·Ã¥Ã­Ã¨Ã¥")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äîñòàë èç àïòå÷êè áèíò, çàòåì íà÷àë îáìàòûâàòü ğàíó")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã« Ã¨Ã§ Ã Ã¯Ã²Ã¥Ã·ÃªÃ¨ Ã¡Ã¨Ã­Ã², Ã§Ã Ã²Ã¥Ã¬ Ã­Ã Ã·Ã Ã« Ã®Ã¡Ã¬Ã Ã²Ã»Ã¢Ã Ã²Ã¼ Ã°Ã Ã­Ã³")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Áèíòû ïîñòåïåííî ñêğûâàşò ğàíó.")
+                    sampSendChat("/do ÃÃ¨Ã­Ã²Ã» Ã¯Ã®Ã±Ã²Ã¥Ã¯Ã¥Ã­Ã­Ã® Ã±ÃªÃ°Ã»Ã¢Ã Ã¾Ã² Ã°Ã Ã­Ã³.")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Ïîâÿçêà êğåïêî íàëîæåíà è ñòÿãèâàåò ğàíó.")
+                    sampSendChat("/do ÃÃ®Ã¢Ã¿Ã§ÃªÃ  ÃªÃ°Ã¥Ã¯ÃªÃ® Ã­Ã Ã«Ã®Ã¦Ã¥Ã­Ã  Ã¨ Ã±Ã²Ã¿Ã£Ã¨Ã¢Ã Ã¥Ã² Ã°Ã Ã­Ã³.")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Êğîâîòå÷åíèå ïîñòåïåííî ïğîõîäèò.")
+                    sampSendChat("/do ÃŠÃ°Ã®Ã¢Ã®Ã²Ã¥Ã·Ã¥Ã­Ã¨Ã¥ Ã¯Ã®Ã±Ã²Ã¥Ã¯Ã¥Ã­Ã­Ã® Ã¯Ã°Ã®ÃµÃ®Ã¤Ã¨Ã².")
                     wait(200)
-                    sampAddChatMessage("[SOBR tools]: Êîíåö îòûãğîâêè.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: ÃŠÃ®Ã­Ã¥Ã¶ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨.", 0x33AAFFFF)
                   else
-                    sampAddChatMessage("[SOBR tools]: Ñòàğò îòûãğîâêè. Äëÿ îòìåíû íàæìèòå CTRL+R.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: Ã‘Ã²Ã Ã°Ã² Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨. Ã„Ã«Ã¿ Ã®Ã²Ã¬Ã¥Ã­Ã» Ã­Ã Ã¦Ã¬Ã¨Ã²Ã¥ CTRL+R.", 0x33AAFFFF)
                     wait(200)
-                    sampSendChat("/me îñìîòğåëà ğàíåííîãî")
+                    sampSendChat("/me Ã®Ã±Ã¬Ã®Ã²Ã°Ã¥Ã«Ã  Ã°Ã Ã­Ã¥Ã­Ã­Ã®Ã£Ã®")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïîìîãëà ÷åëîâåêó ïğèíÿòü ïîëóñèäÿ÷åå ïîëîæåíèå")
+                    sampSendChat("/me Ã¯Ã®Ã¬Ã®Ã£Ã«Ã  Ã·Ã¥Ã«Ã®Ã¢Ã¥ÃªÃ³ Ã¯Ã°Ã¨Ã­Ã¿Ã²Ã¼ Ã¯Ã®Ã«Ã³Ã±Ã¨Ã¤Ã¿Ã·Ã¥Ã¥ Ã¯Ã®Ã«Ã®Ã¦Ã¥Ã­Ã¨Ã¥")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äîñòàëà àïòå÷êó è îòêğûë åå")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã«Ã  Ã Ã¯Ã²Ã¥Ã·ÃªÃ³ Ã¨ Ã®Ã²ÃªÃ°Ã»Ã« Ã¥Ã¥")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Äîñòàëà èç àïòå÷êè ñòåğèëüíûé áèíò è ñğåäñòâà äëÿ îáğàáîòêè ğàí.")
+                    sampSendChat("/do Ã„Ã®Ã±Ã²Ã Ã«Ã  Ã¨Ã§ Ã Ã¯Ã²Ã¥Ã·ÃªÃ¨ Ã±Ã²Ã¥Ã°Ã¨Ã«Ã¼Ã­Ã»Ã© Ã¡Ã¨Ã­Ã² Ã¨ Ã±Ã°Ã¥Ã¤Ã±Ã²Ã¢Ã  Ã¤Ã«Ã¿ Ã®Ã¡Ã°Ã Ã¡Ã®Ã²ÃªÃ¨ Ã°Ã Ã­.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me îáğàáîòàëà êğàÿ ğàíû îáåççàğàæèâàşùèì ñğåäñòâîì è óáğàë èçëèøêè êğîâè")
+                    sampSendChat("/me Ã®Ã¡Ã°Ã Ã¡Ã®Ã²Ã Ã«Ã  ÃªÃ°Ã Ã¿ Ã°Ã Ã­Ã» Ã®Ã¡Ã¥Ã§Ã§Ã Ã°Ã Ã¦Ã¨Ã¢Ã Ã¾Ã¹Ã¨Ã¬ Ã±Ã°Ã¥Ã¤Ã±Ã²Ã¢Ã®Ã¬ Ã¨ Ã³Ã¡Ã°Ã Ã« Ã¨Ã§Ã«Ã¨Ã¸ÃªÃ¨ ÃªÃ°Ã®Ã¢Ã¨")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Äîñòàëà àñåïòè÷åñêóş ìàğëş è ñìî÷èëà åå ñïèğòîì.")
+                    sampSendChat("/do Ã„Ã®Ã±Ã²Ã Ã«Ã  Ã Ã±Ã¥Ã¯Ã²Ã¨Ã·Ã¥Ã±ÃªÃ³Ã¾ Ã¬Ã Ã°Ã«Ã¾ Ã¨ Ã±Ã¬Ã®Ã·Ã¨Ã«Ã  Ã¥Ã¥ Ã±Ã¯Ã¨Ã°Ã²Ã®Ã¬.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïğèæàëà ìàğëş ê ğàíå, ïğèîñòàíîâèâ êğîâîòå÷åíèå")
+                    sampSendChat("/me Ã¯Ã°Ã¨Ã¦Ã Ã«Ã  Ã¬Ã Ã°Ã«Ã¾ Ãª Ã°Ã Ã­Ã¥, Ã¯Ã°Ã¨Ã®Ã±Ã²Ã Ã­Ã®Ã¢Ã¨Ã¢ ÃªÃ°Ã®Ã¢Ã®Ã²Ã¥Ã·Ã¥Ã­Ã¨Ã¥")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äîñòàëà èç àïòå÷êè áèíò, çàòåì íà÷àëà îáìàòûâàòü ğàíó")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã«Ã  Ã¨Ã§ Ã Ã¯Ã²Ã¥Ã·ÃªÃ¨ Ã¡Ã¨Ã­Ã², Ã§Ã Ã²Ã¥Ã¬ Ã­Ã Ã·Ã Ã«Ã  Ã®Ã¡Ã¬Ã Ã²Ã»Ã¢Ã Ã²Ã¼ Ã°Ã Ã­Ã³")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Áèíòû ïîñòåïåííî ñêğûâàşò ğàíó.")
+                    sampSendChat("/do ÃÃ¨Ã­Ã²Ã» Ã¯Ã®Ã±Ã²Ã¥Ã¯Ã¥Ã­Ã­Ã® Ã±ÃªÃ°Ã»Ã¢Ã Ã¾Ã² Ã°Ã Ã­Ã³.")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Ïîâÿçêà êğåïêî íàëîæåíà è ñòÿãèâàåò ğàíó.")
+                    sampSendChat("/do ÃÃ®Ã¢Ã¿Ã§ÃªÃ  ÃªÃ°Ã¥Ã¯ÃªÃ® Ã­Ã Ã«Ã®Ã¦Ã¥Ã­Ã  Ã¨ Ã±Ã²Ã¿Ã£Ã¨Ã¢Ã Ã¥Ã² Ã°Ã Ã­Ã³.")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Êğîâîòå÷åíèå ïîñòåïåííî ïğîõîäèò.")
+                    sampSendChat("/do ÃŠÃ°Ã®Ã¢Ã®Ã²Ã¥Ã·Ã¥Ã­Ã¨Ã¥ Ã¯Ã®Ã±Ã²Ã¥Ã¯Ã¥Ã­Ã­Ã® Ã¯Ã°Ã®ÃµÃ®Ã¤Ã¨Ã².")
                     wait(200)
-                    sampAddChatMessage("[SOBR tools]: Êîíåö îòûãğîâêè.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: ÃŠÃ®Ã­Ã¥Ã¶ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨.", 0x33AAFFFF)
                   end
                 end
               end
             },
             {
-              title = "{808080}ÏÌÏ ïğè ïîòåğå ïóëüñà{FFFFFF}",
+              title = "{808080}ÃÃŒÃ Ã¯Ã°Ã¨ Ã¯Ã®Ã²Ã¥Ã°Ã¥ Ã¯Ã³Ã«Ã¼Ã±Ã {FFFFFF}",
               onclick = function()
-                if settings.global.lwait ~= "Íå óêàçàíà." and settings.global.lwait ~= "Íå óêàçàíà" then
+                if settings.global.lwait ~= "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­Ã ." and settings.global.lwait ~= "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­Ã " then
                   if settings.global.m_s_t_a_t == true then
-                    sampAddChatMessage("[SOBR tools]: Ñòàğò îòûãğîâêè. Äëÿ îòìåíû íàæìèòå CTRL+R.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: Ã‘Ã²Ã Ã°Ã² Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨. Ã„Ã«Ã¿ Ã®Ã²Ã¬Ã¥Ã­Ã» Ã­Ã Ã¦Ã¬Ã¨Ã²Ã¥ CTRL+R.", 0x33AAFFFF)
                     wait(200)
-                    sampSendChat("/do Íà ïğàâîì ïëå÷å âèñèò îòêğûòàÿ ìåä. ñóìêà.")
+                    sampSendChat("/do ÃÃ  Ã¯Ã°Ã Ã¢Ã®Ã¬ Ã¯Ã«Ã¥Ã·Ã¥ Ã¢Ã¨Ã±Ã¨Ã² Ã®Ã²ÃªÃ°Ã»Ã²Ã Ã¿ Ã¬Ã¥Ã¤. Ã±Ã³Ã¬ÃªÃ .")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äîñòàâ èç ñóìêè ïîëîòåíöå, ïîäëîæèë åãî ïîä øåş ïîñòğàäàâøåãî")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã¢ Ã¨Ã§ Ã±Ã³Ã¬ÃªÃ¨ Ã¯Ã®Ã«Ã®Ã²Ã¥Ã­Ã¶Ã¥, Ã¯Ã®Ã¤Ã«Ã®Ã¦Ã¨Ã« Ã¥Ã£Ã® Ã¯Ã®Ã¤ Ã¸Ã¥Ã¾ Ã¯Ã®Ã±Ã²Ã°Ã Ã¤Ã Ã¢Ã¸Ã¥Ã£Ã®")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ñíÿë ñ ãğóäè ÷åëîâåêà âñş îäåæäó")
+                    sampSendChat("/me Ã±Ã­Ã¿Ã« Ã± Ã£Ã°Ã³Ã¤Ã¨ Ã·Ã¥Ã«Ã®Ã¢Ã¥ÃªÃ  Ã¢Ã±Ã¾ Ã®Ã¤Ã¥Ã¦Ã¤Ã³")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ñíÿë âñå ñäàâëèâàşùèå àêñåññóàğû")
+                    sampSendChat("/me Ã±Ã­Ã¿Ã« Ã¢Ã±Ã¥ Ã±Ã¤Ã Ã¢Ã«Ã¨Ã¢Ã Ã¾Ã¹Ã¨Ã¥ Ã ÃªÃ±Ã¥Ã±Ã±Ã³Ã Ã°Ã»")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ñäåëàâ ãëóáîêèé âäîõ, íà÷àë äåëàòü èñêóññòâåííîå äûõàíèå ë¸ãêèõ")
+                    sampSendChat("/me Ã±Ã¤Ã¥Ã«Ã Ã¢ Ã£Ã«Ã³Ã¡Ã®ÃªÃ¨Ã© Ã¢Ã¤Ã®Ãµ, Ã­Ã Ã·Ã Ã« Ã¤Ã¥Ã«Ã Ã²Ã¼ Ã¨Ã±ÃªÃ³Ã±Ã±Ã²Ã¢Ã¥Ã­Ã­Ã®Ã¥ Ã¤Ã»ÃµÃ Ã­Ã¨Ã¥ Ã«Â¸Ã£ÃªÃ¨Ãµ")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Âîçäóõ ïîñòåïåííî íàïîëíÿåò è çàïîëíÿåò ë¸ãêèå ïîñòğàäàâøåãî.")
+                    sampSendChat("/do Ã‚Ã®Ã§Ã¤Ã³Ãµ Ã¯Ã®Ã±Ã²Ã¥Ã¯Ã¥Ã­Ã­Ã® Ã­Ã Ã¯Ã®Ã«Ã­Ã¿Ã¥Ã² Ã¨ Ã§Ã Ã¯Ã®Ã«Ã­Ã¿Ã¥Ã² Ã«Â¸Ã£ÃªÃ¨Ã¥ Ã¯Ã®Ã±Ã²Ã°Ã Ã¤Ã Ã¢Ã¸Ã¥Ã£Ã®.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïîëîæèë ğóêè äğóã íà äğóãà íà ãğóäü ÷åëîâåêà")
+                    sampSendChat("/me Ã¯Ã®Ã«Ã®Ã¦Ã¨Ã« Ã°Ã³ÃªÃ¨ Ã¤Ã°Ã³Ã£ Ã­Ã  Ã¤Ã°Ã³Ã£Ã  Ã­Ã  Ã£Ã°Ã³Ã¤Ã¼ Ã·Ã¥Ã«Ã®Ã¢Ã¥ÃªÃ ")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äåëàåò íåïğÿìîé ìàññàæ ñåğäöà")
+                    sampSendChat("/me Ã¤Ã¥Ã«Ã Ã¥Ã² Ã­Ã¥Ã¯Ã°Ã¿Ã¬Ã®Ã© Ã¬Ã Ã±Ã±Ã Ã¦ Ã±Ã¥Ã°Ã¤Ã¶Ã ")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïîïåğåìåííî äåëàåò èñêóññòâåííîå äûõàíèå è íåïğÿìîé ìàññàæ ñåğäöà")
+                    sampSendChat("/me Ã¯Ã®Ã¯Ã¥Ã°Ã¥Ã¬Ã¥Ã­Ã­Ã® Ã¤Ã¥Ã«Ã Ã¥Ã² Ã¨Ã±ÃªÃ³Ã±Ã±Ã²Ã¢Ã¥Ã­Ã­Ã®Ã¥ Ã¤Ã»ÃµÃ Ã­Ã¨Ã¥ Ã¨ Ã­Ã¥Ã¯Ã°Ã¿Ã¬Ã®Ã© Ã¬Ã Ã±Ã±Ã Ã¦ Ã±Ã¥Ã°Ã¤Ã¶Ã ")
                     wait(200)
-                    sampAddChatMessage("[SOBR tools]: Êîíåö îòûãğîâêè.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: ÃŠÃ®Ã­Ã¥Ã¶ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨.", 0x33AAFFFF)
                   else
-                    sampAddChatMessage("[SOBR tools]: Ñòàğò îòûãğîâêè. Äëÿ îòìåíû íàæìèòå CTRL+R.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: Ã‘Ã²Ã Ã°Ã² Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨. Ã„Ã«Ã¿ Ã®Ã²Ã¬Ã¥Ã­Ã» Ã­Ã Ã¦Ã¬Ã¨Ã²Ã¥ CTRL+R.", 0x33AAFFFF)
                     wait(200)
-                    sampSendChat("/do Íà ïğàâîì ïëå÷å âèñèò îòêğûòàÿ ìåä. ñóìêà.")
+                    sampSendChat("/do ÃÃ  Ã¯Ã°Ã Ã¢Ã®Ã¬ Ã¯Ã«Ã¥Ã·Ã¥ Ã¢Ã¨Ã±Ã¨Ã² Ã®Ã²ÃªÃ°Ã»Ã²Ã Ã¿ Ã¬Ã¥Ã¤. Ã±Ã³Ã¬ÃªÃ .")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äîñòàâ èç ñóìêè ïîëîòåíöå, ïîäëîæèëà åãî ïîä øåş ïîñòğàäàâøåãî")
+                    sampSendChat("/me Ã¤Ã®Ã±Ã²Ã Ã¢ Ã¨Ã§ Ã±Ã³Ã¬ÃªÃ¨ Ã¯Ã®Ã«Ã®Ã²Ã¥Ã­Ã¶Ã¥, Ã¯Ã®Ã¤Ã«Ã®Ã¦Ã¨Ã«Ã  Ã¥Ã£Ã® Ã¯Ã®Ã¤ Ã¸Ã¥Ã¾ Ã¯Ã®Ã±Ã²Ã°Ã Ã¤Ã Ã¢Ã¸Ã¥Ã£Ã®")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ñíÿëà ñ ãğóäè ÷åëîâåêà âñş îäåæäó")
+                    sampSendChat("/me Ã±Ã­Ã¿Ã«Ã  Ã± Ã£Ã°Ã³Ã¤Ã¨ Ã·Ã¥Ã«Ã®Ã¢Ã¥ÃªÃ  Ã¢Ã±Ã¾ Ã®Ã¤Ã¥Ã¦Ã¤Ã³")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ñíÿëà âñå ñäàâëèâàşùèå àêñåññóàğû")
+                    sampSendChat("/me Ã±Ã­Ã¿Ã«Ã  Ã¢Ã±Ã¥ Ã±Ã¤Ã Ã¢Ã«Ã¨Ã¢Ã Ã¾Ã¹Ã¨Ã¥ Ã ÃªÃ±Ã¥Ã±Ã±Ã³Ã Ã°Ã»")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ñäåëàâ ãëóáîêèé âäîõ, íà÷àëà äåëàòü èñêóññòâåííîå äûõàíèå ë¸ãêèõ")
+                    sampSendChat("/me Ã±Ã¤Ã¥Ã«Ã Ã¢ Ã£Ã«Ã³Ã¡Ã®ÃªÃ¨Ã© Ã¢Ã¤Ã®Ãµ, Ã­Ã Ã·Ã Ã«Ã  Ã¤Ã¥Ã«Ã Ã²Ã¼ Ã¨Ã±ÃªÃ³Ã±Ã±Ã²Ã¢Ã¥Ã­Ã­Ã®Ã¥ Ã¤Ã»ÃµÃ Ã­Ã¨Ã¥ Ã«Â¸Ã£ÃªÃ¨Ãµ")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Âîçäóõ ïîñòåïåííî íàïîëíÿåò è çàïîëíÿåò ë¸ãêèå ïîñòğàäàâøåãî.")
+                    sampSendChat("/do Ã‚Ã®Ã§Ã¤Ã³Ãµ Ã¯Ã®Ã±Ã²Ã¥Ã¯Ã¥Ã­Ã­Ã® Ã­Ã Ã¯Ã®Ã«Ã­Ã¿Ã¥Ã² Ã¨ Ã§Ã Ã¯Ã®Ã«Ã­Ã¿Ã¥Ã² Ã«Â¸Ã£ÃªÃ¨Ã¥ Ã¯Ã®Ã±Ã²Ã°Ã Ã¤Ã Ã¢Ã¸Ã¥Ã£Ã®.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïîëîæèëà ğóêè äğóã íà äğóãà íà ãğóäü ÷åëîâåêà")
+                    sampSendChat("/me Ã¯Ã®Ã«Ã®Ã¦Ã¨Ã«Ã  Ã°Ã³ÃªÃ¨ Ã¤Ã°Ã³Ã£ Ã­Ã  Ã¤Ã°Ã³Ã£Ã  Ã­Ã  Ã£Ã°Ã³Ã¤Ã¼ Ã·Ã¥Ã«Ã®Ã¢Ã¥ÃªÃ ")
                     wait(settings.global.lwait)
-                    sampSendChat("/me äåëàåò íåïğÿìîé ìàññàæ ñåğäöà")
+                    sampSendChat("/me Ã¤Ã¥Ã«Ã Ã¥Ã² Ã­Ã¥Ã¯Ã°Ã¿Ã¬Ã®Ã© Ã¬Ã Ã±Ã±Ã Ã¦ Ã±Ã¥Ã°Ã¤Ã¶Ã ")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïîïåğåìåííî äåëàåò èñêóññòâåííîå äûõàíèå è íåïğÿìîé ìàññàæ ñåğäöà")
+                    sampSendChat("/me Ã¯Ã®Ã¯Ã¥Ã°Ã¥Ã¬Ã¥Ã­Ã­Ã® Ã¤Ã¥Ã«Ã Ã¥Ã² Ã¨Ã±ÃªÃ³Ã±Ã±Ã²Ã¢Ã¥Ã­Ã­Ã®Ã¥ Ã¤Ã»ÃµÃ Ã­Ã¨Ã¥ Ã¨ Ã­Ã¥Ã¯Ã°Ã¿Ã¬Ã®Ã© Ã¬Ã Ã±Ã±Ã Ã¦ Ã±Ã¥Ã°Ã¤Ã¶Ã ")
                     wait(200)
-                    sampAddChatMessage("[SOBR tools]: Êîíåö îòûãğîâêè.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: ÃŠÃ®Ã­Ã¥Ã¶ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨.", 0x33AAFFFF)
                   end
                 end
               end
@@ -854,138 +854,138 @@ function refreshDialog()
           }
         },
         {
-          title = "{808080}Äğóãîå{FFFFFF}",
+          title = "{808080}Ã„Ã°Ã³Ã£Ã®Ã¥{FFFFFF}",
           submenu = 
           {
-            title = "{808080}Âûáåğèòå îòûãğîâêó{FFFFFF}",
+            title = "{808080}Ã‚Ã»Ã¡Ã¥Ã°Ã¨Ã²Ã¥ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ³{FFFFFF}",
             {
-              title = "{808080}Ìàñêèğîâêà àâòîìîáèëÿ è ñèäÿ÷èõ â í¸ì{FFFFFF}",
+              title = "{808080}ÃŒÃ Ã±ÃªÃ¨Ã°Ã®Ã¢ÃªÃ  Ã Ã¢Ã²Ã®Ã¬Ã®Ã¡Ã¨Ã«Ã¿ Ã¨ Ã±Ã¨Ã¤Ã¿Ã·Ã¨Ãµ Ã¢ Ã­Â¸Ã¬{FFFFFF}",
               onclick = function()
-                if settings.global.lwait ~= "Íå óêàçàíà." and settings.global.lwait ~= "Íå óêàçàíà" then
-                  sampAddChatMessage("[SOBR tools]: Ñòàğò îòûãğîâêè. Äëÿ îòìåíû íàæìèòå CTRL+R.", 0x33AAFFFF)
+                if settings.global.lwait ~= "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­Ã ." and settings.global.lwait ~= "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­Ã " then
+                  sampAddChatMessage("[SOBR tools]: Ã‘Ã²Ã Ã°Ã² Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨. Ã„Ã«Ã¿ Ã®Ã²Ã¬Ã¥Ã­Ã» Ã­Ã Ã¦Ã¬Ã¨Ã²Ã¥ CTRL+R.", 0x33AAFFFF)
                   wait(200)
-                  sampSendChat("/do Âîäèòåëü è ïàññàæèğû íàõîäÿòñÿ â àâòîìîáèëå áåç îïîçíîâàòåëüíûõ çíàêîâ.")
+                  sampSendChat("/do Ã‚Ã®Ã¤Ã¨Ã²Ã¥Ã«Ã¼ Ã¨ Ã¯Ã Ã±Ã±Ã Ã¦Ã¨Ã°Ã» Ã­Ã ÃµÃ®Ã¤Ã¿Ã²Ã±Ã¿ Ã¢ Ã Ã¢Ã²Ã®Ã¬Ã®Ã¡Ã¨Ã«Ã¥ Ã¡Ã¥Ã§ Ã®Ã¯Ã®Ã§Ã­Ã®Ã¢Ã Ã²Ã¥Ã«Ã¼Ã­Ã»Ãµ Ã§Ã­Ã ÃªÃ®Ã¢.")
                   wait(settings.global.lwait)
-                  sampSendChat("/do Àâòîìîáèëü ïîëíîñòüş áğîíèğîâàí, íîìåğíûå çíàêè îòñóòñòâóşò, øèíû ïóëåñòîéêèå.")
+                  sampSendChat("/do Ã€Ã¢Ã²Ã®Ã¬Ã®Ã¡Ã¨Ã«Ã¼ Ã¯Ã®Ã«Ã­Ã®Ã±Ã²Ã¼Ã¾ Ã¡Ã°Ã®Ã­Ã¨Ã°Ã®Ã¢Ã Ã­, Ã­Ã®Ã¬Ã¥Ã°Ã­Ã»Ã¥ Ã§Ã­Ã ÃªÃ¨ Ã®Ã²Ã±Ã³Ã²Ã±Ã²Ã¢Ã³Ã¾Ã², Ã¸Ã¨Ã­Ã» Ã¯Ã³Ã«Ã¥Ã±Ã²Ã®Ã©ÃªÃ¨Ã¥.")
                   wait(settings.global.lwait)
-                  sampSendChat("/do Ñòåêëà àâòîìîáèëÿ çàòîíèğîâàíû, ëè÷íîñòü âîäèòåëÿ è ïàññàæèğîâ íå ğàñïîçíàòü.")
+                  sampSendChat("/do Ã‘Ã²Ã¥ÃªÃ«Ã  Ã Ã¢Ã²Ã®Ã¬Ã®Ã¡Ã¨Ã«Ã¿ Ã§Ã Ã²Ã®Ã­Ã¨Ã°Ã®Ã¢Ã Ã­Ã», Ã«Ã¨Ã·Ã­Ã®Ã±Ã²Ã¼ Ã¢Ã®Ã¤Ã¨Ã²Ã¥Ã«Ã¿ Ã¨ Ã¯Ã Ã±Ã±Ã Ã¦Ã¨Ã°Ã®Ã¢ Ã­Ã¥ Ã°Ã Ã±Ã¯Ã®Ã§Ã­Ã Ã²Ã¼.")
                   wait(200)
-                  sampAddChatMessage("[SOBR tools]: Êîíåö îòûãğîâêè.", 0x33AAFFFF)
+                  sampAddChatMessage("[SOBR tools]: ÃŠÃ®Ã­Ã¥Ã¶ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨.", 0x33AAFFFF)
                 end
               end
             },
             {
-              title = "{808080}Íàäåòü ïğîòèâîãàç{FFFFFF}",
+              title = "{808080}ÃÃ Ã¤Ã¥Ã²Ã¼ Ã¯Ã°Ã®Ã²Ã¨Ã¢Ã®Ã£Ã Ã§{FFFFFF}",
               onclick = function()
-                if settings.global.lwait ~= "Íå óêàçàíà." and settings.global.lwait ~= "Íå óêàçàíà" then
+                if settings.global.lwait ~= "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­Ã ." and settings.global.lwait ~= "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­Ã " then
                   if settings.global.m_s_t_a_t == true then
-                    sampAddChatMessage("[SOBR tools]: Ñòàğò îòûãğîâêè. Äëÿ îòìåíû íàæìèòå CTRL+R.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: Ã‘Ã²Ã Ã°Ã² Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨. Ã„Ã«Ã¿ Ã®Ã²Ã¬Ã¥Ã­Ã» Ã­Ã Ã¦Ã¬Ã¨Ã²Ã¥ CTRL+R.", 0x33AAFFFF)
                     wait(200)
-                    sampSendChat("/do Íà áåäğå ëåâîé íîãè âèñèò ïîäñóìîê ñ ïğîòèâîãàçîì ÃÏ-21.")
+                    sampSendChat("/do ÃÃ  Ã¡Ã¥Ã¤Ã°Ã¥ Ã«Ã¥Ã¢Ã®Ã© Ã­Ã®Ã£Ã¨ Ã¢Ã¨Ã±Ã¨Ã² Ã¯Ã®Ã¤Ã±Ã³Ã¬Ã®Ãª Ã± Ã¯Ã°Ã®Ã²Ã¨Ã¢Ã®Ã£Ã Ã§Ã®Ã¬ ÃƒÃ-21.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me çàäåğæàâ äûõàíèå, äîñòàë ïğîòèâîãàç è ëîâêèì äâèæåíèåì íàäåë åãî")
+                    sampSendChat("/me Ã§Ã Ã¤Ã¥Ã°Ã¦Ã Ã¢ Ã¤Ã»ÃµÃ Ã­Ã¨Ã¥, Ã¤Ã®Ã±Ã²Ã Ã« Ã¯Ã°Ã®Ã²Ã¨Ã¢Ã®Ã£Ã Ã§ Ã¨ Ã«Ã®Ã¢ÃªÃ¨Ã¬ Ã¤Ã¢Ã¨Ã¦Ã¥Ã­Ã¨Ã¥Ã¬ Ã­Ã Ã¤Ã¥Ã« Ã¥Ã£Ã®")
                     wait(200)
-                    sampAddChatMessage("[SOBR tools]: Êîíåö îòûãğîâêè.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: ÃŠÃ®Ã­Ã¥Ã¶ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨.", 0x33AAFFFF)
                   else
-                    sampAddChatMessage("[SOBR tools]: Ñòàğò îòûãğîâêè. Äëÿ îòìåíû íàæìèòå CTRL+R.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: Ã‘Ã²Ã Ã°Ã² Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨. Ã„Ã«Ã¿ Ã®Ã²Ã¬Ã¥Ã­Ã» Ã­Ã Ã¦Ã¬Ã¨Ã²Ã¥ CTRL+R.", 0x33AAFFFF)
                     wait(200)
-                    sampSendChat("/do Íà áåäğå ëåâîé íîãè âèñèò ïîäñóìîê ñ ïğîòèâîãàçîì ÃÏ-21.")
+                    sampSendChat("/do ÃÃ  Ã¡Ã¥Ã¤Ã°Ã¥ Ã«Ã¥Ã¢Ã®Ã© Ã­Ã®Ã£Ã¨ Ã¢Ã¨Ã±Ã¨Ã² Ã¯Ã®Ã¤Ã±Ã³Ã¬Ã®Ãª Ã± Ã¯Ã°Ã®Ã²Ã¨Ã¢Ã®Ã£Ã Ã§Ã®Ã¬ ÃƒÃ-21.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me çàäåğæàâ äûõàíèå, äîñòàëà ïğîòèâîãàç è ëîâêèì äâèæåíèåì íàäåëà åãî")
+                    sampSendChat("/me Ã§Ã Ã¤Ã¥Ã°Ã¦Ã Ã¢ Ã¤Ã»ÃµÃ Ã­Ã¨Ã¥, Ã¤Ã®Ã±Ã²Ã Ã«Ã  Ã¯Ã°Ã®Ã²Ã¨Ã¢Ã®Ã£Ã Ã§ Ã¨ Ã«Ã®Ã¢ÃªÃ¨Ã¬ Ã¤Ã¢Ã¨Ã¦Ã¥Ã­Ã¨Ã¥Ã¬ Ã­Ã Ã¤Ã¥Ã«Ã  Ã¥Ã£Ã®")
                     wait(200)
-                    sampAddChatMessage("[SOBR tools]: Êîíåö îòûãğîâêè.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: ÃŠÃ®Ã­Ã¥Ã¶ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨.", 0x33AAFFFF)
                   end
                 end
               end
             },
             {
-              title = "{808080}Ïîëíàÿ ìàñêèğîâêà ñåáÿ{FFFFFF}",
+              title = "{808080}ÃÃ®Ã«Ã­Ã Ã¿ Ã¬Ã Ã±ÃªÃ¨Ã°Ã®Ã¢ÃªÃ  Ã±Ã¥Ã¡Ã¿{FFFFFF}",
               onclick = function()
-                if settings.global.lwait ~= "Íå óêàçàíà." and settings.global.lwait ~= "Íå óêàçàíà" then
+                if settings.global.lwait ~= "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­Ã ." and settings.global.lwait ~= "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­Ã " then
                   if settings.global.m_s_t_a_t == true then
-                    sampAddChatMessage("[SOBR tools]: Ñòàğò îòûãğîâêè. Äëÿ îòìåíû íàæìèòå CTRL+R.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: Ã‘Ã²Ã Ã°Ã² Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨. Ã„Ã«Ã¿ Ã®Ã²Ã¬Ã¥Ã­Ã» Ã­Ã Ã¦Ã¬Ã¨Ã²Ã¥ CTRL+R.", 0x33AAFFFF)
                     wait(200)
-                    sampSendChat("/do Íåèçâåñòíûé îäåò â âîåííóş ôîğìó èç íîìåêñà òåìíî ñåğîãî öâåòà.")
+                    sampSendChat("/do ÃÃ¥Ã¨Ã§Ã¢Ã¥Ã±Ã²Ã­Ã»Ã© Ã®Ã¤Ã¥Ã² Ã¢ Ã¢Ã®Ã¥Ã­Ã­Ã³Ã¾ Ã´Ã®Ã°Ã¬Ã³ Ã¨Ã§ Ã­Ã®Ã¬Ã¥ÃªÃ±Ã  Ã²Ã¥Ã¬Ã­Ã® Ã±Ã¥Ã°Ã®Ã£Ã® Ã¶Ã¢Ã¥Ã²Ã .")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Íà áğîíåæèëåòå íåò íàøèâîê, ğàñïîçíàâàòåëüíûå çíàêè îòñóòñòâóşò.")
+                    sampSendChat("/do ÃÃ  Ã¡Ã°Ã®Ã­Ã¥Ã¦Ã¨Ã«Ã¥Ã²Ã¥ Ã­Ã¥Ã² Ã­Ã Ã¸Ã¨Ã¢Ã®Ãª, Ã°Ã Ã±Ã¯Ã®Ã§Ã­Ã Ã¢Ã Ã²Ã¥Ã«Ã¼Ã­Ã»Ã¥ Ã§Ã­Ã ÃªÃ¨ Ã®Ã²Ã±Ã³Ã²Ã±Ã²Ã¢Ã³Ã¾Ã².")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Ëèöî ñêğûòî áàëàêëàâîé, ëè÷íîñòü íå ğàñïîçíàòü.")
+                    sampSendChat("/do Ã‹Ã¨Ã¶Ã® Ã±ÃªÃ°Ã»Ã²Ã® Ã¡Ã Ã«Ã ÃªÃ«Ã Ã¢Ã®Ã©, Ã«Ã¨Ã·Ã­Ã®Ã±Ã²Ã¼ Ã­Ã¥ Ã°Ã Ã±Ã¯Ã®Ã§Ã­Ã Ã²Ã¼.")
                     wait(200)
-                    sampAddChatMessage("[SOBR tools]: Êîíåö îòûãğîâêè.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: ÃŠÃ®Ã­Ã¥Ã¶ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨.", 0x33AAFFFF)
                   else
-                    sampAddChatMessage("[SOBR tools]: Ñòàğò îòûãğîâêè. Äëÿ îòìåíû íàæìèòå CTRL+R.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: Ã‘Ã²Ã Ã°Ã² Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨. Ã„Ã«Ã¿ Ã®Ã²Ã¬Ã¥Ã­Ã» Ã­Ã Ã¦Ã¬Ã¨Ã²Ã¥ CTRL+R.", 0x33AAFFFF)
                     wait(200)
-                    sampSendChat("/do Íåèçâåñòíàÿ îäåòà â âîåííóş ôîğìó èç íîìåêñà òåìíî ñåğîãî öâåòà.")
+                    sampSendChat("/do ÃÃ¥Ã¨Ã§Ã¢Ã¥Ã±Ã²Ã­Ã Ã¿ Ã®Ã¤Ã¥Ã²Ã  Ã¢ Ã¢Ã®Ã¥Ã­Ã­Ã³Ã¾ Ã´Ã®Ã°Ã¬Ã³ Ã¨Ã§ Ã­Ã®Ã¬Ã¥ÃªÃ±Ã  Ã²Ã¥Ã¬Ã­Ã® Ã±Ã¥Ã°Ã®Ã£Ã® Ã¶Ã¢Ã¥Ã²Ã .")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Íà áğîíåæèëåòå íåò íàøèâîê, ğàñïîçíàâàòåëüíûå çíàêè îòñóòñòâóşò.")
+                    sampSendChat("/do ÃÃ  Ã¡Ã°Ã®Ã­Ã¥Ã¦Ã¨Ã«Ã¥Ã²Ã¥ Ã­Ã¥Ã² Ã­Ã Ã¸Ã¨Ã¢Ã®Ãª, Ã°Ã Ã±Ã¯Ã®Ã§Ã­Ã Ã¢Ã Ã²Ã¥Ã«Ã¼Ã­Ã»Ã¥ Ã§Ã­Ã ÃªÃ¨ Ã®Ã²Ã±Ã³Ã²Ã±Ã²Ã¢Ã³Ã¾Ã².")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Ëèöî ñêğûòî áàëàêëàâîé, ëè÷íîñòü íå ğàñïîçíàòü.")
+                    sampSendChat("/do Ã‹Ã¨Ã¶Ã® Ã±ÃªÃ°Ã»Ã²Ã® Ã¡Ã Ã«Ã ÃªÃ«Ã Ã¢Ã®Ã©, Ã«Ã¨Ã·Ã­Ã®Ã±Ã²Ã¼ Ã­Ã¥ Ã°Ã Ã±Ã¯Ã®Ã§Ã­Ã Ã²Ã¼.")
                     wait(200)
-                    sampAddChatMessage("[SOBR tools]: Êîíåö îòûãğîâêè.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: ÃŠÃ®Ã­Ã¥Ã¶ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨.", 0x33AAFFFF)
                   end
                 end
               end
             },
             {
-              title = "{808080}Ïîëíàÿ ìàñêèğîâêà ñåáÿ è îêğóæàşùèõ{FFFFFF}",
+              title = "{808080}ÃÃ®Ã«Ã­Ã Ã¿ Ã¬Ã Ã±ÃªÃ¨Ã°Ã®Ã¢ÃªÃ  Ã±Ã¥Ã¡Ã¿ Ã¨ Ã®ÃªÃ°Ã³Ã¦Ã Ã¾Ã¹Ã¨Ãµ{FFFFFF}",
               onclick = function()
-                if settings.global.lwait ~= "Íå óêàçàíà." and settings.global.lwait ~= "Íå óêàçàíà" then
-                  sampAddChatMessage("[SOBR tools]: Ñòàğò îòûãğîâêè. Äëÿ îòìåíû íàæìèòå CTRL+R.", 0x33AAFFFF)
+                if settings.global.lwait ~= "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­Ã ." and settings.global.lwait ~= "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­Ã " then
+                  sampAddChatMessage("[SOBR tools]: Ã‘Ã²Ã Ã°Ã² Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨. Ã„Ã«Ã¿ Ã®Ã²Ã¬Ã¥Ã­Ã» Ã­Ã Ã¦Ã¬Ã¨Ã²Ã¥ CTRL+R.", 0x33AAFFFF)
                   wait(200)
-                  sampSendChat("/do Íåèçâåñòíûå îäåòû â âîåííóş ôîğìó èç íîìåêñà òåìíî-ñåğîãî öâåòà.")
+                  sampSendChat("/do ÃÃ¥Ã¨Ã§Ã¢Ã¥Ã±Ã²Ã­Ã»Ã¥ Ã®Ã¤Ã¥Ã²Ã» Ã¢ Ã¢Ã®Ã¥Ã­Ã­Ã³Ã¾ Ã´Ã®Ã°Ã¬Ã³ Ã¨Ã§ Ã­Ã®Ã¬Ã¥ÃªÃ±Ã  Ã²Ã¥Ã¬Ã­Ã®-Ã±Ã¥Ã°Ã®Ã£Ã® Ã¶Ã¢Ã¥Ã²Ã .")
                   wait(settings.global.lwait)
-                  sampSendChat("/do Ğàñïîçíàâàòåëüíûå çíàêè íà ôîğìå îòñóòñòâóşò.")
+                  sampSendChat("/do ÃÃ Ã±Ã¯Ã®Ã§Ã­Ã Ã¢Ã Ã²Ã¥Ã«Ã¼Ã­Ã»Ã¥ Ã§Ã­Ã ÃªÃ¨ Ã­Ã  Ã´Ã®Ã°Ã¬Ã¥ Ã®Ã²Ã±Ã³Ã²Ã±Ã²Ã¢Ã³Ã¾Ã².")
                   wait(settings.global.lwait)
-                  sampSendChat("/do Ëèöà ñêğûòû áàëàêëàâàìè, ëè÷íîñòè íå ğàñïîçíàòü.")
+                  sampSendChat("/do Ã‹Ã¨Ã¶Ã  Ã±ÃªÃ°Ã»Ã²Ã» Ã¡Ã Ã«Ã ÃªÃ«Ã Ã¢Ã Ã¬Ã¨, Ã«Ã¨Ã·Ã­Ã®Ã±Ã²Ã¨ Ã­Ã¥ Ã°Ã Ã±Ã¯Ã®Ã§Ã­Ã Ã²Ã¼.")
                   wait(200)
-                  sampAddChatMessage("[SOBR tools]: Êîíåö îòûãğîâêè.", 0x33AAFFFF)
+                  sampAddChatMessage("[SOBR tools]: ÃŠÃ®Ã­Ã¥Ã¶ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨.", 0x33AAFFFF)
                 end
               end
             },
             {
-              title = "{808080}Ïğîâåğêà ñíàğÿæåíèÿ{FFFFFF}",
+              title = "{808080}ÃÃ°Ã®Ã¢Ã¥Ã°ÃªÃ  Ã±Ã­Ã Ã°Ã¿Ã¦Ã¥Ã­Ã¨Ã¿{FFFFFF}",
               onclick = function()
-                if settings.global.lwait ~= "Íå óêàçàíà." and settings.global.lwait ~= "Íå óêàçàíà" then
+                if settings.global.lwait ~= "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­Ã ." and settings.global.lwait ~= "ÃÃ¥ Ã³ÃªÃ Ã§Ã Ã­Ã " then
                   if settings.global.m_s_t_a_t == true then
-                    sampAddChatMessage("[SOBR tools]: Ñòàğò îòûãğîâêè. Äëÿ îòìåíû íàæìèòå CTRL+R.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: Ã‘Ã²Ã Ã°Ã² Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨. Ã„Ã«Ã¿ Ã®Ã²Ã¬Ã¥Ã­Ã» Ã­Ã Ã¦Ã¬Ã¨Ã²Ã¥ CTRL+R.", 0x33AAFFFF)
                     wait(200)
-                    sampSendChat("/do Íà ãğóäè âèñèò ÷åòûğå ïîäñóìêà.")
+                    sampSendChat("/do ÃÃ  Ã£Ã°Ã³Ã¤Ã¨ Ã¢Ã¨Ã±Ã¨Ã² Ã·Ã¥Ã²Ã»Ã°Ã¥ Ã¯Ã®Ã¤Ã±Ã³Ã¬ÃªÃ .")
                     wait(settings.global.lwait)
-                    sampSendChat("/me íà÷àë ïğîâåğÿòü ñâîå ñíàğÿæåíèå, ïğîâåğÿÿ êàæäûé ïîäñóìîê")
+                    sampSendChat("/me Ã­Ã Ã·Ã Ã« Ã¯Ã°Ã®Ã¢Ã¥Ã°Ã¿Ã²Ã¼ Ã±Ã¢Ã®Ã¥ Ã±Ã­Ã Ã°Ã¿Ã¦Ã¥Ã­Ã¨Ã¥, Ã¯Ã°Ã®Ã¢Ã¥Ã°Ã¿Ã¿ ÃªÃ Ã¦Ã¤Ã»Ã© Ã¯Ã®Ã¤Ã±Ã³Ã¬Ã®Ãª")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïğîâåğèë ïåğâûé ïîäñóìîê")
+                    sampSendChat("/me Ã¯Ã°Ã®Ã¢Ã¥Ã°Ã¨Ã« Ã¯Ã¥Ã°Ã¢Ã»Ã© Ã¯Ã®Ã¤Ã±Ã³Ã¬Ã®Ãª")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Â ïåğâîì ïîäñóìêå ëåæèò àïòå÷êà ÀÈ-2 è ïåğåâÿçî÷íûé ïàêåò ÈÏÏ-1. ")
+                    sampSendChat("/do Ã‚ Ã¯Ã¥Ã°Ã¢Ã®Ã¬ Ã¯Ã®Ã¤Ã±Ã³Ã¬ÃªÃ¥ Ã«Ã¥Ã¦Ã¨Ã² Ã Ã¯Ã²Ã¥Ã·ÃªÃ  Ã€Ãˆ-2 Ã¨ Ã¯Ã¥Ã°Ã¥Ã¢Ã¿Ã§Ã®Ã·Ã­Ã»Ã© Ã¯Ã ÃªÃ¥Ã² ÃˆÃÃ-1. ")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïğîâåğèë âòîğîé è òğåòèé ïîäñóìîê")
+                    sampSendChat("/me Ã¯Ã°Ã®Ã¢Ã¥Ã°Ã¨Ã« Ã¢Ã²Ã®Ã°Ã®Ã© Ã¨ Ã²Ã°Ã¥Ã²Ã¨Ã© Ã¯Ã®Ã¤Ã±Ã³Ã¬Ã®Ãª")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Âî âòîğîì è òğåòüåì ïîäñóìêå ëåæèò 5 ìàãàçèíîâ äëÿ Ì4, 6 ìàãàçèíîâ äëÿ Deagle, 5 îáîéì äëÿ Rifle.")
+                    sampSendChat("/do Ã‚Ã® Ã¢Ã²Ã®Ã°Ã®Ã¬ Ã¨ Ã²Ã°Ã¥Ã²Ã¼Ã¥Ã¬ Ã¯Ã®Ã¤Ã±Ã³Ã¬ÃªÃ¥ Ã«Ã¥Ã¦Ã¨Ã² 5 Ã¬Ã Ã£Ã Ã§Ã¨Ã­Ã®Ã¢ Ã¤Ã«Ã¿ ÃŒ4, 6 Ã¬Ã Ã£Ã Ã§Ã¨Ã­Ã®Ã¢ Ã¤Ã«Ã¿ Deagle, 5 Ã®Ã¡Ã®Ã©Ã¬ Ã¤Ã«Ã¿ Rifle.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïğîâåğèë ÷åòâåğòûé ïîäñóìîê")
+                    sampSendChat("/me Ã¯Ã°Ã®Ã¢Ã¥Ã°Ã¨Ã« Ã·Ã¥Ã²Ã¢Ã¥Ã°Ã²Ã»Ã© Ã¯Ã®Ã¤Ã±Ã³Ã¬Ã®Ãª")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Â ÷åòâåğòîì ïîäñóìêå ëåæàò 2 íåáîëüøèõ ôèëüòğà äëÿ ïğîòèâîãàçà, êëş÷è, ñèãàğåòû, íàğó÷íèêè.")
+                    sampSendChat("/do Ã‚ Ã·Ã¥Ã²Ã¢Ã¥Ã°Ã²Ã®Ã¬ Ã¯Ã®Ã¤Ã±Ã³Ã¬ÃªÃ¥ Ã«Ã¥Ã¦Ã Ã² 2 Ã­Ã¥Ã¡Ã®Ã«Ã¼Ã¸Ã¨Ãµ Ã´Ã¨Ã«Ã¼Ã²Ã°Ã  Ã¤Ã«Ã¿ Ã¯Ã°Ã®Ã²Ã¨Ã¢Ã®Ã£Ã Ã§Ã , ÃªÃ«Ã¾Ã·Ã¨, Ã±Ã¨Ã£Ã Ã°Ã¥Ã²Ã», Ã­Ã Ã°Ã³Ã·Ã­Ã¨ÃªÃ¨.")
                     wait(200)
-                    sampAddChatMessage("[SOBR tools]: Êîíåö îòûãğîâêè.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: ÃŠÃ®Ã­Ã¥Ã¶ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨.", 0x33AAFFFF)
                   else
-                    sampAddChatMessage("[SOBR tools]: Ñòàğò îòûãğîâêè. Äëÿ îòìåíû íàæìèòå CTRL+R.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: Ã‘Ã²Ã Ã°Ã² Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨. Ã„Ã«Ã¿ Ã®Ã²Ã¬Ã¥Ã­Ã» Ã­Ã Ã¦Ã¬Ã¨Ã²Ã¥ CTRL+R.", 0x33AAFFFF)
                     wait(200)
-                    sampSendChat("/do Íà ãğóäè âèñèò ÷åòûğå ïîäñóìêà.")
+                    sampSendChat("/do ÃÃ  Ã£Ã°Ã³Ã¤Ã¨ Ã¢Ã¨Ã±Ã¨Ã² Ã·Ã¥Ã²Ã»Ã°Ã¥ Ã¯Ã®Ã¤Ã±Ã³Ã¬ÃªÃ .")
                     wait(settings.global.lwait)
-                    sampSendChat("/me íà÷àëà ïğîâåğÿòü ñâîå ñíàğÿæåíèå, ïğîâåğÿÿ êàæäûé ïîäñóìîê")
+                    sampSendChat("/me Ã­Ã Ã·Ã Ã«Ã  Ã¯Ã°Ã®Ã¢Ã¥Ã°Ã¿Ã²Ã¼ Ã±Ã¢Ã®Ã¥ Ã±Ã­Ã Ã°Ã¿Ã¦Ã¥Ã­Ã¨Ã¥, Ã¯Ã°Ã®Ã¢Ã¥Ã°Ã¿Ã¿ ÃªÃ Ã¦Ã¤Ã»Ã© Ã¯Ã®Ã¤Ã±Ã³Ã¬Ã®Ãª")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïğîâåğèëà ïåğâûé ïîäñóìîê")
+                    sampSendChat("/me Ã¯Ã°Ã®Ã¢Ã¥Ã°Ã¨Ã«Ã  Ã¯Ã¥Ã°Ã¢Ã»Ã© Ã¯Ã®Ã¤Ã±Ã³Ã¬Ã®Ãª")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Â ïåğâîì ïîäñóìêå ëåæèò àïòå÷êà ÀÈ-2 è ïåğåâÿçî÷íûé ïàêåò ÈÏÏ-1. ")
+                    sampSendChat("/do Ã‚ Ã¯Ã¥Ã°Ã¢Ã®Ã¬ Ã¯Ã®Ã¤Ã±Ã³Ã¬ÃªÃ¥ Ã«Ã¥Ã¦Ã¨Ã² Ã Ã¯Ã²Ã¥Ã·ÃªÃ  Ã€Ãˆ-2 Ã¨ Ã¯Ã¥Ã°Ã¥Ã¢Ã¿Ã§Ã®Ã·Ã­Ã»Ã© Ã¯Ã ÃªÃ¥Ã² ÃˆÃÃ-1. ")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïğîâåğèëà âòîğîé è òğåòèé ïîäñóìîê")
+                    sampSendChat("/me Ã¯Ã°Ã®Ã¢Ã¥Ã°Ã¨Ã«Ã  Ã¢Ã²Ã®Ã°Ã®Ã© Ã¨ Ã²Ã°Ã¥Ã²Ã¨Ã© Ã¯Ã®Ã¤Ã±Ã³Ã¬Ã®Ãª")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Âî âòîğîì è òğåòüåì ïîäñóìêå ëåæèò 5 ìàãàçèíîâ äëÿ Ì4, 6 ìàãàçèíîâ äëÿ Deagle, 5 îáîéì äëÿ Rifle.")
+                    sampSendChat("/do Ã‚Ã® Ã¢Ã²Ã®Ã°Ã®Ã¬ Ã¨ Ã²Ã°Ã¥Ã²Ã¼Ã¥Ã¬ Ã¯Ã®Ã¤Ã±Ã³Ã¬ÃªÃ¥ Ã«Ã¥Ã¦Ã¨Ã² 5 Ã¬Ã Ã£Ã Ã§Ã¨Ã­Ã®Ã¢ Ã¤Ã«Ã¿ ÃŒ4, 6 Ã¬Ã Ã£Ã Ã§Ã¨Ã­Ã®Ã¢ Ã¤Ã«Ã¿ Deagle, 5 Ã®Ã¡Ã®Ã©Ã¬ Ã¤Ã«Ã¿ Rifle.")
                     wait(settings.global.lwait)
-                    sampSendChat("/me ïğîâåğèëà ÷åòâåğòûé ïîäñóìîê")
+                    sampSendChat("/me Ã¯Ã°Ã®Ã¢Ã¥Ã°Ã¨Ã«Ã  Ã·Ã¥Ã²Ã¢Ã¥Ã°Ã²Ã»Ã© Ã¯Ã®Ã¤Ã±Ã³Ã¬Ã®Ãª")
                     wait(settings.global.lwait)
-                    sampSendChat("/do Â ÷åòâåğòîì ïîäñóìêå ëåæàò 2 íåáîëüøèõ ôèëüòğà äëÿ ïğîòèâîãàçà, êëş÷è, ñèãàğåòû, íàğó÷íèêè.")
+                    sampSendChat("/do Ã‚ Ã·Ã¥Ã²Ã¢Ã¥Ã°Ã²Ã®Ã¬ Ã¯Ã®Ã¤Ã±Ã³Ã¬ÃªÃ¥ Ã«Ã¥Ã¦Ã Ã² 2 Ã­Ã¥Ã¡Ã®Ã«Ã¼Ã¸Ã¨Ãµ Ã´Ã¨Ã«Ã¼Ã²Ã°Ã  Ã¤Ã«Ã¿ Ã¯Ã°Ã®Ã²Ã¨Ã¢Ã®Ã£Ã Ã§Ã , ÃªÃ«Ã¾Ã·Ã¨, Ã±Ã¨Ã£Ã Ã°Ã¥Ã²Ã», Ã­Ã Ã°Ã³Ã·Ã­Ã¨ÃªÃ¨.")
                     wait(200)
-                    sampAddChatMessage("[SOBR tools]: Êîíåö îòûãğîâêè.", 0x33AAFFFF)
+                    sampAddChatMessage("[SOBR tools]: ÃŠÃ®Ã­Ã¥Ã¶ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ¨.", 0x33AAFFFF)
                   end
                 end
               end
@@ -993,9 +993,9 @@ function refreshDialog()
           }
         },
         {
-          title = "{808080}Çàäåğæêà ìåæäó ñòğîêàìè â îòûãğîâêàõ:{FFFFFF} "..pInfo.lwait,
+          title = "{808080}Ã‡Ã Ã¤Ã¥Ã°Ã¦ÃªÃ  Ã¬Ã¥Ã¦Ã¤Ã³ Ã±Ã²Ã°Ã®ÃªÃ Ã¬Ã¨ Ã¢ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ Ãµ:{FFFFFF} "..pInfo.lwait,
           onclick = function()
-            sampShowDialog(9999, "Óñòàíîâèòü çàäåğæêó:", "{b6b6b6}Ââåäè çàäåğæêó:", "ÎÊ", "Çàêğûòü", 1)
+            sampShowDialog(9999, "Ã“Ã±Ã²Ã Ã­Ã®Ã¢Ã¨Ã²Ã¼ Ã§Ã Ã¤Ã¥Ã°Ã¦ÃªÃ³:", "{b6b6b6}Ã‚Ã¢Ã¥Ã¤Ã¨ Ã§Ã Ã¤Ã¥Ã°Ã¦ÃªÃ³:", "ÃÃŠ", "Ã‡Ã ÃªÃ°Ã»Ã²Ã¼", 1)
             while sampIsDialogActive() do wait(0) end
             local result, button, item, input = sampHasDialogRespond(9999)
             if result and button == 1 then
@@ -1008,24 +1008,24 @@ function refreshDialog()
       }
     },
     {
-      title = "{808080}Èíôîğìàöèÿ{FFFFFF}",
+      title = "{808080}ÃˆÃ­Ã´Ã®Ã°Ã¬Ã Ã¶Ã¨Ã¿{FFFFFF}",
       submenu =
       {
-        title = "{808080}Èíôîğìàöèÿ{FFFFFF}",
+        title = "{808080}ÃˆÃ­Ã´Ã®Ã°Ã¬Ã Ã¶Ã¨Ã¿{FFFFFF}",
         {
-          title = "{808080}Óñòàâ îòğÿäà{FFFFFF}",
+          title = "{808080}Ã“Ã±Ã²Ã Ã¢ Ã®Ã²Ã°Ã¿Ã¤Ã {FFFFFF}",
           onclick = function()
-            sampShowDialog(2344, "{808080}[SOBR tools] Óñòàâ ÑÎÁĞ{FFFFFF}", "{808080}«ÏĞÅÀÌÁÓËÀ»\n1.1 Êàæäûé áîåö îòğÿäà îáÿçàí çíàòü è ñîáëşäàòü ïğàâèëà óñòàíîâëåííûå óñòàâîì.\n1.2 Çà íåñîáëşäåíèå óñòàâà îòğÿäà áîåö ìîæåò ïîëó÷èòü íàêàçàíèå âïëîòü äî èñêëş÷åíèÿ èç îòğÿäà.\n1.3 Êîìàíäèğ îòğÿäà èìååò ïğàâî èçìåíÿòü óñòàâ â ëşáîå âğåìÿ.\n«ÎÁßÇÀÍÍÎÑÒÈ»\n2.1 Îñóùåñòâëåíèå áåçîïàñíîñòè îõğàíÿåìîé òåğğèòîğèè àğìèè Ëàñ-Âåíòóğàñà;\n2.2 Ìãíîâåííîå ğåàãèğîâàíèå íà `SOS` ñî ñòîğîíû áîéöîâ, âåäóùèõ ïîñòàâêè áîåïğèïàñîâ;\n2.3 Ïğîâåğêà `Ìàãàçèíîâ îäåæäû` è `ÀÌÌÎ`;\n2.4 Ïğåäîòâğàùåíèå êğàæè âîåííîãî èìóùåñòâà, â òîì ÷èñëå âîåííîé òåõíèêè;\n2.5 Îñóùåñòâëåíèå êğóãëîñóòî÷íûõ ïàòğóëåé âîêğóã âîèíñêîé ÷àñòè, ìàğøğóòîâ ñíàáæåíèÿ â öåëÿõ íàõîäêè çàñàäû áàéêåğñêèõ êëóáîâ, à òàê æå ïàòğóëü áëèçëåæàùèõ òåğğèòîğèé ãîğîäà è åãî îêğåñòíîñòåé;\n2.6 Ïåøèé ïàòğóëü ñàìîé ÷àñòè ( ÃÑ-Àíãàğû );\n2.7 Îñóùåñòâëåíèå ñîïğîâîæäåíèé êîëîíí ñíàáæåíèÿ â öåëÿõ ñîõğàííîñòè èìóùåñòâà àğìèè;\n2.8 Îñóùåñòâëåíèå áåçîïàñíîñòè è ïîğÿäêà íà ïğèçûâàõ â àğìèş Ëàñ-Âåíòóğàñà;\n2.9 Ó÷àñòèå â ñïåö. îïåğàöèÿõ âìåñòå ñ Óïğàâëåíèåì Ñîáñòâåííîé Áåçîïàñíîñòè,à òàê æå Federal Bureau of Investigation;\n2.10 Ïîìîùü â ïîğòó Ëîñ-Ñàíòîñà ïğè ÷ğåçâû÷àéíûõ ñèòóàöèÿõ.\n2.11 Ïîìîùü äğóãèì âçâîäàì.\n«ÇÀÏĞÅÒÛ»\n3.1 Íàğóøåíèå óñòàâà â ëşáîé ôîğìå;\n3.2 Íåèñïîëíåíèå ïğèêàçîâ êîìàíäóşùåãî ñîñòàâà, ğóêîâîäñòâà àğìèè;\n3.3 Íåÿâêà íà âûçîâû FBI ïî çàïğîñàì. (èñêë.: ÑÎ èëè ğàçëè÷íîãî ğîäà ìåğîïğèÿòèÿ îò ğóê-âà îòğÿäà);\n3.4 Èäòè â ïåğåñòğåëêó ñ òğåìÿ è áîëåå âîîğóæåííûìè ïğîòèâíèêàìè (èñêë.: ñ âàìè íàïàğíèê);\n3.5 Ó÷àñòèå â òğåíèğîâêàõ/ìï îò Ñåíàòîğîâ ñ êàêèì-ëèáî âçâîäîì, êîãäà íàïàäåíèÿ áàéêåğîâ è áàíäèòîâ ïğîèñõîäÿò ÷àñòî;\n3.6 Âçğûâàòü ôóğó ïîñëå òîãî, êàê îòáèëè ó ÎÏÃ (â ñëó÷àå, åñëè ôóğà ïîëîìàíà, ïî÷èíèòü ğåì.êîìïëåêòîì, åñëè ôóğà íà õîäó, ıâàêóèğîâàòü â ÷àñòü);\n3.7 Ëşáûå êîíôëèêòû ñ áîéöàìè àğìèè;\n3.8 Íàõîäèòüñÿ â îïàñíîì ğàéîíå âíå ñïåö.îïåğàöèé;\n3.9 Îñóùåñòâëÿòü âîçäóøíûé ïàòğóëü áåç ğàçğåøåíèÿ êîì.ñîñòàâà îòğÿäà è/èëè â ñîñòàâå ìåíåå òğåõ ÷åëîâåê;\n3.10 Íåñìîòğÿ íà îôèöåğñêîå çâàíèÿ â îòğÿäå, ÑÎÁĞ íå èìååò ïğàâî êîìàíäîâàòü èëè ğóêîâîäèòü êåì-ëèáî èç âçâîäîâ èëè îôèöåğîâ.\n(èñêë.: äîïóñêàåòñÿ ğóêîâîäñòâî ñîëäàòàìè â êğèòè÷åñêèõ ñèòóàöèÿõ ïğè îòñóòñòâèè ñòàğøèõ îôèöåğîâ)\n«ĞÀÇĞÅØÅÍÎ»\n4.1 Ïîêèäàòü òåğğèòîğèş ÷àñòè äëÿ çàïğàâêè òğàíñïîğòà è ïîïîëíåíèÿ ğåì. êîìïëåêòîâ ñ äîêëàäîì. (îò äîëæíîñòè Áîåö)\n4.2 Âûåçæàòü ñ òåğğèòîğèè áàçû ÷åğåç ïğîõîä ğÿäîì ñ ÊÏÏ è ÷åğåç ãîğêó ğÿäîì ñ êîíòåéíåğàìè íà ÃÑ.\n4.3 Ëîìàòü êíîïî÷íóş ñòàíöèè âî âğåìÿ ïîãîíè çà ôóğîé.\n4.4 Îòäûõàòü, ñïàòü â øòàáå íåîãğàíè÷åííîå âğåìÿ.\n4.5 Ïàğêîâàòü ñâîé ëè÷íûé òğàíñïîğò ñïğàâà îò øòàáà.\n4.6 Âåñòè îãîíü íà ïîğàæåíèå ïî ëşáîìó áîéöó, êîòîğûé íàõîäèòñÿ â ìàñêå â ÷àñòè.{FFFFFF}", "Ïîíÿë", "Íå ïîíÿë", 0)
+            sampShowDialog(2344, "{808080}[SOBR tools] Ã“Ã±Ã²Ã Ã¢ Ã‘ÃÃÃ{FFFFFF}", "{808080}Â«ÃÃÃ…Ã€ÃŒÃÃ“Ã‹Ã€Â»\n1.1 ÃŠÃ Ã¦Ã¤Ã»Ã© Ã¡Ã®Ã¥Ã¶ Ã®Ã²Ã°Ã¿Ã¤Ã  Ã®Ã¡Ã¿Ã§Ã Ã­ Ã§Ã­Ã Ã²Ã¼ Ã¨ Ã±Ã®Ã¡Ã«Ã¾Ã¤Ã Ã²Ã¼ Ã¯Ã°Ã Ã¢Ã¨Ã«Ã  Ã³Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­Ã­Ã»Ã¥ Ã³Ã±Ã²Ã Ã¢Ã®Ã¬.\n1.2 Ã‡Ã  Ã­Ã¥Ã±Ã®Ã¡Ã«Ã¾Ã¤Ã¥Ã­Ã¨Ã¥ Ã³Ã±Ã²Ã Ã¢Ã  Ã®Ã²Ã°Ã¿Ã¤Ã  Ã¡Ã®Ã¥Ã¶ Ã¬Ã®Ã¦Ã¥Ã² Ã¯Ã®Ã«Ã³Ã·Ã¨Ã²Ã¼ Ã­Ã ÃªÃ Ã§Ã Ã­Ã¨Ã¥ Ã¢Ã¯Ã«Ã®Ã²Ã¼ Ã¤Ã® Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¿ Ã¨Ã§ Ã®Ã²Ã°Ã¿Ã¤Ã .\n1.3 ÃŠÃ®Ã¬Ã Ã­Ã¤Ã¨Ã° Ã®Ã²Ã°Ã¿Ã¤Ã  Ã¨Ã¬Ã¥Ã¥Ã² Ã¯Ã°Ã Ã¢Ã® Ã¨Ã§Ã¬Ã¥Ã­Ã¿Ã²Ã¼ Ã³Ã±Ã²Ã Ã¢ Ã¢ Ã«Ã¾Ã¡Ã®Ã¥ Ã¢Ã°Ã¥Ã¬Ã¿.\nÂ«ÃÃÃŸÃ‡Ã€ÃÃÃÃ‘Ã’ÃˆÂ»\n2.1 ÃÃ±Ã³Ã¹Ã¥Ã±Ã²Ã¢Ã«Ã¥Ã­Ã¨Ã¥ Ã¡Ã¥Ã§Ã®Ã¯Ã Ã±Ã­Ã®Ã±Ã²Ã¨ Ã®ÃµÃ°Ã Ã­Ã¿Ã¥Ã¬Ã®Ã© Ã²Ã¥Ã°Ã°Ã¨Ã²Ã®Ã°Ã¨Ã¨ Ã Ã°Ã¬Ã¨Ã¨ Ã‹Ã Ã±-Ã‚Ã¥Ã­Ã²Ã³Ã°Ã Ã±Ã ;\n2.2 ÃŒÃ£Ã­Ã®Ã¢Ã¥Ã­Ã­Ã®Ã¥ Ã°Ã¥Ã Ã£Ã¨Ã°Ã®Ã¢Ã Ã­Ã¨Ã¥ Ã­Ã  `SOS` Ã±Ã® Ã±Ã²Ã®Ã°Ã®Ã­Ã» Ã¡Ã®Ã©Ã¶Ã®Ã¢, Ã¢Ã¥Ã¤Ã³Ã¹Ã¨Ãµ Ã¯Ã®Ã±Ã²Ã Ã¢ÃªÃ¨ Ã¡Ã®Ã¥Ã¯Ã°Ã¨Ã¯Ã Ã±Ã®Ã¢;\n2.3 ÃÃ°Ã®Ã¢Ã¥Ã°ÃªÃ  `ÃŒÃ Ã£Ã Ã§Ã¨Ã­Ã®Ã¢ Ã®Ã¤Ã¥Ã¦Ã¤Ã»` Ã¨ `Ã€ÃŒÃŒÃ`;\n2.4 ÃÃ°Ã¥Ã¤Ã®Ã²Ã¢Ã°Ã Ã¹Ã¥Ã­Ã¨Ã¥ ÃªÃ°Ã Ã¦Ã¨ Ã¢Ã®Ã¥Ã­Ã­Ã®Ã£Ã® Ã¨Ã¬Ã³Ã¹Ã¥Ã±Ã²Ã¢Ã , Ã¢ Ã²Ã®Ã¬ Ã·Ã¨Ã±Ã«Ã¥ Ã¢Ã®Ã¥Ã­Ã­Ã®Ã© Ã²Ã¥ÃµÃ­Ã¨ÃªÃ¨;\n2.5 ÃÃ±Ã³Ã¹Ã¥Ã±Ã²Ã¢Ã«Ã¥Ã­Ã¨Ã¥ ÃªÃ°Ã³Ã£Ã«Ã®Ã±Ã³Ã²Ã®Ã·Ã­Ã»Ãµ Ã¯Ã Ã²Ã°Ã³Ã«Ã¥Ã© Ã¢Ã®ÃªÃ°Ã³Ã£ Ã¢Ã®Ã¨Ã­Ã±ÃªÃ®Ã© Ã·Ã Ã±Ã²Ã¨, Ã¬Ã Ã°Ã¸Ã°Ã³Ã²Ã®Ã¢ Ã±Ã­Ã Ã¡Ã¦Ã¥Ã­Ã¨Ã¿ Ã¢ Ã¶Ã¥Ã«Ã¿Ãµ Ã­Ã ÃµÃ®Ã¤ÃªÃ¨ Ã§Ã Ã±Ã Ã¤Ã» Ã¡Ã Ã©ÃªÃ¥Ã°Ã±ÃªÃ¨Ãµ ÃªÃ«Ã³Ã¡Ã®Ã¢, Ã  Ã²Ã Ãª Ã¦Ã¥ Ã¯Ã Ã²Ã°Ã³Ã«Ã¼ Ã¡Ã«Ã¨Ã§Ã«Ã¥Ã¦Ã Ã¹Ã¨Ãµ Ã²Ã¥Ã°Ã°Ã¨Ã²Ã®Ã°Ã¨Ã© Ã£Ã®Ã°Ã®Ã¤Ã  Ã¨ Ã¥Ã£Ã® Ã®ÃªÃ°Ã¥Ã±Ã²Ã­Ã®Ã±Ã²Ã¥Ã©;\n2.6 ÃÃ¥Ã¸Ã¨Ã© Ã¯Ã Ã²Ã°Ã³Ã«Ã¼ Ã±Ã Ã¬Ã®Ã© Ã·Ã Ã±Ã²Ã¨ ( ÃƒÃ‘-Ã€Ã­Ã£Ã Ã°Ã» );\n2.7 ÃÃ±Ã³Ã¹Ã¥Ã±Ã²Ã¢Ã«Ã¥Ã­Ã¨Ã¥ Ã±Ã®Ã¯Ã°Ã®Ã¢Ã®Ã¦Ã¤Ã¥Ã­Ã¨Ã© ÃªÃ®Ã«Ã®Ã­Ã­ Ã±Ã­Ã Ã¡Ã¦Ã¥Ã­Ã¨Ã¿ Ã¢ Ã¶Ã¥Ã«Ã¿Ãµ Ã±Ã®ÃµÃ°Ã Ã­Ã­Ã®Ã±Ã²Ã¨ Ã¨Ã¬Ã³Ã¹Ã¥Ã±Ã²Ã¢Ã  Ã Ã°Ã¬Ã¨Ã¨;\n2.8 ÃÃ±Ã³Ã¹Ã¥Ã±Ã²Ã¢Ã«Ã¥Ã­Ã¨Ã¥ Ã¡Ã¥Ã§Ã®Ã¯Ã Ã±Ã­Ã®Ã±Ã²Ã¨ Ã¨ Ã¯Ã®Ã°Ã¿Ã¤ÃªÃ  Ã­Ã  Ã¯Ã°Ã¨Ã§Ã»Ã¢Ã Ãµ Ã¢ Ã Ã°Ã¬Ã¨Ã¾ Ã‹Ã Ã±-Ã‚Ã¥Ã­Ã²Ã³Ã°Ã Ã±Ã ;\n2.9 Ã“Ã·Ã Ã±Ã²Ã¨Ã¥ Ã¢ Ã±Ã¯Ã¥Ã¶. Ã®Ã¯Ã¥Ã°Ã Ã¶Ã¨Ã¿Ãµ Ã¢Ã¬Ã¥Ã±Ã²Ã¥ Ã± Ã“Ã¯Ã°Ã Ã¢Ã«Ã¥Ã­Ã¨Ã¥Ã¬ Ã‘Ã®Ã¡Ã±Ã²Ã¢Ã¥Ã­Ã­Ã®Ã© ÃÃ¥Ã§Ã®Ã¯Ã Ã±Ã­Ã®Ã±Ã²Ã¨,Ã  Ã²Ã Ãª Ã¦Ã¥ Federal Bureau of Investigation;\n2.10 ÃÃ®Ã¬Ã®Ã¹Ã¼ Ã¢ Ã¯Ã®Ã°Ã²Ã³ Ã‹Ã®Ã±-Ã‘Ã Ã­Ã²Ã®Ã±Ã  Ã¯Ã°Ã¨ Ã·Ã°Ã¥Ã§Ã¢Ã»Ã·Ã Ã©Ã­Ã»Ãµ Ã±Ã¨Ã²Ã³Ã Ã¶Ã¨Ã¿Ãµ.\n2.11 ÃÃ®Ã¬Ã®Ã¹Ã¼ Ã¤Ã°Ã³Ã£Ã¨Ã¬ Ã¢Ã§Ã¢Ã®Ã¤Ã Ã¬.\nÂ«Ã‡Ã€ÃÃÃ…Ã’Ã›Â»\n3.1 ÃÃ Ã°Ã³Ã¸Ã¥Ã­Ã¨Ã¥ Ã³Ã±Ã²Ã Ã¢Ã  Ã¢ Ã«Ã¾Ã¡Ã®Ã© Ã´Ã®Ã°Ã¬Ã¥;\n3.2 ÃÃ¥Ã¨Ã±Ã¯Ã®Ã«Ã­Ã¥Ã­Ã¨Ã¥ Ã¯Ã°Ã¨ÃªÃ Ã§Ã®Ã¢ ÃªÃ®Ã¬Ã Ã­Ã¤Ã³Ã¾Ã¹Ã¥Ã£Ã® Ã±Ã®Ã±Ã²Ã Ã¢Ã , Ã°Ã³ÃªÃ®Ã¢Ã®Ã¤Ã±Ã²Ã¢Ã  Ã Ã°Ã¬Ã¨Ã¨;\n3.3 ÃÃ¥Ã¿Ã¢ÃªÃ  Ã­Ã  Ã¢Ã»Ã§Ã®Ã¢Ã» FBI Ã¯Ã® Ã§Ã Ã¯Ã°Ã®Ã±Ã Ã¬. (Ã¨Ã±ÃªÃ«.: Ã‘Ã Ã¨Ã«Ã¨ Ã°Ã Ã§Ã«Ã¨Ã·Ã­Ã®Ã£Ã® Ã°Ã®Ã¤Ã  Ã¬Ã¥Ã°Ã®Ã¯Ã°Ã¨Ã¿Ã²Ã¨Ã¿ Ã®Ã² Ã°Ã³Ãª-Ã¢Ã  Ã®Ã²Ã°Ã¿Ã¤Ã );\n3.4 ÃˆÃ¤Ã²Ã¨ Ã¢ Ã¯Ã¥Ã°Ã¥Ã±Ã²Ã°Ã¥Ã«ÃªÃ³ Ã± Ã²Ã°Ã¥Ã¬Ã¿ Ã¨ Ã¡Ã®Ã«Ã¥Ã¥ Ã¢Ã®Ã®Ã°Ã³Ã¦Ã¥Ã­Ã­Ã»Ã¬Ã¨ Ã¯Ã°Ã®Ã²Ã¨Ã¢Ã­Ã¨ÃªÃ Ã¬Ã¨ (Ã¨Ã±ÃªÃ«.: Ã± Ã¢Ã Ã¬Ã¨ Ã­Ã Ã¯Ã Ã°Ã­Ã¨Ãª);\n3.5 Ã“Ã·Ã Ã±Ã²Ã¨Ã¥ Ã¢ Ã²Ã°Ã¥Ã­Ã¨Ã°Ã®Ã¢ÃªÃ Ãµ/Ã¬Ã¯ Ã®Ã² Ã‘Ã¥Ã­Ã Ã²Ã®Ã°Ã®Ã¢ Ã± ÃªÃ ÃªÃ¨Ã¬-Ã«Ã¨Ã¡Ã® Ã¢Ã§Ã¢Ã®Ã¤Ã®Ã¬, ÃªÃ®Ã£Ã¤Ã  Ã­Ã Ã¯Ã Ã¤Ã¥Ã­Ã¨Ã¿ Ã¡Ã Ã©ÃªÃ¥Ã°Ã®Ã¢ Ã¨ Ã¡Ã Ã­Ã¤Ã¨Ã²Ã®Ã¢ Ã¯Ã°Ã®Ã¨Ã±ÃµÃ®Ã¤Ã¿Ã² Ã·Ã Ã±Ã²Ã®;\n3.6 Ã‚Ã§Ã°Ã»Ã¢Ã Ã²Ã¼ Ã´Ã³Ã°Ã³ Ã¯Ã®Ã±Ã«Ã¥ Ã²Ã®Ã£Ã®, ÃªÃ Ãª Ã®Ã²Ã¡Ã¨Ã«Ã¨ Ã³ ÃÃÃƒ (Ã¢ Ã±Ã«Ã³Ã·Ã Ã¥, Ã¥Ã±Ã«Ã¨ Ã´Ã³Ã°Ã  Ã¯Ã®Ã«Ã®Ã¬Ã Ã­Ã , Ã¯Ã®Ã·Ã¨Ã­Ã¨Ã²Ã¼ Ã°Ã¥Ã¬.ÃªÃ®Ã¬Ã¯Ã«Ã¥ÃªÃ²Ã®Ã¬, Ã¥Ã±Ã«Ã¨ Ã´Ã³Ã°Ã  Ã­Ã  ÃµÃ®Ã¤Ã³, Ã½Ã¢Ã ÃªÃ³Ã¨Ã°Ã®Ã¢Ã Ã²Ã¼ Ã¢ Ã·Ã Ã±Ã²Ã¼);\n3.7 Ã‹Ã¾Ã¡Ã»Ã¥ ÃªÃ®Ã­Ã´Ã«Ã¨ÃªÃ²Ã» Ã± Ã¡Ã®Ã©Ã¶Ã Ã¬Ã¨ Ã Ã°Ã¬Ã¨Ã¨;\n3.8 ÃÃ ÃµÃ®Ã¤Ã¨Ã²Ã¼Ã±Ã¿ Ã¢ Ã®Ã¯Ã Ã±Ã­Ã®Ã¬ Ã°Ã Ã©Ã®Ã­Ã¥ Ã¢Ã­Ã¥ Ã±Ã¯Ã¥Ã¶.Ã®Ã¯Ã¥Ã°Ã Ã¶Ã¨Ã©;\n3.9 ÃÃ±Ã³Ã¹Ã¥Ã±Ã²Ã¢Ã«Ã¿Ã²Ã¼ Ã¢Ã®Ã§Ã¤Ã³Ã¸Ã­Ã»Ã© Ã¯Ã Ã²Ã°Ã³Ã«Ã¼ Ã¡Ã¥Ã§ Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã¨Ã¿ ÃªÃ®Ã¬.Ã±Ã®Ã±Ã²Ã Ã¢Ã  Ã®Ã²Ã°Ã¿Ã¤Ã  Ã¨/Ã¨Ã«Ã¨ Ã¢ Ã±Ã®Ã±Ã²Ã Ã¢Ã¥ Ã¬Ã¥Ã­Ã¥Ã¥ Ã²Ã°Ã¥Ãµ Ã·Ã¥Ã«Ã®Ã¢Ã¥Ãª;\n3.10 ÃÃ¥Ã±Ã¬Ã®Ã²Ã°Ã¿ Ã­Ã  Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã±ÃªÃ®Ã¥ Ã§Ã¢Ã Ã­Ã¨Ã¿ Ã¢ Ã®Ã²Ã°Ã¿Ã¤Ã¥, Ã‘ÃÃÃ Ã­Ã¥ Ã¨Ã¬Ã¥Ã¥Ã² Ã¯Ã°Ã Ã¢Ã® ÃªÃ®Ã¬Ã Ã­Ã¤Ã®Ã¢Ã Ã²Ã¼ Ã¨Ã«Ã¨ Ã°Ã³ÃªÃ®Ã¢Ã®Ã¤Ã¨Ã²Ã¼ ÃªÃ¥Ã¬-Ã«Ã¨Ã¡Ã® Ã¨Ã§ Ã¢Ã§Ã¢Ã®Ã¤Ã®Ã¢ Ã¨Ã«Ã¨ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã®Ã¢.\n(Ã¨Ã±ÃªÃ«.: Ã¤Ã®Ã¯Ã³Ã±ÃªÃ Ã¥Ã²Ã±Ã¿ Ã°Ã³ÃªÃ®Ã¢Ã®Ã¤Ã±Ã²Ã¢Ã® Ã±Ã®Ã«Ã¤Ã Ã²Ã Ã¬Ã¨ Ã¢ ÃªÃ°Ã¨Ã²Ã¨Ã·Ã¥Ã±ÃªÃ¨Ãµ Ã±Ã¨Ã²Ã³Ã Ã¶Ã¨Ã¿Ãµ Ã¯Ã°Ã¨ Ã®Ã²Ã±Ã³Ã²Ã±Ã²Ã¢Ã¨Ã¨ Ã±Ã²Ã Ã°Ã¸Ã¨Ãµ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã®Ã¢)\nÂ«ÃÃ€Ã‡ÃÃ…Ã˜Ã…ÃÃÂ»\n4.1 ÃÃ®ÃªÃ¨Ã¤Ã Ã²Ã¼ Ã²Ã¥Ã°Ã°Ã¨Ã²Ã®Ã°Ã¨Ã¾ Ã·Ã Ã±Ã²Ã¨ Ã¤Ã«Ã¿ Ã§Ã Ã¯Ã°Ã Ã¢ÃªÃ¨ Ã²Ã°Ã Ã­Ã±Ã¯Ã®Ã°Ã²Ã  Ã¨ Ã¯Ã®Ã¯Ã®Ã«Ã­Ã¥Ã­Ã¨Ã¿ Ã°Ã¥Ã¬. ÃªÃ®Ã¬Ã¯Ã«Ã¥ÃªÃ²Ã®Ã¢ Ã± Ã¤Ã®ÃªÃ«Ã Ã¤Ã®Ã¬. (Ã®Ã² Ã¤Ã®Ã«Ã¦Ã­Ã®Ã±Ã²Ã¨ ÃÃ®Ã¥Ã¶)\n4.2 Ã‚Ã»Ã¥Ã§Ã¦Ã Ã²Ã¼ Ã± Ã²Ã¥Ã°Ã°Ã¨Ã²Ã®Ã°Ã¨Ã¨ Ã¡Ã Ã§Ã» Ã·Ã¥Ã°Ã¥Ã§ Ã¯Ã°Ã®ÃµÃ®Ã¤ Ã°Ã¿Ã¤Ã®Ã¬ Ã± ÃŠÃÃ Ã¨ Ã·Ã¥Ã°Ã¥Ã§ Ã£Ã®Ã°ÃªÃ³ Ã°Ã¿Ã¤Ã®Ã¬ Ã± ÃªÃ®Ã­Ã²Ã¥Ã©Ã­Ã¥Ã°Ã Ã¬Ã¨ Ã­Ã  ÃƒÃ‘.\n4.3 Ã‹Ã®Ã¬Ã Ã²Ã¼ ÃªÃ­Ã®Ã¯Ã®Ã·Ã­Ã³Ã¾ Ã±Ã²Ã Ã­Ã¶Ã¨Ã¨ Ã¢Ã® Ã¢Ã°Ã¥Ã¬Ã¿ Ã¯Ã®Ã£Ã®Ã­Ã¨ Ã§Ã  Ã´Ã³Ã°Ã®Ã©.\n4.4 ÃÃ²Ã¤Ã»ÃµÃ Ã²Ã¼, Ã±Ã¯Ã Ã²Ã¼ Ã¢ Ã¸Ã²Ã Ã¡Ã¥ Ã­Ã¥Ã®Ã£Ã°Ã Ã­Ã¨Ã·Ã¥Ã­Ã­Ã®Ã¥ Ã¢Ã°Ã¥Ã¬Ã¿.\n4.5 ÃÃ Ã°ÃªÃ®Ã¢Ã Ã²Ã¼ Ã±Ã¢Ã®Ã© Ã«Ã¨Ã·Ã­Ã»Ã© Ã²Ã°Ã Ã­Ã±Ã¯Ã®Ã°Ã² Ã±Ã¯Ã°Ã Ã¢Ã  Ã®Ã² Ã¸Ã²Ã Ã¡Ã .\n4.6 Ã‚Ã¥Ã±Ã²Ã¨ Ã®Ã£Ã®Ã­Ã¼ Ã­Ã  Ã¯Ã®Ã°Ã Ã¦Ã¥Ã­Ã¨Ã¥ Ã¯Ã® Ã«Ã¾Ã¡Ã®Ã¬Ã³ Ã¡Ã®Ã©Ã¶Ã³, ÃªÃ®Ã²Ã®Ã°Ã»Ã© Ã­Ã ÃµÃ®Ã¤Ã¨Ã²Ã±Ã¿ Ã¢ Ã¬Ã Ã±ÃªÃ¥ Ã¢ Ã·Ã Ã±Ã²Ã¨.{FFFFFF}", "ÃÃ®Ã­Ã¿Ã«", "ÃÃ¥ Ã¯Ã®Ã­Ã¿Ã«", 0)
           end
         },
         {
-          title = "{808080}Òåí-êîäû{FFFFFF} ",
+          title = "{808080}Ã’Ã¥Ã­-ÃªÃ®Ã¤Ã»{FFFFFF} ",
           onclick = function()
-            sampShowDialog(4353, "{808080}[SOBR tools] Òåí-êîäû{FFFFFF}", "{808080}10-4 — Ñîîáùåíèå ïğèíÿòî, âûåçæàş!\n10-6 — ß çàíÿò, ïî ïğè÷èíå - [Óêàçàòü ïğè÷èíó]\n10-8 — Ãîòîâ ê ğàáîòå [Óêàçàòü ïîçûâíîé]\n10-10 — Ïîõèùåíèå, â ñåêòîğå - [Óêàçàòü ñåêòîğ]\n10-16 — Ïåğåõâàòèòå ïîäîçğåâàåìîãî â ñåêòîğå - [Óêàçàòü ñåêòîğ]\n10-20 — Ìåñòîïîëîæåíèå â ñåêòîğå - [Óêàçàòü ñåêòîğ]\n10-26 — Ïîñëåäíÿÿ èíôîğìàöèÿ îòìåíÿåòñÿ.\n10-34 — Òğåáóåòñÿ ïîäêğåïëåíèå â ñåêòîğå - [Óêàçàòü ñåêòîğ]\n10-37 — Òğåáóåòñÿ ıâàêóàöèÿ â ñåêòîğ - [Óêàçàòü ñåêòîğ]\n10-38 — Òğåáóåòñÿ ìàøèíà ñêîğîé ïîìîùè â ñåêòîğ - [Óêàçàòü ñåêòîğ]\n10-30 - Âûåõàëè â ñîïğîâîæäåíèå - [Óêàçàòü ïîçûâíûå íàïàğíèêîâ]\n10-31 - Âîçâğàùàåìñÿ â ÷àñòü\n10-40 - Ïàòğóëü ÷àñòè - [Óêàçàòü ïîçûâíûå íàïàğíèêîâ]\n10-43 - Âûëåòåëè â ïîğò ËÑ - [Óêàçàòü ïîçûâíûå íàïàğíèêîâ]\n10-44 - Ïğèëåòåëè â ïîğò ËÑ\n10-51 - Âûåõàëè íà ïğîâåğêó AMMO LS - [Óêàçàòü ïîçûâíûå íàïàğíèêîâ]\n10-52 - Âûåõàëè íà ïğîâåğêó AMMO SF - [Óêàçàòü ïîçûâíûå íàïàğíèêîâ]\n10-53 - Âûåõàëè íà ïğîâåğêó AMMO LV - [Óêàçàòü ïîçûâíûå íàïàğíèêîâ]\n10-61 - Âûåõàëè íà ïğîâåğêó MO LS - [Óêàçàòü ïîçûâíûå íàïàğíèêîâ]\n10-62 - Âûåõàëè íà ïğîâåğêó MO SF - [Óêàçàòü ïîçûâíûå íàïàğíèêîâ]\n10-63 - Âûåõàëè íà ïğîâåğêó MO LV - [Óêàçàòü ïîçûâíûå íàïàğíèêîâ]\n10-99 — Çàäàíèå âûïîëíåíî, âñå â ïîğÿäêå.\n10-100 — Íóæíî îòîéòè.\n10-200 — Òğåáóåòñÿ íàğÿä ïîëèöèè â ñåêòîğ - [Óêàçàòü ñåêòîğ]\n10-250 — Âûçîâ ñïåö.îòğÿäîâ PD â óêàçàííîå ìåñòî - [Óêàçàòü ñåêòîğ / ìåñòî].\n(Èñïîëüçóåòñÿ ïğè ğåéäàõ, îáëàâàõ, òåğàêòàõ è îáùèõ òğåíèğîâêàõ)\n10-300 — Âûçîâ ñïåö.îòğÿäîâ PD è Army â óêàçàííîå ìåñòî - [Óêàçàòü ñåêòîğ / ìåñòî].\n(Èñïîëüçóåòñÿ ïğè ğåéäàõ, îáëàâàõ, òåğàêòàõ è îáùèõ òğåíèğîâêàõ){FFFFFF}", "Ïîíÿë", "Íå ïîíÿë", 0)
+            sampShowDialog(4353, "{808080}[SOBR tools] Ã’Ã¥Ã­-ÃªÃ®Ã¤Ã»{FFFFFF}", "{808080}10-4 Â— Ã‘Ã®Ã®Ã¡Ã¹Ã¥Ã­Ã¨Ã¥ Ã¯Ã°Ã¨Ã­Ã¿Ã²Ã®, Ã¢Ã»Ã¥Ã§Ã¦Ã Ã¾!\n10-6 Â— ÃŸ Ã§Ã Ã­Ã¿Ã², Ã¯Ã® Ã¯Ã°Ã¨Ã·Ã¨Ã­Ã¥ - [Ã“ÃªÃ Ã§Ã Ã²Ã¼ Ã¯Ã°Ã¨Ã·Ã¨Ã­Ã³]\n10-8 Â— ÃƒÃ®Ã²Ã®Ã¢ Ãª Ã°Ã Ã¡Ã®Ã²Ã¥ [Ã“ÃªÃ Ã§Ã Ã²Ã¼ Ã¯Ã®Ã§Ã»Ã¢Ã­Ã®Ã©]\n10-10 Â— ÃÃ®ÃµÃ¨Ã¹Ã¥Ã­Ã¨Ã¥, Ã¢ Ã±Ã¥ÃªÃ²Ã®Ã°Ã¥ - [Ã“ÃªÃ Ã§Ã Ã²Ã¼ Ã±Ã¥ÃªÃ²Ã®Ã°]\n10-16 Â— ÃÃ¥Ã°Ã¥ÃµÃ¢Ã Ã²Ã¨Ã²Ã¥ Ã¯Ã®Ã¤Ã®Ã§Ã°Ã¥Ã¢Ã Ã¥Ã¬Ã®Ã£Ã® Ã¢ Ã±Ã¥ÃªÃ²Ã®Ã°Ã¥ - [Ã“ÃªÃ Ã§Ã Ã²Ã¼ Ã±Ã¥ÃªÃ²Ã®Ã°]\n10-20 Â— ÃŒÃ¥Ã±Ã²Ã®Ã¯Ã®Ã«Ã®Ã¦Ã¥Ã­Ã¨Ã¥ Ã¢ Ã±Ã¥ÃªÃ²Ã®Ã°Ã¥ - [Ã“ÃªÃ Ã§Ã Ã²Ã¼ Ã±Ã¥ÃªÃ²Ã®Ã°]\n10-26 Â— ÃÃ®Ã±Ã«Ã¥Ã¤Ã­Ã¿Ã¿ Ã¨Ã­Ã´Ã®Ã°Ã¬Ã Ã¶Ã¨Ã¿ Ã®Ã²Ã¬Ã¥Ã­Ã¿Ã¥Ã²Ã±Ã¿.\n10-34 Â— Ã’Ã°Ã¥Ã¡Ã³Ã¥Ã²Ã±Ã¿ Ã¯Ã®Ã¤ÃªÃ°Ã¥Ã¯Ã«Ã¥Ã­Ã¨Ã¥ Ã¢ Ã±Ã¥ÃªÃ²Ã®Ã°Ã¥ - [Ã“ÃªÃ Ã§Ã Ã²Ã¼ Ã±Ã¥ÃªÃ²Ã®Ã°]\n10-37 Â— Ã’Ã°Ã¥Ã¡Ã³Ã¥Ã²Ã±Ã¿ Ã½Ã¢Ã ÃªÃ³Ã Ã¶Ã¨Ã¿ Ã¢ Ã±Ã¥ÃªÃ²Ã®Ã° - [Ã“ÃªÃ Ã§Ã Ã²Ã¼ Ã±Ã¥ÃªÃ²Ã®Ã°]\n10-38 Â— Ã’Ã°Ã¥Ã¡Ã³Ã¥Ã²Ã±Ã¿ Ã¬Ã Ã¸Ã¨Ã­Ã  Ã±ÃªÃ®Ã°Ã®Ã© Ã¯Ã®Ã¬Ã®Ã¹Ã¨ Ã¢ Ã±Ã¥ÃªÃ²Ã®Ã° - [Ã“ÃªÃ Ã§Ã Ã²Ã¼ Ã±Ã¥ÃªÃ²Ã®Ã°]\n10-30 - Ã‚Ã»Ã¥ÃµÃ Ã«Ã¨ Ã¢ Ã±Ã®Ã¯Ã°Ã®Ã¢Ã®Ã¦Ã¤Ã¥Ã­Ã¨Ã¥ - [Ã“ÃªÃ Ã§Ã Ã²Ã¼ Ã¯Ã®Ã§Ã»Ã¢Ã­Ã»Ã¥ Ã­Ã Ã¯Ã Ã°Ã­Ã¨ÃªÃ®Ã¢]\n10-31 - Ã‚Ã®Ã§Ã¢Ã°Ã Ã¹Ã Ã¥Ã¬Ã±Ã¿ Ã¢ Ã·Ã Ã±Ã²Ã¼\n10-40 - ÃÃ Ã²Ã°Ã³Ã«Ã¼ Ã·Ã Ã±Ã²Ã¨ - [Ã“ÃªÃ Ã§Ã Ã²Ã¼ Ã¯Ã®Ã§Ã»Ã¢Ã­Ã»Ã¥ Ã­Ã Ã¯Ã Ã°Ã­Ã¨ÃªÃ®Ã¢]\n10-43 - Ã‚Ã»Ã«Ã¥Ã²Ã¥Ã«Ã¨ Ã¢ Ã¯Ã®Ã°Ã² Ã‹Ã‘ - [Ã“ÃªÃ Ã§Ã Ã²Ã¼ Ã¯Ã®Ã§Ã»Ã¢Ã­Ã»Ã¥ Ã­Ã Ã¯Ã Ã°Ã­Ã¨ÃªÃ®Ã¢]\n10-44 - ÃÃ°Ã¨Ã«Ã¥Ã²Ã¥Ã«Ã¨ Ã¢ Ã¯Ã®Ã°Ã² Ã‹Ã‘\n10-51 - Ã‚Ã»Ã¥ÃµÃ Ã«Ã¨ Ã­Ã  Ã¯Ã°Ã®Ã¢Ã¥Ã°ÃªÃ³ AMMO LS - [Ã“ÃªÃ Ã§Ã Ã²Ã¼ Ã¯Ã®Ã§Ã»Ã¢Ã­Ã»Ã¥ Ã­Ã Ã¯Ã Ã°Ã­Ã¨ÃªÃ®Ã¢]\n10-52 - Ã‚Ã»Ã¥ÃµÃ Ã«Ã¨ Ã­Ã  Ã¯Ã°Ã®Ã¢Ã¥Ã°ÃªÃ³ AMMO SF - [Ã“ÃªÃ Ã§Ã Ã²Ã¼ Ã¯Ã®Ã§Ã»Ã¢Ã­Ã»Ã¥ Ã­Ã Ã¯Ã Ã°Ã­Ã¨ÃªÃ®Ã¢]\n10-53 - Ã‚Ã»Ã¥ÃµÃ Ã«Ã¨ Ã­Ã  Ã¯Ã°Ã®Ã¢Ã¥Ã°ÃªÃ³ AMMO LV - [Ã“ÃªÃ Ã§Ã Ã²Ã¼ Ã¯Ã®Ã§Ã»Ã¢Ã­Ã»Ã¥ Ã­Ã Ã¯Ã Ã°Ã­Ã¨ÃªÃ®Ã¢]\n10-61 - Ã‚Ã»Ã¥ÃµÃ Ã«Ã¨ Ã­Ã  Ã¯Ã°Ã®Ã¢Ã¥Ã°ÃªÃ³ MO LS - [Ã“ÃªÃ Ã§Ã Ã²Ã¼ Ã¯Ã®Ã§Ã»Ã¢Ã­Ã»Ã¥ Ã­Ã Ã¯Ã Ã°Ã­Ã¨ÃªÃ®Ã¢]\n10-62 - Ã‚Ã»Ã¥ÃµÃ Ã«Ã¨ Ã­Ã  Ã¯Ã°Ã®Ã¢Ã¥Ã°ÃªÃ³ MO SF - [Ã“ÃªÃ Ã§Ã Ã²Ã¼ Ã¯Ã®Ã§Ã»Ã¢Ã­Ã»Ã¥ Ã­Ã Ã¯Ã Ã°Ã­Ã¨ÃªÃ®Ã¢]\n10-63 - Ã‚Ã»Ã¥ÃµÃ Ã«Ã¨ Ã­Ã  Ã¯Ã°Ã®Ã¢Ã¥Ã°ÃªÃ³ MO LV - [Ã“ÃªÃ Ã§Ã Ã²Ã¼ Ã¯Ã®Ã§Ã»Ã¢Ã­Ã»Ã¥ Ã­Ã Ã¯Ã Ã°Ã­Ã¨ÃªÃ®Ã¢]\n10-99 Â— Ã‡Ã Ã¤Ã Ã­Ã¨Ã¥ Ã¢Ã»Ã¯Ã®Ã«Ã­Ã¥Ã­Ã®, Ã¢Ã±Ã¥ Ã¢ Ã¯Ã®Ã°Ã¿Ã¤ÃªÃ¥.\n10-100 Â— ÃÃ³Ã¦Ã­Ã® Ã®Ã²Ã®Ã©Ã²Ã¨.\n10-200 Â— Ã’Ã°Ã¥Ã¡Ã³Ã¥Ã²Ã±Ã¿ Ã­Ã Ã°Ã¿Ã¤ Ã¯Ã®Ã«Ã¨Ã¶Ã¨Ã¨ Ã¢ Ã±Ã¥ÃªÃ²Ã®Ã° - [Ã“ÃªÃ Ã§Ã Ã²Ã¼ Ã±Ã¥ÃªÃ²Ã®Ã°]\n10-250 Â— Ã‚Ã»Ã§Ã®Ã¢ Ã±Ã¯Ã¥Ã¶.Ã®Ã²Ã°Ã¿Ã¤Ã®Ã¢ PD Ã¢ Ã³ÃªÃ Ã§Ã Ã­Ã­Ã®Ã¥ Ã¬Ã¥Ã±Ã²Ã® - [Ã“ÃªÃ Ã§Ã Ã²Ã¼ Ã±Ã¥ÃªÃ²Ã®Ã° / Ã¬Ã¥Ã±Ã²Ã®].\n(ÃˆÃ±Ã¯Ã®Ã«Ã¼Ã§Ã³Ã¥Ã²Ã±Ã¿ Ã¯Ã°Ã¨ Ã°Ã¥Ã©Ã¤Ã Ãµ, Ã®Ã¡Ã«Ã Ã¢Ã Ãµ, Ã²Ã¥Ã°Ã ÃªÃ²Ã Ãµ Ã¨ Ã®Ã¡Ã¹Ã¨Ãµ Ã²Ã°Ã¥Ã­Ã¨Ã°Ã®Ã¢ÃªÃ Ãµ)\n10-300 Â— Ã‚Ã»Ã§Ã®Ã¢ Ã±Ã¯Ã¥Ã¶.Ã®Ã²Ã°Ã¿Ã¤Ã®Ã¢ PD Ã¨ Army Ã¢ Ã³ÃªÃ Ã§Ã Ã­Ã­Ã®Ã¥ Ã¬Ã¥Ã±Ã²Ã® - [Ã“ÃªÃ Ã§Ã Ã²Ã¼ Ã±Ã¥ÃªÃ²Ã®Ã° / Ã¬Ã¥Ã±Ã²Ã®].\n(ÃˆÃ±Ã¯Ã®Ã«Ã¼Ã§Ã³Ã¥Ã²Ã±Ã¿ Ã¯Ã°Ã¨ Ã°Ã¥Ã©Ã¤Ã Ãµ, Ã®Ã¡Ã«Ã Ã¢Ã Ãµ, Ã²Ã¥Ã°Ã ÃªÃ²Ã Ãµ Ã¨ Ã®Ã¡Ã¹Ã¨Ãµ Ã²Ã°Ã¥Ã­Ã¨Ã°Ã®Ã¢ÃªÃ Ãµ){FFFFFF}", "ÃÃ®Ã­Ã¿Ã«", "ÃÃ¥ Ã¯Ã®Ã­Ã¿Ã«", 0)
           end
         },
         {
-          title = "{808080}Óñòàâ àğìèè è Ôåäåğàëüíîå Ïîñòàíîâëåíèå{FFFFFF}",
+          title = "{808080}Ã“Ã±Ã²Ã Ã¢ Ã Ã°Ã¬Ã¨Ã¨ Ã¨ Ã”Ã¥Ã¤Ã¥Ã°Ã Ã«Ã¼Ã­Ã®Ã¥ ÃÃ®Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­Ã¨Ã¥{FFFFFF}",
           onclick = function()
             cmd_imgui()
           end
@@ -1033,20 +1033,20 @@ function refreshDialog()
       }
     },
     {
-      title = "{808080}Êîìàíäû ñêğèïòà{FFFFFF}",
+      title = "{808080}ÃŠÃ®Ã¬Ã Ã­Ã¤Ã» Ã±ÃªÃ°Ã¨Ã¯Ã²Ã {FFFFFF}",
       onclick = function()
-        sampShowDialog(1285, "{808080}[SOBR tools] Êîìàíäû{FFFFFF}", "{808080}/aclist - âûêëş÷èòü/âêëş÷èòü àâòîêëèñò\n/lp - âûêëş÷èòü/âêëş÷èòü îòêğûâàíèå àâòî íà êëàâèøó `L`\n/atag - âûêëş÷èòü/âêëş÷èòü àâòî-òåã\n/ascreen - âûêëş÷èòü/âêëş÷èòü àâòî-ñêğèí ïîñëå ïıéäåÿ\n/sw, /st - ñìåíèòü èãğîâîå âğåìÿ/ïîãîäó\n/cc - î÷èñòèòü ÷àò\n/kv - ïîñòàâèòü ìåòêó íà êâàäğàò\n/getm - ïîêàçàòü ñåáå ìîíèòîğèíã, /rgetm - â ğàöèş\n/przv - âêëş÷èòü/âûêëş÷èòü ğåæèì ïğèçûâà\n/abp - âûêëş÷èòü/âêëş÷èòü àâòî-ÁÏ íà `alt`\n/abp - âêëş÷èòü íàñòğîéêè àâòî-ÁÏ\n/splayer - âêëş÷èòü/âûêëş÷èòü îòîáğàæåíèå â ÷àòå íèêîâ âîåííûõ êîòîğûå ïîÿâèëèñü â çîíå ñòğèìà\n/fustav - ïîñìîòğåòü ÔÏ è óñòàâ\n/ñòÿæêè - âêëş÷èòü/îòêëş÷èòü îòûãğîâêó ñòÿæåê\n/äîêëàäû - îòêğûòü ìåíş äîêëàäîâ{FFFFFF}", "Ëàäíî", "Ïğîõëàäíî", 0)
+        sampShowDialog(1285, "{808080}[SOBR tools] ÃŠÃ®Ã¬Ã Ã­Ã¤Ã»{FFFFFF}", "{808080}/aclist - Ã¢Ã»ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼/Ã¢ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼ Ã Ã¢Ã²Ã®ÃªÃ«Ã¨Ã±Ã²\n/lp - Ã¢Ã»ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼/Ã¢ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼ Ã®Ã²ÃªÃ°Ã»Ã¢Ã Ã­Ã¨Ã¥ Ã Ã¢Ã²Ã® Ã­Ã  ÃªÃ«Ã Ã¢Ã¨Ã¸Ã³ `L`\n/atag - Ã¢Ã»ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼/Ã¢ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼ Ã Ã¢Ã²Ã®-Ã²Ã¥Ã£\n/ascreen - Ã¢Ã»ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼/Ã¢ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼ Ã Ã¢Ã²Ã®-Ã±ÃªÃ°Ã¨Ã­ Ã¯Ã®Ã±Ã«Ã¥ Ã¯Ã½Ã©Ã¤Ã¥Ã¿\n/sw, /st - Ã±Ã¬Ã¥Ã­Ã¨Ã²Ã¼ Ã¨Ã£Ã°Ã®Ã¢Ã®Ã¥ Ã¢Ã°Ã¥Ã¬Ã¿/Ã¯Ã®Ã£Ã®Ã¤Ã³\n/cc - Ã®Ã·Ã¨Ã±Ã²Ã¨Ã²Ã¼ Ã·Ã Ã²\n/kv - Ã¯Ã®Ã±Ã²Ã Ã¢Ã¨Ã²Ã¼ Ã¬Ã¥Ã²ÃªÃ³ Ã­Ã  ÃªÃ¢Ã Ã¤Ã°Ã Ã²\n/getm - Ã¯Ã®ÃªÃ Ã§Ã Ã²Ã¼ Ã±Ã¥Ã¡Ã¥ Ã¬Ã®Ã­Ã¨Ã²Ã®Ã°Ã¨Ã­Ã£, /rgetm - Ã¢ Ã°Ã Ã¶Ã¨Ã¾\n/przv - Ã¢ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼/Ã¢Ã»ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼ Ã°Ã¥Ã¦Ã¨Ã¬ Ã¯Ã°Ã¨Ã§Ã»Ã¢Ã \n/abp - Ã¢Ã»ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼/Ã¢ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼ Ã Ã¢Ã²Ã®-ÃÃ Ã­Ã  `alt`\n/abp - Ã¢ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼ Ã­Ã Ã±Ã²Ã°Ã®Ã©ÃªÃ¨ Ã Ã¢Ã²Ã®-ÃÃ\n/splayer - Ã¢ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼/Ã¢Ã»ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼ Ã®Ã²Ã®Ã¡Ã°Ã Ã¦Ã¥Ã­Ã¨Ã¥ Ã¢ Ã·Ã Ã²Ã¥ Ã­Ã¨ÃªÃ®Ã¢ Ã¢Ã®Ã¥Ã­Ã­Ã»Ãµ ÃªÃ®Ã²Ã®Ã°Ã»Ã¥ Ã¯Ã®Ã¿Ã¢Ã¨Ã«Ã¨Ã±Ã¼ Ã¢ Ã§Ã®Ã­Ã¥ Ã±Ã²Ã°Ã¨Ã¬Ã \n/fustav - Ã¯Ã®Ã±Ã¬Ã®Ã²Ã°Ã¥Ã²Ã¼ Ã”Ã Ã¨ Ã³Ã±Ã²Ã Ã¢\n/Ã±Ã²Ã¿Ã¦ÃªÃ¨ - Ã¢ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼/Ã®Ã²ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ³ Ã±Ã²Ã¿Ã¦Ã¥Ãª\n/Ã¤Ã®ÃªÃ«Ã Ã¤Ã» - Ã®Ã²ÃªÃ°Ã»Ã²Ã¼ Ã¬Ã¥Ã­Ã¾ Ã¤Ã®ÃªÃ«Ã Ã¤Ã®Ã¢{FFFFFF}", "Ã‹Ã Ã¤Ã­Ã®", "ÃÃ°Ã®ÃµÃ«Ã Ã¤Ã­Ã®", 0)
       end
     },
     {
-      title = "{808080}Íàñòğîéêè{FFFFFF}",
+      title = "{808080}ÃÃ Ã±Ã²Ã°Ã®Ã©ÃªÃ¨{FFFFFF}",
       submenu =
       {
-        title = "{808080}Íàñòğîéêè{FFFFFF}",
+        title = "{808080}ÃÃ Ã±Ã²Ã°Ã®Ã©ÃªÃ¨{FFFFFF}",
         {
-          title = "{808080}Òıã:{FFFFFF} "..pInfo.Tag,
+          title = "{808080}Ã’Ã½Ã£:{FFFFFF} "..pInfo.Tag,
           onclick = function()
-            sampShowDialog(9999, "Óñòàíîâèòü òıã:", "{b6b6b6}Ââåäè ñâîé òıã:", "ÎÊ", "Çàêğûòü", 1)
+            sampShowDialog(9999, "Ã“Ã±Ã²Ã Ã­Ã®Ã¢Ã¨Ã²Ã¼ Ã²Ã½Ã£:", "{b6b6b6}Ã‚Ã¢Ã¥Ã¤Ã¨ Ã±Ã¢Ã®Ã© Ã²Ã½Ã£:", "ÃÃŠ", "Ã‡Ã ÃªÃ°Ã»Ã²Ã¼", 1)
             while sampIsDialogActive() do wait(0) end
             local result, button, item, input = sampHasDialogRespond(9999)
             if result and button == 1 then
@@ -1058,9 +1058,9 @@ function refreshDialog()
           end
         },
         {
-          title = "{808080}Íîìåğ öâåòà àâòîêëèñòà:{FFFFFF} "..pInfo.cvetclist,
+          title = "{808080}ÃÃ®Ã¬Ã¥Ã° Ã¶Ã¢Ã¥Ã²Ã  Ã Ã¢Ã²Ã®ÃªÃ«Ã¨Ã±Ã²Ã :{FFFFFF} "..pInfo.cvetclist,
           onclick = function()
-            sampShowDialog(9999, "Àâòîêëèñò:", "{b6b6b6}Ââåäè íîìåğ öâåòà:", "ÎÊ", "Çàêğûòü", 1)
+            sampShowDialog(9999, "Ã€Ã¢Ã²Ã®ÃªÃ«Ã¨Ã±Ã²:", "{b6b6b6}Ã‚Ã¢Ã¥Ã¤Ã¨ Ã­Ã®Ã¬Ã¥Ã° Ã¶Ã¢Ã¥Ã²Ã :", "ÃÃŠ", "Ã‡Ã ÃªÃ°Ã»Ã²Ã¼", 1)
             while sampIsDialogActive() do wait(0) end
             local result, button, item, input = sampHasDialogRespond(9999)
             if result and button == 1 then
@@ -1072,62 +1072,62 @@ function refreshDialog()
           end
         },
         {
-          title = "{808080}Âûêëş÷èòü/âêëş÷èòü îòêğûâàíèå òğàíñïîğòà íà êëàâèøó `L`{FFFFFF}",
+          title = "{808080}Ã‚Ã»ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼/Ã¢ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼ Ã®Ã²ÃªÃ°Ã»Ã¢Ã Ã­Ã¨Ã¥ Ã²Ã°Ã Ã­Ã±Ã¯Ã®Ã°Ã²Ã  Ã­Ã  ÃªÃ«Ã Ã¢Ã¨Ã¸Ã³ `L`{FFFFFF}",
           onclick = function()
             if settings.global.k_r_u_t_o == true then
-              sampAddChatMessage("[SOBR tools]: Îòêğûâàíèå àâòî íà êëàâèøó `L` áûëî âûêëş÷åíî.", 0xFFB22222)
+              sampAddChatMessage("[SOBR tools]: ÃÃ²ÃªÃ°Ã»Ã¢Ã Ã­Ã¨Ã¥ Ã Ã¢Ã²Ã® Ã­Ã  ÃªÃ«Ã Ã¢Ã¨Ã¸Ã³ `L` Ã¡Ã»Ã«Ã® Ã¢Ã»ÃªÃ«Ã¾Ã·Ã¥Ã­Ã®.", 0xFFB22222)
               settings.global.k_r_u_t_o = false
             else
-              sampAddChatMessage("[SOBR tools]: Îòêğûâàíèå àâòî íà êëàâèøó `L` áûëî âêëş÷åíî.", 0x33AAFFFF)
+              sampAddChatMessage("[SOBR tools]: ÃÃ²ÃªÃ°Ã»Ã¢Ã Ã­Ã¨Ã¥ Ã Ã¢Ã²Ã® Ã­Ã  ÃªÃ«Ã Ã¢Ã¨Ã¸Ã³ `L` Ã¡Ã»Ã«Ã® Ã¢ÃªÃ«Ã¾Ã·Ã¥Ã­Ã®.", 0x33AAFFFF)
               settings.global.k_r_u_t_o = true
             end
           end
         },
         {
-          title = "{808080}Âûêëş÷èòü/âêëş÷èòü àâòî-òåã{FFFFFF}",
+          title = "{808080}Ã‚Ã»ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼/Ã¢ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼ Ã Ã¢Ã²Ã®-Ã²Ã¥Ã£{FFFFFF}",
           onclick = function()
             if settings.global.a_u_t_o_tag == true then
-              sampAddChatMessage("[SOBR tools]: Àâòîòåã â ÷àò áûë âûêëş÷åí.", 0xFFB22222)
+              sampAddChatMessage("[SOBR tools]: Ã€Ã¢Ã²Ã®Ã²Ã¥Ã£ Ã¢ Ã·Ã Ã² Ã¡Ã»Ã« Ã¢Ã»ÃªÃ«Ã¾Ã·Ã¥Ã­.", 0xFFB22222)
               settings.global.a_u_t_o_tag = false
             else
-              sampAddChatMessage("[SOBR tools]: Àâòîòåã â ÷àò áûë âêëş÷åí.", 0x33AAFFFF)
+              sampAddChatMessage("[SOBR tools]: Ã€Ã¢Ã²Ã®Ã²Ã¥Ã£ Ã¢ Ã·Ã Ã² Ã¡Ã»Ã« Ã¢ÃªÃ«Ã¾Ã·Ã¥Ã­.", 0x33AAFFFF)
               settings.global.a_u_t_o_tag = true
             end
           end
         },
         {
-          title = "{808080}Âûêëş÷èòü/âêëş÷èòü àâòîñêğèí ïîñëå ïıéäåÿ{FFFFFF}",
+          title = "{808080}Ã‚Ã»ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼/Ã¢ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼ Ã Ã¢Ã²Ã®Ã±ÃªÃ°Ã¨Ã­ Ã¯Ã®Ã±Ã«Ã¥ Ã¯Ã½Ã©Ã¤Ã¥Ã¿{FFFFFF}",
           onclick = function()
             if settings.global.a_u_t_o_screen == true then
-              sampAddChatMessage("[SOBR tools]: Àâòîñêğèí ïîñëå ïıéäåÿ áûë âûêëş÷åí.", 0xFFB22222)
+              sampAddChatMessage("[SOBR tools]: Ã€Ã¢Ã²Ã®Ã±ÃªÃ°Ã¨Ã­ Ã¯Ã®Ã±Ã«Ã¥ Ã¯Ã½Ã©Ã¤Ã¥Ã¿ Ã¡Ã»Ã« Ã¢Ã»ÃªÃ«Ã¾Ã·Ã¥Ã­.", 0xFFB22222)
               settings.global.a_u_t_o_screen = false
             else
-              sampAddChatMessage("[SOBR tools]: Àâòîñêğèí ïîñëå ïıéäåÿ áûë âêëş÷åí.", 0x33AAFFFF)
+              sampAddChatMessage("[SOBR tools]: Ã€Ã¢Ã²Ã®Ã±ÃªÃ°Ã¨Ã­ Ã¯Ã®Ã±Ã«Ã¥ Ã¯Ã½Ã©Ã¤Ã¥Ã¿ Ã¡Ã»Ã« Ã¢ÃªÃ«Ã¾Ã·Ã¥Ã­.", 0x33AAFFFF)
               settings.global.a_u_t_o_screen = true
             end
           end
         },
         {
-          title = "{808080}Âûêëş÷èòü/âêëş÷èòü ïîêàç ïàñïîğòà íà `Alt + ïğèöåë íà èãğîêà`{FFFFFF}",
+          title = "{808080}Ã‚Ã»ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼/Ã¢ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼ Ã¯Ã®ÃªÃ Ã§ Ã¯Ã Ã±Ã¯Ã®Ã°Ã²Ã  Ã­Ã  `Alt + Ã¯Ã°Ã¨Ã¶Ã¥Ã« Ã­Ã  Ã¨Ã£Ã°Ã®ÃªÃ `{FFFFFF}",
           onclick = function()
             if settings.global.pokazatpassport == true then
-              sampAddChatMessage("[SOBR tools]: Ôóíêöèÿ ïîêàçà ïàñïîğòà áûëà îòêëş÷åíà.", 0xFFB22222)
+              sampAddChatMessage("[SOBR tools]: Ã”Ã³Ã­ÃªÃ¶Ã¨Ã¿ Ã¯Ã®ÃªÃ Ã§Ã  Ã¯Ã Ã±Ã¯Ã®Ã°Ã²Ã  Ã¡Ã»Ã«Ã  Ã®Ã²ÃªÃ«Ã¾Ã·Ã¥Ã­Ã .", 0xFFB22222)
               settings.global.pokazatpassport = false
             else
-              sampAddChatMessage("[SOBR tools]: Ôóíêöèÿ ïîêàçà ïàñïîğòà áûëà âêëş÷åíà.", 0x33AAFFFF)
+              sampAddChatMessage("[SOBR tools]: Ã”Ã³Ã­ÃªÃ¶Ã¨Ã¿ Ã¯Ã®ÃªÃ Ã§Ã  Ã¯Ã Ã±Ã¯Ã®Ã°Ã²Ã  Ã¡Ã»Ã«Ã  Ã¢ÃªÃ«Ã¾Ã·Ã¥Ã­Ã .", 0x33AAFFFF)
               settings.global.pokazatpassport = true
             end
           end
         },
         {
-          title = "{808080}Âûêëş÷èòü/âêëş÷èòü îòîáğàæåíèå ïîçûâíûõ{FFFFFF}",
+          title = "{808080}Ã‚Ã»ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼/Ã¢ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¼ Ã®Ã²Ã®Ã¡Ã°Ã Ã¦Ã¥Ã­Ã¨Ã¥ Ã¯Ã®Ã§Ã»Ã¢Ã­Ã»Ãµ{FFFFFF}",
           onclick = function()
             if settings.global.pozivnoy == true then
-              sampAddChatMessage("[SOBR tools]: Îòîáğàæåíèå ïîçûâíûõ áûëî âûêëş÷åíî.", 0xFFB22222)
+              sampAddChatMessage("[SOBR tools]: ÃÃ²Ã®Ã¡Ã°Ã Ã¦Ã¥Ã­Ã¨Ã¥ Ã¯Ã®Ã§Ã»Ã¢Ã­Ã»Ãµ Ã¡Ã»Ã«Ã® Ã¢Ã»ÃªÃ«Ã¾Ã·Ã¥Ã­Ã®.", 0xFFB22222)
               settings.global.pozivnoy = false
               for k, val in pairs(tData) do val:deattachText() end
             else
-              sampAddChatMessage("[SOBR tools]: Îòîáğàæåíèå ïîçûâíûõ áûëî âêëş÷åíî.", 0x33AAFFFF)
+              sampAddChatMessage("[SOBR tools]: ÃÃ²Ã®Ã¡Ã°Ã Ã¦Ã¥Ã­Ã¨Ã¥ Ã¯Ã®Ã§Ã»Ã¢Ã­Ã»Ãµ Ã¡Ã»Ã«Ã® Ã¢ÃªÃ«Ã¾Ã·Ã¥Ã­Ã®.", 0x33AAFFFF)
               settings.global.pozivnoy = true
               for k, val in pairs(tData) do val:attachText() end
             end
@@ -1140,74 +1140,74 @@ function refreshDialog()
   LVDialog = {
 
     {
-      title = "{808080}Ïğèçûâ/ìåä.îñìîòğ{FFFFFF}",
+      title = "{808080}ÃÃ°Ã¨Ã§Ã»Ã¢/Ã¬Ã¥Ã¤.Ã®Ã±Ã¬Ã®Ã²Ã°{FFFFFF}",
       submenu = {
-        title = "{808080}Ìåä.îñìîòğ{FFFFFF}",
+        title = "{808080}ÃŒÃ¥Ã¤.Ã®Ã±Ã¬Ã®Ã²Ã°{FFFFFF}",
         {
-          title = "{808080}Ïğèâåòñòâèå è ïğîñüáà ïîêàçàòü äîêóìåíòû{FFFFFF}",
+          title = "{808080}ÃÃ°Ã¨Ã¢Ã¥Ã²Ã±Ã²Ã¢Ã¨Ã¥ Ã¨ Ã¯Ã°Ã®Ã±Ã¼Ã¡Ã  Ã¯Ã®ÃªÃ Ã§Ã Ã²Ã¼ Ã¤Ã®ÃªÃ³Ã¬Ã¥Ã­Ã²Ã»{FFFFFF}",
           onclick = function()
             local _, pID = sampGetPlayerIdByCharHandle(PLAYER_PED)
             if settings.global.m_s_t_a_t == true then
-                sampSendChat("Ïğèâåòñòâóş, ÿ ñîòğóäíèê ïğèçûâíîé êîìèññèè.")
+                sampSendChat("ÃÃ°Ã¨Ã¢Ã¥Ã²Ã±Ã²Ã¢Ã³Ã¾, Ã¿ Ã±Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨Ãª Ã¯Ã°Ã¨Ã§Ã»Ã¢Ã­Ã®Ã© ÃªÃ®Ã¬Ã¨Ã±Ã±Ã¨Ã¨.")
                 wait(1600)
-                sampSendChat("Ïîêàæèòå âàøè äîêóìåíòû è ìåäèöèíñêóş êàğòó.")
+                sampSendChat("ÃÃ®ÃªÃ Ã¦Ã¨Ã²Ã¥ Ã¢Ã Ã¸Ã¨ Ã¤Ã®ÃªÃ³Ã¬Ã¥Ã­Ã²Ã» Ã¨ Ã¬Ã¥Ã¤Ã¨Ã¶Ã¨Ã­Ã±ÃªÃ³Ã¾ ÃªÃ Ã°Ã²Ã³.")
                 wait(1600)
-                sampSendChat("/b /showpass "..pID.." / /me ïîêàçàë ìåä.êàğòó")
+                sampSendChat("/b /showpass "..pID.." / /me Ã¯Ã®ÃªÃ Ã§Ã Ã« Ã¬Ã¥Ã¤.ÃªÃ Ã°Ã²Ã³")
             else
-                sampSendChat("Ïğèâåòñòâóş, ÿ ñîòğóäíèöà ïğèçûâíîé êîìèññèè.")
+                sampSendChat("ÃÃ°Ã¨Ã¢Ã¥Ã²Ã±Ã²Ã¢Ã³Ã¾, Ã¿ Ã±Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨Ã¶Ã  Ã¯Ã°Ã¨Ã§Ã»Ã¢Ã­Ã®Ã© ÃªÃ®Ã¬Ã¨Ã±Ã±Ã¨Ã¨.")
                 wait(1600)
-                sampSendChat("Ïîêàæèòå âàøè äîêóìåíòû è ìåäèöèíñêóş êàğòó.")
+                sampSendChat("ÃÃ®ÃªÃ Ã¦Ã¨Ã²Ã¥ Ã¢Ã Ã¸Ã¨ Ã¤Ã®ÃªÃ³Ã¬Ã¥Ã­Ã²Ã» Ã¨ Ã¬Ã¥Ã¤Ã¨Ã¶Ã¨Ã­Ã±ÃªÃ³Ã¾ ÃªÃ Ã°Ã²Ã³.")
                 wait(1600)
-                sampSendChat("/b /showpass "..pID.." / /me ïîêàçàë ìåä.êàğòó")
+                sampSendChat("/b /showpass "..pID.." / /me Ã¯Ã®ÃªÃ Ã§Ã Ã« Ã¬Ã¥Ã¤.ÃªÃ Ã°Ã²Ã³")
             end
           end
         },
         {
-          title = "{808080}/me âçÿë ìåäêàğòó è íà÷àë èçó÷àòü å¸{FFFFFF}",
+          title = "{808080}/me Ã¢Ã§Ã¿Ã« Ã¬Ã¥Ã¤ÃªÃ Ã°Ã²Ã³ Ã¨ Ã­Ã Ã·Ã Ã« Ã¨Ã§Ã³Ã·Ã Ã²Ã¼ Ã¥Â¸{FFFFFF}",
           onclick = function()
-             sampSendChat("/me âçÿë ìåäêàğòó è íà÷àë èçó÷àòü å¸")
+             sampSendChat("/me Ã¢Ã§Ã¿Ã« Ã¬Ã¥Ã¤ÃªÃ Ã°Ã²Ã³ Ã¨ Ã­Ã Ã·Ã Ã« Ã¨Ã§Ã³Ã·Ã Ã²Ã¼ Ã¥Â¸")
           end
         },
         {
-          title = "{808080}/todo Ñêîëüêî âàì ïîëíûõ ëåò?*ïåğåëèñòûâàÿ ìåäêàğòó{FFFFFF}",
+          title = "{808080}/todo Ã‘ÃªÃ®Ã«Ã¼ÃªÃ® Ã¢Ã Ã¬ Ã¯Ã®Ã«Ã­Ã»Ãµ Ã«Ã¥Ã²?*Ã¯Ã¥Ã°Ã¥Ã«Ã¨Ã±Ã²Ã»Ã¢Ã Ã¿ Ã¬Ã¥Ã¤ÃªÃ Ã°Ã²Ã³{FFFFFF}",
           onclick = function()
-             sampSendChat("/todo Ñêîëüêî âàì ïîëíûõ ëåò?*ïåğåëèñòûâàÿ ìåäêàğòó")
+             sampSendChat("/todo Ã‘ÃªÃ®Ã«Ã¼ÃªÃ® Ã¢Ã Ã¬ Ã¯Ã®Ã«Ã­Ã»Ãµ Ã«Ã¥Ã²?*Ã¯Ã¥Ã°Ã¥Ã«Ã¨Ã±Ã²Ã»Ã¢Ã Ã¿ Ã¬Ã¥Ã¤ÃªÃ Ã°Ã²Ã³")
           end
         },
         {
-          title = "{808080}/todo Òàê, ğàññêàæèòå ìíå î ñåáå*çàêğûâ ìåäêàğòó{FFFFFF}",
+          title = "{808080}/todo Ã’Ã Ãª, Ã°Ã Ã±Ã±ÃªÃ Ã¦Ã¨Ã²Ã¥ Ã¬Ã­Ã¥ Ã® Ã±Ã¥Ã¡Ã¥*Ã§Ã ÃªÃ°Ã»Ã¢ Ã¬Ã¥Ã¤ÃªÃ Ã°Ã²Ã³{FFFFFF}",
           onclick = function()
-             sampSendChat("/todo Òàê, ğàññêàæèòå ìíå î ñåáå*çàêğûâ ìåäêàğòó")
+             sampSendChat("/todo Ã’Ã Ãª, Ã°Ã Ã±Ã±ÃªÃ Ã¦Ã¨Ã²Ã¥ Ã¬Ã­Ã¥ Ã® Ã±Ã¥Ã¡Ã¥*Ã§Ã ÃªÃ°Ã»Ã¢ Ã¬Ã¥Ã¤ÃªÃ Ã°Ã²Ã³")
           end
         },
         {
-          title = "{808080}Îòëè÷íî. ×òî ó ìåíÿ íàä ãîëîâîé?{FFFFFF}",
+          title = "{808080}ÃÃ²Ã«Ã¨Ã·Ã­Ã®. Ã—Ã²Ã® Ã³ Ã¬Ã¥Ã­Ã¿ Ã­Ã Ã¤ Ã£Ã®Ã«Ã®Ã¢Ã®Ã©?{FFFFFF}",
           onclick = function()
-             sampSendChat("Îòëè÷íî. ×òî ó ìåíÿ íàä ãîëîâîé?")
+             sampSendChat("ÃÃ²Ã«Ã¨Ã·Ã­Ã®. Ã—Ã²Ã® Ã³ Ã¬Ã¥Ã­Ã¿ Ã­Ã Ã¤ Ã£Ã®Ã«Ã®Ã¢Ã®Ã©?")
           end
         },
         {
-          title = "{808080}Îòëè÷íî, âû ãîäíû äëÿ ñëóæáû â àğìèè{FFFFFF}",
+          title = "{808080}ÃÃ²Ã«Ã¨Ã·Ã­Ã®, Ã¢Ã» Ã£Ã®Ã¤Ã­Ã» Ã¤Ã«Ã¿ Ã±Ã«Ã³Ã¦Ã¡Ã» Ã¢ Ã Ã°Ã¬Ã¨Ã¨{FFFFFF}",
           onclick = function()
-             sampSendChat("Îòëè÷íî, âû ãîäíû äëÿ ñëóæáû â àğìèè.")
+             sampSendChat("ÃÃ²Ã«Ã¨Ã·Ã­Ã®, Ã¢Ã» Ã£Ã®Ã¤Ã­Ã» Ã¤Ã«Ã¿ Ã±Ã«Ã³Ã¦Ã¡Ã» Ã¢ Ã Ã°Ã¬Ã¨Ã¨.")
           end
         },
         {
-          title = "{808080}Äåğæèòå ïîâÿçêó ¹16 è ïğîõîäèòå â ñîñåäíèé êàáèíåò{FFFFFF}",
+          title = "{808080}Ã„Ã¥Ã°Ã¦Ã¨Ã²Ã¥ Ã¯Ã®Ã¢Ã¿Ã§ÃªÃ³ Â¹16 Ã¨ Ã¯Ã°Ã®ÃµÃ®Ã¤Ã¨Ã²Ã¥ Ã¢ Ã±Ã®Ã±Ã¥Ã¤Ã­Ã¨Ã© ÃªÃ Ã¡Ã¨Ã­Ã¥Ã²{FFFFFF}",
           onclick = function()
-             sampSendChat("Äåğæèòå ïîâÿçêó ¹16 è ïğîõîäèòå â ñîñåäíèé êàáèíåò.")
+             sampSendChat("Ã„Ã¥Ã°Ã¦Ã¨Ã²Ã¥ Ã¯Ã®Ã¢Ã¿Ã§ÃªÃ³ Â¹16 Ã¨ Ã¯Ã°Ã®ÃµÃ®Ã¤Ã¨Ã²Ã¥ Ã¢ Ã±Ã®Ã±Ã¥Ã¤Ã­Ã¨Ã© ÃªÃ Ã¡Ã¨Ã­Ã¥Ã².")
           end
         },
         {
-          title = "{808080}/r [Âàø òıã]: Ãğàæäàíèí ñ ïåéäæåğîì ID ãîäåí äëÿ ñëóæáû â àğìèè Âûäàë ğîçîâóş ïîâÿçêó{FFFFFF}",
+          title = "{808080}/r [Ã‚Ã Ã¸ Ã²Ã½Ã£]: ÃƒÃ°Ã Ã¦Ã¤Ã Ã­Ã¨Ã­ Ã± Ã¯Ã¥Ã©Ã¤Ã¦Ã¥Ã°Ã®Ã¬ ID Ã£Ã®Ã¤Ã¥Ã­ Ã¤Ã«Ã¿ Ã±Ã«Ã³Ã¦Ã¡Ã» Ã¢ Ã Ã°Ã¬Ã¨Ã¨ Ã‚Ã»Ã¤Ã Ã« Ã°Ã®Ã§Ã®Ã¢Ã³Ã¾ Ã¯Ã®Ã¢Ã¿Ã§ÃªÃ³{FFFFFF}",
           onclick = function()
-            sampShowDialog(9999, "{CD5C5C}SOBR tools {FFFFFF} :", "{b6b6b6}Ââåäèòå èä.\nÎáğàçåö: {FFFFFF}3", "ÎÊ", "Çàêğûòü", 1)
+            sampShowDialog(9999, "{CD5C5C}SOBR tools {FFFFFF} :", "{b6b6b6}Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã¨Ã¤.\nÃÃ¡Ã°Ã Ã§Ã¥Ã¶: {FFFFFF}3", "ÃÃŠ", "Ã‡Ã ÃªÃ°Ã»Ã²Ã¼", 1)
             while sampIsDialogActive() do wait(0) end
             local result, button, item, input = sampHasDialogRespond(9999)
             if result and button == 1 then
               local args = split(input, ",")
                 args[1] = args[1]:gsub(" ", "")
-                sampSendChat("/r "..pInfo.Tag.." Ãğàæäàíèí ñ ïåéäæåğîì "..args[1].." ãîäåí äëÿ ñëóæáû â àğìèè, ïîëó÷èë ğîçîâóş ïîâÿçêó.")
+                sampSendChat("/r "..pInfo.Tag.." ÃƒÃ°Ã Ã¦Ã¤Ã Ã­Ã¨Ã­ Ã± Ã¯Ã¥Ã©Ã¤Ã¦Ã¥Ã°Ã®Ã¬ "..args[1].." Ã£Ã®Ã¤Ã¥Ã­ Ã¤Ã«Ã¿ Ã±Ã«Ã³Ã¦Ã¡Ã» Ã¢ Ã Ã°Ã¬Ã¨Ã¨, Ã¯Ã®Ã«Ã³Ã·Ã¨Ã« Ã°Ã®Ã§Ã®Ã¢Ã³Ã¾ Ã¯Ã®Ã¢Ã¿Ã§ÃªÃ³.")
             end
           end
         },
@@ -1224,7 +1224,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Øûíãûñ"):gsub("Angel Galante", "Âàìïèğ"):gsub("Valentin Molo", "Êğîò"):gsub("Aleksey Tarasov", "Çâåğü"):gsub("Sergu Sibov", "Àğèñòîêğàò"):gsub("Misha Samyrai", "Æèò"):gsub("Jimmy Saints", "Ìàêêóèí"):gsub("Saibor Ackerman", "Ìîëíèÿ"):gsub("Evan Corleone", "Ëåâèàôàí"):gsub("Bogdan Mishenko", "Ñîêîë"):gsub("Brain Spencor", "Âîëê"):gsub("Boulevard Bledov", "Áèçîí"):gsub("Ashton Edwards", "Àøîò"):gsub("Barbie Bell", "Àíãåë"):gsub("Chris Ludvig", "ßíêè"):gsub("Santiago Belucci", "ßñòğåá"):gsub("Jack Lingard", "Áàğîí"):gsub("Kevin Spencor", "Ãğîì"):gsub("Thomas Rinner", "Êàğàõìàí"):gsub("Aiden Florestino", "Ïğèçğàê"):gsub("Steven Green", "Áóğûé"):gsub("Hidan Bell", "Àíäğşõà"):gsub("Christopher Shaffer", "Ìå÷"):gsub("Weaver Tail", "Õîé")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Ã˜Ã»Ã­Ã£Ã»Ã±"):gsub("Angel Galante", "Ã‚Ã Ã¬Ã¯Ã¨Ã°"):gsub("Valentin Molo", "ÃŠÃ°Ã®Ã²"):gsub("Aleksey Tarasov", "Ã‡Ã¢Ã¥Ã°Ã¼"):gsub("Sergu Sibov", "Ã€Ã°Ã¨Ã±Ã²Ã®ÃªÃ°Ã Ã²"):gsub("Misha Samyrai", "Ã†Ã¨Ã²"):gsub("Jimmy Saints", "ÃŒÃ ÃªÃªÃ³Ã¨Ã­"):gsub("Saibor Ackerman", "ÃŒÃ®Ã«Ã­Ã¨Ã¿"):gsub("Evan Corleone", "Ã‹Ã¥Ã¢Ã¨Ã Ã´Ã Ã­"):gsub("Bogdan Mishenko", "Ã‘Ã®ÃªÃ®Ã«"):gsub("Brain Spencor", "Ã‚Ã®Ã«Ãª"):gsub("Boulevard Bledov", "ÃÃ¨Ã§Ã®Ã­"):gsub("Ashton Edwards", "Ã€Ã¸Ã®Ã²"):gsub("Barbie Bell", "Ã€Ã­Ã£Ã¥Ã«"):gsub("Chris Ludvig", "ÃŸÃ­ÃªÃ¨"):gsub("Santiago Belucci", "ÃŸÃ±Ã²Ã°Ã¥Ã¡"):gsub("Jack Lingard", "ÃÃ Ã°Ã®Ã­"):gsub("Kevin Spencor", "ÃƒÃ°Ã®Ã¬"):gsub("Thomas Rinner", "ÃŠÃ Ã°Ã ÃµÃ¬Ã Ã­"):gsub("Aiden Florestino", "ÃÃ°Ã¨Ã§Ã°Ã Ãª"):gsub("Steven Green", "ÃÃ³Ã°Ã»Ã©"):gsub("Hidan Bell", "Ã€Ã­Ã¤Ã°Ã¾ÃµÃ "):gsub("Christopher Shaffer", "ÃŒÃ¥Ã·"):gsub("Weaver Tail", "Ã•Ã®Ã©")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1247,7 +1247,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Øûíãûñ"):gsub("Angel Galante", "Âàìïèğ"):gsub("Valentin Molo", "Êğîò"):gsub("Aleksey Tarasov", "Çâåğü"):gsub("Sergu Sibov", "Àğèñòîêğàò"):gsub("Misha Samyrai", "Æèò"):gsub("Jimmy Saints", "Ìàêêóèí"):gsub("Saibor Ackerman", "Ìîëíèÿ"):gsub("Evan Corleone", "Ëåâèàôàí"):gsub("Bogdan Mishenko", "Ñîêîë"):gsub("Brain Spencor", "Âîëê"):gsub("Boulevard Bledov", "Áèçîí"):gsub("Ashton Edwards", "Àøîò"):gsub("Barbie Bell", "Àíãåë"):gsub("Chris Ludvig", "ßíêè"):gsub("Santiago Belucci", "ßñòğåá"):gsub("Jack Lingard", "Áàğîí"):gsub("Kevin Spencor", "Ãğîì"):gsub("Thomas Rinner", "Êàğàõìàí"):gsub("Aiden Florestino", "Ïğèçğàê"):gsub("Steven Green", "Áóğûé"):gsub("Hidan Bell", "Àíäğşõà"):gsub("Christopher Shaffer", "Ìå÷"):gsub("Weaver Tail", "Õîé")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Ã˜Ã»Ã­Ã£Ã»Ã±"):gsub("Angel Galante", "Ã‚Ã Ã¬Ã¯Ã¨Ã°"):gsub("Valentin Molo", "ÃŠÃ°Ã®Ã²"):gsub("Aleksey Tarasov", "Ã‡Ã¢Ã¥Ã°Ã¼"):gsub("Sergu Sibov", "Ã€Ã°Ã¨Ã±Ã²Ã®ÃªÃ°Ã Ã²"):gsub("Misha Samyrai", "Ã†Ã¨Ã²"):gsub("Jimmy Saints", "ÃŒÃ ÃªÃªÃ³Ã¨Ã­"):gsub("Saibor Ackerman", "ÃŒÃ®Ã«Ã­Ã¨Ã¿"):gsub("Evan Corleone", "Ã‹Ã¥Ã¢Ã¨Ã Ã´Ã Ã­"):gsub("Bogdan Mishenko", "Ã‘Ã®ÃªÃ®Ã«"):gsub("Brain Spencor", "Ã‚Ã®Ã«Ãª"):gsub("Boulevard Bledov", "ÃÃ¨Ã§Ã®Ã­"):gsub("Ashton Edwards", "Ã€Ã¸Ã®Ã²"):gsub("Barbie Bell", "Ã€Ã­Ã£Ã¥Ã«"):gsub("Chris Ludvig", "ÃŸÃ­ÃªÃ¨"):gsub("Santiago Belucci", "ÃŸÃ±Ã²Ã°Ã¥Ã¡"):gsub("Jack Lingard", "ÃÃ Ã°Ã®Ã­"):gsub("Kevin Spencor", "ÃƒÃ°Ã®Ã¬"):gsub("Thomas Rinner", "ÃŠÃ Ã°Ã ÃµÃ¬Ã Ã­"):gsub("Aiden Florestino", "ÃÃ°Ã¨Ã§Ã°Ã Ãª"):gsub("Steven Green", "ÃÃ³Ã°Ã»Ã©"):gsub("Hidan Bell", "Ã€Ã­Ã¤Ã°Ã¾ÃµÃ "):gsub("Christopher Shaffer", "ÃŒÃ¥Ã·"):gsub("Weaver Tail", "Ã•Ã®Ã©")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1270,7 +1270,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Øûíãûñ"):gsub("Angel Galante", "Âàìïèğ"):gsub("Valentin Molo", "Êğîò"):gsub("Aleksey Tarasov", "Çâåğü"):gsub("Sergu Sibov", "Àğèñòîêğàò"):gsub("Misha Samyrai", "Æèò"):gsub("Jimmy Saints", "Ìàêêóèí"):gsub("Saibor Ackerman", "Ìîëíèÿ"):gsub("Evan Corleone", "Ëåâèàôàí"):gsub("Bogdan Mishenko", "Ñîêîë"):gsub("Brain Spencor", "Âîëê"):gsub("Boulevard Bledov", "Áèçîí"):gsub("Ashton Edwards", "Àøîò"):gsub("Barbie Bell", "Àíãåë"):gsub("Chris Ludvig", "ßíêè"):gsub("Santiago Belucci", "ßñòğåá"):gsub("Jack Lingard", "Áàğîí"):gsub("Kevin Spencor", "Ãğîì"):gsub("Thomas Rinner", "Êàğàõìàí"):gsub("Aiden Florestino", "Ïğèçğàê"):gsub("Steven Green", "Áóğûé"):gsub("Hidan Bell", "Àíäğşõà"):gsub("Christopher Shaffer", "Ìå÷"):gsub("Weaver Tail", "Õîé")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Ã˜Ã»Ã­Ã£Ã»Ã±"):gsub("Angel Galante", "Ã‚Ã Ã¬Ã¯Ã¨Ã°"):gsub("Valentin Molo", "ÃŠÃ°Ã®Ã²"):gsub("Aleksey Tarasov", "Ã‡Ã¢Ã¥Ã°Ã¼"):gsub("Sergu Sibov", "Ã€Ã°Ã¨Ã±Ã²Ã®ÃªÃ°Ã Ã²"):gsub("Misha Samyrai", "Ã†Ã¨Ã²"):gsub("Jimmy Saints", "ÃŒÃ ÃªÃªÃ³Ã¨Ã­"):gsub("Saibor Ackerman", "ÃŒÃ®Ã«Ã­Ã¨Ã¿"):gsub("Evan Corleone", "Ã‹Ã¥Ã¢Ã¨Ã Ã´Ã Ã­"):gsub("Bogdan Mishenko", "Ã‘Ã®ÃªÃ®Ã«"):gsub("Brain Spencor", "Ã‚Ã®Ã«Ãª"):gsub("Boulevard Bledov", "ÃÃ¨Ã§Ã®Ã­"):gsub("Ashton Edwards", "Ã€Ã¸Ã®Ã²"):gsub("Barbie Bell", "Ã€Ã­Ã£Ã¥Ã«"):gsub("Chris Ludvig", "ÃŸÃ­ÃªÃ¨"):gsub("Santiago Belucci", "ÃŸÃ±Ã²Ã°Ã¥Ã¡"):gsub("Jack Lingard", "ÃÃ Ã°Ã®Ã­"):gsub("Kevin Spencor", "ÃƒÃ°Ã®Ã¬"):gsub("Thomas Rinner", "ÃŠÃ Ã°Ã ÃµÃ¬Ã Ã­"):gsub("Aiden Florestino", "ÃÃ°Ã¨Ã§Ã°Ã Ãª"):gsub("Steven Green", "ÃÃ³Ã°Ã»Ã©"):gsub("Hidan Bell", "Ã€Ã­Ã¤Ã°Ã¾ÃµÃ "):gsub("Christopher Shaffer", "ÃŒÃ¥Ã·"):gsub("Weaver Tail", "Ã•Ã®Ã©")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1293,7 +1293,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Øûíãûñ"):gsub("Angel Galante", "Âàìïèğ"):gsub("Valentin Molo", "Êğîò"):gsub("Aleksey Tarasov", "Çâåğü"):gsub("Sergu Sibov", "Àğèñòîêğàò"):gsub("Misha Samyrai", "Æèò"):gsub("Jimmy Saints", "Ìàêêóèí"):gsub("Saibor Ackerman", "Ìîëíèÿ"):gsub("Evan Corleone", "Ëåâèàôàí"):gsub("Bogdan Mishenko", "Ñîêîë"):gsub("Brain Spencor", "Âîëê"):gsub("Boulevard Bledov", "Áèçîí"):gsub("Ashton Edwards", "Àøîò"):gsub("Barbie Bell", "Àíãåë"):gsub("Chris Ludvig", "ßíêè"):gsub("Santiago Belucci", "ßñòğåá"):gsub("Jack Lingard", "Áàğîí"):gsub("Kevin Spencor", "Ãğîì"):gsub("Thomas Rinner", "Êàğàõìàí"):gsub("Aiden Florestino", "Ïğèçğàê"):gsub("Steven Green", "Áóğûé"):gsub("Hidan Bell", "Àíäğşõà"):gsub("Christopher Shaffer", "Ìå÷"):gsub("Weaver Tail", "Õîé")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Ã˜Ã»Ã­Ã£Ã»Ã±"):gsub("Angel Galante", "Ã‚Ã Ã¬Ã¯Ã¨Ã°"):gsub("Valentin Molo", "ÃŠÃ°Ã®Ã²"):gsub("Aleksey Tarasov", "Ã‡Ã¢Ã¥Ã°Ã¼"):gsub("Sergu Sibov", "Ã€Ã°Ã¨Ã±Ã²Ã®ÃªÃ°Ã Ã²"):gsub("Misha Samyrai", "Ã†Ã¨Ã²"):gsub("Jimmy Saints", "ÃŒÃ ÃªÃªÃ³Ã¨Ã­"):gsub("Saibor Ackerman", "ÃŒÃ®Ã«Ã­Ã¨Ã¿"):gsub("Evan Corleone", "Ã‹Ã¥Ã¢Ã¨Ã Ã´Ã Ã­"):gsub("Bogdan Mishenko", "Ã‘Ã®ÃªÃ®Ã«"):gsub("Brain Spencor", "Ã‚Ã®Ã«Ãª"):gsub("Boulevard Bledov", "ÃÃ¨Ã§Ã®Ã­"):gsub("Ashton Edwards", "Ã€Ã¸Ã®Ã²"):gsub("Barbie Bell", "Ã€Ã­Ã£Ã¥Ã«"):gsub("Chris Ludvig", "ÃŸÃ­ÃªÃ¨"):gsub("Santiago Belucci", "ÃŸÃ±Ã²Ã°Ã¥Ã¡"):gsub("Jack Lingard", "ÃÃ Ã°Ã®Ã­"):gsub("Kevin Spencor", "ÃƒÃ°Ã®Ã¬"):gsub("Thomas Rinner", "ÃŠÃ Ã°Ã ÃµÃ¬Ã Ã­"):gsub("Aiden Florestino", "ÃÃ°Ã¨Ã§Ã°Ã Ãª"):gsub("Steven Green", "ÃÃ³Ã°Ã»Ã©"):gsub("Hidan Bell", "Ã€Ã­Ã¤Ã°Ã¾ÃµÃ "):gsub("Christopher Shaffer", "ÃŒÃ¥Ã·"):gsub("Weaver Tail", "Ã•Ã®Ã©")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1316,7 +1316,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Øûíãûñ"):gsub("Angel Galante", "Âàìïèğ"):gsub("Valentin Molo", "Êğîò"):gsub("Aleksey Tarasov", "Çâåğü"):gsub("Sergu Sibov", "Àğèñòîêğàò"):gsub("Misha Samyrai", "Æèò"):gsub("Jimmy Saints", "Ìàêêóèí"):gsub("Saibor Ackerman", "Ìîëíèÿ"):gsub("Evan Corleone", "Ëåâèàôàí"):gsub("Bogdan Mishenko", "Ñîêîë"):gsub("Brain Spencor", "Âîëê"):gsub("Boulevard Bledov", "Áèçîí"):gsub("Ashton Edwards", "Àøîò"):gsub("Barbie Bell", "Àíãåë"):gsub("Chris Ludvig", "ßíêè"):gsub("Santiago Belucci", "ßñòğåá"):gsub("Jack Lingard", "Áàğîí"):gsub("Kevin Spencor", "Ãğîì"):gsub("Thomas Rinner", "Êàğàõìàí"):gsub("Aiden Florestino", "Ïğèçğàê"):gsub("Steven Green", "Áóğûé"):gsub("Hidan Bell", "Àíäğşõà"):gsub("Christopher Shaffer", "Ìå÷"):gsub("Weaver Tail", "Õîé")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Ã˜Ã»Ã­Ã£Ã»Ã±"):gsub("Angel Galante", "Ã‚Ã Ã¬Ã¯Ã¨Ã°"):gsub("Valentin Molo", "ÃŠÃ°Ã®Ã²"):gsub("Aleksey Tarasov", "Ã‡Ã¢Ã¥Ã°Ã¼"):gsub("Sergu Sibov", "Ã€Ã°Ã¨Ã±Ã²Ã®ÃªÃ°Ã Ã²"):gsub("Misha Samyrai", "Ã†Ã¨Ã²"):gsub("Jimmy Saints", "ÃŒÃ ÃªÃªÃ³Ã¨Ã­"):gsub("Saibor Ackerman", "ÃŒÃ®Ã«Ã­Ã¨Ã¿"):gsub("Evan Corleone", "Ã‹Ã¥Ã¢Ã¨Ã Ã´Ã Ã­"):gsub("Bogdan Mishenko", "Ã‘Ã®ÃªÃ®Ã«"):gsub("Brain Spencor", "Ã‚Ã®Ã«Ãª"):gsub("Boulevard Bledov", "ÃÃ¨Ã§Ã®Ã­"):gsub("Ashton Edwards", "Ã€Ã¸Ã®Ã²"):gsub("Barbie Bell", "Ã€Ã­Ã£Ã¥Ã«"):gsub("Chris Ludvig", "ÃŸÃ­ÃªÃ¨"):gsub("Santiago Belucci", "ÃŸÃ±Ã²Ã°Ã¥Ã¡"):gsub("Jack Lingard", "ÃÃ Ã°Ã®Ã­"):gsub("Kevin Spencor", "ÃƒÃ°Ã®Ã¬"):gsub("Thomas Rinner", "ÃŠÃ Ã°Ã ÃµÃ¬Ã Ã­"):gsub("Aiden Florestino", "ÃÃ°Ã¨Ã§Ã°Ã Ãª"):gsub("Steven Green", "ÃÃ³Ã°Ã»Ã©"):gsub("Hidan Bell", "Ã€Ã­Ã¤Ã°Ã¾ÃµÃ "):gsub("Christopher Shaffer", "ÃŒÃ¥Ã·"):gsub("Weaver Tail", "Ã•Ã®Ã©")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1339,7 +1339,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Øûíãûñ"):gsub("Angel Galante", "Âàìïèğ"):gsub("Valentin Molo", "Êğîò"):gsub("Aleksey Tarasov", "Çâåğü"):gsub("Sergu Sibov", "Àğèñòîêğàò"):gsub("Misha Samyrai", "Æèò"):gsub("Jimmy Saints", "Ìàêêóèí"):gsub("Saibor Ackerman", "Ìîëíèÿ"):gsub("Evan Corleone", "Ëåâèàôàí"):gsub("Bogdan Mishenko", "Ñîêîë"):gsub("Brain Spencor", "Âîëê"):gsub("Boulevard Bledov", "Áèçîí"):gsub("Ashton Edwards", "Àøîò"):gsub("Barbie Bell", "Àíãåë"):gsub("Chris Ludvig", "ßíêè"):gsub("Santiago Belucci", "ßñòğåá"):gsub("Jack Lingard", "Áàğîí"):gsub("Kevin Spencor", "Ãğîì"):gsub("Thomas Rinner", "Êàğàõìàí"):gsub("Aiden Florestino", "Ïğèçğàê"):gsub("Steven Green", "Áóğûé"):gsub("Hidan Bell", "Àíäğşõà"):gsub("Christopher Shaffer", "Ìå÷"):gsub("Weaver Tail", "Õîé")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Ã˜Ã»Ã­Ã£Ã»Ã±"):gsub("Angel Galante", "Ã‚Ã Ã¬Ã¯Ã¨Ã°"):gsub("Valentin Molo", "ÃŠÃ°Ã®Ã²"):gsub("Aleksey Tarasov", "Ã‡Ã¢Ã¥Ã°Ã¼"):gsub("Sergu Sibov", "Ã€Ã°Ã¨Ã±Ã²Ã®ÃªÃ°Ã Ã²"):gsub("Misha Samyrai", "Ã†Ã¨Ã²"):gsub("Jimmy Saints", "ÃŒÃ ÃªÃªÃ³Ã¨Ã­"):gsub("Saibor Ackerman", "ÃŒÃ®Ã«Ã­Ã¨Ã¿"):gsub("Evan Corleone", "Ã‹Ã¥Ã¢Ã¨Ã Ã´Ã Ã­"):gsub("Bogdan Mishenko", "Ã‘Ã®ÃªÃ®Ã«"):gsub("Brain Spencor", "Ã‚Ã®Ã«Ãª"):gsub("Boulevard Bledov", "ÃÃ¨Ã§Ã®Ã­"):gsub("Ashton Edwards", "Ã€Ã¸Ã®Ã²"):gsub("Barbie Bell", "Ã€Ã­Ã£Ã¥Ã«"):gsub("Chris Ludvig", "ÃŸÃ­ÃªÃ¨"):gsub("Santiago Belucci", "ÃŸÃ±Ã²Ã°Ã¥Ã¡"):gsub("Jack Lingard", "ÃÃ Ã°Ã®Ã­"):gsub("Kevin Spencor", "ÃƒÃ°Ã®Ã¬"):gsub("Thomas Rinner", "ÃŠÃ Ã°Ã ÃµÃ¬Ã Ã­"):gsub("Aiden Florestino", "ÃÃ°Ã¨Ã§Ã°Ã Ãª"):gsub("Steven Green", "ÃÃ³Ã°Ã»Ã©"):gsub("Hidan Bell", "Ã€Ã­Ã¤Ã°Ã¾ÃµÃ "):gsub("Christopher Shaffer", "ÃŒÃ¥Ã·"):gsub("Weaver Tail", "Ã•Ã®Ã©")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1362,7 +1362,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Øûíãûñ"):gsub("Angel Galante", "Âàìïèğ"):gsub("Valentin Molo", "Êğîò"):gsub("Aleksey Tarasov", "Çâåğü"):gsub("Sergu Sibov", "Àğèñòîêğàò"):gsub("Misha Samyrai", "Æèò"):gsub("Jimmy Saints", "Ìàêêóèí"):gsub("Saibor Ackerman", "Ìîëíèÿ"):gsub("Evan Corleone", "Ëåâèàôàí"):gsub("Bogdan Mishenko", "Ñîêîë"):gsub("Brain Spencor", "Âîëê"):gsub("Boulevard Bledov", "Áèçîí"):gsub("Ashton Edwards", "Àøîò"):gsub("Barbie Bell", "Àíãåë"):gsub("Chris Ludvig", "ßíêè"):gsub("Santiago Belucci", "ßñòğåá"):gsub("Jack Lingard", "Áàğîí"):gsub("Kevin Spencor", "Ãğîì"):gsub("Thomas Rinner", "Êàğàõìàí"):gsub("Aiden Florestino", "Ïğèçğàê"):gsub("Steven Green", "Áóğûé"):gsub("Hidan Bell", "Àíäğşõà"):gsub("Christopher Shaffer", "Ìå÷"):gsub("Weaver Tail", "Õîé")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Ã˜Ã»Ã­Ã£Ã»Ã±"):gsub("Angel Galante", "Ã‚Ã Ã¬Ã¯Ã¨Ã°"):gsub("Valentin Molo", "ÃŠÃ°Ã®Ã²"):gsub("Aleksey Tarasov", "Ã‡Ã¢Ã¥Ã°Ã¼"):gsub("Sergu Sibov", "Ã€Ã°Ã¨Ã±Ã²Ã®ÃªÃ°Ã Ã²"):gsub("Misha Samyrai", "Ã†Ã¨Ã²"):gsub("Jimmy Saints", "ÃŒÃ ÃªÃªÃ³Ã¨Ã­"):gsub("Saibor Ackerman", "ÃŒÃ®Ã«Ã­Ã¨Ã¿"):gsub("Evan Corleone", "Ã‹Ã¥Ã¢Ã¨Ã Ã´Ã Ã­"):gsub("Bogdan Mishenko", "Ã‘Ã®ÃªÃ®Ã«"):gsub("Brain Spencor", "Ã‚Ã®Ã«Ãª"):gsub("Boulevard Bledov", "ÃÃ¨Ã§Ã®Ã­"):gsub("Ashton Edwards", "Ã€Ã¸Ã®Ã²"):gsub("Barbie Bell", "Ã€Ã­Ã£Ã¥Ã«"):gsub("Chris Ludvig", "ÃŸÃ­ÃªÃ¨"):gsub("Santiago Belucci", "ÃŸÃ±Ã²Ã°Ã¥Ã¡"):gsub("Jack Lingard", "ÃÃ Ã°Ã®Ã­"):gsub("Kevin Spencor", "ÃƒÃ°Ã®Ã¬"):gsub("Thomas Rinner", "ÃŠÃ Ã°Ã ÃµÃ¬Ã Ã­"):gsub("Aiden Florestino", "ÃÃ°Ã¨Ã§Ã°Ã Ãª"):gsub("Steven Green", "ÃÃ³Ã°Ã»Ã©"):gsub("Hidan Bell", "Ã€Ã­Ã¤Ã°Ã¾ÃµÃ "):gsub("Christopher Shaffer", "ÃŒÃ¥Ã·"):gsub("Weaver Tail", "Ã•Ã®Ã©")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1385,7 +1385,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Øûíãûñ"):gsub("Angel Galante", "Âàìïèğ"):gsub("Valentin Molo", "Êğîò"):gsub("Aleksey Tarasov", "Çâåğü"):gsub("Sergu Sibov", "Àğèñòîêğàò"):gsub("Misha Samyrai", "Æèò"):gsub("Jimmy Saints", "Ìàêêóèí"):gsub("Saibor Ackerman", "Ìîëíèÿ"):gsub("Evan Corleone", "Ëåâèàôàí"):gsub("Bogdan Mishenko", "Ñîêîë"):gsub("Brain Spencor", "Âîëê"):gsub("Boulevard Bledov", "Áèçîí"):gsub("Ashton Edwards", "Àøîò"):gsub("Barbie Bell", "Àíãåë"):gsub("Chris Ludvig", "ßíêè"):gsub("Santiago Belucci", "ßñòğåá"):gsub("Jack Lingard", "Áàğîí"):gsub("Kevin Spencor", "Ãğîì"):gsub("Thomas Rinner", "Êàğàõìàí"):gsub("Aiden Florestino", "Ïğèçğàê"):gsub("Steven Green", "Áóğûé"):gsub("Hidan Bell", "Àíäğşõà"):gsub("Christopher Shaffer", "Ìå÷"):gsub("Weaver Tail", "Õîé")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Ã˜Ã»Ã­Ã£Ã»Ã±"):gsub("Angel Galante", "Ã‚Ã Ã¬Ã¯Ã¨Ã°"):gsub("Valentin Molo", "ÃŠÃ°Ã®Ã²"):gsub("Aleksey Tarasov", "Ã‡Ã¢Ã¥Ã°Ã¼"):gsub("Sergu Sibov", "Ã€Ã°Ã¨Ã±Ã²Ã®ÃªÃ°Ã Ã²"):gsub("Misha Samyrai", "Ã†Ã¨Ã²"):gsub("Jimmy Saints", "ÃŒÃ ÃªÃªÃ³Ã¨Ã­"):gsub("Saibor Ackerman", "ÃŒÃ®Ã«Ã­Ã¨Ã¿"):gsub("Evan Corleone", "Ã‹Ã¥Ã¢Ã¨Ã Ã´Ã Ã­"):gsub("Bogdan Mishenko", "Ã‘Ã®ÃªÃ®Ã«"):gsub("Brain Spencor", "Ã‚Ã®Ã«Ãª"):gsub("Boulevard Bledov", "ÃÃ¨Ã§Ã®Ã­"):gsub("Ashton Edwards", "Ã€Ã¸Ã®Ã²"):gsub("Barbie Bell", "Ã€Ã­Ã£Ã¥Ã«"):gsub("Chris Ludvig", "ÃŸÃ­ÃªÃ¨"):gsub("Santiago Belucci", "ÃŸÃ±Ã²Ã°Ã¥Ã¡"):gsub("Jack Lingard", "ÃÃ Ã°Ã®Ã­"):gsub("Kevin Spencor", "ÃƒÃ°Ã®Ã¬"):gsub("Thomas Rinner", "ÃŠÃ Ã°Ã ÃµÃ¬Ã Ã­"):gsub("Aiden Florestino", "ÃÃ°Ã¨Ã§Ã°Ã Ãª"):gsub("Steven Green", "ÃÃ³Ã°Ã»Ã©"):gsub("Hidan Bell", "Ã€Ã­Ã¤Ã°Ã¾ÃµÃ "):gsub("Christopher Shaffer", "ÃŒÃ¥Ã·"):gsub("Weaver Tail", "Ã•Ã®Ã©")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1408,7 +1408,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Øûíãûñ"):gsub("Angel Galante", "Âàìïèğ"):gsub("Valentin Molo", "Êğîò"):gsub("Aleksey Tarasov", "Çâåğü"):gsub("Sergu Sibov", "Àğèñòîêğàò"):gsub("Misha Samyrai", "Æèò"):gsub("Jimmy Saints", "Ìàêêóèí"):gsub("Saibor Ackerman", "Ìîëíèÿ"):gsub("Evan Corleone", "Ëåâèàôàí"):gsub("Bogdan Mishenko", "Ñîêîë"):gsub("Brain Spencor", "Âîëê"):gsub("Boulevard Bledov", "Áèçîí"):gsub("Ashton Edwards", "Àøîò"):gsub("Barbie Bell", "Àíãåë"):gsub("Chris Ludvig", "ßíêè"):gsub("Santiago Belucci", "ßñòğåá"):gsub("Jack Lingard", "Áàğîí"):gsub("Kevin Spencor", "Ãğîì"):gsub("Thomas Rinner", "Êàğàõìàí"):gsub("Aiden Florestino", "Ïğèçğàê"):gsub("Steven Green", "Áóğûé"):gsub("Hidan Bell", "Àíäğşõà"):gsub("Christopher Shaffer", "Ìå÷"):gsub("Weaver Tail", "Õîé")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Ã˜Ã»Ã­Ã£Ã»Ã±"):gsub("Angel Galante", "Ã‚Ã Ã¬Ã¯Ã¨Ã°"):gsub("Valentin Molo", "ÃŠÃ°Ã®Ã²"):gsub("Aleksey Tarasov", "Ã‡Ã¢Ã¥Ã°Ã¼"):gsub("Sergu Sibov", "Ã€Ã°Ã¨Ã±Ã²Ã®ÃªÃ°Ã Ã²"):gsub("Misha Samyrai", "Ã†Ã¨Ã²"):gsub("Jimmy Saints", "ÃŒÃ ÃªÃªÃ³Ã¨Ã­"):gsub("Saibor Ackerman", "ÃŒÃ®Ã«Ã­Ã¨Ã¿"):gsub("Evan Corleone", "Ã‹Ã¥Ã¢Ã¨Ã Ã´Ã Ã­"):gsub("Bogdan Mishenko", "Ã‘Ã®ÃªÃ®Ã«"):gsub("Brain Spencor", "Ã‚Ã®Ã«Ãª"):gsub("Boulevard Bledov", "ÃÃ¨Ã§Ã®Ã­"):gsub("Ashton Edwards", "Ã€Ã¸Ã®Ã²"):gsub("Barbie Bell", "Ã€Ã­Ã£Ã¥Ã«"):gsub("Chris Ludvig", "ÃŸÃ­ÃªÃ¨"):gsub("Santiago Belucci", "ÃŸÃ±Ã²Ã°Ã¥Ã¡"):gsub("Jack Lingard", "ÃÃ Ã°Ã®Ã­"):gsub("Kevin Spencor", "ÃƒÃ°Ã®Ã¬"):gsub("Thomas Rinner", "ÃŠÃ Ã°Ã ÃµÃ¬Ã Ã­"):gsub("Aiden Florestino", "ÃÃ°Ã¨Ã§Ã°Ã Ãª"):gsub("Steven Green", "ÃÃ³Ã°Ã»Ã©"):gsub("Hidan Bell", "Ã€Ã­Ã¤Ã°Ã¾ÃµÃ "):gsub("Christopher Shaffer", "ÃŒÃ¥Ã·"):gsub("Weaver Tail", "Ã•Ã®Ã©")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1431,7 +1431,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Øûíãûñ"):gsub("Angel Galante", "Âàìïèğ"):gsub("Valentin Molo", "Êğîò"):gsub("Aleksey Tarasov", "Çâåğü"):gsub("Sergu Sibov", "Àğèñòîêğàò"):gsub("Misha Samyrai", "Æèò"):gsub("Jimmy Saints", "Ìàêêóèí"):gsub("Saibor Ackerman", "Ìîëíèÿ"):gsub("Evan Corleone", "Ëåâèàôàí"):gsub("Bogdan Mishenko", "Ñîêîë"):gsub("Brain Spencor", "Âîëê"):gsub("Boulevard Bledov", "Áèçîí"):gsub("Ashton Edwards", "Àøîò"):gsub("Barbie Bell", "Àíãåë"):gsub("Chris Ludvig", "ßíêè"):gsub("Santiago Belucci", "ßñòğåá"):gsub("Jack Lingard", "Áàğîí"):gsub("Kevin Spencor", "Ãğîì"):gsub("Thomas Rinner", "Êàğàõìàí"):gsub("Aiden Florestino", "Ïğèçğàê"):gsub("Steven Green", "Áóğûé"):gsub("Hidan Bell", "Àíäğşõà"):gsub("Christopher Shaffer", "Ìå÷"):gsub("Weaver Tail", "Õîé")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Ã˜Ã»Ã­Ã£Ã»Ã±"):gsub("Angel Galante", "Ã‚Ã Ã¬Ã¯Ã¨Ã°"):gsub("Valentin Molo", "ÃŠÃ°Ã®Ã²"):gsub("Aleksey Tarasov", "Ã‡Ã¢Ã¥Ã°Ã¼"):gsub("Sergu Sibov", "Ã€Ã°Ã¨Ã±Ã²Ã®ÃªÃ°Ã Ã²"):gsub("Misha Samyrai", "Ã†Ã¨Ã²"):gsub("Jimmy Saints", "ÃŒÃ ÃªÃªÃ³Ã¨Ã­"):gsub("Saibor Ackerman", "ÃŒÃ®Ã«Ã­Ã¨Ã¿"):gsub("Evan Corleone", "Ã‹Ã¥Ã¢Ã¨Ã Ã´Ã Ã­"):gsub("Bogdan Mishenko", "Ã‘Ã®ÃªÃ®Ã«"):gsub("Brain Spencor", "Ã‚Ã®Ã«Ãª"):gsub("Boulevard Bledov", "ÃÃ¨Ã§Ã®Ã­"):gsub("Ashton Edwards", "Ã€Ã¸Ã®Ã²"):gsub("Barbie Bell", "Ã€Ã­Ã£Ã¥Ã«"):gsub("Chris Ludvig", "ÃŸÃ­ÃªÃ¨"):gsub("Santiago Belucci", "ÃŸÃ±Ã²Ã°Ã¥Ã¡"):gsub("Jack Lingard", "ÃÃ Ã°Ã®Ã­"):gsub("Kevin Spencor", "ÃƒÃ°Ã®Ã¬"):gsub("Thomas Rinner", "ÃŠÃ Ã°Ã ÃµÃ¬Ã Ã­"):gsub("Aiden Florestino", "ÃÃ°Ã¨Ã§Ã°Ã Ãª"):gsub("Steven Green", "ÃÃ³Ã°Ã»Ã©"):gsub("Hidan Bell", "Ã€Ã­Ã¤Ã°Ã¾ÃµÃ "):gsub("Christopher Shaffer", "ÃŒÃ¥Ã·"):gsub("Weaver Tail", "Ã•Ã®Ã©")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1453,7 +1453,7 @@ function refreshDialog()
             if (amount > 0) then
                 names = ""
                 for k, val in pairs(result) do
-                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Øûíãûñ"):gsub("Angel Galante", "Âàìïèğ"):gsub("Valentin Molo", "Êğîò"):gsub("Aleksey Tarasov", "Çâåğü"):gsub("Sergu Sibov", "Àğèñòîêğàò"):gsub("Misha Samyrai", "Æèò"):gsub("Jimmy Saints", "Ìàêêóèí"):gsub("Saibor Ackerman", "Ìîëíèÿ"):gsub("Evan Corleone", "Ëåâèàôàí"):gsub("Bogdan Mishenko", "Ñîêîë"):gsub("Brain Spencor", "Âîëê"):gsub("Boulevard Bledov", "Áèçîí"):gsub("Ashton Edwards", "Àøîò"):gsub("Barbie Bell", "Àíãåë"):gsub("Chris Ludvig", "ßíêè"):gsub("Santiago Belucci", "ßñòğåá"):gsub("Jack Lingard", "Áàğîí"):gsub("Kevin Spencor", "Ãğîì"):gsub("Thomas Rinner", "Êàğàõìàí"):gsub("Aiden Florestino", "Ïğèçğàê"):gsub("Steven Green", "Áóğûé"):gsub("Hidan Bell", "Àíäğşõà"):gsub("Christopher Shaffer", "Ìå÷"):gsub("Weaver Tail", "Õîé")
+                    n = val.playername:gsub("_", " "):gsub("Leo Florenso", "Ã˜Ã»Ã­Ã£Ã»Ã±"):gsub("Angel Galante", "Ã‚Ã Ã¬Ã¯Ã¨Ã°"):gsub("Valentin Molo", "ÃŠÃ°Ã®Ã²"):gsub("Aleksey Tarasov", "Ã‡Ã¢Ã¥Ã°Ã¼"):gsub("Sergu Sibov", "Ã€Ã°Ã¨Ã±Ã²Ã®ÃªÃ°Ã Ã²"):gsub("Misha Samyrai", "Ã†Ã¨Ã²"):gsub("Jimmy Saints", "ÃŒÃ ÃªÃªÃ³Ã¨Ã­"):gsub("Saibor Ackerman", "ÃŒÃ®Ã«Ã­Ã¨Ã¿"):gsub("Evan Corleone", "Ã‹Ã¥Ã¢Ã¨Ã Ã´Ã Ã­"):gsub("Bogdan Mishenko", "Ã‘Ã®ÃªÃ®Ã«"):gsub("Brain Spencor", "Ã‚Ã®Ã«Ãª"):gsub("Boulevard Bledov", "ÃÃ¨Ã§Ã®Ã­"):gsub("Ashton Edwards", "Ã€Ã¸Ã®Ã²"):gsub("Barbie Bell", "Ã€Ã­Ã£Ã¥Ã«"):gsub("Chris Ludvig", "ÃŸÃ­ÃªÃ¨"):gsub("Santiago Belucci", "ÃŸÃ±Ã²Ã°Ã¥Ã¡"):gsub("Jack Lingard", "ÃÃ Ã°Ã®Ã­"):gsub("Kevin Spencor", "ÃƒÃ°Ã®Ã¬"):gsub("Thomas Rinner", "ÃŠÃ Ã°Ã ÃµÃ¬Ã Ã­"):gsub("Aiden Florestino", "ÃÃ°Ã¨Ã§Ã°Ã Ãª"):gsub("Steven Green", "ÃÃ³Ã°Ã»Ã©"):gsub("Hidan Bell", "Ã€Ã­Ã¤Ã°Ã¾ÃµÃ "):gsub("Christopher Shaffer", "ÃŒÃ¥Ã·"):gsub("Weaver Tail", "Ã•Ã®Ã©")
                     print(n)
                     if names == "" then
                         names = names.. n
@@ -1504,28 +1504,28 @@ function Target:New(text)
   return obj
 end
 
-tData["Leo_Florenso"] = Target:New("{000000}Øûíãûñ{FFFFFF}")
-tData["Angel_Galante"] = Target:New("{000000}Âàìïèğ{FFFFFF}")
-tData["Aleksey_Tarasov"] = Target:New("{000000}Çâåğü{FFFFFF}")
-tData["Valentin_Molo"] = Target:New("{000000}Êğîò{FFFFFF}")
-tData["Brain_Spencor"] = Target:New("{000000}Âîëê{FFFFFF}")
-tData["Kevin_Spencor"] = Target:New("{000000}Ãğîì{FFFFFF}")
-tData["Evan_Corleone"] = Target:New("{000000}Ëåâèàôàí{FFFFFF}")
-tData["Misha_Samyrai"] = Target:New("{000000}Æèò{FFFFFF}")
-tData["Sergu_Sibov"] = Target:New("{000000}Àğèñòîêğàò{FFFFFF}")
-tData["Christopher_Shaffer"] = Target:New("{000000}Ìå÷{FFFFFF}")
-tData["Jimmy_Saints"] = Target:New("{000000}Ìàêêóèí{FFFFFF}")
-tData["Barbie_Bell"] = Target:New("{000000}Àíãåë{FFFFFF}")
-tData["Saibor_Ackerman"] = Target:New("{000000}Ìîëíèÿ{FFFFFF}")
-tData["Boulevard_Bledov"] = Target:New("{000000}Áèçîí{FFFFFF}")
-tData["Bogdan_Mishenko"] = Target:New("{000000}Ñîêîë{FFFFFF}")
-tData["Ashton_Edwards"] = Target:New("{000000}Àøîò{FFFFFF}")
-tData["Santiago_Belucci"] = Target:New("{000000}ßñòğåá{FFFFFF}")
-tData["Thomas_Rinner"] = Target:New("{000000}Êàğàõìàí{FFFFFF}")
-tData["Aiden_Florestino"] = Target:New("{000000}Ïğèçğàê{FFFFFF}")
-tData["Steven_Green"] = Target:New("{000000}Áóğûé{FFFFFF}")
-tData["Hidan_Bell"] = Target:New("{000000}Àíäğşõà{FFFFFF}")
-tData["Weaver_Tail"] = Target:New("{000000}Õîé{FFFFFF}")
+tData["Leo_Florenso"] = Target:New("{000000}Ã˜Ã»Ã­Ã£Ã»Ã±{FFFFFF}")
+tData["Angel_Galante"] = Target:New("{000000}Ã‚Ã Ã¬Ã¯Ã¨Ã°{FFFFFF}")
+tData["Aleksey_Tarasov"] = Target:New("{000000}Ã‡Ã¢Ã¥Ã°Ã¼{FFFFFF}")
+tData["Valentin_Molo"] = Target:New("{000000}ÃŠÃ°Ã®Ã²{FFFFFF}")
+tData["Brain_Spencor"] = Target:New("{000000}Ã‚Ã®Ã«Ãª{FFFFFF}")
+tData["Kevin_Spencor"] = Target:New("{000000}ÃƒÃ°Ã®Ã¬{FFFFFF}")
+tData["Evan_Corleone"] = Target:New("{000000}Ã‹Ã¥Ã¢Ã¨Ã Ã´Ã Ã­{FFFFFF}")
+tData["Misha_Samyrai"] = Target:New("{000000}Ã†Ã¨Ã²{FFFFFF}")
+tData["Sergu_Sibov"] = Target:New("{000000}Ã€Ã°Ã¨Ã±Ã²Ã®ÃªÃ°Ã Ã²{FFFFFF}")
+tData["Christopher_Shaffer"] = Target:New("{000000}ÃŒÃ¥Ã·{FFFFFF}")
+tData["Jimmy_Saints"] = Target:New("{000000}ÃŒÃ ÃªÃªÃ³Ã¨Ã­{FFFFFF}")
+tData["Barbie_Bell"] = Target:New("{000000}Ã€Ã­Ã£Ã¥Ã«{FFFFFF}")
+tData["Saibor_Ackerman"] = Target:New("{000000}ÃŒÃ®Ã«Ã­Ã¨Ã¿{FFFFFF}")
+tData["Boulevard_Bledov"] = Target:New("{000000}ÃÃ¨Ã§Ã®Ã­{FFFFFF}")
+tData["Bogdan_Mishenko"] = Target:New("{000000}Ã‘Ã®ÃªÃ®Ã«{FFFFFF}")
+tData["Ashton_Edwards"] = Target:New("{000000}Ã€Ã¸Ã®Ã²{FFFFFF}")
+tData["Santiago_Belucci"] = Target:New("{000000}ÃŸÃ±Ã²Ã°Ã¥Ã¡{FFFFFF}")
+tData["Thomas_Rinner"] = Target:New("{000000}ÃŠÃ Ã°Ã ÃµÃ¬Ã Ã­{FFFFFF}")
+tData["Aiden_Florestino"] = Target:New("{000000}ÃÃ°Ã¨Ã§Ã°Ã Ãª{FFFFFF}")
+tData["Steven_Green"] = Target:New("{000000}ÃÃ³Ã°Ã»Ã©{FFFFFF}")
+tData["Hidan_Bell"] = Target:New("{000000}Ã€Ã­Ã¤Ã°Ã¾ÃµÃ {FFFFFF}")
+tData["Weaver_Tail"] = Target:New("{000000}Ã•Ã®Ã©{FFFFFF}")
 
 nData = {"Leo_Florenso", "Angel_Galante", "Aleksey_Tarasov", "Valentin_Molo", "Evan_Corleone", "Misha_Samyrai", "Kevin_Spencor", "Brain_Spencor", "Sergu_Sibov", "Jimmy_Saints", "Saibor_Ackerman", "Christopher_Shaffer", "Barbie_Bell", "Boulevard_Bledov", "Bogdan_Mishenko", "Ashton_Edwards", "Santiago_Belucci", "Thomas_Rinner", "Aiden_Florestino", "Steven_Green", "Hidan_Bell", "Weaver_Tail"}
 
@@ -1534,7 +1534,7 @@ function e.onPlayerStreamIn(id, _, model)
     if cfg.global.sdelaitak == true then
       local name = sampGetPlayerNickname(id)
       if model == 287 or model == 191 or model == 179 or model == 61 or model == 255 or model == 73 then
-        sampAddChatMessage("[SOBR tools]: Áîåö "..name.." ïîÿâèëñÿ â çîíå ïğîğèñîâêè.", 0x33AAFFFF)
+        sampAddChatMessage("[SOBR tools]: ÃÃ®Ã¥Ã¶ "..name.." Ã¯Ã®Ã¿Ã¢Ã¨Ã«Ã±Ã¿ Ã¢ Ã§Ã®Ã­Ã¥ Ã¯Ã°Ã®Ã°Ã¨Ã±Ã®Ã¢ÃªÃ¨.", 0x33AAFFFF)
       end
     end
   end
@@ -1548,7 +1548,7 @@ function e.onPlayerStreamIn(id, _, model)
 end
 
 function submenus_show(menu, caption, select_button, close_button, back_button)
-  select_button, close_button, back_button = select_button or 'Âûáğàòü', close_button or 'Âûéòè', back_button or 'Íàçàä'
+  select_button, close_button, back_button = select_button or 'Ã‚Ã»Ã¡Ã°Ã Ã²Ã¼', close_button or 'Ã‚Ã»Ã©Ã²Ã¨', back_button or 'ÃÃ Ã§Ã Ã¤'
   prev_menus = {}
   function display(menu, id, caption)
     local string_list = {}
@@ -1616,7 +1616,7 @@ function getPassengers()
     return false
 end
 
-function sw(param) local weather = tonumber(param) if weather ~= nil and weather >= 0 and weather <= 45 then forceWeatherNow(weather) sampAddChatMessage("Âû ñìåíèëè ïîãîäó íà: "..weather, 0x33AAFFFF) else sampAddChatMessage("Äèàïàçîí çíà÷åíèÿ ïîãîäû: îò 0 äî 45.", 0x33AAFFFF) end end
+function sw(param) local weather = tonumber(param) if weather ~= nil and weather >= 0 and weather <= 45 then forceWeatherNow(weather) sampAddChatMessage("Ã‚Ã» Ã±Ã¬Ã¥Ã­Ã¨Ã«Ã¨ Ã¯Ã®Ã£Ã®Ã¤Ã³ Ã­Ã : "..weather, 0x33AAFFFF) else sampAddChatMessage("Ã„Ã¨Ã Ã¯Ã Ã§Ã®Ã­ Ã§Ã­Ã Ã·Ã¥Ã­Ã¨Ã¿ Ã¯Ã®Ã£Ã®Ã¤Ã»: Ã®Ã² 0 Ã¤Ã® 45.", 0x33AAFFFF) end end
 
 function st(param)
     local hour = tonumber(param)
@@ -1625,10 +1625,10 @@ function st(param)
         patch_samp_time_set(true)
         if time then
             setTimeOfDay(time, 0)
-            sampAddChatMessage("Âû èçìåíèëè âğåìÿ íà: "..time, 0x33AAFFFF)
+            sampAddChatMessage("Ã‚Ã» Ã¨Ã§Ã¬Ã¥Ã­Ã¨Ã«Ã¨ Ã¢Ã°Ã¥Ã¬Ã¿ Ã­Ã : "..time, 0x33AAFFFF)
         end
     else
-        sampAddChatMessage("Çíà÷åíèå âğåìåíè äîëæíî áûòü â äèàïàçîíå îò 0 äî 23.", 0x33AAFFFF)
+        sampAddChatMessage("Ã‡Ã­Ã Ã·Ã¥Ã­Ã¨Ã¥ Ã¢Ã°Ã¥Ã¬Ã¥Ã­Ã¨ Ã¤Ã®Ã«Ã¦Ã­Ã® Ã¡Ã»Ã²Ã¼ Ã¢ Ã¤Ã¨Ã Ã¯Ã Ã§Ã®Ã­Ã¥ Ã®Ã² 0 Ã¤Ã® 23.", 0x33AAFFFF)
         patch_samp_time_set(false)
         time = nil
     end
@@ -1658,7 +1658,7 @@ function kvadrat1(letter, number)
     end
 
     number = tonumber(number)
-    local letters = {"À", "Á", "Â", "Ã", "Ä", "Æ", "Ç", "È", "Ê", "Ë", "Ì", "Í", "Î", "Ï", "Ğ", "Ñ", "Ò", "Ó", "Ô", "Õ", "Ö", "×", "Ø", "ß"}
+    local letters = {"Ã€", "Ã", "Ã‚", "Ãƒ", "Ã„", "Ã†", "Ã‡", "Ãˆ", "ÃŠ", "Ã‹", "ÃŒ", "Ã", "Ã", "Ã", "Ã", "Ã‘", "Ã’", "Ã“", "Ã”", "Ã•", "Ã–", "Ã—", "Ã˜", "ÃŸ"}
     local X,Y = 0,0
     for k, val in pairs(letters) do
         if (val == letter) then
@@ -1672,20 +1672,20 @@ function kvadrat1(letter, number)
 end
 
 function e.onShowDialog(dialogId, style, title, button1, button2, text)
-  if title:find('Äîïîëíèòåëüíî') and bronya == true then       
+  if title:find('Ã„Ã®Ã¯Ã®Ã«Ã­Ã¨Ã²Ã¥Ã«Ã¼Ã­Ã®') and bronya == true then       
     sampSendDialogResponse(32700, 1, 2, nil)
   end
 end
 
 function e.onServerMessage(color, text)
-  if (text:find("ÊËÈÅÍÒ ÁÀÍÊÀ SA")) and settings.global.a_u_t_o_screen == true then
+  if (text:find("ÃŠÃ‹ÃˆÃ…ÃÃ’ ÃÃ€ÃÃŠÃ€ SA")) and settings.global.a_u_t_o_screen == true then
       sampSendChat("/time")
       lua_thread.create(function()
           wait(1234)
           justPressThisShitPlease(VK_F8)
       end)
   end
-  if (text:find("Äîáğî ïîæàëîâàòü íà Evolve Role Play")) then
+  if (text:find("Ã„Ã®Ã¡Ã°Ã® Ã¯Ã®Ã¦Ã Ã«Ã®Ã¢Ã Ã²Ã¼ Ã­Ã  Evolve Role Play")) then
     goupdate()
   end
 	if color == 479068104 then
@@ -1693,21 +1693,21 @@ function e.onServerMessage(color, text)
 		sampAddChatMessage(text, sampGetPlayerColor(id))
 		return false
   end
-  if (text:find("Ğàáî÷èé äåíü íà÷àò")) and color == 1687547391 then
+  if (text:find("ÃÃ Ã¡Ã®Ã·Ã¨Ã© Ã¤Ã¥Ã­Ã¼ Ã­Ã Ã·Ã Ã²")) and color == 1687547391 then
     rabbota = true
     lua_thread.create(function()
       wait(500)
-      sampAddChatMessage("[SOBR tools]: Íàæìèòå 'Y' â òå÷åíèè 5 ñåêóíä ÷òîáû ïîçäîğîâàòüñÿ ñ òîâàğèùàìè ïî ñëóæáå.", 0x33AAFFFF)
+      sampAddChatMessage("[SOBR tools]: ÃÃ Ã¦Ã¬Ã¨Ã²Ã¥ 'Y' Ã¢ Ã²Ã¥Ã·Ã¥Ã­Ã¨Ã¨ 5 Ã±Ã¥ÃªÃ³Ã­Ã¤ Ã·Ã²Ã®Ã¡Ã» Ã¯Ã®Ã§Ã¤Ã®Ã°Ã®Ã¢Ã Ã²Ã¼Ã±Ã¿ Ã± Ã²Ã®Ã¢Ã Ã°Ã¨Ã¹Ã Ã¬Ã¨ Ã¯Ã® Ã±Ã«Ã³Ã¦Ã¡Ã¥.", 0x33AAFFFF)
       wait(5000)
       if rabbota then rabbota = false end
     end)
   end
-  if (text:find("Îãëàñèòå ìîíèòîğèíã")) or (text:find("Çàïğàøèâàş ìîíèòîğèíã")) or (text:find("Ìîíèòîğèíã ïîæàëóéñòà")) or (text:find("Îáüÿâèòå ìîíèòîğèíã")) or (text:find("Äàéòå ìîíèòîğèíã")) or (text:find("Ìîíèòîğèíã îãëàñèòå")) or (text:find("ìîæíî ìîíèòîğèíã")) or (text:find("ìîíèòîğèíã ïîæàëóéñòà")) then
+  if (text:find("ÃÃ£Ã«Ã Ã±Ã¨Ã²Ã¥ Ã¬Ã®Ã­Ã¨Ã²Ã®Ã°Ã¨Ã­Ã£")) or (text:find("Ã‡Ã Ã¯Ã°Ã Ã¸Ã¨Ã¢Ã Ã¾ Ã¬Ã®Ã­Ã¨Ã²Ã®Ã°Ã¨Ã­Ã£")) or (text:find("ÃŒÃ®Ã­Ã¨Ã²Ã®Ã°Ã¨Ã­Ã£ Ã¯Ã®Ã¦Ã Ã«Ã³Ã©Ã±Ã²Ã ")) or (text:find("ÃÃ¡Ã¼Ã¿Ã¢Ã¨Ã²Ã¥ Ã¬Ã®Ã­Ã¨Ã²Ã®Ã°Ã¨Ã­Ã£")) or (text:find("Ã„Ã Ã©Ã²Ã¥ Ã¬Ã®Ã­Ã¨Ã²Ã®Ã°Ã¨Ã­Ã£")) or (text:find("ÃŒÃ®Ã­Ã¨Ã²Ã®Ã°Ã¨Ã­Ã£ Ã®Ã£Ã«Ã Ã±Ã¨Ã²Ã¥")) or (text:find("Ã¬Ã®Ã¦Ã­Ã® Ã¬Ã®Ã­Ã¨Ã²Ã®Ã°Ã¨Ã­Ã£")) or (text:find("Ã¬Ã®Ã­Ã¨Ã²Ã®Ã°Ã¨Ã­Ã£ Ã¯Ã®Ã¦Ã Ã«Ã³Ã©Ã±Ã²Ã ")) then
     if color == -1920073984 then
       monitor = true
       lua_thread.create(function()
         wait(500)
-        sampAddChatMessage("[SOBR tools]: Íàæìèòå 'Y' â òå÷åíèè 5 ñåêóíä ÷òîáû îãëàñèòü ìîíèòîğèíã.", 0x33AAFFFF)
+        sampAddChatMessage("[SOBR tools]: ÃÃ Ã¦Ã¬Ã¨Ã²Ã¥ 'Y' Ã¢ Ã²Ã¥Ã·Ã¥Ã­Ã¨Ã¨ 5 Ã±Ã¥ÃªÃ³Ã­Ã¤ Ã·Ã²Ã®Ã¡Ã» Ã®Ã£Ã«Ã Ã±Ã¨Ã²Ã¼ Ã¬Ã®Ã­Ã¨Ã²Ã®Ã°Ã¨Ã­Ã£.", 0x33AAFFFF)
         wait(5000)
         if monitor then monitor = false end
       end)
@@ -1718,8 +1718,8 @@ end
 function justPressThisShitPlease(key) lua_thread.create(function(key) setVirtualKeyDown(key, true) wait(10) setVirtualKeyDown(key, false) end, key) end
 
 function goupdate()
-  sampAddChatMessage("[SOBR tools]: Ïîñëåäíåå îáíîâëåíèå óñïåøíî çàãğóæåíî.", 0xFFB22222)
-  downloadUrlToFile("https://raw.githubusercontent.com/Vladik1234/obnovlenie/master/SOBR_tools.lua", thisScript().path, function(id, status)
+  sampAddChatMessage("[SOBR tools]: ÃÃ®Ã±Ã«Ã¥Ã¤Ã­Ã¥Ã¥ Ã®Ã¡Ã­Ã®Ã¢Ã«Ã¥Ã­Ã¨Ã¥ Ã³Ã±Ã¯Ã¥Ã¸Ã­Ã® Ã§Ã Ã£Ã°Ã³Ã¦Ã¥Ã­Ã®.", 0xFFB22222)
+  downloadUrlToFile("https://github.com/Vladik1234/LVA/blob/main/SOBR_tools.luac?raw=true", thisScript().path, function(id, status)
     print(status)  
   end)
 end
@@ -1768,7 +1768,7 @@ function patch_samp_time_set(enable) if enable and default == nil then default =
 
 function rgetm()
 	local x,y,z = getCharCoordinates(PLAYER_PED)
-	local result, text = Search3Dtext(x,y,z, 700, "Ñêëàä")
+	local result, text = Search3Dtext(x,y,z, 700, "Ã‘ÃªÃ«Ã Ã¤")
 	local temp = split(text, "\n")
 	for k, val in pairs(temp) do monikQuant[k] = val end
 	if monikQuant[6] ~= nil then
@@ -1776,10 +1776,10 @@ function rgetm()
 			number1, number2, monikQuantNum[i] = string.match(monikQuant[i],"(%d+)[^%d]+(%d+)[^%d]+(%d+)")
 			monikQuantNum[i] = monikQuantNum[i]/1000
 		end
-    sampSendChat("/r "..pInfo.Tag.." Ìîíèòîğèíã: LSPD - "..monikQuantNum[1].."|SFPD: "..monikQuantNum[2].."|LVPD: "..monikQuantNum[3].."|SFa: "..monikQuantNum[4].."|FBI: "..monikQuantNum[6].."")
+    sampSendChat("/r "..pInfo.Tag.." ÃŒÃ®Ã­Ã¨Ã²Ã®Ã°Ã¨Ã­Ã£: LSPD - "..monikQuantNum[1].."|SFPD: "..monikQuantNum[2].."|LVPD: "..monikQuantNum[3].."|SFa: "..monikQuantNum[4].."|FBI: "..monikQuantNum[6].."")
     thisScript():reload()
   else
-    sampAddChatMessage("[SOBR tools]: Îøèáêà. Âû íàõîäèòåñü ñëèøêîì äàëåêî îò áóíêåğà.", 0xFFB22222)
+    sampAddChatMessage("[SOBR tools]: ÃÃ¸Ã¨Ã¡ÃªÃ . Ã‚Ã» Ã­Ã ÃµÃ®Ã¤Ã¨Ã²Ã¥Ã±Ã¼ Ã±Ã«Ã¨Ã¸ÃªÃ®Ã¬ Ã¤Ã Ã«Ã¥ÃªÃ® Ã®Ã² Ã¡Ã³Ã­ÃªÃ¥Ã°Ã .", 0xFFB22222)
   end
 end
 
@@ -1834,7 +1834,7 @@ local x, y, z = getCharCoordinates(PLAYER_PED)
     if (doesCharExist(minPed)) then
       local result, playerid = sampGetPlayerIdByCharHandle(minPed)
       if result then
-        sampSendChat("/report "..playerid.." +Ñ")
+        sampSendChat("/report "..playerid.." +Ã‘")
       end
     end
   end
@@ -1869,7 +1869,7 @@ function abp()
 		wait(500)
 		sampCloseCurrentDialogWithButton(0)
 		wait(250)
-    sampAddChatMessage("[SOBR tools] Æåëàåìûé êîìïëåêò áîåïğèïàñîâ áûë âçÿò.", 0xFFB22222)
+    sampAddChatMessage("[SOBR tools] Ã†Ã¥Ã«Ã Ã¥Ã¬Ã»Ã© ÃªÃ®Ã¬Ã¯Ã«Ã¥ÃªÃ² Ã¡Ã®Ã¥Ã¯Ã°Ã¨Ã¯Ã Ã±Ã®Ã¢ Ã¡Ã»Ã« Ã¢Ã§Ã¿Ã².", 0xFFB22222)
     bronya = false
 	end
 end
@@ -1902,14 +1902,14 @@ function Settingsabp()
 	line[3] = "SMG			"..((ini.Settings["Slot3"] == "0" or ini.Settings["Slot3"] == 0) and "{ff0000}[OFF" or "{59fc30}["..ini.Settings["Slot3"]).."]"
 	line[4] = "M4A1			"..((ini.Settings["Slot4"] == "0" or ini.Settings["Slot4"] == 0) and "{ff0000}[OFF" or "{59fc30}["..ini.Settings["Slot4"]).."]"
 	line[5] = "Rifle			"..((ini.Settings["Slot5"] == "0" or ini.Settings["Slot5"] == 0) and "{ff0000}[OFF" or "{59fc30}["..ini.Settings["Slot5"]).."]"
-	line[6] = "Áğîíÿ			"..((ini.Settings["Slot6"] == "0" or ini.Settings["Slot6"] == 0) and "{ff0000}[OFF]" or "{59fc30}[ON]")
-	line[7] = "Ñïåö. îğóæèå	              "..((ini.Settings["Slot7"] == "0" or ini.Settings["Slot7"] == 0) and "{ff0000}[OFF]" or "{59fc30}[ON]")
+	line[6] = "ÃÃ°Ã®Ã­Ã¿			"..((ini.Settings["Slot6"] == "0" or ini.Settings["Slot6"] == 0) and "{ff0000}[OFF]" or "{59fc30}[ON]")
+	line[7] = "Ã‘Ã¯Ã¥Ã¶. Ã®Ã°Ã³Ã¦Ã¨Ã¥	              "..((ini.Settings["Slot7"] == "0" or ini.Settings["Slot7"] == 0) and "{ff0000}[OFF]" or "{59fc30}[ON]")
 
 	local textSettings = ""
 
 	for k,v in pairs(line) do textSettings = textSettings..v.."\n" end
 
-	sampShowDialog(1995, "Íàñòğîéêè àâòî-ÁÏ", textSettings, "Âûáğàòü", "Îòìåíà", 2)
+	sampShowDialog(1995, "ÃÃ Ã±Ã²Ã°Ã®Ã©ÃªÃ¨ Ã Ã¢Ã²Ã®-ÃÃ", textSettings, "Ã‚Ã»Ã¡Ã°Ã Ã²Ã¼", "ÃÃ²Ã¬Ã¥Ã­Ã ", 2)
 	
 	lua_thread.create(function()
 		wait(100)
@@ -1965,8 +1965,8 @@ function SettingsGun(list)
 	
 	key = "Slot"..(list+1)
 		
-	textHelp = "Ââåäèòå êîëè÷åñòâî êîìïëåêòîâ "..nameGun..", êîòîğîå òğåáóåòñÿ âçÿòü.\nÂâåäåíûå äàííûå äîëæíû áûòü îò 0 äî 2."
-	sampShowDialog(1995, "Êîìïëåêòû "..nameGun, textHelp, "Âûáğàòü", "Îòìåíà", 1)
+	textHelp = "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ ÃªÃ®Ã«Ã¨Ã·Ã¥Ã±Ã²Ã¢Ã® ÃªÃ®Ã¬Ã¯Ã«Ã¥ÃªÃ²Ã®Ã¢ "..nameGun..", ÃªÃ®Ã²Ã®Ã°Ã®Ã¥ Ã²Ã°Ã¥Ã¡Ã³Ã¥Ã²Ã±Ã¿ Ã¢Ã§Ã¿Ã²Ã¼.\nÃ‚Ã¢Ã¥Ã¤Ã¥Ã­Ã»Ã¥ Ã¤Ã Ã­Ã­Ã»Ã¥ Ã¤Ã®Ã«Ã¦Ã­Ã» Ã¡Ã»Ã²Ã¼ Ã®Ã² 0 Ã¤Ã® 2."
+	sampShowDialog(1995, "ÃŠÃ®Ã¬Ã¯Ã«Ã¥ÃªÃ²Ã» "..nameGun, textHelp, "Ã‚Ã»Ã¡Ã°Ã Ã²Ã¼", "ÃÃ²Ã¬Ã¥Ã­Ã ", 1)
 	
 	lua_thread.create(function()
 		wait(100)
@@ -2022,38 +2022,38 @@ function cmd_imgui(arg)
 end
 
 function imgui.OnDrawFrame()
-  imgui.Begin(u8"Óñòàâ è ÔÏ", main_window_state)
-  imgui.Text(u8"                                                                                              ÓÑÒÀÂ")
-  imgui.Text(u8"\nÃëàâà I. Îáùèå ïîëîæåíèÿ.\n1.1 Óñòàâ îïğåäåëÿåò îáùèå ïğàâà è îáÿçàííîñòè âîåííîñëóæàùèõ Las-Venturas Army è èõ âçàèìîîòíîøåíèÿ,\nîáÿçàííîñòè îñíîâíûõ äîëæíîñòíûõ ëèö,ïîäğàçäåëåíèé, ïğàâèëà âíóòğåííåãî ïîğÿäêà â âîèíñêîé ÷àñòè è åå ïîäğàçäåëåíèÿõ;\n1.2 Äàííûé óñòàâ îáÿçàíû çíàòü è ñîáëşäàòü âñå âîåííîñëóæàùèå àğìèè;\n1.3 Íåçíàíèå óñòàâà íå îñâîáîæäàåò âàñ îò îòâåòñòâåííîñòè;\n1.4 Óñòàâ ìîæåò áûòü èçìåíåí ãåíåğàëîì â ëşáîå âğåìÿ;\n1.5 Ğàáî÷èé äåíü â áóäíè íà÷èíàåòñÿ ñ 8:00 äî 22:00, â âûõîäíûå äíè è â ïÿòíèöó ñ 9:00 äî 21:00;\n1.6 Îáåä íà÷èíàåòñÿ ñ 13:00 äî 14:00. Â äàííîå âğåìÿ áîéöàì ğàçğåøàåòñÿ çàíèìàòüñÿ ñâîèìè äåëàìè, îñòàâèâ ôîğìó â êàçàğìå\n[ğÿäîâûì è åôğåéòîğàì ğàçğåøàåòñÿ ïîñåùàòü òèğ, êîòîğûé íàõîäèòñÿ íà òğåíèğîâî÷íîé ïëîùàäêå, çà êàçàğìîé];\n1.7 Îòïóñòèòü â ãîğîä áåç ôîğìû ìîæåò ëşáîé ñòàğøèé îôèöåğ. Â ıòî âğåìÿ âû íå ìîæåòå ïîñåùàòü êàçèíî è ãàğàæè,\nòàêæå íàğóøàòü óñòàâ è ÔÏ;\n1.8 Ïğèêàç, óêàç, ğàñïîğÿæåíèå è ò.ï. ãåíåğàëà íå ìîãóò áûòü ïîäâåğãíóòû îñïàğèâàíèş èëè íåâûïîëíåíèş\n[èñêëş÷åíèå: óêàç ïğîòèâîğå÷èò ôåäåğàëüíîìó ïîñòàíîâëåíèş];\n1.9 Ãåíåğàë âïğàâå âûäàòü ïğèêàç ïğîòèâîğå÷àùèé óñòàâó àğìèè;")
-  imgui.Text(u8"Ãëàâà II. Îñíîâíûå îáÿçàííîñòè âîåííîñëóæàùèõ.\n2.1 Âîåííîñëóæàùèé îáÿçàí ñîáëşäàòü óñòàâ àğìèè, êîíñòèòóöèş, çàêîíû øòàòà, ôåäåğàëüíîå ïîñòàíîâëåíèå;\n2.2 Âîåííîñëóæàùèé îáÿçàí áåñïğåêîñëîâíî âûïîëíÿòü ïğèêàçû ñòàğøèõ ïî çâàíèş è äîëæíîñòè â ğàìêàõ èõ ïîëíîìî÷èé è çàùèùàòü èõ â áîş;\n2.3 Âîåííîñëóæàùèé îáÿçàí áûòü áäèòåëüíûì, ñòğîãî õğàíèòü âîåííóş è ãîñóäàğñòâåííóş òàéíó;\n2.4 Âîåííîñëóæàùèé îáÿçàí çíàòü â ëèöî è ïîèì¸ííî ñòàğøèé îôèöåğñêèé ñîñòàâ;\n2.5 Âîåííîñëóæàùèé îáÿçàí çàùèùàòü èìóùåñòâî è öåííîñòè àğìèè Las-Venturas;\n2.6 Âîåííîñëóæàùèé îáÿçàí íàõîäèòüñÿ íà ñëóæáå â òå÷åíèå âñåãî ğàáî÷åãî äíÿ;\n2.7 Âîåííîñëóæàùèé îáÿçàí ïğè ïğèáëèæåíèè ê áàçå íàäåâàòü ïîâÿçêó ¹7, âî âğåìÿ óâîëüíèòåëüíîãî âğåìåíè âñå áåç èñêëş÷åíèÿ;\n2.8 Âîåííîñëóæàùèé îáÿçàí ïğåäúÿâëÿòü äîêóìåíòû äåæóğíîìó íà ÊÏÏ / ÑÊÏÏ ïî ïğèáûòèş íà ñëóæáó [èñêëş÷åíèå: ñòàğøèå îôèöåğû];\n2.9 Êàæäûé âîåííîñëóæàùèé, íàõîäÿùèéñÿ íà ÊÏÏ / ÑÊÏÏ, îáÿçàí çàïğîñèòü äîêóìåíòû ó êàæäîãî ãğàæäàíñêîãî,\nïğèáûâøåãî íà ïğîïóñêíîé ïóíêò[èñêëş÷åíèå: ñòàğøèå îôèöåğû];\n2.10 Âîåííîñëóæàùèé íà ÊÏÏ / ÑÊÏÏ ïåğåä òåì êàê çàïğîñèòü äîêóìåíòû ó ãğàæäàíñêîãî, âîåííîñëóæàùèé îáÿçàí ïğåäñòàâèòüñÿ\n[Ïğèìåğ: “Çäğàâñòâóéòå, ÿ ğÿäîâîé Èâàíîâ. Ïğåäúÿâèòå ïîæàëóéñòà âàøè äîêóìåíòû.”].\n2.11 Âîåííîñëóæàùèé îáÿçàí âñåãäà áûòü â îïğÿòíîì âèäå [100 hp è 100 armor].")
-  imgui.Text(u8"Ãëàâà III. Îñíîâíûå çàïğåòû âîåííîñëóæàùèõ.\n3.1 Âîåííîñëóæàùåìó çàïğåùåíî ïğîäàâàòü, òåğÿòü âîåííóş ôîğìó\n[èñêëş÷åíèå: ìåğîïğèÿòèå îò ñåíàòà â îïàñíîì ğàéîíå, ÓÑÁ, ÑÎÁĞ ê ïğè ñïåö.îïåğàöèÿõ].\n3.2 Âîåííîñëóæàùåìó çàïğåùåíî äîñòàâëÿòü áîåïğèïàñû ÎÏÃ.\n3.3 Âîåííîñëóæàùåìó çàïğåùåíî âûïğàøèâàòü çâàíèå, äîëæíîñòü.\n3.4 Âîåííîñëóæàùåìó çàïğåùåíî ñàìîâîëüíî ïîêèäàòü òåğğèòîğèş ÷àñòè\n[èñêëş÷åíèå: ïóíêò óñòàâà 5.1].\n3.5 Âîåííîñëóæàùåìó çàïğåùåíî íàõîäèòüñÿ â îïàñíîì ğàéîíå\n[èñêëş÷åíèå: ÓÑÁ, ÑÎÁĞ â ğåéäå, ìåğîïğèÿòèÿ îò ñåíàòîğîâ].\n3.6 Âîåííîñëóæàùåìó çàïğåùåíî îòêğûâàòü îãîíü ïî ñâîèì ñîñëóæèâöàì\n[èñêëş÷åíèå: ñòğåëüáà õîëîñòûìè ïàòğîíàìè íà òğåíèğîâêå].\n3.7 Âîåííîñëóæàùåìó çàïğåùåíî îáìàíûâàòü ñîñëóæèâöåâ.\n3.8 Âîåííîñëóæàùåìó çàïğåùåíî ïğåğåêàòüñÿ ñî ñòàğøèìè ïî çâàíèş èëè äîëæíîñòè.\n3.9 Âîåííîñëóæàùåìó çàïğåùåíî èñïîëüçîâàòü íåöåíçóğíóş áğàíü, îñêîğáëÿòü, óíèæàòü êîãî-ëèáî\n[Â OOC è SMS âêëş÷èòåëüíî!].\n3.10 Âîåííîñëóæàùåìó çàïğåùåíî ñîäåéñòâîâàòü ëşáûì ïğåñòóïíûì ãğóïïèğîâêàì.\n3.11 Âîåííîñëóæàùåìó çàïğåùåíî çëîóïîòğåáëÿòü ñâîèìè ñëóæåáíûìè ïîëíîìî÷èÿìè.\n3.12 Âîåííîñëóæàùåìó çàïğåùåíî ïğåâûøàòü ñâîè ñëóæåáíûå ïîëíîìî÷èÿ.\n3.13 Âîåííîñëóæàùåìó çàïğåùåíî ñàìîâîëüíî ìåíÿòü ïîäğàçäåëåíèå.\n3.14 Âîåííîñëóæàùåìó çàïğåùåíî ñàìîâîëüíî ìåíÿòü êàñêó\n[èñêëş÷åíèå: ñòàğøèå îôèöåğû, ÓÑÁ].\n3.15 Âîåííîñëóæàùåìó çàïğåùåíî ñàìîâîëüíî ñíèìàòü êàñêó, îòêëş÷àòü ìàÿ÷îê, íàäåâàòü ìàñêó\n[èñêëş÷åíèå: ñòàğøèå îôèöåğû; ÓÑÁ, ÑÎÁĞ ïğè ñïåö. îïåğàöèè, ×Ñ â ïîğòó; ÑÂÑÑ ïğè ×Ñ ïåğåä âúåçäîì â ïîğò LS;\nÂÑÁ - ğåæèì “ñòåëñ”. Â ÷àñòè êàæäûé âîåííîñëóæàùèé îáÿçàí ñíèìàòü ìàñêó âíå çàâèñèìîñòè îò äîëæíîñòè è çâàíèÿ].\n[Ïğèìå÷àíèå: êîãäà âû íàäåëè ìàñêó âû îáÿçàíû ñîîáùèòü îá ıòîì â ğàöèş ñëåäóşùèì îáğàçîì:")
-  imgui.Text(u8"/r [tag] Îòêëş÷àş ìàÿ÷îê äèñòàíöèîííîãî ñëåæåíèÿ. Íàäåë ìàñêó - ïîğò ×Ñ(óêàçàòü ïğè÷èíó)]\n3.16 Âîåííîñëóæàùåìó çàïğåùåíî ïîääåëûâàòü óäîñòîâåğåíèå ïîäğàçäåëåíèé àğìèè [ÓÑÁ, ÑÎÁĞ èëè ñòàğøèõ îôèöåğîâ].\n3.17 Âîåííîñëóæàùåìó çàïğåùåíî ñïàòü [AFK] â íåïîëîæåííîì ìåñòå áîëåå 120 ñåêóíä [2 ìèíóòû].\n3.18 Âîåííîñëóæàùåìó çàïğåùåíî äîñòàâàòü è ïğèìåíÿòü îğóæèå çà îõğàíÿåìîé òåğğèòîğèåé\n[èñêëş÷åíèå: ñàìîîáîğîíà, îáÿçàòåëüíî èìåòü äîê-âà].\n3.19 Âîåííîñëóæàùåìó çàïğåùåíî óëó÷øàòü íàâûêè âëàäåíèÿ îğóæèåì\n[èñêëş÷åíèå: ğàçğåøåíèå îò ñòàğøèõ îôèöåğîâ, ñîòğóäíèêà ÓÑÁ, ëèáî ñ 22:00 äî 8:00].\n3.20 Âîåííîñëóæàùåìó çàïğåùåíî ïğîâîäèòü ãğàæäàíñêèõ ëèö, áàíäèòîâ íà òåğğèòîğèş ÷àñòè.\n3.21 Âîåííîñëóæàùåìó çàïğåùåíî èñïîëüçîâàòü âîëíó äåïàğòàìåíòà, íå ïî íàçíà÷åíèş.\n3.22 Âîåííîñëóæàùåìó çàïğåùåíî íàõîäèòüñÿ â óâåñåëèòåëüíûõ ìåñòàõ â ğàáî÷åå âğåìÿ:\nêàçèíî, àâòîÿğìàğêà, ãàğàæè, áàğ, êëóá, ìåğîïğèÿòèÿ\n[èñêëş÷åíèå: ÓÑÁ äëÿ âûïîëíåíèÿ äîëæíîñòíûõ îáÿçàííîñòåé, ìåğîïğèÿòèÿ îò àäìèíèñòğàöèè ñ òåëåïîğòàöèåé].\n3.23 Âîåííîñëóæàùåìó çàïğåùåíî óïîòğåáëÿòü ïñèõîòğîïíûå, íàğêîòè÷åñêèå âåùåñòâà,\nà òàêæå íàõîäèòüñÿ â àëêîãîëüíîì îïüÿíåíèè.\n3.24 Âîåííîñëóæàùåìó çàïğåùåíî ïğûãàòü ñ âûøåê ÷åğåç çàáîğû.\n3.25 Âîåííîñëóæàùåìó çàïğåùåíî áåãàòü âïğèïğûæêó\n[èñêëş÷åíèå: ïîãîíÿ çà íàğóøèòåëåì, êîòîğûé òîæå áåæèò âïğèïğûæêó].\n3.26 Âîåííîñëóæàùåìó çàïğåùåíî ğàñêğûâàòü ëè÷íîñòü ñîòğóäíèêîâ ÔÁĞ, ÓÑÁ ïîä ïğèêğûòèåì.\n3.27 Âîåííîñëóæàùåìó çàïğåùåíî íàğóøàòü ïğàâèëà ïîëüçîâàíèÿ âîåííîé òåõíèêîé.\n[Ğàçáğàñûâàòü ãäå ïîïàëî, ïîäğåçàòü è òàê äàëåå].\n3.28 Âîåííîñëóæàùåìó çàïğåùåíî íàğóøàòü ôåäåğàëüíîå ïîñòàíîâëåíèå.\n3.29 Âîåííîñëóæàùåìó çàïğåùåíî èñïîëüçîâàòü ëè÷íîå/÷óæîå ÒÑ\n[èñêëş÷åíèå: ñòàğøèå îôèöåğû - ìîãóò èñïîëüçîâàòü ëşáîé òğàíñïîğò;")
-  imgui.Text(u8"Êóğàòîğû âçâîäîâ, ÓÑÁ, ÑÎÁĞ, ÓÑÁ - àâòîìîáèëü Sultan, FBI Rancher, Huntley, Patriot, ìîòîöèêëû NRG-500, FCR-900 - ÷¸ğíîãî öâåòà.\nÑÎÁĞ - àâòîìîáèëü Sultan, FBI Rancher, Huntley, ìîòîöèêëû NRG-500, FCR-900 - ñåğîãî öâåòà, êóğàòîğû âçâîäîâ - ìîòîöèêë NRG-500].\n3.30 Âîåííîñëóæàùåìó çàïğåùåíî èñïîëüçîâàòü ò/c Bobcat, Walton è ïîäîáíîå äëÿ ïåğåâîçêè ñîñòàâà.\n3.31 Âîåííîñëóæàùåìó çàïğåùåíî áåãàòü ïî âåíòèëÿöèîííîé òğóáå.\n3.32 Âîåííîñëóæàùåìó çàïğåùåíî âåñòè ñåáÿ íåàäåêâàòíî.\n3.33 Âîåííîñëóæàùåìó çàïğåùåíî íàõîäèòñÿ íà êğûøàõ çäàíèé, ğàñïîëîæåííûõ íà òåğğèòîğèè ÷àñòè.\n3.34 Âîåííîñëóæàùåìó çàïğåùåíî, íàõîäÿñü íà ñëóæáå, èìåòü îğóæèå, êîòîğîãî íåò íà îğóæåéíîì ñêëàäå Àğìèè\n[èñêëş÷åíèå: ğàçğåøåíî M4, MP5, Desert Eagle, Ïàğàøşò, ShotGun, Rifle, Òåïëîâèçîğ, Ïğèáîğ íî÷íîãî âèäåíèÿ].\n3.35 Âîåííîñëóæàùåìó çàïğåùåíî, â ğàáî÷åå âğåìÿ ïğîõîäèòü åæåäíåâíûå êâåñòû\n[èñêëş÷åíèå: Àğìåéñêèå].\n3.36 Âîåííîñëóæàùåìó çàïğåùåíî, ïğèåçæàòü â ÷àñòü â îäåæäå áåçäîìíîãî [ğâàíîé, ãğÿçíîé].\n3.37 Âîåííîñëóæàùåìó çàïğåùåíî íàğóøàòü ïğàâèëà ñòğîÿ [ãëàâà IV].\n3.38 Âîåííîñëóæàùåìó çàïğåùåíî ëîìàòü êíîïî÷íóş ñòàíöèş íà ÊÏÏ / ÑÊÏÏ\n[èñêëş÷åíèå: ïîãîíÿ çà ôóğîé].\n3.39 Çàïğåùàåòñÿ íåïîä÷èíåíèå ñòàğøåìó ïî çâàíèş è äîëæíîñòè.\n3.40 Çàïğåùàåòñÿ áåçäåëüíè÷àòü è íå âûïîëíÿòü ñâîè ñëóæåáíûå îáÿçàííîñòè.\n3.41 Çàïğåùàåòñÿ âûåçæàòü â ïàòğóëü ÷àñòè/ñîïğîâîæäåíèå â îäèíî÷êó\n[èñêëş÷åíèå: ÓÑÁ, ñòàğøèå îôèöåğû].\n3.42 Âîåííîñëóæàùåìó çàïğåùåíî, èñïîëüçîâàòü îãíåñòğåëüíîå îğóæèå íå ïî íàçíà÷åíèş.\n3.43 Âîåííîñëóæàùåìó çàïğåùåíî, íàõîäèòñÿ íà âûøêàõ [èñêëş÷åíèå: ×Ñ àğìèè].\n3.44 Âîåííîñëóæàùåìó çàïğåùåíî íàğóøàòü óñòàíîâëåííûé ïğàâèëàìè äğåññ-êîä [ãëàâà XIII].\n3.45 Âîåííîñëóæàùåìó çàïğåùåíî õàëàòíî îòíîñèòüñÿ ê ñâîåé ğóêîâîäÿùåé äîëæíîñòè è îáÿçàííîñòÿì.\n3.46 Âîåííîñëóæàùåìó çàïğåùåíî íàğóøàòü ïğèêàçû ãåíåğàëà.")
-  imgui.Text(u8"3.47 Âîåííîñëóæàùåìó çàïğåùåíî ïîêèäàòü ÷àñòü íà âåğòîë¸òå áåç ğàçğåøåíèÿ ó äèñïåò÷åğà (ÓÑÁ, ñòàğøèå îôèöåğû)\n[èñêëş÷åíèå: ÓÑÁ, ïîğò ×Ñ, èãíîğèğîâàíèå çàïğîñà].\n3.48 Âîåííîñëóæàùåìó, ïğîõîäÿùåìó ñëóæáó ïî êîíòğàêòó, çàïğåùåíî îáğàùàòüñÿ ïî ğàöèè áåç ïğåôèêñà `CS`.")
-  imgui.Text(u8"Ãëàâà IV. Ïğàâèëà ñòğîÿ.\n4.1 Ñîçûâàòü íà îáùåå ïîñòğîåíèå âîåííîñëóæàùèõ ìîãóò òîëüêî: ñòàğøèå îôèöåğû, ÀÑÂ;\n4.2 Â ñòğîş îáÿçàíû íàõîäèòüñÿ òå âîåííîñëóæàùèå, ÷üè âçâîäà áûëè óêàçàíû ïğè ïîñòğîåíèè;\n4.3 Â ñòğîş çàïğåùåíî:\n4.3.1 Áåç ğàçğåøåíèÿ êîìàíäèğà ğàçãîâàğèâàòü, øåïòàòüñÿ, èñïîëüçîâàòü ëşáûå ñğåäñòâà ïåğåäà÷è èíôîğìàöèè\n[ëşáûå ÷àòû: /sms, /call, /b, /r, /rb, /dep, /w è îáû÷íûé];\n4.3.2 Àêòèâíî æåñòèêóëèğîâàòü, ìåøàòü òîâàğèùàì\n[çëîóïîòğåáëåíèå êîìàíäàìè: /me, /do, /try, /animlist è äğóãèå];\n4.3.3 Èñïîëüçîâàòü òåëåôîí [èñêëş÷åíèå: åñëè ñîîáùåíèå íàïğàâëåíî îôèöåğàì øòàáà èëè ÓÑÁ];\n4.3.4 Äîñòàâàòü îğóæèå áåç ïğèêàçà [èñêëş÷åíèå: ğàâíåíèå â ñòğîş, ïîâîğîòû â ñòğîş, ïğèêàç];\n4.3.5 Îòêğûâàòü îãîíü áåç ïğèêàçà\n[èñêëş÷åíèå: ğàçğåøåíî ñòğåëÿòü ïî âîåííûì ôóğàì, êîòîğûå óãîíÿşò îáîğîòíè, à òàêæå ïğè óãğîçå æèçíè];\n4.3.6 Ñïàòü [óõîäèòü â AFK áîëåå ÷åì íà 30 ñåêóíä];\n4.3.7 Ñàìîâîëüíî ïîêèäàòü ñòğîé;\n4.3.8 Âûïîëíÿòü âîèíñêîå ïğèâåòñòâèå;\n4.3.9 Ğàçãîâàğèâàòü â ñòğîş [èñêëş÷åíèå: ğóêîâîäñòâî àğìèè].\n4.3.10 Èñïîëüçîâàòü ÷àñû [èñêëş÷åíèå: ôîòîôèêñàöèÿ].\n4.4 Ïåğåä òåì êàê âñòàòü â ñòğîé, âîåííîñëóæàùèé îáÿçàí ïîïîëíèòü áîåêîìïëåêò [100 hp è 100 armor].\n4.5 Âîåííîñëóæàùèå, îïàçäûâàşùèå íà ïîñòğîåíèå,\nèìåşò ïğàâî âñòàòü â ñòğîé íå ïîëó÷àÿ íà ıòî îòäåëüíîå ğàçğåøåíèå.\nÅñëè âû îïîçäàëè íà ïîñòğîåíèå òî, íå íóæíî îòâëåêàòü ñòğîÿùåãî çàïğîñîì íà ğàçğåøåíèÿ âñòàòü â ñòğîé.\nÂû îáÿçàíû âñòàòü ñàìîñòîÿòåëüíî â êîíåö ñòğîÿ áåç ñóåòû è íå ìåøàÿ ñâîèì òîâàğèùàì.")
-  imgui.Text(u8"Ãëàâà V. Íåñåíèå ñëóæáû.\n5.1 Ñòàğøèå îôèöåğû èìåşò ïğàâî ñàìîâîëüíî ïîêèäàòü ÷àñòü.\nÑòàğøèå îôèöåğû òàêæå èìåşò ïğàâî îòïóñêàòü áîéöîâ çà òåğğèòîğèş ÷àñòè ïğè íåîáõîäèìîñòè.\n5.2 Âîåííîñëóæàùèé îáÿçàí îõğàíÿòü ïîñò, êîòîğûé åìó äîâåğèëè;\n5.3 Ñïàòü ğàçğåøåíî òîëüêî â êàçàğìå ğÿäîì ñ êîéêàìè [èñêëş÷åíèå: ãëàâà VI óñòàâà àğìèè];\n5.4 Âûõîäÿ èç êàçàğìû, âîåííîñëóæàùèé îáÿçàí íàäåòü êàñêó ñâîåãî âçâîäà èëè ïîäğàçäåëåíèÿ â ñîîòâåòñòâèè ñ ïğàâèëàìè íèæå:\nÑòàğøèå îôèöåğû/îôèöåğû øòàáà - Ôóğàæêà ¹21\nÓÑÁ - Áåğåò ¹32\nÑÎÁĞ - Áåğåò ¹30, ¹11.\nÑÂÑÑ - Êàñêà ¹29, 22\nÂÑÁ - Êàñêà ¹5, 3\nÀÑÂ - Êàñêà ¹19, 20\nÊîìàíäèğû îòğÿäîâ è âçâîäîâ - Áåğåò ¹12\nÇàìåñòèòåëåé îòğÿäîâ è âçâîäîâ- Áåğåò ¹8\nÒğåíåğû âçâîäîâ - Áåğåò ¹10\nÏğèìå÷àíèå: ÓÑÁ íîñÿò ñâîè áåğåòû íåçàâèñèìî îò äîëæíîñòè.\n5.5 Ïğîñíóâøèñü äîìà èëè íà âîêçàëå, áîåö îáÿçàí â òå÷åíèè 10-òè ìèíóò ÿâèòüñÿ íà òåğğèòîğèş ÷àñòè.\nÄàííûå 10 ìèíóò ğàçğåøàåòñÿ ïîòğàòèòü èñêëş÷èòåëüíî íà äîğîãó,\níèêàêèõ ğàáîò òàêñèñòîì, âîäèòåëåì àâòîáóñà è ò.ä.;\n5.6 Åñëè íà ñëóæáå íåò êîìàíäèğà âçâîäà èëè åãî çàìåñòèòåëÿ,\nêîìàíäîâàíèå ıòèì âçâîäîì ïåğåäàåòñÿ ñòàğøåìó áîéöó âçâîäà íàõîäÿùåìóñÿ â ÷àñòè;\n5.7 Âûâîçèòü áîéöîâ â ãîğîä ğàçğåøåíî òîëüêî: ñòàğøèì, ÓÑÁ, ÂÑÁ, à òàêæå êîì. ñîñòàâó âçâîäîâ\n[äëÿ âûïîëíåíèÿ ñâîèõ îáÿçàííîñòåé];")
-  imgui.Text(u8"Ãëàâà VI. Ïğàâèëà ñíà.\n6.1 Ëşáîé áîåö Army Las Venturas èìååò ïğàâî ñïàòü â êàçàğìå ğÿäîì ñ êîéêàìè;\n6.2 Áîéöû ÂÑÁ èìåşò ïğàâî ñïàòü â àíãàğàõ, íå ìåøàÿ ïğîåçäó ôóğàì;\n6.3 Áîéöû îòğÿäîâ ÓÑÁ, ÑÎÁĞ èìåşò ïğàâî ñïàòü â âíóòğè øòàáà íåîãğàíè÷åííîå âğåìÿ;\n6.4 Ñòàğøèå îôèöåğû èìåşò ïğàâî ñïàòü â ëşáîì ìåñòå;\n6.5 Áîéöû ÓÑÁ èìåşò ïğàâî ñïàòü íà ïëàöó, íî íå áîëåå ÷åì 2 ìèíóòû [120 ñåêóíä].")
-  imgui.Text(u8"Ãëàâà VII. Óâîëüíèòåëüíîå âğåìÿ.\n7.1 Óâîëüíèòåëüíîå âğåìÿ â áóäíèå äíè íà÷èíàåòñÿ â 22:00 è çàêàí÷èâàåòñÿ â 8:00,\nâ ïÿòíèöó è âûõîäíûå äíè íà÷èíàåòñÿ â 21:00 è çàêàí÷èâàåòñÿ â 9:00;\n7.2 Áîéöû, èìåşùèå çâàíèå Ìë.Ñåğæàíò è âûøå, èìåşò ïğàâî ñíÿòü ôîğìó è îòïğàâèòüñÿ â óâîëüíèòåëüíîå âğåìÿ.\nĞÿäîâûå è Åôğåéòîğû òàê æå ïğîäîëæàşò íåñòè ñëóæáó â ÷àñòè;\n7.3 Åñëè ñêëàäû ãîñóäàğñòâåííûõ îğãàíèçàöèé øòàòà ñîñòàâëÿşò ìåíåå 100.000 åäèíèö,\nòî óâîëüíèòåëüíîå âğåìÿ ÂÑÁ îòìåíÿåòñÿ äî òîãî ìîìåíòà, ïîêà ñêëàäû íå áóäóò çàïîëíåíû;\n7.4 Êîì.ñîñòàâ âçâîäîâ, ñòàğøèå îôèöåğû è áîéöû àğìèè, ìîãóò áûòü âûçâàíû â ÷àñòü ñ óâîëüíèòåëüíîãî âğåìåíè;\n7.5 Îòëîæèòü óâîëüíèòåëüíîå âğåìÿ èìåşò ïğàâî òîëüêî ñòàğøèå îôèöåğû.")
-  imgui.Text(u8"Ãëàâà VIII. Ñóáîğäèíàöèÿ/ïğàâèëà èñïîëüçîâàíèå ğàöèè.\n8.1 Âîåííîñëóæàùèå îáÿçàíû ñîáëşäàòü ñóáîğäèíàöèş â îáùåíèè ìåæäó ñîáîé;\n8.2 Ïğè ñîãëàñèè áîåö îáÿçàí îòâå÷àòü: `Òàê òî÷íî, òîâàğèù «Ôàìèëèÿ, Çâàíèå»!`,\nïğè íåñîãëàñèè: `Íèêàê íåò, Òîâàğèù «Ôàìèëèÿ, Çâàíèå»!`,\nåñëè áîåö ïîëó÷èë ïğèêàç: `Åñòü, Òîâàğèù «Ôàìèëèÿ, Çâàíèå»!`;\n8.3 Çäîğîâàÿñü ñ ñîñëóæèâöàìè, áîåö îáÿçàí ñêàçàòü: `Çäğàâèÿ æåëàş`\n[`ñàëàì`, `çäîğîâà` è ò.ï çàïğåùåíû];\n8.4 Âîåííîñëóæàùèé îáÿçàí îòâåòèòü: ` ÿ, òîâàğèù `çâàíèå` ` êîãäà åãî íàçûâàåò ñòàğøèé ïî çâàíèş;\n8.5 Åñëè âîåííîñëóæàùåãî âûçâàëè, òî ïî ïğèáûòèş îí îáÿçàí äîëîæèòü\n[Ïğèìåğ: `Ãåíåğàë Êàñåòè, ğÿäîâîé Èâàíîâ ïî âàøåìó ïğèêàçàíèş ïğèáûë`];\n8.6 Ñïğàøèâàÿ ÷òî-ëèáî, âîåííîñëóæàùèé äîëæåí ñêàçàòü: ` Òîâàğèù `çâàíèå`, ğàçğåøèòå îáğàòèòüñÿ` `;\n8.7 Ïğè ïîîùğåíèè âîåííîñëóæàùåãî îí äîëæåí îòâåòèòü: `Ñëóæó Àğìèè Las Venturas!`;\n8.8 Âîåííîñëóæàùèé îáÿçàí âåæëèâî îáùàòüñÿ ñ ëşáûì æèòåëåì øòàòà;\n8.9 Âîåííîñëóæàùèé îáÿçàí îáğàùàòüñÿ íà `Âû` ê ñâîèì ñîñëóæèâöàì\n[èñêëş÷åíèå: åñëè äîëæíîñòü è çâàíèå âûøå, òî ğàçğåøàåòñÿ îáğàùàòüñÿ íà `Òû`].\n8.10 Ïğè îáùåíèè â ğàöèş äîëæíû ñîáëşäàòüñÿ âñå âûøåïåğå÷èñëåííûå ïğàâèëà;\n8.11 Ïğè îáùåíèè ïî ğàöèè çàïğåùåíî:\n8.11.1 Âåñòè ğàçãîâîğû íå ñâÿçàííûå ñ íåñåíèåì ñëóæáû [Îôôòîïèòü, ôëóäèòü, ìåòàãåéìèíã];\n8.11.2 Óïîòğåáëÿòü íåöåíçóğíûå âûğàæåíèÿ [â OOC è IC ÷àò];\n8.11.3 Ãîâîğèòü áåç îáîçíà÷åíèÿ âàøåãî âçâîäà [ïğèìåğ: /r [ÂÀØ ÂÇÂÎÄ]:].\n8.12 Âîåííîñëóæàùèé îáÿçàí îáğàùàòüñÿ ê ñòàğøèì ñòğîãî ïî çâàíèş\n[Ïğèìåğ: `Òîâàğèù Ãåíåğàë Êàñåòè, ğàçğåøèòå îáğàòèòüñÿ?`];\n8.13 Âî âğåìÿ “ğàäèîìîë÷àíèå” [×Ñ ğàöèè] çàïğåùåíî âñåì èñïîëüçîâàòü ğàöèş äî ñíÿòèå ×Ñ\n[èñêëş÷åíèå: ğàöèåé ìîãóò ïîëüçîâàòüñÿ ñòàğøèå îôèöåğû, ÓÑÁ].\n")
-  imgui.Text(u8"Ãëàâà IX. Ïğîïóñêíîé ğåæèì.\n9.1 Íà òåğğèòîğèş ÷àñòè Las-Venturas Army ğàçğåøåíî ïğîïóñêàòü:\nÑåíàòîğîâ;\n- Ìığà è åãî çàìåñòèòåëåé\n[èñêëş÷åíèå: ê ïóíêòó 9.1 - çàìåñòèòåëè Ìığà ïğè âúåçäå íà îõğàíÿåìóş òåğğèòîğèş îáÿçàíû ïğåäîñòàâèòü ñëåäóşùèå äîêóìåíòû]:\nÄîêóìåíò ïîäòâåğæäàşùèé ëè÷íîñòü.\nÓäîñòîâåğåíèå ïîäòâåğæäàşùåå êóğèğóşùóş îòğàñëü.\nÄèğåêòîğà ÔÁĞ è åãî çàìåñòèòåëåé;\nØåğèôîâ SAPD è èõ çàìåñòèòåëåé;\n- Ãåíåğàëà San-Fierro Army.\nÎñòàëüíûì ãîñóäàğñòâåííûì ñëóæàùèì íà òåğğèòîğèè àğìèè ğàçğåøåíî íàõîäèòüñÿ\nïîñëå ïğåäóïğåæäåíèÿ ïî âîëíå äåïàğòàìåíòà è ïîëó÷åíèÿ îäîáğåíèÿ îò\nñòàğøèõ îôèöåğîâ, ëèáî ñòàğøåãî â ÷àñòè, íà äàííûé ìîìåíò;\n9.2 Áîéöû íà ïîñòó îáÿçàíû äîêëàäûâàòü â ğàöèş î ïğèáûòèè âñåõ ëèö â ãğàæäàíñêîé îäåæäå íà ÊÏÏ è ÑÊÏÏ;\n9.3 Áîéöû íà ïîñòó èìåşò ïğàâî ïğîâåğÿòü ïàñïîğòà ó âñåõ âúåçæàşùèõ è âûåçæàşùèõ âîåííîñëóæàùèõ,\näîëæíîñòíûõ è ãğàæäàíñêèõ ëèö\n[èñêëş÷åíèå: ñåíàòîğû øòàòà, ñòàğøèå îôèöåğû, êîëîííà ôóğ ñ áîåïğèïàñàìè];\n9.4 Çàïğåùåíî âûïóñêàòü ñ òåğğèòîğèè ÷àñòè ñîëäàò, êîòîğûå íå èìåşò ğàçğåøåíèÿ íà âûåçä îò ñòàğøèõ îôèöåğîâ\n[èñêëş÷åíèå: ïóíêò 9.5 óñòàâà àğìèè];\n9.5 Äëÿ èñïîëíåíèÿ îñíîâíûõ çàäà÷ ïîäğàçäåëåíèÿ,\náîéöû ÑÎÁĞ, ÓÑÁ, ÑÂÑÑ, ÂÑÁ, ÀÑÂ èìåşò ïğàâî ïîêèíóòü ÷àñòü áåç ğàçğåøåíèÿ ñòàğøèõ îôèöåğîâ;\n9.6 Âúåçä íà òåğğèòîğèş âîåííîé ÷àñòè íà ãğàæäàíñêîì òğàíñïîğòíîì ñğåäñòâå ñòğîãî çàïğåùåí\n[èñêëş÷åíèå: ñåíàòîğû øòàòà, ïàğêîâêà àâòîìîáèëÿ íà òåğğèòîğèè ÷àñòè,\nñîãëàñíî ãëàâå XII óñòàâà àğìèè];\n9.6.1 Ëèöàì, óêàçàííûì â ïóíêòå 9.1 óñòàâà àğìèè, äîïóñêàåòñÿ âúåçä íà òåğğèòîğèş âîåííîé ÷àñòè\níà ñëóæåáíîì òğàíñïîğòå èñêëş÷èòåëüíî â ñëóæåáíûõ öåëÿõ;\n9.7 Âñå âîåííîñëóæàùèå îáÿçàíû ïîêàçûâàòü ïàñïîğò íà ÊÏÏ è ÑÊÏÏ ïî ïğèáûòèè â ÷àñòü â ãğàæäàíñêîé ôîğìå\n[èñêëş÷åíèå: ñòàğøèå îôèöåğû];")
-  imgui.Text(u8"9.8 Âîçäóøíîå ïğîñòğàíñòâî Las-Venturas Army ÿâëÿåòñÿ çàêğûòûì\n[èñêëş÷åíèå: ãğóçîâûå âåğòîëåòû SFa ïğè ïîñòàâêå áîåïğèïàñîâ, à òàêæå ëèöà, óêàçàííûå â ïóíêòå 9.1 óñòàâà àğìèè].\n9.9 Ïîêèíóòü ÷àñòè âîçäóøíûì ïóò¸ì ğàçğåøàåòñÿ òîëüêî ñ ğàçğåøåíèÿ äèñïåò÷åğà (ÓÑÁ, ñòàğøèõ îôèöåğîâ)\n[èñêëş÷åíèå: ÓÑÁ, ïîğò ×Ñ, èãíîğèğîâàíèå çàïğîñà].")
-  imgui.Text(u8"Ãëàâà X. Âîåííûé òğàíñïîğò.\n10.1 Õàììåğû, ñòîÿùèå â ÃÂÒ, ğàçğåøåíî áğàòü áîéöàì: ÓÑÁ, ÑÎÁĞ, ÑÂÑÑ, ÂÑÁ, ÀÑÂ,\nà òàêæå äëÿ ñîïğîâîæäåíèÿ ôóğ è ïàòğóëèğîâàíèÿ ÷àñòè;\n10.2 Îôèöåğñêèå äæèïû â ÃÂÒ ğàçğåøåíî áğàòü áîéöàì: ÓÑÁ, ÑÎÁĞ, ÀÑÂ,\nÊîì.ñîñòàâó âçâîäîâ è îòğÿäîâ [Êîìàíäèğ, çàìåñòèòåëè, òğåíåğà];\n10.3 Îôèöåğñêèé äæèï ó êàçàğìû ğàçğåøåíî áğàòü: ÀÑÂ, äëÿ ïğîâåäåíèÿ ëåêöèé;\n10.4 Õàììåğà, ñòîÿùèå ó êàçàğìû, ğàçğåøåíî áğàòü áîéöàì: ÓÑÁ, ÑÎÁĞ;\n10.5 Õàììåğà, ñòîÿùèå â Øòàáå ÑÎÁĞ ğàçğåøåíî áğàòü áîéöàì: ÓÑÁ, ÑÎÁĞ;\n10.6 Âåğòîëåòû çà êàçàğìîé ğàçğåøåíî áğàòü áîéöàì: ÑÎÁĞ îò 3-õ ÷åëîâåê; \n ñ îïåğàòèâíèêà; ÑÂÑÑ îò 3-õ ÷åëîâåê, à òàêæå ñ ğàçğåøåíèÿ ñòàğøèõ îôèöåğîâ;\n10.7 Ãğóçîâèêè ñíàáæåíèÿ ğàçğåøåíî áğàòü áîéöàì: ÀÑÂ, ÓÑÁ, ÑÎÁĞ, ÂÑÁ\n[èñêëş÷åíèå: åôğåéòîğ è âûøå äëÿ ïîìîùè ÂÑÁ ñ ğàçğåøåíèÿ îôèöåğîâ øòàáà];\n10.8 Àâòîáóñû ğàçğåøåíî áğàòü ïî ïğèêàçó ñòàğøèõ îôèöåğîâ äëÿ ïğîâåäåíèÿ ìåğîïğèÿòèé âíóòğè àğìèè, ïğèçûâîâ;\n10.9 Ñàìîë¸ò Shamal èìåşò ïğàâî áğàòü: ñòàğøèå îôèöåğû, òàêæå ëşáîé áîåö ñ ğàçğåøåíèÿ ñòàğøèõ îôèöåğîâ;\n10.10 Ñòàğøèå îôèöåğû èìåşò ïğàâî áğàòü ëşáóş òåõíèêó àğìèè;")
-  imgui.Text(u8"Ãëàâà XI. Ïîëíîìî÷èÿ âçâîäîâ/äîëæíîñòåé.\n11.1 Âçâîä ÂÂÎ ïîä÷èíÿåòñÿ âñåì âûøåñòîÿùèì âçâîäàì, à èìåííî: ÀÑÂ, ñïåö. îòğÿäàì è ñòàğøèì îôèöåğàì;\n11.2 Âçâîäà ÑÂÑÑ, ÂÂÎ è ÂÑÁ íàõîäÿòñÿ íà îäíîì óğîâíå èåğàğõèè;\n11.3 Îòğÿä ñïåöèàëüíîãî íàçíà÷åíèÿ ÑÎÁĞ ïîä÷èíÿåòñÿ: ãåí. øòàáó, ÓÑÁ;\n11.4 ÓÑÁ ïîä÷èíÿåòñÿ: ãåí. øòàáó.\nÍà÷àëüíèê ÓÑÁ ïîä÷èíÿåòñÿ îò ïîëêîâíèêà\nÇàì.Íà÷àëüíèêà ÓÑÁ ïî÷èíÿåòñÿ îò ïîäïîëêîâíèêà\nîò Ñòàæ¸ğà è äî Ñò.Îïåğàòèâíèêà ïîä÷èíÿşòñÿ îò ìàéîğà.\n11.5 Ëşáîé áîåö Àğìèè Las Venturas, äîãîâîğèâøèñü ñ ÀÑÂ èëè ñòàğøèìè îôèöåğàìè,\nìîãóò îğãàíèçîâûâàòü òğåíèğîâêè è ñòğîèòü àğìèş äëÿ ıòèõ òğåíèğîâîê;\n11.6 Óïîëíîìî÷åííûå âûäàòü äèñöèïëèíàğíîå âçûñêàíèå,\nâî âğåìÿ íàêàçàíèÿ, îáÿçàíû ğóêîâîäñòâîâàòüñÿ òàáëèöåé íàêàçàíèé è äèñöèïëèíàğíûõ âçûñêàíèé;")
-  imgui.Text(u8"Ãëàâà XII. Ïğàâèëà ïàğêîâêè.\n12.1 Çà íàğóøåíèå ïğàâèë ïàğêîâêè, áîåö ìîæåò ïîëó÷èòü ñàíêöèè â âèäå íàğÿäà, çà ïîâòîğíûå íàğóøåíèÿ âûãîâîğ;\n12.2 Ğÿäîâûì è åôğåéòîğàì ñòğîãî çàïğåùåíî èìåòü ËÒÑ â ÷àñòè è ïğèëåãàşùåé ê íåé òåğğèòîğèè;\n12.3 Áîéöû, èìåşùèå çâàíèå Ìë.Ñåğæàíò è âûøå îáÿçàíû ïàğêîâàòüñÿ íà îáùåé ïàğêîâêå âíå ÷àñòè;\n12.4 Áîéöû, ñîñòîÿùèå â ñïåö.îòğÿäå ÑÎÁĞ èìåşò ïğàâî ïàğêîâàòü ËÒÑ ñåğîãî öâåòà,\nóêàçàííûå â ïóíêòå 3.29 äëÿ ÑÎÁĞ, íà ïàğêîâêå ñïğàâà îò øòàáà;\n12.5 Áîéöû, ñîñòîÿùèå â ñïåö.îòğÿäå ÓÑÁ, èìåşò ïğàâî ïàğêîâàòü ËÒÑ ÷¸ğíîãî öâåòà,\nóêàçàííûå â ïóíêòå 3.29 äëÿ ÓÑÁ, â áóíêåğå;\n12.6 Áîéöû, èìåşùèå çâàíèå îò Ìë.Ëåéòåíàíò äî Êàïèòàí èìåşò ïğàâî ïàğêîâàòüñÿ çà Àíãàğîì ¹2;\n12.7 Îôèöåğû øòàáà èìåşò ïğàâî ïàğêîâàòüñÿ òîëüêî â áóíêåğå;\n12.8 Áîéöû èìåşùèå ñâîé ëè÷íûé âåğòîë¸ò îáÿçàíû ïàğêîâàòü åãî\níà îáùåé ïàğêîâêå âíå ÷àñòè èëè ğÿäîì ñ íåé. Âíå çàâèñèìîñòè îò çâàíèÿ\n[èñêëş÷åíèå: ÓÑÁ ìîæíî ïğèïàğêîâàòü âåğòîë¸ò íà õîëìèêå íå äàëåêî îò ñâîåé ïàğêîâêè].\n12.9 Áîéöû, ñîñòîÿùèå â ÀÑÂ, èìåşò ïğàâî ïàğêîâàòü ËÒÑ áåëîãî öâåòà,\nóêàçàííûå â ïóíêòå 3.29, íà ïàğêîâêå ñëåâà îò êàçàğìû, ó áàíêîìàòà.;")
-  imgui.Text(u8"Ãëàâà XIII. Äğåññ-êîä.\n13.1 Âîåííîñëóæàùèé îáÿçàí íîñèòü ôîğìó óñòàíîâëåííîé íèæå ïğàâèëàìè:\n13.1.1 Ïîëåâóş ôîğìó ¹287 - ğàçğåøåíî íîñèòü âñåì âîåííîñëóæàùèì àğìèè.\n13.1.2 ×åğíûé êîñòşì ¹255 - ğàçğåøåíî íîñèòü çàìåñòèòåëÿì âçâîäîâ.\n13.1.3 Ñèíèé êîñòşì ¹61 - ğàçğåøåíî íîñèòü èñêëş÷èòåëüíî ñòàğøèì îôèöåğàì.\n13.1.4 Ñïåöèàëüíàÿ ôîğìà ¹179 - ğàçğåøåíî íîñèòü òğåíåğàì âçâîäîâ è âîåííîñëóæàùèì ïîëó÷èâøèå êğàïîâûé áåğåò.\n13.1.5 Ôîğìà ñ êàìóôëÿæíûìè øòàíàìè ¹73 - ğàçğåøåíî íîñèòü áîéöàì ÑÂÑÑ è ÂÑÁ, ÀÑÂ;\n13.1.6 Ôîğìà ¹191 - ïğåäíàçíà÷åíà äëÿ æåíñêîãî ïîëà, íåçàâèñèìî îò äîëæíîñòè è çâàíèÿ.\n13.2 Ïåğåîäåâøèñü â âîåííóş ôîğìó, âîåííîñëóæàùèé îáÿçàí ñíÿòü çàïğåùåííûå åìó àêñåññóàğû.\nÑïèñîê àêñåññóàğîâ ìîæíî ïîñìîòğåòü íà ôîğóìå.\n13.3 Àêñåññóàğû, íå óêàçàííûå â ïóíêòå 13.2 óñòàâà àğìèè ÿâëÿşòñÿ çàïğåùåííûìè äëÿ âñåõ âîåííîñëóæàùèõ.")
-  imgui.Text(u8"Ãëàâà XIV. Ñèñòåìà âûãîâîğîâ.\n14.1 Âûãîâîğû äëÿ îáû÷íûõ áîéöîâ.\n14.1.1 Âûãîâîğû äåëÿòñÿ íà âûãîâîğ ñ îòğàáîòêîé è áåç îòğàáîòêè.\n14.1.2 Åñëè áîåö ïîëó÷àåò âûãîâîğ ñ îòğàáîòêîé\nîí îáÿçàí ïîïûòàòüñÿ åãî îòğàáîòàòü.\n14.1.3 Åñëè ó áîéöà áûë 1 àêòèâíûé âûãîâîğ è îí ïîëó÷èë åùå îäèí - áîåö\nïîíèæàåòñÿ íà îäíó ñòóïåíü çà 2 àêòèâíûõ âûãîâîğà.\n14.1.4 Åñëè ó áîéöà áûëè 2 àêòèâíûõ âûãîâîğà è îí ïîëó÷èë åùå îäèí - áîåö\nóâîëüíÿåòñÿ èç àğìèè çà 3 àêòèâíûõ âûãîâîğà.\n14.2 Âûãîâîğû äëÿ ñòàğøèõ îôèöåğîâ\n14.2.1 Âûãîâîğ ñòàğøåìó îôèöåğó â ïğàâå âûäàòü òîëüêî Íà÷.Ãåí.Øòàáà è Ãåíåğàë.\nÈñêëş÷åíèå: àäìèíèñòğàöèÿ, FBI.\n14.2.2 Âûãîâîğû ó ñòàğøèõ îôèöåğîâ íå èìåşò ñğîêîâ, âûãîâîğ ìîæåò\nñíÿòü òîëüêî Ãåíåğàë àğìèè ïî èòîãàì ğàáîòû ñòàğøåãî îôèöåğà çà íåäåëş.\n14.2.3 Çà íåçíà÷èòåëüíûå íàğóøåíèÿ ñòàğøåìó îôèöåğó âûäàåòñÿ óñòíîå ïğåäóïğåæäåíèå.\n14.2.4 Åñëè ñòàğøèé îôèöåğ ïîëó÷àåò 2 óñòíûõ ïğåäóïğåæäåíèÿ åìó àâòîìàòè÷åñêè âûäàåòñÿ âûãîâîğ.\n14.2.5 Åñëè ó ñòàğøåãî îôèöåğà íàáèğàåòñÿ 2 àêòèâíûõ âûãîâîğà îí ïîêèäàåò ñâîé ïîñò è ïîíèæàåòñÿ äî Êàïèòàíà.\n14.2.6 Ñîòğóäíèê/áîåö èìåşùèé àêòèâíûé âûãîâîğ, â ïğàâå âçÿòü íåàêòèâ/îòïóñê,\níî ñğîê âûãîâîğà ñäâèãàåòñÿ äî îêîí÷àíèÿ ñğîêà íåàêòèâà/îòïóñêà.\n")
-  imgui.Text(u8"                                                                                              Ôåäåğàëüíîå ïîñòàíîâëåíèå")
-  imgui.Text(u8"\nÂñòóïèòåëüíàÿ ÷àñòü.\n0.1. Ôåäåğàëüíîå Ïîñòàíîâëåíèå — ıòî íîğìàòèâíî-ïğàâîâîé àêò, êîòîğûé áûë ïğèçâàí âíåñòè\n÷¸òêèå ğàìêè â ğàáîòó ãîñóäàğñòâåííûõ îğãàíèçàöèé.\nÔåäåğàëüíîå ïîñòàíîâëåíèå — ıòî íîğìàòèâíî-ïğàâîâîé àêò,\nêîòîğûé îáëàäàåò âûñøåé şğèäè÷åñêîé ñèëîé íàğàâíå ñ\nÊîíñòèòóöèåé øòàòà è ïğåâîñõîäèò ïî çíà÷èìîñòè óñòàâû ïîëèöåéñêèõ äåïàğòàìåíòîâ è àğìèé.\n0.2. Ôåäåğàëüíîå Ïîñòàíîâëåíèå èçäà¸òñÿ Ôåäåğàëüíûì Áşğî Ğàññëåäîâàíèé äëÿ Ïîëèöåéñêèõ è Àğìèé.\n0.3. Ôåäåğàëüíîå Ïîñòàíîâëåíèå ìîæåò áûòü èçìåíåíî Äèğåêòîğîì ÔÁĞ\n[ ïğè ó÷àñòèè ñëåäÿùåãî àäìèíèñòğàòîğà ]\nâ ëşáîå âğåìÿ äíÿ è íî÷è, åãî âñòóïëåíèå â ñèëó ïğîèñõîäèò ÷åğåç 48 ÷àñîâ ïîñëå ïóáëèêàöèè.\n0.4. Ôåäåğàëüíîå Ïîñòàíîâëåíèå îáÿçàíî âûïîëíÿòüñÿ âñåìè ñîòğóäíèêàìè âûøåóïîìÿíóòûõ îğãàíèçàöèé.\n0.5. Íåçíàíèå Ôåäåğàëüíîãî Ïîñòàíîâëåíèÿ íå îñâîáîæäàåò îáâèíÿåìîãî îò îòâåòñòâåííîñòè.")
-  imgui.Text(u8"Ãëàâà ¹1.\nÏğåñòóïëåíèÿ ïğîòèâ îáùåñòâåííîñòè.\n1.1. Çàïğåùàåòñÿ íåñàíêöèîíèğîâàííîå ïğèìåíåíèå îãíåñòğåëüíîãî îğóæèÿ ïğîòèâ ëşáîãî\nãğàæäàíñêîãî ëèöà / ñîòğóäíèêà ãîñóäàğñòâåííûõ îğãàíèçàöèé — ïîíèæåíèå / óâîëüíåíèå.\nÏğèìå÷àíèå: çà ñàíêöèîíèğîâàííîå ïğèìåíåíèå ïîäğàçóìåâàåòñÿ èñïîëüçîâàíèå ïğè ñàìîîáîğîíå,\níåâûïîëíåíèè çàêîííûõ òğåáîâàíèé ïîëèöèè. Äàííîå ïğèìå÷àíèå íå ğàñïğîñòğàíÿåòñÿ íà çåëåíûå çîíû.\n1.2. Çàïğåùàåòñÿ ëşáîå óíèæåíèå ÷åñòè è äîñòîèíñòâà ãğàæäàí íåçàâèñèìî\nîò åãî ñîöèàëüíîãî èëè ïğàâîâîãî ñòàòóñà — óâîëüíåíèå.\n1.3. Çàïğåùàåòñÿ ïğèìåíåíèå íàñèëèÿ â îòíîøåíèè êàê ãğàæäàí,\nòàê è çàêëş÷åííûõ ïîä ñòğàæó ëèö — ïîíèæåíèå / óâîëüíåíèå.\nÃëàâà ¹2.\nÏîñòàíîâëåíèå â îòíîøåíèè ñîòğóäíèêîâ Ôåäåğàëüíîãî Áşğî Ğàññëåäîâàíèé è Ìığèè.\n2.1. Çàïğåùàåòñÿ ïğîíèêàòü íà òåğğèòîğèş FBI áåç ïîëó÷åíèÿ îôèöèàëüíîãî ïğîïóñêà\nîò ëşáîãî èç àãåíòîâ ÔÁĞ âûøå Ìë.Àãåíòà — âûãîâîğ / ïîíèæåíèå.\nÏğèìå÷àíèå: Ãóáåğíàòîğó, Ãåíåğàëàì àğìèé, Øåğèôàì ğàçğåøåíèå íå òğåáóåòñÿ.\n2.2. Çàïğåùàåòñÿ âûäàâàòü ñåáÿ çà ëşáîãî ãîñóäàğñòâåííîãî ñîòğóäíèêà — ïîíèæåíèå / óâîëüíåíèå.\nÈñêëş÷åíèå: àãåíòû ÔÁĞ âî âğåìÿ âåäåíèÿ ñëåäñòâåííûõ äåéñòâèé ïîä ïğèêğûòèåì.\n2.3. Çàïğåùàåòñÿ áğàòü ğóêîâîäñòâî îïåğàöèÿìè\n[ òåğàêòû / ïîõèùåíèÿ / èíàÿ ğàáîòà ïîä ğóêîâîäñòâîì ÔÁĞ ]\náåç ïğèêàçà ÔÁĞ — óâîëüíåíèå.\n2.4. Çàïğåùàåòñÿ íåïîä÷èíåíèå àãåíòó ÔÁĞ â ğàìêàõ åãî çàêîííûõ òğåáîâàíèé — ïîíèæåíèå / óâîëüíåíèå.\nÈñêëş÷åíèå: àãåíòû ÔÁĞ âî âğåìÿ âåäåíèÿ ñëåäñòâåííûõ äåéñòâèé ïîä ïğèêğûòèåì.\n2.5. Çàïğåùàåòñÿ óãğîæàòü / øàíòàæèğîâàòü àãåíòà ÔÁĞ — óâîëüíåíèå.\n2.6. Çàïğåùàåòñÿ îñïàğèâàòü ïîíèæåíèå / óâîëüíåíèå, âûäàííîå àãåíòîì ÔÁĞ / Ãóáåğíàòîğîì ãäå-ëèáî,\nêğîìå êàê â ñïåöèàëüíîì ğàçäåëå æàëîá — ïîíèæåíèå / óâîëüíåíèå.\n2.7. Çàïğåùàåòñÿ ğàñêğûâàòü ëè÷íîñòü àãåíòà ÔÁĞ, åñëè òîò íàõîäèòñÿ ïîä ïğèêğûòèåì — óâîëüíåíèå.\nÏğèìå÷àíèå: åñëè àãåíò ÔÁĞ íàõîäèòñÿ âî âíåäğåíèè ÷åğåç êîìàíäó /spy, à íå ÷åğåç ìàñêèğîâêó,\nòî äàííûé ïóíêò íå îòìåíÿåò íàêàçàíèÿ çà åãî íàğóøåíèå.\nÍå âàæíî â êàêîì ÷àòå áóäåò íàïèñàíà èíôîğìàöèÿ, êîòîğàÿ ïğèâåëà ê ğàñêğûòèş àãåíòà.\n2.8. Çàïğåùàåòñÿ âíîñèòü ïîìåõè â ğàáîòó àòòåñòàöèîííîé êîìèññèè îò âûñøèõ îğãàíîâ âëàñòè,\nïğîâîäÿùèõ ëşáîãî ğîäà ïğîâåğêè â ãîñóäàğñòâåííûõ ñòğóêòóğàõ — âûãîâîğ / ïîíèæåíèå.\nÏğèìå÷àíèå: çàïğåùåíî ïîäñêàçûâàòü ñîòğóäíèêàì ëşáûìè ñïîñîáàìè, áóäü-òî IC, áóäü-òî OOC. [ /r, /rb, /ticket ]\n2.9. Çàïğåùàåòñÿ èçáåãàòü ïğîâåğêè îò ÔÁĞ — ïîíèæåíèå / óâîëüíåíèå.\nÏğèìå÷àíèå: àãåíò èìååò ïğàâî âàñ âûçâàòü â áşğî è ïğîâåñòè ïğîâåğêó.\nÏğè îòêàçå ïîñëåäóåò ñîîòâåòñòâóşùåå íàêàçàíèå ñîãëàñíî ïóíêòó.\n2.10. Çàïğåùåíî ïğèìåíÿòü ñàíêöèè ïî îòíîøåíèş ê àãåíòàì ÔÁĞ ïğè èñïîëíåíèè\n[ øòğàôû, îáúÿâëåíèå â ğîçûñê ],\nà òàêæå âíîñèòü ïîìåõó â ğàáîòó ñîòğóäíèêàì ôåäåğàëüíîãî áşğî — âûãîâîğ / ïîíèæåíèå.\nÏğèìå÷àíèå: àãåíò â ìàñêèğîâêå íå ÿâëÿåòñÿ àãåíòîì ïğè èñïîëíåíèè.")
-  imgui.Text(u8"Ãëàâà ¹3.\nÏîñòàíîâëåíèå â îòíîøåíèè Ïîëèöåéñêèõ Äåïàğòàìåíòîâ è Àğìèé.\n3.1. Çàïğåùàşòñÿ ëşáûå ïğîÿâëåíèÿ íåàäåêâàòíîãî ïîâåäåíèÿ — âûãîâîğ / ïîíèæåíèå / óâîëüíåíèå.\nÏğèìå÷àíèå: ïîä íåàäåêâàòíûì ïîâåäåíèåì ïîäğàçóìåâàåòñÿ ïğûæêè ãîñ. ñëóæàùèì ïî àâòîìîáèëÿì,\níàìåğåííîå âûòàëêèâàíèå àâòî íà äîğîãó è èíûå íàğóøåíèÿ çàêîíîâ øòàòà,\nêîòîğûå ïğèâîäÿò â ñîâîêóïíîñòü íàğóøåíèé íåñêîëüêèõ ïóíêòîâ Ôåäåğàëüíîãî Ïîñòàíîâëåíèÿ\n3.2. Çàïğåùàåòñÿ íàğóøàòü ïğàâèëà ñòğîÿ — âûãîâîğ.\nÏğèìå÷àíèå: òàêæå ïîä ıòèì ïîäğàçóìåâàåòñÿ áåñïğè÷èííîå è áåñïî÷âåííîå èñïîëüçîâàíèå êîìàíäû /time,\nàíèìàöèè è ïğî÷èå òåëîäâèæåíèÿ.\n3.3. Çàïğåùàåòñÿ ïğîäàæà ëşáîãî ãîñóäàğñòâåííîãî èìóùåñòâà\n[ êëş÷è îò êàìåğ/ôîğìà/ôóğû ñ áîåïğèïàñàìè ] — óâîëüíåíèå + ×Ñ ôğàêöèè.\n3.4. Çàïğåùàåòñÿ äàâàòü çàâåäîìî ëîæíóş èíôîğìàöèş ãîñóäàğñòâåííîìó ñîòğóäíèêó — âûãîâîğ / ïîíèæåíèå / óâîëüíåíèå.\nÏğèìå÷àíèå: ïîä äà÷åé ëîæíûõ ïîêàçàíèé ïîäğàçóìåâàåòñÿ ëşáàÿ âûäóìàííàÿ/ñîêğûòàÿ èíôîğìàöèÿ,\nêîòîğóş çàïğàøèâàåò ãîñóäàğñòâåííûé ñîòğóäíèê.\n3.5. Çàïğåùàåòñÿ íåîáîñíîâàííî òğåáîâàòü äîêóìåíòû,\nà òàê æå ïğîâîäèòü îáûñê ãğàæäàíñêèõ ëèö — âûãîâîğ / ïîíèæåíèå.\n3.6. Çàïğåùàåòñÿ ãîñóäàğñòâåííûì ñîòğóäíèêàì âõîäèòü â ñãîâîğû ñ ìàôèåé/áàíäàìè — óâîëüíåíèå.\nÈñêëş÷åíèå: ñïåö. îïåğàöèè [ îáÿçàòåëüíûé êîíòğîëü ñòàğøåãî îôèöåğà ].\n3.7. Çàïğåùàåòñÿ áåç ğàçğåøåíèÿ / ïğîïóñêà [ ñàìîâîëüíî ] ïîêèäàòü ÷àñòü / ñâîé\nãîğîä — âûãîâîğ / ïîíèæåíèå / óâîëüíåíèå.\nÏğèìå÷àíèå: íàõîæäåíèå â íåéòğàëüíîé çîíå íå ÿâëÿåòñÿ íàğóøåíèåì äàííîãî ïóíêòà ôåäåğàëüíîãî ïîñòàíîâëåíèÿ.\n3.8. Çàïğåùàåòñÿ íîñèòü ôîğìó íå ñîîòâåòñòâóşùóş çàíèìàåìîé äîëæíîñòè / çâàíèş — âûãîâîğ / ïîíèæåíèå.\nÏğèìå÷àíèå: ñîîòâåòñòâèå ôîğìû è çâàíèé óñòàíàâëèâàåòñÿ ğóêîâîäèòåëåì îğãàíèçàöèè.\n3.9. Çàïğåùàåòñÿ â ğàáî÷åå âğåìÿ íîñèòü íà ñåáå âûçûâàşùèå àêñåññóàğû — âûãîâîğ / ïîíèæåíèå.\nÏğèìå÷àíèå: ïîä âûçûâàşùèìè àêñåññóàğàìè ïîäğàçóìåâàåòñÿ ÿğêî âûğàæåííûå ïğåäìåòû íà òåëå ãîñ. ñëóæàùåãî.\nĞàçğåøåíû ñòğîãèå î÷êè, ÷àñû, ÷¸ğíûå ïîâÿçêè íà ëèöî. Òàê æå ğàçğåøåíû àêñåññóàğû,\nñîîòâåòñòâóşùèå ïîäğàçäåëåíèş ãîñ. ñëóæàùåãî [ áåğåòû, êîâáîéñêèå øëÿïû ].\n3.10. Çàïğåùåíî óìûøëåííî óäàëÿòü ñ áàçû äàííûõ ğîçûñêà áåç óâåäîìëåíèÿ ÔÁĞ — âûãîâîğ / ïîíèæåíèå / óâîëüíåíèå.\nÄîïîëíåíèå: Åñëè âû îøèáëèñü è ìîæåòå äîêàçàòü ñâîş íåâèíîâíîñòü, âû äîëæíû ñîîáùèòü îá ıòîì â äåïàğòàìåíò.")
-  imgui.Text(u8"Ãëàâà ¹4.\nÏğåñòóïëåíèÿ ãîñóäàğñòâåííûõ ñîòğóäíèêîâ ïğîòèâ íîğì Óñòàâà, è äğóãèõ ïğàâîâûõ äîêóìåíòîâ.\n4.1. Çàïğåùàåòñÿ âûäàâàòü ğîçûñê è(èëè) âûïèñûâàòü øòğàô áåç âåñîìîé íà òî ïğè÷èíû, ïî ïğîñüáå.\nÈíûìè ñëîâàìè - íå âèäÿ ôàêòà íàğóøåíèÿ ëè÷íî — âûãîâîğ / ïîíèæåíèå / óâîëüíåíèå.\n4.2. Çàïğåùàåòñÿ ïğîâîöèğîâàòü êîãî-ëèáî, íå âàæíî, êàêîãî ğîäà ïğîâîêàöèè — âûãîâîğ / ïîíèæåíèå / óâîëüíåíèå.\n4.3. Çàïğåùàåòñÿ èñïîëüçîâàòü íåöåíçóğíóş áğàíü, à òàêæå îñêîğáëåíèÿ — âûãîâîğ / ïîíèæåíèå / óâîëüíåíèå.\nÏğèìå÷àíèå: ïî äàííîìó ïóíêòó ğàññìîòğåíèş ïîäëåæàò æàëîáû/îáğàùåíèÿ, â ñëó÷àå,\nåñëè ñîòğóäíèê íàõîäèëñÿ ïğè èñïîëíåíèè è/èëè òåêñò îòíîñèëñÿ ê\nïğîôåññèîíàëüíîé äåÿòåëüíîñòè.\nÍàğóøåíèå ıòîãî ïóíêòà îäèíàêîâî ğàñïğîñòğàíÿåòñÿ êàê íà IC òàê è íà OOC ÷àòû [ ñìñ, /fb, /f. ].\n4.4. Çàïğåùàåòñÿ â ğàáî÷åå âğåìÿ çàíèìàòüñÿ ñâîèìè äåëàìè â ğàáî÷åå âğåìÿ,\nóñòàíîâëåííîå óñòàâîì ñîîòâåòñòâóşùåé îğãàíèçàöèè\n[ èãğà â êàçèíî, ó÷àñòèå â ïåéíòáîëå, base jump, äåğáè, è äğóãèå ìåğîïğèÿòèÿ â ğàçâëåêàòåëüíîì öåíòğå.\nÂ òîì ÷èñëå çàïğåùåíû ïîñåùåíèÿ àâòîÿğìàğêè è àóêöèîííûõ\nãàğàæåé. ] — âûãîâîğ / ïîíèæåíèå / óâîëüíåíèå.\nÈñêëş÷åíèå: ìåğîïğèÿòèÿ îò àäìèíèñòğàöèè [ ñî ñêğèíîì òåëåïîğòà ],\nèñïîëíåíèå ñëóæåáíûõ îáÿçàííîñòåé [ îõğàíà àâòîğûíêà, ïğîâåğêà âûøåóïîìÿíóòûõ ìåñò\náîéöàìè ñïåö.îòğÿäîâ àğìèé è ñò. îôèöåğîâ ], îáåä ñ 13:00 äî 14:00 [ ôîğìó íåîáõîäèìî ñíÿòü ],\nğàçğåøåíèå ğóêîâîäñòâà, ñò. îôèöåğû.\nÏğèìå÷àíèå: ğóêîâîäñòâî äåïàğòàìåíòà èëè àğìèè íå èìååò ïğàâà âûäàâàòü ğàçğåøåíèå íà ïîñåùåíèå\n[ ñ öåëüş èãğû ]\nâ êàçèíî è àóêöèîííûõ ãàğàæåé è íå èìååò ïğàâî â ğàáî÷åå âğåìÿ ïîñåùàòü [ ñ öåëüş èãğû ] èõ ñàìîñòîÿòåëüíî.\n4.5. Çàïğåùàåòñÿ õğàíåíèå è óïîòğåáëåíèå íàğêîòè÷åñêèõ âåùåñòâ, à òàêæå õğàíåíèå êğàäåíûõ ìàòåğèàëîâ.")
-  imgui.Text(u8"Ïîä ıòó ñòàòüş ïîïàäàåò õğàíåíèå âûøåïåğå÷èñëåííûõ ìàòåğèàëîâ â ñåéôå. — óâîëüíåíèå.\nÈñêëş÷åíèå: Ñîòğóäíèêè PD, ñîòğóäíèêè ÔÁĞ â öåëÿõ ñïåö. îïåğàöèé [ ñ îáÿçàòåëüíûì êîíòğîëåì ñòàğøåãî îôèöåğà ].\n4.6. Çàïğåùàåòñÿ íàõîäèòüñÿ â îïàñíîì ğàéîíå âíå ñïåö. îïåğàöèé — âûãîâîğ / ïîíèæåíèå / óâîëüíåíèå.\nÈñêëş÷åíèå: ôåäåğàëüíûé ïàòğóëü,ñïåöèàëüíûå îòäåëû [ îáÿçàòåëüíûé êîíòğîëü ñî ñòîğîíû ğóêîâîäñòâà îğãàíèçàöèè ].\n4.7. Çàïğåùàåòñÿ îáúÿâëÿòü â ğîçûñê íå ïî óãîëîâíîìó êîäåêñó — âûãîâîğ / ïîíèæåíèå.\n4.8. Çàïğåùàåòñÿ íåïîä÷èíåíèå ñòàğøåìó ïî çâàíèş â ğàìêàõ çàêîíà — âûãîâîğ / ïîíèæåíèå.\nÈñêëş÷åíèå: Ñòàğøèå ïî çâàíèş - â ğàìêàõ îäíîé îğãàíèçàöèè.\n4.9. Çàïğåùàåòñÿ óïîòğåáëÿòü àëêîãîëü â ğàáî÷åå âğåìÿ — ïîíèæåíèå.\n4.10. Çàïğåùàåòñÿ áğàòü / äàâàòü âçÿòêè — óâîëüíåíèå.\nÏğèìå÷àíèå: ğàçğåøàåòñÿ îòûãğîâêà Bad Cops.\nÎíà äîëæíà áûòü ñ ïğåäâàğèòåëüíûì ñíÿòèåì âñåõ íàøèâîê è íàäåâàíèåì ìàñêè ñ ôèêñàöèåé\n[ screen & /time ].\nÂ ñëó÷àå åñëè âàñ óñïåëè çàäåğæàòü è ñíÿòü ìàñêó - ïğèâëåêàåòåñü ïî óêàçàííîé ñòàòüå Ôåäåğàëüíîãî ïîñòàíîâëåíèÿ.\n4.11. Çàïğåùàåòñÿ íàğóøàòü ïğàâèëà âîëíû äåïàğòàìåíòà — âûãîâîğ / ïîíèæåíèå.\nÏğèìå÷àíèå: ğóêîâîäñòâî ãîñ.îğãàíèçàöèåé îáÿçàíî îïîâåùàòü ïğèáûâøèõ ğàáîòíèêîâ\níà ğàáîòó î ïîëîæåíèè ×Ñ ïî âîëíå äåïàğòàìåíòà, äàííûé ïóíêò\nğàñïğîñòğàíÿåòñÿ äàæå íà òåõ, êòî «íå çíàë» ÷òî âîëíà íà ×Ñ.\nÍàğóøåíèåì äàííîé ñòàòüè ÔÏ ÿâëÿşòñÿ ñîîáùåíèÿ ñëåäóşùåãî ñîäåğæàíèÿ: «OG, íå ğåàãèğóåì», «ó÷òåì\nïğè ïîíèæåíèè», à òàêæå ñîîáùåíèÿ ïğî åäó â íåôîğìàëüíîì êîíòåêñòå «íàêîğìèòå ïå÷åíüêàìè»,\n«äàéòå åäû», «íàêîğìèòå ïîí÷èêàìè».\n4.12. Çàïğåùàåòñÿ áåñïğè÷èííî îáûñêèâàòü ãîñóäàğñòâåííûõ ñîòğóäíèêîâ — âûãîâîğ / ïîíèæåíèå.\nÏğèìå÷àíèå: â ñëó÷àå, åñëè îáûñêèâàåòñÿ àãåíò ïîä ïğèêğûòèåì/ìàñêèğîâêîé,")
-  imgui.Text(u8"êîòîğûé ñåáÿ íå ğàñêğûë ïî ñîáñòâåííûì ïğè÷èíàì — îôèöåğ ïîëèöèè íå áóäåò ïğèâëå÷¸í ê îòâåòñòâåííîñòè.\n4.13. Çàïğåùàåòñÿ ëèøàòü ëèöåíçèè áåç âåñîìûõ íà òî ïğè÷èí — êîìïåíñàöèÿ ñòîèìîñòè ëèöåíçèé çà ñ÷¸ò\nîòîáğàâøåãî îôèöåğà ñ âûíåñåíèåì äîï. ñàíêöèè — âûãîâîğ / ïîíèæåíèå.\nÏğèìå÷àíèå: åñëè Âû óâèäåëè, ÷òî ãîñóäàğñòâåííûé ñîòğóäíèê íàğóøèë ïğàâèëà äîğîæíîãî äâèæåíèÿ\nèëè â ãğàæäàíñêîé ôîğìå ÓÊ [ ãäå ïğåäóñìàòğèâàåòñÿ èçúÿòèå ëèöåíçèè ],\nè ó Âàñ åñòü äîêàçàòåëüñòâà, Âû èìååòå ïîëíîå ïğàâî çàáğàòü ëèöåíçèş.\n4.14. Çàïğåùàåòñÿ íàğóøàòü ñóáîğäèíàöèş ïğè îáùåíèè ñî ñòàğøèìè ïî çâàíèş — âûãîâîğ / ïîíèæåíèå.\n4.15. Çàïğåùàåòñÿ óáèéñòâî â íàğó÷íèêàõ èëè ıôôåêòîì ıëåêòğîøîêåğà — ïîíèæåíèå / óâîëüíåíèå.\nÏğèìå÷àíèå: ğàçğåøåíî èñïîëüçîâàòü ıëåêòğîøîêåğ â ïåğåñòğåëêå, åñëè îíà íà÷àëàñü â Çåë¸íîé Çîíå\nè ó âàñ åñòü äîêàçàòåëüñòâà.\n4.16. Çàïğåùàåòñÿ íàğóøàòü çàêîíû øòàòà, à èìåííî: óãîëîâíûé êîäåêñ è àäìèíèñòğàòèâíûé êîäåêñû,\nêîíñòèòóöèÿ, óñòàâû ÏÄ / Àğìèé è äğóãèå ïğàâèëà óñòàíîâëåííûå êàêèìè-ëèáî\nïğàâîâûìè àêòàìè — âûãîâîğ / ïîíèæåíèå / óâîëüíåíèå.\nÈñêëş÷åíèå: åñëè ó Âàñ åñòü äîêàçàòåëüñòâà, ïîäòâåğæäàşùèå âàøó ïîëíóş ëèáî ÷àñòè÷íóş\níåâèíîâíîñòü ïî ôàêòàì: ñàìîîáîğîíû ñåáÿ è áëèçêèõ; çàùèòû ëè÷íîãî èìóùåñòâà;\nïğè âûïîëíåíèè ñëóæåáíîãî äîëãà, íî íàõîäÿñü íå ïğè èñïîëíåíèè ñëóæåáíûõ îáÿçàííîñòåé [ íå â ôîğìå ];\nïğèêàç ñòàğøåãî ïî çâàíèş â ğàìêàõ çàêîíà.\n4.17. Çàïğåùàåòñÿ íåïîä÷èíåíèå ğóêîâîäÿùåìó ñîñòàâó ÔÁĞ — ïîíèæåíèå / óâîëüíåíèå.\n4.18. Çàïğåùàåòñÿ íåïîä÷èíåíèå Ãóáåğíàòîğó â ğàìêàõ çàêîíà Øòàòà Evolve — ïîíèæåíèå / óâîëüíåíèå.\n4.19. Çàïğåùàåòñÿ îòäàâàòü ïğèêàçû Ãóáåğíàòîğó — óâîëüíåíèå.\n4.20. Çàïğåùàåòñÿ îòäàâàòü ïğèêàçû ñîòğóäíèêàì ÔÁĞ — ïîíèæåíèå / óâîëüíåíèå.")
-  imgui.Text(u8"4.21. Çàïğåùåíî íàäåâàòü ìàñêó íå íàõîäÿñü íà ñïåö.îïåğàöèè/íà îáëàâå èëè çàåçäå/îòáèâàíèè/çàùèòå ïîğòà.\nĞàçğåøåíî íàäåòü ìàñêó ïî ïğèêàçó àãåíòà ÔÁĞ ñ íàëè÷èåì äîêàçàòåëüñòâ. — âûãîâîğ / ïîíèæåíèå.\nÏğèìå÷àíèå: íîñèòü ìàñêó â ó÷àñòêå [ â ãàğàæå ] òàêæå çàïğåùåíî.\nÏğè çëîóïîòğåáëåíèè äàííûì ïóíêòîì ñëåäóåò íàêàçàíèå çà ïğåâûøåíèå äîëæíîñòíûõ ïîëíîìî÷èé.\n4.22. Çàïğåùàåòñÿ èñïîëüçîâàòü ëè÷íîå òğàíñïîğòíîå ñğåäñòâî â ñëóæåáíûõ öåëÿõ è ñèòóàöèÿõ,\níå ïğåäóñìîòğåííûõ äåéñòâóşùèì óñòàâîì ãîñ.îğãàíèçàöèè. — âûãîâîğ.\nÏğèìå÷àíèå: äàííûé ïóíêò îòíîñèòñÿ â ïåğâóş î÷åğåäü ê àğìèÿì.\nÈñïîëüçîâàòü ëè÷íûé òğàíñïîğò ìîãóò ñïåö. ïîäğàçäåëåíèÿ è Ñòàğøèé Îôèöåğñêèé ñîñòàâ àğìèé,\nÃëàâû è âûøå ÔÁĞ.\n4.23. Çàïğåùàåòñÿ ïğåâûøàòü ñâîè äîëæíîñòíûå ïîëíîìî÷èÿ — ïîíèæåíèå / óâîëüíåíèå.\n4.24. Çàïğåùàåòñÿ îáúÿâëÿòü â ğîçûñê ïîäîçğåâàåìîãî/ïğåñòóïíèêà åñëè íà íåì íàäåòà ìàñêà — âûãîâîğ / ïîíèæåíèå.\nÈñêëş÷åíèå: Ïîäîçğåâàåìîãî óäàëîñü çàäåğæàòü [ îáåçäâèæèòü òàéçåğîì èëè íàğó÷íèêàìè ],\nâ òàêîì ñëó÷àå ğîçûñê âûäàåòñÿ íåçàâèñèìî îò òîãî, â ìàñêå îí èëè íåò.\nÄîïóñêàåòñÿ òàêæå âûäà÷à ğîçûñêà â ñëó÷àå íåïîñğåäñòâåííîãî êîíòàêòà ñ ïîäîçğåâàåìûì áåç ìàñêè äî ïîãîíè\n[ ò.å. âîçìîæíîñòü ğàçãëÿäåòü ëèöî, íàëè÷èå äîêàçàòåëüñòâ ñ /time îáÿçàòåëüíî ].\n4.25. Çàïğåùàåòñÿ íàğóøàòü îáùèå ïğàâèëà ïîëèöèè — âûãîâîğ / ïîíèæåíèå / óâîëüíåíèå.\n4.26. Çàïğåùåíî áåçäåéñòâèå / íåèñïîëíåíèå îáÿçàííîñòåé ïî îêàçàíèş ïîìîùè ëèöàì,\níàõîäÿùèìñÿ â îïàñíîé ñèòóàöèè, ïî ïğåäîòâğàùåíèş íàíåñåíèÿ óùåğáà èìóùåñòâó. — âûãîâîğ / ïîíèæåíèå / óâîëüíåíèå.\n4.27. Çàïğåùàåòñÿ ïğîèçâîäèòü àğåñò ñîòğóäíèêà AF, à òàêæå âñåõ ëèäåğîâ ãîñóäàğñòâåííûõ ñòğóêòóğ\nè èõ çàìåñòèòåëåé â ğàáî÷åå è âûõîäíîå âğåìÿ áåç îäîáğåíèÿ FBI — âûãîâîğ / ïîíèæåíèå.")
-  imgui.Text(u8"Ïğèìå÷àíèå: Â ñëó÷àå, åñëè ïî çàïğîñó â äåïàğòàìåíò íèêòî íå äàåò îòâåò â òå÷åíèå 5 ìèíóò,\nòî ğàçğåøàåòñÿ àğåñò è áåç îäîáğåíèÿ FBI, ÍÎ ñ îáÿçàòåëüíîé ôèêñàöèåé çàïğîñà.\n4.28. Çàïğåùàåòñÿ íàğóøàòü ïğàâèëà ïîñåùåíèÿ Ìığèè,\nà òàêæå âîñïğåïÿòñòâîâàòü çàêîííîé äåÿòåëüíîñòè ìèíèñòğîâ è âèöå-ãóáåğíàòîğîâ,\nèãíîğèğîâàòü èõ òğåáîâàíèÿ, óêàçàííûå â çàêîíå «Î ğàáîòå ìığèè» — âûãîâîğ / ïîíèæåíèå.\n4.29. Çàïğåùàåòñÿ èñïîëüçîâàòü ìåãàôîí â ëè÷íûõ öåëÿõ,\nà èìåííî â ğàçëè÷íûõ ïåğåãîâîğîâ ñ äğóçüÿìè,\nøóòêè è âñÿêèé áğåä, íå îòíîñÿùèéñÿ ê ğàáî÷èì ìîìåíòàì — âûãîâîğ / ïîíèæåíèå.\nÏğèìå÷àíèå: [ Ïğèìåğû — «İé, áğî, êàê äåëà?» & «Ïîéäåì ïîêàòàåìñÿ?» ] — òàê äåëàòü íåëüçÿ!")
-  imgui.Text(u8"Ãëàâà ¹5.\n5.1. Ñîòğóäíèê ÔÁĞ èìååò ïğàâî ñìåíèòü íàêàçàíèå íà äèñöèïëèíàğíîå âçûñêàíèå â âèäå ïğåäóïğåæäåíèÿ\nëèáî èíîå íàêàçàíèå íå ïğåäóñìîòğåííîå ïóíêòàìè\níàñòîÿùåãî áşğî ïğè ñìÿã÷àşùèõ îáñòîÿòåëüñòâàõ.\nÑìÿã÷àşùèì îáñòîÿòåëüñòâîì ÿâëÿåòñÿ ğàñêàÿíèå ãîñ. ñëóæàùåãî â ñîäåÿííîì íàğóøåíèè,\nëèáî êîíñòğóêòèâíàÿ àğãóìåíòàöèÿ ñâîèõ äåéñòâèé\nñ ïîäêğåïëåíèåì äîêàçàòåëüñòâ ñâîèì àğãóìåíòàì.\n5.2. Ñîòğóäíèê Àğìèè èëè ÏÄ îáÿçàí ñäåëàòü âûâîäû î ñâîåé âèíå è ïîñòàğàòüñÿ áîëåå íå íàğóøàòü ÔÏ.\n5.3. Ñìåíà íàêàçàíèÿ îñóùåñòâëÿåòñÿ àãåíòîì ÔÁĞ, èñõîäÿ èç åãî çäğàâîãî ñìûñëà è îïûòà.\nÂûäà÷à ïğåäóïğåæäåíèé çà ïóíêòû, êîòîğûå òàê èëè èíà÷å ñïîñîáíû ïîøàòíóòü ãîñóäàğñòâåííóş áåçîïàñíîñòü - çàïğåùåíû.\n5.4. Ñîòğóäíèê èìååò ïğàâî ïîëó÷èòü òîëüêî îäíî ïğåäóïğåæäåíèå,\nïğè ïîñëåäóşùèõ íàğóøåíèÿõ ñëåäóşò áîëåå òÿæêèå íàêàçàíèÿ.\n5.5. Ïóíêòû, ïğåäóñìàòğèâàşùèå âûáîğ âèäà íàêàçàíèÿ,\nïîäğàçóìåâàşò ïğèìåíåíèå îäíîãî èç íèõ ïî óñìîòğåíèş âûäàşùåãî íàêàçàíèå,\nâ çàâèñèìîñòè îò òÿæåñòè íàğóøåíèÿ è íàëè÷èÿ àêòèâíûõ ïğåäóïğåæäåíèé,\nëèáî íàğóøåíèé â ïğîøëîì.\n5.6. Íåîğäèíàğíûå ñèòóàöèè. Â ñëó÷àå ñîâåğøåíèÿ ãîñóäàğñòâåííûì ñîòğóäíèêîì äåÿíèÿ,\nêîòîğîå ìîæíî ñ÷åñòü çà êîñâåííîå íàğóøåíèå òîé èëè èíîé ñòàòüè îäíîãî èç\níîğìàòèâíî-ïğàâîâûõ àêòîâ, ğóêîâîäÿùèé ñîñòàâ ÔÁĞ èìååò ïğàâî ïğèìåíèòü\nëşáîé èç äåéñòâóşùèõ ïóíêòîâ çàêîíîäàòåëüíûõ áàç, ññûëàÿñü ïğè ıòîì íà ÔÏ.")
-  imgui.Text(u8"Ãëàâà ¹6.\nÏîëíîìî÷èÿ àãåíòîâ ÔÁĞ.\n6.1. Äåæóğíûé FBI è âûøå èìååò ïğàâî îòäàòü ïğèêàç áîéöàì àğìèè äî çâàíèÿ Êàïèòàí è îôèöåğàì ïîëèöèè äî çâàíèÿ\nÊàïèòàí âêëş÷èòåëüíî ïğè ×Ñ [ òåğàêòå/ïîõèùåíèå ].\n6.2. Àãåíò DEA/CID èìååò ïğàâî îòäàòü ïğèêàç áîéöàì àğìèè äî çâàíèÿ\nÏğàïîğùèê è îôèöåğàì ïîëèöèè äî çâàíèÿ Ñò.Ïğàïîğùèê âêëş÷èòåëüíî.\n6.3. Ãëàâà DEA/CID èìååò ïğàâî îòäàòü ïğèêàç áîéöàì àğìèè äî çâàíèÿ\nÌàéîğ è îôèöåğàì ïîëèöèè äî çâàíèÿ Ìàéîğ âêëş÷èòåëüíî.\n6.4. Èíñïåêòîğ FBI èìååò ïğàâî îòäàòü ïğèêàç áîéöàì àğìèè äî çâàíèÿ \nÏîäïîëêîâíèê è îôèöåğàì ïîëèöèè äî çâàíèÿ Ïîäïîëêîâíèê âêëş÷èòåëüíî.\n6.5. Çàì. Äèğåêòîğà FBI èìååò ïğàâî îòäàòü ïğèêàç áîéöàì àğìèè äî çâàíèÿ\nÏîëêîâíèê è îôèöåğàì ïîëèöèè äî çâàíèÿ Ïîëêîâíèê âêëş÷èòåëüíî.\nÏğèìå÷àíèå: Â ñëó÷àÿõ, êîãäà Äèğåêòîğà ÔÁĞ íåò íà ğàáî÷åì ìåñòå [ íå â èãğå/âûõîäíîé ],\nÇàìåñòèòåëü Äèğåêòîğà ÔÁĞ èìååò ïğàâî îòäàòü ïğèêàç ëşáîìó ñîòğóäíèêó ñèëîâûõ ñòğóêòóğ.\n6.6. Äèğåêòîğ FBI èìååò ïğàâî îòäàòü ïğèêàç áîéöàì àğìèè äî çâàíèÿ\nÃåíåğàë è îôèöåğàì ïîëèöèè äî çâàíèÿ Øåğèô âêëş÷èòåëüíî.")
-  imgui.Text(u8"Ãëàâà ¹7.\nÂèäû ñàíêöèé äëÿ ãîñóäàğñòâåííûõ ñòğóêòóğ.\n7.1. Ñàíêöèè, ïåğå÷èñëåííûå íèæå â äàííîé ãëàâå ÿâëÿşòñÿ åäèíûìè.\nËşáàÿ äğóãàÿ ñàíêöèÿ, âûäàííàÿ íå ïî äàííûì ïğàâèëàì íå íàäåëÿåòñÿ şğèäè÷åñêîé ñèëîé.\n7.2. Ñîòğóäíèê ÏÄ/Àğìèè ìîæåò ïîëó÷èòü ñàíêöèş â âèäå ïğåäóïğåæäåíèÿ\nçà íàğóøåíèå Ôåäåğàëüíîãî ïîñòàíîâëåíèÿ / âíóòğåííåãî óñòàâà îğãàíèçàöèè.\n7.3. Ñîòğóäíèê ÏÄ/Àğìèè ìîæåò ïîëó÷èòü ñàíêöèş â âèäå íàğÿäà çà íàğóøåíèå\nÔåäåğàëüíîãî ïîñòàíîâëåíèÿ / âíóòğåííåãî óñòàâà îğãàíèçàöèè.\n7.4. Ñîòğóäíèê ÏÄ/Àğìèè ìîæåò ïîëó÷èòü ñàíêöèş â âèäå îáû÷íîãî âûãîâîğà íà 7 äíåé çà íàğóøåíèå\nÔåäåğàëüíîãî ïîñòàíîâëåíèÿ / âíóòğåííåãî óñòàâà îğãàíèçàöèè.\n7.5. Ñîòğóäíèê ÏÄ/Àğìèè ìîæåò ïîëó÷èòü ñàíêöèş â âèäå ñòğîãîãî âûãîâîğà íà 14 äíåé ñ\nïğîïóñêîì ïîâûøåíèÿ çà íàğóøåíèå Ôåäåğàëüíîãî ïîñòàíîâëåíèÿ / âíóòğåííåãî óñòàâà îğãàíèçàöèè.\n7.6. Ñîòğóäíèê ÏÄ/Àğìèè ìîæåò ïîëó÷èòü ñàíêöèş â âèäå ïîíèæåíèÿ çà íàğóøåíèå\nÔåäåğàëüíîãî ïîñòàíîâëåíèÿ / âíóòğåííåãî óñòàâà îğãàíèçàöèè.\n7.7. Ñîòğóäíèê ÏÄ/Àğìèè ìîæåò ïîëó÷èòü ñàíêöèş â âèäå óâîëüíåíèÿ çà íàğóøåíèå\nÔåäåğàëüíîãî ïîñòàíîâëåíèÿ / âíóòğåííåãî óñòàâà îğãàíèçàöèè.")
+  imgui.Begin(u8"Ã“Ã±Ã²Ã Ã¢ Ã¨ Ã”Ã", main_window_state)
+  imgui.Text(u8"                                                                                              Ã“Ã‘Ã’Ã€Ã‚")
+  imgui.Text(u8"\nÃƒÃ«Ã Ã¢Ã  I. ÃÃ¡Ã¹Ã¨Ã¥ Ã¯Ã®Ã«Ã®Ã¦Ã¥Ã­Ã¨Ã¿.\n1.1 Ã“Ã±Ã²Ã Ã¢ Ã®Ã¯Ã°Ã¥Ã¤Ã¥Ã«Ã¿Ã¥Ã² Ã®Ã¡Ã¹Ã¨Ã¥ Ã¯Ã°Ã Ã¢Ã  Ã¨ Ã®Ã¡Ã¿Ã§Ã Ã­Ã­Ã®Ã±Ã²Ã¨ Ã¢Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ãµ Las-Venturas Army Ã¨ Ã¨Ãµ Ã¢Ã§Ã Ã¨Ã¬Ã®Ã®Ã²Ã­Ã®Ã¸Ã¥Ã­Ã¨Ã¿,\nÃ®Ã¡Ã¿Ã§Ã Ã­Ã­Ã®Ã±Ã²Ã¨ Ã®Ã±Ã­Ã®Ã¢Ã­Ã»Ãµ Ã¤Ã®Ã«Ã¦Ã­Ã®Ã±Ã²Ã­Ã»Ãµ Ã«Ã¨Ã¶,Ã¯Ã®Ã¤Ã°Ã Ã§Ã¤Ã¥Ã«Ã¥Ã­Ã¨Ã©, Ã¯Ã°Ã Ã¢Ã¨Ã«Ã  Ã¢Ã­Ã³Ã²Ã°Ã¥Ã­Ã­Ã¥Ã£Ã® Ã¯Ã®Ã°Ã¿Ã¤ÃªÃ  Ã¢ Ã¢Ã®Ã¨Ã­Ã±ÃªÃ®Ã© Ã·Ã Ã±Ã²Ã¨ Ã¨ Ã¥Ã¥ Ã¯Ã®Ã¤Ã°Ã Ã§Ã¤Ã¥Ã«Ã¥Ã­Ã¨Ã¿Ãµ;\n1.2 Ã„Ã Ã­Ã­Ã»Ã© Ã³Ã±Ã²Ã Ã¢ Ã®Ã¡Ã¿Ã§Ã Ã­Ã» Ã§Ã­Ã Ã²Ã¼ Ã¨ Ã±Ã®Ã¡Ã«Ã¾Ã¤Ã Ã²Ã¼ Ã¢Ã±Ã¥ Ã¢Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã¥ Ã Ã°Ã¬Ã¨Ã¨;\n1.3 ÃÃ¥Ã§Ã­Ã Ã­Ã¨Ã¥ Ã³Ã±Ã²Ã Ã¢Ã  Ã­Ã¥ Ã®Ã±Ã¢Ã®Ã¡Ã®Ã¦Ã¤Ã Ã¥Ã² Ã¢Ã Ã± Ã®Ã² Ã®Ã²Ã¢Ã¥Ã²Ã±Ã²Ã¢Ã¥Ã­Ã­Ã®Ã±Ã²Ã¨;\n1.4 Ã“Ã±Ã²Ã Ã¢ Ã¬Ã®Ã¦Ã¥Ã² Ã¡Ã»Ã²Ã¼ Ã¨Ã§Ã¬Ã¥Ã­Ã¥Ã­ Ã£Ã¥Ã­Ã¥Ã°Ã Ã«Ã®Ã¬ Ã¢ Ã«Ã¾Ã¡Ã®Ã¥ Ã¢Ã°Ã¥Ã¬Ã¿;\n1.5 ÃÃ Ã¡Ã®Ã·Ã¨Ã© Ã¤Ã¥Ã­Ã¼ Ã¢ Ã¡Ã³Ã¤Ã­Ã¨ Ã­Ã Ã·Ã¨Ã­Ã Ã¥Ã²Ã±Ã¿ Ã± 8:00 Ã¤Ã® 22:00, Ã¢ Ã¢Ã»ÃµÃ®Ã¤Ã­Ã»Ã¥ Ã¤Ã­Ã¨ Ã¨ Ã¢ Ã¯Ã¿Ã²Ã­Ã¨Ã¶Ã³ Ã± 9:00 Ã¤Ã® 21:00;\n1.6 ÃÃ¡Ã¥Ã¤ Ã­Ã Ã·Ã¨Ã­Ã Ã¥Ã²Ã±Ã¿ Ã± 13:00 Ã¤Ã® 14:00. Ã‚ Ã¤Ã Ã­Ã­Ã®Ã¥ Ã¢Ã°Ã¥Ã¬Ã¿ Ã¡Ã®Ã©Ã¶Ã Ã¬ Ã°Ã Ã§Ã°Ã¥Ã¸Ã Ã¥Ã²Ã±Ã¿ Ã§Ã Ã­Ã¨Ã¬Ã Ã²Ã¼Ã±Ã¿ Ã±Ã¢Ã®Ã¨Ã¬Ã¨ Ã¤Ã¥Ã«Ã Ã¬Ã¨, Ã®Ã±Ã²Ã Ã¢Ã¨Ã¢ Ã´Ã®Ã°Ã¬Ã³ Ã¢ ÃªÃ Ã§Ã Ã°Ã¬Ã¥\n[Ã°Ã¿Ã¤Ã®Ã¢Ã»Ã¬ Ã¨ Ã¥Ã´Ã°Ã¥Ã©Ã²Ã®Ã°Ã Ã¬ Ã°Ã Ã§Ã°Ã¥Ã¸Ã Ã¥Ã²Ã±Ã¿ Ã¯Ã®Ã±Ã¥Ã¹Ã Ã²Ã¼ Ã²Ã¨Ã°, ÃªÃ®Ã²Ã®Ã°Ã»Ã© Ã­Ã ÃµÃ®Ã¤Ã¨Ã²Ã±Ã¿ Ã­Ã  Ã²Ã°Ã¥Ã­Ã¨Ã°Ã®Ã¢Ã®Ã·Ã­Ã®Ã© Ã¯Ã«Ã®Ã¹Ã Ã¤ÃªÃ¥, Ã§Ã  ÃªÃ Ã§Ã Ã°Ã¬Ã®Ã©];\n1.7 ÃÃ²Ã¯Ã³Ã±Ã²Ã¨Ã²Ã¼ Ã¢ Ã£Ã®Ã°Ã®Ã¤ Ã¡Ã¥Ã§ Ã´Ã®Ã°Ã¬Ã» Ã¬Ã®Ã¦Ã¥Ã² Ã«Ã¾Ã¡Ã®Ã© Ã±Ã²Ã Ã°Ã¸Ã¨Ã© Ã®Ã´Ã¨Ã¶Ã¥Ã°. Ã‚ Ã½Ã²Ã® Ã¢Ã°Ã¥Ã¬Ã¿ Ã¢Ã» Ã­Ã¥ Ã¬Ã®Ã¦Ã¥Ã²Ã¥ Ã¯Ã®Ã±Ã¥Ã¹Ã Ã²Ã¼ ÃªÃ Ã§Ã¨Ã­Ã® Ã¨ Ã£Ã Ã°Ã Ã¦Ã¨,\nÃ²Ã ÃªÃ¦Ã¥ Ã­Ã Ã°Ã³Ã¸Ã Ã²Ã¼ Ã³Ã±Ã²Ã Ã¢ Ã¨ Ã”Ã;\n1.8 ÃÃ°Ã¨ÃªÃ Ã§, Ã³ÃªÃ Ã§, Ã°Ã Ã±Ã¯Ã®Ã°Ã¿Ã¦Ã¥Ã­Ã¨Ã¥ Ã¨ Ã².Ã¯. Ã£Ã¥Ã­Ã¥Ã°Ã Ã«Ã  Ã­Ã¥ Ã¬Ã®Ã£Ã³Ã² Ã¡Ã»Ã²Ã¼ Ã¯Ã®Ã¤Ã¢Ã¥Ã°Ã£Ã­Ã³Ã²Ã» Ã®Ã±Ã¯Ã Ã°Ã¨Ã¢Ã Ã­Ã¨Ã¾ Ã¨Ã«Ã¨ Ã­Ã¥Ã¢Ã»Ã¯Ã®Ã«Ã­Ã¥Ã­Ã¨Ã¾\n[Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã³ÃªÃ Ã§ Ã¯Ã°Ã®Ã²Ã¨Ã¢Ã®Ã°Ã¥Ã·Ã¨Ã² Ã´Ã¥Ã¤Ã¥Ã°Ã Ã«Ã¼Ã­Ã®Ã¬Ã³ Ã¯Ã®Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­Ã¨Ã¾];\n1.9 ÃƒÃ¥Ã­Ã¥Ã°Ã Ã« Ã¢Ã¯Ã°Ã Ã¢Ã¥ Ã¢Ã»Ã¤Ã Ã²Ã¼ Ã¯Ã°Ã¨ÃªÃ Ã§ Ã¯Ã°Ã®Ã²Ã¨Ã¢Ã®Ã°Ã¥Ã·Ã Ã¹Ã¨Ã© Ã³Ã±Ã²Ã Ã¢Ã³ Ã Ã°Ã¬Ã¨Ã¨;")
+  imgui.Text(u8"ÃƒÃ«Ã Ã¢Ã  II. ÃÃ±Ã­Ã®Ã¢Ã­Ã»Ã¥ Ã®Ã¡Ã¿Ã§Ã Ã­Ã­Ã®Ã±Ã²Ã¨ Ã¢Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ãµ.\n2.1 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã© Ã®Ã¡Ã¿Ã§Ã Ã­ Ã±Ã®Ã¡Ã«Ã¾Ã¤Ã Ã²Ã¼ Ã³Ã±Ã²Ã Ã¢ Ã Ã°Ã¬Ã¨Ã¨, ÃªÃ®Ã­Ã±Ã²Ã¨Ã²Ã³Ã¶Ã¨Ã¾, Ã§Ã ÃªÃ®Ã­Ã» Ã¸Ã²Ã Ã²Ã , Ã´Ã¥Ã¤Ã¥Ã°Ã Ã«Ã¼Ã­Ã®Ã¥ Ã¯Ã®Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­Ã¨Ã¥;\n2.2 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã© Ã®Ã¡Ã¿Ã§Ã Ã­ Ã¡Ã¥Ã±Ã¯Ã°Ã¥ÃªÃ®Ã±Ã«Ã®Ã¢Ã­Ã® Ã¢Ã»Ã¯Ã®Ã«Ã­Ã¿Ã²Ã¼ Ã¯Ã°Ã¨ÃªÃ Ã§Ã» Ã±Ã²Ã Ã°Ã¸Ã¨Ãµ Ã¯Ã® Ã§Ã¢Ã Ã­Ã¨Ã¾ Ã¨ Ã¤Ã®Ã«Ã¦Ã­Ã®Ã±Ã²Ã¨ Ã¢ Ã°Ã Ã¬ÃªÃ Ãµ Ã¨Ãµ Ã¯Ã®Ã«Ã­Ã®Ã¬Ã®Ã·Ã¨Ã© Ã¨ Ã§Ã Ã¹Ã¨Ã¹Ã Ã²Ã¼ Ã¨Ãµ Ã¢ Ã¡Ã®Ã¾;\n2.3 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã© Ã®Ã¡Ã¿Ã§Ã Ã­ Ã¡Ã»Ã²Ã¼ Ã¡Ã¤Ã¨Ã²Ã¥Ã«Ã¼Ã­Ã»Ã¬, Ã±Ã²Ã°Ã®Ã£Ã® ÃµÃ°Ã Ã­Ã¨Ã²Ã¼ Ã¢Ã®Ã¥Ã­Ã­Ã³Ã¾ Ã¨ Ã£Ã®Ã±Ã³Ã¤Ã Ã°Ã±Ã²Ã¢Ã¥Ã­Ã­Ã³Ã¾ Ã²Ã Ã©Ã­Ã³;\n2.4 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã© Ã®Ã¡Ã¿Ã§Ã Ã­ Ã§Ã­Ã Ã²Ã¼ Ã¢ Ã«Ã¨Ã¶Ã® Ã¨ Ã¯Ã®Ã¨Ã¬Â¸Ã­Ã­Ã® Ã±Ã²Ã Ã°Ã¸Ã¨Ã© Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã±ÃªÃ¨Ã© Ã±Ã®Ã±Ã²Ã Ã¢;\n2.5 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã© Ã®Ã¡Ã¿Ã§Ã Ã­ Ã§Ã Ã¹Ã¨Ã¹Ã Ã²Ã¼ Ã¨Ã¬Ã³Ã¹Ã¥Ã±Ã²Ã¢Ã® Ã¨ Ã¶Ã¥Ã­Ã­Ã®Ã±Ã²Ã¨ Ã Ã°Ã¬Ã¨Ã¨ Las-Venturas;\n2.6 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã© Ã®Ã¡Ã¿Ã§Ã Ã­ Ã­Ã ÃµÃ®Ã¤Ã¨Ã²Ã¼Ã±Ã¿ Ã­Ã  Ã±Ã«Ã³Ã¦Ã¡Ã¥ Ã¢ Ã²Ã¥Ã·Ã¥Ã­Ã¨Ã¥ Ã¢Ã±Ã¥Ã£Ã® Ã°Ã Ã¡Ã®Ã·Ã¥Ã£Ã® Ã¤Ã­Ã¿;\n2.7 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã© Ã®Ã¡Ã¿Ã§Ã Ã­ Ã¯Ã°Ã¨ Ã¯Ã°Ã¨Ã¡Ã«Ã¨Ã¦Ã¥Ã­Ã¨Ã¨ Ãª Ã¡Ã Ã§Ã¥ Ã­Ã Ã¤Ã¥Ã¢Ã Ã²Ã¼ Ã¯Ã®Ã¢Ã¿Ã§ÃªÃ³ Â¹7, Ã¢Ã® Ã¢Ã°Ã¥Ã¬Ã¿ Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¨Ã²Ã¥Ã«Ã¼Ã­Ã®Ã£Ã® Ã¢Ã°Ã¥Ã¬Ã¥Ã­Ã¨ Ã¢Ã±Ã¥ Ã¡Ã¥Ã§ Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¿;\n2.8 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã© Ã®Ã¡Ã¿Ã§Ã Ã­ Ã¯Ã°Ã¥Ã¤ÃºÃ¿Ã¢Ã«Ã¿Ã²Ã¼ Ã¤Ã®ÃªÃ³Ã¬Ã¥Ã­Ã²Ã» Ã¤Ã¥Ã¦Ã³Ã°Ã­Ã®Ã¬Ã³ Ã­Ã  ÃŠÃÃ / Ã‘ÃŠÃÃ Ã¯Ã® Ã¯Ã°Ã¨Ã¡Ã»Ã²Ã¨Ã¾ Ã­Ã  Ã±Ã«Ã³Ã¦Ã¡Ã³ [Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã±Ã²Ã Ã°Ã¸Ã¨Ã¥ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã»];\n2.9 ÃŠÃ Ã¦Ã¤Ã»Ã© Ã¢Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã©, Ã­Ã ÃµÃ®Ã¤Ã¿Ã¹Ã¨Ã©Ã±Ã¿ Ã­Ã  ÃŠÃÃ / Ã‘ÃŠÃÃ, Ã®Ã¡Ã¿Ã§Ã Ã­ Ã§Ã Ã¯Ã°Ã®Ã±Ã¨Ã²Ã¼ Ã¤Ã®ÃªÃ³Ã¬Ã¥Ã­Ã²Ã» Ã³ ÃªÃ Ã¦Ã¤Ã®Ã£Ã® Ã£Ã°Ã Ã¦Ã¤Ã Ã­Ã±ÃªÃ®Ã£Ã®,\nÃ¯Ã°Ã¨Ã¡Ã»Ã¢Ã¸Ã¥Ã£Ã® Ã­Ã  Ã¯Ã°Ã®Ã¯Ã³Ã±ÃªÃ­Ã®Ã© Ã¯Ã³Ã­ÃªÃ²[Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã±Ã²Ã Ã°Ã¸Ã¨Ã¥ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã»];\n2.10 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã© Ã­Ã  ÃŠÃÃ / Ã‘ÃŠÃÃ Ã¯Ã¥Ã°Ã¥Ã¤ Ã²Ã¥Ã¬ ÃªÃ Ãª Ã§Ã Ã¯Ã°Ã®Ã±Ã¨Ã²Ã¼ Ã¤Ã®ÃªÃ³Ã¬Ã¥Ã­Ã²Ã» Ã³ Ã£Ã°Ã Ã¦Ã¤Ã Ã­Ã±ÃªÃ®Ã£Ã®, Ã¢Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã© Ã®Ã¡Ã¿Ã§Ã Ã­ Ã¯Ã°Ã¥Ã¤Ã±Ã²Ã Ã¢Ã¨Ã²Ã¼Ã±Ã¿\n[ÃÃ°Ã¨Ã¬Ã¥Ã°: Â“Ã‡Ã¤Ã°Ã Ã¢Ã±Ã²Ã¢Ã³Ã©Ã²Ã¥, Ã¿ Ã°Ã¿Ã¤Ã®Ã¢Ã®Ã© ÃˆÃ¢Ã Ã­Ã®Ã¢. ÃÃ°Ã¥Ã¤ÃºÃ¿Ã¢Ã¨Ã²Ã¥ Ã¯Ã®Ã¦Ã Ã«Ã³Ã©Ã±Ã²Ã  Ã¢Ã Ã¸Ã¨ Ã¤Ã®ÃªÃ³Ã¬Ã¥Ã­Ã²Ã».Â”].\n2.11 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã© Ã®Ã¡Ã¿Ã§Ã Ã­ Ã¢Ã±Ã¥Ã£Ã¤Ã  Ã¡Ã»Ã²Ã¼ Ã¢ Ã®Ã¯Ã°Ã¿Ã²Ã­Ã®Ã¬ Ã¢Ã¨Ã¤Ã¥ [100 hp Ã¨ 100 armor].")
+  imgui.Text(u8"ÃƒÃ«Ã Ã¢Ã  III. ÃÃ±Ã­Ã®Ã¢Ã­Ã»Ã¥ Ã§Ã Ã¯Ã°Ã¥Ã²Ã» Ã¢Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ãµ.\n3.1 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã¯Ã°Ã®Ã¤Ã Ã¢Ã Ã²Ã¼, Ã²Ã¥Ã°Ã¿Ã²Ã¼ Ã¢Ã®Ã¥Ã­Ã­Ã³Ã¾ Ã´Ã®Ã°Ã¬Ã³\n[Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã¬Ã¥Ã°Ã®Ã¯Ã°Ã¨Ã¿Ã²Ã¨Ã¥ Ã®Ã² Ã±Ã¥Ã­Ã Ã²Ã  Ã¢ Ã®Ã¯Ã Ã±Ã­Ã®Ã¬ Ã°Ã Ã©Ã®Ã­Ã¥, Ã“Ã‘Ã, Ã‘ÃÃÃ Ãª Ã¯Ã°Ã¨ Ã±Ã¯Ã¥Ã¶.Ã®Ã¯Ã¥Ã°Ã Ã¶Ã¨Ã¿Ãµ].\n3.2 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã¤Ã®Ã±Ã²Ã Ã¢Ã«Ã¿Ã²Ã¼ Ã¡Ã®Ã¥Ã¯Ã°Ã¨Ã¯Ã Ã±Ã» ÃÃÃƒ.\n3.3 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã¢Ã»Ã¯Ã°Ã Ã¸Ã¨Ã¢Ã Ã²Ã¼ Ã§Ã¢Ã Ã­Ã¨Ã¥, Ã¤Ã®Ã«Ã¦Ã­Ã®Ã±Ã²Ã¼.\n3.4 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã±Ã Ã¬Ã®Ã¢Ã®Ã«Ã¼Ã­Ã® Ã¯Ã®ÃªÃ¨Ã¤Ã Ã²Ã¼ Ã²Ã¥Ã°Ã°Ã¨Ã²Ã®Ã°Ã¨Ã¾ Ã·Ã Ã±Ã²Ã¨\n[Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã¯Ã³Ã­ÃªÃ² Ã³Ã±Ã²Ã Ã¢Ã  5.1].\n3.5 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã­Ã ÃµÃ®Ã¤Ã¨Ã²Ã¼Ã±Ã¿ Ã¢ Ã®Ã¯Ã Ã±Ã­Ã®Ã¬ Ã°Ã Ã©Ã®Ã­Ã¥\n[Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã“Ã‘Ã, Ã‘ÃÃÃ Ã¢ Ã°Ã¥Ã©Ã¤Ã¥, Ã¬Ã¥Ã°Ã®Ã¯Ã°Ã¨Ã¿Ã²Ã¨Ã¿ Ã®Ã² Ã±Ã¥Ã­Ã Ã²Ã®Ã°Ã®Ã¢].\n3.6 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã®Ã²ÃªÃ°Ã»Ã¢Ã Ã²Ã¼ Ã®Ã£Ã®Ã­Ã¼ Ã¯Ã® Ã±Ã¢Ã®Ã¨Ã¬ Ã±Ã®Ã±Ã«Ã³Ã¦Ã¨Ã¢Ã¶Ã Ã¬\n[Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã±Ã²Ã°Ã¥Ã«Ã¼Ã¡Ã  ÃµÃ®Ã«Ã®Ã±Ã²Ã»Ã¬Ã¨ Ã¯Ã Ã²Ã°Ã®Ã­Ã Ã¬Ã¨ Ã­Ã  Ã²Ã°Ã¥Ã­Ã¨Ã°Ã®Ã¢ÃªÃ¥].\n3.7 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã®Ã¡Ã¬Ã Ã­Ã»Ã¢Ã Ã²Ã¼ Ã±Ã®Ã±Ã«Ã³Ã¦Ã¨Ã¢Ã¶Ã¥Ã¢.\n3.8 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã¯Ã°Ã¥Ã°Ã¥ÃªÃ Ã²Ã¼Ã±Ã¿ Ã±Ã® Ã±Ã²Ã Ã°Ã¸Ã¨Ã¬Ã¨ Ã¯Ã® Ã§Ã¢Ã Ã­Ã¨Ã¾ Ã¨Ã«Ã¨ Ã¤Ã®Ã«Ã¦Ã­Ã®Ã±Ã²Ã¨.\n3.9 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã¨Ã±Ã¯Ã®Ã«Ã¼Ã§Ã®Ã¢Ã Ã²Ã¼ Ã­Ã¥Ã¶Ã¥Ã­Ã§Ã³Ã°Ã­Ã³Ã¾ Ã¡Ã°Ã Ã­Ã¼, Ã®Ã±ÃªÃ®Ã°Ã¡Ã«Ã¿Ã²Ã¼, Ã³Ã­Ã¨Ã¦Ã Ã²Ã¼ ÃªÃ®Ã£Ã®-Ã«Ã¨Ã¡Ã®\n[Ã‚ OOC Ã¨ SMS Ã¢ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¥Ã«Ã¼Ã­Ã®!].\n3.10 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã±Ã®Ã¤Ã¥Ã©Ã±Ã²Ã¢Ã®Ã¢Ã Ã²Ã¼ Ã«Ã¾Ã¡Ã»Ã¬ Ã¯Ã°Ã¥Ã±Ã²Ã³Ã¯Ã­Ã»Ã¬ Ã£Ã°Ã³Ã¯Ã¯Ã¨Ã°Ã®Ã¢ÃªÃ Ã¬.\n3.11 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã§Ã«Ã®Ã³Ã¯Ã®Ã²Ã°Ã¥Ã¡Ã«Ã¿Ã²Ã¼ Ã±Ã¢Ã®Ã¨Ã¬Ã¨ Ã±Ã«Ã³Ã¦Ã¥Ã¡Ã­Ã»Ã¬Ã¨ Ã¯Ã®Ã«Ã­Ã®Ã¬Ã®Ã·Ã¨Ã¿Ã¬Ã¨.\n3.12 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã¯Ã°Ã¥Ã¢Ã»Ã¸Ã Ã²Ã¼ Ã±Ã¢Ã®Ã¨ Ã±Ã«Ã³Ã¦Ã¥Ã¡Ã­Ã»Ã¥ Ã¯Ã®Ã«Ã­Ã®Ã¬Ã®Ã·Ã¨Ã¿.\n3.13 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã±Ã Ã¬Ã®Ã¢Ã®Ã«Ã¼Ã­Ã® Ã¬Ã¥Ã­Ã¿Ã²Ã¼ Ã¯Ã®Ã¤Ã°Ã Ã§Ã¤Ã¥Ã«Ã¥Ã­Ã¨Ã¥.\n3.14 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã±Ã Ã¬Ã®Ã¢Ã®Ã«Ã¼Ã­Ã® Ã¬Ã¥Ã­Ã¿Ã²Ã¼ ÃªÃ Ã±ÃªÃ³\n[Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã±Ã²Ã Ã°Ã¸Ã¨Ã¥ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã», Ã“Ã‘Ã].\n3.15 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã±Ã Ã¬Ã®Ã¢Ã®Ã«Ã¼Ã­Ã® Ã±Ã­Ã¨Ã¬Ã Ã²Ã¼ ÃªÃ Ã±ÃªÃ³, Ã®Ã²ÃªÃ«Ã¾Ã·Ã Ã²Ã¼ Ã¬Ã Ã¿Ã·Ã®Ãª, Ã­Ã Ã¤Ã¥Ã¢Ã Ã²Ã¼ Ã¬Ã Ã±ÃªÃ³\n[Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã±Ã²Ã Ã°Ã¸Ã¨Ã¥ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã»; Ã“Ã‘Ã, Ã‘ÃÃÃ Ã¯Ã°Ã¨ Ã±Ã¯Ã¥Ã¶. Ã®Ã¯Ã¥Ã°Ã Ã¶Ã¨Ã¨, Ã—Ã‘ Ã¢ Ã¯Ã®Ã°Ã²Ã³; Ã‘Ã‚Ã‘Ã‘ Ã¯Ã°Ã¨ Ã—Ã‘ Ã¯Ã¥Ã°Ã¥Ã¤ Ã¢ÃºÃ¥Ã§Ã¤Ã®Ã¬ Ã¢ Ã¯Ã®Ã°Ã² LS;\nÃ‚Ã‘Ã - Ã°Ã¥Ã¦Ã¨Ã¬ Â“Ã±Ã²Ã¥Ã«Ã±Â”. Ã‚ Ã·Ã Ã±Ã²Ã¨ ÃªÃ Ã¦Ã¤Ã»Ã© Ã¢Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã© Ã®Ã¡Ã¿Ã§Ã Ã­ Ã±Ã­Ã¨Ã¬Ã Ã²Ã¼ Ã¬Ã Ã±ÃªÃ³ Ã¢Ã­Ã¥ Ã§Ã Ã¢Ã¨Ã±Ã¨Ã¬Ã®Ã±Ã²Ã¨ Ã®Ã² Ã¤Ã®Ã«Ã¦Ã­Ã®Ã±Ã²Ã¨ Ã¨ Ã§Ã¢Ã Ã­Ã¨Ã¿].\n[ÃÃ°Ã¨Ã¬Ã¥Ã·Ã Ã­Ã¨Ã¥: ÃªÃ®Ã£Ã¤Ã  Ã¢Ã» Ã­Ã Ã¤Ã¥Ã«Ã¨ Ã¬Ã Ã±ÃªÃ³ Ã¢Ã» Ã®Ã¡Ã¿Ã§Ã Ã­Ã» Ã±Ã®Ã®Ã¡Ã¹Ã¨Ã²Ã¼ Ã®Ã¡ Ã½Ã²Ã®Ã¬ Ã¢ Ã°Ã Ã¶Ã¨Ã¾ Ã±Ã«Ã¥Ã¤Ã³Ã¾Ã¹Ã¨Ã¬ Ã®Ã¡Ã°Ã Ã§Ã®Ã¬:")
+  imgui.Text(u8"/r [tag] ÃÃ²ÃªÃ«Ã¾Ã·Ã Ã¾ Ã¬Ã Ã¿Ã·Ã®Ãª Ã¤Ã¨Ã±Ã²Ã Ã­Ã¶Ã¨Ã®Ã­Ã­Ã®Ã£Ã® Ã±Ã«Ã¥Ã¦Ã¥Ã­Ã¨Ã¿. ÃÃ Ã¤Ã¥Ã« Ã¬Ã Ã±ÃªÃ³ - Ã¯Ã®Ã°Ã² Ã—Ã‘(Ã³ÃªÃ Ã§Ã Ã²Ã¼ Ã¯Ã°Ã¨Ã·Ã¨Ã­Ã³)]\n3.16 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã¯Ã®Ã¤Ã¤Ã¥Ã«Ã»Ã¢Ã Ã²Ã¼ Ã³Ã¤Ã®Ã±Ã²Ã®Ã¢Ã¥Ã°Ã¥Ã­Ã¨Ã¥ Ã¯Ã®Ã¤Ã°Ã Ã§Ã¤Ã¥Ã«Ã¥Ã­Ã¨Ã© Ã Ã°Ã¬Ã¨Ã¨ [Ã“Ã‘Ã, Ã‘ÃÃÃ Ã¨Ã«Ã¨ Ã±Ã²Ã Ã°Ã¸Ã¨Ãµ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã®Ã¢].\n3.17 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã±Ã¯Ã Ã²Ã¼ [AFK] Ã¢ Ã­Ã¥Ã¯Ã®Ã«Ã®Ã¦Ã¥Ã­Ã­Ã®Ã¬ Ã¬Ã¥Ã±Ã²Ã¥ Ã¡Ã®Ã«Ã¥Ã¥ 120 Ã±Ã¥ÃªÃ³Ã­Ã¤ [2 Ã¬Ã¨Ã­Ã³Ã²Ã»].\n3.18 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã¤Ã®Ã±Ã²Ã Ã¢Ã Ã²Ã¼ Ã¨ Ã¯Ã°Ã¨Ã¬Ã¥Ã­Ã¿Ã²Ã¼ Ã®Ã°Ã³Ã¦Ã¨Ã¥ Ã§Ã  Ã®ÃµÃ°Ã Ã­Ã¿Ã¥Ã¬Ã®Ã© Ã²Ã¥Ã°Ã°Ã¨Ã²Ã®Ã°Ã¨Ã¥Ã©\n[Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã±Ã Ã¬Ã®Ã®Ã¡Ã®Ã°Ã®Ã­Ã , Ã®Ã¡Ã¿Ã§Ã Ã²Ã¥Ã«Ã¼Ã­Ã® Ã¨Ã¬Ã¥Ã²Ã¼ Ã¤Ã®Ãª-Ã¢Ã ].\n3.19 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã³Ã«Ã³Ã·Ã¸Ã Ã²Ã¼ Ã­Ã Ã¢Ã»ÃªÃ¨ Ã¢Ã«Ã Ã¤Ã¥Ã­Ã¨Ã¿ Ã®Ã°Ã³Ã¦Ã¨Ã¥Ã¬\n[Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã¨Ã¥ Ã®Ã² Ã±Ã²Ã Ã°Ã¸Ã¨Ãµ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã®Ã¢, Ã±Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨ÃªÃ  Ã“Ã‘Ã, Ã«Ã¨Ã¡Ã® Ã± 22:00 Ã¤Ã® 8:00].\n3.20 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã¯Ã°Ã®Ã¢Ã®Ã¤Ã¨Ã²Ã¼ Ã£Ã°Ã Ã¦Ã¤Ã Ã­Ã±ÃªÃ¨Ãµ Ã«Ã¨Ã¶, Ã¡Ã Ã­Ã¤Ã¨Ã²Ã®Ã¢ Ã­Ã  Ã²Ã¥Ã°Ã°Ã¨Ã²Ã®Ã°Ã¨Ã¾ Ã·Ã Ã±Ã²Ã¨.\n3.21 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã¨Ã±Ã¯Ã®Ã«Ã¼Ã§Ã®Ã¢Ã Ã²Ã¼ Ã¢Ã®Ã«Ã­Ã³ Ã¤Ã¥Ã¯Ã Ã°Ã²Ã Ã¬Ã¥Ã­Ã²Ã , Ã­Ã¥ Ã¯Ã® Ã­Ã Ã§Ã­Ã Ã·Ã¥Ã­Ã¨Ã¾.\n3.22 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã­Ã ÃµÃ®Ã¤Ã¨Ã²Ã¼Ã±Ã¿ Ã¢ Ã³Ã¢Ã¥Ã±Ã¥Ã«Ã¨Ã²Ã¥Ã«Ã¼Ã­Ã»Ãµ Ã¬Ã¥Ã±Ã²Ã Ãµ Ã¢ Ã°Ã Ã¡Ã®Ã·Ã¥Ã¥ Ã¢Ã°Ã¥Ã¬Ã¿:\nÃªÃ Ã§Ã¨Ã­Ã®, Ã Ã¢Ã²Ã®Ã¿Ã°Ã¬Ã Ã°ÃªÃ , Ã£Ã Ã°Ã Ã¦Ã¨, Ã¡Ã Ã°, ÃªÃ«Ã³Ã¡, Ã¬Ã¥Ã°Ã®Ã¯Ã°Ã¨Ã¿Ã²Ã¨Ã¿\n[Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã“Ã‘Ã Ã¤Ã«Ã¿ Ã¢Ã»Ã¯Ã®Ã«Ã­Ã¥Ã­Ã¨Ã¿ Ã¤Ã®Ã«Ã¦Ã­Ã®Ã±Ã²Ã­Ã»Ãµ Ã®Ã¡Ã¿Ã§Ã Ã­Ã­Ã®Ã±Ã²Ã¥Ã©, Ã¬Ã¥Ã°Ã®Ã¯Ã°Ã¨Ã¿Ã²Ã¨Ã¿ Ã®Ã² Ã Ã¤Ã¬Ã¨Ã­Ã¨Ã±Ã²Ã°Ã Ã¶Ã¨Ã¨ Ã± Ã²Ã¥Ã«Ã¥Ã¯Ã®Ã°Ã²Ã Ã¶Ã¨Ã¥Ã©].\n3.23 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã³Ã¯Ã®Ã²Ã°Ã¥Ã¡Ã«Ã¿Ã²Ã¼ Ã¯Ã±Ã¨ÃµÃ®Ã²Ã°Ã®Ã¯Ã­Ã»Ã¥, Ã­Ã Ã°ÃªÃ®Ã²Ã¨Ã·Ã¥Ã±ÃªÃ¨Ã¥ Ã¢Ã¥Ã¹Ã¥Ã±Ã²Ã¢Ã ,\nÃ  Ã²Ã ÃªÃ¦Ã¥ Ã­Ã ÃµÃ®Ã¤Ã¨Ã²Ã¼Ã±Ã¿ Ã¢ Ã Ã«ÃªÃ®Ã£Ã®Ã«Ã¼Ã­Ã®Ã¬ Ã®Ã¯Ã¼Ã¿Ã­Ã¥Ã­Ã¨Ã¨.\n3.24 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã¯Ã°Ã»Ã£Ã Ã²Ã¼ Ã± Ã¢Ã»Ã¸Ã¥Ãª Ã·Ã¥Ã°Ã¥Ã§ Ã§Ã Ã¡Ã®Ã°Ã».\n3.25 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã¡Ã¥Ã£Ã Ã²Ã¼ Ã¢Ã¯Ã°Ã¨Ã¯Ã°Ã»Ã¦ÃªÃ³\n[Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã¯Ã®Ã£Ã®Ã­Ã¿ Ã§Ã  Ã­Ã Ã°Ã³Ã¸Ã¨Ã²Ã¥Ã«Ã¥Ã¬, ÃªÃ®Ã²Ã®Ã°Ã»Ã© Ã²Ã®Ã¦Ã¥ Ã¡Ã¥Ã¦Ã¨Ã² Ã¢Ã¯Ã°Ã¨Ã¯Ã°Ã»Ã¦ÃªÃ³].\n3.26 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã°Ã Ã±ÃªÃ°Ã»Ã¢Ã Ã²Ã¼ Ã«Ã¨Ã·Ã­Ã®Ã±Ã²Ã¼ Ã±Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨ÃªÃ®Ã¢ Ã”ÃÃ, Ã“Ã‘Ã Ã¯Ã®Ã¤ Ã¯Ã°Ã¨ÃªÃ°Ã»Ã²Ã¨Ã¥Ã¬.\n3.27 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã­Ã Ã°Ã³Ã¸Ã Ã²Ã¼ Ã¯Ã°Ã Ã¢Ã¨Ã«Ã  Ã¯Ã®Ã«Ã¼Ã§Ã®Ã¢Ã Ã­Ã¨Ã¿ Ã¢Ã®Ã¥Ã­Ã­Ã®Ã© Ã²Ã¥ÃµÃ­Ã¨ÃªÃ®Ã©.\n[ÃÃ Ã§Ã¡Ã°Ã Ã±Ã»Ã¢Ã Ã²Ã¼ Ã£Ã¤Ã¥ Ã¯Ã®Ã¯Ã Ã«Ã®, Ã¯Ã®Ã¤Ã°Ã¥Ã§Ã Ã²Ã¼ Ã¨ Ã²Ã Ãª Ã¤Ã Ã«Ã¥Ã¥].\n3.28 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã­Ã Ã°Ã³Ã¸Ã Ã²Ã¼ Ã´Ã¥Ã¤Ã¥Ã°Ã Ã«Ã¼Ã­Ã®Ã¥ Ã¯Ã®Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­Ã¨Ã¥.\n3.29 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã¨Ã±Ã¯Ã®Ã«Ã¼Ã§Ã®Ã¢Ã Ã²Ã¼ Ã«Ã¨Ã·Ã­Ã®Ã¥/Ã·Ã³Ã¦Ã®Ã¥ Ã’Ã‘\n[Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã±Ã²Ã Ã°Ã¸Ã¨Ã¥ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã» - Ã¬Ã®Ã£Ã³Ã² Ã¨Ã±Ã¯Ã®Ã«Ã¼Ã§Ã®Ã¢Ã Ã²Ã¼ Ã«Ã¾Ã¡Ã®Ã© Ã²Ã°Ã Ã­Ã±Ã¯Ã®Ã°Ã²;")
+  imgui.Text(u8"ÃŠÃ³Ã°Ã Ã²Ã®Ã°Ã» Ã¢Ã§Ã¢Ã®Ã¤Ã®Ã¢, Ã“Ã‘Ã, Ã‘ÃÃÃ, Ã“Ã‘Ã - Ã Ã¢Ã²Ã®Ã¬Ã®Ã¡Ã¨Ã«Ã¼ Sultan, FBI Rancher, Huntley, Patriot, Ã¬Ã®Ã²Ã®Ã¶Ã¨ÃªÃ«Ã» NRG-500, FCR-900 - Ã·Â¸Ã°Ã­Ã®Ã£Ã® Ã¶Ã¢Ã¥Ã²Ã .\nÃ‘ÃÃÃ - Ã Ã¢Ã²Ã®Ã¬Ã®Ã¡Ã¨Ã«Ã¼ Sultan, FBI Rancher, Huntley, Ã¬Ã®Ã²Ã®Ã¶Ã¨ÃªÃ«Ã» NRG-500, FCR-900 - Ã±Ã¥Ã°Ã®Ã£Ã® Ã¶Ã¢Ã¥Ã²Ã , ÃªÃ³Ã°Ã Ã²Ã®Ã°Ã» Ã¢Ã§Ã¢Ã®Ã¤Ã®Ã¢ - Ã¬Ã®Ã²Ã®Ã¶Ã¨ÃªÃ« NRG-500].\n3.30 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã¨Ã±Ã¯Ã®Ã«Ã¼Ã§Ã®Ã¢Ã Ã²Ã¼ Ã²/c Bobcat, Walton Ã¨ Ã¯Ã®Ã¤Ã®Ã¡Ã­Ã®Ã¥ Ã¤Ã«Ã¿ Ã¯Ã¥Ã°Ã¥Ã¢Ã®Ã§ÃªÃ¨ Ã±Ã®Ã±Ã²Ã Ã¢Ã .\n3.31 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã¡Ã¥Ã£Ã Ã²Ã¼ Ã¯Ã® Ã¢Ã¥Ã­Ã²Ã¨Ã«Ã¿Ã¶Ã¨Ã®Ã­Ã­Ã®Ã© Ã²Ã°Ã³Ã¡Ã¥.\n3.32 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã¢Ã¥Ã±Ã²Ã¨ Ã±Ã¥Ã¡Ã¿ Ã­Ã¥Ã Ã¤Ã¥ÃªÃ¢Ã Ã²Ã­Ã®.\n3.33 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã­Ã ÃµÃ®Ã¤Ã¨Ã²Ã±Ã¿ Ã­Ã  ÃªÃ°Ã»Ã¸Ã Ãµ Ã§Ã¤Ã Ã­Ã¨Ã©, Ã°Ã Ã±Ã¯Ã®Ã«Ã®Ã¦Ã¥Ã­Ã­Ã»Ãµ Ã­Ã  Ã²Ã¥Ã°Ã°Ã¨Ã²Ã®Ã°Ã¨Ã¨ Ã·Ã Ã±Ã²Ã¨.\n3.34 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã®, Ã­Ã ÃµÃ®Ã¤Ã¿Ã±Ã¼ Ã­Ã  Ã±Ã«Ã³Ã¦Ã¡Ã¥, Ã¨Ã¬Ã¥Ã²Ã¼ Ã®Ã°Ã³Ã¦Ã¨Ã¥, ÃªÃ®Ã²Ã®Ã°Ã®Ã£Ã® Ã­Ã¥Ã² Ã­Ã  Ã®Ã°Ã³Ã¦Ã¥Ã©Ã­Ã®Ã¬ Ã±ÃªÃ«Ã Ã¤Ã¥ Ã€Ã°Ã¬Ã¨Ã¨\n[Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã® M4, MP5, Desert Eagle, ÃÃ Ã°Ã Ã¸Ã¾Ã², ShotGun, Rifle, Ã’Ã¥Ã¯Ã«Ã®Ã¢Ã¨Ã§Ã®Ã°, ÃÃ°Ã¨Ã¡Ã®Ã° Ã­Ã®Ã·Ã­Ã®Ã£Ã® Ã¢Ã¨Ã¤Ã¥Ã­Ã¨Ã¿].\n3.35 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã®, Ã¢ Ã°Ã Ã¡Ã®Ã·Ã¥Ã¥ Ã¢Ã°Ã¥Ã¬Ã¿ Ã¯Ã°Ã®ÃµÃ®Ã¤Ã¨Ã²Ã¼ Ã¥Ã¦Ã¥Ã¤Ã­Ã¥Ã¢Ã­Ã»Ã¥ ÃªÃ¢Ã¥Ã±Ã²Ã»\n[Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã€Ã°Ã¬Ã¥Ã©Ã±ÃªÃ¨Ã¥].\n3.36 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã®, Ã¯Ã°Ã¨Ã¥Ã§Ã¦Ã Ã²Ã¼ Ã¢ Ã·Ã Ã±Ã²Ã¼ Ã¢ Ã®Ã¤Ã¥Ã¦Ã¤Ã¥ Ã¡Ã¥Ã§Ã¤Ã®Ã¬Ã­Ã®Ã£Ã® [Ã°Ã¢Ã Ã­Ã®Ã©, Ã£Ã°Ã¿Ã§Ã­Ã®Ã©].\n3.37 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã­Ã Ã°Ã³Ã¸Ã Ã²Ã¼ Ã¯Ã°Ã Ã¢Ã¨Ã«Ã  Ã±Ã²Ã°Ã®Ã¿ [Ã£Ã«Ã Ã¢Ã  IV].\n3.38 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã«Ã®Ã¬Ã Ã²Ã¼ ÃªÃ­Ã®Ã¯Ã®Ã·Ã­Ã³Ã¾ Ã±Ã²Ã Ã­Ã¶Ã¨Ã¾ Ã­Ã  ÃŠÃÃ / Ã‘ÃŠÃÃ\n[Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã¯Ã®Ã£Ã®Ã­Ã¿ Ã§Ã  Ã´Ã³Ã°Ã®Ã©].\n3.39 Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã­Ã¥Ã¯Ã®Ã¤Ã·Ã¨Ã­Ã¥Ã­Ã¨Ã¥ Ã±Ã²Ã Ã°Ã¸Ã¥Ã¬Ã³ Ã¯Ã® Ã§Ã¢Ã Ã­Ã¨Ã¾ Ã¨ Ã¤Ã®Ã«Ã¦Ã­Ã®Ã±Ã²Ã¨.\n3.40 Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã¡Ã¥Ã§Ã¤Ã¥Ã«Ã¼Ã­Ã¨Ã·Ã Ã²Ã¼ Ã¨ Ã­Ã¥ Ã¢Ã»Ã¯Ã®Ã«Ã­Ã¿Ã²Ã¼ Ã±Ã¢Ã®Ã¨ Ã±Ã«Ã³Ã¦Ã¥Ã¡Ã­Ã»Ã¥ Ã®Ã¡Ã¿Ã§Ã Ã­Ã­Ã®Ã±Ã²Ã¨.\n3.41 Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã¢Ã»Ã¥Ã§Ã¦Ã Ã²Ã¼ Ã¢ Ã¯Ã Ã²Ã°Ã³Ã«Ã¼ Ã·Ã Ã±Ã²Ã¨/Ã±Ã®Ã¯Ã°Ã®Ã¢Ã®Ã¦Ã¤Ã¥Ã­Ã¨Ã¥ Ã¢ Ã®Ã¤Ã¨Ã­Ã®Ã·ÃªÃ³\n[Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã“Ã‘Ã, Ã±Ã²Ã Ã°Ã¸Ã¨Ã¥ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã»].\n3.42 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã®, Ã¨Ã±Ã¯Ã®Ã«Ã¼Ã§Ã®Ã¢Ã Ã²Ã¼ Ã®Ã£Ã­Ã¥Ã±Ã²Ã°Ã¥Ã«Ã¼Ã­Ã®Ã¥ Ã®Ã°Ã³Ã¦Ã¨Ã¥ Ã­Ã¥ Ã¯Ã® Ã­Ã Ã§Ã­Ã Ã·Ã¥Ã­Ã¨Ã¾.\n3.43 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã®, Ã­Ã ÃµÃ®Ã¤Ã¨Ã²Ã±Ã¿ Ã­Ã  Ã¢Ã»Ã¸ÃªÃ Ãµ [Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã—Ã‘ Ã Ã°Ã¬Ã¨Ã¨].\n3.44 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã­Ã Ã°Ã³Ã¸Ã Ã²Ã¼ Ã³Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­Ã­Ã»Ã© Ã¯Ã°Ã Ã¢Ã¨Ã«Ã Ã¬Ã¨ Ã¤Ã°Ã¥Ã±Ã±-ÃªÃ®Ã¤ [Ã£Ã«Ã Ã¢Ã  XIII].\n3.45 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® ÃµÃ Ã«Ã Ã²Ã­Ã® Ã®Ã²Ã­Ã®Ã±Ã¨Ã²Ã¼Ã±Ã¿ Ãª Ã±Ã¢Ã®Ã¥Ã© Ã°Ã³ÃªÃ®Ã¢Ã®Ã¤Ã¿Ã¹Ã¥Ã© Ã¤Ã®Ã«Ã¦Ã­Ã®Ã±Ã²Ã¨ Ã¨ Ã®Ã¡Ã¿Ã§Ã Ã­Ã­Ã®Ã±Ã²Ã¿Ã¬.\n3.46 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã­Ã Ã°Ã³Ã¸Ã Ã²Ã¼ Ã¯Ã°Ã¨ÃªÃ Ã§Ã» Ã£Ã¥Ã­Ã¥Ã°Ã Ã«Ã .")
+  imgui.Text(u8"3.47 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã¯Ã®ÃªÃ¨Ã¤Ã Ã²Ã¼ Ã·Ã Ã±Ã²Ã¼ Ã­Ã  Ã¢Ã¥Ã°Ã²Ã®Ã«Â¸Ã²Ã¥ Ã¡Ã¥Ã§ Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã¨Ã¿ Ã³ Ã¤Ã¨Ã±Ã¯Ã¥Ã²Ã·Ã¥Ã°Ã  (Ã“Ã‘Ã, Ã±Ã²Ã Ã°Ã¸Ã¨Ã¥ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã»)\n[Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã“Ã‘Ã, Ã¯Ã®Ã°Ã² Ã—Ã‘, Ã¨Ã£Ã­Ã®Ã°Ã¨Ã°Ã®Ã¢Ã Ã­Ã¨Ã¥ Ã§Ã Ã¯Ã°Ã®Ã±Ã ].\n3.48 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã¬Ã³, Ã¯Ã°Ã®ÃµÃ®Ã¤Ã¿Ã¹Ã¥Ã¬Ã³ Ã±Ã«Ã³Ã¦Ã¡Ã³ Ã¯Ã® ÃªÃ®Ã­Ã²Ã°Ã ÃªÃ²Ã³, Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã®Ã¡Ã°Ã Ã¹Ã Ã²Ã¼Ã±Ã¿ Ã¯Ã® Ã°Ã Ã¶Ã¨Ã¨ Ã¡Ã¥Ã§ Ã¯Ã°Ã¥Ã´Ã¨ÃªÃ±Ã  `CS`.")
+  imgui.Text(u8"ÃƒÃ«Ã Ã¢Ã  IV. ÃÃ°Ã Ã¢Ã¨Ã«Ã  Ã±Ã²Ã°Ã®Ã¿.\n4.1 Ã‘Ã®Ã§Ã»Ã¢Ã Ã²Ã¼ Ã­Ã  Ã®Ã¡Ã¹Ã¥Ã¥ Ã¯Ã®Ã±Ã²Ã°Ã®Ã¥Ã­Ã¨Ã¥ Ã¢Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ãµ Ã¬Ã®Ã£Ã³Ã² Ã²Ã®Ã«Ã¼ÃªÃ®: Ã±Ã²Ã Ã°Ã¸Ã¨Ã¥ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã», Ã€Ã‘Ã‚;\n4.2 Ã‚ Ã±Ã²Ã°Ã®Ã¾ Ã®Ã¡Ã¿Ã§Ã Ã­Ã» Ã­Ã ÃµÃ®Ã¤Ã¨Ã²Ã¼Ã±Ã¿ Ã²Ã¥ Ã¢Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã¥, Ã·Ã¼Ã¨ Ã¢Ã§Ã¢Ã®Ã¤Ã  Ã¡Ã»Ã«Ã¨ Ã³ÃªÃ Ã§Ã Ã­Ã» Ã¯Ã°Ã¨ Ã¯Ã®Ã±Ã²Ã°Ã®Ã¥Ã­Ã¨Ã¨;\n4.3 Ã‚ Ã±Ã²Ã°Ã®Ã¾ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã®:\n4.3.1 ÃÃ¥Ã§ Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã¨Ã¿ ÃªÃ®Ã¬Ã Ã­Ã¤Ã¨Ã°Ã  Ã°Ã Ã§Ã£Ã®Ã¢Ã Ã°Ã¨Ã¢Ã Ã²Ã¼, Ã¸Ã¥Ã¯Ã²Ã Ã²Ã¼Ã±Ã¿, Ã¨Ã±Ã¯Ã®Ã«Ã¼Ã§Ã®Ã¢Ã Ã²Ã¼ Ã«Ã¾Ã¡Ã»Ã¥ Ã±Ã°Ã¥Ã¤Ã±Ã²Ã¢Ã  Ã¯Ã¥Ã°Ã¥Ã¤Ã Ã·Ã¨ Ã¨Ã­Ã´Ã®Ã°Ã¬Ã Ã¶Ã¨Ã¨\n[Ã«Ã¾Ã¡Ã»Ã¥ Ã·Ã Ã²Ã»: /sms, /call, /b, /r, /rb, /dep, /w Ã¨ Ã®Ã¡Ã»Ã·Ã­Ã»Ã©];\n4.3.2 Ã€ÃªÃ²Ã¨Ã¢Ã­Ã® Ã¦Ã¥Ã±Ã²Ã¨ÃªÃ³Ã«Ã¨Ã°Ã®Ã¢Ã Ã²Ã¼, Ã¬Ã¥Ã¸Ã Ã²Ã¼ Ã²Ã®Ã¢Ã Ã°Ã¨Ã¹Ã Ã¬\n[Ã§Ã«Ã®Ã³Ã¯Ã®Ã²Ã°Ã¥Ã¡Ã«Ã¥Ã­Ã¨Ã¥ ÃªÃ®Ã¬Ã Ã­Ã¤Ã Ã¬Ã¨: /me, /do, /try, /animlist Ã¨ Ã¤Ã°Ã³Ã£Ã¨Ã¥];\n4.3.3 ÃˆÃ±Ã¯Ã®Ã«Ã¼Ã§Ã®Ã¢Ã Ã²Ã¼ Ã²Ã¥Ã«Ã¥Ã´Ã®Ã­ [Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã¥Ã±Ã«Ã¨ Ã±Ã®Ã®Ã¡Ã¹Ã¥Ã­Ã¨Ã¥ Ã­Ã Ã¯Ã°Ã Ã¢Ã«Ã¥Ã­Ã® Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã Ã¬ Ã¸Ã²Ã Ã¡Ã  Ã¨Ã«Ã¨ Ã“Ã‘Ã];\n4.3.4 Ã„Ã®Ã±Ã²Ã Ã¢Ã Ã²Ã¼ Ã®Ã°Ã³Ã¦Ã¨Ã¥ Ã¡Ã¥Ã§ Ã¯Ã°Ã¨ÃªÃ Ã§Ã  [Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã°Ã Ã¢Ã­Ã¥Ã­Ã¨Ã¥ Ã¢ Ã±Ã²Ã°Ã®Ã¾, Ã¯Ã®Ã¢Ã®Ã°Ã®Ã²Ã» Ã¢ Ã±Ã²Ã°Ã®Ã¾, Ã¯Ã°Ã¨ÃªÃ Ã§];\n4.3.5 ÃÃ²ÃªÃ°Ã»Ã¢Ã Ã²Ã¼ Ã®Ã£Ã®Ã­Ã¼ Ã¡Ã¥Ã§ Ã¯Ã°Ã¨ÃªÃ Ã§Ã \n[Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã® Ã±Ã²Ã°Ã¥Ã«Ã¿Ã²Ã¼ Ã¯Ã® Ã¢Ã®Ã¥Ã­Ã­Ã»Ã¬ Ã´Ã³Ã°Ã Ã¬, ÃªÃ®Ã²Ã®Ã°Ã»Ã¥ Ã³Ã£Ã®Ã­Ã¿Ã¾Ã² Ã®Ã¡Ã®Ã°Ã®Ã²Ã­Ã¨, Ã  Ã²Ã ÃªÃ¦Ã¥ Ã¯Ã°Ã¨ Ã³Ã£Ã°Ã®Ã§Ã¥ Ã¦Ã¨Ã§Ã­Ã¨];\n4.3.6 Ã‘Ã¯Ã Ã²Ã¼ [Ã³ÃµÃ®Ã¤Ã¨Ã²Ã¼ Ã¢ AFK Ã¡Ã®Ã«Ã¥Ã¥ Ã·Ã¥Ã¬ Ã­Ã  30 Ã±Ã¥ÃªÃ³Ã­Ã¤];\n4.3.7 Ã‘Ã Ã¬Ã®Ã¢Ã®Ã«Ã¼Ã­Ã® Ã¯Ã®ÃªÃ¨Ã¤Ã Ã²Ã¼ Ã±Ã²Ã°Ã®Ã©;\n4.3.8 Ã‚Ã»Ã¯Ã®Ã«Ã­Ã¿Ã²Ã¼ Ã¢Ã®Ã¨Ã­Ã±ÃªÃ®Ã¥ Ã¯Ã°Ã¨Ã¢Ã¥Ã²Ã±Ã²Ã¢Ã¨Ã¥;\n4.3.9 ÃÃ Ã§Ã£Ã®Ã¢Ã Ã°Ã¨Ã¢Ã Ã²Ã¼ Ã¢ Ã±Ã²Ã°Ã®Ã¾ [Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã°Ã³ÃªÃ®Ã¢Ã®Ã¤Ã±Ã²Ã¢Ã® Ã Ã°Ã¬Ã¨Ã¨].\n4.3.10 ÃˆÃ±Ã¯Ã®Ã«Ã¼Ã§Ã®Ã¢Ã Ã²Ã¼ Ã·Ã Ã±Ã» [Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã´Ã®Ã²Ã®Ã´Ã¨ÃªÃ±Ã Ã¶Ã¨Ã¿].\n4.4 ÃÃ¥Ã°Ã¥Ã¤ Ã²Ã¥Ã¬ ÃªÃ Ãª Ã¢Ã±Ã²Ã Ã²Ã¼ Ã¢ Ã±Ã²Ã°Ã®Ã©, Ã¢Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã© Ã®Ã¡Ã¿Ã§Ã Ã­ Ã¯Ã®Ã¯Ã®Ã«Ã­Ã¨Ã²Ã¼ Ã¡Ã®Ã¥ÃªÃ®Ã¬Ã¯Ã«Ã¥ÃªÃ² [100 hp Ã¨ 100 armor].\n4.5 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã¥, Ã®Ã¯Ã Ã§Ã¤Ã»Ã¢Ã Ã¾Ã¹Ã¨Ã¥ Ã­Ã  Ã¯Ã®Ã±Ã²Ã°Ã®Ã¥Ã­Ã¨Ã¥,\nÃ¨Ã¬Ã¥Ã¾Ã² Ã¯Ã°Ã Ã¢Ã® Ã¢Ã±Ã²Ã Ã²Ã¼ Ã¢ Ã±Ã²Ã°Ã®Ã© Ã­Ã¥ Ã¯Ã®Ã«Ã³Ã·Ã Ã¿ Ã­Ã  Ã½Ã²Ã® Ã®Ã²Ã¤Ã¥Ã«Ã¼Ã­Ã®Ã¥ Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã¨Ã¥.\nÃ…Ã±Ã«Ã¨ Ã¢Ã» Ã®Ã¯Ã®Ã§Ã¤Ã Ã«Ã¨ Ã­Ã  Ã¯Ã®Ã±Ã²Ã°Ã®Ã¥Ã­Ã¨Ã¥ Ã²Ã®, Ã­Ã¥ Ã­Ã³Ã¦Ã­Ã® Ã®Ã²Ã¢Ã«Ã¥ÃªÃ Ã²Ã¼ Ã±Ã²Ã°Ã®Ã¿Ã¹Ã¥Ã£Ã® Ã§Ã Ã¯Ã°Ã®Ã±Ã®Ã¬ Ã­Ã  Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã¨Ã¿ Ã¢Ã±Ã²Ã Ã²Ã¼ Ã¢ Ã±Ã²Ã°Ã®Ã©.\nÃ‚Ã» Ã®Ã¡Ã¿Ã§Ã Ã­Ã» Ã¢Ã±Ã²Ã Ã²Ã¼ Ã±Ã Ã¬Ã®Ã±Ã²Ã®Ã¿Ã²Ã¥Ã«Ã¼Ã­Ã® Ã¢ ÃªÃ®Ã­Ã¥Ã¶ Ã±Ã²Ã°Ã®Ã¿ Ã¡Ã¥Ã§ Ã±Ã³Ã¥Ã²Ã» Ã¨ Ã­Ã¥ Ã¬Ã¥Ã¸Ã Ã¿ Ã±Ã¢Ã®Ã¨Ã¬ Ã²Ã®Ã¢Ã Ã°Ã¨Ã¹Ã Ã¬.")
+  imgui.Text(u8"ÃƒÃ«Ã Ã¢Ã  V. ÃÃ¥Ã±Ã¥Ã­Ã¨Ã¥ Ã±Ã«Ã³Ã¦Ã¡Ã».\n5.1 Ã‘Ã²Ã Ã°Ã¸Ã¨Ã¥ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã» Ã¨Ã¬Ã¥Ã¾Ã² Ã¯Ã°Ã Ã¢Ã® Ã±Ã Ã¬Ã®Ã¢Ã®Ã«Ã¼Ã­Ã® Ã¯Ã®ÃªÃ¨Ã¤Ã Ã²Ã¼ Ã·Ã Ã±Ã²Ã¼.\nÃ‘Ã²Ã Ã°Ã¸Ã¨Ã¥ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã» Ã²Ã ÃªÃ¦Ã¥ Ã¨Ã¬Ã¥Ã¾Ã² Ã¯Ã°Ã Ã¢Ã® Ã®Ã²Ã¯Ã³Ã±ÃªÃ Ã²Ã¼ Ã¡Ã®Ã©Ã¶Ã®Ã¢ Ã§Ã  Ã²Ã¥Ã°Ã°Ã¨Ã²Ã®Ã°Ã¨Ã¾ Ã·Ã Ã±Ã²Ã¨ Ã¯Ã°Ã¨ Ã­Ã¥Ã®Ã¡ÃµÃ®Ã¤Ã¨Ã¬Ã®Ã±Ã²Ã¨.\n5.2 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã© Ã®Ã¡Ã¿Ã§Ã Ã­ Ã®ÃµÃ°Ã Ã­Ã¿Ã²Ã¼ Ã¯Ã®Ã±Ã², ÃªÃ®Ã²Ã®Ã°Ã»Ã© Ã¥Ã¬Ã³ Ã¤Ã®Ã¢Ã¥Ã°Ã¨Ã«Ã¨;\n5.3 Ã‘Ã¯Ã Ã²Ã¼ Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã® Ã²Ã®Ã«Ã¼ÃªÃ® Ã¢ ÃªÃ Ã§Ã Ã°Ã¬Ã¥ Ã°Ã¿Ã¤Ã®Ã¬ Ã± ÃªÃ®Ã©ÃªÃ Ã¬Ã¨ [Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã£Ã«Ã Ã¢Ã  VI Ã³Ã±Ã²Ã Ã¢Ã  Ã Ã°Ã¬Ã¨Ã¨];\n5.4 Ã‚Ã»ÃµÃ®Ã¤Ã¿ Ã¨Ã§ ÃªÃ Ã§Ã Ã°Ã¬Ã», Ã¢Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã© Ã®Ã¡Ã¿Ã§Ã Ã­ Ã­Ã Ã¤Ã¥Ã²Ã¼ ÃªÃ Ã±ÃªÃ³ Ã±Ã¢Ã®Ã¥Ã£Ã® Ã¢Ã§Ã¢Ã®Ã¤Ã  Ã¨Ã«Ã¨ Ã¯Ã®Ã¤Ã°Ã Ã§Ã¤Ã¥Ã«Ã¥Ã­Ã¨Ã¿ Ã¢ Ã±Ã®Ã®Ã²Ã¢Ã¥Ã²Ã±Ã²Ã¢Ã¨Ã¨ Ã± Ã¯Ã°Ã Ã¢Ã¨Ã«Ã Ã¬Ã¨ Ã­Ã¨Ã¦Ã¥:\nÃ‘Ã²Ã Ã°Ã¸Ã¨Ã¥ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã»/Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã» Ã¸Ã²Ã Ã¡Ã  - Ã”Ã³Ã°Ã Ã¦ÃªÃ  Â¹21\nÃ“Ã‘Ã - ÃÃ¥Ã°Ã¥Ã² Â¹32\nÃ‘ÃÃÃ - ÃÃ¥Ã°Ã¥Ã² Â¹30, Â¹11.\nÃ‘Ã‚Ã‘Ã‘ - ÃŠÃ Ã±ÃªÃ  Â¹29, 22\nÃ‚Ã‘Ã - ÃŠÃ Ã±ÃªÃ  Â¹5, 3\nÃ€Ã‘Ã‚ - ÃŠÃ Ã±ÃªÃ  Â¹19, 20\nÃŠÃ®Ã¬Ã Ã­Ã¤Ã¨Ã°Ã» Ã®Ã²Ã°Ã¿Ã¤Ã®Ã¢ Ã¨ Ã¢Ã§Ã¢Ã®Ã¤Ã®Ã¢ - ÃÃ¥Ã°Ã¥Ã² Â¹12\nÃ‡Ã Ã¬Ã¥Ã±Ã²Ã¨Ã²Ã¥Ã«Ã¥Ã© Ã®Ã²Ã°Ã¿Ã¤Ã®Ã¢ Ã¨ Ã¢Ã§Ã¢Ã®Ã¤Ã®Ã¢- ÃÃ¥Ã°Ã¥Ã² Â¹8\nÃ’Ã°Ã¥Ã­Ã¥Ã°Ã» Ã¢Ã§Ã¢Ã®Ã¤Ã®Ã¢ - ÃÃ¥Ã°Ã¥Ã² Â¹10\nÃÃ°Ã¨Ã¬Ã¥Ã·Ã Ã­Ã¨Ã¥: Ã“Ã‘Ã Ã­Ã®Ã±Ã¿Ã² Ã±Ã¢Ã®Ã¨ Ã¡Ã¥Ã°Ã¥Ã²Ã» Ã­Ã¥Ã§Ã Ã¢Ã¨Ã±Ã¨Ã¬Ã® Ã®Ã² Ã¤Ã®Ã«Ã¦Ã­Ã®Ã±Ã²Ã¨.\n5.5 ÃÃ°Ã®Ã±Ã­Ã³Ã¢Ã¸Ã¨Ã±Ã¼ Ã¤Ã®Ã¬Ã  Ã¨Ã«Ã¨ Ã­Ã  Ã¢Ã®ÃªÃ§Ã Ã«Ã¥, Ã¡Ã®Ã¥Ã¶ Ã®Ã¡Ã¿Ã§Ã Ã­ Ã¢ Ã²Ã¥Ã·Ã¥Ã­Ã¨Ã¨ 10-Ã²Ã¨ Ã¬Ã¨Ã­Ã³Ã² Ã¿Ã¢Ã¨Ã²Ã¼Ã±Ã¿ Ã­Ã  Ã²Ã¥Ã°Ã°Ã¨Ã²Ã®Ã°Ã¨Ã¾ Ã·Ã Ã±Ã²Ã¨.\nÃ„Ã Ã­Ã­Ã»Ã¥ 10 Ã¬Ã¨Ã­Ã³Ã² Ã°Ã Ã§Ã°Ã¥Ã¸Ã Ã¥Ã²Ã±Ã¿ Ã¯Ã®Ã²Ã°Ã Ã²Ã¨Ã²Ã¼ Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¥Ã«Ã¼Ã­Ã® Ã­Ã  Ã¤Ã®Ã°Ã®Ã£Ã³,\nÃ­Ã¨ÃªÃ ÃªÃ¨Ãµ Ã°Ã Ã¡Ã®Ã² Ã²Ã ÃªÃ±Ã¨Ã±Ã²Ã®Ã¬, Ã¢Ã®Ã¤Ã¨Ã²Ã¥Ã«Ã¥Ã¬ Ã Ã¢Ã²Ã®Ã¡Ã³Ã±Ã  Ã¨ Ã².Ã¤.;\n5.6 Ã…Ã±Ã«Ã¨ Ã­Ã  Ã±Ã«Ã³Ã¦Ã¡Ã¥ Ã­Ã¥Ã² ÃªÃ®Ã¬Ã Ã­Ã¤Ã¨Ã°Ã  Ã¢Ã§Ã¢Ã®Ã¤Ã  Ã¨Ã«Ã¨ Ã¥Ã£Ã® Ã§Ã Ã¬Ã¥Ã±Ã²Ã¨Ã²Ã¥Ã«Ã¿,\nÃªÃ®Ã¬Ã Ã­Ã¤Ã®Ã¢Ã Ã­Ã¨Ã¥ Ã½Ã²Ã¨Ã¬ Ã¢Ã§Ã¢Ã®Ã¤Ã®Ã¬ Ã¯Ã¥Ã°Ã¥Ã¤Ã Ã¥Ã²Ã±Ã¿ Ã±Ã²Ã Ã°Ã¸Ã¥Ã¬Ã³ Ã¡Ã®Ã©Ã¶Ã³ Ã¢Ã§Ã¢Ã®Ã¤Ã  Ã­Ã ÃµÃ®Ã¤Ã¿Ã¹Ã¥Ã¬Ã³Ã±Ã¿ Ã¢ Ã·Ã Ã±Ã²Ã¨;\n5.7 Ã‚Ã»Ã¢Ã®Ã§Ã¨Ã²Ã¼ Ã¡Ã®Ã©Ã¶Ã®Ã¢ Ã¢ Ã£Ã®Ã°Ã®Ã¤ Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã® Ã²Ã®Ã«Ã¼ÃªÃ®: Ã±Ã²Ã Ã°Ã¸Ã¨Ã¬, Ã“Ã‘Ã, Ã‚Ã‘Ã, Ã  Ã²Ã ÃªÃ¦Ã¥ ÃªÃ®Ã¬. Ã±Ã®Ã±Ã²Ã Ã¢Ã³ Ã¢Ã§Ã¢Ã®Ã¤Ã®Ã¢\n[Ã¤Ã«Ã¿ Ã¢Ã»Ã¯Ã®Ã«Ã­Ã¥Ã­Ã¨Ã¿ Ã±Ã¢Ã®Ã¨Ãµ Ã®Ã¡Ã¿Ã§Ã Ã­Ã­Ã®Ã±Ã²Ã¥Ã©];")
+  imgui.Text(u8"ÃƒÃ«Ã Ã¢Ã  VI. ÃÃ°Ã Ã¢Ã¨Ã«Ã  Ã±Ã­Ã .\n6.1 Ã‹Ã¾Ã¡Ã®Ã© Ã¡Ã®Ã¥Ã¶ Army Las Venturas Ã¨Ã¬Ã¥Ã¥Ã² Ã¯Ã°Ã Ã¢Ã® Ã±Ã¯Ã Ã²Ã¼ Ã¢ ÃªÃ Ã§Ã Ã°Ã¬Ã¥ Ã°Ã¿Ã¤Ã®Ã¬ Ã± ÃªÃ®Ã©ÃªÃ Ã¬Ã¨;\n6.2 ÃÃ®Ã©Ã¶Ã» Ã‚Ã‘Ã Ã¨Ã¬Ã¥Ã¾Ã² Ã¯Ã°Ã Ã¢Ã® Ã±Ã¯Ã Ã²Ã¼ Ã¢ Ã Ã­Ã£Ã Ã°Ã Ãµ, Ã­Ã¥ Ã¬Ã¥Ã¸Ã Ã¿ Ã¯Ã°Ã®Ã¥Ã§Ã¤Ã³ Ã´Ã³Ã°Ã Ã¬;\n6.3 ÃÃ®Ã©Ã¶Ã» Ã®Ã²Ã°Ã¿Ã¤Ã®Ã¢ Ã“Ã‘Ã, Ã‘ÃÃÃ Ã¨Ã¬Ã¥Ã¾Ã² Ã¯Ã°Ã Ã¢Ã® Ã±Ã¯Ã Ã²Ã¼ Ã¢ Ã¢Ã­Ã³Ã²Ã°Ã¨ Ã¸Ã²Ã Ã¡Ã  Ã­Ã¥Ã®Ã£Ã°Ã Ã­Ã¨Ã·Ã¥Ã­Ã­Ã®Ã¥ Ã¢Ã°Ã¥Ã¬Ã¿;\n6.4 Ã‘Ã²Ã Ã°Ã¸Ã¨Ã¥ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã» Ã¨Ã¬Ã¥Ã¾Ã² Ã¯Ã°Ã Ã¢Ã® Ã±Ã¯Ã Ã²Ã¼ Ã¢ Ã«Ã¾Ã¡Ã®Ã¬ Ã¬Ã¥Ã±Ã²Ã¥;\n6.5 ÃÃ®Ã©Ã¶Ã» Ã“Ã‘Ã Ã¨Ã¬Ã¥Ã¾Ã² Ã¯Ã°Ã Ã¢Ã® Ã±Ã¯Ã Ã²Ã¼ Ã­Ã  Ã¯Ã«Ã Ã¶Ã³, Ã­Ã® Ã­Ã¥ Ã¡Ã®Ã«Ã¥Ã¥ Ã·Ã¥Ã¬ 2 Ã¬Ã¨Ã­Ã³Ã²Ã» [120 Ã±Ã¥ÃªÃ³Ã­Ã¤].")
+  imgui.Text(u8"ÃƒÃ«Ã Ã¢Ã  VII. Ã“Ã¢Ã®Ã«Ã¼Ã­Ã¨Ã²Ã¥Ã«Ã¼Ã­Ã®Ã¥ Ã¢Ã°Ã¥Ã¬Ã¿.\n7.1 Ã“Ã¢Ã®Ã«Ã¼Ã­Ã¨Ã²Ã¥Ã«Ã¼Ã­Ã®Ã¥ Ã¢Ã°Ã¥Ã¬Ã¿ Ã¢ Ã¡Ã³Ã¤Ã­Ã¨Ã¥ Ã¤Ã­Ã¨ Ã­Ã Ã·Ã¨Ã­Ã Ã¥Ã²Ã±Ã¿ Ã¢ 22:00 Ã¨ Ã§Ã ÃªÃ Ã­Ã·Ã¨Ã¢Ã Ã¥Ã²Ã±Ã¿ Ã¢ 8:00,\nÃ¢ Ã¯Ã¿Ã²Ã­Ã¨Ã¶Ã³ Ã¨ Ã¢Ã»ÃµÃ®Ã¤Ã­Ã»Ã¥ Ã¤Ã­Ã¨ Ã­Ã Ã·Ã¨Ã­Ã Ã¥Ã²Ã±Ã¿ Ã¢ 21:00 Ã¨ Ã§Ã ÃªÃ Ã­Ã·Ã¨Ã¢Ã Ã¥Ã²Ã±Ã¿ Ã¢ 9:00;\n7.2 ÃÃ®Ã©Ã¶Ã», Ã¨Ã¬Ã¥Ã¾Ã¹Ã¨Ã¥ Ã§Ã¢Ã Ã­Ã¨Ã¥ ÃŒÃ«.Ã‘Ã¥Ã°Ã¦Ã Ã­Ã² Ã¨ Ã¢Ã»Ã¸Ã¥, Ã¨Ã¬Ã¥Ã¾Ã² Ã¯Ã°Ã Ã¢Ã® Ã±Ã­Ã¿Ã²Ã¼ Ã´Ã®Ã°Ã¬Ã³ Ã¨ Ã®Ã²Ã¯Ã°Ã Ã¢Ã¨Ã²Ã¼Ã±Ã¿ Ã¢ Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¨Ã²Ã¥Ã«Ã¼Ã­Ã®Ã¥ Ã¢Ã°Ã¥Ã¬Ã¿.\nÃÃ¿Ã¤Ã®Ã¢Ã»Ã¥ Ã¨ Ã…Ã´Ã°Ã¥Ã©Ã²Ã®Ã°Ã» Ã²Ã Ãª Ã¦Ã¥ Ã¯Ã°Ã®Ã¤Ã®Ã«Ã¦Ã Ã¾Ã² Ã­Ã¥Ã±Ã²Ã¨ Ã±Ã«Ã³Ã¦Ã¡Ã³ Ã¢ Ã·Ã Ã±Ã²Ã¨;\n7.3 Ã…Ã±Ã«Ã¨ Ã±ÃªÃ«Ã Ã¤Ã» Ã£Ã®Ã±Ã³Ã¤Ã Ã°Ã±Ã²Ã¢Ã¥Ã­Ã­Ã»Ãµ Ã®Ã°Ã£Ã Ã­Ã¨Ã§Ã Ã¶Ã¨Ã© Ã¸Ã²Ã Ã²Ã  Ã±Ã®Ã±Ã²Ã Ã¢Ã«Ã¿Ã¾Ã² Ã¬Ã¥Ã­Ã¥Ã¥ 100.000 Ã¥Ã¤Ã¨Ã­Ã¨Ã¶,\nÃ²Ã® Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¨Ã²Ã¥Ã«Ã¼Ã­Ã®Ã¥ Ã¢Ã°Ã¥Ã¬Ã¿ Ã‚Ã‘Ã Ã®Ã²Ã¬Ã¥Ã­Ã¿Ã¥Ã²Ã±Ã¿ Ã¤Ã® Ã²Ã®Ã£Ã® Ã¬Ã®Ã¬Ã¥Ã­Ã²Ã , Ã¯Ã®ÃªÃ  Ã±ÃªÃ«Ã Ã¤Ã» Ã­Ã¥ Ã¡Ã³Ã¤Ã³Ã² Ã§Ã Ã¯Ã®Ã«Ã­Ã¥Ã­Ã»;\n7.4 ÃŠÃ®Ã¬.Ã±Ã®Ã±Ã²Ã Ã¢ Ã¢Ã§Ã¢Ã®Ã¤Ã®Ã¢, Ã±Ã²Ã Ã°Ã¸Ã¨Ã¥ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã» Ã¨ Ã¡Ã®Ã©Ã¶Ã» Ã Ã°Ã¬Ã¨Ã¨, Ã¬Ã®Ã£Ã³Ã² Ã¡Ã»Ã²Ã¼ Ã¢Ã»Ã§Ã¢Ã Ã­Ã» Ã¢ Ã·Ã Ã±Ã²Ã¼ Ã± Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¨Ã²Ã¥Ã«Ã¼Ã­Ã®Ã£Ã® Ã¢Ã°Ã¥Ã¬Ã¥Ã­Ã¨;\n7.5 ÃÃ²Ã«Ã®Ã¦Ã¨Ã²Ã¼ Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¨Ã²Ã¥Ã«Ã¼Ã­Ã®Ã¥ Ã¢Ã°Ã¥Ã¬Ã¿ Ã¨Ã¬Ã¥Ã¾Ã² Ã¯Ã°Ã Ã¢Ã® Ã²Ã®Ã«Ã¼ÃªÃ® Ã±Ã²Ã Ã°Ã¸Ã¨Ã¥ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã».")
+  imgui.Text(u8"ÃƒÃ«Ã Ã¢Ã  VIII. Ã‘Ã³Ã¡Ã®Ã°Ã¤Ã¨Ã­Ã Ã¶Ã¨Ã¿/Ã¯Ã°Ã Ã¢Ã¨Ã«Ã  Ã¨Ã±Ã¯Ã®Ã«Ã¼Ã§Ã®Ã¢Ã Ã­Ã¨Ã¥ Ã°Ã Ã¶Ã¨Ã¨.\n8.1 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã¥ Ã®Ã¡Ã¿Ã§Ã Ã­Ã» Ã±Ã®Ã¡Ã«Ã¾Ã¤Ã Ã²Ã¼ Ã±Ã³Ã¡Ã®Ã°Ã¤Ã¨Ã­Ã Ã¶Ã¨Ã¾ Ã¢ Ã®Ã¡Ã¹Ã¥Ã­Ã¨Ã¨ Ã¬Ã¥Ã¦Ã¤Ã³ Ã±Ã®Ã¡Ã®Ã©;\n8.2 ÃÃ°Ã¨ Ã±Ã®Ã£Ã«Ã Ã±Ã¨Ã¨ Ã¡Ã®Ã¥Ã¶ Ã®Ã¡Ã¿Ã§Ã Ã­ Ã®Ã²Ã¢Ã¥Ã·Ã Ã²Ã¼: `Ã’Ã Ãª Ã²Ã®Ã·Ã­Ã®, Ã²Ã®Ã¢Ã Ã°Ã¨Ã¹ Â«Ã”Ã Ã¬Ã¨Ã«Ã¨Ã¿, Ã‡Ã¢Ã Ã­Ã¨Ã¥Â»!`,\nÃ¯Ã°Ã¨ Ã­Ã¥Ã±Ã®Ã£Ã«Ã Ã±Ã¨Ã¨: `ÃÃ¨ÃªÃ Ãª Ã­Ã¥Ã², Ã’Ã®Ã¢Ã Ã°Ã¨Ã¹ Â«Ã”Ã Ã¬Ã¨Ã«Ã¨Ã¿, Ã‡Ã¢Ã Ã­Ã¨Ã¥Â»!`,\nÃ¥Ã±Ã«Ã¨ Ã¡Ã®Ã¥Ã¶ Ã¯Ã®Ã«Ã³Ã·Ã¨Ã« Ã¯Ã°Ã¨ÃªÃ Ã§: `Ã…Ã±Ã²Ã¼, Ã’Ã®Ã¢Ã Ã°Ã¨Ã¹ Â«Ã”Ã Ã¬Ã¨Ã«Ã¨Ã¿, Ã‡Ã¢Ã Ã­Ã¨Ã¥Â»!`;\n8.3 Ã‡Ã¤Ã®Ã°Ã®Ã¢Ã Ã¿Ã±Ã¼ Ã± Ã±Ã®Ã±Ã«Ã³Ã¦Ã¨Ã¢Ã¶Ã Ã¬Ã¨, Ã¡Ã®Ã¥Ã¶ Ã®Ã¡Ã¿Ã§Ã Ã­ Ã±ÃªÃ Ã§Ã Ã²Ã¼: `Ã‡Ã¤Ã°Ã Ã¢Ã¨Ã¿ Ã¦Ã¥Ã«Ã Ã¾`\n[`Ã±Ã Ã«Ã Ã¬`, `Ã§Ã¤Ã®Ã°Ã®Ã¢Ã ` Ã¨ Ã².Ã¯ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã»];\n8.4 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã© Ã®Ã¡Ã¿Ã§Ã Ã­ Ã®Ã²Ã¢Ã¥Ã²Ã¨Ã²Ã¼: ` Ã¿, Ã²Ã®Ã¢Ã Ã°Ã¨Ã¹ `Ã§Ã¢Ã Ã­Ã¨Ã¥` ` ÃªÃ®Ã£Ã¤Ã  Ã¥Ã£Ã® Ã­Ã Ã§Ã»Ã¢Ã Ã¥Ã² Ã±Ã²Ã Ã°Ã¸Ã¨Ã© Ã¯Ã® Ã§Ã¢Ã Ã­Ã¨Ã¾;\n8.5 Ã…Ã±Ã«Ã¨ Ã¢Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã£Ã® Ã¢Ã»Ã§Ã¢Ã Ã«Ã¨, Ã²Ã® Ã¯Ã® Ã¯Ã°Ã¨Ã¡Ã»Ã²Ã¨Ã¾ Ã®Ã­ Ã®Ã¡Ã¿Ã§Ã Ã­ Ã¤Ã®Ã«Ã®Ã¦Ã¨Ã²Ã¼\n[ÃÃ°Ã¨Ã¬Ã¥Ã°: `ÃƒÃ¥Ã­Ã¥Ã°Ã Ã« ÃŠÃ Ã±Ã¥Ã²Ã¨, Ã°Ã¿Ã¤Ã®Ã¢Ã®Ã© ÃˆÃ¢Ã Ã­Ã®Ã¢ Ã¯Ã® Ã¢Ã Ã¸Ã¥Ã¬Ã³ Ã¯Ã°Ã¨ÃªÃ Ã§Ã Ã­Ã¨Ã¾ Ã¯Ã°Ã¨Ã¡Ã»Ã«`];\n8.6 Ã‘Ã¯Ã°Ã Ã¸Ã¨Ã¢Ã Ã¿ Ã·Ã²Ã®-Ã«Ã¨Ã¡Ã®, Ã¢Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã© Ã¤Ã®Ã«Ã¦Ã¥Ã­ Ã±ÃªÃ Ã§Ã Ã²Ã¼: ` Ã’Ã®Ã¢Ã Ã°Ã¨Ã¹ `Ã§Ã¢Ã Ã­Ã¨Ã¥`, Ã°Ã Ã§Ã°Ã¥Ã¸Ã¨Ã²Ã¥ Ã®Ã¡Ã°Ã Ã²Ã¨Ã²Ã¼Ã±Ã¿` `;\n8.7 ÃÃ°Ã¨ Ã¯Ã®Ã®Ã¹Ã°Ã¥Ã­Ã¨Ã¨ Ã¢Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã£Ã® Ã®Ã­ Ã¤Ã®Ã«Ã¦Ã¥Ã­ Ã®Ã²Ã¢Ã¥Ã²Ã¨Ã²Ã¼: `Ã‘Ã«Ã³Ã¦Ã³ Ã€Ã°Ã¬Ã¨Ã¨ Las Venturas!`;\n8.8 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã© Ã®Ã¡Ã¿Ã§Ã Ã­ Ã¢Ã¥Ã¦Ã«Ã¨Ã¢Ã® Ã®Ã¡Ã¹Ã Ã²Ã¼Ã±Ã¿ Ã± Ã«Ã¾Ã¡Ã»Ã¬ Ã¦Ã¨Ã²Ã¥Ã«Ã¥Ã¬ Ã¸Ã²Ã Ã²Ã ;\n8.9 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã© Ã®Ã¡Ã¿Ã§Ã Ã­ Ã®Ã¡Ã°Ã Ã¹Ã Ã²Ã¼Ã±Ã¿ Ã­Ã  `Ã‚Ã»` Ãª Ã±Ã¢Ã®Ã¨Ã¬ Ã±Ã®Ã±Ã«Ã³Ã¦Ã¨Ã¢Ã¶Ã Ã¬\n[Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã¥Ã±Ã«Ã¨ Ã¤Ã®Ã«Ã¦Ã­Ã®Ã±Ã²Ã¼ Ã¨ Ã§Ã¢Ã Ã­Ã¨Ã¥ Ã¢Ã»Ã¸Ã¥, Ã²Ã® Ã°Ã Ã§Ã°Ã¥Ã¸Ã Ã¥Ã²Ã±Ã¿ Ã®Ã¡Ã°Ã Ã¹Ã Ã²Ã¼Ã±Ã¿ Ã­Ã  `Ã’Ã»`].\n8.10 ÃÃ°Ã¨ Ã®Ã¡Ã¹Ã¥Ã­Ã¨Ã¨ Ã¢ Ã°Ã Ã¶Ã¨Ã¾ Ã¤Ã®Ã«Ã¦Ã­Ã» Ã±Ã®Ã¡Ã«Ã¾Ã¤Ã Ã²Ã¼Ã±Ã¿ Ã¢Ã±Ã¥ Ã¢Ã»Ã¸Ã¥Ã¯Ã¥Ã°Ã¥Ã·Ã¨Ã±Ã«Ã¥Ã­Ã­Ã»Ã¥ Ã¯Ã°Ã Ã¢Ã¨Ã«Ã ;\n8.11 ÃÃ°Ã¨ Ã®Ã¡Ã¹Ã¥Ã­Ã¨Ã¨ Ã¯Ã® Ã°Ã Ã¶Ã¨Ã¨ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã®:\n8.11.1 Ã‚Ã¥Ã±Ã²Ã¨ Ã°Ã Ã§Ã£Ã®Ã¢Ã®Ã°Ã» Ã­Ã¥ Ã±Ã¢Ã¿Ã§Ã Ã­Ã­Ã»Ã¥ Ã± Ã­Ã¥Ã±Ã¥Ã­Ã¨Ã¥Ã¬ Ã±Ã«Ã³Ã¦Ã¡Ã» [ÃÃ´Ã´Ã²Ã®Ã¯Ã¨Ã²Ã¼, Ã´Ã«Ã³Ã¤Ã¨Ã²Ã¼, Ã¬Ã¥Ã²Ã Ã£Ã¥Ã©Ã¬Ã¨Ã­Ã£];\n8.11.2 Ã“Ã¯Ã®Ã²Ã°Ã¥Ã¡Ã«Ã¿Ã²Ã¼ Ã­Ã¥Ã¶Ã¥Ã­Ã§Ã³Ã°Ã­Ã»Ã¥ Ã¢Ã»Ã°Ã Ã¦Ã¥Ã­Ã¨Ã¿ [Ã¢ OOC Ã¨ IC Ã·Ã Ã²];\n8.11.3 ÃƒÃ®Ã¢Ã®Ã°Ã¨Ã²Ã¼ Ã¡Ã¥Ã§ Ã®Ã¡Ã®Ã§Ã­Ã Ã·Ã¥Ã­Ã¨Ã¿ Ã¢Ã Ã¸Ã¥Ã£Ã® Ã¢Ã§Ã¢Ã®Ã¤Ã  [Ã¯Ã°Ã¨Ã¬Ã¥Ã°: /r [Ã‚Ã€Ã˜ Ã‚Ã‡Ã‚ÃÃ„]:].\n8.12 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã© Ã®Ã¡Ã¿Ã§Ã Ã­ Ã®Ã¡Ã°Ã Ã¹Ã Ã²Ã¼Ã±Ã¿ Ãª Ã±Ã²Ã Ã°Ã¸Ã¨Ã¬ Ã±Ã²Ã°Ã®Ã£Ã® Ã¯Ã® Ã§Ã¢Ã Ã­Ã¨Ã¾\n[ÃÃ°Ã¨Ã¬Ã¥Ã°: `Ã’Ã®Ã¢Ã Ã°Ã¨Ã¹ ÃƒÃ¥Ã­Ã¥Ã°Ã Ã« ÃŠÃ Ã±Ã¥Ã²Ã¨, Ã°Ã Ã§Ã°Ã¥Ã¸Ã¨Ã²Ã¥ Ã®Ã¡Ã°Ã Ã²Ã¨Ã²Ã¼Ã±Ã¿?`];\n8.13 Ã‚Ã® Ã¢Ã°Ã¥Ã¬Ã¿ Â“Ã°Ã Ã¤Ã¨Ã®Ã¬Ã®Ã«Ã·Ã Ã­Ã¨Ã¥Â” [Ã—Ã‘ Ã°Ã Ã¶Ã¨Ã¨] Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã¢Ã±Ã¥Ã¬ Ã¨Ã±Ã¯Ã®Ã«Ã¼Ã§Ã®Ã¢Ã Ã²Ã¼ Ã°Ã Ã¶Ã¨Ã¾ Ã¤Ã® Ã±Ã­Ã¿Ã²Ã¨Ã¥ Ã—Ã‘\n[Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã°Ã Ã¶Ã¨Ã¥Ã© Ã¬Ã®Ã£Ã³Ã² Ã¯Ã®Ã«Ã¼Ã§Ã®Ã¢Ã Ã²Ã¼Ã±Ã¿ Ã±Ã²Ã Ã°Ã¸Ã¨Ã¥ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã», Ã“Ã‘Ã].\n")
+  imgui.Text(u8"ÃƒÃ«Ã Ã¢Ã  IX. ÃÃ°Ã®Ã¯Ã³Ã±ÃªÃ­Ã®Ã© Ã°Ã¥Ã¦Ã¨Ã¬.\n9.1 ÃÃ  Ã²Ã¥Ã°Ã°Ã¨Ã²Ã®Ã°Ã¨Ã¾ Ã·Ã Ã±Ã²Ã¨ Las-Venturas Army Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã® Ã¯Ã°Ã®Ã¯Ã³Ã±ÃªÃ Ã²Ã¼:\nÃ‘Ã¥Ã­Ã Ã²Ã®Ã°Ã®Ã¢;\n- ÃŒÃ½Ã°Ã  Ã¨ Ã¥Ã£Ã® Ã§Ã Ã¬Ã¥Ã±Ã²Ã¨Ã²Ã¥Ã«Ã¥Ã©\n[Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ãª Ã¯Ã³Ã­ÃªÃ²Ã³ 9.1 - Ã§Ã Ã¬Ã¥Ã±Ã²Ã¨Ã²Ã¥Ã«Ã¨ ÃŒÃ½Ã°Ã  Ã¯Ã°Ã¨ Ã¢ÃºÃ¥Ã§Ã¤Ã¥ Ã­Ã  Ã®ÃµÃ°Ã Ã­Ã¿Ã¥Ã¬Ã³Ã¾ Ã²Ã¥Ã°Ã°Ã¨Ã²Ã®Ã°Ã¨Ã¾ Ã®Ã¡Ã¿Ã§Ã Ã­Ã» Ã¯Ã°Ã¥Ã¤Ã®Ã±Ã²Ã Ã¢Ã¨Ã²Ã¼ Ã±Ã«Ã¥Ã¤Ã³Ã¾Ã¹Ã¨Ã¥ Ã¤Ã®ÃªÃ³Ã¬Ã¥Ã­Ã²Ã»]:\nÃ„Ã®ÃªÃ³Ã¬Ã¥Ã­Ã² Ã¯Ã®Ã¤Ã²Ã¢Ã¥Ã°Ã¦Ã¤Ã Ã¾Ã¹Ã¨Ã© Ã«Ã¨Ã·Ã­Ã®Ã±Ã²Ã¼.\nÃ“Ã¤Ã®Ã±Ã²Ã®Ã¢Ã¥Ã°Ã¥Ã­Ã¨Ã¥ Ã¯Ã®Ã¤Ã²Ã¢Ã¥Ã°Ã¦Ã¤Ã Ã¾Ã¹Ã¥Ã¥ ÃªÃ³Ã°Ã¨Ã°Ã³Ã¾Ã¹Ã³Ã¾ Ã®Ã²Ã°Ã Ã±Ã«Ã¼.\nÃ„Ã¨Ã°Ã¥ÃªÃ²Ã®Ã°Ã  Ã”ÃÃ Ã¨ Ã¥Ã£Ã® Ã§Ã Ã¬Ã¥Ã±Ã²Ã¨Ã²Ã¥Ã«Ã¥Ã©;\nÃ˜Ã¥Ã°Ã¨Ã´Ã®Ã¢ SAPD Ã¨ Ã¨Ãµ Ã§Ã Ã¬Ã¥Ã±Ã²Ã¨Ã²Ã¥Ã«Ã¥Ã©;\n- ÃƒÃ¥Ã­Ã¥Ã°Ã Ã«Ã  San-Fierro Army.\nÃÃ±Ã²Ã Ã«Ã¼Ã­Ã»Ã¬ Ã£Ã®Ã±Ã³Ã¤Ã Ã°Ã±Ã²Ã¢Ã¥Ã­Ã­Ã»Ã¬ Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã¬ Ã­Ã  Ã²Ã¥Ã°Ã°Ã¨Ã²Ã®Ã°Ã¨Ã¨ Ã Ã°Ã¬Ã¨Ã¨ Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã® Ã­Ã ÃµÃ®Ã¤Ã¨Ã²Ã¼Ã±Ã¿\nÃ¯Ã®Ã±Ã«Ã¥ Ã¯Ã°Ã¥Ã¤Ã³Ã¯Ã°Ã¥Ã¦Ã¤Ã¥Ã­Ã¨Ã¿ Ã¯Ã® Ã¢Ã®Ã«Ã­Ã¥ Ã¤Ã¥Ã¯Ã Ã°Ã²Ã Ã¬Ã¥Ã­Ã²Ã  Ã¨ Ã¯Ã®Ã«Ã³Ã·Ã¥Ã­Ã¨Ã¿ Ã®Ã¤Ã®Ã¡Ã°Ã¥Ã­Ã¨Ã¿ Ã®Ã²\nÃ±Ã²Ã Ã°Ã¸Ã¨Ãµ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã®Ã¢, Ã«Ã¨Ã¡Ã® Ã±Ã²Ã Ã°Ã¸Ã¥Ã£Ã® Ã¢ Ã·Ã Ã±Ã²Ã¨, Ã­Ã  Ã¤Ã Ã­Ã­Ã»Ã© Ã¬Ã®Ã¬Ã¥Ã­Ã²;\n9.2 ÃÃ®Ã©Ã¶Ã» Ã­Ã  Ã¯Ã®Ã±Ã²Ã³ Ã®Ã¡Ã¿Ã§Ã Ã­Ã» Ã¤Ã®ÃªÃ«Ã Ã¤Ã»Ã¢Ã Ã²Ã¼ Ã¢ Ã°Ã Ã¶Ã¨Ã¾ Ã® Ã¯Ã°Ã¨Ã¡Ã»Ã²Ã¨Ã¨ Ã¢Ã±Ã¥Ãµ Ã«Ã¨Ã¶ Ã¢ Ã£Ã°Ã Ã¦Ã¤Ã Ã­Ã±ÃªÃ®Ã© Ã®Ã¤Ã¥Ã¦Ã¤Ã¥ Ã­Ã  ÃŠÃÃ Ã¨ Ã‘ÃŠÃÃ;\n9.3 ÃÃ®Ã©Ã¶Ã» Ã­Ã  Ã¯Ã®Ã±Ã²Ã³ Ã¨Ã¬Ã¥Ã¾Ã² Ã¯Ã°Ã Ã¢Ã® Ã¯Ã°Ã®Ã¢Ã¥Ã°Ã¿Ã²Ã¼ Ã¯Ã Ã±Ã¯Ã®Ã°Ã²Ã  Ã³ Ã¢Ã±Ã¥Ãµ Ã¢ÃºÃ¥Ã§Ã¦Ã Ã¾Ã¹Ã¨Ãµ Ã¨ Ã¢Ã»Ã¥Ã§Ã¦Ã Ã¾Ã¹Ã¨Ãµ Ã¢Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ãµ,\nÃ¤Ã®Ã«Ã¦Ã­Ã®Ã±Ã²Ã­Ã»Ãµ Ã¨ Ã£Ã°Ã Ã¦Ã¤Ã Ã­Ã±ÃªÃ¨Ãµ Ã«Ã¨Ã¶\n[Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã±Ã¥Ã­Ã Ã²Ã®Ã°Ã» Ã¸Ã²Ã Ã²Ã , Ã±Ã²Ã Ã°Ã¸Ã¨Ã¥ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã», ÃªÃ®Ã«Ã®Ã­Ã­Ã  Ã´Ã³Ã° Ã± Ã¡Ã®Ã¥Ã¯Ã°Ã¨Ã¯Ã Ã±Ã Ã¬Ã¨];\n9.4 Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã¢Ã»Ã¯Ã³Ã±ÃªÃ Ã²Ã¼ Ã± Ã²Ã¥Ã°Ã°Ã¨Ã²Ã®Ã°Ã¨Ã¨ Ã·Ã Ã±Ã²Ã¨ Ã±Ã®Ã«Ã¤Ã Ã², ÃªÃ®Ã²Ã®Ã°Ã»Ã¥ Ã­Ã¥ Ã¨Ã¬Ã¥Ã¾Ã² Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã¨Ã¿ Ã­Ã  Ã¢Ã»Ã¥Ã§Ã¤ Ã®Ã² Ã±Ã²Ã Ã°Ã¸Ã¨Ãµ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã®Ã¢\n[Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã¯Ã³Ã­ÃªÃ² 9.5 Ã³Ã±Ã²Ã Ã¢Ã  Ã Ã°Ã¬Ã¨Ã¨];\n9.5 Ã„Ã«Ã¿ Ã¨Ã±Ã¯Ã®Ã«Ã­Ã¥Ã­Ã¨Ã¿ Ã®Ã±Ã­Ã®Ã¢Ã­Ã»Ãµ Ã§Ã Ã¤Ã Ã· Ã¯Ã®Ã¤Ã°Ã Ã§Ã¤Ã¥Ã«Ã¥Ã­Ã¨Ã¿,\nÃ¡Ã®Ã©Ã¶Ã» Ã‘ÃÃÃ, Ã“Ã‘Ã, Ã‘Ã‚Ã‘Ã‘, Ã‚Ã‘Ã, Ã€Ã‘Ã‚ Ã¨Ã¬Ã¥Ã¾Ã² Ã¯Ã°Ã Ã¢Ã® Ã¯Ã®ÃªÃ¨Ã­Ã³Ã²Ã¼ Ã·Ã Ã±Ã²Ã¼ Ã¡Ã¥Ã§ Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã¨Ã¿ Ã±Ã²Ã Ã°Ã¸Ã¨Ãµ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã®Ã¢;\n9.6 Ã‚ÃºÃ¥Ã§Ã¤ Ã­Ã  Ã²Ã¥Ã°Ã°Ã¨Ã²Ã®Ã°Ã¨Ã¾ Ã¢Ã®Ã¥Ã­Ã­Ã®Ã© Ã·Ã Ã±Ã²Ã¨ Ã­Ã  Ã£Ã°Ã Ã¦Ã¤Ã Ã­Ã±ÃªÃ®Ã¬ Ã²Ã°Ã Ã­Ã±Ã¯Ã®Ã°Ã²Ã­Ã®Ã¬ Ã±Ã°Ã¥Ã¤Ã±Ã²Ã¢Ã¥ Ã±Ã²Ã°Ã®Ã£Ã® Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­\n[Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã±Ã¥Ã­Ã Ã²Ã®Ã°Ã» Ã¸Ã²Ã Ã²Ã , Ã¯Ã Ã°ÃªÃ®Ã¢ÃªÃ  Ã Ã¢Ã²Ã®Ã¬Ã®Ã¡Ã¨Ã«Ã¿ Ã­Ã  Ã²Ã¥Ã°Ã°Ã¨Ã²Ã®Ã°Ã¨Ã¨ Ã·Ã Ã±Ã²Ã¨,\nÃ±Ã®Ã£Ã«Ã Ã±Ã­Ã® Ã£Ã«Ã Ã¢Ã¥ XII Ã³Ã±Ã²Ã Ã¢Ã  Ã Ã°Ã¬Ã¨Ã¨];\n9.6.1 Ã‹Ã¨Ã¶Ã Ã¬, Ã³ÃªÃ Ã§Ã Ã­Ã­Ã»Ã¬ Ã¢ Ã¯Ã³Ã­ÃªÃ²Ã¥ 9.1 Ã³Ã±Ã²Ã Ã¢Ã  Ã Ã°Ã¬Ã¨Ã¨, Ã¤Ã®Ã¯Ã³Ã±ÃªÃ Ã¥Ã²Ã±Ã¿ Ã¢ÃºÃ¥Ã§Ã¤ Ã­Ã  Ã²Ã¥Ã°Ã°Ã¨Ã²Ã®Ã°Ã¨Ã¾ Ã¢Ã®Ã¥Ã­Ã­Ã®Ã© Ã·Ã Ã±Ã²Ã¨\nÃ­Ã  Ã±Ã«Ã³Ã¦Ã¥Ã¡Ã­Ã®Ã¬ Ã²Ã°Ã Ã­Ã±Ã¯Ã®Ã°Ã²Ã¥ Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¥Ã«Ã¼Ã­Ã® Ã¢ Ã±Ã«Ã³Ã¦Ã¥Ã¡Ã­Ã»Ãµ Ã¶Ã¥Ã«Ã¿Ãµ;\n9.7 Ã‚Ã±Ã¥ Ã¢Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã¥ Ã®Ã¡Ã¿Ã§Ã Ã­Ã» Ã¯Ã®ÃªÃ Ã§Ã»Ã¢Ã Ã²Ã¼ Ã¯Ã Ã±Ã¯Ã®Ã°Ã² Ã­Ã  ÃŠÃÃ Ã¨ Ã‘ÃŠÃÃ Ã¯Ã® Ã¯Ã°Ã¨Ã¡Ã»Ã²Ã¨Ã¨ Ã¢ Ã·Ã Ã±Ã²Ã¼ Ã¢ Ã£Ã°Ã Ã¦Ã¤Ã Ã­Ã±ÃªÃ®Ã© Ã´Ã®Ã°Ã¬Ã¥\n[Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã±Ã²Ã Ã°Ã¸Ã¨Ã¥ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã»];")
+  imgui.Text(u8"9.8 Ã‚Ã®Ã§Ã¤Ã³Ã¸Ã­Ã®Ã¥ Ã¯Ã°Ã®Ã±Ã²Ã°Ã Ã­Ã±Ã²Ã¢Ã® Las-Venturas Army Ã¿Ã¢Ã«Ã¿Ã¥Ã²Ã±Ã¿ Ã§Ã ÃªÃ°Ã»Ã²Ã»Ã¬\n[Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã£Ã°Ã³Ã§Ã®Ã¢Ã»Ã¥ Ã¢Ã¥Ã°Ã²Ã®Ã«Ã¥Ã²Ã» SFa Ã¯Ã°Ã¨ Ã¯Ã®Ã±Ã²Ã Ã¢ÃªÃ¥ Ã¡Ã®Ã¥Ã¯Ã°Ã¨Ã¯Ã Ã±Ã®Ã¢, Ã  Ã²Ã ÃªÃ¦Ã¥ Ã«Ã¨Ã¶Ã , Ã³ÃªÃ Ã§Ã Ã­Ã­Ã»Ã¥ Ã¢ Ã¯Ã³Ã­ÃªÃ²Ã¥ 9.1 Ã³Ã±Ã²Ã Ã¢Ã  Ã Ã°Ã¬Ã¨Ã¨].\n9.9 ÃÃ®ÃªÃ¨Ã­Ã³Ã²Ã¼ Ã·Ã Ã±Ã²Ã¨ Ã¢Ã®Ã§Ã¤Ã³Ã¸Ã­Ã»Ã¬ Ã¯Ã³Ã²Â¸Ã¬ Ã°Ã Ã§Ã°Ã¥Ã¸Ã Ã¥Ã²Ã±Ã¿ Ã²Ã®Ã«Ã¼ÃªÃ® Ã± Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã¨Ã¿ Ã¤Ã¨Ã±Ã¯Ã¥Ã²Ã·Ã¥Ã°Ã  (Ã“Ã‘Ã, Ã±Ã²Ã Ã°Ã¸Ã¨Ãµ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã®Ã¢)\n[Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã“Ã‘Ã, Ã¯Ã®Ã°Ã² Ã—Ã‘, Ã¨Ã£Ã­Ã®Ã°Ã¨Ã°Ã®Ã¢Ã Ã­Ã¨Ã¥ Ã§Ã Ã¯Ã°Ã®Ã±Ã ].")
+  imgui.Text(u8"ÃƒÃ«Ã Ã¢Ã  X. Ã‚Ã®Ã¥Ã­Ã­Ã»Ã© Ã²Ã°Ã Ã­Ã±Ã¯Ã®Ã°Ã².\n10.1 Ã•Ã Ã¬Ã¬Ã¥Ã°Ã», Ã±Ã²Ã®Ã¿Ã¹Ã¨Ã¥ Ã¢ ÃƒÃ‚Ã’, Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã® Ã¡Ã°Ã Ã²Ã¼ Ã¡Ã®Ã©Ã¶Ã Ã¬: Ã“Ã‘Ã, Ã‘ÃÃÃ, Ã‘Ã‚Ã‘Ã‘, Ã‚Ã‘Ã, Ã€Ã‘Ã‚,\nÃ  Ã²Ã ÃªÃ¦Ã¥ Ã¤Ã«Ã¿ Ã±Ã®Ã¯Ã°Ã®Ã¢Ã®Ã¦Ã¤Ã¥Ã­Ã¨Ã¿ Ã´Ã³Ã° Ã¨ Ã¯Ã Ã²Ã°Ã³Ã«Ã¨Ã°Ã®Ã¢Ã Ã­Ã¨Ã¿ Ã·Ã Ã±Ã²Ã¨;\n10.2 ÃÃ´Ã¨Ã¶Ã¥Ã°Ã±ÃªÃ¨Ã¥ Ã¤Ã¦Ã¨Ã¯Ã» Ã¢ ÃƒÃ‚Ã’ Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã® Ã¡Ã°Ã Ã²Ã¼ Ã¡Ã®Ã©Ã¶Ã Ã¬: Ã“Ã‘Ã, Ã‘ÃÃÃ, Ã€Ã‘Ã‚,\nÃŠÃ®Ã¬.Ã±Ã®Ã±Ã²Ã Ã¢Ã³ Ã¢Ã§Ã¢Ã®Ã¤Ã®Ã¢ Ã¨ Ã®Ã²Ã°Ã¿Ã¤Ã®Ã¢ [ÃŠÃ®Ã¬Ã Ã­Ã¤Ã¨Ã°, Ã§Ã Ã¬Ã¥Ã±Ã²Ã¨Ã²Ã¥Ã«Ã¨, Ã²Ã°Ã¥Ã­Ã¥Ã°Ã ];\n10.3 ÃÃ´Ã¨Ã¶Ã¥Ã°Ã±ÃªÃ¨Ã© Ã¤Ã¦Ã¨Ã¯ Ã³ ÃªÃ Ã§Ã Ã°Ã¬Ã» Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã® Ã¡Ã°Ã Ã²Ã¼: Ã€Ã‘Ã‚, Ã¤Ã«Ã¿ Ã¯Ã°Ã®Ã¢Ã¥Ã¤Ã¥Ã­Ã¨Ã¿ Ã«Ã¥ÃªÃ¶Ã¨Ã©;\n10.4 Ã•Ã Ã¬Ã¬Ã¥Ã°Ã , Ã±Ã²Ã®Ã¿Ã¹Ã¨Ã¥ Ã³ ÃªÃ Ã§Ã Ã°Ã¬Ã», Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã® Ã¡Ã°Ã Ã²Ã¼ Ã¡Ã®Ã©Ã¶Ã Ã¬: Ã“Ã‘Ã, Ã‘ÃÃÃ;\n10.5 Ã•Ã Ã¬Ã¬Ã¥Ã°Ã , Ã±Ã²Ã®Ã¿Ã¹Ã¨Ã¥ Ã¢ Ã˜Ã²Ã Ã¡Ã¥ Ã‘ÃÃÃ Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã® Ã¡Ã°Ã Ã²Ã¼ Ã¡Ã®Ã©Ã¶Ã Ã¬: Ã“Ã‘Ã, Ã‘ÃÃÃ;\n10.6 Ã‚Ã¥Ã°Ã²Ã®Ã«Ã¥Ã²Ã» Ã§Ã  ÃªÃ Ã§Ã Ã°Ã¬Ã®Ã© Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã® Ã¡Ã°Ã Ã²Ã¼ Ã¡Ã®Ã©Ã¶Ã Ã¬: Ã‘ÃÃÃ Ã®Ã² 3-Ãµ Ã·Ã¥Ã«Ã®Ã¢Ã¥Ãª; \n Ã± Ã®Ã¯Ã¥Ã°Ã Ã²Ã¨Ã¢Ã­Ã¨ÃªÃ ; Ã‘Ã‚Ã‘Ã‘ Ã®Ã² 3-Ãµ Ã·Ã¥Ã«Ã®Ã¢Ã¥Ãª, Ã  Ã²Ã ÃªÃ¦Ã¥ Ã± Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã¨Ã¿ Ã±Ã²Ã Ã°Ã¸Ã¨Ãµ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã®Ã¢;\n10.7 ÃƒÃ°Ã³Ã§Ã®Ã¢Ã¨ÃªÃ¨ Ã±Ã­Ã Ã¡Ã¦Ã¥Ã­Ã¨Ã¿ Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã® Ã¡Ã°Ã Ã²Ã¼ Ã¡Ã®Ã©Ã¶Ã Ã¬: Ã€Ã‘Ã‚, Ã“Ã‘Ã, Ã‘ÃÃÃ, Ã‚Ã‘Ã\n[Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã¥Ã´Ã°Ã¥Ã©Ã²Ã®Ã° Ã¨ Ã¢Ã»Ã¸Ã¥ Ã¤Ã«Ã¿ Ã¯Ã®Ã¬Ã®Ã¹Ã¨ Ã‚Ã‘Ã Ã± Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã¨Ã¿ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã®Ã¢ Ã¸Ã²Ã Ã¡Ã ];\n10.8 Ã€Ã¢Ã²Ã®Ã¡Ã³Ã±Ã» Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã® Ã¡Ã°Ã Ã²Ã¼ Ã¯Ã® Ã¯Ã°Ã¨ÃªÃ Ã§Ã³ Ã±Ã²Ã Ã°Ã¸Ã¨Ãµ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã®Ã¢ Ã¤Ã«Ã¿ Ã¯Ã°Ã®Ã¢Ã¥Ã¤Ã¥Ã­Ã¨Ã¿ Ã¬Ã¥Ã°Ã®Ã¯Ã°Ã¨Ã¿Ã²Ã¨Ã© Ã¢Ã­Ã³Ã²Ã°Ã¨ Ã Ã°Ã¬Ã¨Ã¨, Ã¯Ã°Ã¨Ã§Ã»Ã¢Ã®Ã¢;\n10.9 Ã‘Ã Ã¬Ã®Ã«Â¸Ã² Shamal Ã¨Ã¬Ã¥Ã¾Ã² Ã¯Ã°Ã Ã¢Ã® Ã¡Ã°Ã Ã²Ã¼: Ã±Ã²Ã Ã°Ã¸Ã¨Ã¥ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã», Ã²Ã ÃªÃ¦Ã¥ Ã«Ã¾Ã¡Ã®Ã© Ã¡Ã®Ã¥Ã¶ Ã± Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã¨Ã¿ Ã±Ã²Ã Ã°Ã¸Ã¨Ãµ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã®Ã¢;\n10.10 Ã‘Ã²Ã Ã°Ã¸Ã¨Ã¥ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã» Ã¨Ã¬Ã¥Ã¾Ã² Ã¯Ã°Ã Ã¢Ã® Ã¡Ã°Ã Ã²Ã¼ Ã«Ã¾Ã¡Ã³Ã¾ Ã²Ã¥ÃµÃ­Ã¨ÃªÃ³ Ã Ã°Ã¬Ã¨Ã¨;")
+  imgui.Text(u8"ÃƒÃ«Ã Ã¢Ã  XI. ÃÃ®Ã«Ã­Ã®Ã¬Ã®Ã·Ã¨Ã¿ Ã¢Ã§Ã¢Ã®Ã¤Ã®Ã¢/Ã¤Ã®Ã«Ã¦Ã­Ã®Ã±Ã²Ã¥Ã©.\n11.1 Ã‚Ã§Ã¢Ã®Ã¤ Ã‚Ã‚Ã Ã¯Ã®Ã¤Ã·Ã¨Ã­Ã¿Ã¥Ã²Ã±Ã¿ Ã¢Ã±Ã¥Ã¬ Ã¢Ã»Ã¸Ã¥Ã±Ã²Ã®Ã¿Ã¹Ã¨Ã¬ Ã¢Ã§Ã¢Ã®Ã¤Ã Ã¬, Ã  Ã¨Ã¬Ã¥Ã­Ã­Ã®: Ã€Ã‘Ã‚, Ã±Ã¯Ã¥Ã¶. Ã®Ã²Ã°Ã¿Ã¤Ã Ã¬ Ã¨ Ã±Ã²Ã Ã°Ã¸Ã¨Ã¬ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã Ã¬;\n11.2 Ã‚Ã§Ã¢Ã®Ã¤Ã  Ã‘Ã‚Ã‘Ã‘, Ã‚Ã‚Ã Ã¨ Ã‚Ã‘Ã Ã­Ã ÃµÃ®Ã¤Ã¿Ã²Ã±Ã¿ Ã­Ã  Ã®Ã¤Ã­Ã®Ã¬ Ã³Ã°Ã®Ã¢Ã­Ã¥ Ã¨Ã¥Ã°Ã Ã°ÃµÃ¨Ã¨;\n11.3 ÃÃ²Ã°Ã¿Ã¤ Ã±Ã¯Ã¥Ã¶Ã¨Ã Ã«Ã¼Ã­Ã®Ã£Ã® Ã­Ã Ã§Ã­Ã Ã·Ã¥Ã­Ã¨Ã¿ Ã‘ÃÃÃ Ã¯Ã®Ã¤Ã·Ã¨Ã­Ã¿Ã¥Ã²Ã±Ã¿: Ã£Ã¥Ã­. Ã¸Ã²Ã Ã¡Ã³, Ã“Ã‘Ã;\n11.4 Ã“Ã‘Ã Ã¯Ã®Ã¤Ã·Ã¨Ã­Ã¿Ã¥Ã²Ã±Ã¿: Ã£Ã¥Ã­. Ã¸Ã²Ã Ã¡Ã³.\nÃÃ Ã·Ã Ã«Ã¼Ã­Ã¨Ãª Ã“Ã‘Ã Ã¯Ã®Ã¤Ã·Ã¨Ã­Ã¿Ã¥Ã²Ã±Ã¿ Ã®Ã² Ã¯Ã®Ã«ÃªÃ®Ã¢Ã­Ã¨ÃªÃ \nÃ‡Ã Ã¬.ÃÃ Ã·Ã Ã«Ã¼Ã­Ã¨ÃªÃ  Ã“Ã‘Ã Ã¯Ã®Ã·Ã¨Ã­Ã¿Ã¥Ã²Ã±Ã¿ Ã®Ã² Ã¯Ã®Ã¤Ã¯Ã®Ã«ÃªÃ®Ã¢Ã­Ã¨ÃªÃ \nÃ®Ã² Ã‘Ã²Ã Ã¦Â¸Ã°Ã  Ã¨ Ã¤Ã® Ã‘Ã².ÃÃ¯Ã¥Ã°Ã Ã²Ã¨Ã¢Ã­Ã¨ÃªÃ  Ã¯Ã®Ã¤Ã·Ã¨Ã­Ã¿Ã¾Ã²Ã±Ã¿ Ã®Ã² Ã¬Ã Ã©Ã®Ã°Ã .\n11.5 Ã‹Ã¾Ã¡Ã®Ã© Ã¡Ã®Ã¥Ã¶ Ã€Ã°Ã¬Ã¨Ã¨ Las Venturas, Ã¤Ã®Ã£Ã®Ã¢Ã®Ã°Ã¨Ã¢Ã¸Ã¨Ã±Ã¼ Ã± Ã€Ã‘Ã‚ Ã¨Ã«Ã¨ Ã±Ã²Ã Ã°Ã¸Ã¨Ã¬Ã¨ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã Ã¬Ã¨,\nÃ¬Ã®Ã£Ã³Ã² Ã®Ã°Ã£Ã Ã­Ã¨Ã§Ã®Ã¢Ã»Ã¢Ã Ã²Ã¼ Ã²Ã°Ã¥Ã­Ã¨Ã°Ã®Ã¢ÃªÃ¨ Ã¨ Ã±Ã²Ã°Ã®Ã¨Ã²Ã¼ Ã Ã°Ã¬Ã¨Ã¾ Ã¤Ã«Ã¿ Ã½Ã²Ã¨Ãµ Ã²Ã°Ã¥Ã­Ã¨Ã°Ã®Ã¢Ã®Ãª;\n11.6 Ã“Ã¯Ã®Ã«Ã­Ã®Ã¬Ã®Ã·Ã¥Ã­Ã­Ã»Ã¥ Ã¢Ã»Ã¤Ã Ã²Ã¼ Ã¤Ã¨Ã±Ã¶Ã¨Ã¯Ã«Ã¨Ã­Ã Ã°Ã­Ã®Ã¥ Ã¢Ã§Ã»Ã±ÃªÃ Ã­Ã¨Ã¥,\nÃ¢Ã® Ã¢Ã°Ã¥Ã¬Ã¿ Ã­Ã ÃªÃ Ã§Ã Ã­Ã¨Ã¿, Ã®Ã¡Ã¿Ã§Ã Ã­Ã» Ã°Ã³ÃªÃ®Ã¢Ã®Ã¤Ã±Ã²Ã¢Ã®Ã¢Ã Ã²Ã¼Ã±Ã¿ Ã²Ã Ã¡Ã«Ã¨Ã¶Ã¥Ã© Ã­Ã ÃªÃ Ã§Ã Ã­Ã¨Ã© Ã¨ Ã¤Ã¨Ã±Ã¶Ã¨Ã¯Ã«Ã¨Ã­Ã Ã°Ã­Ã»Ãµ Ã¢Ã§Ã»Ã±ÃªÃ Ã­Ã¨Ã©;")
+  imgui.Text(u8"ÃƒÃ«Ã Ã¢Ã  XII. ÃÃ°Ã Ã¢Ã¨Ã«Ã  Ã¯Ã Ã°ÃªÃ®Ã¢ÃªÃ¨.\n12.1 Ã‡Ã  Ã­Ã Ã°Ã³Ã¸Ã¥Ã­Ã¨Ã¥ Ã¯Ã°Ã Ã¢Ã¨Ã« Ã¯Ã Ã°ÃªÃ®Ã¢ÃªÃ¨, Ã¡Ã®Ã¥Ã¶ Ã¬Ã®Ã¦Ã¥Ã² Ã¯Ã®Ã«Ã³Ã·Ã¨Ã²Ã¼ Ã±Ã Ã­ÃªÃ¶Ã¨Ã¨ Ã¢ Ã¢Ã¨Ã¤Ã¥ Ã­Ã Ã°Ã¿Ã¤Ã , Ã§Ã  Ã¯Ã®Ã¢Ã²Ã®Ã°Ã­Ã»Ã¥ Ã­Ã Ã°Ã³Ã¸Ã¥Ã­Ã¨Ã¿ Ã¢Ã»Ã£Ã®Ã¢Ã®Ã°;\n12.2 ÃÃ¿Ã¤Ã®Ã¢Ã»Ã¬ Ã¨ Ã¥Ã´Ã°Ã¥Ã©Ã²Ã®Ã°Ã Ã¬ Ã±Ã²Ã°Ã®Ã£Ã® Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã¨Ã¬Ã¥Ã²Ã¼ Ã‹Ã’Ã‘ Ã¢ Ã·Ã Ã±Ã²Ã¨ Ã¨ Ã¯Ã°Ã¨Ã«Ã¥Ã£Ã Ã¾Ã¹Ã¥Ã© Ãª Ã­Ã¥Ã© Ã²Ã¥Ã°Ã°Ã¨Ã²Ã®Ã°Ã¨Ã¨;\n12.3 ÃÃ®Ã©Ã¶Ã», Ã¨Ã¬Ã¥Ã¾Ã¹Ã¨Ã¥ Ã§Ã¢Ã Ã­Ã¨Ã¥ ÃŒÃ«.Ã‘Ã¥Ã°Ã¦Ã Ã­Ã² Ã¨ Ã¢Ã»Ã¸Ã¥ Ã®Ã¡Ã¿Ã§Ã Ã­Ã» Ã¯Ã Ã°ÃªÃ®Ã¢Ã Ã²Ã¼Ã±Ã¿ Ã­Ã  Ã®Ã¡Ã¹Ã¥Ã© Ã¯Ã Ã°ÃªÃ®Ã¢ÃªÃ¥ Ã¢Ã­Ã¥ Ã·Ã Ã±Ã²Ã¨;\n12.4 ÃÃ®Ã©Ã¶Ã», Ã±Ã®Ã±Ã²Ã®Ã¿Ã¹Ã¨Ã¥ Ã¢ Ã±Ã¯Ã¥Ã¶.Ã®Ã²Ã°Ã¿Ã¤Ã¥ Ã‘ÃÃÃ Ã¨Ã¬Ã¥Ã¾Ã² Ã¯Ã°Ã Ã¢Ã® Ã¯Ã Ã°ÃªÃ®Ã¢Ã Ã²Ã¼ Ã‹Ã’Ã‘ Ã±Ã¥Ã°Ã®Ã£Ã® Ã¶Ã¢Ã¥Ã²Ã ,\nÃ³ÃªÃ Ã§Ã Ã­Ã­Ã»Ã¥ Ã¢ Ã¯Ã³Ã­ÃªÃ²Ã¥ 3.29 Ã¤Ã«Ã¿ Ã‘ÃÃÃ, Ã­Ã  Ã¯Ã Ã°ÃªÃ®Ã¢ÃªÃ¥ Ã±Ã¯Ã°Ã Ã¢Ã  Ã®Ã² Ã¸Ã²Ã Ã¡Ã ;\n12.5 ÃÃ®Ã©Ã¶Ã», Ã±Ã®Ã±Ã²Ã®Ã¿Ã¹Ã¨Ã¥ Ã¢ Ã±Ã¯Ã¥Ã¶.Ã®Ã²Ã°Ã¿Ã¤Ã¥ Ã“Ã‘Ã, Ã¨Ã¬Ã¥Ã¾Ã² Ã¯Ã°Ã Ã¢Ã® Ã¯Ã Ã°ÃªÃ®Ã¢Ã Ã²Ã¼ Ã‹Ã’Ã‘ Ã·Â¸Ã°Ã­Ã®Ã£Ã® Ã¶Ã¢Ã¥Ã²Ã ,\nÃ³ÃªÃ Ã§Ã Ã­Ã­Ã»Ã¥ Ã¢ Ã¯Ã³Ã­ÃªÃ²Ã¥ 3.29 Ã¤Ã«Ã¿ Ã“Ã‘Ã, Ã¢ Ã¡Ã³Ã­ÃªÃ¥Ã°Ã¥;\n12.6 ÃÃ®Ã©Ã¶Ã», Ã¨Ã¬Ã¥Ã¾Ã¹Ã¨Ã¥ Ã§Ã¢Ã Ã­Ã¨Ã¥ Ã®Ã² ÃŒÃ«.Ã‹Ã¥Ã©Ã²Ã¥Ã­Ã Ã­Ã² Ã¤Ã® ÃŠÃ Ã¯Ã¨Ã²Ã Ã­ Ã¨Ã¬Ã¥Ã¾Ã² Ã¯Ã°Ã Ã¢Ã® Ã¯Ã Ã°ÃªÃ®Ã¢Ã Ã²Ã¼Ã±Ã¿ Ã§Ã  Ã€Ã­Ã£Ã Ã°Ã®Ã¬ Â¹2;\n12.7 ÃÃ´Ã¨Ã¶Ã¥Ã°Ã» Ã¸Ã²Ã Ã¡Ã  Ã¨Ã¬Ã¥Ã¾Ã² Ã¯Ã°Ã Ã¢Ã® Ã¯Ã Ã°ÃªÃ®Ã¢Ã Ã²Ã¼Ã±Ã¿ Ã²Ã®Ã«Ã¼ÃªÃ® Ã¢ Ã¡Ã³Ã­ÃªÃ¥Ã°Ã¥;\n12.8 ÃÃ®Ã©Ã¶Ã» Ã¨Ã¬Ã¥Ã¾Ã¹Ã¨Ã¥ Ã±Ã¢Ã®Ã© Ã«Ã¨Ã·Ã­Ã»Ã© Ã¢Ã¥Ã°Ã²Ã®Ã«Â¸Ã² Ã®Ã¡Ã¿Ã§Ã Ã­Ã» Ã¯Ã Ã°ÃªÃ®Ã¢Ã Ã²Ã¼ Ã¥Ã£Ã®\nÃ­Ã  Ã®Ã¡Ã¹Ã¥Ã© Ã¯Ã Ã°ÃªÃ®Ã¢ÃªÃ¥ Ã¢Ã­Ã¥ Ã·Ã Ã±Ã²Ã¨ Ã¨Ã«Ã¨ Ã°Ã¿Ã¤Ã®Ã¬ Ã± Ã­Ã¥Ã©. Ã‚Ã­Ã¥ Ã§Ã Ã¢Ã¨Ã±Ã¨Ã¬Ã®Ã±Ã²Ã¨ Ã®Ã² Ã§Ã¢Ã Ã­Ã¨Ã¿\n[Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã“Ã‘Ã Ã¬Ã®Ã¦Ã­Ã® Ã¯Ã°Ã¨Ã¯Ã Ã°ÃªÃ®Ã¢Ã Ã²Ã¼ Ã¢Ã¥Ã°Ã²Ã®Ã«Â¸Ã² Ã­Ã  ÃµÃ®Ã«Ã¬Ã¨ÃªÃ¥ Ã­Ã¥ Ã¤Ã Ã«Ã¥ÃªÃ® Ã®Ã² Ã±Ã¢Ã®Ã¥Ã© Ã¯Ã Ã°ÃªÃ®Ã¢ÃªÃ¨].\n12.9 ÃÃ®Ã©Ã¶Ã», Ã±Ã®Ã±Ã²Ã®Ã¿Ã¹Ã¨Ã¥ Ã¢ Ã€Ã‘Ã‚, Ã¨Ã¬Ã¥Ã¾Ã² Ã¯Ã°Ã Ã¢Ã® Ã¯Ã Ã°ÃªÃ®Ã¢Ã Ã²Ã¼ Ã‹Ã’Ã‘ Ã¡Ã¥Ã«Ã®Ã£Ã® Ã¶Ã¢Ã¥Ã²Ã ,\nÃ³ÃªÃ Ã§Ã Ã­Ã­Ã»Ã¥ Ã¢ Ã¯Ã³Ã­ÃªÃ²Ã¥ 3.29, Ã­Ã  Ã¯Ã Ã°ÃªÃ®Ã¢ÃªÃ¥ Ã±Ã«Ã¥Ã¢Ã  Ã®Ã² ÃªÃ Ã§Ã Ã°Ã¬Ã», Ã³ Ã¡Ã Ã­ÃªÃ®Ã¬Ã Ã²Ã .;")
+  imgui.Text(u8"ÃƒÃ«Ã Ã¢Ã  XIII. Ã„Ã°Ã¥Ã±Ã±-ÃªÃ®Ã¤.\n13.1 Ã‚Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã© Ã®Ã¡Ã¿Ã§Ã Ã­ Ã­Ã®Ã±Ã¨Ã²Ã¼ Ã´Ã®Ã°Ã¬Ã³ Ã³Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­Ã­Ã®Ã© Ã­Ã¨Ã¦Ã¥ Ã¯Ã°Ã Ã¢Ã¨Ã«Ã Ã¬Ã¨:\n13.1.1 ÃÃ®Ã«Ã¥Ã¢Ã³Ã¾ Ã´Ã®Ã°Ã¬Ã³ Â¹287 - Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã® Ã­Ã®Ã±Ã¨Ã²Ã¼ Ã¢Ã±Ã¥Ã¬ Ã¢Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã¬ Ã Ã°Ã¬Ã¨Ã¨.\n13.1.2 Ã—Ã¥Ã°Ã­Ã»Ã© ÃªÃ®Ã±Ã²Ã¾Ã¬ Â¹255 - Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã® Ã­Ã®Ã±Ã¨Ã²Ã¼ Ã§Ã Ã¬Ã¥Ã±Ã²Ã¨Ã²Ã¥Ã«Ã¿Ã¬ Ã¢Ã§Ã¢Ã®Ã¤Ã®Ã¢.\n13.1.3 Ã‘Ã¨Ã­Ã¨Ã© ÃªÃ®Ã±Ã²Ã¾Ã¬ Â¹61 - Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã® Ã­Ã®Ã±Ã¨Ã²Ã¼ Ã¨Ã±ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¥Ã«Ã¼Ã­Ã® Ã±Ã²Ã Ã°Ã¸Ã¨Ã¬ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã Ã¬.\n13.1.4 Ã‘Ã¯Ã¥Ã¶Ã¨Ã Ã«Ã¼Ã­Ã Ã¿ Ã´Ã®Ã°Ã¬Ã  Â¹179 - Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã® Ã­Ã®Ã±Ã¨Ã²Ã¼ Ã²Ã°Ã¥Ã­Ã¥Ã°Ã Ã¬ Ã¢Ã§Ã¢Ã®Ã¤Ã®Ã¢ Ã¨ Ã¢Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã¬ Ã¯Ã®Ã«Ã³Ã·Ã¨Ã¢Ã¸Ã¨Ã¥ ÃªÃ°Ã Ã¯Ã®Ã¢Ã»Ã© Ã¡Ã¥Ã°Ã¥Ã².\n13.1.5 Ã”Ã®Ã°Ã¬Ã  Ã± ÃªÃ Ã¬Ã³Ã´Ã«Ã¿Ã¦Ã­Ã»Ã¬Ã¨ Ã¸Ã²Ã Ã­Ã Ã¬Ã¨ Â¹73 - Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã® Ã­Ã®Ã±Ã¨Ã²Ã¼ Ã¡Ã®Ã©Ã¶Ã Ã¬ Ã‘Ã‚Ã‘Ã‘ Ã¨ Ã‚Ã‘Ã, Ã€Ã‘Ã‚;\n13.1.6 Ã”Ã®Ã°Ã¬Ã  Â¹191 - Ã¯Ã°Ã¥Ã¤Ã­Ã Ã§Ã­Ã Ã·Ã¥Ã­Ã  Ã¤Ã«Ã¿ Ã¦Ã¥Ã­Ã±ÃªÃ®Ã£Ã® Ã¯Ã®Ã«Ã , Ã­Ã¥Ã§Ã Ã¢Ã¨Ã±Ã¨Ã¬Ã® Ã®Ã² Ã¤Ã®Ã«Ã¦Ã­Ã®Ã±Ã²Ã¨ Ã¨ Ã§Ã¢Ã Ã­Ã¨Ã¿.\n13.2 ÃÃ¥Ã°Ã¥Ã®Ã¤Ã¥Ã¢Ã¸Ã¨Ã±Ã¼ Ã¢ Ã¢Ã®Ã¥Ã­Ã­Ã³Ã¾ Ã´Ã®Ã°Ã¬Ã³, Ã¢Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã© Ã®Ã¡Ã¿Ã§Ã Ã­ Ã±Ã­Ã¿Ã²Ã¼ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã­Ã»Ã¥ Ã¥Ã¬Ã³ Ã ÃªÃ±Ã¥Ã±Ã±Ã³Ã Ã°Ã».\nÃ‘Ã¯Ã¨Ã±Ã®Ãª Ã ÃªÃ±Ã¥Ã±Ã±Ã³Ã Ã°Ã®Ã¢ Ã¬Ã®Ã¦Ã­Ã® Ã¯Ã®Ã±Ã¬Ã®Ã²Ã°Ã¥Ã²Ã¼ Ã­Ã  Ã´Ã®Ã°Ã³Ã¬Ã¥.\n13.3 Ã€ÃªÃ±Ã¥Ã±Ã±Ã³Ã Ã°Ã», Ã­Ã¥ Ã³ÃªÃ Ã§Ã Ã­Ã­Ã»Ã¥ Ã¢ Ã¯Ã³Ã­ÃªÃ²Ã¥ 13.2 Ã³Ã±Ã²Ã Ã¢Ã  Ã Ã°Ã¬Ã¨Ã¨ Ã¿Ã¢Ã«Ã¿Ã¾Ã²Ã±Ã¿ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã­Ã»Ã¬Ã¨ Ã¤Ã«Ã¿ Ã¢Ã±Ã¥Ãµ Ã¢Ã®Ã¥Ã­Ã­Ã®Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ãµ.")
+  imgui.Text(u8"ÃƒÃ«Ã Ã¢Ã  XIV. Ã‘Ã¨Ã±Ã²Ã¥Ã¬Ã  Ã¢Ã»Ã£Ã®Ã¢Ã®Ã°Ã®Ã¢.\n14.1 Ã‚Ã»Ã£Ã®Ã¢Ã®Ã°Ã» Ã¤Ã«Ã¿ Ã®Ã¡Ã»Ã·Ã­Ã»Ãµ Ã¡Ã®Ã©Ã¶Ã®Ã¢.\n14.1.1 Ã‚Ã»Ã£Ã®Ã¢Ã®Ã°Ã» Ã¤Ã¥Ã«Ã¿Ã²Ã±Ã¿ Ã­Ã  Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° Ã± Ã®Ã²Ã°Ã Ã¡Ã®Ã²ÃªÃ®Ã© Ã¨ Ã¡Ã¥Ã§ Ã®Ã²Ã°Ã Ã¡Ã®Ã²ÃªÃ¨.\n14.1.2 Ã…Ã±Ã«Ã¨ Ã¡Ã®Ã¥Ã¶ Ã¯Ã®Ã«Ã³Ã·Ã Ã¥Ã² Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° Ã± Ã®Ã²Ã°Ã Ã¡Ã®Ã²ÃªÃ®Ã©\nÃ®Ã­ Ã®Ã¡Ã¿Ã§Ã Ã­ Ã¯Ã®Ã¯Ã»Ã²Ã Ã²Ã¼Ã±Ã¿ Ã¥Ã£Ã® Ã®Ã²Ã°Ã Ã¡Ã®Ã²Ã Ã²Ã¼.\n14.1.3 Ã…Ã±Ã«Ã¨ Ã³ Ã¡Ã®Ã©Ã¶Ã  Ã¡Ã»Ã« 1 Ã ÃªÃ²Ã¨Ã¢Ã­Ã»Ã© Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° Ã¨ Ã®Ã­ Ã¯Ã®Ã«Ã³Ã·Ã¨Ã« Ã¥Ã¹Ã¥ Ã®Ã¤Ã¨Ã­ - Ã¡Ã®Ã¥Ã¶\nÃ¯Ã®Ã­Ã¨Ã¦Ã Ã¥Ã²Ã±Ã¿ Ã­Ã  Ã®Ã¤Ã­Ã³ Ã±Ã²Ã³Ã¯Ã¥Ã­Ã¼ Ã§Ã  2 Ã ÃªÃ²Ã¨Ã¢Ã­Ã»Ãµ Ã¢Ã»Ã£Ã®Ã¢Ã®Ã°Ã .\n14.1.4 Ã…Ã±Ã«Ã¨ Ã³ Ã¡Ã®Ã©Ã¶Ã  Ã¡Ã»Ã«Ã¨ 2 Ã ÃªÃ²Ã¨Ã¢Ã­Ã»Ãµ Ã¢Ã»Ã£Ã®Ã¢Ã®Ã°Ã  Ã¨ Ã®Ã­ Ã¯Ã®Ã«Ã³Ã·Ã¨Ã« Ã¥Ã¹Ã¥ Ã®Ã¤Ã¨Ã­ - Ã¡Ã®Ã¥Ã¶\nÃ³Ã¢Ã®Ã«Ã¼Ã­Ã¿Ã¥Ã²Ã±Ã¿ Ã¨Ã§ Ã Ã°Ã¬Ã¨Ã¨ Ã§Ã  3 Ã ÃªÃ²Ã¨Ã¢Ã­Ã»Ãµ Ã¢Ã»Ã£Ã®Ã¢Ã®Ã°Ã .\n14.2 Ã‚Ã»Ã£Ã®Ã¢Ã®Ã°Ã» Ã¤Ã«Ã¿ Ã±Ã²Ã Ã°Ã¸Ã¨Ãµ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã®Ã¢\n14.2.1 Ã‚Ã»Ã£Ã®Ã¢Ã®Ã° Ã±Ã²Ã Ã°Ã¸Ã¥Ã¬Ã³ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã³ Ã¢ Ã¯Ã°Ã Ã¢Ã¥ Ã¢Ã»Ã¤Ã Ã²Ã¼ Ã²Ã®Ã«Ã¼ÃªÃ® ÃÃ Ã·.ÃƒÃ¥Ã­.Ã˜Ã²Ã Ã¡Ã  Ã¨ ÃƒÃ¥Ã­Ã¥Ã°Ã Ã«.\nÃˆÃ±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã Ã¤Ã¬Ã¨Ã­Ã¨Ã±Ã²Ã°Ã Ã¶Ã¨Ã¿, FBI.\n14.2.2 Ã‚Ã»Ã£Ã®Ã¢Ã®Ã°Ã» Ã³ Ã±Ã²Ã Ã°Ã¸Ã¨Ãµ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã®Ã¢ Ã­Ã¥ Ã¨Ã¬Ã¥Ã¾Ã² Ã±Ã°Ã®ÃªÃ®Ã¢, Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° Ã¬Ã®Ã¦Ã¥Ã²\nÃ±Ã­Ã¿Ã²Ã¼ Ã²Ã®Ã«Ã¼ÃªÃ® ÃƒÃ¥Ã­Ã¥Ã°Ã Ã« Ã Ã°Ã¬Ã¨Ã¨ Ã¯Ã® Ã¨Ã²Ã®Ã£Ã Ã¬ Ã°Ã Ã¡Ã®Ã²Ã» Ã±Ã²Ã Ã°Ã¸Ã¥Ã£Ã® Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã  Ã§Ã  Ã­Ã¥Ã¤Ã¥Ã«Ã¾.\n14.2.3 Ã‡Ã  Ã­Ã¥Ã§Ã­Ã Ã·Ã¨Ã²Ã¥Ã«Ã¼Ã­Ã»Ã¥ Ã­Ã Ã°Ã³Ã¸Ã¥Ã­Ã¨Ã¿ Ã±Ã²Ã Ã°Ã¸Ã¥Ã¬Ã³ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã³ Ã¢Ã»Ã¤Ã Ã¥Ã²Ã±Ã¿ Ã³Ã±Ã²Ã­Ã®Ã¥ Ã¯Ã°Ã¥Ã¤Ã³Ã¯Ã°Ã¥Ã¦Ã¤Ã¥Ã­Ã¨Ã¥.\n14.2.4 Ã…Ã±Ã«Ã¨ Ã±Ã²Ã Ã°Ã¸Ã¨Ã© Ã®Ã´Ã¨Ã¶Ã¥Ã° Ã¯Ã®Ã«Ã³Ã·Ã Ã¥Ã² 2 Ã³Ã±Ã²Ã­Ã»Ãµ Ã¯Ã°Ã¥Ã¤Ã³Ã¯Ã°Ã¥Ã¦Ã¤Ã¥Ã­Ã¨Ã¿ Ã¥Ã¬Ã³ Ã Ã¢Ã²Ã®Ã¬Ã Ã²Ã¨Ã·Ã¥Ã±ÃªÃ¨ Ã¢Ã»Ã¤Ã Ã¥Ã²Ã±Ã¿ Ã¢Ã»Ã£Ã®Ã¢Ã®Ã°.\n14.2.5 Ã…Ã±Ã«Ã¨ Ã³ Ã±Ã²Ã Ã°Ã¸Ã¥Ã£Ã® Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã  Ã­Ã Ã¡Ã¨Ã°Ã Ã¥Ã²Ã±Ã¿ 2 Ã ÃªÃ²Ã¨Ã¢Ã­Ã»Ãµ Ã¢Ã»Ã£Ã®Ã¢Ã®Ã°Ã  Ã®Ã­ Ã¯Ã®ÃªÃ¨Ã¤Ã Ã¥Ã² Ã±Ã¢Ã®Ã© Ã¯Ã®Ã±Ã² Ã¨ Ã¯Ã®Ã­Ã¨Ã¦Ã Ã¥Ã²Ã±Ã¿ Ã¤Ã® ÃŠÃ Ã¯Ã¨Ã²Ã Ã­Ã .\n14.2.6 Ã‘Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨Ãª/Ã¡Ã®Ã¥Ã¶ Ã¨Ã¬Ã¥Ã¾Ã¹Ã¨Ã© Ã ÃªÃ²Ã¨Ã¢Ã­Ã»Ã© Ã¢Ã»Ã£Ã®Ã¢Ã®Ã°, Ã¢ Ã¯Ã°Ã Ã¢Ã¥ Ã¢Ã§Ã¿Ã²Ã¼ Ã­Ã¥Ã ÃªÃ²Ã¨Ã¢/Ã®Ã²Ã¯Ã³Ã±Ãª,\nÃ­Ã® Ã±Ã°Ã®Ãª Ã¢Ã»Ã£Ã®Ã¢Ã®Ã°Ã  Ã±Ã¤Ã¢Ã¨Ã£Ã Ã¥Ã²Ã±Ã¿ Ã¤Ã® Ã®ÃªÃ®Ã­Ã·Ã Ã­Ã¨Ã¿ Ã±Ã°Ã®ÃªÃ  Ã­Ã¥Ã ÃªÃ²Ã¨Ã¢Ã /Ã®Ã²Ã¯Ã³Ã±ÃªÃ .\n")
+  imgui.Text(u8"                                                                                              Ã”Ã¥Ã¤Ã¥Ã°Ã Ã«Ã¼Ã­Ã®Ã¥ Ã¯Ã®Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­Ã¨Ã¥")
+  imgui.Text(u8"\nÃ‚Ã±Ã²Ã³Ã¯Ã¨Ã²Ã¥Ã«Ã¼Ã­Ã Ã¿ Ã·Ã Ã±Ã²Ã¼.\n0.1. Ã”Ã¥Ã¤Ã¥Ã°Ã Ã«Ã¼Ã­Ã®Ã¥ ÃÃ®Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­Ã¨Ã¥ Â— Ã½Ã²Ã® Ã­Ã®Ã°Ã¬Ã Ã²Ã¨Ã¢Ã­Ã®-Ã¯Ã°Ã Ã¢Ã®Ã¢Ã®Ã© Ã ÃªÃ², ÃªÃ®Ã²Ã®Ã°Ã»Ã© Ã¡Ã»Ã« Ã¯Ã°Ã¨Ã§Ã¢Ã Ã­ Ã¢Ã­Ã¥Ã±Ã²Ã¨\nÃ·Â¸Ã²ÃªÃ¨Ã¥ Ã°Ã Ã¬ÃªÃ¨ Ã¢ Ã°Ã Ã¡Ã®Ã²Ã³ Ã£Ã®Ã±Ã³Ã¤Ã Ã°Ã±Ã²Ã¢Ã¥Ã­Ã­Ã»Ãµ Ã®Ã°Ã£Ã Ã­Ã¨Ã§Ã Ã¶Ã¨Ã©.\nÃ”Ã¥Ã¤Ã¥Ã°Ã Ã«Ã¼Ã­Ã®Ã¥ Ã¯Ã®Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­Ã¨Ã¥ Â— Ã½Ã²Ã® Ã­Ã®Ã°Ã¬Ã Ã²Ã¨Ã¢Ã­Ã®-Ã¯Ã°Ã Ã¢Ã®Ã¢Ã®Ã© Ã ÃªÃ²,\nÃªÃ®Ã²Ã®Ã°Ã»Ã© Ã®Ã¡Ã«Ã Ã¤Ã Ã¥Ã² Ã¢Ã»Ã±Ã¸Ã¥Ã© Ã¾Ã°Ã¨Ã¤Ã¨Ã·Ã¥Ã±ÃªÃ®Ã© Ã±Ã¨Ã«Ã®Ã© Ã­Ã Ã°Ã Ã¢Ã­Ã¥ Ã±\nÃŠÃ®Ã­Ã±Ã²Ã¨Ã²Ã³Ã¶Ã¨Ã¥Ã© Ã¸Ã²Ã Ã²Ã  Ã¨ Ã¯Ã°Ã¥Ã¢Ã®Ã±ÃµÃ®Ã¤Ã¨Ã² Ã¯Ã® Ã§Ã­Ã Ã·Ã¨Ã¬Ã®Ã±Ã²Ã¨ Ã³Ã±Ã²Ã Ã¢Ã» Ã¯Ã®Ã«Ã¨Ã¶Ã¥Ã©Ã±ÃªÃ¨Ãµ Ã¤Ã¥Ã¯Ã Ã°Ã²Ã Ã¬Ã¥Ã­Ã²Ã®Ã¢ Ã¨ Ã Ã°Ã¬Ã¨Ã©.\n0.2. Ã”Ã¥Ã¤Ã¥Ã°Ã Ã«Ã¼Ã­Ã®Ã¥ ÃÃ®Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­Ã¨Ã¥ Ã¨Ã§Ã¤Ã Â¸Ã²Ã±Ã¿ Ã”Ã¥Ã¤Ã¥Ã°Ã Ã«Ã¼Ã­Ã»Ã¬ ÃÃ¾Ã°Ã® ÃÃ Ã±Ã±Ã«Ã¥Ã¤Ã®Ã¢Ã Ã­Ã¨Ã© Ã¤Ã«Ã¿ ÃÃ®Ã«Ã¨Ã¶Ã¥Ã©Ã±ÃªÃ¨Ãµ Ã¨ Ã€Ã°Ã¬Ã¨Ã©.\n0.3. Ã”Ã¥Ã¤Ã¥Ã°Ã Ã«Ã¼Ã­Ã®Ã¥ ÃÃ®Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­Ã¨Ã¥ Ã¬Ã®Ã¦Ã¥Ã² Ã¡Ã»Ã²Ã¼ Ã¨Ã§Ã¬Ã¥Ã­Ã¥Ã­Ã® Ã„Ã¨Ã°Ã¥ÃªÃ²Ã®Ã°Ã®Ã¬ Ã”ÃÃ\n[ Ã¯Ã°Ã¨ Ã³Ã·Ã Ã±Ã²Ã¨Ã¨ Ã±Ã«Ã¥Ã¤Ã¿Ã¹Ã¥Ã£Ã® Ã Ã¤Ã¬Ã¨Ã­Ã¨Ã±Ã²Ã°Ã Ã²Ã®Ã°Ã  ]\nÃ¢ Ã«Ã¾Ã¡Ã®Ã¥ Ã¢Ã°Ã¥Ã¬Ã¿ Ã¤Ã­Ã¿ Ã¨ Ã­Ã®Ã·Ã¨, Ã¥Ã£Ã® Ã¢Ã±Ã²Ã³Ã¯Ã«Ã¥Ã­Ã¨Ã¥ Ã¢ Ã±Ã¨Ã«Ã³ Ã¯Ã°Ã®Ã¨Ã±ÃµÃ®Ã¤Ã¨Ã² Ã·Ã¥Ã°Ã¥Ã§ 48 Ã·Ã Ã±Ã®Ã¢ Ã¯Ã®Ã±Ã«Ã¥ Ã¯Ã³Ã¡Ã«Ã¨ÃªÃ Ã¶Ã¨Ã¨.\n0.4. Ã”Ã¥Ã¤Ã¥Ã°Ã Ã«Ã¼Ã­Ã®Ã¥ ÃÃ®Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­Ã¨Ã¥ Ã®Ã¡Ã¿Ã§Ã Ã­Ã® Ã¢Ã»Ã¯Ã®Ã«Ã­Ã¿Ã²Ã¼Ã±Ã¿ Ã¢Ã±Ã¥Ã¬Ã¨ Ã±Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨ÃªÃ Ã¬Ã¨ Ã¢Ã»Ã¸Ã¥Ã³Ã¯Ã®Ã¬Ã¿Ã­Ã³Ã²Ã»Ãµ Ã®Ã°Ã£Ã Ã­Ã¨Ã§Ã Ã¶Ã¨Ã©.\n0.5. ÃÃ¥Ã§Ã­Ã Ã­Ã¨Ã¥ Ã”Ã¥Ã¤Ã¥Ã°Ã Ã«Ã¼Ã­Ã®Ã£Ã® ÃÃ®Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­Ã¨Ã¿ Ã­Ã¥ Ã®Ã±Ã¢Ã®Ã¡Ã®Ã¦Ã¤Ã Ã¥Ã² Ã®Ã¡Ã¢Ã¨Ã­Ã¿Ã¥Ã¬Ã®Ã£Ã® Ã®Ã² Ã®Ã²Ã¢Ã¥Ã²Ã±Ã²Ã¢Ã¥Ã­Ã­Ã®Ã±Ã²Ã¨.")
+  imgui.Text(u8"ÃƒÃ«Ã Ã¢Ã  Â¹1.\nÃÃ°Ã¥Ã±Ã²Ã³Ã¯Ã«Ã¥Ã­Ã¨Ã¿ Ã¯Ã°Ã®Ã²Ã¨Ã¢ Ã®Ã¡Ã¹Ã¥Ã±Ã²Ã¢Ã¥Ã­Ã­Ã®Ã±Ã²Ã¨.\n1.1. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã­Ã¥Ã±Ã Ã­ÃªÃ¶Ã¨Ã®Ã­Ã¨Ã°Ã®Ã¢Ã Ã­Ã­Ã®Ã¥ Ã¯Ã°Ã¨Ã¬Ã¥Ã­Ã¥Ã­Ã¨Ã¥ Ã®Ã£Ã­Ã¥Ã±Ã²Ã°Ã¥Ã«Ã¼Ã­Ã®Ã£Ã® Ã®Ã°Ã³Ã¦Ã¨Ã¿ Ã¯Ã°Ã®Ã²Ã¨Ã¢ Ã«Ã¾Ã¡Ã®Ã£Ã®\nÃ£Ã°Ã Ã¦Ã¤Ã Ã­Ã±ÃªÃ®Ã£Ã® Ã«Ã¨Ã¶Ã  / Ã±Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨ÃªÃ  Ã£Ã®Ã±Ã³Ã¤Ã Ã°Ã±Ã²Ã¢Ã¥Ã­Ã­Ã»Ãµ Ã®Ã°Ã£Ã Ã­Ã¨Ã§Ã Ã¶Ã¨Ã© Â— Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥ / Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥.\nÃÃ°Ã¨Ã¬Ã¥Ã·Ã Ã­Ã¨Ã¥: Ã§Ã  Ã±Ã Ã­ÃªÃ¶Ã¨Ã®Ã­Ã¨Ã°Ã®Ã¢Ã Ã­Ã­Ã®Ã¥ Ã¯Ã°Ã¨Ã¬Ã¥Ã­Ã¥Ã­Ã¨Ã¥ Ã¯Ã®Ã¤Ã°Ã Ã§Ã³Ã¬Ã¥Ã¢Ã Ã¥Ã²Ã±Ã¿ Ã¨Ã±Ã¯Ã®Ã«Ã¼Ã§Ã®Ã¢Ã Ã­Ã¨Ã¥ Ã¯Ã°Ã¨ Ã±Ã Ã¬Ã®Ã®Ã¡Ã®Ã°Ã®Ã­Ã¥,\nÃ­Ã¥Ã¢Ã»Ã¯Ã®Ã«Ã­Ã¥Ã­Ã¨Ã¨ Ã§Ã ÃªÃ®Ã­Ã­Ã»Ãµ Ã²Ã°Ã¥Ã¡Ã®Ã¢Ã Ã­Ã¨Ã© Ã¯Ã®Ã«Ã¨Ã¶Ã¨Ã¨. Ã„Ã Ã­Ã­Ã®Ã¥ Ã¯Ã°Ã¨Ã¬Ã¥Ã·Ã Ã­Ã¨Ã¥ Ã­Ã¥ Ã°Ã Ã±Ã¯Ã°Ã®Ã±Ã²Ã°Ã Ã­Ã¿Ã¥Ã²Ã±Ã¿ Ã­Ã  Ã§Ã¥Ã«Ã¥Ã­Ã»Ã¥ Ã§Ã®Ã­Ã».\n1.2. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã«Ã¾Ã¡Ã®Ã¥ Ã³Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥ Ã·Ã¥Ã±Ã²Ã¨ Ã¨ Ã¤Ã®Ã±Ã²Ã®Ã¨Ã­Ã±Ã²Ã¢Ã  Ã£Ã°Ã Ã¦Ã¤Ã Ã­ Ã­Ã¥Ã§Ã Ã¢Ã¨Ã±Ã¨Ã¬Ã®\nÃ®Ã² Ã¥Ã£Ã® Ã±Ã®Ã¶Ã¨Ã Ã«Ã¼Ã­Ã®Ã£Ã® Ã¨Ã«Ã¨ Ã¯Ã°Ã Ã¢Ã®Ã¢Ã®Ã£Ã® Ã±Ã²Ã Ã²Ã³Ã±Ã  Â— Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥.\n1.3. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã¯Ã°Ã¨Ã¬Ã¥Ã­Ã¥Ã­Ã¨Ã¥ Ã­Ã Ã±Ã¨Ã«Ã¨Ã¿ Ã¢ Ã®Ã²Ã­Ã®Ã¸Ã¥Ã­Ã¨Ã¨ ÃªÃ Ãª Ã£Ã°Ã Ã¦Ã¤Ã Ã­,\nÃ²Ã Ãª Ã¨ Ã§Ã ÃªÃ«Ã¾Ã·Ã¥Ã­Ã­Ã»Ãµ Ã¯Ã®Ã¤ Ã±Ã²Ã°Ã Ã¦Ã³ Ã«Ã¨Ã¶ Â— Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥ / Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥.\nÃƒÃ«Ã Ã¢Ã  Â¹2.\nÃÃ®Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­Ã¨Ã¥ Ã¢ Ã®Ã²Ã­Ã®Ã¸Ã¥Ã­Ã¨Ã¨ Ã±Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨ÃªÃ®Ã¢ Ã”Ã¥Ã¤Ã¥Ã°Ã Ã«Ã¼Ã­Ã®Ã£Ã® ÃÃ¾Ã°Ã® ÃÃ Ã±Ã±Ã«Ã¥Ã¤Ã®Ã¢Ã Ã­Ã¨Ã© Ã¨ ÃŒÃ½Ã°Ã¨Ã¨.\n2.1. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã¯Ã°Ã®Ã­Ã¨ÃªÃ Ã²Ã¼ Ã­Ã  Ã²Ã¥Ã°Ã°Ã¨Ã²Ã®Ã°Ã¨Ã¾ FBI Ã¡Ã¥Ã§ Ã¯Ã®Ã«Ã³Ã·Ã¥Ã­Ã¨Ã¿ Ã®Ã´Ã¨Ã¶Ã¨Ã Ã«Ã¼Ã­Ã®Ã£Ã® Ã¯Ã°Ã®Ã¯Ã³Ã±ÃªÃ \nÃ®Ã² Ã«Ã¾Ã¡Ã®Ã£Ã® Ã¨Ã§ Ã Ã£Ã¥Ã­Ã²Ã®Ã¢ Ã”ÃÃ Ã¢Ã»Ã¸Ã¥ ÃŒÃ«.Ã€Ã£Ã¥Ã­Ã²Ã  Â— Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° / Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥.\nÃÃ°Ã¨Ã¬Ã¥Ã·Ã Ã­Ã¨Ã¥: ÃƒÃ³Ã¡Ã¥Ã°Ã­Ã Ã²Ã®Ã°Ã³, ÃƒÃ¥Ã­Ã¥Ã°Ã Ã«Ã Ã¬ Ã Ã°Ã¬Ã¨Ã©, Ã˜Ã¥Ã°Ã¨Ã´Ã Ã¬ Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã¨Ã¥ Ã­Ã¥ Ã²Ã°Ã¥Ã¡Ã³Ã¥Ã²Ã±Ã¿.\n2.2. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã¢Ã»Ã¤Ã Ã¢Ã Ã²Ã¼ Ã±Ã¥Ã¡Ã¿ Ã§Ã  Ã«Ã¾Ã¡Ã®Ã£Ã® Ã£Ã®Ã±Ã³Ã¤Ã Ã°Ã±Ã²Ã¢Ã¥Ã­Ã­Ã®Ã£Ã® Ã±Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨ÃªÃ  Â— Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥ / Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥.\nÃˆÃ±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã Ã£Ã¥Ã­Ã²Ã» Ã”ÃÃ Ã¢Ã® Ã¢Ã°Ã¥Ã¬Ã¿ Ã¢Ã¥Ã¤Ã¥Ã­Ã¨Ã¿ Ã±Ã«Ã¥Ã¤Ã±Ã²Ã¢Ã¥Ã­Ã­Ã»Ãµ Ã¤Ã¥Ã©Ã±Ã²Ã¢Ã¨Ã© Ã¯Ã®Ã¤ Ã¯Ã°Ã¨ÃªÃ°Ã»Ã²Ã¨Ã¥Ã¬.\n2.3. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã¡Ã°Ã Ã²Ã¼ Ã°Ã³ÃªÃ®Ã¢Ã®Ã¤Ã±Ã²Ã¢Ã® Ã®Ã¯Ã¥Ã°Ã Ã¶Ã¨Ã¿Ã¬Ã¨\n[ Ã²Ã¥Ã°Ã ÃªÃ²Ã» / Ã¯Ã®ÃµÃ¨Ã¹Ã¥Ã­Ã¨Ã¿ / Ã¨Ã­Ã Ã¿ Ã°Ã Ã¡Ã®Ã²Ã  Ã¯Ã®Ã¤ Ã°Ã³ÃªÃ®Ã¢Ã®Ã¤Ã±Ã²Ã¢Ã®Ã¬ Ã”ÃÃ ]\nÃ¡Ã¥Ã§ Ã¯Ã°Ã¨ÃªÃ Ã§Ã  Ã”ÃÃ Â— Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥.\n2.4. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã­Ã¥Ã¯Ã®Ã¤Ã·Ã¨Ã­Ã¥Ã­Ã¨Ã¥ Ã Ã£Ã¥Ã­Ã²Ã³ Ã”ÃÃ Ã¢ Ã°Ã Ã¬ÃªÃ Ãµ Ã¥Ã£Ã® Ã§Ã ÃªÃ®Ã­Ã­Ã»Ãµ Ã²Ã°Ã¥Ã¡Ã®Ã¢Ã Ã­Ã¨Ã© Â— Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥ / Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥.\nÃˆÃ±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã Ã£Ã¥Ã­Ã²Ã» Ã”ÃÃ Ã¢Ã® Ã¢Ã°Ã¥Ã¬Ã¿ Ã¢Ã¥Ã¤Ã¥Ã­Ã¨Ã¿ Ã±Ã«Ã¥Ã¤Ã±Ã²Ã¢Ã¥Ã­Ã­Ã»Ãµ Ã¤Ã¥Ã©Ã±Ã²Ã¢Ã¨Ã© Ã¯Ã®Ã¤ Ã¯Ã°Ã¨ÃªÃ°Ã»Ã²Ã¨Ã¥Ã¬.\n2.5. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã³Ã£Ã°Ã®Ã¦Ã Ã²Ã¼ / Ã¸Ã Ã­Ã²Ã Ã¦Ã¨Ã°Ã®Ã¢Ã Ã²Ã¼ Ã Ã£Ã¥Ã­Ã²Ã  Ã”ÃÃ Â— Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥.\n2.6. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã®Ã±Ã¯Ã Ã°Ã¨Ã¢Ã Ã²Ã¼ Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥ / Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥, Ã¢Ã»Ã¤Ã Ã­Ã­Ã®Ã¥ Ã Ã£Ã¥Ã­Ã²Ã®Ã¬ Ã”ÃÃ / ÃƒÃ³Ã¡Ã¥Ã°Ã­Ã Ã²Ã®Ã°Ã®Ã¬ Ã£Ã¤Ã¥-Ã«Ã¨Ã¡Ã®,\nÃªÃ°Ã®Ã¬Ã¥ ÃªÃ Ãª Ã¢ Ã±Ã¯Ã¥Ã¶Ã¨Ã Ã«Ã¼Ã­Ã®Ã¬ Ã°Ã Ã§Ã¤Ã¥Ã«Ã¥ Ã¦Ã Ã«Ã®Ã¡ Â— Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥ / Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥.\n2.7. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã°Ã Ã±ÃªÃ°Ã»Ã¢Ã Ã²Ã¼ Ã«Ã¨Ã·Ã­Ã®Ã±Ã²Ã¼ Ã Ã£Ã¥Ã­Ã²Ã  Ã”ÃÃ, Ã¥Ã±Ã«Ã¨ Ã²Ã®Ã² Ã­Ã ÃµÃ®Ã¤Ã¨Ã²Ã±Ã¿ Ã¯Ã®Ã¤ Ã¯Ã°Ã¨ÃªÃ°Ã»Ã²Ã¨Ã¥Ã¬ Â— Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥.\nÃÃ°Ã¨Ã¬Ã¥Ã·Ã Ã­Ã¨Ã¥: Ã¥Ã±Ã«Ã¨ Ã Ã£Ã¥Ã­Ã² Ã”ÃÃ Ã­Ã ÃµÃ®Ã¤Ã¨Ã²Ã±Ã¿ Ã¢Ã® Ã¢Ã­Ã¥Ã¤Ã°Ã¥Ã­Ã¨Ã¨ Ã·Ã¥Ã°Ã¥Ã§ ÃªÃ®Ã¬Ã Ã­Ã¤Ã³ /spy, Ã  Ã­Ã¥ Ã·Ã¥Ã°Ã¥Ã§ Ã¬Ã Ã±ÃªÃ¨Ã°Ã®Ã¢ÃªÃ³,\nÃ²Ã® Ã¤Ã Ã­Ã­Ã»Ã© Ã¯Ã³Ã­ÃªÃ² Ã­Ã¥ Ã®Ã²Ã¬Ã¥Ã­Ã¿Ã¥Ã² Ã­Ã ÃªÃ Ã§Ã Ã­Ã¨Ã¿ Ã§Ã  Ã¥Ã£Ã® Ã­Ã Ã°Ã³Ã¸Ã¥Ã­Ã¨Ã¥.\nÃÃ¥ Ã¢Ã Ã¦Ã­Ã® Ã¢ ÃªÃ ÃªÃ®Ã¬ Ã·Ã Ã²Ã¥ Ã¡Ã³Ã¤Ã¥Ã² Ã­Ã Ã¯Ã¨Ã±Ã Ã­Ã  Ã¨Ã­Ã´Ã®Ã°Ã¬Ã Ã¶Ã¨Ã¿, ÃªÃ®Ã²Ã®Ã°Ã Ã¿ Ã¯Ã°Ã¨Ã¢Ã¥Ã«Ã  Ãª Ã°Ã Ã±ÃªÃ°Ã»Ã²Ã¨Ã¾ Ã Ã£Ã¥Ã­Ã²Ã .\n2.8. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã¢Ã­Ã®Ã±Ã¨Ã²Ã¼ Ã¯Ã®Ã¬Ã¥ÃµÃ¨ Ã¢ Ã°Ã Ã¡Ã®Ã²Ã³ Ã Ã²Ã²Ã¥Ã±Ã²Ã Ã¶Ã¨Ã®Ã­Ã­Ã®Ã© ÃªÃ®Ã¬Ã¨Ã±Ã±Ã¨Ã¨ Ã®Ã² Ã¢Ã»Ã±Ã¸Ã¨Ãµ Ã®Ã°Ã£Ã Ã­Ã®Ã¢ Ã¢Ã«Ã Ã±Ã²Ã¨,\nÃ¯Ã°Ã®Ã¢Ã®Ã¤Ã¿Ã¹Ã¨Ãµ Ã«Ã¾Ã¡Ã®Ã£Ã® Ã°Ã®Ã¤Ã  Ã¯Ã°Ã®Ã¢Ã¥Ã°ÃªÃ¨ Ã¢ Ã£Ã®Ã±Ã³Ã¤Ã Ã°Ã±Ã²Ã¢Ã¥Ã­Ã­Ã»Ãµ Ã±Ã²Ã°Ã³ÃªÃ²Ã³Ã°Ã Ãµ Â— Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° / Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥.\nÃÃ°Ã¨Ã¬Ã¥Ã·Ã Ã­Ã¨Ã¥: Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã¯Ã®Ã¤Ã±ÃªÃ Ã§Ã»Ã¢Ã Ã²Ã¼ Ã±Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨ÃªÃ Ã¬ Ã«Ã¾Ã¡Ã»Ã¬Ã¨ Ã±Ã¯Ã®Ã±Ã®Ã¡Ã Ã¬Ã¨, Ã¡Ã³Ã¤Ã¼-Ã²Ã® IC, Ã¡Ã³Ã¤Ã¼-Ã²Ã® OOC. [ /r, /rb, /ticket ]\n2.9. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã¨Ã§Ã¡Ã¥Ã£Ã Ã²Ã¼ Ã¯Ã°Ã®Ã¢Ã¥Ã°ÃªÃ¨ Ã®Ã² Ã”ÃÃ Â— Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥ / Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥.\nÃÃ°Ã¨Ã¬Ã¥Ã·Ã Ã­Ã¨Ã¥: Ã Ã£Ã¥Ã­Ã² Ã¨Ã¬Ã¥Ã¥Ã² Ã¯Ã°Ã Ã¢Ã® Ã¢Ã Ã± Ã¢Ã»Ã§Ã¢Ã Ã²Ã¼ Ã¢ Ã¡Ã¾Ã°Ã® Ã¨ Ã¯Ã°Ã®Ã¢Ã¥Ã±Ã²Ã¨ Ã¯Ã°Ã®Ã¢Ã¥Ã°ÃªÃ³.\nÃÃ°Ã¨ Ã®Ã²ÃªÃ Ã§Ã¥ Ã¯Ã®Ã±Ã«Ã¥Ã¤Ã³Ã¥Ã² Ã±Ã®Ã®Ã²Ã¢Ã¥Ã²Ã±Ã²Ã¢Ã³Ã¾Ã¹Ã¥Ã¥ Ã­Ã ÃªÃ Ã§Ã Ã­Ã¨Ã¥ Ã±Ã®Ã£Ã«Ã Ã±Ã­Ã® Ã¯Ã³Ã­ÃªÃ²Ã³.\n2.10. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã¯Ã°Ã¨Ã¬Ã¥Ã­Ã¿Ã²Ã¼ Ã±Ã Ã­ÃªÃ¶Ã¨Ã¨ Ã¯Ã® Ã®Ã²Ã­Ã®Ã¸Ã¥Ã­Ã¨Ã¾ Ãª Ã Ã£Ã¥Ã­Ã²Ã Ã¬ Ã”ÃÃ Ã¯Ã°Ã¨ Ã¨Ã±Ã¯Ã®Ã«Ã­Ã¥Ã­Ã¨Ã¨\n[ Ã¸Ã²Ã°Ã Ã´Ã», Ã®Ã¡ÃºÃ¿Ã¢Ã«Ã¥Ã­Ã¨Ã¥ Ã¢ Ã°Ã®Ã§Ã»Ã±Ãª ],\nÃ  Ã²Ã ÃªÃ¦Ã¥ Ã¢Ã­Ã®Ã±Ã¨Ã²Ã¼ Ã¯Ã®Ã¬Ã¥ÃµÃ³ Ã¢ Ã°Ã Ã¡Ã®Ã²Ã³ Ã±Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨ÃªÃ Ã¬ Ã´Ã¥Ã¤Ã¥Ã°Ã Ã«Ã¼Ã­Ã®Ã£Ã® Ã¡Ã¾Ã°Ã® Â— Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° / Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥.\nÃÃ°Ã¨Ã¬Ã¥Ã·Ã Ã­Ã¨Ã¥: Ã Ã£Ã¥Ã­Ã² Ã¢ Ã¬Ã Ã±ÃªÃ¨Ã°Ã®Ã¢ÃªÃ¥ Ã­Ã¥ Ã¿Ã¢Ã«Ã¿Ã¥Ã²Ã±Ã¿ Ã Ã£Ã¥Ã­Ã²Ã®Ã¬ Ã¯Ã°Ã¨ Ã¨Ã±Ã¯Ã®Ã«Ã­Ã¥Ã­Ã¨Ã¨.")
+  imgui.Text(u8"ÃƒÃ«Ã Ã¢Ã  Â¹3.\nÃÃ®Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­Ã¨Ã¥ Ã¢ Ã®Ã²Ã­Ã®Ã¸Ã¥Ã­Ã¨Ã¨ ÃÃ®Ã«Ã¨Ã¶Ã¥Ã©Ã±ÃªÃ¨Ãµ Ã„Ã¥Ã¯Ã Ã°Ã²Ã Ã¬Ã¥Ã­Ã²Ã®Ã¢ Ã¨ Ã€Ã°Ã¬Ã¨Ã©.\n3.1. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¾Ã²Ã±Ã¿ Ã«Ã¾Ã¡Ã»Ã¥ Ã¯Ã°Ã®Ã¿Ã¢Ã«Ã¥Ã­Ã¨Ã¿ Ã­Ã¥Ã Ã¤Ã¥ÃªÃ¢Ã Ã²Ã­Ã®Ã£Ã® Ã¯Ã®Ã¢Ã¥Ã¤Ã¥Ã­Ã¨Ã¿ Â— Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° / Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥ / Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥.\nÃÃ°Ã¨Ã¬Ã¥Ã·Ã Ã­Ã¨Ã¥: Ã¯Ã®Ã¤ Ã­Ã¥Ã Ã¤Ã¥ÃªÃ¢Ã Ã²Ã­Ã»Ã¬ Ã¯Ã®Ã¢Ã¥Ã¤Ã¥Ã­Ã¨Ã¥Ã¬ Ã¯Ã®Ã¤Ã°Ã Ã§Ã³Ã¬Ã¥Ã¢Ã Ã¥Ã²Ã±Ã¿ Ã¯Ã°Ã»Ã¦ÃªÃ¨ Ã£Ã®Ã±. Ã±Ã«Ã³Ã¦Ã Ã¹Ã¨Ã¬ Ã¯Ã® Ã Ã¢Ã²Ã®Ã¬Ã®Ã¡Ã¨Ã«Ã¿Ã¬,\nÃ­Ã Ã¬Ã¥Ã°Ã¥Ã­Ã­Ã®Ã¥ Ã¢Ã»Ã²Ã Ã«ÃªÃ¨Ã¢Ã Ã­Ã¨Ã¥ Ã Ã¢Ã²Ã® Ã­Ã  Ã¤Ã®Ã°Ã®Ã£Ã³ Ã¨ Ã¨Ã­Ã»Ã¥ Ã­Ã Ã°Ã³Ã¸Ã¥Ã­Ã¨Ã¿ Ã§Ã ÃªÃ®Ã­Ã®Ã¢ Ã¸Ã²Ã Ã²Ã ,\nÃªÃ®Ã²Ã®Ã°Ã»Ã¥ Ã¯Ã°Ã¨Ã¢Ã®Ã¤Ã¿Ã² Ã¢ Ã±Ã®Ã¢Ã®ÃªÃ³Ã¯Ã­Ã®Ã±Ã²Ã¼ Ã­Ã Ã°Ã³Ã¸Ã¥Ã­Ã¨Ã© Ã­Ã¥Ã±ÃªÃ®Ã«Ã¼ÃªÃ¨Ãµ Ã¯Ã³Ã­ÃªÃ²Ã®Ã¢ Ã”Ã¥Ã¤Ã¥Ã°Ã Ã«Ã¼Ã­Ã®Ã£Ã® ÃÃ®Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­Ã¨Ã¿\n3.2. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã­Ã Ã°Ã³Ã¸Ã Ã²Ã¼ Ã¯Ã°Ã Ã¢Ã¨Ã«Ã  Ã±Ã²Ã°Ã®Ã¿ Â— Ã¢Ã»Ã£Ã®Ã¢Ã®Ã°.\nÃÃ°Ã¨Ã¬Ã¥Ã·Ã Ã­Ã¨Ã¥: Ã²Ã ÃªÃ¦Ã¥ Ã¯Ã®Ã¤ Ã½Ã²Ã¨Ã¬ Ã¯Ã®Ã¤Ã°Ã Ã§Ã³Ã¬Ã¥Ã¢Ã Ã¥Ã²Ã±Ã¿ Ã¡Ã¥Ã±Ã¯Ã°Ã¨Ã·Ã¨Ã­Ã­Ã®Ã¥ Ã¨ Ã¡Ã¥Ã±Ã¯Ã®Ã·Ã¢Ã¥Ã­Ã­Ã®Ã¥ Ã¨Ã±Ã¯Ã®Ã«Ã¼Ã§Ã®Ã¢Ã Ã­Ã¨Ã¥ ÃªÃ®Ã¬Ã Ã­Ã¤Ã» /time,\nÃ Ã­Ã¨Ã¬Ã Ã¶Ã¨Ã¨ Ã¨ Ã¯Ã°Ã®Ã·Ã¨Ã¥ Ã²Ã¥Ã«Ã®Ã¤Ã¢Ã¨Ã¦Ã¥Ã­Ã¨Ã¿.\n3.3. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã¯Ã°Ã®Ã¤Ã Ã¦Ã  Ã«Ã¾Ã¡Ã®Ã£Ã® Ã£Ã®Ã±Ã³Ã¤Ã Ã°Ã±Ã²Ã¢Ã¥Ã­Ã­Ã®Ã£Ã® Ã¨Ã¬Ã³Ã¹Ã¥Ã±Ã²Ã¢Ã \n[ ÃªÃ«Ã¾Ã·Ã¨ Ã®Ã² ÃªÃ Ã¬Ã¥Ã°/Ã´Ã®Ã°Ã¬Ã /Ã´Ã³Ã°Ã» Ã± Ã¡Ã®Ã¥Ã¯Ã°Ã¨Ã¯Ã Ã±Ã Ã¬Ã¨ ] Â— Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥ + Ã—Ã‘ Ã´Ã°Ã ÃªÃ¶Ã¨Ã¨.\n3.4. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã¤Ã Ã¢Ã Ã²Ã¼ Ã§Ã Ã¢Ã¥Ã¤Ã®Ã¬Ã® Ã«Ã®Ã¦Ã­Ã³Ã¾ Ã¨Ã­Ã´Ã®Ã°Ã¬Ã Ã¶Ã¨Ã¾ Ã£Ã®Ã±Ã³Ã¤Ã Ã°Ã±Ã²Ã¢Ã¥Ã­Ã­Ã®Ã¬Ã³ Ã±Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨ÃªÃ³ Â— Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° / Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥ / Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥.\nÃÃ°Ã¨Ã¬Ã¥Ã·Ã Ã­Ã¨Ã¥: Ã¯Ã®Ã¤ Ã¤Ã Ã·Ã¥Ã© Ã«Ã®Ã¦Ã­Ã»Ãµ Ã¯Ã®ÃªÃ Ã§Ã Ã­Ã¨Ã© Ã¯Ã®Ã¤Ã°Ã Ã§Ã³Ã¬Ã¥Ã¢Ã Ã¥Ã²Ã±Ã¿ Ã«Ã¾Ã¡Ã Ã¿ Ã¢Ã»Ã¤Ã³Ã¬Ã Ã­Ã­Ã Ã¿/Ã±Ã®ÃªÃ°Ã»Ã²Ã Ã¿ Ã¨Ã­Ã´Ã®Ã°Ã¬Ã Ã¶Ã¨Ã¿,\nÃªÃ®Ã²Ã®Ã°Ã³Ã¾ Ã§Ã Ã¯Ã°Ã Ã¸Ã¨Ã¢Ã Ã¥Ã² Ã£Ã®Ã±Ã³Ã¤Ã Ã°Ã±Ã²Ã¢Ã¥Ã­Ã­Ã»Ã© Ã±Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨Ãª.\n3.5. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã­Ã¥Ã®Ã¡Ã®Ã±Ã­Ã®Ã¢Ã Ã­Ã­Ã® Ã²Ã°Ã¥Ã¡Ã®Ã¢Ã Ã²Ã¼ Ã¤Ã®ÃªÃ³Ã¬Ã¥Ã­Ã²Ã»,\nÃ  Ã²Ã Ãª Ã¦Ã¥ Ã¯Ã°Ã®Ã¢Ã®Ã¤Ã¨Ã²Ã¼ Ã®Ã¡Ã»Ã±Ãª Ã£Ã°Ã Ã¦Ã¤Ã Ã­Ã±ÃªÃ¨Ãµ Ã«Ã¨Ã¶ Â— Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° / Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥.\n3.6. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã£Ã®Ã±Ã³Ã¤Ã Ã°Ã±Ã²Ã¢Ã¥Ã­Ã­Ã»Ã¬ Ã±Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨ÃªÃ Ã¬ Ã¢ÃµÃ®Ã¤Ã¨Ã²Ã¼ Ã¢ Ã±Ã£Ã®Ã¢Ã®Ã°Ã» Ã± Ã¬Ã Ã´Ã¨Ã¥Ã©/Ã¡Ã Ã­Ã¤Ã Ã¬Ã¨ Â— Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥.\nÃˆÃ±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã±Ã¯Ã¥Ã¶. Ã®Ã¯Ã¥Ã°Ã Ã¶Ã¨Ã¨ [ Ã®Ã¡Ã¿Ã§Ã Ã²Ã¥Ã«Ã¼Ã­Ã»Ã© ÃªÃ®Ã­Ã²Ã°Ã®Ã«Ã¼ Ã±Ã²Ã Ã°Ã¸Ã¥Ã£Ã® Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã  ].\n3.7. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã¡Ã¥Ã§ Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã¨Ã¿ / Ã¯Ã°Ã®Ã¯Ã³Ã±ÃªÃ  [ Ã±Ã Ã¬Ã®Ã¢Ã®Ã«Ã¼Ã­Ã® ] Ã¯Ã®ÃªÃ¨Ã¤Ã Ã²Ã¼ Ã·Ã Ã±Ã²Ã¼ / Ã±Ã¢Ã®Ã©\nÃ£Ã®Ã°Ã®Ã¤ Â— Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° / Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥ / Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥.\nÃÃ°Ã¨Ã¬Ã¥Ã·Ã Ã­Ã¨Ã¥: Ã­Ã ÃµÃ®Ã¦Ã¤Ã¥Ã­Ã¨Ã¥ Ã¢ Ã­Ã¥Ã©Ã²Ã°Ã Ã«Ã¼Ã­Ã®Ã© Ã§Ã®Ã­Ã¥ Ã­Ã¥ Ã¿Ã¢Ã«Ã¿Ã¥Ã²Ã±Ã¿ Ã­Ã Ã°Ã³Ã¸Ã¥Ã­Ã¨Ã¥Ã¬ Ã¤Ã Ã­Ã­Ã®Ã£Ã® Ã¯Ã³Ã­ÃªÃ²Ã  Ã´Ã¥Ã¤Ã¥Ã°Ã Ã«Ã¼Ã­Ã®Ã£Ã® Ã¯Ã®Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­Ã¨Ã¿.\n3.8. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã­Ã®Ã±Ã¨Ã²Ã¼ Ã´Ã®Ã°Ã¬Ã³ Ã­Ã¥ Ã±Ã®Ã®Ã²Ã¢Ã¥Ã²Ã±Ã²Ã¢Ã³Ã¾Ã¹Ã³Ã¾ Ã§Ã Ã­Ã¨Ã¬Ã Ã¥Ã¬Ã®Ã© Ã¤Ã®Ã«Ã¦Ã­Ã®Ã±Ã²Ã¨ / Ã§Ã¢Ã Ã­Ã¨Ã¾ Â— Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° / Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥.\nÃÃ°Ã¨Ã¬Ã¥Ã·Ã Ã­Ã¨Ã¥: Ã±Ã®Ã®Ã²Ã¢Ã¥Ã²Ã±Ã²Ã¢Ã¨Ã¥ Ã´Ã®Ã°Ã¬Ã» Ã¨ Ã§Ã¢Ã Ã­Ã¨Ã© Ã³Ã±Ã²Ã Ã­Ã Ã¢Ã«Ã¨Ã¢Ã Ã¥Ã²Ã±Ã¿ Ã°Ã³ÃªÃ®Ã¢Ã®Ã¤Ã¨Ã²Ã¥Ã«Ã¥Ã¬ Ã®Ã°Ã£Ã Ã­Ã¨Ã§Ã Ã¶Ã¨Ã¨.\n3.9. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã¢ Ã°Ã Ã¡Ã®Ã·Ã¥Ã¥ Ã¢Ã°Ã¥Ã¬Ã¿ Ã­Ã®Ã±Ã¨Ã²Ã¼ Ã­Ã  Ã±Ã¥Ã¡Ã¥ Ã¢Ã»Ã§Ã»Ã¢Ã Ã¾Ã¹Ã¨Ã¥ Ã ÃªÃ±Ã¥Ã±Ã±Ã³Ã Ã°Ã» Â— Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° / Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥.\nÃÃ°Ã¨Ã¬Ã¥Ã·Ã Ã­Ã¨Ã¥: Ã¯Ã®Ã¤ Ã¢Ã»Ã§Ã»Ã¢Ã Ã¾Ã¹Ã¨Ã¬Ã¨ Ã ÃªÃ±Ã¥Ã±Ã±Ã³Ã Ã°Ã Ã¬Ã¨ Ã¯Ã®Ã¤Ã°Ã Ã§Ã³Ã¬Ã¥Ã¢Ã Ã¥Ã²Ã±Ã¿ Ã¿Ã°ÃªÃ® Ã¢Ã»Ã°Ã Ã¦Ã¥Ã­Ã­Ã»Ã¥ Ã¯Ã°Ã¥Ã¤Ã¬Ã¥Ã²Ã» Ã­Ã  Ã²Ã¥Ã«Ã¥ Ã£Ã®Ã±. Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã£Ã®.\nÃÃ Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã» Ã±Ã²Ã°Ã®Ã£Ã¨Ã¥ Ã®Ã·ÃªÃ¨, Ã·Ã Ã±Ã», Ã·Â¸Ã°Ã­Ã»Ã¥ Ã¯Ã®Ã¢Ã¿Ã§ÃªÃ¨ Ã­Ã  Ã«Ã¨Ã¶Ã®. Ã’Ã Ãª Ã¦Ã¥ Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã» Ã ÃªÃ±Ã¥Ã±Ã±Ã³Ã Ã°Ã»,\nÃ±Ã®Ã®Ã²Ã¢Ã¥Ã²Ã±Ã²Ã¢Ã³Ã¾Ã¹Ã¨Ã¥ Ã¯Ã®Ã¤Ã°Ã Ã§Ã¤Ã¥Ã«Ã¥Ã­Ã¨Ã¾ Ã£Ã®Ã±. Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã£Ã® [ Ã¡Ã¥Ã°Ã¥Ã²Ã», ÃªÃ®Ã¢Ã¡Ã®Ã©Ã±ÃªÃ¨Ã¥ Ã¸Ã«Ã¿Ã¯Ã» ].\n3.10. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã³Ã¬Ã»Ã¸Ã«Ã¥Ã­Ã­Ã® Ã³Ã¤Ã Ã«Ã¿Ã²Ã¼ Ã± Ã¡Ã Ã§Ã» Ã¤Ã Ã­Ã­Ã»Ãµ Ã°Ã®Ã§Ã»Ã±ÃªÃ  Ã¡Ã¥Ã§ Ã³Ã¢Ã¥Ã¤Ã®Ã¬Ã«Ã¥Ã­Ã¨Ã¿ Ã”ÃÃ Â— Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° / Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥ / Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥.\nÃ„Ã®Ã¯Ã®Ã«Ã­Ã¥Ã­Ã¨Ã¥: Ã…Ã±Ã«Ã¨ Ã¢Ã» Ã®Ã¸Ã¨Ã¡Ã«Ã¨Ã±Ã¼ Ã¨ Ã¬Ã®Ã¦Ã¥Ã²Ã¥ Ã¤Ã®ÃªÃ Ã§Ã Ã²Ã¼ Ã±Ã¢Ã®Ã¾ Ã­Ã¥Ã¢Ã¨Ã­Ã®Ã¢Ã­Ã®Ã±Ã²Ã¼, Ã¢Ã» Ã¤Ã®Ã«Ã¦Ã­Ã» Ã±Ã®Ã®Ã¡Ã¹Ã¨Ã²Ã¼ Ã®Ã¡ Ã½Ã²Ã®Ã¬ Ã¢ Ã¤Ã¥Ã¯Ã Ã°Ã²Ã Ã¬Ã¥Ã­Ã².")
+  imgui.Text(u8"ÃƒÃ«Ã Ã¢Ã  Â¹4.\nÃÃ°Ã¥Ã±Ã²Ã³Ã¯Ã«Ã¥Ã­Ã¨Ã¿ Ã£Ã®Ã±Ã³Ã¤Ã Ã°Ã±Ã²Ã¢Ã¥Ã­Ã­Ã»Ãµ Ã±Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨ÃªÃ®Ã¢ Ã¯Ã°Ã®Ã²Ã¨Ã¢ Ã­Ã®Ã°Ã¬ Ã“Ã±Ã²Ã Ã¢Ã , Ã¨ Ã¤Ã°Ã³Ã£Ã¨Ãµ Ã¯Ã°Ã Ã¢Ã®Ã¢Ã»Ãµ Ã¤Ã®ÃªÃ³Ã¬Ã¥Ã­Ã²Ã®Ã¢.\n4.1. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã¢Ã»Ã¤Ã Ã¢Ã Ã²Ã¼ Ã°Ã®Ã§Ã»Ã±Ãª Ã¨(Ã¨Ã«Ã¨) Ã¢Ã»Ã¯Ã¨Ã±Ã»Ã¢Ã Ã²Ã¼ Ã¸Ã²Ã°Ã Ã´ Ã¡Ã¥Ã§ Ã¢Ã¥Ã±Ã®Ã¬Ã®Ã© Ã­Ã  Ã²Ã® Ã¯Ã°Ã¨Ã·Ã¨Ã­Ã», Ã¯Ã® Ã¯Ã°Ã®Ã±Ã¼Ã¡Ã¥.\nÃˆÃ­Ã»Ã¬Ã¨ Ã±Ã«Ã®Ã¢Ã Ã¬Ã¨ - Ã­Ã¥ Ã¢Ã¨Ã¤Ã¿ Ã´Ã ÃªÃ²Ã  Ã­Ã Ã°Ã³Ã¸Ã¥Ã­Ã¨Ã¿ Ã«Ã¨Ã·Ã­Ã® Â— Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° / Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥ / Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥.\n4.2. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã¯Ã°Ã®Ã¢Ã®Ã¶Ã¨Ã°Ã®Ã¢Ã Ã²Ã¼ ÃªÃ®Ã£Ã®-Ã«Ã¨Ã¡Ã®, Ã­Ã¥ Ã¢Ã Ã¦Ã­Ã®, ÃªÃ ÃªÃ®Ã£Ã® Ã°Ã®Ã¤Ã  Ã¯Ã°Ã®Ã¢Ã®ÃªÃ Ã¶Ã¨Ã¨ Â— Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° / Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥ / Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥.\n4.3. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã¨Ã±Ã¯Ã®Ã«Ã¼Ã§Ã®Ã¢Ã Ã²Ã¼ Ã­Ã¥Ã¶Ã¥Ã­Ã§Ã³Ã°Ã­Ã³Ã¾ Ã¡Ã°Ã Ã­Ã¼, Ã  Ã²Ã ÃªÃ¦Ã¥ Ã®Ã±ÃªÃ®Ã°Ã¡Ã«Ã¥Ã­Ã¨Ã¿ Â— Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° / Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥ / Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥.\nÃÃ°Ã¨Ã¬Ã¥Ã·Ã Ã­Ã¨Ã¥: Ã¯Ã® Ã¤Ã Ã­Ã­Ã®Ã¬Ã³ Ã¯Ã³Ã­ÃªÃ²Ã³ Ã°Ã Ã±Ã±Ã¬Ã®Ã²Ã°Ã¥Ã­Ã¨Ã¾ Ã¯Ã®Ã¤Ã«Ã¥Ã¦Ã Ã² Ã¦Ã Ã«Ã®Ã¡Ã»/Ã®Ã¡Ã°Ã Ã¹Ã¥Ã­Ã¨Ã¿, Ã¢ Ã±Ã«Ã³Ã·Ã Ã¥,\nÃ¥Ã±Ã«Ã¨ Ã±Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨Ãª Ã­Ã ÃµÃ®Ã¤Ã¨Ã«Ã±Ã¿ Ã¯Ã°Ã¨ Ã¨Ã±Ã¯Ã®Ã«Ã­Ã¥Ã­Ã¨Ã¨ Ã¨/Ã¨Ã«Ã¨ Ã²Ã¥ÃªÃ±Ã² Ã®Ã²Ã­Ã®Ã±Ã¨Ã«Ã±Ã¿ Ãª\nÃ¯Ã°Ã®Ã´Ã¥Ã±Ã±Ã¨Ã®Ã­Ã Ã«Ã¼Ã­Ã®Ã© Ã¤Ã¥Ã¿Ã²Ã¥Ã«Ã¼Ã­Ã®Ã±Ã²Ã¨.\nÃÃ Ã°Ã³Ã¸Ã¥Ã­Ã¨Ã¥ Ã½Ã²Ã®Ã£Ã® Ã¯Ã³Ã­ÃªÃ²Ã  Ã®Ã¤Ã¨Ã­Ã ÃªÃ®Ã¢Ã® Ã°Ã Ã±Ã¯Ã°Ã®Ã±Ã²Ã°Ã Ã­Ã¿Ã¥Ã²Ã±Ã¿ ÃªÃ Ãª Ã­Ã  IC Ã²Ã Ãª Ã¨ Ã­Ã  OOC Ã·Ã Ã²Ã» [ Ã±Ã¬Ã±, /fb, /f. ].\n4.4. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã¢ Ã°Ã Ã¡Ã®Ã·Ã¥Ã¥ Ã¢Ã°Ã¥Ã¬Ã¿ Ã§Ã Ã­Ã¨Ã¬Ã Ã²Ã¼Ã±Ã¿ Ã±Ã¢Ã®Ã¨Ã¬Ã¨ Ã¤Ã¥Ã«Ã Ã¬Ã¨ Ã¢ Ã°Ã Ã¡Ã®Ã·Ã¥Ã¥ Ã¢Ã°Ã¥Ã¬Ã¿,\nÃ³Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­Ã­Ã®Ã¥ Ã³Ã±Ã²Ã Ã¢Ã®Ã¬ Ã±Ã®Ã®Ã²Ã¢Ã¥Ã²Ã±Ã²Ã¢Ã³Ã¾Ã¹Ã¥Ã© Ã®Ã°Ã£Ã Ã­Ã¨Ã§Ã Ã¶Ã¨Ã¨\n[ Ã¨Ã£Ã°Ã  Ã¢ ÃªÃ Ã§Ã¨Ã­Ã®, Ã³Ã·Ã Ã±Ã²Ã¨Ã¥ Ã¢ Ã¯Ã¥Ã©Ã­Ã²Ã¡Ã®Ã«Ã¥, base jump, Ã¤Ã¥Ã°Ã¡Ã¨, Ã¨ Ã¤Ã°Ã³Ã£Ã¨Ã¥ Ã¬Ã¥Ã°Ã®Ã¯Ã°Ã¨Ã¿Ã²Ã¨Ã¿ Ã¢ Ã°Ã Ã§Ã¢Ã«Ã¥ÃªÃ Ã²Ã¥Ã«Ã¼Ã­Ã®Ã¬ Ã¶Ã¥Ã­Ã²Ã°Ã¥.\nÃ‚ Ã²Ã®Ã¬ Ã·Ã¨Ã±Ã«Ã¥ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã» Ã¯Ã®Ã±Ã¥Ã¹Ã¥Ã­Ã¨Ã¿ Ã Ã¢Ã²Ã®Ã¿Ã°Ã¬Ã Ã°ÃªÃ¨ Ã¨ Ã Ã³ÃªÃ¶Ã¨Ã®Ã­Ã­Ã»Ãµ\nÃ£Ã Ã°Ã Ã¦Ã¥Ã©. ] Â— Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° / Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥ / Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥.\nÃˆÃ±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã¬Ã¥Ã°Ã®Ã¯Ã°Ã¨Ã¿Ã²Ã¨Ã¿ Ã®Ã² Ã Ã¤Ã¬Ã¨Ã­Ã¨Ã±Ã²Ã°Ã Ã¶Ã¨Ã¨ [ Ã±Ã® Ã±ÃªÃ°Ã¨Ã­Ã®Ã¬ Ã²Ã¥Ã«Ã¥Ã¯Ã®Ã°Ã²Ã  ],\nÃ¨Ã±Ã¯Ã®Ã«Ã­Ã¥Ã­Ã¨Ã¥ Ã±Ã«Ã³Ã¦Ã¥Ã¡Ã­Ã»Ãµ Ã®Ã¡Ã¿Ã§Ã Ã­Ã­Ã®Ã±Ã²Ã¥Ã© [ Ã®ÃµÃ°Ã Ã­Ã  Ã Ã¢Ã²Ã®Ã°Ã»Ã­ÃªÃ , Ã¯Ã°Ã®Ã¢Ã¥Ã°ÃªÃ  Ã¢Ã»Ã¸Ã¥Ã³Ã¯Ã®Ã¬Ã¿Ã­Ã³Ã²Ã»Ãµ Ã¬Ã¥Ã±Ã²\nÃ¡Ã®Ã©Ã¶Ã Ã¬Ã¨ Ã±Ã¯Ã¥Ã¶.Ã®Ã²Ã°Ã¿Ã¤Ã®Ã¢ Ã Ã°Ã¬Ã¨Ã© Ã¨ Ã±Ã². Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã®Ã¢ ], Ã®Ã¡Ã¥Ã¤ Ã± 13:00 Ã¤Ã® 14:00 [ Ã´Ã®Ã°Ã¬Ã³ Ã­Ã¥Ã®Ã¡ÃµÃ®Ã¤Ã¨Ã¬Ã® Ã±Ã­Ã¿Ã²Ã¼ ],\nÃ°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã¨Ã¥ Ã°Ã³ÃªÃ®Ã¢Ã®Ã¤Ã±Ã²Ã¢Ã , Ã±Ã². Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã».\nÃÃ°Ã¨Ã¬Ã¥Ã·Ã Ã­Ã¨Ã¥: Ã°Ã³ÃªÃ®Ã¢Ã®Ã¤Ã±Ã²Ã¢Ã® Ã¤Ã¥Ã¯Ã Ã°Ã²Ã Ã¬Ã¥Ã­Ã²Ã  Ã¨Ã«Ã¨ Ã Ã°Ã¬Ã¨Ã¨ Ã­Ã¥ Ã¨Ã¬Ã¥Ã¥Ã² Ã¯Ã°Ã Ã¢Ã  Ã¢Ã»Ã¤Ã Ã¢Ã Ã²Ã¼ Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã¨Ã¥ Ã­Ã  Ã¯Ã®Ã±Ã¥Ã¹Ã¥Ã­Ã¨Ã¥\n[ Ã± Ã¶Ã¥Ã«Ã¼Ã¾ Ã¨Ã£Ã°Ã» ]\nÃ¢ ÃªÃ Ã§Ã¨Ã­Ã® Ã¨ Ã Ã³ÃªÃ¶Ã¨Ã®Ã­Ã­Ã»Ãµ Ã£Ã Ã°Ã Ã¦Ã¥Ã© Ã¨ Ã­Ã¥ Ã¨Ã¬Ã¥Ã¥Ã² Ã¯Ã°Ã Ã¢Ã® Ã¢ Ã°Ã Ã¡Ã®Ã·Ã¥Ã¥ Ã¢Ã°Ã¥Ã¬Ã¿ Ã¯Ã®Ã±Ã¥Ã¹Ã Ã²Ã¼ [ Ã± Ã¶Ã¥Ã«Ã¼Ã¾ Ã¨Ã£Ã°Ã» ] Ã¨Ãµ Ã±Ã Ã¬Ã®Ã±Ã²Ã®Ã¿Ã²Ã¥Ã«Ã¼Ã­Ã®.\n4.5. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ ÃµÃ°Ã Ã­Ã¥Ã­Ã¨Ã¥ Ã¨ Ã³Ã¯Ã®Ã²Ã°Ã¥Ã¡Ã«Ã¥Ã­Ã¨Ã¥ Ã­Ã Ã°ÃªÃ®Ã²Ã¨Ã·Ã¥Ã±ÃªÃ¨Ãµ Ã¢Ã¥Ã¹Ã¥Ã±Ã²Ã¢, Ã  Ã²Ã ÃªÃ¦Ã¥ ÃµÃ°Ã Ã­Ã¥Ã­Ã¨Ã¥ ÃªÃ°Ã Ã¤Ã¥Ã­Ã»Ãµ Ã¬Ã Ã²Ã¥Ã°Ã¨Ã Ã«Ã®Ã¢.")
+  imgui.Text(u8"ÃÃ®Ã¤ Ã½Ã²Ã³ Ã±Ã²Ã Ã²Ã¼Ã¾ Ã¯Ã®Ã¯Ã Ã¤Ã Ã¥Ã² ÃµÃ°Ã Ã­Ã¥Ã­Ã¨Ã¥ Ã¢Ã»Ã¸Ã¥Ã¯Ã¥Ã°Ã¥Ã·Ã¨Ã±Ã«Ã¥Ã­Ã­Ã»Ãµ Ã¬Ã Ã²Ã¥Ã°Ã¨Ã Ã«Ã®Ã¢ Ã¢ Ã±Ã¥Ã©Ã´Ã¥. Â— Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥.\nÃˆÃ±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã‘Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨ÃªÃ¨ PD, Ã±Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨ÃªÃ¨ Ã”ÃÃ Ã¢ Ã¶Ã¥Ã«Ã¿Ãµ Ã±Ã¯Ã¥Ã¶. Ã®Ã¯Ã¥Ã°Ã Ã¶Ã¨Ã© [ Ã± Ã®Ã¡Ã¿Ã§Ã Ã²Ã¥Ã«Ã¼Ã­Ã»Ã¬ ÃªÃ®Ã­Ã²Ã°Ã®Ã«Ã¥Ã¬ Ã±Ã²Ã Ã°Ã¸Ã¥Ã£Ã® Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã  ].\n4.6. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã­Ã ÃµÃ®Ã¤Ã¨Ã²Ã¼Ã±Ã¿ Ã¢ Ã®Ã¯Ã Ã±Ã­Ã®Ã¬ Ã°Ã Ã©Ã®Ã­Ã¥ Ã¢Ã­Ã¥ Ã±Ã¯Ã¥Ã¶. Ã®Ã¯Ã¥Ã°Ã Ã¶Ã¨Ã© Â— Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° / Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥ / Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥.\nÃˆÃ±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã´Ã¥Ã¤Ã¥Ã°Ã Ã«Ã¼Ã­Ã»Ã© Ã¯Ã Ã²Ã°Ã³Ã«Ã¼,Ã±Ã¯Ã¥Ã¶Ã¨Ã Ã«Ã¼Ã­Ã»Ã¥ Ã®Ã²Ã¤Ã¥Ã«Ã» [ Ã®Ã¡Ã¿Ã§Ã Ã²Ã¥Ã«Ã¼Ã­Ã»Ã© ÃªÃ®Ã­Ã²Ã°Ã®Ã«Ã¼ Ã±Ã® Ã±Ã²Ã®Ã°Ã®Ã­Ã» Ã°Ã³ÃªÃ®Ã¢Ã®Ã¤Ã±Ã²Ã¢Ã  Ã®Ã°Ã£Ã Ã­Ã¨Ã§Ã Ã¶Ã¨Ã¨ ].\n4.7. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã®Ã¡ÃºÃ¿Ã¢Ã«Ã¿Ã²Ã¼ Ã¢ Ã°Ã®Ã§Ã»Ã±Ãª Ã­Ã¥ Ã¯Ã® Ã³Ã£Ã®Ã«Ã®Ã¢Ã­Ã®Ã¬Ã³ ÃªÃ®Ã¤Ã¥ÃªÃ±Ã³ Â— Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° / Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥.\n4.8. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã­Ã¥Ã¯Ã®Ã¤Ã·Ã¨Ã­Ã¥Ã­Ã¨Ã¥ Ã±Ã²Ã Ã°Ã¸Ã¥Ã¬Ã³ Ã¯Ã® Ã§Ã¢Ã Ã­Ã¨Ã¾ Ã¢ Ã°Ã Ã¬ÃªÃ Ãµ Ã§Ã ÃªÃ®Ã­Ã  Â— Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° / Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥.\nÃˆÃ±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã‘Ã²Ã Ã°Ã¸Ã¨Ã¥ Ã¯Ã® Ã§Ã¢Ã Ã­Ã¨Ã¾ - Ã¢ Ã°Ã Ã¬ÃªÃ Ãµ Ã®Ã¤Ã­Ã®Ã© Ã®Ã°Ã£Ã Ã­Ã¨Ã§Ã Ã¶Ã¨Ã¨.\n4.9. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã³Ã¯Ã®Ã²Ã°Ã¥Ã¡Ã«Ã¿Ã²Ã¼ Ã Ã«ÃªÃ®Ã£Ã®Ã«Ã¼ Ã¢ Ã°Ã Ã¡Ã®Ã·Ã¥Ã¥ Ã¢Ã°Ã¥Ã¬Ã¿ Â— Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥.\n4.10. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã¡Ã°Ã Ã²Ã¼ / Ã¤Ã Ã¢Ã Ã²Ã¼ Ã¢Ã§Ã¿Ã²ÃªÃ¨ Â— Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥.\nÃÃ°Ã¨Ã¬Ã¥Ã·Ã Ã­Ã¨Ã¥: Ã°Ã Ã§Ã°Ã¥Ã¸Ã Ã¥Ã²Ã±Ã¿ Ã®Ã²Ã»Ã£Ã°Ã®Ã¢ÃªÃ  Bad Cops.\nÃÃ­Ã  Ã¤Ã®Ã«Ã¦Ã­Ã  Ã¡Ã»Ã²Ã¼ Ã± Ã¯Ã°Ã¥Ã¤Ã¢Ã Ã°Ã¨Ã²Ã¥Ã«Ã¼Ã­Ã»Ã¬ Ã±Ã­Ã¿Ã²Ã¨Ã¥Ã¬ Ã¢Ã±Ã¥Ãµ Ã­Ã Ã¸Ã¨Ã¢Ã®Ãª Ã¨ Ã­Ã Ã¤Ã¥Ã¢Ã Ã­Ã¨Ã¥Ã¬ Ã¬Ã Ã±ÃªÃ¨ Ã± Ã´Ã¨ÃªÃ±Ã Ã¶Ã¨Ã¥Ã©\n[ screen & /time ].\nÃ‚ Ã±Ã«Ã³Ã·Ã Ã¥ Ã¥Ã±Ã«Ã¨ Ã¢Ã Ã± Ã³Ã±Ã¯Ã¥Ã«Ã¨ Ã§Ã Ã¤Ã¥Ã°Ã¦Ã Ã²Ã¼ Ã¨ Ã±Ã­Ã¿Ã²Ã¼ Ã¬Ã Ã±ÃªÃ³ - Ã¯Ã°Ã¨Ã¢Ã«Ã¥ÃªÃ Ã¥Ã²Ã¥Ã±Ã¼ Ã¯Ã® Ã³ÃªÃ Ã§Ã Ã­Ã­Ã®Ã© Ã±Ã²Ã Ã²Ã¼Ã¥ Ã”Ã¥Ã¤Ã¥Ã°Ã Ã«Ã¼Ã­Ã®Ã£Ã® Ã¯Ã®Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­Ã¨Ã¿.\n4.11. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã­Ã Ã°Ã³Ã¸Ã Ã²Ã¼ Ã¯Ã°Ã Ã¢Ã¨Ã«Ã  Ã¢Ã®Ã«Ã­Ã» Ã¤Ã¥Ã¯Ã Ã°Ã²Ã Ã¬Ã¥Ã­Ã²Ã  Â— Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° / Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥.\nÃÃ°Ã¨Ã¬Ã¥Ã·Ã Ã­Ã¨Ã¥: Ã°Ã³ÃªÃ®Ã¢Ã®Ã¤Ã±Ã²Ã¢Ã® Ã£Ã®Ã±.Ã®Ã°Ã£Ã Ã­Ã¨Ã§Ã Ã¶Ã¨Ã¥Ã© Ã®Ã¡Ã¿Ã§Ã Ã­Ã® Ã®Ã¯Ã®Ã¢Ã¥Ã¹Ã Ã²Ã¼ Ã¯Ã°Ã¨Ã¡Ã»Ã¢Ã¸Ã¨Ãµ Ã°Ã Ã¡Ã®Ã²Ã­Ã¨ÃªÃ®Ã¢\nÃ­Ã  Ã°Ã Ã¡Ã®Ã²Ã³ Ã® Ã¯Ã®Ã«Ã®Ã¦Ã¥Ã­Ã¨Ã¨ Ã—Ã‘ Ã¯Ã® Ã¢Ã®Ã«Ã­Ã¥ Ã¤Ã¥Ã¯Ã Ã°Ã²Ã Ã¬Ã¥Ã­Ã²Ã , Ã¤Ã Ã­Ã­Ã»Ã© Ã¯Ã³Ã­ÃªÃ²\nÃ°Ã Ã±Ã¯Ã°Ã®Ã±Ã²Ã°Ã Ã­Ã¿Ã¥Ã²Ã±Ã¿ Ã¤Ã Ã¦Ã¥ Ã­Ã  Ã²Ã¥Ãµ, ÃªÃ²Ã® Â«Ã­Ã¥ Ã§Ã­Ã Ã«Â» Ã·Ã²Ã® Ã¢Ã®Ã«Ã­Ã  Ã­Ã  Ã—Ã‘.\nÃÃ Ã°Ã³Ã¸Ã¥Ã­Ã¨Ã¥Ã¬ Ã¤Ã Ã­Ã­Ã®Ã© Ã±Ã²Ã Ã²Ã¼Ã¨ Ã”Ã Ã¿Ã¢Ã«Ã¿Ã¾Ã²Ã±Ã¿ Ã±Ã®Ã®Ã¡Ã¹Ã¥Ã­Ã¨Ã¿ Ã±Ã«Ã¥Ã¤Ã³Ã¾Ã¹Ã¥Ã£Ã® Ã±Ã®Ã¤Ã¥Ã°Ã¦Ã Ã­Ã¨Ã¿: Â«OG, Ã­Ã¥ Ã°Ã¥Ã Ã£Ã¨Ã°Ã³Ã¥Ã¬Â», Â«Ã³Ã·Ã²Ã¥Ã¬\nÃ¯Ã°Ã¨ Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¨Â», Ã  Ã²Ã ÃªÃ¦Ã¥ Ã±Ã®Ã®Ã¡Ã¹Ã¥Ã­Ã¨Ã¿ Ã¯Ã°Ã® Ã¥Ã¤Ã³ Ã¢ Ã­Ã¥Ã´Ã®Ã°Ã¬Ã Ã«Ã¼Ã­Ã®Ã¬ ÃªÃ®Ã­Ã²Ã¥ÃªÃ±Ã²Ã¥ Â«Ã­Ã ÃªÃ®Ã°Ã¬Ã¨Ã²Ã¥ Ã¯Ã¥Ã·Ã¥Ã­Ã¼ÃªÃ Ã¬Ã¨Â»,\nÂ«Ã¤Ã Ã©Ã²Ã¥ Ã¥Ã¤Ã»Â», Â«Ã­Ã ÃªÃ®Ã°Ã¬Ã¨Ã²Ã¥ Ã¯Ã®Ã­Ã·Ã¨ÃªÃ Ã¬Ã¨Â».\n4.12. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã¡Ã¥Ã±Ã¯Ã°Ã¨Ã·Ã¨Ã­Ã­Ã® Ã®Ã¡Ã»Ã±ÃªÃ¨Ã¢Ã Ã²Ã¼ Ã£Ã®Ã±Ã³Ã¤Ã Ã°Ã±Ã²Ã¢Ã¥Ã­Ã­Ã»Ãµ Ã±Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨ÃªÃ®Ã¢ Â— Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° / Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥.\nÃÃ°Ã¨Ã¬Ã¥Ã·Ã Ã­Ã¨Ã¥: Ã¢ Ã±Ã«Ã³Ã·Ã Ã¥, Ã¥Ã±Ã«Ã¨ Ã®Ã¡Ã»Ã±ÃªÃ¨Ã¢Ã Ã¥Ã²Ã±Ã¿ Ã Ã£Ã¥Ã­Ã² Ã¯Ã®Ã¤ Ã¯Ã°Ã¨ÃªÃ°Ã»Ã²Ã¨Ã¥Ã¬/Ã¬Ã Ã±ÃªÃ¨Ã°Ã®Ã¢ÃªÃ®Ã©,")
+  imgui.Text(u8"ÃªÃ®Ã²Ã®Ã°Ã»Ã© Ã±Ã¥Ã¡Ã¿ Ã­Ã¥ Ã°Ã Ã±ÃªÃ°Ã»Ã« Ã¯Ã® Ã±Ã®Ã¡Ã±Ã²Ã¢Ã¥Ã­Ã­Ã»Ã¬ Ã¯Ã°Ã¨Ã·Ã¨Ã­Ã Ã¬ Â— Ã®Ã´Ã¨Ã¶Ã¥Ã° Ã¯Ã®Ã«Ã¨Ã¶Ã¨Ã¨ Ã­Ã¥ Ã¡Ã³Ã¤Ã¥Ã² Ã¯Ã°Ã¨Ã¢Ã«Ã¥Ã·Â¸Ã­ Ãª Ã®Ã²Ã¢Ã¥Ã²Ã±Ã²Ã¢Ã¥Ã­Ã­Ã®Ã±Ã²Ã¨.\n4.13. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã«Ã¨Ã¸Ã Ã²Ã¼ Ã«Ã¨Ã¶Ã¥Ã­Ã§Ã¨Ã¨ Ã¡Ã¥Ã§ Ã¢Ã¥Ã±Ã®Ã¬Ã»Ãµ Ã­Ã  Ã²Ã® Ã¯Ã°Ã¨Ã·Ã¨Ã­ Â— ÃªÃ®Ã¬Ã¯Ã¥Ã­Ã±Ã Ã¶Ã¨Ã¿ Ã±Ã²Ã®Ã¨Ã¬Ã®Ã±Ã²Ã¨ Ã«Ã¨Ã¶Ã¥Ã­Ã§Ã¨Ã© Ã§Ã  Ã±Ã·Â¸Ã²\nÃ®Ã²Ã®Ã¡Ã°Ã Ã¢Ã¸Ã¥Ã£Ã® Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã  Ã± Ã¢Ã»Ã­Ã¥Ã±Ã¥Ã­Ã¨Ã¥Ã¬ Ã¤Ã®Ã¯. Ã±Ã Ã­ÃªÃ¶Ã¨Ã¨ Â— Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° / Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥.\nÃÃ°Ã¨Ã¬Ã¥Ã·Ã Ã­Ã¨Ã¥: Ã¥Ã±Ã«Ã¨ Ã‚Ã» Ã³Ã¢Ã¨Ã¤Ã¥Ã«Ã¨, Ã·Ã²Ã® Ã£Ã®Ã±Ã³Ã¤Ã Ã°Ã±Ã²Ã¢Ã¥Ã­Ã­Ã»Ã© Ã±Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨Ãª Ã­Ã Ã°Ã³Ã¸Ã¨Ã« Ã¯Ã°Ã Ã¢Ã¨Ã«Ã  Ã¤Ã®Ã°Ã®Ã¦Ã­Ã®Ã£Ã® Ã¤Ã¢Ã¨Ã¦Ã¥Ã­Ã¨Ã¿\nÃ¨Ã«Ã¨ Ã¢ Ã£Ã°Ã Ã¦Ã¤Ã Ã­Ã±ÃªÃ®Ã© Ã´Ã®Ã°Ã¬Ã¥ Ã“ÃŠ [ Ã£Ã¤Ã¥ Ã¯Ã°Ã¥Ã¤Ã³Ã±Ã¬Ã Ã²Ã°Ã¨Ã¢Ã Ã¥Ã²Ã±Ã¿ Ã¨Ã§ÃºÃ¿Ã²Ã¨Ã¥ Ã«Ã¨Ã¶Ã¥Ã­Ã§Ã¨Ã¨ ],\nÃ¨ Ã³ Ã‚Ã Ã± Ã¥Ã±Ã²Ã¼ Ã¤Ã®ÃªÃ Ã§Ã Ã²Ã¥Ã«Ã¼Ã±Ã²Ã¢Ã , Ã‚Ã» Ã¨Ã¬Ã¥Ã¥Ã²Ã¥ Ã¯Ã®Ã«Ã­Ã®Ã¥ Ã¯Ã°Ã Ã¢Ã® Ã§Ã Ã¡Ã°Ã Ã²Ã¼ Ã«Ã¨Ã¶Ã¥Ã­Ã§Ã¨Ã¾.\n4.14. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã­Ã Ã°Ã³Ã¸Ã Ã²Ã¼ Ã±Ã³Ã¡Ã®Ã°Ã¤Ã¨Ã­Ã Ã¶Ã¨Ã¾ Ã¯Ã°Ã¨ Ã®Ã¡Ã¹Ã¥Ã­Ã¨Ã¨ Ã±Ã® Ã±Ã²Ã Ã°Ã¸Ã¨Ã¬Ã¨ Ã¯Ã® Ã§Ã¢Ã Ã­Ã¨Ã¾ Â— Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° / Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥.\n4.15. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã³Ã¡Ã¨Ã©Ã±Ã²Ã¢Ã® Ã¢ Ã­Ã Ã°Ã³Ã·Ã­Ã¨ÃªÃ Ãµ Ã¨Ã«Ã¨ Ã½Ã´Ã´Ã¥ÃªÃ²Ã®Ã¬ Ã½Ã«Ã¥ÃªÃ²Ã°Ã®Ã¸Ã®ÃªÃ¥Ã°Ã  Â— Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥ / Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥.\nÃÃ°Ã¨Ã¬Ã¥Ã·Ã Ã­Ã¨Ã¥: Ã°Ã Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã® Ã¨Ã±Ã¯Ã®Ã«Ã¼Ã§Ã®Ã¢Ã Ã²Ã¼ Ã½Ã«Ã¥ÃªÃ²Ã°Ã®Ã¸Ã®ÃªÃ¥Ã° Ã¢ Ã¯Ã¥Ã°Ã¥Ã±Ã²Ã°Ã¥Ã«ÃªÃ¥, Ã¥Ã±Ã«Ã¨ Ã®Ã­Ã  Ã­Ã Ã·Ã Ã«Ã Ã±Ã¼ Ã¢ Ã‡Ã¥Ã«Â¸Ã­Ã®Ã© Ã‡Ã®Ã­Ã¥\nÃ¨ Ã³ Ã¢Ã Ã± Ã¥Ã±Ã²Ã¼ Ã¤Ã®ÃªÃ Ã§Ã Ã²Ã¥Ã«Ã¼Ã±Ã²Ã¢Ã .\n4.16. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã­Ã Ã°Ã³Ã¸Ã Ã²Ã¼ Ã§Ã ÃªÃ®Ã­Ã» Ã¸Ã²Ã Ã²Ã , Ã  Ã¨Ã¬Ã¥Ã­Ã­Ã®: Ã³Ã£Ã®Ã«Ã®Ã¢Ã­Ã»Ã© ÃªÃ®Ã¤Ã¥ÃªÃ± Ã¨ Ã Ã¤Ã¬Ã¨Ã­Ã¨Ã±Ã²Ã°Ã Ã²Ã¨Ã¢Ã­Ã»Ã© ÃªÃ®Ã¤Ã¥ÃªÃ±Ã»,\nÃªÃ®Ã­Ã±Ã²Ã¨Ã²Ã³Ã¶Ã¨Ã¿, Ã³Ã±Ã²Ã Ã¢Ã» ÃÃ„ / Ã€Ã°Ã¬Ã¨Ã© Ã¨ Ã¤Ã°Ã³Ã£Ã¨Ã¥ Ã¯Ã°Ã Ã¢Ã¨Ã«Ã  Ã³Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­Ã­Ã»Ã¥ ÃªÃ ÃªÃ¨Ã¬Ã¨-Ã«Ã¨Ã¡Ã®\nÃ¯Ã°Ã Ã¢Ã®Ã¢Ã»Ã¬Ã¨ Ã ÃªÃ²Ã Ã¬Ã¨ Â— Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° / Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥ / Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥.\nÃˆÃ±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: Ã¥Ã±Ã«Ã¨ Ã³ Ã‚Ã Ã± Ã¥Ã±Ã²Ã¼ Ã¤Ã®ÃªÃ Ã§Ã Ã²Ã¥Ã«Ã¼Ã±Ã²Ã¢Ã , Ã¯Ã®Ã¤Ã²Ã¢Ã¥Ã°Ã¦Ã¤Ã Ã¾Ã¹Ã¨Ã¥ Ã¢Ã Ã¸Ã³ Ã¯Ã®Ã«Ã­Ã³Ã¾ Ã«Ã¨Ã¡Ã® Ã·Ã Ã±Ã²Ã¨Ã·Ã­Ã³Ã¾\nÃ­Ã¥Ã¢Ã¨Ã­Ã®Ã¢Ã­Ã®Ã±Ã²Ã¼ Ã¯Ã® Ã´Ã ÃªÃ²Ã Ã¬: Ã±Ã Ã¬Ã®Ã®Ã¡Ã®Ã°Ã®Ã­Ã» Ã±Ã¥Ã¡Ã¿ Ã¨ Ã¡Ã«Ã¨Ã§ÃªÃ¨Ãµ; Ã§Ã Ã¹Ã¨Ã²Ã» Ã«Ã¨Ã·Ã­Ã®Ã£Ã® Ã¨Ã¬Ã³Ã¹Ã¥Ã±Ã²Ã¢Ã ;\nÃ¯Ã°Ã¨ Ã¢Ã»Ã¯Ã®Ã«Ã­Ã¥Ã­Ã¨Ã¨ Ã±Ã«Ã³Ã¦Ã¥Ã¡Ã­Ã®Ã£Ã® Ã¤Ã®Ã«Ã£Ã , Ã­Ã® Ã­Ã ÃµÃ®Ã¤Ã¿Ã±Ã¼ Ã­Ã¥ Ã¯Ã°Ã¨ Ã¨Ã±Ã¯Ã®Ã«Ã­Ã¥Ã­Ã¨Ã¨ Ã±Ã«Ã³Ã¦Ã¥Ã¡Ã­Ã»Ãµ Ã®Ã¡Ã¿Ã§Ã Ã­Ã­Ã®Ã±Ã²Ã¥Ã© [ Ã­Ã¥ Ã¢ Ã´Ã®Ã°Ã¬Ã¥ ];\nÃ¯Ã°Ã¨ÃªÃ Ã§ Ã±Ã²Ã Ã°Ã¸Ã¥Ã£Ã® Ã¯Ã® Ã§Ã¢Ã Ã­Ã¨Ã¾ Ã¢ Ã°Ã Ã¬ÃªÃ Ãµ Ã§Ã ÃªÃ®Ã­Ã .\n4.17. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã­Ã¥Ã¯Ã®Ã¤Ã·Ã¨Ã­Ã¥Ã­Ã¨Ã¥ Ã°Ã³ÃªÃ®Ã¢Ã®Ã¤Ã¿Ã¹Ã¥Ã¬Ã³ Ã±Ã®Ã±Ã²Ã Ã¢Ã³ Ã”ÃÃ Â— Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥ / Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥.\n4.18. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã­Ã¥Ã¯Ã®Ã¤Ã·Ã¨Ã­Ã¥Ã­Ã¨Ã¥ ÃƒÃ³Ã¡Ã¥Ã°Ã­Ã Ã²Ã®Ã°Ã³ Ã¢ Ã°Ã Ã¬ÃªÃ Ãµ Ã§Ã ÃªÃ®Ã­Ã  Ã˜Ã²Ã Ã²Ã  Evolve Â— Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥ / Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥.\n4.19. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã®Ã²Ã¤Ã Ã¢Ã Ã²Ã¼ Ã¯Ã°Ã¨ÃªÃ Ã§Ã» ÃƒÃ³Ã¡Ã¥Ã°Ã­Ã Ã²Ã®Ã°Ã³ Â— Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥.\n4.20. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã®Ã²Ã¤Ã Ã¢Ã Ã²Ã¼ Ã¯Ã°Ã¨ÃªÃ Ã§Ã» Ã±Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨ÃªÃ Ã¬ Ã”ÃÃ Â— Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥ / Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥.")
+  imgui.Text(u8"4.21. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã­Ã Ã¤Ã¥Ã¢Ã Ã²Ã¼ Ã¬Ã Ã±ÃªÃ³ Ã­Ã¥ Ã­Ã ÃµÃ®Ã¤Ã¿Ã±Ã¼ Ã­Ã  Ã±Ã¯Ã¥Ã¶.Ã®Ã¯Ã¥Ã°Ã Ã¶Ã¨Ã¨/Ã­Ã  Ã®Ã¡Ã«Ã Ã¢Ã¥ Ã¨Ã«Ã¨ Ã§Ã Ã¥Ã§Ã¤Ã¥/Ã®Ã²Ã¡Ã¨Ã¢Ã Ã­Ã¨Ã¨/Ã§Ã Ã¹Ã¨Ã²Ã¥ Ã¯Ã®Ã°Ã²Ã .\nÃÃ Ã§Ã°Ã¥Ã¸Ã¥Ã­Ã® Ã­Ã Ã¤Ã¥Ã²Ã¼ Ã¬Ã Ã±ÃªÃ³ Ã¯Ã® Ã¯Ã°Ã¨ÃªÃ Ã§Ã³ Ã Ã£Ã¥Ã­Ã²Ã  Ã”ÃÃ Ã± Ã­Ã Ã«Ã¨Ã·Ã¨Ã¥Ã¬ Ã¤Ã®ÃªÃ Ã§Ã Ã²Ã¥Ã«Ã¼Ã±Ã²Ã¢. Â— Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° / Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥.\nÃÃ°Ã¨Ã¬Ã¥Ã·Ã Ã­Ã¨Ã¥: Ã­Ã®Ã±Ã¨Ã²Ã¼ Ã¬Ã Ã±ÃªÃ³ Ã¢ Ã³Ã·Ã Ã±Ã²ÃªÃ¥ [ Ã¢ Ã£Ã Ã°Ã Ã¦Ã¥ ] Ã²Ã ÃªÃ¦Ã¥ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã®.\nÃÃ°Ã¨ Ã§Ã«Ã®Ã³Ã¯Ã®Ã²Ã°Ã¥Ã¡Ã«Ã¥Ã­Ã¨Ã¨ Ã¤Ã Ã­Ã­Ã»Ã¬ Ã¯Ã³Ã­ÃªÃ²Ã®Ã¬ Ã±Ã«Ã¥Ã¤Ã³Ã¥Ã² Ã­Ã ÃªÃ Ã§Ã Ã­Ã¨Ã¥ Ã§Ã  Ã¯Ã°Ã¥Ã¢Ã»Ã¸Ã¥Ã­Ã¨Ã¥ Ã¤Ã®Ã«Ã¦Ã­Ã®Ã±Ã²Ã­Ã»Ãµ Ã¯Ã®Ã«Ã­Ã®Ã¬Ã®Ã·Ã¨Ã©.\n4.22. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã¨Ã±Ã¯Ã®Ã«Ã¼Ã§Ã®Ã¢Ã Ã²Ã¼ Ã«Ã¨Ã·Ã­Ã®Ã¥ Ã²Ã°Ã Ã­Ã±Ã¯Ã®Ã°Ã²Ã­Ã®Ã¥ Ã±Ã°Ã¥Ã¤Ã±Ã²Ã¢Ã® Ã¢ Ã±Ã«Ã³Ã¦Ã¥Ã¡Ã­Ã»Ãµ Ã¶Ã¥Ã«Ã¿Ãµ Ã¨ Ã±Ã¨Ã²Ã³Ã Ã¶Ã¨Ã¿Ãµ,\nÃ­Ã¥ Ã¯Ã°Ã¥Ã¤Ã³Ã±Ã¬Ã®Ã²Ã°Ã¥Ã­Ã­Ã»Ãµ Ã¤Ã¥Ã©Ã±Ã²Ã¢Ã³Ã¾Ã¹Ã¨Ã¬ Ã³Ã±Ã²Ã Ã¢Ã®Ã¬ Ã£Ã®Ã±.Ã®Ã°Ã£Ã Ã­Ã¨Ã§Ã Ã¶Ã¨Ã¨. Â— Ã¢Ã»Ã£Ã®Ã¢Ã®Ã°.\nÃÃ°Ã¨Ã¬Ã¥Ã·Ã Ã­Ã¨Ã¥: Ã¤Ã Ã­Ã­Ã»Ã© Ã¯Ã³Ã­ÃªÃ² Ã®Ã²Ã­Ã®Ã±Ã¨Ã²Ã±Ã¿ Ã¢ Ã¯Ã¥Ã°Ã¢Ã³Ã¾ Ã®Ã·Ã¥Ã°Ã¥Ã¤Ã¼ Ãª Ã Ã°Ã¬Ã¨Ã¿Ã¬.\nÃˆÃ±Ã¯Ã®Ã«Ã¼Ã§Ã®Ã¢Ã Ã²Ã¼ Ã«Ã¨Ã·Ã­Ã»Ã© Ã²Ã°Ã Ã­Ã±Ã¯Ã®Ã°Ã² Ã¬Ã®Ã£Ã³Ã² Ã±Ã¯Ã¥Ã¶. Ã¯Ã®Ã¤Ã°Ã Ã§Ã¤Ã¥Ã«Ã¥Ã­Ã¨Ã¿ Ã¨ Ã‘Ã²Ã Ã°Ã¸Ã¨Ã© ÃÃ´Ã¨Ã¶Ã¥Ã°Ã±ÃªÃ¨Ã© Ã±Ã®Ã±Ã²Ã Ã¢ Ã Ã°Ã¬Ã¨Ã©,\nÃƒÃ«Ã Ã¢Ã» Ã¨ Ã¢Ã»Ã¸Ã¥ Ã”ÃÃ.\n4.23. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã¯Ã°Ã¥Ã¢Ã»Ã¸Ã Ã²Ã¼ Ã±Ã¢Ã®Ã¨ Ã¤Ã®Ã«Ã¦Ã­Ã®Ã±Ã²Ã­Ã»Ã¥ Ã¯Ã®Ã«Ã­Ã®Ã¬Ã®Ã·Ã¨Ã¿ Â— Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥ / Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥.\n4.24. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã®Ã¡ÃºÃ¿Ã¢Ã«Ã¿Ã²Ã¼ Ã¢ Ã°Ã®Ã§Ã»Ã±Ãª Ã¯Ã®Ã¤Ã®Ã§Ã°Ã¥Ã¢Ã Ã¥Ã¬Ã®Ã£Ã®/Ã¯Ã°Ã¥Ã±Ã²Ã³Ã¯Ã­Ã¨ÃªÃ  Ã¥Ã±Ã«Ã¨ Ã­Ã  Ã­Ã¥Ã¬ Ã­Ã Ã¤Ã¥Ã²Ã  Ã¬Ã Ã±ÃªÃ  Â— Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° / Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥.\nÃˆÃ±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥: ÃÃ®Ã¤Ã®Ã§Ã°Ã¥Ã¢Ã Ã¥Ã¬Ã®Ã£Ã® Ã³Ã¤Ã Ã«Ã®Ã±Ã¼ Ã§Ã Ã¤Ã¥Ã°Ã¦Ã Ã²Ã¼ [ Ã®Ã¡Ã¥Ã§Ã¤Ã¢Ã¨Ã¦Ã¨Ã²Ã¼ Ã²Ã Ã©Ã§Ã¥Ã°Ã®Ã¬ Ã¨Ã«Ã¨ Ã­Ã Ã°Ã³Ã·Ã­Ã¨ÃªÃ Ã¬Ã¨ ],\nÃ¢ Ã²Ã ÃªÃ®Ã¬ Ã±Ã«Ã³Ã·Ã Ã¥ Ã°Ã®Ã§Ã»Ã±Ãª Ã¢Ã»Ã¤Ã Ã¥Ã²Ã±Ã¿ Ã­Ã¥Ã§Ã Ã¢Ã¨Ã±Ã¨Ã¬Ã® Ã®Ã² Ã²Ã®Ã£Ã®, Ã¢ Ã¬Ã Ã±ÃªÃ¥ Ã®Ã­ Ã¨Ã«Ã¨ Ã­Ã¥Ã².\nÃ„Ã®Ã¯Ã³Ã±ÃªÃ Ã¥Ã²Ã±Ã¿ Ã²Ã ÃªÃ¦Ã¥ Ã¢Ã»Ã¤Ã Ã·Ã  Ã°Ã®Ã§Ã»Ã±ÃªÃ  Ã¢ Ã±Ã«Ã³Ã·Ã Ã¥ Ã­Ã¥Ã¯Ã®Ã±Ã°Ã¥Ã¤Ã±Ã²Ã¢Ã¥Ã­Ã­Ã®Ã£Ã® ÃªÃ®Ã­Ã²Ã ÃªÃ²Ã  Ã± Ã¯Ã®Ã¤Ã®Ã§Ã°Ã¥Ã¢Ã Ã¥Ã¬Ã»Ã¬ Ã¡Ã¥Ã§ Ã¬Ã Ã±ÃªÃ¨ Ã¤Ã® Ã¯Ã®Ã£Ã®Ã­Ã¨\n[ Ã².Ã¥. Ã¢Ã®Ã§Ã¬Ã®Ã¦Ã­Ã®Ã±Ã²Ã¼ Ã°Ã Ã§Ã£Ã«Ã¿Ã¤Ã¥Ã²Ã¼ Ã«Ã¨Ã¶Ã®, Ã­Ã Ã«Ã¨Ã·Ã¨Ã¥ Ã¤Ã®ÃªÃ Ã§Ã Ã²Ã¥Ã«Ã¼Ã±Ã²Ã¢ Ã± /time Ã®Ã¡Ã¿Ã§Ã Ã²Ã¥Ã«Ã¼Ã­Ã® ].\n4.25. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã­Ã Ã°Ã³Ã¸Ã Ã²Ã¼ Ã®Ã¡Ã¹Ã¨Ã¥ Ã¯Ã°Ã Ã¢Ã¨Ã«Ã  Ã¯Ã®Ã«Ã¨Ã¶Ã¨Ã¨ Â— Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° / Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥ / Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥.\n4.26. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã® Ã¡Ã¥Ã§Ã¤Ã¥Ã©Ã±Ã²Ã¢Ã¨Ã¥ / Ã­Ã¥Ã¨Ã±Ã¯Ã®Ã«Ã­Ã¥Ã­Ã¨Ã¥ Ã®Ã¡Ã¿Ã§Ã Ã­Ã­Ã®Ã±Ã²Ã¥Ã© Ã¯Ã® Ã®ÃªÃ Ã§Ã Ã­Ã¨Ã¾ Ã¯Ã®Ã¬Ã®Ã¹Ã¨ Ã«Ã¨Ã¶Ã Ã¬,\nÃ­Ã ÃµÃ®Ã¤Ã¿Ã¹Ã¨Ã¬Ã±Ã¿ Ã¢ Ã®Ã¯Ã Ã±Ã­Ã®Ã© Ã±Ã¨Ã²Ã³Ã Ã¶Ã¨Ã¨, Ã¯Ã® Ã¯Ã°Ã¥Ã¤Ã®Ã²Ã¢Ã°Ã Ã¹Ã¥Ã­Ã¨Ã¾ Ã­Ã Ã­Ã¥Ã±Ã¥Ã­Ã¨Ã¿ Ã³Ã¹Ã¥Ã°Ã¡Ã  Ã¨Ã¬Ã³Ã¹Ã¥Ã±Ã²Ã¢Ã³. Â— Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° / Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥ / Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¥.\n4.27. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã¯Ã°Ã®Ã¨Ã§Ã¢Ã®Ã¤Ã¨Ã²Ã¼ Ã Ã°Ã¥Ã±Ã² Ã±Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨ÃªÃ  AF, Ã  Ã²Ã ÃªÃ¦Ã¥ Ã¢Ã±Ã¥Ãµ Ã«Ã¨Ã¤Ã¥Ã°Ã®Ã¢ Ã£Ã®Ã±Ã³Ã¤Ã Ã°Ã±Ã²Ã¢Ã¥Ã­Ã­Ã»Ãµ Ã±Ã²Ã°Ã³ÃªÃ²Ã³Ã°\nÃ¨ Ã¨Ãµ Ã§Ã Ã¬Ã¥Ã±Ã²Ã¨Ã²Ã¥Ã«Ã¥Ã© Ã¢ Ã°Ã Ã¡Ã®Ã·Ã¥Ã¥ Ã¨ Ã¢Ã»ÃµÃ®Ã¤Ã­Ã®Ã¥ Ã¢Ã°Ã¥Ã¬Ã¿ Ã¡Ã¥Ã§ Ã®Ã¤Ã®Ã¡Ã°Ã¥Ã­Ã¨Ã¿ FBI Â— Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° / Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥.")
+  imgui.Text(u8"ÃÃ°Ã¨Ã¬Ã¥Ã·Ã Ã­Ã¨Ã¥: Ã‚ Ã±Ã«Ã³Ã·Ã Ã¥, Ã¥Ã±Ã«Ã¨ Ã¯Ã® Ã§Ã Ã¯Ã°Ã®Ã±Ã³ Ã¢ Ã¤Ã¥Ã¯Ã Ã°Ã²Ã Ã¬Ã¥Ã­Ã² Ã­Ã¨ÃªÃ²Ã® Ã­Ã¥ Ã¤Ã Ã¥Ã² Ã®Ã²Ã¢Ã¥Ã² Ã¢ Ã²Ã¥Ã·Ã¥Ã­Ã¨Ã¥ 5 Ã¬Ã¨Ã­Ã³Ã²,\nÃ²Ã® Ã°Ã Ã§Ã°Ã¥Ã¸Ã Ã¥Ã²Ã±Ã¿ Ã Ã°Ã¥Ã±Ã² Ã¨ Ã¡Ã¥Ã§ Ã®Ã¤Ã®Ã¡Ã°Ã¥Ã­Ã¨Ã¿ FBI, ÃÃ Ã± Ã®Ã¡Ã¿Ã§Ã Ã²Ã¥Ã«Ã¼Ã­Ã®Ã© Ã´Ã¨ÃªÃ±Ã Ã¶Ã¨Ã¥Ã© Ã§Ã Ã¯Ã°Ã®Ã±Ã .\n4.28. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã­Ã Ã°Ã³Ã¸Ã Ã²Ã¼ Ã¯Ã°Ã Ã¢Ã¨Ã«Ã  Ã¯Ã®Ã±Ã¥Ã¹Ã¥Ã­Ã¨Ã¿ ÃŒÃ½Ã°Ã¨Ã¨,\nÃ  Ã²Ã ÃªÃ¦Ã¥ Ã¢Ã®Ã±Ã¯Ã°Ã¥Ã¯Ã¿Ã²Ã±Ã²Ã¢Ã®Ã¢Ã Ã²Ã¼ Ã§Ã ÃªÃ®Ã­Ã­Ã®Ã© Ã¤Ã¥Ã¿Ã²Ã¥Ã«Ã¼Ã­Ã®Ã±Ã²Ã¨ Ã¬Ã¨Ã­Ã¨Ã±Ã²Ã°Ã®Ã¢ Ã¨ Ã¢Ã¨Ã¶Ã¥-Ã£Ã³Ã¡Ã¥Ã°Ã­Ã Ã²Ã®Ã°Ã®Ã¢,\nÃ¨Ã£Ã­Ã®Ã°Ã¨Ã°Ã®Ã¢Ã Ã²Ã¼ Ã¨Ãµ Ã²Ã°Ã¥Ã¡Ã®Ã¢Ã Ã­Ã¨Ã¿, Ã³ÃªÃ Ã§Ã Ã­Ã­Ã»Ã¥ Ã¢ Ã§Ã ÃªÃ®Ã­Ã¥ Â«Ã Ã°Ã Ã¡Ã®Ã²Ã¥ Ã¬Ã½Ã°Ã¨Ã¨Â» Â— Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° / Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥.\n4.29. Ã‡Ã Ã¯Ã°Ã¥Ã¹Ã Ã¥Ã²Ã±Ã¿ Ã¨Ã±Ã¯Ã®Ã«Ã¼Ã§Ã®Ã¢Ã Ã²Ã¼ Ã¬Ã¥Ã£Ã Ã´Ã®Ã­ Ã¢ Ã«Ã¨Ã·Ã­Ã»Ãµ Ã¶Ã¥Ã«Ã¿Ãµ,\nÃ  Ã¨Ã¬Ã¥Ã­Ã­Ã® Ã¢ Ã°Ã Ã§Ã«Ã¨Ã·Ã­Ã»Ãµ Ã¯Ã¥Ã°Ã¥Ã£Ã®Ã¢Ã®Ã°Ã®Ã¢ Ã± Ã¤Ã°Ã³Ã§Ã¼Ã¿Ã¬Ã¨,\nÃ¸Ã³Ã²ÃªÃ¨ Ã¨ Ã¢Ã±Ã¿ÃªÃ¨Ã© Ã¡Ã°Ã¥Ã¤, Ã­Ã¥ Ã®Ã²Ã­Ã®Ã±Ã¿Ã¹Ã¨Ã©Ã±Ã¿ Ãª Ã°Ã Ã¡Ã®Ã·Ã¨Ã¬ Ã¬Ã®Ã¬Ã¥Ã­Ã²Ã Ã¬ Â— Ã¢Ã»Ã£Ã®Ã¢Ã®Ã° / Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥.\nÃÃ°Ã¨Ã¬Ã¥Ã·Ã Ã­Ã¨Ã¥: [ ÃÃ°Ã¨Ã¬Ã¥Ã°Ã» Â— Â«ÃÃ©, Ã¡Ã°Ã®, ÃªÃ Ãª Ã¤Ã¥Ã«Ã ?Â» & Â«ÃÃ®Ã©Ã¤Ã¥Ã¬ Ã¯Ã®ÃªÃ Ã²Ã Ã¥Ã¬Ã±Ã¿?Â» ] Â— Ã²Ã Ãª Ã¤Ã¥Ã«Ã Ã²Ã¼ Ã­Ã¥Ã«Ã¼Ã§Ã¿!")
+  imgui.Text(u8"ÃƒÃ«Ã Ã¢Ã  Â¹5.\n5.1. Ã‘Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨Ãª Ã”ÃÃ Ã¨Ã¬Ã¥Ã¥Ã² Ã¯Ã°Ã Ã¢Ã® Ã±Ã¬Ã¥Ã­Ã¨Ã²Ã¼ Ã­Ã ÃªÃ Ã§Ã Ã­Ã¨Ã¥ Ã­Ã  Ã¤Ã¨Ã±Ã¶Ã¨Ã¯Ã«Ã¨Ã­Ã Ã°Ã­Ã®Ã¥ Ã¢Ã§Ã»Ã±ÃªÃ Ã­Ã¨Ã¥ Ã¢ Ã¢Ã¨Ã¤Ã¥ Ã¯Ã°Ã¥Ã¤Ã³Ã¯Ã°Ã¥Ã¦Ã¤Ã¥Ã­Ã¨Ã¿\nÃ«Ã¨Ã¡Ã® Ã¨Ã­Ã®Ã¥ Ã­Ã ÃªÃ Ã§Ã Ã­Ã¨Ã¥ Ã­Ã¥ Ã¯Ã°Ã¥Ã¤Ã³Ã±Ã¬Ã®Ã²Ã°Ã¥Ã­Ã­Ã®Ã¥ Ã¯Ã³Ã­ÃªÃ²Ã Ã¬Ã¨\nÃ­Ã Ã±Ã²Ã®Ã¿Ã¹Ã¥Ã£Ã® Ã¡Ã¾Ã°Ã® Ã¯Ã°Ã¨ Ã±Ã¬Ã¿Ã£Ã·Ã Ã¾Ã¹Ã¨Ãµ Ã®Ã¡Ã±Ã²Ã®Ã¿Ã²Ã¥Ã«Ã¼Ã±Ã²Ã¢Ã Ãµ.\nÃ‘Ã¬Ã¿Ã£Ã·Ã Ã¾Ã¹Ã¨Ã¬ Ã®Ã¡Ã±Ã²Ã®Ã¿Ã²Ã¥Ã«Ã¼Ã±Ã²Ã¢Ã®Ã¬ Ã¿Ã¢Ã«Ã¿Ã¥Ã²Ã±Ã¿ Ã°Ã Ã±ÃªÃ Ã¿Ã­Ã¨Ã¥ Ã£Ã®Ã±. Ã±Ã«Ã³Ã¦Ã Ã¹Ã¥Ã£Ã® Ã¢ Ã±Ã®Ã¤Ã¥Ã¿Ã­Ã­Ã®Ã¬ Ã­Ã Ã°Ã³Ã¸Ã¥Ã­Ã¨Ã¨,\nÃ«Ã¨Ã¡Ã® ÃªÃ®Ã­Ã±Ã²Ã°Ã³ÃªÃ²Ã¨Ã¢Ã­Ã Ã¿ Ã Ã°Ã£Ã³Ã¬Ã¥Ã­Ã²Ã Ã¶Ã¨Ã¿ Ã±Ã¢Ã®Ã¨Ãµ Ã¤Ã¥Ã©Ã±Ã²Ã¢Ã¨Ã©\nÃ± Ã¯Ã®Ã¤ÃªÃ°Ã¥Ã¯Ã«Ã¥Ã­Ã¨Ã¥Ã¬ Ã¤Ã®ÃªÃ Ã§Ã Ã²Ã¥Ã«Ã¼Ã±Ã²Ã¢ Ã±Ã¢Ã®Ã¨Ã¬ Ã Ã°Ã£Ã³Ã¬Ã¥Ã­Ã²Ã Ã¬.\n5.2. Ã‘Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨Ãª Ã€Ã°Ã¬Ã¨Ã¨ Ã¨Ã«Ã¨ ÃÃ„ Ã®Ã¡Ã¿Ã§Ã Ã­ Ã±Ã¤Ã¥Ã«Ã Ã²Ã¼ Ã¢Ã»Ã¢Ã®Ã¤Ã» Ã® Ã±Ã¢Ã®Ã¥Ã© Ã¢Ã¨Ã­Ã¥ Ã¨ Ã¯Ã®Ã±Ã²Ã Ã°Ã Ã²Ã¼Ã±Ã¿ Ã¡Ã®Ã«Ã¥Ã¥ Ã­Ã¥ Ã­Ã Ã°Ã³Ã¸Ã Ã²Ã¼ Ã”Ã.\n5.3. Ã‘Ã¬Ã¥Ã­Ã  Ã­Ã ÃªÃ Ã§Ã Ã­Ã¨Ã¿ Ã®Ã±Ã³Ã¹Ã¥Ã±Ã²Ã¢Ã«Ã¿Ã¥Ã²Ã±Ã¿ Ã Ã£Ã¥Ã­Ã²Ã®Ã¬ Ã”ÃÃ, Ã¨Ã±ÃµÃ®Ã¤Ã¿ Ã¨Ã§ Ã¥Ã£Ã® Ã§Ã¤Ã°Ã Ã¢Ã®Ã£Ã® Ã±Ã¬Ã»Ã±Ã«Ã  Ã¨ Ã®Ã¯Ã»Ã²Ã .\nÃ‚Ã»Ã¤Ã Ã·Ã  Ã¯Ã°Ã¥Ã¤Ã³Ã¯Ã°Ã¥Ã¦Ã¤Ã¥Ã­Ã¨Ã© Ã§Ã  Ã¯Ã³Ã­ÃªÃ²Ã», ÃªÃ®Ã²Ã®Ã°Ã»Ã¥ Ã²Ã Ãª Ã¨Ã«Ã¨ Ã¨Ã­Ã Ã·Ã¥ Ã±Ã¯Ã®Ã±Ã®Ã¡Ã­Ã» Ã¯Ã®Ã¸Ã Ã²Ã­Ã³Ã²Ã¼ Ã£Ã®Ã±Ã³Ã¤Ã Ã°Ã±Ã²Ã¢Ã¥Ã­Ã­Ã³Ã¾ Ã¡Ã¥Ã§Ã®Ã¯Ã Ã±Ã­Ã®Ã±Ã²Ã¼ - Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã».\n5.4. Ã‘Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨Ãª Ã¨Ã¬Ã¥Ã¥Ã² Ã¯Ã°Ã Ã¢Ã® Ã¯Ã®Ã«Ã³Ã·Ã¨Ã²Ã¼ Ã²Ã®Ã«Ã¼ÃªÃ® Ã®Ã¤Ã­Ã® Ã¯Ã°Ã¥Ã¤Ã³Ã¯Ã°Ã¥Ã¦Ã¤Ã¥Ã­Ã¨Ã¥,\nÃ¯Ã°Ã¨ Ã¯Ã®Ã±Ã«Ã¥Ã¤Ã³Ã¾Ã¹Ã¨Ãµ Ã­Ã Ã°Ã³Ã¸Ã¥Ã­Ã¨Ã¿Ãµ Ã±Ã«Ã¥Ã¤Ã³Ã¾Ã² Ã¡Ã®Ã«Ã¥Ã¥ Ã²Ã¿Ã¦ÃªÃ¨Ã¥ Ã­Ã ÃªÃ Ã§Ã Ã­Ã¨Ã¿.\n5.5. ÃÃ³Ã­ÃªÃ²Ã», Ã¯Ã°Ã¥Ã¤Ã³Ã±Ã¬Ã Ã²Ã°Ã¨Ã¢Ã Ã¾Ã¹Ã¨Ã¥ Ã¢Ã»Ã¡Ã®Ã° Ã¢Ã¨Ã¤Ã  Ã­Ã ÃªÃ Ã§Ã Ã­Ã¨Ã¿,\nÃ¯Ã®Ã¤Ã°Ã Ã§Ã³Ã¬Ã¥Ã¢Ã Ã¾Ã² Ã¯Ã°Ã¨Ã¬Ã¥Ã­Ã¥Ã­Ã¨Ã¥ Ã®Ã¤Ã­Ã®Ã£Ã® Ã¨Ã§ Ã­Ã¨Ãµ Ã¯Ã® Ã³Ã±Ã¬Ã®Ã²Ã°Ã¥Ã­Ã¨Ã¾ Ã¢Ã»Ã¤Ã Ã¾Ã¹Ã¥Ã£Ã® Ã­Ã ÃªÃ Ã§Ã Ã­Ã¨Ã¥,\nÃ¢ Ã§Ã Ã¢Ã¨Ã±Ã¨Ã¬Ã®Ã±Ã²Ã¨ Ã®Ã² Ã²Ã¿Ã¦Ã¥Ã±Ã²Ã¨ Ã­Ã Ã°Ã³Ã¸Ã¥Ã­Ã¨Ã¿ Ã¨ Ã­Ã Ã«Ã¨Ã·Ã¨Ã¿ Ã ÃªÃ²Ã¨Ã¢Ã­Ã»Ãµ Ã¯Ã°Ã¥Ã¤Ã³Ã¯Ã°Ã¥Ã¦Ã¤Ã¥Ã­Ã¨Ã©,\nÃ«Ã¨Ã¡Ã® Ã­Ã Ã°Ã³Ã¸Ã¥Ã­Ã¨Ã© Ã¢ Ã¯Ã°Ã®Ã¸Ã«Ã®Ã¬.\n5.6. ÃÃ¥Ã®Ã°Ã¤Ã¨Ã­Ã Ã°Ã­Ã»Ã¥ Ã±Ã¨Ã²Ã³Ã Ã¶Ã¨Ã¨. Ã‚ Ã±Ã«Ã³Ã·Ã Ã¥ Ã±Ã®Ã¢Ã¥Ã°Ã¸Ã¥Ã­Ã¨Ã¿ Ã£Ã®Ã±Ã³Ã¤Ã Ã°Ã±Ã²Ã¢Ã¥Ã­Ã­Ã»Ã¬ Ã±Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨ÃªÃ®Ã¬ Ã¤Ã¥Ã¿Ã­Ã¨Ã¿,\nÃªÃ®Ã²Ã®Ã°Ã®Ã¥ Ã¬Ã®Ã¦Ã­Ã® Ã±Ã·Ã¥Ã±Ã²Ã¼ Ã§Ã  ÃªÃ®Ã±Ã¢Ã¥Ã­Ã­Ã®Ã¥ Ã­Ã Ã°Ã³Ã¸Ã¥Ã­Ã¨Ã¥ Ã²Ã®Ã© Ã¨Ã«Ã¨ Ã¨Ã­Ã®Ã© Ã±Ã²Ã Ã²Ã¼Ã¨ Ã®Ã¤Ã­Ã®Ã£Ã® Ã¨Ã§\nÃ­Ã®Ã°Ã¬Ã Ã²Ã¨Ã¢Ã­Ã®-Ã¯Ã°Ã Ã¢Ã®Ã¢Ã»Ãµ Ã ÃªÃ²Ã®Ã¢, Ã°Ã³ÃªÃ®Ã¢Ã®Ã¤Ã¿Ã¹Ã¨Ã© Ã±Ã®Ã±Ã²Ã Ã¢ Ã”ÃÃ Ã¨Ã¬Ã¥Ã¥Ã² Ã¯Ã°Ã Ã¢Ã® Ã¯Ã°Ã¨Ã¬Ã¥Ã­Ã¨Ã²Ã¼\nÃ«Ã¾Ã¡Ã®Ã© Ã¨Ã§ Ã¤Ã¥Ã©Ã±Ã²Ã¢Ã³Ã¾Ã¹Ã¨Ãµ Ã¯Ã³Ã­ÃªÃ²Ã®Ã¢ Ã§Ã ÃªÃ®Ã­Ã®Ã¤Ã Ã²Ã¥Ã«Ã¼Ã­Ã»Ãµ Ã¡Ã Ã§, Ã±Ã±Ã»Ã«Ã Ã¿Ã±Ã¼ Ã¯Ã°Ã¨ Ã½Ã²Ã®Ã¬ Ã­Ã  Ã”Ã.")
+  imgui.Text(u8"ÃƒÃ«Ã Ã¢Ã  Â¹6.\nÃÃ®Ã«Ã­Ã®Ã¬Ã®Ã·Ã¨Ã¿ Ã Ã£Ã¥Ã­Ã²Ã®Ã¢ Ã”ÃÃ.\n6.1. Ã„Ã¥Ã¦Ã³Ã°Ã­Ã»Ã© FBI Ã¨ Ã¢Ã»Ã¸Ã¥ Ã¨Ã¬Ã¥Ã¥Ã² Ã¯Ã°Ã Ã¢Ã® Ã®Ã²Ã¤Ã Ã²Ã¼ Ã¯Ã°Ã¨ÃªÃ Ã§ Ã¡Ã®Ã©Ã¶Ã Ã¬ Ã Ã°Ã¬Ã¨Ã¨ Ã¤Ã® Ã§Ã¢Ã Ã­Ã¨Ã¿ ÃŠÃ Ã¯Ã¨Ã²Ã Ã­ Ã¨ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã Ã¬ Ã¯Ã®Ã«Ã¨Ã¶Ã¨Ã¨ Ã¤Ã® Ã§Ã¢Ã Ã­Ã¨Ã¿\nÃŠÃ Ã¯Ã¨Ã²Ã Ã­ Ã¢ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¥Ã«Ã¼Ã­Ã® Ã¯Ã°Ã¨ Ã—Ã‘ [ Ã²Ã¥Ã°Ã ÃªÃ²Ã¥/Ã¯Ã®ÃµÃ¨Ã¹Ã¥Ã­Ã¨Ã¥ ].\n6.2. Ã€Ã£Ã¥Ã­Ã² DEA/CID Ã¨Ã¬Ã¥Ã¥Ã² Ã¯Ã°Ã Ã¢Ã® Ã®Ã²Ã¤Ã Ã²Ã¼ Ã¯Ã°Ã¨ÃªÃ Ã§ Ã¡Ã®Ã©Ã¶Ã Ã¬ Ã Ã°Ã¬Ã¨Ã¨ Ã¤Ã® Ã§Ã¢Ã Ã­Ã¨Ã¿\nÃÃ°Ã Ã¯Ã®Ã°Ã¹Ã¨Ãª Ã¨ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã Ã¬ Ã¯Ã®Ã«Ã¨Ã¶Ã¨Ã¨ Ã¤Ã® Ã§Ã¢Ã Ã­Ã¨Ã¿ Ã‘Ã².ÃÃ°Ã Ã¯Ã®Ã°Ã¹Ã¨Ãª Ã¢ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¥Ã«Ã¼Ã­Ã®.\n6.3. ÃƒÃ«Ã Ã¢Ã  DEA/CID Ã¨Ã¬Ã¥Ã¥Ã² Ã¯Ã°Ã Ã¢Ã® Ã®Ã²Ã¤Ã Ã²Ã¼ Ã¯Ã°Ã¨ÃªÃ Ã§ Ã¡Ã®Ã©Ã¶Ã Ã¬ Ã Ã°Ã¬Ã¨Ã¨ Ã¤Ã® Ã§Ã¢Ã Ã­Ã¨Ã¿\nÃŒÃ Ã©Ã®Ã° Ã¨ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã Ã¬ Ã¯Ã®Ã«Ã¨Ã¶Ã¨Ã¨ Ã¤Ã® Ã§Ã¢Ã Ã­Ã¨Ã¿ ÃŒÃ Ã©Ã®Ã° Ã¢ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¥Ã«Ã¼Ã­Ã®.\n6.4. ÃˆÃ­Ã±Ã¯Ã¥ÃªÃ²Ã®Ã° FBI Ã¨Ã¬Ã¥Ã¥Ã² Ã¯Ã°Ã Ã¢Ã® Ã®Ã²Ã¤Ã Ã²Ã¼ Ã¯Ã°Ã¨ÃªÃ Ã§ Ã¡Ã®Ã©Ã¶Ã Ã¬ Ã Ã°Ã¬Ã¨Ã¨ Ã¤Ã® Ã§Ã¢Ã Ã­Ã¨Ã¿ \nÃÃ®Ã¤Ã¯Ã®Ã«ÃªÃ®Ã¢Ã­Ã¨Ãª Ã¨ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã Ã¬ Ã¯Ã®Ã«Ã¨Ã¶Ã¨Ã¨ Ã¤Ã® Ã§Ã¢Ã Ã­Ã¨Ã¿ ÃÃ®Ã¤Ã¯Ã®Ã«ÃªÃ®Ã¢Ã­Ã¨Ãª Ã¢ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¥Ã«Ã¼Ã­Ã®.\n6.5. Ã‡Ã Ã¬. Ã„Ã¨Ã°Ã¥ÃªÃ²Ã®Ã°Ã  FBI Ã¨Ã¬Ã¥Ã¥Ã² Ã¯Ã°Ã Ã¢Ã® Ã®Ã²Ã¤Ã Ã²Ã¼ Ã¯Ã°Ã¨ÃªÃ Ã§ Ã¡Ã®Ã©Ã¶Ã Ã¬ Ã Ã°Ã¬Ã¨Ã¨ Ã¤Ã® Ã§Ã¢Ã Ã­Ã¨Ã¿\nÃÃ®Ã«ÃªÃ®Ã¢Ã­Ã¨Ãª Ã¨ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã Ã¬ Ã¯Ã®Ã«Ã¨Ã¶Ã¨Ã¨ Ã¤Ã® Ã§Ã¢Ã Ã­Ã¨Ã¿ ÃÃ®Ã«ÃªÃ®Ã¢Ã­Ã¨Ãª Ã¢ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¥Ã«Ã¼Ã­Ã®.\nÃÃ°Ã¨Ã¬Ã¥Ã·Ã Ã­Ã¨Ã¥: Ã‚ Ã±Ã«Ã³Ã·Ã Ã¿Ãµ, ÃªÃ®Ã£Ã¤Ã  Ã„Ã¨Ã°Ã¥ÃªÃ²Ã®Ã°Ã  Ã”ÃÃ Ã­Ã¥Ã² Ã­Ã  Ã°Ã Ã¡Ã®Ã·Ã¥Ã¬ Ã¬Ã¥Ã±Ã²Ã¥ [ Ã­Ã¥ Ã¢ Ã¨Ã£Ã°Ã¥/Ã¢Ã»ÃµÃ®Ã¤Ã­Ã®Ã© ],\nÃ‡Ã Ã¬Ã¥Ã±Ã²Ã¨Ã²Ã¥Ã«Ã¼ Ã„Ã¨Ã°Ã¥ÃªÃ²Ã®Ã°Ã  Ã”ÃÃ Ã¨Ã¬Ã¥Ã¥Ã² Ã¯Ã°Ã Ã¢Ã® Ã®Ã²Ã¤Ã Ã²Ã¼ Ã¯Ã°Ã¨ÃªÃ Ã§ Ã«Ã¾Ã¡Ã®Ã¬Ã³ Ã±Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨ÃªÃ³ Ã±Ã¨Ã«Ã®Ã¢Ã»Ãµ Ã±Ã²Ã°Ã³ÃªÃ²Ã³Ã°.\n6.6. Ã„Ã¨Ã°Ã¥ÃªÃ²Ã®Ã° FBI Ã¨Ã¬Ã¥Ã¥Ã² Ã¯Ã°Ã Ã¢Ã® Ã®Ã²Ã¤Ã Ã²Ã¼ Ã¯Ã°Ã¨ÃªÃ Ã§ Ã¡Ã®Ã©Ã¶Ã Ã¬ Ã Ã°Ã¬Ã¨Ã¨ Ã¤Ã® Ã§Ã¢Ã Ã­Ã¨Ã¿\nÃƒÃ¥Ã­Ã¥Ã°Ã Ã« Ã¨ Ã®Ã´Ã¨Ã¶Ã¥Ã°Ã Ã¬ Ã¯Ã®Ã«Ã¨Ã¶Ã¨Ã¨ Ã¤Ã® Ã§Ã¢Ã Ã­Ã¨Ã¿ Ã˜Ã¥Ã°Ã¨Ã´ Ã¢ÃªÃ«Ã¾Ã·Ã¨Ã²Ã¥Ã«Ã¼Ã­Ã®.")
+  imgui.Text(u8"ÃƒÃ«Ã Ã¢Ã  Â¹7.\nÃ‚Ã¨Ã¤Ã» Ã±Ã Ã­ÃªÃ¶Ã¨Ã© Ã¤Ã«Ã¿ Ã£Ã®Ã±Ã³Ã¤Ã Ã°Ã±Ã²Ã¢Ã¥Ã­Ã­Ã»Ãµ Ã±Ã²Ã°Ã³ÃªÃ²Ã³Ã°.\n7.1. Ã‘Ã Ã­ÃªÃ¶Ã¨Ã¨, Ã¯Ã¥Ã°Ã¥Ã·Ã¨Ã±Ã«Ã¥Ã­Ã­Ã»Ã¥ Ã­Ã¨Ã¦Ã¥ Ã¢ Ã¤Ã Ã­Ã­Ã®Ã© Ã£Ã«Ã Ã¢Ã¥ Ã¿Ã¢Ã«Ã¿Ã¾Ã²Ã±Ã¿ Ã¥Ã¤Ã¨Ã­Ã»Ã¬Ã¨.\nÃ‹Ã¾Ã¡Ã Ã¿ Ã¤Ã°Ã³Ã£Ã Ã¿ Ã±Ã Ã­ÃªÃ¶Ã¨Ã¿, Ã¢Ã»Ã¤Ã Ã­Ã­Ã Ã¿ Ã­Ã¥ Ã¯Ã® Ã¤Ã Ã­Ã­Ã»Ã¬ Ã¯Ã°Ã Ã¢Ã¨Ã«Ã Ã¬ Ã­Ã¥ Ã­Ã Ã¤Ã¥Ã«Ã¿Ã¥Ã²Ã±Ã¿ Ã¾Ã°Ã¨Ã¤Ã¨Ã·Ã¥Ã±ÃªÃ®Ã© Ã±Ã¨Ã«Ã®Ã©.\n7.2. Ã‘Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨Ãª ÃÃ„/Ã€Ã°Ã¬Ã¨Ã¨ Ã¬Ã®Ã¦Ã¥Ã² Ã¯Ã®Ã«Ã³Ã·Ã¨Ã²Ã¼ Ã±Ã Ã­ÃªÃ¶Ã¨Ã¾ Ã¢ Ã¢Ã¨Ã¤Ã¥ Ã¯Ã°Ã¥Ã¤Ã³Ã¯Ã°Ã¥Ã¦Ã¤Ã¥Ã­Ã¨Ã¿\nÃ§Ã  Ã­Ã Ã°Ã³Ã¸Ã¥Ã­Ã¨Ã¥ Ã”Ã¥Ã¤Ã¥Ã°Ã Ã«Ã¼Ã­Ã®Ã£Ã® Ã¯Ã®Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­Ã¨Ã¿ / Ã¢Ã­Ã³Ã²Ã°Ã¥Ã­Ã­Ã¥Ã£Ã® Ã³Ã±Ã²Ã Ã¢Ã  Ã®Ã°Ã£Ã Ã­Ã¨Ã§Ã Ã¶Ã¨Ã¨.\n7.3. Ã‘Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨Ãª ÃÃ„/Ã€Ã°Ã¬Ã¨Ã¨ Ã¬Ã®Ã¦Ã¥Ã² Ã¯Ã®Ã«Ã³Ã·Ã¨Ã²Ã¼ Ã±Ã Ã­ÃªÃ¶Ã¨Ã¾ Ã¢ Ã¢Ã¨Ã¤Ã¥ Ã­Ã Ã°Ã¿Ã¤Ã  Ã§Ã  Ã­Ã Ã°Ã³Ã¸Ã¥Ã­Ã¨Ã¥\nÃ”Ã¥Ã¤Ã¥Ã°Ã Ã«Ã¼Ã­Ã®Ã£Ã® Ã¯Ã®Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­Ã¨Ã¿ / Ã¢Ã­Ã³Ã²Ã°Ã¥Ã­Ã­Ã¥Ã£Ã® Ã³Ã±Ã²Ã Ã¢Ã  Ã®Ã°Ã£Ã Ã­Ã¨Ã§Ã Ã¶Ã¨Ã¨.\n7.4. Ã‘Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨Ãª ÃÃ„/Ã€Ã°Ã¬Ã¨Ã¨ Ã¬Ã®Ã¦Ã¥Ã² Ã¯Ã®Ã«Ã³Ã·Ã¨Ã²Ã¼ Ã±Ã Ã­ÃªÃ¶Ã¨Ã¾ Ã¢ Ã¢Ã¨Ã¤Ã¥ Ã®Ã¡Ã»Ã·Ã­Ã®Ã£Ã® Ã¢Ã»Ã£Ã®Ã¢Ã®Ã°Ã  Ã­Ã  7 Ã¤Ã­Ã¥Ã© Ã§Ã  Ã­Ã Ã°Ã³Ã¸Ã¥Ã­Ã¨Ã¥\nÃ”Ã¥Ã¤Ã¥Ã°Ã Ã«Ã¼Ã­Ã®Ã£Ã® Ã¯Ã®Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­Ã¨Ã¿ / Ã¢Ã­Ã³Ã²Ã°Ã¥Ã­Ã­Ã¥Ã£Ã® Ã³Ã±Ã²Ã Ã¢Ã  Ã®Ã°Ã£Ã Ã­Ã¨Ã§Ã Ã¶Ã¨Ã¨.\n7.5. Ã‘Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨Ãª ÃÃ„/Ã€Ã°Ã¬Ã¨Ã¨ Ã¬Ã®Ã¦Ã¥Ã² Ã¯Ã®Ã«Ã³Ã·Ã¨Ã²Ã¼ Ã±Ã Ã­ÃªÃ¶Ã¨Ã¾ Ã¢ Ã¢Ã¨Ã¤Ã¥ Ã±Ã²Ã°Ã®Ã£Ã®Ã£Ã® Ã¢Ã»Ã£Ã®Ã¢Ã®Ã°Ã  Ã­Ã  14 Ã¤Ã­Ã¥Ã© Ã±\nÃ¯Ã°Ã®Ã¯Ã³Ã±ÃªÃ®Ã¬ Ã¯Ã®Ã¢Ã»Ã¸Ã¥Ã­Ã¨Ã¿ Ã§Ã  Ã­Ã Ã°Ã³Ã¸Ã¥Ã­Ã¨Ã¥ Ã”Ã¥Ã¤Ã¥Ã°Ã Ã«Ã¼Ã­Ã®Ã£Ã® Ã¯Ã®Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­Ã¨Ã¿ / Ã¢Ã­Ã³Ã²Ã°Ã¥Ã­Ã­Ã¥Ã£Ã® Ã³Ã±Ã²Ã Ã¢Ã  Ã®Ã°Ã£Ã Ã­Ã¨Ã§Ã Ã¶Ã¨Ã¨.\n7.6. Ã‘Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨Ãª ÃÃ„/Ã€Ã°Ã¬Ã¨Ã¨ Ã¬Ã®Ã¦Ã¥Ã² Ã¯Ã®Ã«Ã³Ã·Ã¨Ã²Ã¼ Ã±Ã Ã­ÃªÃ¶Ã¨Ã¾ Ã¢ Ã¢Ã¨Ã¤Ã¥ Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¿ Ã§Ã  Ã­Ã Ã°Ã³Ã¸Ã¥Ã­Ã¨Ã¥\nÃ”Ã¥Ã¤Ã¥Ã°Ã Ã«Ã¼Ã­Ã®Ã£Ã® Ã¯Ã®Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­Ã¨Ã¿ / Ã¢Ã­Ã³Ã²Ã°Ã¥Ã­Ã­Ã¥Ã£Ã® Ã³Ã±Ã²Ã Ã¢Ã  Ã®Ã°Ã£Ã Ã­Ã¨Ã§Ã Ã¶Ã¨Ã¨.\n7.7. Ã‘Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨Ãª ÃÃ„/Ã€Ã°Ã¬Ã¨Ã¨ Ã¬Ã®Ã¦Ã¥Ã² Ã¯Ã®Ã«Ã³Ã·Ã¨Ã²Ã¼ Ã±Ã Ã­ÃªÃ¶Ã¨Ã¾ Ã¢ Ã¢Ã¨Ã¤Ã¥ Ã³Ã¢Ã®Ã«Ã¼Ã­Ã¥Ã­Ã¨Ã¿ Ã§Ã  Ã­Ã Ã°Ã³Ã¸Ã¥Ã­Ã¨Ã¥\nÃ”Ã¥Ã¤Ã¥Ã°Ã Ã«Ã¼Ã­Ã®Ã£Ã® Ã¯Ã®Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­Ã¨Ã¿ / Ã¢Ã­Ã³Ã²Ã°Ã¥Ã­Ã­Ã¥Ã£Ã® Ã³Ã±Ã²Ã Ã¢Ã  Ã®Ã°Ã£Ã Ã­Ã¨Ã§Ã Ã¶Ã¨Ã¨.")
   imgui.End()
 end
 
@@ -2062,7 +2062,7 @@ function nyamnyam()
   if result then
     local animid = sampGetPlayerAnimationId(id)
     if animid == 536 then
-      sampSendChat("Íÿì íÿì.")
+      sampSendChat("ÃÃ¿Ã¬ Ã­Ã¿Ã¬.")
       wait(6000)
     end
   end
@@ -2090,4 +2090,4 @@ function SettingsBodyArmor(flag)
 	Settingsabp()
 end
 
-function kvadrat() local KV = { [1] = "À", [2] = "Á", [3] = "Â", [4] = "Ã", [5] = "Ä", [6] = "Æ", [7] = "Ç", [8] = "È", [9] = "Ê", [10] = "Ë", [11] = "Ì", [12] = "Í", [13] = "Î", [14] = "Ï", [15] = "Ğ", [16] = "Ñ", [17] = "Ò", [18] = "Ó", [19] = "Ô", [20] = "Õ", [21] = "Ö", [22] = "×", [23] = "Ø", [24] = "ß", } local X, Y, Z = getCharCoordinates(playerPed) X = math.ceil((X + 3000) / 250) Y = math.ceil((Y * - 1 + 3000) / 250) Y = KV[Y] local KVX = (Y.."-"..X) return KVX end 
+function kvadrat() local KV = { [1] = "Ã€", [2] = "Ã", [3] = "Ã‚", [4] = "Ãƒ", [5] = "Ã„", [6] = "Ã†", [7] = "Ã‡", [8] = "Ãˆ", [9] = "ÃŠ", [10] = "Ã‹", [11] = "ÃŒ", [12] = "Ã", [13] = "Ã", [14] = "Ã", [15] = "Ã", [16] = "Ã‘", [17] = "Ã’", [18] = "Ã“", [19] = "Ã”", [20] = "Ã•", [21] = "Ã–", [22] = "Ã—", [23] = "Ã˜", [24] = "ÃŸ", } local X, Y, Z = getCharCoordinates(playerPed) X = math.ceil((X + 3000) / 250) Y = math.ceil((Y * - 1 + 3000) / 250) Y = KV[Y] local KVX = (Y.."-"..X) return KVX end 
