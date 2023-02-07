@@ -7,6 +7,12 @@ local cfg = config.load(nil, 'florenso_tools/config.ini')
 local prizivi = "config/florenso_tools/config.ini"
 local settings = {}
 local text1 = '"Los-Santos"'
+local dlstatus = require("moonloader").download_status
+local script_vers = 1
+local script_path = thisScript().path
+local script_url = "https://raw.githubusercontent.com/Vladik1234/obnovlenie/master/florenso_tools.lua"
+local update_path = getWorkingDirectory() .. "/update.ini"
+local update_url = "https://raw.githubusercontent.com/Vladik1234/florenso/main/update.ini"
 
 function main()
   while not isSampAvailable() do wait(100) end
@@ -31,6 +37,18 @@ function main()
     doljnost = cfg.global.doljnost
     settings = cfg
   end
+
+  downloadUrlToFile(update_url, update_path, function(id, status)
+    if status == dlstatus.STATUS_ENDDOWNLOADDATA then
+        updateIni = config.load(nil, update_path)
+        if tonumber(updateIni.info.vers) > script_vers then
+            sampAddChatMessage("[florenso_tools]: Есть обновление. Версия: " .. updateIni.info.vers_text, 0x33AAFFFF)
+            update_state = true
+        else
+            sampAddChatMessage("[florenso_tools]: Обновлений не обнаружено. Загружаем старую версию.", 0x33AAFFFF)
+        end
+    end
+  end)
 
   sampRegisterChatCommand("florenso_tools", function() 
     local _, pID = sampGetPlayerIdByCharHandle(PLAYER_PED)
@@ -102,6 +120,16 @@ function main()
     end
   end)
 
+  while true do wait(100)
+    if update_state then
+      downloadUrlToFile(script_url, script_path, function(id, status)
+          if status == dlstatus.STATUS_ENDDOWNLOADDATA then
+              sampAddChatMessage("[florenso_tools]: Скрипт успешно обновлён.", 0x33AAFFFF)
+              thisScript():reload()
+          end
+      end)
+    end
+  end
 
   lua_thread.create(function()
     while true do wait(0)
@@ -706,15 +734,15 @@ function main()
         if tonumber(os.date("%H")) == settings.global.hour and tonumber(os.date("%M")) == settings.global.minute and tonumber(os.date("%S")) == 00 then
           sampAddChatMessage(os.date("[florenso tools]: Начинаю вещание. Не пользуйся чатом."), 0x33AAFFFF) 
           wait(500)
-          sampSendChat(" /d OG, занимаю волну государственных новостей.")
+          sampSendChat("/d OG, занимаю волну государственных новостей.")
           wait(2500)
-          sampSendChat(" /gov [Army LV] Уважаемые жители штата, на портале армии открыты заявления на контрактную службу.")
+          sampSendChat("/gov [Army LV] Уважаемые жители штата, на портале армии открыты заявления на контрактную службу.")
           wait(5500)
-          sampSendChat(" /gov [Army LV] Требования: от 7 лет в штате, не состоять в ЧС LVA")
+          sampSendChat("/gov [Army LV] Требования: от 7 лет в штате, не состоять в ЧС LVA")
           wait(5500)
-          sampSendChat(" /gov [Army LV] За завершение контракта денежные выплаты до 500.000$, подробная информация на оф.портале армии")
+          sampSendChat("/gov [Army LV] За завершение контракта денежные выплаты до 500.000$, подробная информация на оф.портале армии")
           wait(2500)
-          sampSendChat(" /d OG, освободил волну государственных новостей.")
+          sampSendChat("/d OG, освободил волну государственных новостей.")
           wait(1000)
           justPressThisShitPlease(VK_F6)
           sampSetChatInputText("/pagesize 20")
