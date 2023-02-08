@@ -8,7 +8,7 @@ local prizivi = "config/florenso_tools/config.ini"
 local settings = {}
 local text1 = '"Los-Santos"'
 local dlstatus = require("moonloader").download_status
-local script_vers = 1
+local script_vers = 2
 local script_path = thisScript().path
 local script_url = "https://raw.githubusercontent.com/Vladik1234/obnovlenie/master/florenso_tools.lua"
 local update_path = getWorkingDirectory() .. "/update.ini"
@@ -20,7 +20,7 @@ function main()
     local settings = {
       global = {
         prizivi = false,
-        Tag = "[Ген.Штаб]"
+        Tag = "[ГѓГҐГ­.ГГІГ ГЎ]"
       }
     }
     config.save(settings, 'florenso_tools/config.ini')
@@ -42,10 +42,10 @@ function main()
     if status == dlstatus.STATUS_ENDDOWNLOADDATA then
         updateIni = config.load(nil, update_path)
         if tonumber(updateIni.info.vers) > script_vers then
-            sampAddChatMessage("[florenso_tools]: Есть обновление. Версия: " .. updateIni.info.vers_text, 0x33AAFFFF)
+            sampAddChatMessage("[florenso_tools]: Г…Г±ГІГј Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГҐ. Г‚ГҐГ°Г±ГЁГї: " .. updateIni.info.vers_text, 0x33AAFFFF)
             update_state = true
         else
-            sampAddChatMessage("[florenso_tools]: Обновлений не обнаружено. Загружаем старую версию.", 0x33AAFFFF)
+            sampAddChatMessage("[florenso_tools]: ГЋГЎГ­Г®ГўГ«ГҐГ­ГЁГ© Г­ГҐ Г®ГЎГ­Г Г°ГіГ¦ГҐГ­Г®. Г‡Г ГЈГ°ГіГ¦Г ГҐГ¬ Г±ГІГ Г°ГіГѕ ГўГҐГ°Г±ГЁГѕ.", 0x33AAFFFF)
         end
     end
   end)
@@ -55,9 +55,9 @@ function main()
     name = sampGetPlayerNickname(pID)
     if settings.global.prizivi == true then
       settings.global.prizivi = false 
-      sampAddChatMessage("[florenso tools]: Скрипт отключён.", 0x33AAFFFF) 
+      sampAddChatMessage("[florenso tools]: Г‘ГЄГ°ГЁГЇГІ Г®ГІГЄГ«ГѕГ·ВёГ­.", 0x33AAFFFF) 
     else
-      sampAddChatMessage("[florenso tools]: Скрипт запущен.", 0x33AAFFFF) 
+      sampAddChatMessage("[florenso tools]: Г‘ГЄГ°ГЁГЇГІ Г§Г ГЇГіГ№ГҐГ­.", 0x33AAFFFF) 
       settings.global.prizivi = true
     end
   end)
@@ -65,7 +65,7 @@ function main()
   lua_thread.create(function()
     while true do wait(0)
       if testCheat("OOO") then
-        sampShowDialog(9999, "Установить тэг:", "{b6b6b6}Введи свой тэг:", "ОК", "Закрыть", 1)
+        sampShowDialog(9999, "Г“Г±ГІГ Г­Г®ГўГЁГІГј ГІГЅГЈ:", "{b6b6b6}Г‚ГўГҐГ¤ГЁ Г±ГўГ®Г© ГІГЅГЈ:", "ГЋГЉ", "Г‡Г ГЄГ°Г»ГІГј", 1)
         while sampIsDialogActive() do wait(0) end
         local result, button, item, input = sampHasDialogRespond(9999)
         if result and button == 1 then
@@ -89,11 +89,11 @@ function main()
   lua_thread.create(function()
     while true do wait(0)
       if wasKeyPressed(VK_Y) and povishka == true then
-        if zvanie == "Ефрейтора" or zvanie == "Мл.Сержанта" or zvanie == "Сержанта" or zvanie == "Ст.Сержанта" or zvanie == "Старшины" or zvanie == "Прапорщика" then
-          sampSendChat("/me достал(а) лычки "..zvanie.." затем передал человеку на против")
+        if zvanie == "Г…ГґГ°ГҐГ©ГІГ®Г°Г " or zvanie == "ГЊГ«.Г‘ГҐГ°Г¦Г Г­ГІГ " or zvanie == "Г‘ГҐГ°Г¦Г Г­ГІГ " or zvanie == "Г‘ГІ.Г‘ГҐГ°Г¦Г Г­ГІГ " or zvanie == "Г‘ГІГ Г°ГёГЁГ­Г»" or zvanie == "ГЏГ°Г ГЇГ®Г°Г№ГЁГЄГ " then
+          sampSendChat("/me Г¤Г®Г±ГІГ Г«(Г ) Г«Г»Г·ГЄГЁ "..zvanie.." Г§Г ГІГҐГ¬ ГЇГҐГ°ГҐГ¤Г Г« Г·ГҐГ«Г®ГўГҐГЄГі Г­Г  ГЇГ°Г®ГІГЁГў")
           povishka = false
         else
-          sampSendChat("/me достал(а) погоны "..zvanie.." затем передал человеку на против")
+          sampSendChat("/me Г¤Г®Г±ГІГ Г«(Г ) ГЇГ®ГЈГ®Г­Г» "..zvanie.." Г§Г ГІГҐГ¬ ГЇГҐГ°ГҐГ¤Г Г« Г·ГҐГ«Г®ГўГҐГЄГі Г­Г  ГЇГ°Г®ГІГЁГў")
         end
       end
     end
@@ -102,9 +102,9 @@ function main()
   lua_thread.create(function()
     while true do wait(0)
       if wasKeyPressed(VK_Y) and uvolnenie then
-        sampSendChat("/r "..settings.global.Tag.." "..nickuvolennogo.." уволен из армии Las-Venturas`a. Причина: "..prichina.."")
+        sampSendChat("/r "..settings.global.Tag.." "..nickuvolennogo.." ГіГўГ®Г«ГҐГ­ ГЁГ§ Г Г°Г¬ГЁГЁ Las-Venturas`a. ГЏГ°ГЁГ·ГЁГ­Г : "..prichina.."")
         wait(1000)
-        sampSendChat("/me достал(а) КПК, после чего отметил(а) личное дело "..nickuvolennogo.." как «Уволен»")
+        sampSendChat("/me Г¤Г®Г±ГІГ Г«(Г ) ГЉГЏГЉ, ГЇГ®Г±Г«ГҐ Г·ГҐГЈГ® Г®ГІГ¬ГҐГІГЁГ«(Г ) Г«ГЁГ·Г­Г®ГҐ Г¤ГҐГ«Г® "..nickuvolennogo.." ГЄГ ГЄ В«Г“ГўГ®Г«ГҐГ­В»")
         uvolnenie = false
       end
     end
@@ -124,7 +124,7 @@ function main()
     if update_state then
       downloadUrlToFile(script_url, script_path, function(id, status)
           if status == dlstatus.STATUS_ENDDOWNLOADDATA then
-              sampAddChatMessage("[florenso_tools]: Скрипт успешно обновлён.", 0x33AAFFFF)
+              sampAddChatMessage("[florenso_tools]: Г‘ГЄГ°ГЁГЇГІ ГіГ±ГЇГҐГёГ­Г® Г®ГЎГ­Г®ГўГ«ВёГ­.", 0x33AAFFFF)
               thisScript():reload()
           end
       end)
@@ -143,20 +143,20 @@ function main()
         local shift_m = 100 * (dt2.min  - dt1.min) / 60
         if tonumber(os.date("%H")) == 14 and tonumber(os.date("%M")) == 04 and tonumber(os.date("%S")) == 00 then
           wait(500)
-          sampAddChatMessage(os.date("[florenso tools]: Через минуту вещаем, не уходи в афк."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: Г—ГҐГ°ГҐГ§ Г¬ГЁГ­ГіГІГі ГўГҐГ№Г ГҐГ¬, Г­ГҐ ГіГµГ®Г¤ГЁ Гў Г ГґГЄ."), 0x33AAFFFF)
         end
         if tonumber(os.date("%H")) == 14 and tonumber(os.date("%M")) == 05 and tonumber(os.date("%S")) == 00 then
-          sampAddChatMessage(os.date("[florenso tools]: Начинаю вещание. Не пользуйся чатом."), 0x33AAFFFF) -- первый призыв
+          sampAddChatMessage(os.date("[florenso tools]: ГЌГ Г·ГЁГ­Г Гѕ ГўГҐГ№Г Г­ГЁГҐ. ГЌГҐ ГЇГ®Г«ГјГ§ГіГ©Г±Гї Г·Г ГІГ®Г¬."), 0x33AAFFFF) -- ГЇГҐГ°ГўГ»Г© ГЇГ°ГЁГ§Г»Гў
           wait(500)
-          sampSendChat("/d OG, занимаю волну государственных новостей.")
+          sampSendChat("/d OG, Г§Г Г­ГЁГ¬Г Гѕ ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(2500)
-          sampSendChat("/gov [Army LV]: Уважаемые жители штата, cегодня в 14:15 состоится призыв в Армию Las-Venturas.")
+          sampSendChat("/gov [Army LV]: Г“ГўГ Г¦Г ГҐГ¬Г»ГҐ Г¦ГЁГІГҐГ«ГЁ ГёГІГ ГІГ , cГҐГЈГ®Г¤Г­Гї Гў 14:15 Г±Г®Г±ГІГ®ГЁГІГ±Гї ГЇГ°ГЁГ§Г»Гў Гў ГЂГ°Г¬ГЁГѕ Las-Venturas.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Требования: минимум 2 года проживания в штате и отсутствие проблем с законом.")
+          sampSendChat("/gov [Army LV]: Г’Г°ГҐГЎГ®ГўГ Г­ГЁГї: Г¬ГЁГ­ГЁГ¬ГіГ¬ 2 ГЈГ®Г¤Г  ГЇГ°Г®Г¦ГЁГўГ Г­ГЁГї Гў ГёГІГ ГІГҐ ГЁ Г®ГІГ±ГіГІГ±ГІГўГЁГҐ ГЇГ°Г®ГЎГ«ГҐГ¬ Г± Г§Г ГЄГ®Г­Г®Г¬.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Призывной пункт по GPS 4 - 2. Второй этаж Больницы "..text1..".")
+          sampSendChat("/gov [Army LV]: ГЏГ°ГЁГ§Г»ГўГ­Г®Г© ГЇГіГ­ГЄГІ ГЇГ® GPS 4 - 2. Г‚ГІГ®Г°Г®Г© ГЅГІГ Г¦ ГЃГ®Г«ГјГ­ГЁГ¶Г» "..text1..".")
           wait(2500)
-          sampSendChat("/d OG, освободил волну государственных новостей.")
+          sampSendChat("/d OG, Г®Г±ГўГ®ГЎГ®Г¤ГЁГ« ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(1000)
           justPressThisShitPlease(VK_F6)
           sampSetChatInputText("/pagesize 20")
@@ -172,20 +172,20 @@ function main()
         end
         if tonumber(os.date("%H")) == 14 and tonumber(os.date("%M")) == 14 and tonumber(os.date("%S")) == 00 then
           wait(500)
-          sampAddChatMessage(os.date("[florenso tools]: Через минуту вещаем, не уходи в афк."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: Г—ГҐГ°ГҐГ§ Г¬ГЁГ­ГіГІГі ГўГҐГ№Г ГҐГ¬, Г­ГҐ ГіГµГ®Г¤ГЁ Гў Г ГґГЄ."), 0x33AAFFFF)
         end
         if tonumber(os.date("%H")) == 14 and tonumber(os.date("%M")) == 15 and tonumber(os.date("%S")) == 00 then
-          sampAddChatMessage(os.date("[florenso tools]: Начинаю вещание. Не пользуйся чатом."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: ГЌГ Г·ГЁГ­Г Гѕ ГўГҐГ№Г Г­ГЁГҐ. ГЌГҐ ГЇГ®Г«ГјГ§ГіГ©Г±Гї Г·Г ГІГ®Г¬."), 0x33AAFFFF)
           wait(500)
-          sampSendChat("/d OG, занимаю волну государственных новостей.")
+          sampSendChat("/d OG, Г§Г Г­ГЁГ¬Г Гѕ ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(2500)
-          sampSendChat("/gov [Army LV]: Уважаемые жители штата, призыв в Армию Las-Venturas начался.")
+          sampSendChat("/gov [Army LV]: Г“ГўГ Г¦Г ГҐГ¬Г»ГҐ Г¦ГЁГІГҐГ«ГЁ ГёГІГ ГІГ , ГЇГ°ГЁГ§Г»Гў Гў ГЂГ°Г¬ГЁГѕ Las-Venturas Г­Г Г·Г Г«Г±Гї.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Требования: минимум 2 года проживания в штате и отсутствие проблем с законом.")
+          sampSendChat("/gov [Army LV]: Г’Г°ГҐГЎГ®ГўГ Г­ГЁГї: Г¬ГЁГ­ГЁГ¬ГіГ¬ 2 ГЈГ®Г¤Г  ГЇГ°Г®Г¦ГЁГўГ Г­ГЁГї Гў ГёГІГ ГІГҐ ГЁ Г®ГІГ±ГіГІГ±ГІГўГЁГҐ ГЇГ°Г®ГЎГ«ГҐГ¬ Г± Г§Г ГЄГ®Г­Г®Г¬.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Призывной пункт по GPS 4 - 2. Второй этаж Больницы "..text1..".")
+          sampSendChat("/gov [Army LV]: ГЏГ°ГЁГ§Г»ГўГ­Г®Г© ГЇГіГ­ГЄГІ ГЇГ® GPS 4 - 2. Г‚ГІГ®Г°Г®Г© ГЅГІГ Г¦ ГЃГ®Г«ГјГ­ГЁГ¶Г» "..text1..".")
           wait(2500)
-          sampSendChat("/d OG, освободил волну государственных новостей.")
+          sampSendChat("/d OG, Г®Г±ГўГ®ГЎГ®Г¤ГЁГ« ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(1000)
           justPressThisShitPlease(VK_F6)
           sampSetChatInputText("/pagesize 20")
@@ -201,20 +201,20 @@ function main()
         end
         if tonumber(os.date("%H")) == 14 and tonumber(os.date("%M")) == 24 and tonumber(os.date("%S")) == 00 then
           wait(500)
-          sampAddChatMessage(os.date("[florenso tools]: Через минуту вещаем, не уходи в афк."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: Г—ГҐГ°ГҐГ§ Г¬ГЁГ­ГіГІГі ГўГҐГ№Г ГҐГ¬, Г­ГҐ ГіГµГ®Г¤ГЁ Гў Г ГґГЄ."), 0x33AAFFFF)
         end
         if tonumber(os.date("%H")) == 14 and tonumber(os.date("%M")) == 25 and tonumber(os.date("%S")) == 00 then
-          sampAddChatMessage(os.date("[florenso tools]: Начинаю вещание. Не пользуйся чатом."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: ГЌГ Г·ГЁГ­Г Гѕ ГўГҐГ№Г Г­ГЁГҐ. ГЌГҐ ГЇГ®Г«ГјГ§ГіГ©Г±Гї Г·Г ГІГ®Г¬."), 0x33AAFFFF)
           wait(500)
-          sampSendChat("/d OG, занимаю волну государственных новостей.")
+          sampSendChat("/d OG, Г§Г Г­ГЁГ¬Г Гѕ ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(2500)
-          sampSendChat("/gov [Army LV]: Уважаемые жители штата, призыв в Армию Las-Venturas продолжается.")
+          sampSendChat("/gov [Army LV]: Г“ГўГ Г¦Г ГҐГ¬Г»ГҐ Г¦ГЁГІГҐГ«ГЁ ГёГІГ ГІГ , ГЇГ°ГЁГ§Г»Гў Гў ГЂГ°Г¬ГЁГѕ Las-Venturas ГЇГ°Г®Г¤Г®Г«Г¦Г ГҐГІГ±Гї.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Требования: минимум 2 года проживания в штате и отсутствие проблем с законом.")
+          sampSendChat("/gov [Army LV]: Г’Г°ГҐГЎГ®ГўГ Г­ГЁГї: Г¬ГЁГ­ГЁГ¬ГіГ¬ 2 ГЈГ®Г¤Г  ГЇГ°Г®Г¦ГЁГўГ Г­ГЁГї Гў ГёГІГ ГІГҐ ГЁ Г®ГІГ±ГіГІГ±ГІГўГЁГҐ ГЇГ°Г®ГЎГ«ГҐГ¬ Г± Г§Г ГЄГ®Г­Г®Г¬.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Призывной пункт по GPS 4 - 2. Второй этаж Больницы "..text1..".")
+          sampSendChat("/gov [Army LV]: ГЏГ°ГЁГ§Г»ГўГ­Г®Г© ГЇГіГ­ГЄГІ ГЇГ® GPS 4 - 2. Г‚ГІГ®Г°Г®Г© ГЅГІГ Г¦ ГЃГ®Г«ГјГ­ГЁГ¶Г» "..text1..".")
           wait(2500)
-          sampSendChat("/d OG, освободил волну государственных новостей.")
+          sampSendChat("/d OG, Г®Г±ГўГ®ГЎГ®Г¤ГЁГ« ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(1000)
           justPressThisShitPlease(VK_F6)
           sampSetChatInputText("/pagesize 20")
@@ -230,20 +230,20 @@ function main()
         end
         if tonumber(os.date("%H")) == 14 and tonumber(os.date("%M")) == 34 and tonumber(os.date("%S")) == 00 then
           wait(500)
-          sampAddChatMessage(os.date("[florenso tools]: Через минуту вещаем, не уходи в афк."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: Г—ГҐГ°ГҐГ§ Г¬ГЁГ­ГіГІГі ГўГҐГ№Г ГҐГ¬, Г­ГҐ ГіГµГ®Г¤ГЁ Гў Г ГґГЄ."), 0x33AAFFFF)
         end
         if tonumber(os.date("%H")) == 14 and tonumber(os.date("%M")) == 35 and tonumber(os.date("%S")) == 00 then
-          sampAddChatMessage(os.date("[florenso tools]: Начинаю вещание. Не пользуйся чатом."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: ГЌГ Г·ГЁГ­Г Гѕ ГўГҐГ№Г Г­ГЁГҐ. ГЌГҐ ГЇГ®Г«ГјГ§ГіГ©Г±Гї Г·Г ГІГ®Г¬."), 0x33AAFFFF)
           wait(500)
-          sampSendChat("/d OG, занимаю волну государственных новостей.")
+          sampSendChat("/d OG, Г§Г Г­ГЁГ¬Г Гѕ ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(2500)
-          sampSendChat("/gov [Army LV]: Уважаемые жители штата, призыв в Армию Las-Venturas продолжается.")
+          sampSendChat("/gov [Army LV]: Г“ГўГ Г¦Г ГҐГ¬Г»ГҐ Г¦ГЁГІГҐГ«ГЁ ГёГІГ ГІГ , ГЇГ°ГЁГ§Г»Гў Гў ГЂГ°Г¬ГЁГѕ Las-Venturas ГЇГ°Г®Г¤Г®Г«Г¦Г ГҐГІГ±Гї.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Требования: минимум 2 года проживания в штате и отсутствие проблем с законом.")
+          sampSendChat("/gov [Army LV]: Г’Г°ГҐГЎГ®ГўГ Г­ГЁГї: Г¬ГЁГ­ГЁГ¬ГіГ¬ 2 ГЈГ®Г¤Г  ГЇГ°Г®Г¦ГЁГўГ Г­ГЁГї Гў ГёГІГ ГІГҐ ГЁ Г®ГІГ±ГіГІГ±ГІГўГЁГҐ ГЇГ°Г®ГЎГ«ГҐГ¬ Г± Г§Г ГЄГ®Г­Г®Г¬.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Призывной пункт по GPS 4 - 2. Второй этаж Больницы "..text1..".")
+          sampSendChat("/gov [Army LV]: ГЏГ°ГЁГ§Г»ГўГ­Г®Г© ГЇГіГ­ГЄГІ ГЇГ® GPS 4 - 2. Г‚ГІГ®Г°Г®Г© ГЅГІГ Г¦ ГЃГ®Г«ГјГ­ГЁГ¶Г» "..text1..".")
           wait(2500)
-          sampSendChat("/d OG, освободил волну государственных новостей.")
+          sampSendChat("/d OG, Г®Г±ГўГ®ГЎГ®Г¤ГЁГ« ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(1000)
           justPressThisShitPlease(VK_F6)
           sampSetChatInputText("/pagesize 20")
@@ -259,20 +259,20 @@ function main()
         end
         if tonumber(os.date("%H")) == 14 and tonumber(os.date("%M")) == 44 and tonumber(os.date("%S")) == 00 then
           wait(500)
-          sampAddChatMessage(os.date("[florenso tools]: Через минуту вещаем, не уходи в афк."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: Г—ГҐГ°ГҐГ§ Г¬ГЁГ­ГіГІГі ГўГҐГ№Г ГҐГ¬, Г­ГҐ ГіГµГ®Г¤ГЁ Гў Г ГґГЄ."), 0x33AAFFFF)
         end
         if tonumber(os.date("%H")) == 14 and tonumber(os.date("%M")) == 45 and tonumber(os.date("%S")) == 00 then
-          sampAddChatMessage(os.date("[florenso tools]: Начинаю вещание. Не пользуйся чатом."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: ГЌГ Г·ГЁГ­Г Гѕ ГўГҐГ№Г Г­ГЁГҐ. ГЌГҐ ГЇГ®Г«ГјГ§ГіГ©Г±Гї Г·Г ГІГ®Г¬."), 0x33AAFFFF)
           wait(500)
-          sampSendChat("/d OG, занимаю волну государственных новостей.")
+          sampSendChat("/d OG, Г§Г Г­ГЁГ¬Г Гѕ ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(2500)
-          sampSendChat("/gov [Army LV]: Уважаемые жители штата, призыв в Армию Las-Venturas окончен. Следующий призыв в 18:45.")
+          sampSendChat("/gov [Army LV]: Г“ГўГ Г¦Г ГҐГ¬Г»ГҐ Г¦ГЁГІГҐГ«ГЁ ГёГІГ ГІГ , ГЇГ°ГЁГ§Г»Гў Гў ГЂГ°Г¬ГЁГѕ Las-Venturas Г®ГЄГ®Г­Г·ГҐГ­. Г‘Г«ГҐГ¤ГіГѕГ№ГЁГ© ГЇГ°ГЁГ§Г»Гў Гў 18:45.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Также напоминаю, что открыты заявления на контрактную службу в Армию Las-Venturas.")
+          sampSendChat("/gov [Army LV]: Г’Г ГЄГ¦ГҐ Г­Г ГЇГ®Г¬ГЁГ­Г Гѕ, Г·ГІГ® Г®ГІГЄГ°Г»ГІГ» Г§Г ГїГўГ«ГҐГ­ГЁГї Г­Г  ГЄГ®Г­ГІГ°Г ГЄГІГ­ГіГѕ Г±Г«ГіГ¦ГЎГі Гў ГЂГ°Г¬ГЁГѕ Las-Venturas.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Подробная информация на официальном портале армии.")
+          sampSendChat("/gov [Army LV]: ГЏГ®Г¤Г°Г®ГЎГ­Г Гї ГЁГ­ГґГ®Г°Г¬Г Г¶ГЁГї Г­Г  Г®ГґГЁГ¶ГЁГ Г«ГјГ­Г®Г¬ ГЇГ®Г°ГІГ Г«ГҐ Г Г°Г¬ГЁГЁ.")
           wait(2500)
-          sampSendChat("/d OG, освободил волну государственных новостей.")
+          sampSendChat("/d OG, Г®Г±ГўГ®ГЎГ®Г¤ГЁГ« ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(1000)
           justPressThisShitPlease(VK_F6)
           sampSetChatInputText("/pagesize 20")
@@ -286,24 +286,24 @@ function main()
           sampSetChatInputText("/pagesize 11")
           justPressThisShitPlease(VK_RETURN)
           settings.global.prizivi = false
-          sampAddChatMessage("[florenso tools]: Скрипт отключён. Если вы будете проводить следующий призыв - включите скрипт ещё раз.", 0x33AAFFFF) 
+          sampAddChatMessage("[florenso tools]: Г‘ГЄГ°ГЁГЇГІ Г®ГІГЄГ«ГѕГ·ВёГ­. Г…Г±Г«ГЁ ГўГ» ГЎГіГ¤ГҐГІГҐ ГЇГ°Г®ГўГ®Г¤ГЁГІГј Г±Г«ГҐГ¤ГіГѕГ№ГЁГ© ГЇГ°ГЁГ§Г»Гў - ГўГЄГ«ГѕГ·ГЁГІГҐ Г±ГЄГ°ГЁГЇГІ ГҐГ№Вё Г°Г Г§.", 0x33AAFFFF) 
         end
         if tonumber(os.date("%H")) == 18 and tonumber(os.date("%M")) == 34 and tonumber(os.date("%S")) == 00 then
           wait(500)
-          sampAddChatMessage(os.date("[florenso tools]: Через минуту вещаем, не уходи в афк."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: Г—ГҐГ°ГҐГ§ Г¬ГЁГ­ГіГІГі ГўГҐГ№Г ГҐГ¬, Г­ГҐ ГіГµГ®Г¤ГЁ Гў Г ГґГЄ."), 0x33AAFFFF)
         end
         if tonumber(os.date("%H")) == 18 and tonumber(os.date("%M")) == 35 and tonumber(os.date("%S")) == 00 then
-          sampAddChatMessage(os.date("[florenso tools]: Начинаю вещание. Не пользуйся чатом."), 0x33AAFFFF) -- второй призыв
+          sampAddChatMessage(os.date("[florenso tools]: ГЌГ Г·ГЁГ­Г Гѕ ГўГҐГ№Г Г­ГЁГҐ. ГЌГҐ ГЇГ®Г«ГјГ§ГіГ©Г±Гї Г·Г ГІГ®Г¬."), 0x33AAFFFF) -- ГўГІГ®Г°Г®Г© ГЇГ°ГЁГ§Г»Гў
           wait(500)
-          sampSendChat("/d OG, занимаю волну государственных новостей.")
+          sampSendChat("/d OG, Г§Г Г­ГЁГ¬Г Гѕ ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(2500)
-          sampSendChat("/gov [Army LV]: Уважаемые жители штата, cегодня в 18:45 состоится призыв в Армию Las-Venturas.")
+          sampSendChat("/gov [Army LV]: Г“ГўГ Г¦Г ГҐГ¬Г»ГҐ Г¦ГЁГІГҐГ«ГЁ ГёГІГ ГІГ , cГҐГЈГ®Г¤Г­Гї Гў 18:45 Г±Г®Г±ГІГ®ГЁГІГ±Гї ГЇГ°ГЁГ§Г»Гў Гў ГЂГ°Г¬ГЁГѕ Las-Venturas.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Требования: минимум 2 года проживания в штате и отсутствие проблем с законом.")
+          sampSendChat("/gov [Army LV]: Г’Г°ГҐГЎГ®ГўГ Г­ГЁГї: Г¬ГЁГ­ГЁГ¬ГіГ¬ 2 ГЈГ®Г¤Г  ГЇГ°Г®Г¦ГЁГўГ Г­ГЁГї Гў ГёГІГ ГІГҐ ГЁ Г®ГІГ±ГіГІГ±ГІГўГЁГҐ ГЇГ°Г®ГЎГ«ГҐГ¬ Г± Г§Г ГЄГ®Г­Г®Г¬.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Призывной пункт по GPS 4 - 2. Второй этаж Больницы "..text1..".")
+          sampSendChat("/gov [Army LV]: ГЏГ°ГЁГ§Г»ГўГ­Г®Г© ГЇГіГ­ГЄГІ ГЇГ® GPS 4 - 2. Г‚ГІГ®Г°Г®Г© ГЅГІГ Г¦ ГЃГ®Г«ГјГ­ГЁГ¶Г» "..text1..".")
           wait(2500)
-          sampSendChat("/d OG, освободил волну государственных новостей.")
+          sampSendChat("/d OG, Г®Г±ГўГ®ГЎГ®Г¤ГЁГ« ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(1000)
           justPressThisShitPlease(VK_F6)
           sampSetChatInputText("/pagesize 20")
@@ -319,20 +319,20 @@ function main()
         end
         if tonumber(os.date("%H")) == 18 and tonumber(os.date("%M")) == 44 and tonumber(os.date("%S")) == 00 then
           wait(500)
-          sampAddChatMessage(os.date("[florenso tools]: Через минуту вещаем, не уходи в афк."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: Г—ГҐГ°ГҐГ§ Г¬ГЁГ­ГіГІГі ГўГҐГ№Г ГҐГ¬, Г­ГҐ ГіГµГ®Г¤ГЁ Гў Г ГґГЄ."), 0x33AAFFFF)
         end
         if tonumber(os.date("%H")) == 18 and tonumber(os.date("%M")) == 45 and tonumber(os.date("%S")) == 00 then
-          sampAddChatMessage(os.date("[florenso tools]: Начинаю вещание. Не пользуйся чатом."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: ГЌГ Г·ГЁГ­Г Гѕ ГўГҐГ№Г Г­ГЁГҐ. ГЌГҐ ГЇГ®Г«ГјГ§ГіГ©Г±Гї Г·Г ГІГ®Г¬."), 0x33AAFFFF)
           wait(500)
-          sampSendChat("/d OG, занимаю волну государственных новостей.")
+          sampSendChat("/d OG, Г§Г Г­ГЁГ¬Г Гѕ ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(2500)
-          sampSendChat("/gov [Army LV]: Уважаемые жители штата, призыв в Армию Las-Venturas начался.")
+          sampSendChat("/gov [Army LV]: Г“ГўГ Г¦Г ГҐГ¬Г»ГҐ Г¦ГЁГІГҐГ«ГЁ ГёГІГ ГІГ , ГЇГ°ГЁГ§Г»Гў Гў ГЂГ°Г¬ГЁГѕ Las-Venturas Г­Г Г·Г Г«Г±Гї.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Требования: минимум 2 года проживания в штате и отсутствие проблем с законом.")
+          sampSendChat("/gov [Army LV]: Г’Г°ГҐГЎГ®ГўГ Г­ГЁГї: Г¬ГЁГ­ГЁГ¬ГіГ¬ 2 ГЈГ®Г¤Г  ГЇГ°Г®Г¦ГЁГўГ Г­ГЁГї Гў ГёГІГ ГІГҐ ГЁ Г®ГІГ±ГіГІГ±ГІГўГЁГҐ ГЇГ°Г®ГЎГ«ГҐГ¬ Г± Г§Г ГЄГ®Г­Г®Г¬.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Призывной пункт по GPS 4 - 2. Второй этаж Больницы "..text1..".")
+          sampSendChat("/gov [Army LV]: ГЏГ°ГЁГ§Г»ГўГ­Г®Г© ГЇГіГ­ГЄГІ ГЇГ® GPS 4 - 2. Г‚ГІГ®Г°Г®Г© ГЅГІГ Г¦ ГЃГ®Г«ГјГ­ГЁГ¶Г» "..text1..".")
           wait(2500)
-          sampSendChat("/d OG, освободил волну государственных новостей.")
+          sampSendChat("/d OG, Г®Г±ГўГ®ГЎГ®Г¤ГЁГ« ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(1000)
           justPressThisShitPlease(VK_F6)
           sampSetChatInputText("/pagesize 20")
@@ -348,20 +348,20 @@ function main()
         end
         if tonumber(os.date("%H")) == 18 and tonumber(os.date("%M")) == 54 and tonumber(os.date("%S")) == 00 then
           wait(500)
-          sampAddChatMessage(os.date("[florenso tools]: Через минуту вещаем, не уходи в афк."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: Г—ГҐГ°ГҐГ§ Г¬ГЁГ­ГіГІГі ГўГҐГ№Г ГҐГ¬, Г­ГҐ ГіГµГ®Г¤ГЁ Гў Г ГґГЄ."), 0x33AAFFFF)
         end
         if tonumber(os.date("%H")) == 18 and tonumber(os.date("%M")) == 55 and tonumber(os.date("%S")) == 00 then
-          sampAddChatMessage(os.date("[florenso tools]: Начинаю вещание. Не пользуйся чатом."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: ГЌГ Г·ГЁГ­Г Гѕ ГўГҐГ№Г Г­ГЁГҐ. ГЌГҐ ГЇГ®Г«ГјГ§ГіГ©Г±Гї Г·Г ГІГ®Г¬."), 0x33AAFFFF)
           wait(500)
-          sampSendChat("/d OG, занимаю волну государственных новостей.")
+          sampSendChat("/d OG, Г§Г Г­ГЁГ¬Г Гѕ ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(2500)
-          sampSendChat("/gov [Army LV]: Уважаемые жители штата, призыв в Армию Las-Venturas продолжается.")
+          sampSendChat("/gov [Army LV]: Г“ГўГ Г¦Г ГҐГ¬Г»ГҐ Г¦ГЁГІГҐГ«ГЁ ГёГІГ ГІГ , ГЇГ°ГЁГ§Г»Гў Гў ГЂГ°Г¬ГЁГѕ Las-Venturas ГЇГ°Г®Г¤Г®Г«Г¦Г ГҐГІГ±Гї.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Требования: минимум 2 года проживания в штате и отсутствие проблем с законом.")
+          sampSendChat("/gov [Army LV]: Г’Г°ГҐГЎГ®ГўГ Г­ГЁГї: Г¬ГЁГ­ГЁГ¬ГіГ¬ 2 ГЈГ®Г¤Г  ГЇГ°Г®Г¦ГЁГўГ Г­ГЁГї Гў ГёГІГ ГІГҐ ГЁ Г®ГІГ±ГіГІГ±ГІГўГЁГҐ ГЇГ°Г®ГЎГ«ГҐГ¬ Г± Г§Г ГЄГ®Г­Г®Г¬.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Призывной пункт по GPS 4 - 2. Второй этаж Больницы "..text1..".")
+          sampSendChat("/gov [Army LV]: ГЏГ°ГЁГ§Г»ГўГ­Г®Г© ГЇГіГ­ГЄГІ ГЇГ® GPS 4 - 2. Г‚ГІГ®Г°Г®Г© ГЅГІГ Г¦ ГЃГ®Г«ГјГ­ГЁГ¶Г» "..text1..".")
           wait(2500)
-          sampSendChat("/d OG, освободил волну государственных новостей.")
+          sampSendChat("/d OG, Г®Г±ГўГ®ГЎГ®Г¤ГЁГ« ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(1000)
           justPressThisShitPlease(VK_F6)
           sampSetChatInputText("/pagesize 20")
@@ -377,20 +377,20 @@ function main()
         end
         if tonumber(os.date("%H")) == 19 and tonumber(os.date("%M")) == 04 and tonumber(os.date("%S")) == 00 then
           wait(500)
-          sampAddChatMessage(os.date("[florenso tools]: Через минуту вещаем, не уходи в афк."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: Г—ГҐГ°ГҐГ§ Г¬ГЁГ­ГіГІГі ГўГҐГ№Г ГҐГ¬, Г­ГҐ ГіГµГ®Г¤ГЁ Гў Г ГґГЄ."), 0x33AAFFFF)
         end
         if tonumber(os.date("%H")) == 19 and tonumber(os.date("%M")) == 05 and tonumber(os.date("%S")) == 00 then
-          sampAddChatMessage(os.date("[florenso tools]: Начинаю вещание. Не пользуйся чатом."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: ГЌГ Г·ГЁГ­Г Гѕ ГўГҐГ№Г Г­ГЁГҐ. ГЌГҐ ГЇГ®Г«ГјГ§ГіГ©Г±Гї Г·Г ГІГ®Г¬."), 0x33AAFFFF)
           wait(500)
-          sampSendChat("/d OG, занимаю волну государственных новостей.")
+          sampSendChat("/d OG, Г§Г Г­ГЁГ¬Г Гѕ ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(2500)
-          sampSendChat("/gov [Army LV]: Уважаемые жители штата, призыв в Армию Las-Venturas продолжается.")
+          sampSendChat("/gov [Army LV]: Г“ГўГ Г¦Г ГҐГ¬Г»ГҐ Г¦ГЁГІГҐГ«ГЁ ГёГІГ ГІГ , ГЇГ°ГЁГ§Г»Гў Гў ГЂГ°Г¬ГЁГѕ Las-Venturas ГЇГ°Г®Г¤Г®Г«Г¦Г ГҐГІГ±Гї.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Требования: минимум 2 года проживания в штате и отсутствие проблем с законом.")
+          sampSendChat("/gov [Army LV]: Г’Г°ГҐГЎГ®ГўГ Г­ГЁГї: Г¬ГЁГ­ГЁГ¬ГіГ¬ 2 ГЈГ®Г¤Г  ГЇГ°Г®Г¦ГЁГўГ Г­ГЁГї Гў ГёГІГ ГІГҐ ГЁ Г®ГІГ±ГіГІГ±ГІГўГЁГҐ ГЇГ°Г®ГЎГ«ГҐГ¬ Г± Г§Г ГЄГ®Г­Г®Г¬.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Призывной пункт по GPS 4 - 2. Второй этаж Больницы "..text1..".")
+          sampSendChat("/gov [Army LV]: ГЏГ°ГЁГ§Г»ГўГ­Г®Г© ГЇГіГ­ГЄГІ ГЇГ® GPS 4 - 2. Г‚ГІГ®Г°Г®Г© ГЅГІГ Г¦ ГЃГ®Г«ГјГ­ГЁГ¶Г» "..text1..".")
           wait(2500)
-          sampSendChat("/d OG, освободил волну государственных новостей.")
+          sampSendChat("/d OG, Г®Г±ГўГ®ГЎГ®Г¤ГЁГ« ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(1000)
           justPressThisShitPlease(VK_F6)
           sampSetChatInputText("/pagesize 20")
@@ -406,20 +406,20 @@ function main()
         end
         if tonumber(os.date("%H")) == 19 and tonumber(os.date("%M")) == 14 and tonumber(os.date("%S")) == 00 then
           wait(500)
-          sampAddChatMessage(os.date("[florenso tools]: Через минуту вещаем, не уходи в афк."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: Г—ГҐГ°ГҐГ§ Г¬ГЁГ­ГіГІГі ГўГҐГ№Г ГҐГ¬, Г­ГҐ ГіГµГ®Г¤ГЁ Гў Г ГґГЄ."), 0x33AAFFFF)
         end
         if tonumber(os.date("%H")) == 19 and tonumber(os.date("%M")) == 15 and tonumber(os.date("%S")) == 00 then
-          sampAddChatMessage(os.date("[florenso tools]: Начинаю вещание. Не пользуйся чатом."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: ГЌГ Г·ГЁГ­Г Гѕ ГўГҐГ№Г Г­ГЁГҐ. ГЌГҐ ГЇГ®Г«ГјГ§ГіГ©Г±Гї Г·Г ГІГ®Г¬."), 0x33AAFFFF)
           wait(500)
-          sampSendChat("/d OG, занимаю волну государственных новостей.")
+          sampSendChat("/d OG, Г§Г Г­ГЁГ¬Г Гѕ ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(2500)
-          sampSendChat("/gov [Army LV]: Уважаемые жители штата, призыв в Армию Las-Venturas окончен. Следующий призыв в 21:20.")
+          sampSendChat("/gov [Army LV]: Г“ГўГ Г¦Г ГҐГ¬Г»ГҐ Г¦ГЁГІГҐГ«ГЁ ГёГІГ ГІГ , ГЇГ°ГЁГ§Г»Гў Гў ГЂГ°Г¬ГЁГѕ Las-Venturas Г®ГЄГ®Г­Г·ГҐГ­. Г‘Г«ГҐГ¤ГіГѕГ№ГЁГ© ГЇГ°ГЁГ§Г»Гў Гў 21:20.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Также напоминаю, что открыты заявления на контрактную службу в Армию Las-Venturas.")
+          sampSendChat("/gov [Army LV]: Г’Г ГЄГ¦ГҐ Г­Г ГЇГ®Г¬ГЁГ­Г Гѕ, Г·ГІГ® Г®ГІГЄГ°Г»ГІГ» Г§Г ГїГўГ«ГҐГ­ГЁГї Г­Г  ГЄГ®Г­ГІГ°Г ГЄГІГ­ГіГѕ Г±Г«ГіГ¦ГЎГі Гў ГЂГ°Г¬ГЁГѕ Las-Venturas.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Подробная информация на официальном портале армии.")
+          sampSendChat("/gov [Army LV]: ГЏГ®Г¤Г°Г®ГЎГ­Г Гї ГЁГ­ГґГ®Г°Г¬Г Г¶ГЁГї Г­Г  Г®ГґГЁГ¶ГЁГ Г«ГјГ­Г®Г¬ ГЇГ®Г°ГІГ Г«ГҐ Г Г°Г¬ГЁГЁ.")
           wait(2500)
-          sampSendChat("/d OG, освободил волну государственных новостей.")
+          sampSendChat("/d OG, Г®Г±ГўГ®ГЎГ®Г¤ГЁГ« ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(1000)
           justPressThisShitPlease(VK_F6)
           sampSetChatInputText("/pagesize 20")
@@ -433,24 +433,24 @@ function main()
           sampSetChatInputText("/pagesize 11")
           justPressThisShitPlease(VK_RETURN)
           settings.global.prizivi = false
-          sampAddChatMessage("[florenso tools]: Скрипт отключён. Если вы будете проводить следующий призыв - включите скрипт ещё раз.", 0x33AAFFFF) 
+          sampAddChatMessage("[florenso tools]: Г‘ГЄГ°ГЁГЇГІ Г®ГІГЄГ«ГѕГ·ВёГ­. Г…Г±Г«ГЁ ГўГ» ГЎГіГ¤ГҐГІГҐ ГЇГ°Г®ГўГ®Г¤ГЁГІГј Г±Г«ГҐГ¤ГіГѕГ№ГЁГ© ГЇГ°ГЁГ§Г»Гў - ГўГЄГ«ГѕГ·ГЁГІГҐ Г±ГЄГ°ГЁГЇГІ ГҐГ№Вё Г°Г Г§.", 0x33AAFFFF) 
         end
         if tonumber(os.date("%H")) == 21 and tonumber(os.date("%M")) == 09 and tonumber(os.date("%S")) == 00 then
           wait(500)
-          sampAddChatMessage(os.date("[florenso tools]: Через минуту вещаем, не уходи в афк."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: Г—ГҐГ°ГҐГ§ Г¬ГЁГ­ГіГІГі ГўГҐГ№Г ГҐГ¬, Г­ГҐ ГіГµГ®Г¤ГЁ Гў Г ГґГЄ."), 0x33AAFFFF)
         end
         if tonumber(os.date("%H")) == 21 and tonumber(os.date("%M")) == 10 and tonumber(os.date("%S")) == 00 then
-          sampAddChatMessage(os.date("[florenso tools]: Начинаю вещание. Не пользуйся чатом."), 0x33AAFFFF) -- третий призыв
+          sampAddChatMessage(os.date("[florenso tools]: ГЌГ Г·ГЁГ­Г Гѕ ГўГҐГ№Г Г­ГЁГҐ. ГЌГҐ ГЇГ®Г«ГјГ§ГіГ©Г±Гї Г·Г ГІГ®Г¬."), 0x33AAFFFF) -- ГІГ°ГҐГІГЁГ© ГЇГ°ГЁГ§Г»Гў
           wait(500)
-          sampSendChat("/d OG, занимаю волну государственных новостей.")
+          sampSendChat("/d OG, Г§Г Г­ГЁГ¬Г Гѕ ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(2500)
-          sampSendChat("/gov [Army LV]: Уважаемые жители штата, cегодня в 21:20 состоится призыв в Армию Las-Venturas.")
+          sampSendChat("/gov [Army LV]: Г“ГўГ Г¦Г ГҐГ¬Г»ГҐ Г¦ГЁГІГҐГ«ГЁ ГёГІГ ГІГ , cГҐГЈГ®Г¤Г­Гї Гў 21:20 Г±Г®Г±ГІГ®ГЁГІГ±Гї ГЇГ°ГЁГ§Г»Гў Гў ГЂГ°Г¬ГЁГѕ Las-Venturas.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Требования: минимум 2 года проживания в штате и отсутствие проблем с законом.")
+          sampSendChat("/gov [Army LV]: Г’Г°ГҐГЎГ®ГўГ Г­ГЁГї: Г¬ГЁГ­ГЁГ¬ГіГ¬ 2 ГЈГ®Г¤Г  ГЇГ°Г®Г¦ГЁГўГ Г­ГЁГї Гў ГёГІГ ГІГҐ ГЁ Г®ГІГ±ГіГІГ±ГІГўГЁГҐ ГЇГ°Г®ГЎГ«ГҐГ¬ Г± Г§Г ГЄГ®Г­Г®Г¬.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Призывной пункт по GPS 4 - 2. Второй этаж Больницы "..text1..".")
+          sampSendChat("/gov [Army LV]: ГЏГ°ГЁГ§Г»ГўГ­Г®Г© ГЇГіГ­ГЄГІ ГЇГ® GPS 4 - 2. Г‚ГІГ®Г°Г®Г© ГЅГІГ Г¦ ГЃГ®Г«ГјГ­ГЁГ¶Г» "..text1..".")
           wait(2500)
-          sampSendChat("/d OG, освободил волну государственных новостей.")
+          sampSendChat("/d OG, Г®Г±ГўГ®ГЎГ®Г¤ГЁГ« ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(1000)
           justPressThisShitPlease(VK_F6)
           sampSetChatInputText("/pagesize 20")
@@ -466,20 +466,20 @@ function main()
         end
         if tonumber(os.date("%H")) == 21 and tonumber(os.date("%M")) == 19 and tonumber(os.date("%S")) == 00 then
           wait(500)
-          sampAddChatMessage(os.date("[florenso tools]: Через минуту вещаем, не уходи в афк."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: Г—ГҐГ°ГҐГ§ Г¬ГЁГ­ГіГІГі ГўГҐГ№Г ГҐГ¬, Г­ГҐ ГіГµГ®Г¤ГЁ Гў Г ГґГЄ."), 0x33AAFFFF)
         end
         if tonumber(os.date("%H")) == 21 and tonumber(os.date("%M")) == 20 and tonumber(os.date("%S")) == 00 then
-          sampAddChatMessage(os.date("[florenso tools]: Начинаю вещание. Не пользуйся чатом."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: ГЌГ Г·ГЁГ­Г Гѕ ГўГҐГ№Г Г­ГЁГҐ. ГЌГҐ ГЇГ®Г«ГјГ§ГіГ©Г±Гї Г·Г ГІГ®Г¬."), 0x33AAFFFF)
           wait(500)
-          sampSendChat("/d OG, занимаю волну государственных новостей.")
+          sampSendChat("/d OG, Г§Г Г­ГЁГ¬Г Гѕ ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(2500)
-          sampSendChat("/gov [Army LV]: Уважаемые жители штата, призыв в Армию Las-Venturas начался.")
+          sampSendChat("/gov [Army LV]: Г“ГўГ Г¦Г ГҐГ¬Г»ГҐ Г¦ГЁГІГҐГ«ГЁ ГёГІГ ГІГ , ГЇГ°ГЁГ§Г»Гў Гў ГЂГ°Г¬ГЁГѕ Las-Venturas Г­Г Г·Г Г«Г±Гї.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Требования: минимум 2 года проживания в штате и отсутствие проблем с законом.")
+          sampSendChat("/gov [Army LV]: Г’Г°ГҐГЎГ®ГўГ Г­ГЁГї: Г¬ГЁГ­ГЁГ¬ГіГ¬ 2 ГЈГ®Г¤Г  ГЇГ°Г®Г¦ГЁГўГ Г­ГЁГї Гў ГёГІГ ГІГҐ ГЁ Г®ГІГ±ГіГІГ±ГІГўГЁГҐ ГЇГ°Г®ГЎГ«ГҐГ¬ Г± Г§Г ГЄГ®Г­Г®Г¬.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Призывной пункт по GPS 4 - 2. Второй этаж Больницы "..text1..".")
+          sampSendChat("/gov [Army LV]: ГЏГ°ГЁГ§Г»ГўГ­Г®Г© ГЇГіГ­ГЄГІ ГЇГ® GPS 4 - 2. Г‚ГІГ®Г°Г®Г© ГЅГІГ Г¦ ГЃГ®Г«ГјГ­ГЁГ¶Г» "..text1..".")
           wait(2500)
-          sampSendChat("/d OG, освободил волну государственных новостей.")
+          sampSendChat("/d OG, Г®Г±ГўГ®ГЎГ®Г¤ГЁГ« ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(1000)
           justPressThisShitPlease(VK_F6)
           sampSetChatInputText("/pagesize 20")
@@ -495,20 +495,20 @@ function main()
         end
         if tonumber(os.date("%H")) == 21 and tonumber(os.date("%M")) == 29 and tonumber(os.date("%S")) == 00 then
           wait(500)
-          sampAddChatMessage(os.date("[florenso tools]: Через минуту вещаем, не уходи в афк."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: Г—ГҐГ°ГҐГ§ Г¬ГЁГ­ГіГІГі ГўГҐГ№Г ГҐГ¬, Г­ГҐ ГіГµГ®Г¤ГЁ Гў Г ГґГЄ."), 0x33AAFFFF)
         end
         if tonumber(os.date("%H")) == 21 and tonumber(os.date("%M")) == 30 and tonumber(os.date("%S")) == 00 then
-          sampAddChatMessage(os.date("[florenso tools]: Начинаю вещание. Не пользуйся чатом."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: ГЌГ Г·ГЁГ­Г Гѕ ГўГҐГ№Г Г­ГЁГҐ. ГЌГҐ ГЇГ®Г«ГјГ§ГіГ©Г±Гї Г·Г ГІГ®Г¬."), 0x33AAFFFF)
           wait(500)
-          sampSendChat("/d OG, занимаю волну государственных новостей.")
+          sampSendChat("/d OG, Г§Г Г­ГЁГ¬Г Гѕ ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(2500)
-          sampSendChat("/gov [Army LV]: Уважаемые жители штата, призыв в Армию Las-Venturas продолжается.")
+          sampSendChat("/gov [Army LV]: Г“ГўГ Г¦Г ГҐГ¬Г»ГҐ Г¦ГЁГІГҐГ«ГЁ ГёГІГ ГІГ , ГЇГ°ГЁГ§Г»Гў Гў ГЂГ°Г¬ГЁГѕ Las-Venturas ГЇГ°Г®Г¤Г®Г«Г¦Г ГҐГІГ±Гї.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Требования: минимум 2 года проживания в штате и отсутствие проблем с законом.")
+          sampSendChat("/gov [Army LV]: Г’Г°ГҐГЎГ®ГўГ Г­ГЁГї: Г¬ГЁГ­ГЁГ¬ГіГ¬ 2 ГЈГ®Г¤Г  ГЇГ°Г®Г¦ГЁГўГ Г­ГЁГї Гў ГёГІГ ГІГҐ ГЁ Г®ГІГ±ГіГІГ±ГІГўГЁГҐ ГЇГ°Г®ГЎГ«ГҐГ¬ Г± Г§Г ГЄГ®Г­Г®Г¬.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Призывной пункт по GPS 4 - 2. Второй этаж Больницы "..text1..".")
+          sampSendChat("/gov [Army LV]: ГЏГ°ГЁГ§Г»ГўГ­Г®Г© ГЇГіГ­ГЄГІ ГЇГ® GPS 4 - 2. Г‚ГІГ®Г°Г®Г© ГЅГІГ Г¦ ГЃГ®Г«ГјГ­ГЁГ¶Г» "..text1..".")
           wait(2500)
-          sampSendChat("/d OG, освободил волну государственных новостей.")
+          sampSendChat("/d OG, Г®Г±ГўГ®ГЎГ®Г¤ГЁГ« ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(1000)
           justPressThisShitPlease(VK_F6)
           sampSetChatInputText("/pagesize 20")
@@ -524,20 +524,20 @@ function main()
         end
         if tonumber(os.date("%H")) == 21 and tonumber(os.date("%M")) == 39 and tonumber(os.date("%S")) == 00 then
           wait(500)
-          sampAddChatMessage(os.date("[florenso tools]: Через минуту вещаем, не уходи в афк."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: Г—ГҐГ°ГҐГ§ Г¬ГЁГ­ГіГІГі ГўГҐГ№Г ГҐГ¬, Г­ГҐ ГіГµГ®Г¤ГЁ Гў Г ГґГЄ."), 0x33AAFFFF)
         end
         if tonumber(os.date("%H")) == 21 and tonumber(os.date("%M")) == 40 and tonumber(os.date("%S")) == 00 then
-          sampAddChatMessage(os.date("[florenso tools]: Начинаю вещание. Не пользуйся чатом."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: ГЌГ Г·ГЁГ­Г Гѕ ГўГҐГ№Г Г­ГЁГҐ. ГЌГҐ ГЇГ®Г«ГјГ§ГіГ©Г±Гї Г·Г ГІГ®Г¬."), 0x33AAFFFF)
           wait(500)
-          sampSendChat("/d OG, занимаю волну государственных новостей.")
+          sampSendChat("/d OG, Г§Г Г­ГЁГ¬Г Гѕ ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(2500)
-          sampSendChat("/gov [Army LV]: Уважаемые жители штата, призыв в Армию Las-Venturas продолжается.")
+          sampSendChat("/gov [Army LV]: Г“ГўГ Г¦Г ГҐГ¬Г»ГҐ Г¦ГЁГІГҐГ«ГЁ ГёГІГ ГІГ , ГЇГ°ГЁГ§Г»Гў Гў ГЂГ°Г¬ГЁГѕ Las-Venturas ГЇГ°Г®Г¤Г®Г«Г¦Г ГҐГІГ±Гї.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Требования: минимум 2 года проживания в штате и отсутствие проблем с законом.")
+          sampSendChat("/gov [Army LV]: Г’Г°ГҐГЎГ®ГўГ Г­ГЁГї: Г¬ГЁГ­ГЁГ¬ГіГ¬ 2 ГЈГ®Г¤Г  ГЇГ°Г®Г¦ГЁГўГ Г­ГЁГї Гў ГёГІГ ГІГҐ ГЁ Г®ГІГ±ГіГІГ±ГІГўГЁГҐ ГЇГ°Г®ГЎГ«ГҐГ¬ Г± Г§Г ГЄГ®Г­Г®Г¬.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Призывной пункт по GPS 4 - 2. Второй этаж Больницы "..text1..".")
+          sampSendChat("/gov [Army LV]: ГЏГ°ГЁГ§Г»ГўГ­Г®Г© ГЇГіГ­ГЄГІ ГЇГ® GPS 4 - 2. Г‚ГІГ®Г°Г®Г© ГЅГІГ Г¦ ГЃГ®Г«ГјГ­ГЁГ¶Г» "..text1..".")
           wait(2500)
-          sampSendChat("/d OG, освободил волну государственных новостей.")
+          sampSendChat("/d OG, Г®Г±ГўГ®ГЎГ®Г¤ГЁГ« ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(1000)
           justPressThisShitPlease(VK_F6)
           sampSetChatInputText("/pagesize 20")
@@ -553,20 +553,20 @@ function main()
         end
         if tonumber(os.date("%H")) == 21 and tonumber(os.date("%M")) == 49 and tonumber(os.date("%S")) == 00 then
           wait(500)
-          sampAddChatMessage(os.date("[florenso tools]: Через минуту вещаем, не уходи в афк."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: Г—ГҐГ°ГҐГ§ Г¬ГЁГ­ГіГІГі ГўГҐГ№Г ГҐГ¬, Г­ГҐ ГіГµГ®Г¤ГЁ Гў Г ГґГЄ."), 0x33AAFFFF)
         end
         if tonumber(os.date("%H")) == 21 and tonumber(os.date("%M")) == 50 and tonumber(os.date("%S")) == 00 then
-          sampAddChatMessage(os.date("[florenso tools]: Начинаю вещание. Не пользуйся чатом."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: ГЌГ Г·ГЁГ­Г Гѕ ГўГҐГ№Г Г­ГЁГҐ. ГЌГҐ ГЇГ®Г«ГјГ§ГіГ©Г±Гї Г·Г ГІГ®Г¬."), 0x33AAFFFF)
           wait(500)
-          sampSendChat("/d OG, занимаю волну государственных новостей.")
+          sampSendChat("/d OG, Г§Г Г­ГЁГ¬Г Гѕ ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(2500)
-          sampSendChat("/gov [Army LV]: Уважаемые жители штата, призыв в Армию Las-Venturas окончен. Следующий призыв в 23:40.")
+          sampSendChat("/gov [Army LV]: Г“ГўГ Г¦Г ГҐГ¬Г»ГҐ Г¦ГЁГІГҐГ«ГЁ ГёГІГ ГІГ , ГЇГ°ГЁГ§Г»Гў Гў ГЂГ°Г¬ГЁГѕ Las-Venturas Г®ГЄГ®Г­Г·ГҐГ­. Г‘Г«ГҐГ¤ГіГѕГ№ГЁГ© ГЇГ°ГЁГ§Г»Гў Гў 23:40.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Также напоминаю, что открыты заявления на контрактную службу в Армию Las-Venturas.")
+          sampSendChat("/gov [Army LV]: Г’Г ГЄГ¦ГҐ Г­Г ГЇГ®Г¬ГЁГ­Г Гѕ, Г·ГІГ® Г®ГІГЄГ°Г»ГІГ» Г§Г ГїГўГ«ГҐГ­ГЁГї Г­Г  ГЄГ®Г­ГІГ°Г ГЄГІГ­ГіГѕ Г±Г«ГіГ¦ГЎГі Гў ГЂГ°Г¬ГЁГѕ Las-Venturas.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Подробная информация на официальном портале армии.")
+          sampSendChat("/gov [Army LV]: ГЏГ®Г¤Г°Г®ГЎГ­Г Гї ГЁГ­ГґГ®Г°Г¬Г Г¶ГЁГї Г­Г  Г®ГґГЁГ¶ГЁГ Г«ГјГ­Г®Г¬ ГЇГ®Г°ГІГ Г«ГҐ Г Г°Г¬ГЁГЁ.")
           wait(2500)
-          sampSendChat("/d OG, освободил волну государственных новостей.")
+          sampSendChat("/d OG, Г®Г±ГўГ®ГЎГ®Г¤ГЁГ« ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(1000)
           justPressThisShitPlease(VK_F6)
           sampSetChatInputText("/pagesize 20")
@@ -580,24 +580,24 @@ function main()
           sampSetChatInputText("/pagesize 11")
           justPressThisShitPlease(VK_RETURN)
           settings.global.prizivi = false
-          sampAddChatMessage("[florenso tools]: Скрипт отключён. Если вы будете проводить следующий призыв - включите скрипт ещё раз.", 0x33AAFFFF) 
+          sampAddChatMessage("[florenso tools]: Г‘ГЄГ°ГЁГЇГІ Г®ГІГЄГ«ГѕГ·ВёГ­. Г…Г±Г«ГЁ ГўГ» ГЎГіГ¤ГҐГІГҐ ГЇГ°Г®ГўГ®Г¤ГЁГІГј Г±Г«ГҐГ¤ГіГѕГ№ГЁГ© ГЇГ°ГЁГ§Г»Гў - ГўГЄГ«ГѕГ·ГЁГІГҐ Г±ГЄГ°ГЁГЇГІ ГҐГ№Вё Г°Г Г§.", 0x33AAFFFF) 
         end
         if tonumber(os.date("%H")) == 23 and tonumber(os.date("%M")) == 29 and tonumber(os.date("%S")) == 00 then
           wait(500)
-          sampAddChatMessage(os.date("[florenso tools]: Через минуту вещаем, не уходи в афк."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: Г—ГҐГ°ГҐГ§ Г¬ГЁГ­ГіГІГі ГўГҐГ№Г ГҐГ¬, Г­ГҐ ГіГµГ®Г¤ГЁ Гў Г ГґГЄ."), 0x33AAFFFF)
         end
         if tonumber(os.date("%H")) == 23 and tonumber(os.date("%M")) == 30 and tonumber(os.date("%S")) == 00 then
-          sampAddChatMessage(os.date("[florenso tools]: Начинаю вещание. Не пользуйся чатом."), 0x33AAFFFF) -- четвёртый призыв
+          sampAddChatMessage(os.date("[florenso tools]: ГЌГ Г·ГЁГ­Г Гѕ ГўГҐГ№Г Г­ГЁГҐ. ГЌГҐ ГЇГ®Г«ГјГ§ГіГ©Г±Гї Г·Г ГІГ®Г¬."), 0x33AAFFFF) -- Г·ГҐГІГўВёГ°ГІГ»Г© ГЇГ°ГЁГ§Г»Гў
           wait(500)
-          sampSendChat("/d OG, занимаю волну государственных новостей.")
+          sampSendChat("/d OG, Г§Г Г­ГЁГ¬Г Гѕ ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(2500)
-          sampSendChat("/gov [Army LV]: Уважаемые жители штата, cегодня в 23:40 состоится призыв в Армию Las-Venturas.")
+          sampSendChat("/gov [Army LV]: Г“ГўГ Г¦Г ГҐГ¬Г»ГҐ Г¦ГЁГІГҐГ«ГЁ ГёГІГ ГІГ , cГҐГЈГ®Г¤Г­Гї Гў 23:40 Г±Г®Г±ГІГ®ГЁГІГ±Гї ГЇГ°ГЁГ§Г»Гў Гў ГЂГ°Г¬ГЁГѕ Las-Venturas.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Требования: минимум 2 года проживания в штате и отсутствие проблем с законом.")
+          sampSendChat("/gov [Army LV]: Г’Г°ГҐГЎГ®ГўГ Г­ГЁГї: Г¬ГЁГ­ГЁГ¬ГіГ¬ 2 ГЈГ®Г¤Г  ГЇГ°Г®Г¦ГЁГўГ Г­ГЁГї Гў ГёГІГ ГІГҐ ГЁ Г®ГІГ±ГіГІГ±ГІГўГЁГҐ ГЇГ°Г®ГЎГ«ГҐГ¬ Г± Г§Г ГЄГ®Г­Г®Г¬.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Призывной пункт по GPS 4 - 2. Второй этаж Больницы "..text1..".")
+          sampSendChat("/gov [Army LV]: ГЏГ°ГЁГ§Г»ГўГ­Г®Г© ГЇГіГ­ГЄГІ ГЇГ® GPS 4 - 2. Г‚ГІГ®Г°Г®Г© ГЅГІГ Г¦ ГЃГ®Г«ГјГ­ГЁГ¶Г» "..text1..".")
           wait(2500)
-          sampSendChat("/d OG, освободил волну государственных новостей.")
+          sampSendChat("/d OG, Г®Г±ГўГ®ГЎГ®Г¤ГЁГ« ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(1000)
           justPressThisShitPlease(VK_F6)
           sampSetChatInputText("/pagesize 20")
@@ -613,20 +613,20 @@ function main()
         end
         if tonumber(os.date("%H")) == 23 and tonumber(os.date("%M")) == 39 and tonumber(os.date("%S")) == 00 then
           wait(500)
-          sampAddChatMessage(os.date("[florenso tools]: Через минуту вещаем, не уходи в афк."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: Г—ГҐГ°ГҐГ§ Г¬ГЁГ­ГіГІГі ГўГҐГ№Г ГҐГ¬, Г­ГҐ ГіГµГ®Г¤ГЁ Гў Г ГґГЄ."), 0x33AAFFFF)
         end
         if tonumber(os.date("%H")) == 23 and tonumber(os.date("%M")) == 40 and tonumber(os.date("%S")) == 00 then
-          sampAddChatMessage(os.date("[florenso tools]: Начинаю вещание. Не пользуйся чатом."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: ГЌГ Г·ГЁГ­Г Гѕ ГўГҐГ№Г Г­ГЁГҐ. ГЌГҐ ГЇГ®Г«ГјГ§ГіГ©Г±Гї Г·Г ГІГ®Г¬."), 0x33AAFFFF)
           wait(500)
-          sampSendChat("/d OG, занимаю волну государственных новостей.")
+          sampSendChat("/d OG, Г§Г Г­ГЁГ¬Г Гѕ ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(2500)
-          sampSendChat("/gov [Army LV]: Уважаемые жители штата, призыв в Армию Las-Venturas начался.")
+          sampSendChat("/gov [Army LV]: Г“ГўГ Г¦Г ГҐГ¬Г»ГҐ Г¦ГЁГІГҐГ«ГЁ ГёГІГ ГІГ , ГЇГ°ГЁГ§Г»Гў Гў ГЂГ°Г¬ГЁГѕ Las-Venturas Г­Г Г·Г Г«Г±Гї.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Требования: минимум 2 года проживания в штате и отсутствие проблем с законом.")
+          sampSendChat("/gov [Army LV]: Г’Г°ГҐГЎГ®ГўГ Г­ГЁГї: Г¬ГЁГ­ГЁГ¬ГіГ¬ 2 ГЈГ®Г¤Г  ГЇГ°Г®Г¦ГЁГўГ Г­ГЁГї Гў ГёГІГ ГІГҐ ГЁ Г®ГІГ±ГіГІГ±ГІГўГЁГҐ ГЇГ°Г®ГЎГ«ГҐГ¬ Г± Г§Г ГЄГ®Г­Г®Г¬.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Призывной пункт по GPS 4 - 2. Второй этаж Больницы "..text1..".")
+          sampSendChat("/gov [Army LV]: ГЏГ°ГЁГ§Г»ГўГ­Г®Г© ГЇГіГ­ГЄГІ ГЇГ® GPS 4 - 2. Г‚ГІГ®Г°Г®Г© ГЅГІГ Г¦ ГЃГ®Г«ГјГ­ГЁГ¶Г» "..text1..".")
           wait(2500)
-          sampSendChat("/d OG, освободил волну государственных новостей.")
+          sampSendChat("/d OG, Г®Г±ГўГ®ГЎГ®Г¤ГЁГ« ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(1000)
           justPressThisShitPlease(VK_F6)
           sampSetChatInputText("/pagesize 20")
@@ -642,20 +642,20 @@ function main()
         end
         if tonumber(os.date("%H")) == 23 and tonumber(os.date("%M")) == 49 and tonumber(os.date("%S")) == 00 then
           wait(500)
-          sampAddChatMessage(os.date("[florenso tools]: Через минуту вещаем, не уходи в афк."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: Г—ГҐГ°ГҐГ§ Г¬ГЁГ­ГіГІГі ГўГҐГ№Г ГҐГ¬, Г­ГҐ ГіГµГ®Г¤ГЁ Гў Г ГґГЄ."), 0x33AAFFFF)
         end
         if tonumber(os.date("%H")) == 23 and tonumber(os.date("%M")) == 50 and tonumber(os.date("%S")) == 00 then
-          sampAddChatMessage(os.date("[florenso tools]: Начинаю вещание. Не пользуйся чатом."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: ГЌГ Г·ГЁГ­Г Гѕ ГўГҐГ№Г Г­ГЁГҐ. ГЌГҐ ГЇГ®Г«ГјГ§ГіГ©Г±Гї Г·Г ГІГ®Г¬."), 0x33AAFFFF)
           wait(500)
-          sampSendChat("/d OG, занимаю волну государственных новостей.")
+          sampSendChat("/d OG, Г§Г Г­ГЁГ¬Г Гѕ ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(2500)
-          sampSendChat("/gov [Army LV]: Уважаемые жители штата, призыв в Армию Las-Venturas продолжается.")
+          sampSendChat("/gov [Army LV]: Г“ГўГ Г¦Г ГҐГ¬Г»ГҐ Г¦ГЁГІГҐГ«ГЁ ГёГІГ ГІГ , ГЇГ°ГЁГ§Г»Гў Гў ГЂГ°Г¬ГЁГѕ Las-Venturas ГЇГ°Г®Г¤Г®Г«Г¦Г ГҐГІГ±Гї.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Требования: минимум 2 года проживания в штате и отсутствие проблем с законом.")
+          sampSendChat("/gov [Army LV]: Г’Г°ГҐГЎГ®ГўГ Г­ГЁГї: Г¬ГЁГ­ГЁГ¬ГіГ¬ 2 ГЈГ®Г¤Г  ГЇГ°Г®Г¦ГЁГўГ Г­ГЁГї Гў ГёГІГ ГІГҐ ГЁ Г®ГІГ±ГіГІГ±ГІГўГЁГҐ ГЇГ°Г®ГЎГ«ГҐГ¬ Г± Г§Г ГЄГ®Г­Г®Г¬.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Призывной пункт по GPS 4 - 2. Второй этаж Больницы "..text1..".")
+          sampSendChat("/gov [Army LV]: ГЏГ°ГЁГ§Г»ГўГ­Г®Г© ГЇГіГ­ГЄГІ ГЇГ® GPS 4 - 2. Г‚ГІГ®Г°Г®Г© ГЅГІГ Г¦ ГЃГ®Г«ГјГ­ГЁГ¶Г» "..text1..".")
           wait(2500)
-          sampSendChat("/d OG, освободил волну государственных новостей.")
+          sampSendChat("/d OG, Г®Г±ГўГ®ГЎГ®Г¤ГЁГ« ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(1000)
           justPressThisShitPlease(VK_F6)
           sampSetChatInputText("/pagesize 20")
@@ -671,20 +671,20 @@ function main()
         end
         if tonumber(os.date("%H")) == 23 and tonumber(os.date("%M")) == 59 and tonumber(os.date("%S")) == 00 then
           wait(500)
-          sampAddChatMessage(os.date("[florenso tools]: Через минуту вещаем, не уходи в афк."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: Г—ГҐГ°ГҐГ§ Г¬ГЁГ­ГіГІГі ГўГҐГ№Г ГҐГ¬, Г­ГҐ ГіГµГ®Г¤ГЁ Гў Г ГґГЄ."), 0x33AAFFFF)
         end
         if tonumber(os.date("%H")) == 00 and tonumber(os.date("%M")) == 00 and tonumber(os.date("%S")) == 00 then
-          sampAddChatMessage(os.date("[florenso tools]: Начинаю вещание. Не пользуйся чатом."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: ГЌГ Г·ГЁГ­Г Гѕ ГўГҐГ№Г Г­ГЁГҐ. ГЌГҐ ГЇГ®Г«ГјГ§ГіГ©Г±Гї Г·Г ГІГ®Г¬."), 0x33AAFFFF)
           wait(500)
-          sampSendChat("/d OG, занимаю волну государственных новостей.")
+          sampSendChat("/d OG, Г§Г Г­ГЁГ¬Г Гѕ ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(2500)
-          sampSendChat("/gov [Army LV]: Уважаемые жители штата, призыв в Армию Las-Venturas продолжается.")
+          sampSendChat("/gov [Army LV]: Г“ГўГ Г¦Г ГҐГ¬Г»ГҐ Г¦ГЁГІГҐГ«ГЁ ГёГІГ ГІГ , ГЇГ°ГЁГ§Г»Гў Гў ГЂГ°Г¬ГЁГѕ Las-Venturas ГЇГ°Г®Г¤Г®Г«Г¦Г ГҐГІГ±Гї.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Требования: минимум 2 года проживания в штате и отсутствие проблем с законом.")
+          sampSendChat("/gov [Army LV]: Г’Г°ГҐГЎГ®ГўГ Г­ГЁГї: Г¬ГЁГ­ГЁГ¬ГіГ¬ 2 ГЈГ®Г¤Г  ГЇГ°Г®Г¦ГЁГўГ Г­ГЁГї Гў ГёГІГ ГІГҐ ГЁ Г®ГІГ±ГіГІГ±ГІГўГЁГҐ ГЇГ°Г®ГЎГ«ГҐГ¬ Г± Г§Г ГЄГ®Г­Г®Г¬.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Призывной пункт по GPS 4 - 2. Второй этаж Больницы "..text1..".")
+          sampSendChat("/gov [Army LV]: ГЏГ°ГЁГ§Г»ГўГ­Г®Г© ГЇГіГ­ГЄГІ ГЇГ® GPS 4 - 2. Г‚ГІГ®Г°Г®Г© ГЅГІГ Г¦ ГЃГ®Г«ГјГ­ГЁГ¶Г» "..text1..".")
           wait(2500)
-          sampSendChat("/d OG, освободил волну государственных новостей.")
+          sampSendChat("/d OG, Г®Г±ГўГ®ГЎГ®Г¤ГЁГ« ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(1000)
           justPressThisShitPlease(VK_F6)
           sampSetChatInputText("/pagesize 20")
@@ -700,20 +700,20 @@ function main()
         end
         if tonumber(os.date("%H")) == 00 and tonumber(os.date("%M")) == 09 and tonumber(os.date("%S")) == 00 then
           wait(500)
-          sampAddChatMessage(os.date("[florenso tools]: Через минуту вещаем, не уходи в афк."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: Г—ГҐГ°ГҐГ§ Г¬ГЁГ­ГіГІГі ГўГҐГ№Г ГҐГ¬, Г­ГҐ ГіГµГ®Г¤ГЁ Гў Г ГґГЄ."), 0x33AAFFFF)
         end
         if tonumber(os.date("%H")) == 00 and tonumber(os.date("%M")) == 10 and tonumber(os.date("%S")) == 00 then
-          sampAddChatMessage(os.date("[florenso tools]: Начинаю вещание. Не пользуйся чатом."), 0x33AAFFFF)
+          sampAddChatMessage(os.date("[florenso tools]: ГЌГ Г·ГЁГ­Г Гѕ ГўГҐГ№Г Г­ГЁГҐ. ГЌГҐ ГЇГ®Г«ГјГ§ГіГ©Г±Гї Г·Г ГІГ®Г¬."), 0x33AAFFFF)
           wait(500)
-          sampSendChat("/d OG, занимаю волну государственных новостей.")
+          sampSendChat("/d OG, Г§Г Г­ГЁГ¬Г Гѕ ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(2500)
-          sampSendChat("/gov [Army LV]: Уважаемые жители штата, призыв в Армию Las-Venturas окончен. Следующий призыв в 14:15.")
+          sampSendChat("/gov [Army LV]: Г“ГўГ Г¦Г ГҐГ¬Г»ГҐ Г¦ГЁГІГҐГ«ГЁ ГёГІГ ГІГ , ГЇГ°ГЁГ§Г»Гў Гў ГЂГ°Г¬ГЁГѕ Las-Venturas Г®ГЄГ®Г­Г·ГҐГ­. Г‘Г«ГҐГ¤ГіГѕГ№ГЁГ© ГЇГ°ГЁГ§Г»Гў Гў 14:15.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Также напоминаю, что открыты заявления на контрактную службу в Армию Las-Venturas.")
+          sampSendChat("/gov [Army LV]: Г’Г ГЄГ¦ГҐ Г­Г ГЇГ®Г¬ГЁГ­Г Гѕ, Г·ГІГ® Г®ГІГЄГ°Г»ГІГ» Г§Г ГїГўГ«ГҐГ­ГЁГї Г­Г  ГЄГ®Г­ГІГ°Г ГЄГІГ­ГіГѕ Г±Г«ГіГ¦ГЎГі Гў ГЂГ°Г¬ГЁГѕ Las-Venturas.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Подробная информация на официальном портале армии.")
+          sampSendChat("/gov [Army LV]: ГЏГ®Г¤Г°Г®ГЎГ­Г Гї ГЁГ­ГґГ®Г°Г¬Г Г¶ГЁГї Г­Г  Г®ГґГЁГ¶ГЁГ Г«ГјГ­Г®Г¬ ГЇГ®Г°ГІГ Г«ГҐ Г Г°Г¬ГЁГЁ.")
           wait(2500)
-          sampSendChat("/d OG, освободил волну государственных новостей.")
+          sampSendChat("/d OG, Г®Г±ГўГ®ГЎГ®Г¤ГЁГ« ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(1000)
           justPressThisShitPlease(VK_F6)
           sampSetChatInputText("/pagesize 20")
@@ -727,22 +727,22 @@ function main()
           sampSetChatInputText("/pagesize 11")
           justPressThisShitPlease(VK_RETURN)
           settings.global.prizivi = false
-          sampAddChatMessage("[florenso tools]: Скрипт отключён. Если вы будете проводить следующий призыв - включите скрипт ещё раз.", 0x33AAFFFF) 
+          sampAddChatMessage("[florenso tools]: Г‘ГЄГ°ГЁГЇГІ Г®ГІГЄГ«ГѕГ·ВёГ­. Г…Г±Г«ГЁ ГўГ» ГЎГіГ¤ГҐГІГҐ ГЇГ°Г®ГўГ®Г¤ГЁГІГј Г±Г«ГҐГ¤ГіГѕГ№ГЁГ© ГЇГ°ГЁГ§Г»Гў - ГўГЄГ«ГѕГ·ГЁГІГҐ Г±ГЄГ°ГЁГЇГІ ГҐГ№Вё Г°Г Г§.", 0x33AAFFFF) 
         end
       end
       if settings.global.rejim1 then
         if tonumber(os.date("%H")) == settings.global.hour and tonumber(os.date("%M")) == settings.global.minute and tonumber(os.date("%S")) == 00 then
-          sampAddChatMessage(os.date("[florenso tools]: Начинаю вещание. Не пользуйся чатом."), 0x33AAFFFF) 
+          sampAddChatMessage(os.date("[florenso tools]: ГЌГ Г·ГЁГ­Г Гѕ ГўГҐГ№Г Г­ГЁГҐ. ГЌГҐ ГЇГ®Г«ГјГ§ГіГ©Г±Гї Г·Г ГІГ®Г¬."), 0x33AAFFFF) 
           wait(500)
-          sampSendChat("/d OG, занимаю волну государственных новостей.")
+          sampSendChat("/d OG, Г§Г Г­ГЁГ¬Г Гѕ ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(2500)
-          sampSendChat("/gov [Army LV] Уважаемые жители штата, на портале армии открыты заявления на контрактную службу.")
+          sampSendChat("/gov [Army LV] Г“ГўГ Г¦Г ГҐГ¬Г»ГҐ Г¦ГЁГІГҐГ«ГЁ ГёГІГ ГІГ , Г­Г  ГЇГ®Г°ГІГ Г«ГҐ Г Г°Г¬ГЁГЁ Г®ГІГЄГ°Г»ГІГ» Г§Г ГїГўГ«ГҐГ­ГЁГї Г­Г  ГЄГ®Г­ГІГ°Г ГЄГІГ­ГіГѕ Г±Г«ГіГ¦ГЎГі.")
           wait(5500)
-          sampSendChat("/gov [Army LV] Требования: от 7 лет в штате, не состоять в ЧС LVA")
+          sampSendChat("/gov [Army LV] Г’Г°ГҐГЎГ®ГўГ Г­ГЁГї: Г®ГІ 7 Г«ГҐГІ Гў ГёГІГ ГІГҐ, Г­ГҐ Г±Г®Г±ГІГ®ГїГІГј Гў Г—Г‘ LVA")
           wait(5500)
-          sampSendChat("/gov [Army LV] За завершение контракта денежные выплаты до 500.000$, подробная информация на оф.портале армии")
+          sampSendChat("/gov [Army LV] Г‡Г  Г§Г ГўГҐГ°ГёГҐГ­ГЁГҐ ГЄГ®Г­ГІГ°Г ГЄГІГ  Г¤ГҐГ­ГҐГ¦Г­Г»ГҐ ГўГ»ГЇГ«Г ГІГ» Г¤Г® 500.000$, ГЇГ®Г¤Г°Г®ГЎГ­Г Гї ГЁГ­ГґГ®Г°Г¬Г Г¶ГЁГї Г­Г  Г®Гґ.ГЇГ®Г°ГІГ Г«ГҐ Г Г°Г¬ГЁГЁ")
           wait(2500)
-          sampSendChat("/d OG, освободил волну государственных новостей.")
+          sampSendChat("/d OG, Г®Г±ГўГ®ГЎГ®Г¤ГЁГ« ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(1000)
           justPressThisShitPlease(VK_F6)
           sampSetChatInputText("/pagesize 20")
@@ -760,19 +760,19 @@ function main()
       end
       if settings.global.rejim2 then
         if tonumber(os.date("%H")) == settings.global.hour and tonumber(os.date("%M")) == settings.global.minute and tonumber(os.date("%S")) == 00 then
-          sampAddChatMessage(os.date("[florenso tools]: Начинаю вещание. Не пользуйся чатом."), 0x33AAFFFF) 
+          sampAddChatMessage(os.date("[florenso tools]: ГЌГ Г·ГЁГ­Г Гѕ ГўГҐГ№Г Г­ГЁГҐ. ГЌГҐ ГЇГ®Г«ГјГ§ГіГ©Г±Гї Г·Г ГІГ®Г¬."), 0x33AAFFFF) 
           wait(500)
-          sampSendChat("/d OG, занимаю волну государственных новостей.")
+          sampSendChat("/d OG, Г§Г Г­ГЁГ¬Г Гѕ ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(2500)
-          sampSendChat("/gov [Army LV] Уважаемые жители штата, прослушайте важную информацию.")
+          sampSendChat("/gov [Army LV] Г“ГўГ Г¦Г ГҐГ¬Г»ГҐ Г¦ГЁГІГҐГ«ГЁ ГёГІГ ГІГ , ГЇГ°Г®Г±Г«ГіГёГ Г©ГІГҐ ГўГ Г¦Г­ГіГѕ ГЁГ­ГґГ®Г°Г¬Г Г¶ГЁГѕ.")
           wait(5500)
-          sampSendChat("/gov [Army LV] Объявляется всеобщая амнистия для граждан, попавших в ЧС LVA.")
+          sampSendChat("/gov [Army LV] ГЋГЎГєГїГўГ«ГїГҐГІГ±Гї ГўГ±ГҐГ®ГЎГ№Г Гї Г Г¬Г­ГЁГ±ГІГЁГї Г¤Г«Гї ГЈГ°Г Г¦Г¤Г Г­, ГЇГ®ГЇГ ГўГёГЁГµ Гў Г—Г‘ LVA.")
           wait(5500)
-          sampSendChat("/gov [Army LV] Исключение: продавцы гос.имущества и злостные нарушители без права на выход.")
+          sampSendChat("/gov [Army LV] Г€Г±ГЄГ«ГѕГ·ГҐГ­ГЁГҐ: ГЇГ°Г®Г¤Г ГўГ¶Г» ГЈГ®Г±.ГЁГ¬ГіГ№ГҐГ±ГІГўГ  ГЁ Г§Г«Г®Г±ГІГ­Г»ГҐ Г­Г Г°ГіГёГЁГІГҐГ«ГЁ ГЎГҐГ§ ГЇГ°Г ГўГ  Г­Г  ГўГ»ГµГ®Г¤.")
           wait(5500)
-          sampSendChat("/gov [Army LV] Ближайший призыв в больнице "..text1.." в 14:45 . С уважением "..settings.global.doljnost.." "..name.."")
+          sampSendChat("/gov [Army LV] ГЃГ«ГЁГ¦Г Г©ГёГЁГ© ГЇГ°ГЁГ§Г»Гў Гў ГЎГ®Г«ГјГ­ГЁГ¶ГҐ "..text1.." Гў 14:45 . Г‘ ГіГўГ Г¦ГҐГ­ГЁГҐГ¬ "..settings.global.doljnost.." "..name.."")
           wait(2500)
-          sampSendChat("/d OG, освободил волну государственных новостей.")
+          sampSendChat("/d OG, Г®Г±ГўГ®ГЎГ®Г¤ГЁГ« ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(1000)
           justPressThisShitPlease(VK_F6)
           sampSetChatInputText("/pagesize 20")
@@ -790,17 +790,17 @@ function main()
       end
       if settings.global.rejim3 then
         if tonumber(os.date("%H")) == settings.global.hour and tonumber(os.date("%M")) == settings.global.minute and tonumber(os.date("%S")) == 00 then
-          sampAddChatMessage(os.date("[florenso tools]: Начинаю вещание. Не пользуйся чатом."), 0x33AAFFFF) 
+          sampAddChatMessage(os.date("[florenso tools]: ГЌГ Г·ГЁГ­Г Гѕ ГўГҐГ№Г Г­ГЁГҐ. ГЌГҐ ГЇГ®Г«ГјГ§ГіГ©Г±Гї Г·Г ГІГ®Г¬."), 0x33AAFFFF) 
           wait(500)
-          sampSendChat("/d OG, занимаю волну государственных новостей.")
+          sampSendChat("/d OG, Г§Г Г­ГЁГ¬Г Гѕ ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(2500)
-          sampSendChat("/gov [Army LV] Уважаемые жители штата, на портале армии открыты заявления на офицерский контракт.")
+          sampSendChat("/gov [Army LV] Г“ГўГ Г¦Г ГҐГ¬Г»ГҐ Г¦ГЁГІГҐГ«ГЁ ГёГІГ ГІГ , Г­Г  ГЇГ®Г°ГІГ Г«ГҐ Г Г°Г¬ГЁГЁ Г®ГІГЄГ°Г»ГІГ» Г§Г ГїГўГ«ГҐГ­ГЁГї Г­Г  Г®ГґГЁГ¶ГҐГ°Г±ГЄГЁГ© ГЄГ®Г­ГІГ°Г ГЄГІ.")
           wait(5500)
-          sampSendChat("/gov [Army LV] Требования: от 2 лет в штате, не состоять в ЧС Las-Venturas Army.")
+          sampSendChat("/gov [Army LV] Г’Г°ГҐГЎГ®ГўГ Г­ГЁГї: Г®ГІ 2 Г«ГҐГІ Гў ГёГІГ ГІГҐ, Г­ГҐ Г±Г®Г±ГІГ®ГїГІГј Гў Г—Г‘ Las-Venturas Army.")
           wait(5500)
-          sampSendChat("/gov [Army LV] За завершение контракта денежные выплаты в 2.000.000$, подробная информация на оф.портале армии")
+          sampSendChat("/gov [Army LV] Г‡Г  Г§Г ГўГҐГ°ГёГҐГ­ГЁГҐ ГЄГ®Г­ГІГ°Г ГЄГІГ  Г¤ГҐГ­ГҐГ¦Г­Г»ГҐ ГўГ»ГЇГ«Г ГІГ» Гў 2.000.000$, ГЇГ®Г¤Г°Г®ГЎГ­Г Гї ГЁГ­ГґГ®Г°Г¬Г Г¶ГЁГї Г­Г  Г®Гґ.ГЇГ®Г°ГІГ Г«ГҐ Г Г°Г¬ГЁГЁ")
           wait(2500)
-          sampSendChat("/d OG, освободил волну государственных новостей.")
+          sampSendChat("/d OG, Г®Г±ГўГ®ГЎГ®Г¤ГЁГ« ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(1000)
           justPressThisShitPlease(VK_F6)
           sampSetChatInputText("/pagesize 20")
@@ -818,19 +818,19 @@ function main()
       end
       if settings.global.rejim4 then
         if tonumber(os.date("%H")) == settings.global.hour and tonumber(os.date("%M")) == settings.global.minute and tonumber(os.date("%S")) == 00 then
-          sampAddChatMessage(os.date("[florenso tools]: Начинаю вещание. Не пользуйся чатом."), 0x33AAFFFF) 
+          sampAddChatMessage(os.date("[florenso tools]: ГЌГ Г·ГЁГ­Г Гѕ ГўГҐГ№Г Г­ГЁГҐ. ГЌГҐ ГЇГ®Г«ГјГ§ГіГ©Г±Гї Г·Г ГІГ®Г¬."), 0x33AAFFFF) 
           wait(500)
-          sampSendChat("/d OG, занимаю волну государственных новостей.")
+          sampSendChat("/d OG, Г§Г Г­ГЁГ¬Г Гѕ ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(2500)
-          sampSendChat("/gov [Army LV]: Уважаемые жители штата,прослушайте объявление.")
+          sampSendChat("/gov [Army LV]: Г“ГўГ Г¦Г ГҐГ¬Г»ГҐ Г¦ГЁГІГҐГ«ГЁ ГёГІГ ГІГ ,ГЇГ°Г®Г±Г«ГіГёГ Г©ГІГҐ Г®ГЎГєГїГўГ«ГҐГ­ГЁГҐ.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: В Настоящее время Army LV нуждается в призывниках.")
+          sampSendChat("/gov [Army LV]: Г‚ ГЌГ Г±ГІГ®ГїГ№ГҐГҐ ГўГ°ГҐГ¬Гї Army LV Г­ГіГ¦Г¤Г ГҐГІГ±Гї Гў ГЇГ°ГЁГ§Г»ГўГ­ГЁГЄГ Гµ.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Время призывов Дневной в 14:15. Вечерний в 18:45.")
+          sampSendChat("/gov [Army LV]: Г‚Г°ГҐГ¬Гї ГЇГ°ГЁГ§Г»ГўГ®Гў Г„Г­ГҐГўГ­Г®Г© Гў 14:15. Г‚ГҐГ·ГҐГ°Г­ГЁГ© Гў 18:45.")
           wait(5500)
-          sampSendChat("/gov [Army LV]: Ночной в 21:20. Крайний в 23:40. С уважением "..settings.global.doljnost.." "..name.."")
+          sampSendChat("/gov [Army LV]: ГЌГ®Г·Г­Г®Г© Гў 21:20. ГЉГ°Г Г©Г­ГЁГ© Гў 23:40. Г‘ ГіГўГ Г¦ГҐГ­ГЁГҐГ¬ "..settings.global.doljnost.." "..name.."")
           wait(2500)
-          sampSendChat("/d OG, освободил волну государственных новостей.")
+          sampSendChat("/d OG, Г®Г±ГўГ®ГЎГ®Г¤ГЁГ« ГўГ®Г«Г­Гі ГЈГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Гµ Г­Г®ГўГ®Г±ГІГҐГ©.")
           wait(1000)
           justPressThisShitPlease(VK_F6)
           sampSetChatInputText("/pagesize 20")
@@ -857,44 +857,44 @@ function refreshDialog()
   LVDialog = {
 
     {
-      title = "{808080}Контрактная служба{FFFFFF}",
+      title = "{808080}ГЉГ®Г­ГІГ°Г ГЄГІГ­Г Гї Г±Г«ГіГ¦ГЎГ {FFFFFF}",
       submenu = {
-        title = "{808080}Настройки{FFFFFF}",
+        title = "{808080}ГЌГ Г±ГІГ°Г®Г©ГЄГЁ{FFFFFF}",
         {
-          title = "{808080}Установить время вещания{FFFFFF}",
+          title = "{808080}Г“Г±ГІГ Г­Г®ГўГЁГІГј ГўГ°ГҐГ¬Гї ГўГҐГ№Г Г­ГЁГї{FFFFFF}",
           onclick = function()
-            sampShowDialog(1234, "{CD5C5C}florenso tools{FFFFFF}", "{b6b6b6}Установите время начала вещания.\n\nОбразец: {FFFFFF}12:00", "ОК", "Закрыть", 1)
+            sampShowDialog(1234, "{CD5C5C}florenso tools{FFFFFF}", "{b6b6b6}Г“Г±ГІГ Г­Г®ГўГЁГІГҐ ГўГ°ГҐГ¬Гї Г­Г Г·Г Г«Г  ГўГҐГ№Г Г­ГЁГї.\n\nГЋГЎГ°Г Г§ГҐГ¶: {FFFFFF}12:00", "ГЋГЉ", "Г‡Г ГЄГ°Г»ГІГј", 1)
             while sampIsDialogActive() do wait(0) end
             local result, button, item, input = sampHasDialogRespond(1234)
             if result and button == 1 then
               local args = split(input, ":")
                 settings.global.hour = args[1]
                 settings.global.minute = args[2]
-                sampAddChatMessage("[florenso tools]: Вы назначили вещание на "..settings.global.hour..":"..settings.global.minute..". Чтобы провещать в это время предварительно включите режим вещания.", 0x33AAFFFF)
+                sampAddChatMessage("[florenso tools]: Г‚Г» Г­Г Г§Г­Г Г·ГЁГ«ГЁ ГўГҐГ№Г Г­ГЁГҐ Г­Г  "..settings.global.hour..":"..settings.global.minute..". Г—ГІГ®ГЎГ» ГЇГ°Г®ГўГҐГ№Г ГІГј Гў ГЅГІГ® ГўГ°ГҐГ¬Гї ГЇГ°ГҐГ¤ГўГ Г°ГЁГІГҐГ«ГјГ­Г® ГўГЄГ«ГѕГ·ГЁГІГҐ Г°ГҐГ¦ГЁГ¬ ГўГҐГ№Г Г­ГЁГї.", 0x33AAFFFF)
                 wait(1000)
-                sampAddChatMessage("[florenso tools]: Рекомендуется включать режим вещания в момент, когда до него более 2-х минут.", 0x33AAFFFF)
+                sampAddChatMessage("[florenso tools]: ГђГҐГЄГ®Г¬ГҐГ­Г¤ГіГҐГІГ±Гї ГўГЄГ«ГѕГ·Г ГІГј Г°ГҐГ¦ГЁГ¬ ГўГҐГ№Г Г­ГЁГї Гў Г¬Г®Г¬ГҐГ­ГІ, ГЄГ®ГЈГ¤Г  Г¤Г® Г­ГҐГЈГ® ГЎГ®Г«ГҐГҐ 2-Гµ Г¬ГЁГ­ГіГІ.", 0x33AAFFFF)
             end
           end
         },
         {
-          title = "{808080}Режим вещания",
+          title = "{808080}ГђГҐГ¦ГЁГ¬ ГўГҐГ№Г Г­ГЁГї",
           onclick = function()
             if settings.global.rejim1 == true then 
               settings.global.rejim1 = false 
-              sampAddChatMessage("[florenso tools]: Режим вещания выключен.", 0x33AAFFFF)
+              sampAddChatMessage("[florenso tools]: ГђГҐГ¦ГЁГ¬ ГўГҐГ№Г Г­ГЁГї ГўГ»ГЄГ«ГѕГ·ГҐГ­.", 0x33AAFFFF)
             else
               if settings.global.doljnost ~= nil then
                 settings.global.rejim1 = true 
                 settings.global.rejim3 = false 
                 settings.global.rejim2 = false 
                 settings.global.rejim4 = false 
-                sampAddChatMessage("[florenso tools]: Режим вещания включен.", 0x33AAFFFF)
+                sampAddChatMessage("[florenso tools]: ГђГҐГ¦ГЁГ¬ ГўГҐГ№Г Г­ГЁГї ГўГЄГ«ГѕГ·ГҐГ­.", 0x33AAFFFF)
                 wait(1000)
-                sampAddChatMessage("[florenso tools]: Вещание начнётся в "..settings.global.hour..":"..settings.global.minute..".", 0x33AAFFFF)
+                sampAddChatMessage("[florenso tools]: Г‚ГҐГ№Г Г­ГЁГҐ Г­Г Г·Г­ВёГІГ±Гї Гў "..settings.global.hour..":"..settings.global.minute..".", 0x33AAFFFF)
                 wait(500)
                 thisScript():reload()
               else
-                sampAddChatMessage("[florenso tools]: Вы не установили звание.", 0x33AAFFFF)
+                sampAddChatMessage("[florenso tools]: Г‚Г» Г­ГҐ ГіГ±ГІГ Г­Г®ГўГЁГ«ГЁ Г§ГўГ Г­ГЁГҐ.", 0x33AAFFFF)
               end
             end
           end
@@ -902,31 +902,31 @@ function refreshDialog()
       }
     },
     {
-      title = "{808080}Амнистия (Вещать до 14:45){FFFFFF}",
+      title = "{808080}ГЂГ¬Г­ГЁГ±ГІГЁГї (Г‚ГҐГ№Г ГІГј Г¤Г® 14:45){FFFFFF}",
       submenu = {
-        title = "{808080}Настройки{FFFFFF}",
+        title = "{808080}ГЌГ Г±ГІГ°Г®Г©ГЄГЁ{FFFFFF}",
         {
-          title = "{808080}Установить время вещания{FFFFFF}",
+          title = "{808080}Г“Г±ГІГ Г­Г®ГўГЁГІГј ГўГ°ГҐГ¬Гї ГўГҐГ№Г Г­ГЁГї{FFFFFF}",
           onclick = function()
-            sampShowDialog(2245, "{CD5C5C}florenso tools{FFFFFF}", "{b6b6b6}Установите время начала вещания.\n\nОбразец: {FFFFFF}12:00", "ОК", "Закрыть", 1)
+            sampShowDialog(2245, "{CD5C5C}florenso tools{FFFFFF}", "{b6b6b6}Г“Г±ГІГ Г­Г®ГўГЁГІГҐ ГўГ°ГҐГ¬Гї Г­Г Г·Г Г«Г  ГўГҐГ№Г Г­ГЁГї.\n\nГЋГЎГ°Г Г§ГҐГ¶: {FFFFFF}12:00", "ГЋГЉ", "Г‡Г ГЄГ°Г»ГІГј", 1)
             while sampIsDialogActive() do wait(0) end
             local result, button, item, input = sampHasDialogRespond(2245)
             if result and button == 1 then
               local args = split(input, ":")
                 settings.global.hour = args[1]
                 settings.global.minute = args[2]
-                sampAddChatMessage("[florenso tools]: Вы назначили вещание на "..settings.global.hour..":"..settings.global.minute..". Чтобы провещать в это время предварительно включите режим вещания.", 0x33AAFFFF)
+                sampAddChatMessage("[florenso tools]: Г‚Г» Г­Г Г§Г­Г Г·ГЁГ«ГЁ ГўГҐГ№Г Г­ГЁГҐ Г­Г  "..settings.global.hour..":"..settings.global.minute..". Г—ГІГ®ГЎГ» ГЇГ°Г®ГўГҐГ№Г ГІГј Гў ГЅГІГ® ГўГ°ГҐГ¬Гї ГЇГ°ГҐГ¤ГўГ Г°ГЁГІГҐГ«ГјГ­Г® ГўГЄГ«ГѕГ·ГЁГІГҐ Г°ГҐГ¦ГЁГ¬ ГўГҐГ№Г Г­ГЁГї.", 0x33AAFFFF)
                 wait(1000)
-                sampAddChatMessage("[florenso tools]: Рекомендуется включать режим вещания в момент, когда до него более 2-х минут.", 0x33AAFFFF)
+                sampAddChatMessage("[florenso tools]: ГђГҐГЄГ®Г¬ГҐГ­Г¤ГіГҐГІГ±Гї ГўГЄГ«ГѕГ·Г ГІГј Г°ГҐГ¦ГЁГ¬ ГўГҐГ№Г Г­ГЁГї Гў Г¬Г®Г¬ГҐГ­ГІ, ГЄГ®ГЈГ¤Г  Г¤Г® Г­ГҐГЈГ® ГЎГ®Г«ГҐГҐ 2-Гµ Г¬ГЁГ­ГіГІ.", 0x33AAFFFF)
             end
           end
         },
         {
-          title = "{808080}Режим вещания",
+          title = "{808080}ГђГҐГ¦ГЁГ¬ ГўГҐГ№Г Г­ГЁГї",
           onclick = function()
             if settings.global.rejim2 == true then 
               settings.global.rejim2 = false 
-              sampAddChatMessage("[florenso tools]: Режим вещания выключен.", 0x33AAFFFF)
+              sampAddChatMessage("[florenso tools]: ГђГҐГ¦ГЁГ¬ ГўГҐГ№Г Г­ГЁГї ГўГ»ГЄГ«ГѕГ·ГҐГ­.", 0x33AAFFFF)
             else 
               if settings.global.doljnost ~= nil then
                 settings.global.rejim2 = true 
@@ -934,13 +934,13 @@ function refreshDialog()
                 settings.global.rejim4 = false 
                 settings.global.rejim1 = false 
                 onScriptTerminate()
-                sampAddChatMessage("[florenso tools]: Режим вещания включен.", 0x33AAFFFF)
+                sampAddChatMessage("[florenso tools]: ГђГҐГ¦ГЁГ¬ ГўГҐГ№Г Г­ГЁГї ГўГЄГ«ГѕГ·ГҐГ­.", 0x33AAFFFF)
                 wait(1000)
-                sampAddChatMessage("[florenso tools]: Вещание начнётся в "..settings.global.hour..":"..settings.global.minute..".", 0x33AAFFFF)
+                sampAddChatMessage("[florenso tools]: Г‚ГҐГ№Г Г­ГЁГҐ Г­Г Г·Г­ВёГІГ±Гї Гў "..settings.global.hour..":"..settings.global.minute..".", 0x33AAFFFF)
                 wait(500)
                 thisScript():reload()
               else
-                sampAddChatMessage("[florenso tools]: Вы не установили звание.", 0x33AAFFFF)
+                sampAddChatMessage("[florenso tools]: Г‚Г» Г­ГҐ ГіГ±ГІГ Г­Г®ГўГЁГ«ГЁ Г§ГўГ Г­ГЁГҐ.", 0x33AAFFFF)
               end
             end
           end
@@ -948,31 +948,31 @@ function refreshDialog()
       }
     },
     {
-      title = "{808080}Офицерский контракт{FFFFFF}",
+      title = "{808080}ГЋГґГЁГ¶ГҐГ°Г±ГЄГЁГ© ГЄГ®Г­ГІГ°Г ГЄГІ{FFFFFF}",
       submenu = {
-        title = "{808080}Настройки{FFFFFF}",
+        title = "{808080}ГЌГ Г±ГІГ°Г®Г©ГЄГЁ{FFFFFF}",
         {
-          title = "{808080}Установить время вещания{FFFFFF}",
+          title = "{808080}Г“Г±ГІГ Г­Г®ГўГЁГІГј ГўГ°ГҐГ¬Гї ГўГҐГ№Г Г­ГЁГї{FFFFFF}",
           onclick = function()
-            sampShowDialog(3358, "{CD5C5C}florenso tools{FFFFFF}", "{b6b6b6}Установите время начала вещания.\n\nОбразец: {FFFFFF}12:00", "ОК", "Закрыть", 1)
+            sampShowDialog(3358, "{CD5C5C}florenso tools{FFFFFF}", "{b6b6b6}Г“Г±ГІГ Г­Г®ГўГЁГІГҐ ГўГ°ГҐГ¬Гї Г­Г Г·Г Г«Г  ГўГҐГ№Г Г­ГЁГї.\n\nГЋГЎГ°Г Г§ГҐГ¶: {FFFFFF}12:00", "ГЋГЉ", "Г‡Г ГЄГ°Г»ГІГј", 1)
             while sampIsDialogActive() do wait(0) end
             local result, button, item, input = sampHasDialogRespond(3358)
             if result and button == 1 then
               local args = split(input, ":")
                 settings.global.hour = args[1]
                 settings.global.minute = args[2]
-                sampAddChatMessage("[florenso tools]: Вы назначили вещание на "..settings.global.hour..":"..settings.global.minute..". Чтобы провещать в это время предварительно включите режим вещания.", 0x33AAFFFF)
+                sampAddChatMessage("[florenso tools]: Г‚Г» Г­Г Г§Г­Г Г·ГЁГ«ГЁ ГўГҐГ№Г Г­ГЁГҐ Г­Г  "..settings.global.hour..":"..settings.global.minute..". Г—ГІГ®ГЎГ» ГЇГ°Г®ГўГҐГ№Г ГІГј Гў ГЅГІГ® ГўГ°ГҐГ¬Гї ГЇГ°ГҐГ¤ГўГ Г°ГЁГІГҐГ«ГјГ­Г® ГўГЄГ«ГѕГ·ГЁГІГҐ Г°ГҐГ¦ГЁГ¬ ГўГҐГ№Г Г­ГЁГї.", 0x33AAFFFF)
                 wait(1000)
-                sampAddChatMessage("[florenso tools]: Рекомендуется включать режим вещания в момент, когда до него более 2-х минут.", 0x33AAFFFF)
+                sampAddChatMessage("[florenso tools]: ГђГҐГЄГ®Г¬ГҐГ­Г¤ГіГҐГІГ±Гї ГўГЄГ«ГѕГ·Г ГІГј Г°ГҐГ¦ГЁГ¬ ГўГҐГ№Г Г­ГЁГї Гў Г¬Г®Г¬ГҐГ­ГІ, ГЄГ®ГЈГ¤Г  Г¤Г® Г­ГҐГЈГ® ГЎГ®Г«ГҐГҐ 2-Гµ Г¬ГЁГ­ГіГІ.", 0x33AAFFFF)
             end
           end
         },
         {
-          title = "{808080}Режим вещания",
+          title = "{808080}ГђГҐГ¦ГЁГ¬ ГўГҐГ№Г Г­ГЁГї",
           onclick = function()
             if settings.global.rejim3 == true then 
               settings.global.rejim3 = false 
-              sampAddChatMessage("[florenso tools]: Режим вещания выключен.", 0x33AAFFFF)
+              sampAddChatMessage("[florenso tools]: ГђГҐГ¦ГЁГ¬ ГўГҐГ№Г Г­ГЁГї ГўГ»ГЄГ«ГѕГ·ГҐГ­.", 0x33AAFFFF)
             else 
               if settings.global.doljnost ~= nil then
                 settings.global.rejim3 = true 
@@ -980,13 +980,13 @@ function refreshDialog()
                 settings.global.rejim2 = false 
                 settings.global.rejim1 = false 
                 onScriptTerminate()
-                sampAddChatMessage("[florenso tools]: Режим вещания включен.", 0x33AAFFFF)
+                sampAddChatMessage("[florenso tools]: ГђГҐГ¦ГЁГ¬ ГўГҐГ№Г Г­ГЁГї ГўГЄГ«ГѕГ·ГҐГ­.", 0x33AAFFFF)
                 wait(1000)
-                sampAddChatMessage("[florenso tools]: Вещание начнётся в "..settings.global.hour..":"..settings.global.minute..".", 0x33AAFFFF)
+                sampAddChatMessage("[florenso tools]: Г‚ГҐГ№Г Г­ГЁГҐ Г­Г Г·Г­ВёГІГ±Гї Гў "..settings.global.hour..":"..settings.global.minute..".", 0x33AAFFFF)
                 wait(500)
                 thisScript():reload()
               else
-                sampAddChatMessage("[florenso tools]: Вы не установили звание.", 0x33AAFFFF)
+                sampAddChatMessage("[florenso tools]: Г‚Г» Г­ГҐ ГіГ±ГІГ Г­Г®ГўГЁГ«ГЁ Г§ГўГ Г­ГЁГҐ.", 0x33AAFFFF)
               end
             end
           end
@@ -994,31 +994,31 @@ function refreshDialog()
       }
     },
     {
-      title = "{808080}Призывники{FFFFFF}",
+      title = "{808080}ГЏГ°ГЁГ§Г»ГўГ­ГЁГЄГЁ{FFFFFF}",
       submenu = {
-        title = "{808080}Настройки{FFFFFF}",
+        title = "{808080}ГЌГ Г±ГІГ°Г®Г©ГЄГЁ{FFFFFF}",
         {
-          title = "{808080}Установить время вещания{FFFFFF}",
+          title = "{808080}Г“Г±ГІГ Г­Г®ГўГЁГІГј ГўГ°ГҐГ¬Гї ГўГҐГ№Г Г­ГЁГї{FFFFFF}",
           onclick = function()
-            sampShowDialog(1275, "{CD5C5C}florenso tools{FFFFFF}", "{b6b6b6}Установите время начала вещания.\n\nОбразец: {FFFFFF}12:00", "ОК", "Закрыть", 1)
+            sampShowDialog(1275, "{CD5C5C}florenso tools{FFFFFF}", "{b6b6b6}Г“Г±ГІГ Г­Г®ГўГЁГІГҐ ГўГ°ГҐГ¬Гї Г­Г Г·Г Г«Г  ГўГҐГ№Г Г­ГЁГї.\n\nГЋГЎГ°Г Г§ГҐГ¶: {FFFFFF}12:00", "ГЋГЉ", "Г‡Г ГЄГ°Г»ГІГј", 1)
             while sampIsDialogActive() do wait(0) end
             local result, button, item, input = sampHasDialogRespond(1275)
             if result and button == 1 then
               local args = split(input, ":")
                 settings.global.hour = args[1]
                 settings.global.minute = args[2]
-                sampAddChatMessage("[florenso tools]: Вы назначили вещание на "..settings.global.hour..":"..settings.global.minute..". Чтобы провещать в это время предварительно включите режим вещания.", 0x33AAFFFF)
+                sampAddChatMessage("[florenso tools]: Г‚Г» Г­Г Г§Г­Г Г·ГЁГ«ГЁ ГўГҐГ№Г Г­ГЁГҐ Г­Г  "..settings.global.hour..":"..settings.global.minute..". Г—ГІГ®ГЎГ» ГЇГ°Г®ГўГҐГ№Г ГІГј Гў ГЅГІГ® ГўГ°ГҐГ¬Гї ГЇГ°ГҐГ¤ГўГ Г°ГЁГІГҐГ«ГјГ­Г® ГўГЄГ«ГѕГ·ГЁГІГҐ Г°ГҐГ¦ГЁГ¬ ГўГҐГ№Г Г­ГЁГї.", 0x33AAFFFF)
                 wait(1000)
-                sampAddChatMessage("[florenso tools]: Рекомендуется включать режим вещания в момент, когда до него более 2-х минут.", 0x33AAFFFF)
+                sampAddChatMessage("[florenso tools]: ГђГҐГЄГ®Г¬ГҐГ­Г¤ГіГҐГІГ±Гї ГўГЄГ«ГѕГ·Г ГІГј Г°ГҐГ¦ГЁГ¬ ГўГҐГ№Г Г­ГЁГї Гў Г¬Г®Г¬ГҐГ­ГІ, ГЄГ®ГЈГ¤Г  Г¤Г® Г­ГҐГЈГ® ГЎГ®Г«ГҐГҐ 2-Гµ Г¬ГЁГ­ГіГІ.", 0x33AAFFFF)
             end
           end
         },
         {
-          title = "{808080}Режим вещания",
+          title = "{808080}ГђГҐГ¦ГЁГ¬ ГўГҐГ№Г Г­ГЁГї",
           onclick = function()
             if settings.global.rejim4 == true then 
               settings.global.rejim4 = false 
-              sampAddChatMessage("[florenso tools]: Режим вещания выключен.", 0x33AAFFFF)
+              sampAddChatMessage("[florenso tools]: ГђГҐГ¦ГЁГ¬ ГўГҐГ№Г Г­ГЁГї ГўГ»ГЄГ«ГѕГ·ГҐГ­.", 0x33AAFFFF)
             else 
               if settings.global.doljnost ~= nil then
                 settings.global.rejim4 = true 
@@ -1026,13 +1026,13 @@ function refreshDialog()
                 settings.global.rejim2 = false 
                 settings.global.rejim1 = false 
                 onScriptTerminate()
-                sampAddChatMessage("[florenso tools]: Режим вещания включен.", 0x33AAFFFF)
+                sampAddChatMessage("[florenso tools]: ГђГҐГ¦ГЁГ¬ ГўГҐГ№Г Г­ГЁГї ГўГЄГ«ГѕГ·ГҐГ­.", 0x33AAFFFF)
                 wait(1000)
-                sampAddChatMessage("[florenso tools]: Вещание начнётся в "..settings.global.hour..":"..settings.global.minute..".", 0x33AAFFFF)
+                sampAddChatMessage("[florenso tools]: Г‚ГҐГ№Г Г­ГЁГҐ Г­Г Г·Г­ВёГІГ±Гї Гў "..settings.global.hour..":"..settings.global.minute..".", 0x33AAFFFF)
                 wait(500)
                 thisScript():reload()
               else
-                sampAddChatMessage("[florenso tools]: Вы не установили звание.", 0x33AAFFFF)
+                sampAddChatMessage("[florenso tools]: Г‚Г» Г­ГҐ ГіГ±ГІГ Г­Г®ГўГЁГ«ГЁ Г§ГўГ Г­ГЁГҐ.", 0x33AAFFFF)
               end
             end
           end
@@ -1040,9 +1040,9 @@ function refreshDialog()
       }
     },
     {
-      title = "{808080}Установить звание (ОБЯЗАТЕЛЬНО){FFFFFF}",
+      title = "{808080}Г“Г±ГІГ Г­Г®ГўГЁГІГј Г§ГўГ Г­ГЁГҐ (ГЋГЃГџГ‡ГЂГ’Г…Г‹ГњГЌГЋ){FFFFFF}",
       onclick = function()
-        sampShowDialog(1234, "{CD5C5C}florenso tools{FFFFFF}", "{b6b6b6}Установите своё звание\nс большой буквы.\n\nОбразец: {FFFFFF}Генерал", "ОК", "Закрыть", 1)
+        sampShowDialog(1234, "{CD5C5C}florenso tools{FFFFFF}", "{b6b6b6}Г“Г±ГІГ Г­Г®ГўГЁГІГҐ Г±ГўГ®Вё Г§ГўГ Г­ГЁГҐ\nГ± ГЎГ®Г«ГјГёГ®Г© ГЎГіГЄГўГ».\n\nГЋГЎГ°Г Г§ГҐГ¶: {FFFFFF}ГѓГҐГ­ГҐГ°Г Г«", "ГЋГЉ", "Г‡Г ГЄГ°Г»ГІГј", 1)
         while sampIsDialogActive() do wait(0) end
         local result, button, item, input = sampHasDialogRespond(1234)
         if result and button == 1 then
@@ -1072,50 +1072,50 @@ function justPressThisShitPlease(key)
 end
 
 function events.onServerMessage(color, text)
-  if (text:find("Добро пожаловать на Evolve Role Play")) then
+  if (text:find("Г„Г®ГЎГ°Г® ГЇГ®Г¦Г Г«Г®ГўГ ГІГј Г­Г  Evolve Role Play")) then
     if settings.global.prizivi == true then
       settings.global.prizivi = false
-      sampAddChatMessage("[florenso tools]: Скрипт призыва отключён. Если вы будете проводить следующий призыв - включите скрипт ещё раз.", 0x33AAFFFF)
-      sampAddChatMessage("[florenso tools]: Ваш тэг: "..settings.global.Tag.."", 0x33AAFFFF)
+      sampAddChatMessage("[florenso tools]: Г‘ГЄГ°ГЁГЇГІ ГЇГ°ГЁГ§Г»ГўГ  Г®ГІГЄГ«ГѕГ·ВёГ­. Г…Г±Г«ГЁ ГўГ» ГЎГіГ¤ГҐГІГҐ ГЇГ°Г®ГўГ®Г¤ГЁГІГј Г±Г«ГҐГ¤ГіГѕГ№ГЁГ© ГЇГ°ГЁГ§Г»Гў - ГўГЄГ«ГѕГ·ГЁГІГҐ Г±ГЄГ°ГЁГЇГІ ГҐГ№Вё Г°Г Г§.", 0x33AAFFFF)
+      sampAddChatMessage("[florenso tools]: Г‚Г Гё ГІГЅГЈ: "..settings.global.Tag.."", 0x33AAFFFF)
     end 
     if settings.global.rejim1 or settings.global.rejim2 or settings.global.rejim3 or settings.global.rejim4 then
-      sampAddChatMessage("[florenso tools]: Режим вещания отключён.", 0x33AAFFFF)
+      sampAddChatMessage("[florenso tools]: ГђГҐГ¦ГЁГ¬ ГўГҐГ№Г Г­ГЁГї Г®ГІГЄГ«ГѕГ·ВёГ­.", 0x33AAFFFF)
       settings.global.rejim4 = false
       settings.global.rejim3 = false 
       settings.global.rejim2 = false 
       settings.global.rejim1 = false 
     end
   end
-  if (text:find("Вы предложили (%w+_%w+) вступить в (.*)")) then
+  if (text:find("Г‚Г» ГЇГ°ГҐГ¤Г«Г®Г¦ГЁГ«ГЁ (%w+_%w+) ГўГ±ГІГіГЇГЁГІГј Гў (.*)")) then
     writeInFile("moonloader/invite.txt", text)
   end
-  if (text:find("Вы выгнали (%w+_%w+) из организации. Причина: (.*)")) then
+  if (text:find("Г‚Г» ГўГ»ГЈГ­Г Г«ГЁ (%w+_%w+) ГЁГ§ Г®Г°ГЈГ Г­ГЁГ§Г Г¶ГЁГЁ. ГЏГ°ГЁГ·ГЁГ­Г : (.*)")) then
     writeInFile("moonloader/uninvite.txt", text)
     uvolnenie = true
     lua_thread.create(function()
       if uvolnenie then 
-        sampAddChatMessage("[florenso tools]: Нажмите 'Y' чтобы отыграть увольнение и обьявить в рацию", 0x33AAFFFF)
+        sampAddChatMessage("[florenso tools]: ГЌГ Г¦Г¬ГЁГІГҐ 'Y' Г·ГІГ®ГЎГ» Г®ГІГ»ГЈГ°Г ГІГј ГіГўГ®Г«ГјГ­ГҐГ­ГЁГҐ ГЁ Г®ГЎГјГїГўГЁГІГј Гў Г°Г Г¶ГЁГѕ", 0x33AAFFFF)
         nickuvolennogo = string.match(text, "(%w+_%w+) .*"):gsub("_", " ")
-        prichina = string.match(text, "%w+_%w+ из организации. Причина: (.*)")
+        prichina = string.match(text, "%w+_%w+ ГЁГ§ Г®Г°ГЈГ Г­ГЁГ§Г Г¶ГЁГЁ. ГЏГ°ГЁГ·ГЁГ­Г : (.*)")
         wait(6000)
         if uvolnenie then uvolnenie = false end
       end
     end)
   end
-  if (text:find("Вы назначили (%w+_%w+).*%[(%d+)%]")) then
+  if (text:find("Г‚Г» Г­Г Г§Г­Г Г·ГЁГ«ГЁ (%w+_%w+).*%[(%d+)%]")) then
     writeInFile("moonloader/giverank.txt", text)
     povishka = true
     lua_thread.create(function()
       if povishka then
-        sampAddChatMessage("[florenso tools]: Нажмите 'Y' чтобы отыграть выдачу лычек/погон", 0x33AAFFFF)
-        zvanie = string.match(text, "%w+_%w+ (.+)%[%d+%]"):gsub("Ефрейтор", "Ефрейтора"):gsub("Сержант", "Сержанта"):gsub("Старшина", "Старшины"):gsub("Прапорщик", "Прапорщика"):gsub("Лейтенант", "Лейтенанта"):gsub("Капитан", "Капитана"):gsub("Майор", "Майора"):gsub("Подполковник", "Подполковника"):gsub("Полковник", "Полковника")
+        sampAddChatMessage("[florenso tools]: ГЌГ Г¦Г¬ГЁГІГҐ 'Y' Г·ГІГ®ГЎГ» Г®ГІГ»ГЈГ°Г ГІГј ГўГ»Г¤Г Г·Гі Г«Г»Г·ГҐГЄ/ГЇГ®ГЈГ®Г­", 0x33AAFFFF)
+        zvanie = string.match(text, "%w+_%w+ (.+)%[%d+%]"):gsub("Г…ГґГ°ГҐГ©ГІГ®Г°", "Г…ГґГ°ГҐГ©ГІГ®Г°Г "):gsub("Г‘ГҐГ°Г¦Г Г­ГІ", "Г‘ГҐГ°Г¦Г Г­ГІГ "):gsub("Г‘ГІГ Г°ГёГЁГ­Г ", "Г‘ГІГ Г°ГёГЁГ­Г»"):gsub("ГЏГ°Г ГЇГ®Г°Г№ГЁГЄ", "ГЏГ°Г ГЇГ®Г°Г№ГЁГЄГ "):gsub("Г‹ГҐГ©ГІГҐГ­Г Г­ГІ", "Г‹ГҐГ©ГІГҐГ­Г Г­ГІГ "):gsub("ГЉГ ГЇГЁГІГ Г­", "ГЉГ ГЇГЁГІГ Г­Г "):gsub("ГЊГ Г©Г®Г°", "ГЊГ Г©Г®Г°Г "):gsub("ГЏГ®Г¤ГЇГ®Г«ГЄГ®ГўГ­ГЁГЄ", "ГЏГ®Г¤ГЇГ®Г«ГЄГ®ГўГ­ГЁГЄГ "):gsub("ГЏГ®Г«ГЄГ®ГўГ­ГЁГЄ", "ГЏГ®Г«ГЄГ®ГўГ­ГЁГЄГ ")
         wait(6000)
         if povishka then povishka = false end
       end
     end)
   end
-  if (text:find("Фракция: Неизвестно")) and (text:find("Должность: Нет")) and prizovniki == true and color == -169954390 then
-    sampAddChatMessage("Нажмите 'Y' чтобы принять "..igrok.." в ЛВА", 0x33AAFFFF)
+  if (text:find("Г”Г°Г ГЄГ¶ГЁГї: ГЌГҐГЁГ§ГўГҐГ±ГІГ­Г®")) and (text:find("Г„Г®Г«Г¦Г­Г®Г±ГІГј: ГЌГҐГІ")) and prizovniki == true and color == -169954390 then
+    sampAddChatMessage("ГЌГ Г¦Г¬ГЁГІГҐ 'Y' Г·ГІГ®ГЎГ» ГЇГ°ГЁГ­ГїГІГј "..igrok.." Гў Г‹Г‚ГЂ", 0x33AAFFFF)
     lua_thread.create(function()
       prizovnik = true
       wait(30000)
@@ -1125,7 +1125,7 @@ function events.onServerMessage(color, text)
 end
 
 function submenus_show(menu, caption, select_button, close_button, back_button)
-  select_button, close_button, back_button = select_button or 'Выбрать', close_button or 'Выйти', back_button or 'Назад'
+  select_button, close_button, back_button = select_button or 'Г‚Г»ГЎГ°Г ГІГј', close_button or 'Г‚Г»Г©ГІГЁ', back_button or 'ГЌГ Г§Г Г¤'
   prev_menus = {}
   function display(menu, id, caption)
     local string_list = {}
@@ -1185,7 +1185,7 @@ function getNearestPlayerId()
             local result, playerid = sampGetPlayerIdByCharHandle(minPed)
             if result and not isCharInAnyCar(minPed) and sampGetPlayerColor(playerid) == 4294942134 then
               local _, pID = sampGetPlayerIdByCharHandle(PLAYER_PED)
-              sampSendChat("Здравия желаю. Будьте добры, покажите Ваши документы.")
+              sampSendChat("Г‡Г¤Г°Г ГўГЁГї Г¦ГҐГ«Г Гѕ. ГЃГіГ¤ГјГІГҐ Г¤Г®ГЎГ°Г», ГЇГ®ГЄГ Г¦ГЁГІГҐ Г‚Г ГёГЁ Г¤Г®ГЄГіГ¬ГҐГ­ГІГ».")
               wait(1000)
               sampSendChat("/b /showpass "..pID.."")
               prizovniki = true
